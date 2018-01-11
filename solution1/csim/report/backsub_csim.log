@@ -1,0 +1,8 @@
+   Compiling ../../../test.cpp in debug mode
+   Compiling ../../../core.cpp in debug mode
+   Generating csim.exe
+
+(Live1:16225): Gtk-WARNING **: Unable to locate theme engine in module_path: "adwaita",
+height = 240, width = 320
+ERROR! blank frame grabbed
+@I [SIM-1] CSim done with 0 errors.

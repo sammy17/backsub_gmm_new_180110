@@ -1,0 +1,71 @@
+<AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
+<sourceFile name="">
+<directive functionLabel="" functionName="process" label="">
+<pragma name="LOOP_TRIPCOUNT">
+<option name="min" value="0"/>
+<option name="max" value="1"/>
+<option name="avg" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="process" label="">
+<pragma name="LOOP_TRIPCOUNT">
+<option name="min" value="1"/>
+<option name="max" value="2"/>
+<option name="avg" value="2"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="backsub" label="">
+<pragma name="ARRAY_PARTITION">
+<option name="variable" positionalBoolean="4" value="frame_out_glob"/>
+<option name="block" positionalBoolean="type" value=""/>
+<option name="factor" value="8"/>
+<option name="dim" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="backsub" label="">
+<pragma name="ARRAY_PARTITION">
+<option name="variable" positionalBoolean="4" value="frame_in_glob"/>
+<option name="block" positionalBoolean="type" value=""/>
+<option name="factor" value="8"/>
+<option name="dim" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="backsub" label="">
+<pragma name="INTERFACE">
+<option name="m_axi" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="bgmodel"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="backsub" label="">
+<pragma name="INTERFACE">
+<option name="port" positionalBoolean="4" value="return"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="backsub" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="learningRate"/>
+<option name="bundle" value="CRTL_BUS"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="backsub" label="">
+<pragma name="INTERFACE">
+<option name="m_axi" positionalBoolean="mode" value=""/>
+<option name="depth" value="76800"/>
+<option name="port" positionalBoolean="4" value="frame_o"/>
+<option name="offset" value="slave"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="backsub" label="">
+<pragma name="INTERFACE">
+<option name="m_axi" positionalBoolean="mode" value=""/>
+<option name="depth" value="76800"/>
+<option name="port" positionalBoolean="4" value="frame_i"/>
+<option name="offset" value="slave"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="backsub" label="">
+<pragma name="PIPELINE"/>
+</directive>
+</sourceFile>
+</AutoPilot:ProjectResources>

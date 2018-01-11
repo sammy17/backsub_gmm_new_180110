@@ -1,0 +1,239 @@
+@I [HLS-0] Workspace /home/zynq-fyp/Desktop/maxi_latest/backsub_gmm_new_180110/solution1 opened at Thu Jan 11 00:19:59 +0530 2018
+@I [HLS-100] Command "config_clock -quiet -name default -period 10 -default=false "
+@I [SYN-201] Setting up clock 'default' with a period of 10ns.
+@I [HLS-100] Command 'config_clock' returned 0; elapsed 3.8e-05Total elapsed time: 0.130 sec.
+@I [HLS-100] Command "open_platform DefaultPlatform "
+@I [HLS-100] Command 'open_platform' returned 0; elapsed 2.6e-05Total elapsed time: 0.130 sec.
+@I [HLS-100] Command "import_lib /home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/zynq/zynq "
+@I [HLS-100] Command "source /home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/common/xilinx.lib "
+@I [HLS-100] Command "source /home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/interface/xilinx_interface.lib "
+@I [HLS-100] Command "source /home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/interface/plb46.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000161Total elapsed time: 0.130 sec.
+@I [HLS-100] Command "source /home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/interface/fsl.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 7.3e-05Total elapsed time: 0.131 sec.
+@I [HLS-100] Command "source /home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/interface/axi4.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000104Total elapsed time: 0.131 sec.
+@I [HLS-100] Command "source /home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/interface/maxi.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 9.1e-05Total elapsed time: 0.131 sec.
+@I [HLS-100] Command "source /home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/interface/saxilite.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 6e-05Total elapsed time: 0.131 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000653Total elapsed time: 0.131 sec.
+@I [HLS-100] Command "source /home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/common/dsp48.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 5.3e-05Total elapsed time: 0.131 sec.
+@I [HLS-100] Command "source /home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/ip/xfir.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 3.9e-05Total elapsed time: 0.131 sec.
+@I [HLS-100] Command "source /home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/ip/xfft.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 3.4e-05Total elapsed time: 0.131 sec.
+@I [HLS-100] Command "source /home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/ip/dds_compiler.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 3.1e-05Total elapsed time: 0.131 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00209Total elapsed time: 0.132 sec.
+@I [HLS-100] Command "source /home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/common/xilinx_old.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000351Total elapsed time: 0.134 sec.
+@I [HLS-100] Command "source /home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/common/xilinx_vivado.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000339Total elapsed time: 0.134 sec.
+@I [HLS-100] Command "source /home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/common/xilinx.hlp "
+@I [HLS-100] Command "source /home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/common/target_info.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 5.6e-05Total elapsed time: 0.135 sec.
+@I [HLS-100] Command "source /home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/interface/xilinx_interface.hlp "
+@I [HLS-100] Command "source /home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/interface/maxi.hlp "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 4.2e-05Total elapsed time: 0.135 sec.
+@I [HLS-100] Command "source /home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/interface/saxilite.hlp "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 4.3e-05Total elapsed time: 0.135 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000147Total elapsed time: 0.135 sec.
+@I [HLS-100] Command "source /home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/common/dsp48.hlp "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000308Total elapsed time: 0.136 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001091Total elapsed time: 0.136 sec.
+@I [HLS-100] Command "source /home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/zynq/dsp48e1.hlp "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 3.8e-05Total elapsed time: 0.136 sec.
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 3e-06Total elapsed time: 0.136 sec.
+@I [HLS-100] Command "config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 9e-06Total elapsed time: 0.136 sec.
+@I [HLS-100] Command "config_chip_info -quiet -speed medium "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 2e-06Total elapsed time: 0.136 sec.
+@I [HLS-100] Command 'import_lib' returned 0; elapsed 0.006904Total elapsed time: 0.137 sec.
+@I [HLS-100] Command "source /home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/zynq/zynq.gen "
+@I [HLS-100] Command "source /home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/common/virtex.gen "
+@I [HLS-100] Command "source /home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/common/xilinx.gen "
+@I [HLS-100] Command "source /home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/interface/plb46.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000572Total elapsed time: 0.138 sec.
+@I [HLS-100] Command "source /home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/interface/fsl.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000209Total elapsed time: 0.138 sec.
+@I [HLS-100] Command "source /home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/interface/axi4.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001076Total elapsed time: 0.139 sec.
+@I [HLS-100] Command "source /home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/interface/nativeAXI4.gen "
+@I [HLS-100] Command "source /home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/interface/saxilite.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001896Total elapsed time: 0.141 sec.
+@I [HLS-100] Command "source /home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/interface/maxi.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.003809Total elapsed time: 0.145 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.005779Total elapsed time: 0.145 sec.
+@I [HLS-100] Command "source /home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/scripts/xilinxcoregen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.004526Total elapsed time: 0.150 sec.
+@I [HLS-100] Command "source /home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/interface/XilEDKCoreGen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.004399Total elapsed time: 0.154 sec.
+@I [HLS-100] Command "source /home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/ip/xfft.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.058505Total elapsed time: 0.213 sec.
+@I [HLS-100] Command "source /home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/ip/xfir.gen "
+@I [HLS-100] Command "source /home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/tps/tcl/tcllib1.11.1/struct/list.tcl "
+@I [HLS-100] Command "source /home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/tps/tcl/tcllib1.11.1/cmdline/cmdline.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000535Total elapsed time: 0.222 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001025Total elapsed time: 0.222 sec.
+@I [HLS-100] Command "source /home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/tps/tcl/tcllib1.11.1/math/bignum.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000307Total elapsed time: 0.227 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.018785Total elapsed time: 0.231 sec.
+@I [HLS-100] Command "source /home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/ip/util.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 8.3e-05Total elapsed time: 0.231 sec.
+@I [HLS-100] Command "source /home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/ip/dds_compiler.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001766Total elapsed time: 0.233 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.096052Total elapsed time: 0.233 sec.
+@I [HLS-100] Command "source /home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/common/dsp48.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 6.3e-05Total elapsed time: 0.234 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.097076Total elapsed time: 0.234 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.097138Total elapsed time: 0.234 sec.
+@I [HLS-100] Command "open_platform DefaultPlatform "
+@I [HLS-100] Command 'open_platform' returned 0; elapsed 4e-06Total elapsed time: 0.234 sec.
+@I [HLS-100] Command "import_lib /home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/zynq/zynq_fpv6 "
+@I [HLS-100] Command "source /home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/common/xilinx_fpv7.lib "
+@I [HLS-100] Command "source /home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/common/xilinx_hp.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000358Total elapsed time: 0.235 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001799Total elapsed time: 0.236 sec.
+@I [HLS-100] Command "source /home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/common/xilinx_fpv.hlp "
+@I [HLS-100] Command "source /home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/common/xilinx.hlp "
+@I [HLS-100] Command "source /home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/common/target_info.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 8.5e-05Total elapsed time: 0.239 sec.
+@I [HLS-100] Command "source /home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/interface/xilinx_interface.hlp "
+@I [HLS-100] Command "source /home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/interface/maxi.hlp "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 4.5e-05Total elapsed time: 0.239 sec.
+@I [HLS-100] Command "source /home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/interface/saxilite.hlp "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 4.6e-05Total elapsed time: 0.239 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000152Total elapsed time: 0.239 sec.
+@I [HLS-100] Command "source /home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/common/dsp48.hlp "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000308Total elapsed time: 0.240 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001122Total elapsed time: 0.240 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001397Total elapsed time: 0.240 sec.
+@I [HLS-100] Command "source /home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/zynq/zynq_hp.hlp "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000447Total elapsed time: 0.241 sec.
+@I [HLS-100] Command 'import_lib' returned 0; elapsed 0.008798Total elapsed time: 0.243 sec.
+@I [HLS-100] Command "source /home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/zynq/zynq_fpv6.gen "
+@I [HLS-100] Command "source /home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/common/xilinx_fpv6.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00084Total elapsed time: 0.244 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000898Total elapsed time: 0.244 sec.
+@I [HLS-100] Command "set_part xc7z020clg484-1 "
+@I [HLS-100] Command "add_library xilinx/zynq/zynq:xc7z020:clg484:-1 "
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 4e-06Total elapsed time: 0.246 sec.
+@I [HLS-100] Command "license_isbetapart xc7z020 "
+@I [HLS-100] Command 'license_isbetapart' returned 1; elapsed 0.00413Total elapsed time: 0.250 sec.
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 5e-06Total elapsed time: 0.251 sec.
+@I [HLS-100] Command "config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 1e-05Total elapsed time: 0.251 sec.
+@I [HLS-100] Command "config_chip_info -quiet -speed slow "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 2e-06Total elapsed time: 0.251 sec.
+@I [HLS-100] Command 'add_library' returned 0; elapsed 0.005693Total elapsed time: 0.251 sec.
+@I [HLS-100] Command "add_library xilinx/zynq/zynq_fpv6 "
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 2e-06Total elapsed time: 0.252 sec.
+@I [HLS-100] Command 'add_library' returned 0; elapsed 0.000756Total elapsed time: 0.252 sec.
+@I [HLS-10] Setting target device to 'xc7z020clg484-1'
+@I [HLS-100] Command 'set_part' returned 0; elapsed 0.007841Total elapsed time: 0.252 sec.
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 2e-06Total elapsed time: 0.252 sec.
+@I [HLS-100] Command "config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 6e-06Total elapsed time: 0.252 sec.
+@I [HLS-100] Command "config_chip_info -quiet -speed slow "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 2e-06Total elapsed time: 0.252 sec.
+@I [HLS-100] Command 'open_solution' returned 0; elapsed 0.125704Total elapsed time: 0.253 sec.
+@I [HLS-100] Command "set_part xc7z020clg484-1 "
+@I [HLS-100] Command "add_library xilinx/zynq/zynq:xc7z020:clg484:-1 "
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 2e-06Total elapsed time: 0.254 sec.
+@I [HLS-100] Command "license_isbetapart xc7z020 "
+@I [HLS-100] Command 'license_isbetapart' returned 1; elapsed 2.4e-05Total elapsed time: 0.254 sec.
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 2e-06Total elapsed time: 0.254 sec.
+@I [HLS-100] Command "config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 7e-06Total elapsed time: 0.254 sec.
+@I [HLS-100] Command "config_chip_info -quiet -speed slow "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 1.2e-05Total elapsed time: 0.254 sec.
+@I [HLS-100] Command 'add_library' returned 0; elapsed 0.001272Total elapsed time: 0.255 sec.
+@I [HLS-100] Command "add_library xilinx/zynq/zynq_fpv6 "
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 2e-06Total elapsed time: 0.255 sec.
+@I [HLS-100] Command 'add_library' returned 0; elapsed 0.00093Total elapsed time: 0.256 sec.
+@I [HLS-100] Command 'set_part' returned 0; elapsed 0.002871Total elapsed time: 0.256 sec.
+@I [HLS-100] Command "create_clock -period 10 -name default "
+@I [HLS-100] Command 'create_clock' returned 0; elapsed 0.000646Total elapsed time: 0.256 sec.
+@I [HLS-100] Command "csynth_design "
+@I [HLS-100] Command "elaborate -effort=medium -skip_syncheck=0 -keep_printf=0 -lm=0 -skip_cdt=0 -skip_transform=0 -ng=0 -g=0 -opt_fp=0 "
+@I [HLS-10] Analyzing design file 'backsub_gmm_new_180110/core.cpp' ... 
+@0 [HLS-0] Analyzing design file 'backsub_gmm_new_180110/core.cpp' ... 
+@I [HLS-0] Compiling one TU...
+@I [HLS-0] 
+Checking before pre-process: exec clang -fno-limit-debug-info -gcc-toolchain "/home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/lnx64/tools/gcc" -hls    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit   -I "/home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/lnx64/tools/systemc/include" -I "/home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/include" -I "/home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/include/ap_sysc" -fexceptions -I "/home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/common/technology/autopilot" -include etc/autopilot_ssdm_op.h "backsub_gmm_new_180110/core.cpp"  -o "/home/zynq-fyp/Desktop/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/core.pp.00.o"
+
+@I [HLS-100] Command "is_encrypted /home/zynq-fyp/Desktop/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/core.pp.00.o "
+@I [HLS-100] Command 'is_encrypted' returned 0; elapsed 6.9e-05Total elapsed time: 7.782 sec.
+@I [HLS-0] Syntax Checker time: 7 seconds per iteration
+@I [HLS-0] 
+Source preprocessing: exec clang -fno-limit-debug-info -gcc-toolchain "/home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/lnx64/tools/gcc" -hls -fno-exceptions  -D__llvm__  -CC -E "backsub_gmm_new_180110/core.cpp"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/common/technology/autopilot" -I "/home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h  -o "/home/zynq-fyp/Desktop/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/core.pp.0.cpp"
+
+@I [HLS-0] GCC PP time: 0 seconds per iteration
+@I [HLS-100] Command "list_core -type functional_unit "
+@I [HLS-100] Command 'list_core' returned 0; elapsed 7.5e-05Total elapsed time: 7.868 sec.
+@I [HLS-0] Marker-Pragma convertor: /home/zynq-fyp/Desktop/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/core.pp.0.cpp /home/zynq-fyp/Desktop/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/core.pp.0.cpp.ap-line.cpp /home/zynq-fyp/Desktop/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/core.pp.0.cpp.ap-line.cpp.CXX 1
+@I [HLS-0] 
+Source processor: exec /home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/tps/lnx64/jre/bin/java -Xmx512m -classpath   "/home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/lib/classes/autopilot.sourceprocessor.jar:/home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/lib/classes/org.eclipse.cdt.core_5.3.0.xilinx_patch.jar:/home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/lib/classes/org.eclipse.core.runtime_3.7.0.v20110110.jar:/home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/lib/classes/org.eclipse.equinox.common_3.6.0.v20110523.jar:/home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/lib/classes/com.ibm.icu_4.4.2.v20110208.jar:/home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/lib/classes/jargs.jar:/home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/lnx64/tools/eclipse/plugins/org.eclipse.emf.common_2.10.1.v20150123-0348.jar:/home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/lnx64/tools/eclipse/plugins/org.eclipse.emf.ecore_2.10.2.v20150123-0348.jar:/home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/lnx64/tools/eclipse/plugins/org.eclipse.emf.ecore.xmi_2.10.2.v20150123-0348.jar:/home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/lnx64/tools/eclipse/plugins/com.autoesl.autopilot.ui.directiveFileModel_1.0.0.jar:/home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/lnx64/tools/eclipse/plugins/com.autoesl.autopilot.ui.common_1.0.0.jar"  autopilot.sourceprocessor.CParser  "/home/zynq-fyp/Desktop/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/core.pp.0.cpp.ap-line.cpp"  -m "backsub" -o "/home/zynq-fyp/Desktop/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/core.pp.0.cpp.ap-cdt.cpp" --pp --directive /home/zynq-fyp/Desktop/maxi_latest/backsub_gmm_new_180110/solution1/solution1.directive --source /home/zynq-fyp/Desktop/maxi_latest/backsub_gmm_new_180110/core.cpp --error /home/zynq-fyp/Desktop/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db --funcunit "AddSub AddSub_DSP AddSubnS DAddSub_fulldsp DAddSub_nodsp DDiv DExp_fulldsp DExp_meddsp DExp_nodsp DLog_fulldsp DLog_meddsp DLog_nodsp DMul_fulldsp DMul_maxdsp DMul_meddsp DMul_nodsp DRSqrt DRecip DSqrt DivnS FAddSub_fulldsp FAddSub_nodsp FDiv FExp_fulldsp FExp_meddsp FExp_nodsp FLog_fulldsp FLog_meddsp FLog_nodsp FMul_fulldsp FMul_maxdsp FMul_meddsp FMul_nodsp FRSqrt_fulldsp FRSqrt_nodsp FRecip_fulldsp FRecip_nodsp FSqrt HAddSub_nodsp HDiv HMul_fulldsp HMul_maxdsp HMul_nodsp HSqrt Mul Mul2S Mul3S Mul4S Mul5S Mul6S Mul_LUT MulnS MuxnS" --ve --vetcl /home/zynq-fyp/Desktop/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db --ca --es --gf --df --pd --p2d /home/zynq-fyp/Desktop/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db --sd --scff /home/zynq-fyp/Desktop/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/.systemc_flag --ad
+
+@I [HLS-0] Error:Syntax error in source:for (__decltype(__n + 0) __niter = __n;
+Error:Missing ; in source:t
+Error:Syntax error in source:)
+ *__first = __value;
+Error:Syntax error in source:for (__decltype(__n + 0) __niter = __n;
+Error:Missing ; in source:t
+Error:Syntax error in source:)
+ *__first = __tmp;
+@I [HLS-0] Marker-Pragma convertor: /home/zynq-fyp/Desktop/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/core.pp.0.cpp.ap-cdt.cpp /home/zynq-fyp/Desktop/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/core.pragma.0.cpp /home/zynq-fyp/Desktop/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/core.pragma.0.cpp.ap-line.CXX 0
+@I [HLS-100] Command "source /home/zynq-fyp/Desktop/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/pragma.status.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 4.8e-05Total elapsed time: 14.768 sec.
+@I [HLS-0] CDT processor time: 6 seconds per iteration
+@I [HLS-0] Pragma handling time: 0 seconds per iteration
+@I [HLS-0] 
+Source preprocessing: exec clang -fno-limit-debug-info -gcc-toolchain "/home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/lnx64/tools/gcc" -hls -fno-exceptions  -D__llvm__  -CC -E "/home/zynq-fyp/Desktop/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/core.pragma.1.cpp"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/common/technology/autopilot" -I "/home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h  -o "/home/zynq-fyp/Desktop/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/core.pragma.2.cpp"
+
+@I [HLS-0] exec clang -fno-limit-debug-info -gcc-toolchain /home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/lnx64/tools/gcc -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions  -D__llvm__  -w  "/home/zynq-fyp/Desktop/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/core.pragma.2.cpp"    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/common/technology/autopilot" -I "/home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -g -o "/home/zynq-fyp/Desktop/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/core.g.bc"
+@I [HLS-100] Command "source /home/zynq-fyp/Desktop/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/ve_warning.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 4.8e-05Total elapsed time: 18.355 sec.
+@I [HLS-10] Validating synthesis directives ...
+@0 [HLS-0] Validating synthesis directives ...
+@I [HLS-100] Command "source /home/zynq-fyp/Desktop/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/pragma.status.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 3.7e-05Total elapsed time: 18.355 sec.
+@I [HLS-0] Linking all ...
+@I [HLS-0] exec llvm-ld  "/home/zynq-fyp/Desktop/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/core.bc"  -disable-opt  -L/home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/lnx64/lib -lm_basic -o "/home/zynq-fyp/Desktop/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/a.o.pre"
+@I [HLS-0] Link time: 0 seconds per iteration
+@I [HLS-0] Linking all ...
+@I [HLS-0] exec llvm-ld  "/home/zynq-fyp/Desktop/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/core.g.bc"  -disable-opt  -L/home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/lnx64/lib -lm_basic -o "/home/zynq-fyp/Desktop/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/a.g.pre"
+@I [HLS-0] Link time: 0 seconds per iteration
+@I [HLS-100] Command "opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 -keep_printf=0 "
+@I [HLS-100] Command "cleanup_all_models "
+@I [HLS-100] Command 'cleanup_all_models' returned 0; elapsed 1e-05Total elapsed time: 19.83 sec.
+@I [HLS-10] Starting code transformations ...
+@0 [HLS-0] Starting code transformations ...
+@I [HLS-0] std xform: transform -hls -share-std-xform -always-inline -promote-dbg-pointer  -interface-preproc  -scalarrepl -mem2reg -keep-read-access -instcombine -dce  -promote-dbg-pointer  -bitop-raise  -indvars -loop-simplify -xunroll  -constprop -instcombine -simplifycfg -indvars  -simplifycfg -dce -globaldce  -basicaa  -simplifycfg -mem2reg -globalopt  -global-constprop -deadargelim -instcombine -simplifycfg  -prune-eh -simplifycfg  -scalarrepl -instcombine -reassociate -licm  -simplifycfg -loop-simplify -indvars -instcombine  -simplifycfg -mem2reg -loop-simplify -indvars -instcombine  -gvn -gvn -instcombine -adce  -break-crit-edges  -simplifycfg -loop-delete  -global-array-opt -dce -dse -adce  -find-syn-modules -top backsub  -deadargelim  -mem2reg -instcombine -dce  -presyn-prepare -auto-rom-infer  -interface-preproc  -syn-check -check-rec-only  -find-region -simplifycfg -func-extr -function-inline  -globaldce -mem2reg -instcombine -dce   -gvn -globaldce -adce -adse  -constprop -instcombine -bit-constprop  -instcombine -dce -simplifycfg -bitop-raise  -simplifycfg -dce -loop-delete -reassociate  -globalopt -global-privatize -mem2reg -dce  -global-constprop -pointer-simplify -constprop -dce  -func-inst -deadargelim  -promote-dbg-pointer  -norm-name   /home/zynq-fyp/Desktop/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/a.g.0.bc -o /home/zynq-fyp/Desktop/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/a.g.1.bc -f  -phase std-opt
+@I [XFORM-603] Inlining function 'std::min<int>' into 'backsub' (backsub_gmm_new_180110/core.cpp:159).
+@I [XFORM-603] Inlining function 'std::min<int>' into 'process' (backsub_gmm_new_180110/core.cpp:73).
+@I [XFORM-603] Inlining function 'std::max<float>' into 'process' (backsub_gmm_new_180110/core.cpp:55).
+@I [HLS-0] Std xform time: 0 seconds per iteration
+@I [HLS-100] Command "is_encrypted /home/zynq-fyp/Desktop/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/a.g.1.bc "
+@I [HLS-100] Command 'is_encrypted' returned 0; elapsed 7e-05Total elapsed time: 19.970 sec.
+@I [HLS-10] Checking synthesizability ...
+@0 [HLS-0] Checking synthesizability ...
+@I [HLS-0] syn check 1/2: transform -hls -syn-check -check-rec-only -disaggr -scalarrepl -norm-name -dce  -mem2reg -instcombine  -function-uniquify -directive-preproc -mem2reg -dse -dce -auto-rom-infer -dce  -array-normalize -instcombine -dce  -array-seg-normalize -instcombine -dce  -array-flatten -instcombine -dce  -array-burst -dce  -deadargelim -promote-global-argument  -function-inline -globaldce -dce  -doublePtrSimplify -doublePtrElim -dce  -doublePtrSimplify -promote-dbg-pointer  -dce -scalarrepl -dse -adse -instcombine  -ptrLegalization  -simplifycfg -dce -instcombine  -pointer-simplify -ptrArgReplace -dce -instcombine   -disaggr -scalarrepl -norm-name -dce  -mem2reg -instcombine -ptrLegalization   -simplifycfg -deadargelim  -instcombine -dce -inst-simplify  -function-uniquify -directive-preproc -mem2reg -dse -dce  -globaldce    /home/zynq-fyp/Desktop/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/a.g.1.bc -o /home/zynq-fyp/Desktop/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/a.g.2.prechk.bc -f
+@I [XFORM-602] Inlining function 'std::sqrt' into 'process' (backsub_gmm_new_180110/core.cpp:57) automatically.
+@I [XFORM-602] Inlining function 'std::swap<MixData>' into 'process' (backsub_gmm_new_180110/core.cpp:63) automatically.
+@I [HLS-0] Syn check 1/2 time: 0 seconds per iteration
+@I [HLS-0] syn check 2/2: transform -syn-check   /home/zynq-fyp/Desktop/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/a.g.2.prechk.bc -o /home/zynq-fyp/Desktop/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/a.g.2.bc -f  -phase syn-check
+@I [HLS-0] Syn check 2/2 time: 0 seconds per iteration
+@I [HLS-0] Compiler optimizing ...
+@I [HLS-0] Share syncheck's 1.bc for syn flow: copy /home/zynq-fyp/Desktop/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/a.g.1.bc to /home/zynq-fyp/Desktop/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/a.o.1.bc
+@I [HLS-0] presyn 1: transform -hls -tmp /home/zynq-fyp/Desktop/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db -type-info  -function-uniquify -directive-preproc -mem2reg -dse -dce  -disaggr -scalarrepl -norm-name -deadargelim  -mem2reg -instcombine -dce -auto-rom-infer -dce -function-uniquify  -resource-proc  -clib-intrinsic-prepare -dce  -func-buffer -dce -array-normalize  -func-legal -instcombine -gvn -constprop -dce   -ptrArgReplace -mem2reg -instcombine -dce  -array-seg-normalize -deadargelim  -instcombine -dce  -pointer-simplify -dce  -port-alignment -dce  -interface-preproc  -data-pack -instcombine -dce   -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn  -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce  -loop-simplify -indvars -instcombine  -gvn -loop-simplify -mem2reg -dce -simplifycfg  -find-region -instcombine  -auto-loop-pipeline  -inst-simplify  -interface-preproc  -indvars -auto-loop-unroll -loop-simplify -loop-bound -xunroll  -constprop -instcombine -simplifycfg -indvars  -simplifycfg -dce -globaldce  -attach-range  -gvn -inst-simplify  -constprop -simplifycfg -dce  -pointer-simplify -dce  -globalopt -constprop -dce  -array-promote -constprop -instcombine -dce  -ptrArgReplace -mem2reg  -instcombine -simplifycfg -dce  -auto-par -instcombine -dce  -array-transform-check  -array-reshape -instcombine -simplifycfg -dce  -ptrArgReplace -deadargelim -mem2reg  -instcombine -simplifycfg -dce   -duplicate-dataflow-processes -globaldce  -array-partition -instcombine -simplifycfg -dce  -ptrArgReplace -global-constprop -deadargelim -mem2reg  -func-legal -instcombine -dce -global-constprop -deadargelim -mem2reg  -instcombine -simplifycfg -dce   -globalopt -constprop -dce  -array-promote -constprop -instcombine -dce  -ptrArgReplace -mem2reg  -instcombine -simplifycfg -dce   -mem-intrinsic-preproc -dce  -global-privatize  -mem2reg -globaldce  -promote-global-argument  -ptrArgReplace -mem2reg -instcombine -dce  -globalopt -mergereturn -simplify-global-access -mem2reg -dce  -pointer-simplify -dce  -functionattrs  -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn  -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce  -inst-simplify -dce -norm-name  -function-inline -globaldce  -func-inst -constprop -instcombine -simplifycfg -dce  -func-legal -dce   -loop-bound  -arraycheck -bitwidthmin -on-by-dataflow  -loop-delete -instcombine -simplifycfg  -globaldce -dce -gvn -deadargelim -dce -loop-simplify -clean-region -simplifycfg -propagate-stable-arguments  -loop-stream -instcombine -simplifycfg -dce -globaldce  -stream-intrinsic-preproc -dce  -check-ap-stream -loop-simplify -eliminate-keepreads  -extract-dataflow-in-loop -loop-simplify -dce -gvn -deadargelim  -check-dataflow-syntax  -legalize-stream-variable -legalize-global -legalize-global-1  -extract-subproc -dce -dead-channel-elimination  -canonicalize-gep -globaldce -dce -gvn -deadargelim  -scalar-propagation -deadargelim -globaldce -mem2reg  -check-dataflow-channels -function-stream -dce -globaldce  -prop-fifo-spec -internal-stream-gen  -canonicalize-gep -globaldce -dce -gvn -deadargelim   -mergereturn -indvars -loop-simplify  -array-stream -instcombine -simplifycfg -dce  -bundle-memfifo-ops -deadargelim    -function-uniquify -directive-preproc -mem2reg -dse -dce  -group-axi-access    -licm -simplifycfg -dce -loop-delete  -norm-name  /home/zynq-fyp/Desktop/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/a.o.1.bc -o /home/zynq-fyp/Desktop/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/a.o.1.tmp.bc -f
