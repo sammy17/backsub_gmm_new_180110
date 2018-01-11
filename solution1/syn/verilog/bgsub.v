@@ -7,7 +7,7 @@
 
 `timescale 1 ns / 1 ps 
 
-(* CORE_GENERATION_INFO="bgsub,hls_ip_2015_4,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020clg484-1,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=dataflow,HLS_SYN_CLOCK=9.575400,HLS_SYN_LAT=5954522,HLS_SYN_TPT=5954523,HLS_SYN_MEM=68,HLS_SYN_DSP=20,HLS_SYN_FF=10785,HLS_SYN_LUT=16161}" *)
+(* CORE_GENERATION_INFO="bgsub,hls_ip_2015_4,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=1,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020clg484-1,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=dataflow,HLS_SYN_CLOCK=9.575400,HLS_SYN_LAT=2366044,HLS_SYN_TPT=2366045,HLS_SYN_MEM=18,HLS_SYN_DSP=20,HLS_SYN_FF=9439,HLS_SYN_LUT=14442}" *)
 
 module bgsub (
         s_axi_AXILiteS_AWVALID,
@@ -127,7 +127,7 @@ module bgsub (
 
 parameter    C_S_AXI_AXILITES_DATA_WIDTH = 32;
 parameter    ap_const_int64_8 = 8;
-parameter    C_S_AXI_AXILITES_ADDR_WIDTH = 7;
+parameter    C_S_AXI_AXILITES_ADDR_WIDTH = 6;
 parameter    C_S_AXI_DATA_WIDTH = 32;
 parameter    C_S_AXI_ADDR_WIDTH = 32;
 parameter    ap_const_logic_1 = 1'b1;
@@ -289,10 +289,7 @@ wire    bgsub_AXILiteS_s_axi_U_ap_dummy_ce;
 wire   [31:0] frame_in;
 wire   [31:0] frame_out;
 wire    init;
-wire   [31:0] bgmodel_sortKey;
-wire   [31:0] bgmodel_weight;
-wire   [31:0] bgmodel_mean;
-wire   [31:0] bgmodel_var;
+wire   [31:0] bgmodel;
 wire    gmem_AWVALID;
 wire    gmem_AWREADY;
 wire   [31:0] gmem_AWADDR;
@@ -391,55 +388,52 @@ wire    bgsub_Block_proc_U0_ap_continue;
 wire    bgsub_Block_proc_U0_ap_idle;
 wire    bgsub_Block_proc_U0_ap_ready;
 wire   [0:0] bgsub_Block_proc_U0_init;
-wire    bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWVALID;
-wire    bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWREADY;
-wire   [31:0] bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWADDR;
-wire   [0:0] bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWID;
-wire   [31:0] bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWLEN;
-wire   [2:0] bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWSIZE;
-wire   [1:0] bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWBURST;
-wire   [1:0] bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWLOCK;
-wire   [3:0] bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWCACHE;
-wire   [2:0] bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWPROT;
-wire   [3:0] bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWQOS;
-wire   [3:0] bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWREGION;
-wire   [0:0] bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWUSER;
-wire    bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_WVALID;
-wire    bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_WREADY;
-wire   [31:0] bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_WDATA;
-wire   [3:0] bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_WSTRB;
-wire    bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_WLAST;
-wire   [0:0] bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_WID;
-wire   [0:0] bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_WUSER;
-wire    bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARVALID;
-wire    bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARREADY;
-wire   [31:0] bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARADDR;
-wire   [0:0] bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARID;
-wire   [31:0] bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARLEN;
-wire   [2:0] bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARSIZE;
-wire   [1:0] bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARBURST;
-wire   [1:0] bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARLOCK;
-wire   [3:0] bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARCACHE;
-wire   [2:0] bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARPROT;
-wire   [3:0] bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARQOS;
-wire   [3:0] bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARREGION;
-wire   [0:0] bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARUSER;
-wire    bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_RVALID;
-wire    bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_RREADY;
-wire   [31:0] bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_RDATA;
-wire    bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_RLAST;
-wire   [0:0] bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_RID;
-wire   [0:0] bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_RUSER;
-wire   [1:0] bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_RRESP;
-wire    bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_BVALID;
-wire    bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_BREADY;
-wire   [1:0] bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_BRESP;
-wire   [0:0] bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_BID;
-wire   [0:0] bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_BUSER;
-wire   [31:0] bgsub_Block_proc_U0_bgmodel_sortKey1;
-wire   [31:0] bgsub_Block_proc_U0_bgmodel_weight;
-wire   [31:0] bgsub_Block_proc_U0_bgmodel_mean;
-wire   [31:0] bgsub_Block_proc_U0_bgmodel_var;
+wire    bgsub_Block_proc_U0_m_axi_bgmodel_AWVALID;
+wire    bgsub_Block_proc_U0_m_axi_bgmodel_AWREADY;
+wire   [31:0] bgsub_Block_proc_U0_m_axi_bgmodel_AWADDR;
+wire   [0:0] bgsub_Block_proc_U0_m_axi_bgmodel_AWID;
+wire   [31:0] bgsub_Block_proc_U0_m_axi_bgmodel_AWLEN;
+wire   [2:0] bgsub_Block_proc_U0_m_axi_bgmodel_AWSIZE;
+wire   [1:0] bgsub_Block_proc_U0_m_axi_bgmodel_AWBURST;
+wire   [1:0] bgsub_Block_proc_U0_m_axi_bgmodel_AWLOCK;
+wire   [3:0] bgsub_Block_proc_U0_m_axi_bgmodel_AWCACHE;
+wire   [2:0] bgsub_Block_proc_U0_m_axi_bgmodel_AWPROT;
+wire   [3:0] bgsub_Block_proc_U0_m_axi_bgmodel_AWQOS;
+wire   [3:0] bgsub_Block_proc_U0_m_axi_bgmodel_AWREGION;
+wire   [0:0] bgsub_Block_proc_U0_m_axi_bgmodel_AWUSER;
+wire    bgsub_Block_proc_U0_m_axi_bgmodel_WVALID;
+wire    bgsub_Block_proc_U0_m_axi_bgmodel_WREADY;
+wire   [31:0] bgsub_Block_proc_U0_m_axi_bgmodel_WDATA;
+wire   [3:0] bgsub_Block_proc_U0_m_axi_bgmodel_WSTRB;
+wire    bgsub_Block_proc_U0_m_axi_bgmodel_WLAST;
+wire   [0:0] bgsub_Block_proc_U0_m_axi_bgmodel_WID;
+wire   [0:0] bgsub_Block_proc_U0_m_axi_bgmodel_WUSER;
+wire    bgsub_Block_proc_U0_m_axi_bgmodel_ARVALID;
+wire    bgsub_Block_proc_U0_m_axi_bgmodel_ARREADY;
+wire   [31:0] bgsub_Block_proc_U0_m_axi_bgmodel_ARADDR;
+wire   [0:0] bgsub_Block_proc_U0_m_axi_bgmodel_ARID;
+wire   [31:0] bgsub_Block_proc_U0_m_axi_bgmodel_ARLEN;
+wire   [2:0] bgsub_Block_proc_U0_m_axi_bgmodel_ARSIZE;
+wire   [1:0] bgsub_Block_proc_U0_m_axi_bgmodel_ARBURST;
+wire   [1:0] bgsub_Block_proc_U0_m_axi_bgmodel_ARLOCK;
+wire   [3:0] bgsub_Block_proc_U0_m_axi_bgmodel_ARCACHE;
+wire   [2:0] bgsub_Block_proc_U0_m_axi_bgmodel_ARPROT;
+wire   [3:0] bgsub_Block_proc_U0_m_axi_bgmodel_ARQOS;
+wire   [3:0] bgsub_Block_proc_U0_m_axi_bgmodel_ARREGION;
+wire   [0:0] bgsub_Block_proc_U0_m_axi_bgmodel_ARUSER;
+wire    bgsub_Block_proc_U0_m_axi_bgmodel_RVALID;
+wire    bgsub_Block_proc_U0_m_axi_bgmodel_RREADY;
+wire   [31:0] bgsub_Block_proc_U0_m_axi_bgmodel_RDATA;
+wire    bgsub_Block_proc_U0_m_axi_bgmodel_RLAST;
+wire   [0:0] bgsub_Block_proc_U0_m_axi_bgmodel_RID;
+wire   [0:0] bgsub_Block_proc_U0_m_axi_bgmodel_RUSER;
+wire   [1:0] bgsub_Block_proc_U0_m_axi_bgmodel_RRESP;
+wire    bgsub_Block_proc_U0_m_axi_bgmodel_BVALID;
+wire    bgsub_Block_proc_U0_m_axi_bgmodel_BREADY;
+wire   [1:0] bgsub_Block_proc_U0_m_axi_bgmodel_BRESP;
+wire   [0:0] bgsub_Block_proc_U0_m_axi_bgmodel_BID;
+wire   [0:0] bgsub_Block_proc_U0_m_axi_bgmodel_BUSER;
+wire   [31:0] bgsub_Block_proc_U0_bgmodel1;
 wire    bgsub_Block_proc_U0_m_axi_frame_out_AWVALID;
 wire    bgsub_Block_proc_U0_m_axi_frame_out_AWREADY;
 wire   [31:0] bgsub_Block_proc_U0_m_axi_frame_out_AWADDR;
@@ -521,10 +515,7 @@ bgsub_AXILiteS_s_axi_U(
     .frame_in( frame_in ),
     .frame_out( frame_out ),
     .init( init ),
-    .bgmodel_sortKey( bgmodel_sortKey ),
-    .bgmodel_weight( bgmodel_weight ),
-    .bgmodel_mean( bgmodel_mean ),
-    .bgmodel_var( bgmodel_var )
+    .bgmodel( bgmodel )
 );
 
 bgsub_gmem_m_axi #(
@@ -758,55 +749,52 @@ bgsub_Block_proc bgsub_Block_proc_U0(
     .ap_idle( bgsub_Block_proc_U0_ap_idle ),
     .ap_ready( bgsub_Block_proc_U0_ap_ready ),
     .init( bgsub_Block_proc_U0_init ),
-    .m_axi_bgmodel_sortKey_AWVALID( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWVALID ),
-    .m_axi_bgmodel_sortKey_AWREADY( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWREADY ),
-    .m_axi_bgmodel_sortKey_AWADDR( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWADDR ),
-    .m_axi_bgmodel_sortKey_AWID( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWID ),
-    .m_axi_bgmodel_sortKey_AWLEN( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWLEN ),
-    .m_axi_bgmodel_sortKey_AWSIZE( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWSIZE ),
-    .m_axi_bgmodel_sortKey_AWBURST( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWBURST ),
-    .m_axi_bgmodel_sortKey_AWLOCK( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWLOCK ),
-    .m_axi_bgmodel_sortKey_AWCACHE( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWCACHE ),
-    .m_axi_bgmodel_sortKey_AWPROT( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWPROT ),
-    .m_axi_bgmodel_sortKey_AWQOS( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWQOS ),
-    .m_axi_bgmodel_sortKey_AWREGION( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWREGION ),
-    .m_axi_bgmodel_sortKey_AWUSER( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWUSER ),
-    .m_axi_bgmodel_sortKey_WVALID( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_WVALID ),
-    .m_axi_bgmodel_sortKey_WREADY( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_WREADY ),
-    .m_axi_bgmodel_sortKey_WDATA( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_WDATA ),
-    .m_axi_bgmodel_sortKey_WSTRB( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_WSTRB ),
-    .m_axi_bgmodel_sortKey_WLAST( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_WLAST ),
-    .m_axi_bgmodel_sortKey_WID( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_WID ),
-    .m_axi_bgmodel_sortKey_WUSER( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_WUSER ),
-    .m_axi_bgmodel_sortKey_ARVALID( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARVALID ),
-    .m_axi_bgmodel_sortKey_ARREADY( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARREADY ),
-    .m_axi_bgmodel_sortKey_ARADDR( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARADDR ),
-    .m_axi_bgmodel_sortKey_ARID( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARID ),
-    .m_axi_bgmodel_sortKey_ARLEN( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARLEN ),
-    .m_axi_bgmodel_sortKey_ARSIZE( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARSIZE ),
-    .m_axi_bgmodel_sortKey_ARBURST( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARBURST ),
-    .m_axi_bgmodel_sortKey_ARLOCK( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARLOCK ),
-    .m_axi_bgmodel_sortKey_ARCACHE( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARCACHE ),
-    .m_axi_bgmodel_sortKey_ARPROT( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARPROT ),
-    .m_axi_bgmodel_sortKey_ARQOS( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARQOS ),
-    .m_axi_bgmodel_sortKey_ARREGION( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARREGION ),
-    .m_axi_bgmodel_sortKey_ARUSER( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARUSER ),
-    .m_axi_bgmodel_sortKey_RVALID( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_RVALID ),
-    .m_axi_bgmodel_sortKey_RREADY( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_RREADY ),
-    .m_axi_bgmodel_sortKey_RDATA( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_RDATA ),
-    .m_axi_bgmodel_sortKey_RLAST( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_RLAST ),
-    .m_axi_bgmodel_sortKey_RID( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_RID ),
-    .m_axi_bgmodel_sortKey_RUSER( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_RUSER ),
-    .m_axi_bgmodel_sortKey_RRESP( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_RRESP ),
-    .m_axi_bgmodel_sortKey_BVALID( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_BVALID ),
-    .m_axi_bgmodel_sortKey_BREADY( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_BREADY ),
-    .m_axi_bgmodel_sortKey_BRESP( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_BRESP ),
-    .m_axi_bgmodel_sortKey_BID( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_BID ),
-    .m_axi_bgmodel_sortKey_BUSER( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_BUSER ),
-    .bgmodel_sortKey1( bgsub_Block_proc_U0_bgmodel_sortKey1 ),
-    .bgmodel_weight( bgsub_Block_proc_U0_bgmodel_weight ),
-    .bgmodel_mean( bgsub_Block_proc_U0_bgmodel_mean ),
-    .bgmodel_var( bgsub_Block_proc_U0_bgmodel_var ),
+    .m_axi_bgmodel_AWVALID( bgsub_Block_proc_U0_m_axi_bgmodel_AWVALID ),
+    .m_axi_bgmodel_AWREADY( bgsub_Block_proc_U0_m_axi_bgmodel_AWREADY ),
+    .m_axi_bgmodel_AWADDR( bgsub_Block_proc_U0_m_axi_bgmodel_AWADDR ),
+    .m_axi_bgmodel_AWID( bgsub_Block_proc_U0_m_axi_bgmodel_AWID ),
+    .m_axi_bgmodel_AWLEN( bgsub_Block_proc_U0_m_axi_bgmodel_AWLEN ),
+    .m_axi_bgmodel_AWSIZE( bgsub_Block_proc_U0_m_axi_bgmodel_AWSIZE ),
+    .m_axi_bgmodel_AWBURST( bgsub_Block_proc_U0_m_axi_bgmodel_AWBURST ),
+    .m_axi_bgmodel_AWLOCK( bgsub_Block_proc_U0_m_axi_bgmodel_AWLOCK ),
+    .m_axi_bgmodel_AWCACHE( bgsub_Block_proc_U0_m_axi_bgmodel_AWCACHE ),
+    .m_axi_bgmodel_AWPROT( bgsub_Block_proc_U0_m_axi_bgmodel_AWPROT ),
+    .m_axi_bgmodel_AWQOS( bgsub_Block_proc_U0_m_axi_bgmodel_AWQOS ),
+    .m_axi_bgmodel_AWREGION( bgsub_Block_proc_U0_m_axi_bgmodel_AWREGION ),
+    .m_axi_bgmodel_AWUSER( bgsub_Block_proc_U0_m_axi_bgmodel_AWUSER ),
+    .m_axi_bgmodel_WVALID( bgsub_Block_proc_U0_m_axi_bgmodel_WVALID ),
+    .m_axi_bgmodel_WREADY( bgsub_Block_proc_U0_m_axi_bgmodel_WREADY ),
+    .m_axi_bgmodel_WDATA( bgsub_Block_proc_U0_m_axi_bgmodel_WDATA ),
+    .m_axi_bgmodel_WSTRB( bgsub_Block_proc_U0_m_axi_bgmodel_WSTRB ),
+    .m_axi_bgmodel_WLAST( bgsub_Block_proc_U0_m_axi_bgmodel_WLAST ),
+    .m_axi_bgmodel_WID( bgsub_Block_proc_U0_m_axi_bgmodel_WID ),
+    .m_axi_bgmodel_WUSER( bgsub_Block_proc_U0_m_axi_bgmodel_WUSER ),
+    .m_axi_bgmodel_ARVALID( bgsub_Block_proc_U0_m_axi_bgmodel_ARVALID ),
+    .m_axi_bgmodel_ARREADY( bgsub_Block_proc_U0_m_axi_bgmodel_ARREADY ),
+    .m_axi_bgmodel_ARADDR( bgsub_Block_proc_U0_m_axi_bgmodel_ARADDR ),
+    .m_axi_bgmodel_ARID( bgsub_Block_proc_U0_m_axi_bgmodel_ARID ),
+    .m_axi_bgmodel_ARLEN( bgsub_Block_proc_U0_m_axi_bgmodel_ARLEN ),
+    .m_axi_bgmodel_ARSIZE( bgsub_Block_proc_U0_m_axi_bgmodel_ARSIZE ),
+    .m_axi_bgmodel_ARBURST( bgsub_Block_proc_U0_m_axi_bgmodel_ARBURST ),
+    .m_axi_bgmodel_ARLOCK( bgsub_Block_proc_U0_m_axi_bgmodel_ARLOCK ),
+    .m_axi_bgmodel_ARCACHE( bgsub_Block_proc_U0_m_axi_bgmodel_ARCACHE ),
+    .m_axi_bgmodel_ARPROT( bgsub_Block_proc_U0_m_axi_bgmodel_ARPROT ),
+    .m_axi_bgmodel_ARQOS( bgsub_Block_proc_U0_m_axi_bgmodel_ARQOS ),
+    .m_axi_bgmodel_ARREGION( bgsub_Block_proc_U0_m_axi_bgmodel_ARREGION ),
+    .m_axi_bgmodel_ARUSER( bgsub_Block_proc_U0_m_axi_bgmodel_ARUSER ),
+    .m_axi_bgmodel_RVALID( bgsub_Block_proc_U0_m_axi_bgmodel_RVALID ),
+    .m_axi_bgmodel_RREADY( bgsub_Block_proc_U0_m_axi_bgmodel_RREADY ),
+    .m_axi_bgmodel_RDATA( bgsub_Block_proc_U0_m_axi_bgmodel_RDATA ),
+    .m_axi_bgmodel_RLAST( bgsub_Block_proc_U0_m_axi_bgmodel_RLAST ),
+    .m_axi_bgmodel_RID( bgsub_Block_proc_U0_m_axi_bgmodel_RID ),
+    .m_axi_bgmodel_RUSER( bgsub_Block_proc_U0_m_axi_bgmodel_RUSER ),
+    .m_axi_bgmodel_RRESP( bgsub_Block_proc_U0_m_axi_bgmodel_RRESP ),
+    .m_axi_bgmodel_BVALID( bgsub_Block_proc_U0_m_axi_bgmodel_BVALID ),
+    .m_axi_bgmodel_BREADY( bgsub_Block_proc_U0_m_axi_bgmodel_BREADY ),
+    .m_axi_bgmodel_BRESP( bgsub_Block_proc_U0_m_axi_bgmodel_BRESP ),
+    .m_axi_bgmodel_BID( bgsub_Block_proc_U0_m_axi_bgmodel_BID ),
+    .m_axi_bgmodel_BUSER( bgsub_Block_proc_U0_m_axi_bgmodel_BUSER ),
+    .bgmodel1( bgsub_Block_proc_U0_bgmodel1 ),
     .m_axi_frame_out_AWVALID( bgsub_Block_proc_U0_m_axi_frame_out_AWVALID ),
     .m_axi_frame_out_AWREADY( bgsub_Block_proc_U0_m_axi_frame_out_AWREADY ),
     .m_axi_frame_out_AWADDR( bgsub_Block_proc_U0_m_axi_frame_out_AWADDR ),
@@ -909,13 +897,7 @@ assign bgsub_Block_proc_U0_ap_continue = ap_const_logic_1;
 
 assign bgsub_Block_proc_U0_ap_start = ap_start;
 
-assign bgsub_Block_proc_U0_bgmodel_mean = bgmodel_mean;
-
-assign bgsub_Block_proc_U0_bgmodel_sortKey1 = bgmodel_sortKey;
-
-assign bgsub_Block_proc_U0_bgmodel_var = bgmodel_var;
-
-assign bgsub_Block_proc_U0_bgmodel_weight = bgmodel_weight;
+assign bgsub_Block_proc_U0_bgmodel1 = bgmodel;
 
 assign bgsub_Block_proc_U0_frame_in = frame_in;
 
@@ -923,31 +905,31 @@ assign bgsub_Block_proc_U0_frame_out2 = frame_out;
 
 assign bgsub_Block_proc_U0_init = init;
 
-assign bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARREADY = gmem_offset_ARREADY;
+assign bgsub_Block_proc_U0_m_axi_bgmodel_ARREADY = gmem_offset_ARREADY;
 
-assign bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWREADY = gmem_offset_AWREADY;
+assign bgsub_Block_proc_U0_m_axi_bgmodel_AWREADY = gmem_offset_AWREADY;
 
-assign bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_BID = gmem_offset_BID;
+assign bgsub_Block_proc_U0_m_axi_bgmodel_BID = gmem_offset_BID;
 
-assign bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_BRESP = gmem_offset_BRESP;
+assign bgsub_Block_proc_U0_m_axi_bgmodel_BRESP = gmem_offset_BRESP;
 
-assign bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_BUSER = gmem_offset_BUSER;
+assign bgsub_Block_proc_U0_m_axi_bgmodel_BUSER = gmem_offset_BUSER;
 
-assign bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_BVALID = gmem_offset_BVALID;
+assign bgsub_Block_proc_U0_m_axi_bgmodel_BVALID = gmem_offset_BVALID;
 
-assign bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_RDATA = gmem_offset_RDATA;
+assign bgsub_Block_proc_U0_m_axi_bgmodel_RDATA = gmem_offset_RDATA;
 
-assign bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_RID = gmem_offset_RID;
+assign bgsub_Block_proc_U0_m_axi_bgmodel_RID = gmem_offset_RID;
 
-assign bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_RLAST = gmem_offset_RLAST;
+assign bgsub_Block_proc_U0_m_axi_bgmodel_RLAST = gmem_offset_RLAST;
 
-assign bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_RRESP = gmem_offset_RRESP;
+assign bgsub_Block_proc_U0_m_axi_bgmodel_RRESP = gmem_offset_RRESP;
 
-assign bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_RUSER = gmem_offset_RUSER;
+assign bgsub_Block_proc_U0_m_axi_bgmodel_RUSER = gmem_offset_RUSER;
 
-assign bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_RVALID = gmem_offset_RVALID;
+assign bgsub_Block_proc_U0_m_axi_bgmodel_RVALID = gmem_offset_RVALID;
 
-assign bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_WREADY = gmem_offset_WREADY;
+assign bgsub_Block_proc_U0_m_axi_bgmodel_WREADY = gmem_offset_WREADY;
 
 assign bgsub_Block_proc_U0_m_axi_frame_out_ARREADY = gmem_ARREADY;
 
@@ -1043,69 +1025,69 @@ assign gmem_WUSER = bgsub_Block_proc_U0_m_axi_frame_out_WUSER;
 
 assign gmem_WVALID = bgsub_Block_proc_U0_m_axi_frame_out_WVALID;
 
-assign gmem_offset_ARADDR = bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARADDR;
+assign gmem_offset_ARADDR = bgsub_Block_proc_U0_m_axi_bgmodel_ARADDR;
 
-assign gmem_offset_ARBURST = bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARBURST;
+assign gmem_offset_ARBURST = bgsub_Block_proc_U0_m_axi_bgmodel_ARBURST;
 
-assign gmem_offset_ARCACHE = bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARCACHE;
+assign gmem_offset_ARCACHE = bgsub_Block_proc_U0_m_axi_bgmodel_ARCACHE;
 
-assign gmem_offset_ARID = bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARID;
+assign gmem_offset_ARID = bgsub_Block_proc_U0_m_axi_bgmodel_ARID;
 
-assign gmem_offset_ARLEN = bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARLEN;
+assign gmem_offset_ARLEN = bgsub_Block_proc_U0_m_axi_bgmodel_ARLEN;
 
-assign gmem_offset_ARLOCK = bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARLOCK;
+assign gmem_offset_ARLOCK = bgsub_Block_proc_U0_m_axi_bgmodel_ARLOCK;
 
-assign gmem_offset_ARPROT = bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARPROT;
+assign gmem_offset_ARPROT = bgsub_Block_proc_U0_m_axi_bgmodel_ARPROT;
 
-assign gmem_offset_ARQOS = bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARQOS;
+assign gmem_offset_ARQOS = bgsub_Block_proc_U0_m_axi_bgmodel_ARQOS;
 
-assign gmem_offset_ARREGION = bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARREGION;
+assign gmem_offset_ARREGION = bgsub_Block_proc_U0_m_axi_bgmodel_ARREGION;
 
-assign gmem_offset_ARSIZE = bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARSIZE;
+assign gmem_offset_ARSIZE = bgsub_Block_proc_U0_m_axi_bgmodel_ARSIZE;
 
-assign gmem_offset_ARUSER = bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARUSER;
+assign gmem_offset_ARUSER = bgsub_Block_proc_U0_m_axi_bgmodel_ARUSER;
 
-assign gmem_offset_ARVALID = bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARVALID;
+assign gmem_offset_ARVALID = bgsub_Block_proc_U0_m_axi_bgmodel_ARVALID;
 
-assign gmem_offset_AWADDR = bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWADDR;
+assign gmem_offset_AWADDR = bgsub_Block_proc_U0_m_axi_bgmodel_AWADDR;
 
-assign gmem_offset_AWBURST = bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWBURST;
+assign gmem_offset_AWBURST = bgsub_Block_proc_U0_m_axi_bgmodel_AWBURST;
 
-assign gmem_offset_AWCACHE = bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWCACHE;
+assign gmem_offset_AWCACHE = bgsub_Block_proc_U0_m_axi_bgmodel_AWCACHE;
 
-assign gmem_offset_AWID = bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWID;
+assign gmem_offset_AWID = bgsub_Block_proc_U0_m_axi_bgmodel_AWID;
 
-assign gmem_offset_AWLEN = bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWLEN;
+assign gmem_offset_AWLEN = bgsub_Block_proc_U0_m_axi_bgmodel_AWLEN;
 
-assign gmem_offset_AWLOCK = bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWLOCK;
+assign gmem_offset_AWLOCK = bgsub_Block_proc_U0_m_axi_bgmodel_AWLOCK;
 
-assign gmem_offset_AWPROT = bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWPROT;
+assign gmem_offset_AWPROT = bgsub_Block_proc_U0_m_axi_bgmodel_AWPROT;
 
-assign gmem_offset_AWQOS = bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWQOS;
+assign gmem_offset_AWQOS = bgsub_Block_proc_U0_m_axi_bgmodel_AWQOS;
 
-assign gmem_offset_AWREGION = bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWREGION;
+assign gmem_offset_AWREGION = bgsub_Block_proc_U0_m_axi_bgmodel_AWREGION;
 
-assign gmem_offset_AWSIZE = bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWSIZE;
+assign gmem_offset_AWSIZE = bgsub_Block_proc_U0_m_axi_bgmodel_AWSIZE;
 
-assign gmem_offset_AWUSER = bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWUSER;
+assign gmem_offset_AWUSER = bgsub_Block_proc_U0_m_axi_bgmodel_AWUSER;
 
-assign gmem_offset_AWVALID = bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWVALID;
+assign gmem_offset_AWVALID = bgsub_Block_proc_U0_m_axi_bgmodel_AWVALID;
 
-assign gmem_offset_BREADY = bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_BREADY;
+assign gmem_offset_BREADY = bgsub_Block_proc_U0_m_axi_bgmodel_BREADY;
 
-assign gmem_offset_RREADY = bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_RREADY;
+assign gmem_offset_RREADY = bgsub_Block_proc_U0_m_axi_bgmodel_RREADY;
 
-assign gmem_offset_WDATA = bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_WDATA;
+assign gmem_offset_WDATA = bgsub_Block_proc_U0_m_axi_bgmodel_WDATA;
 
-assign gmem_offset_WID = bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_WID;
+assign gmem_offset_WID = bgsub_Block_proc_U0_m_axi_bgmodel_WID;
 
-assign gmem_offset_WLAST = bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_WLAST;
+assign gmem_offset_WLAST = bgsub_Block_proc_U0_m_axi_bgmodel_WLAST;
 
-assign gmem_offset_WSTRB = bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_WSTRB;
+assign gmem_offset_WSTRB = bgsub_Block_proc_U0_m_axi_bgmodel_WSTRB;
 
-assign gmem_offset_WUSER = bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_WUSER;
+assign gmem_offset_WUSER = bgsub_Block_proc_U0_m_axi_bgmodel_WUSER;
 
-assign gmem_offset_WVALID = bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_WVALID;
+assign gmem_offset_WVALID = bgsub_Block_proc_U0_m_axi_bgmodel_WVALID;
 
 
 endmodule //bgsub

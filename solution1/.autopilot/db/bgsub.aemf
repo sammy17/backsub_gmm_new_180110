@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1515684820000">
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1515699434000">
   <ports id="1" name="gmem" type="PortType" bitwidth="8" direction="DirInOut" iftype="IfTypeFifo">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
@@ -15,16 +15,7 @@
   <ports id="5" name="init" type="PortType" originalName="init" bitwidth="1">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="6" name="bgmodel_sortKey" type="PortType" originalName="bgmodel.sortKey" bitwidth="32">
-    <dataOutputObjs>read</dataOutputObjs>
-  </ports>
-  <ports id="7" name="bgmodel_weight" type="PortType" originalName="bgmodel.weight" bitwidth="32">
-    <dataOutputObjs>read</dataOutputObjs>
-  </ports>
-  <ports id="8" name="bgmodel_mean" type="PortType" originalName="bgmodel.mean" bitwidth="32">
-    <dataOutputObjs>read</dataOutputObjs>
-  </ports>
-  <ports id="9" name="bgmodel_var" type="PortType" originalName="bgmodel.var" bitwidth="32">
+  <ports id="6" name="bgmodel" type="PortType" originalName="bgmodel" bitwidth="32">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
   <ports id="-1" name="gmem" type="PortType" bitwidth="8" direction="DirInOut" iftype="IfTypeFifo">
@@ -33,60 +24,39 @@
   <ports id="-2" name="gmem_offset" type="PortType" bitwidth="32" direction="DirInOut" iftype="IfTypeFifo">
     <dataInputObjs>call</dataInputObjs>
   </ports>
-  <edges id="42" source_obj="//@ports.8" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0"/>
-  <edges id="44" source_obj="//@ports.7" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.1"/>
-  <edges id="46" source_obj="//@ports.6" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.2"/>
-  <edges id="48" source_obj="//@ports.5" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
-  <edges id="51" source_obj="//@ports.4" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
-  <edges id="53" source_obj="//@ports.3" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="55" source_obj="//@ports.2" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.6"/>
-  <edges id="82" source_obj="//@regions.0/@basic_blocks.0/@node_objs.4" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.7"/>
-  <edges id="83" source_obj="//@ports.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.7"/>
-  <edges id="84" source_obj="//@regions.0/@basic_blocks.0/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.7"/>
-  <edges id="85" source_obj="//@regions.0/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.7"/>
-  <edges id="86" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.7"/>
-  <edges id="87" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.7"/>
-  <edges id="88" source_obj="//@ports.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.7"/>
-  <edges id="89" source_obj="//@regions.0/@basic_blocks.0/@node_objs.5" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.7"/>
-  <edges id="90" source_obj="//@regions.0/@basic_blocks.0/@node_objs.6" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.7"/>
-  <edges id="-83" source_obj="//@regions.0/@basic_blocks.0/@node_objs.7" sink_obj="//@ports.10"/>
-  <edges id="-88" source_obj="//@regions.0/@basic_blocks.0/@node_objs.7" sink_obj="//@ports.9"/>
-  <regions anchor_node="-1" region_type="16" typeName="Dataflow" id="124" RegionName="bgsub">
-    <basic_blocks id="39" name="bgsub" type="BlockType">
-      <node_objs xsi:type="cdfg:CdfgNode" id="10" name="bgmodel_var_read" originalName="bgmodel.var" bitwidth="32" opcode="read">
-        <dataInputObjs>bgmodel_var</dataInputObjs>
+  <edges id="27" source_obj="//@ports.5" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0"/>
+  <edges id="30" source_obj="//@ports.4" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.1"/>
+  <edges id="32" source_obj="//@ports.3" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.2"/>
+  <edges id="34" source_obj="//@ports.2" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="37" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="38" source_obj="//@ports.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="39" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="40" source_obj="//@ports.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="41" source_obj="//@regions.0/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="42" source_obj="//@regions.0/@basic_blocks.0/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="-38" source_obj="//@regions.0/@basic_blocks.0/@node_objs.4" sink_obj="//@ports.7"/>
+  <edges id="-40" source_obj="//@regions.0/@basic_blocks.0/@node_objs.4" sink_obj="//@ports.6"/>
+  <regions anchor_node="-1" region_type="16" typeName="Dataflow" id="67" RegionName="bgsub">
+    <basic_blocks id="24" name="bgsub" type="BlockType">
+      <node_objs xsi:type="cdfg:CdfgNode" id="18" name="bgmodel_read" originalName="bgmodel" bitwidth="32" opcode="read">
+        <dataInputObjs>bgmodel</dataInputObjs>
         <dataOutputObjs>call</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="11" name="bgmodel_mean_read" originalName="bgmodel.mean" bitwidth="32" opcode="read">
-        <dataInputObjs>bgmodel_mean</dataInputObjs>
-        <dataOutputObjs>call</dataOutputObjs>
-      </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="12" name="bgmodel_weight_read" originalName="bgmodel.weight" bitwidth="32" opcode="read">
-        <dataInputObjs>bgmodel_weight</dataInputObjs>
-        <dataOutputObjs>call</dataOutputObjs>
-      </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="13" name="bgmodel_sortKey_read" originalName="bgmodel.sortKey" bitwidth="32" opcode="read">
-        <dataInputObjs>bgmodel_sortKey</dataInputObjs>
-        <dataOutputObjs>call</dataOutputObjs>
-      </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="14" name="init_read" originalName="init" bitwidth="1" opcode="read">
+      <node_objs xsi:type="cdfg:CdfgNode" id="19" name="init_read" originalName="init" bitwidth="1" opcode="read">
         <dataInputObjs>init</dataInputObjs>
         <dataOutputObjs>call</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="15" name="frame_out_read" originalName="frame_out" bitwidth="32" opcode="read">
+      <node_objs xsi:type="cdfg:CdfgNode" id="20" name="frame_out_read" originalName="frame_out" bitwidth="32" opcode="read">
         <dataInputObjs>frame_out</dataInputObjs>
         <dataOutputObjs>call</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="16" name="frame_in_read" originalName="frame_in" bitwidth="32" opcode="read">
+      <node_objs xsi:type="cdfg:CdfgNode" id="21" name="frame_in_read" originalName="frame_in" bitwidth="32" opcode="read">
         <dataInputObjs>frame_in</dataInputObjs>
         <dataOutputObjs>call</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="37" name="node_37" rtlName="bgsub_Block_proc_U0" opcode="call" nodeLatency="1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="22" name="node_22" rtlName="bgsub_Block_proc_U0" opcode="call" nodeLabel="1" nodeLatency="1">
         <dataInputObjs>read</dataInputObjs>
         <dataInputObjs>gmem_offset</dataInputObjs>
-        <dataInputObjs>read</dataInputObjs>
-        <dataInputObjs>read</dataInputObjs>
-        <dataInputObjs>read</dataInputObjs>
         <dataInputObjs>read</dataInputObjs>
         <dataInputObjs>gmem</dataInputObjs>
         <dataInputObjs>read</dataInputObjs>
@@ -95,135 +65,88 @@
         <dataOutputObjs>gmem</dataOutputObjs>
         <constName>bgsub_Block_proc</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="38" name="node_38" lineNumber="218" fileName="backsub_gmm_new_180110/core.cpp" fileDirectory=".." contextFuncName="bgsub" opcode="ret" nodeLabel="1">
-        <inlineStackInfo fileName="backsub_gmm_new_180110/core.cpp" linenumber="218" fileDirectory="/home/fyp-zc702/FYP" functionName="bgsub"/>
+      <node_objs xsi:type="cdfg:CdfgNode" id="23" name="node_23" lineNumber="219" fileName="backsub_gmm_new_180110/core.cpp" fileDirectory=".." contextFuncName="bgsub" opcode="ret" nodeLabel="2">
+        <inlineStackInfo fileName="backsub_gmm_new_180110/core.cpp" linenumber="219" fileDirectory="/home/fyp-zc702/FYP" functionName="bgsub"/>
       </node_objs>
       <fileValidLineNumbers fileName="backsub_gmm_new_180110/core.cpp">
-        <validLinenumbers>218</validLinenumbers>
+        <validLinenumbers>219</validLinenumbers>
       </fileValidLineNumbers>
     </basic_blocks>
   </regions>
   <ScheduleInfo time="0"/>
   <ScheduleInfo time="1"/>
-  <regnodes realName="init_read_reg_214">
-    <nodeIds>14</nodeIds>
-  </regnodes>
-  <regnodes realName="frame_in_read_reg_224">
-    <nodeIds>16</nodeIds>
-  </regnodes>
-  <regnodes realName="bgmodel_weight_read_reg_204">
-    <nodeIds>12</nodeIds>
-  </regnodes>
-  <regnodes realName="frame_out_read_reg_219">
-    <nodeIds>15</nodeIds>
-  </regnodes>
-  <regnodes realName="bgmodel_sortKey_read_reg_209">
-    <nodeIds>13</nodeIds>
-  </regnodes>
-  <regnodes realName="bgmodel_mean_read_reg_199">
-    <nodeIds>11</nodeIds>
-  </regnodes>
-  <regnodes realName="bgmodel_var_read_reg_194">
-    <nodeIds>10</nodeIds>
-  </regnodes>
-  <expressionNodes realName="gmem_offset_addr_2_fu_188">
-    <nodeIds>25</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="tmp_fu_144">
+  <ScheduleInfo time="2"/>
+  <regnodes realName="bgmodel_read_reg_94">
     <nodeIds>18</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="bgmodel_weight7_fu_174">
-    <nodeIds>23</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="gmem_offset_addr_1_fu_168">
-    <nodeIds>22</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="gmem_offset_addr_fu_148">
-    <nodeIds>19</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="tmp_36_fu_164">
+  </regnodes>
+  <regnodes realName="frame_in_read_reg_109">
     <nodeIds>21</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="bgmodel_mean9_fu_154">
+  </regnodes>
+  <regnodes realName="frame_out_read_reg_104">
     <nodeIds>20</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="bgmodel_var1_fu_134">
-    <nodeIds>17</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="tmp_37_fu_184">
-    <nodeIds>24</nodeIds>
-  </expressionNodes>
-  <moduleNodes realName="grp_bgsub_Block_proc_fu_112">
-    <nodeIds>37</nodeIds>
+  </regnodes>
+  <regnodes realName="init_read_reg_99">
+    <nodeIds>19</nodeIds>
+  </regnodes>
+  <moduleNodes realName="grp_bgsub_Block_proc_fu_82">
+    <nodeIds>22</nodeIds>
   </moduleNodes>
-  <ioNodes realName="bgmodel_sortKey_read_read_fu_88">
-    <nodeIds>13</nodeIds>
+  <ioNodes realName="init_read_read_fu_64">
+    <nodeIds>19</nodeIds>
   </ioNodes>
-  <ioNodes realName="bgmodel_mean_read_read_fu_76">
-    <nodeIds>11</nodeIds>
+  <ioNodes realName="bgmodel_read_read_fu_58">
+    <nodeIds>18</nodeIds>
   </ioNodes>
-  <ioNodes realName="bgmodel_weight_read_read_fu_82">
-    <nodeIds>12</nodeIds>
+  <ioNodes realName="frame_in_read_read_fu_76">
+    <nodeIds>21</nodeIds>
   </ioNodes>
-  <ioNodes realName="init_read_read_fu_94">
-    <nodeIds>14</nodeIds>
+  <ioNodes realName="frame_out_read_read_fu_70">
+    <nodeIds>20</nodeIds>
   </ioNodes>
-  <ioNodes realName="frame_in_read_read_fu_106">
-    <nodeIds>16</nodeIds>
-  </ioNodes>
-  <ioNodes realName="frame_out_read_read_fu_100">
-    <nodeIds>15</nodeIds>
-  </ioNodes>
-  <ioNodes realName="bgmodel_var_read_read_fu_70">
-    <nodeIds>10</nodeIds>
-  </ioNodes>
-  <ioPorts name="bgmodel_mean">
+  <ioPorts name="bgmodel">
     <contents name="read">
-      <nodeIds>11</nodeIds>
-    </contents>
-  </ioPorts>
-  <ioPorts name="bgmodel_sortKey">
-    <contents name="read">
-      <nodeIds>13</nodeIds>
-    </contents>
-  </ioPorts>
-  <ioPorts name="bgmodel_var">
-    <contents name="read">
-      <nodeIds>10</nodeIds>
-    </contents>
-  </ioPorts>
-  <ioPorts name="bgmodel_weight">
-    <contents name="read">
-      <nodeIds>12</nodeIds>
+      <nodeIds>18</nodeIds>
     </contents>
   </ioPorts>
   <ioPorts name="frame_in">
     <contents name="read">
-      <nodeIds>16</nodeIds>
+      <nodeIds>21</nodeIds>
     </contents>
   </ioPorts>
   <ioPorts name="frame_out">
     <contents name="read">
-      <nodeIds>15</nodeIds>
+      <nodeIds>20</nodeIds>
     </contents>
   </ioPorts>
   <ioPorts name="gmem">
     <contents name="call">
-      <nodeIds>37</nodeIds>
+      <nodeIds>22</nodeIds>
     </contents>
   </ioPorts>
   <ioPorts name="gmem_offset">
     <contents name="call">
-      <nodeIds>37</nodeIds>
+      <nodeIds>22</nodeIds>
     </contents>
   </ioPorts>
   <ioPorts name="init">
     <contents name="read">
-      <nodeIds>14</nodeIds>
+      <nodeIds>19</nodeIds>
     </contents>
   </ioPorts>
   <fsm>
     <states id="1">
+      <operations id="18" stage="1" latency="1"/>
+      <operations id="19" stage="1" latency="1"/>
+      <operations id="20" stage="1" latency="1"/>
+      <operations id="21" stage="1" latency="1"/>
+    </states>
+    <states id="2">
+      <operations id="22" stage="2" latency="2"/>
+    </states>
+    <states id="3">
+      <operations id="7" stage="1" latency="1"/>
+      <operations id="8" stage="1" latency="1"/>
+      <operations id="9" stage="1" latency="1"/>
       <operations id="10" stage="1" latency="1"/>
       <operations id="11" stage="1" latency="1"/>
       <operations id="12" stage="1" latency="1"/>
@@ -232,75 +155,44 @@
       <operations id="15" stage="1" latency="1"/>
       <operations id="16" stage="1" latency="1"/>
       <operations id="17" stage="1" latency="1"/>
-      <operations id="18" stage="1" latency="1"/>
-      <operations id="19" stage="1" latency="1"/>
-      <operations id="20" stage="1" latency="1"/>
-      <operations id="21" stage="1" latency="1"/>
-      <operations id="22" stage="1" latency="1"/>
+      <operations id="22" stage="1" latency="2"/>
       <operations id="23" stage="1" latency="1"/>
-      <operations id="24" stage="1" latency="1"/>
-      <operations id="25" stage="1" latency="1"/>
-      <operations id="31" stage="1" latency="1"/>
-      <operations id="37" stage="2" latency="2"/>
-    </states>
-    <states id="2">
-      <operations id="26" stage="1" latency="1"/>
-      <operations id="27" stage="1" latency="1"/>
-      <operations id="28" stage="1" latency="1"/>
-      <operations id="29" stage="1" latency="1"/>
-      <operations id="30" stage="1" latency="1"/>
-      <operations id="32" stage="1" latency="1"/>
-      <operations id="33" stage="1" latency="1"/>
-      <operations id="34" stage="1" latency="1"/>
-      <operations id="35" stage="1" latency="1"/>
-      <operations id="36" stage="1" latency="1"/>
-      <operations id="37" stage="1" latency="2"/>
-      <operations id="38" stage="1" latency="1"/>
     </states>
     <transitions inState="1" outState="2">
       <condition/>
     </transitions>
+    <transitions inState="2" outState="3">
+      <condition id="1"/>
+    </transitions>
   </fsm>
   <CFGRegionsRoot>
-    <cfgRegions mId="1" mTag="bgsub" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="10754522" mMaxLatency="-1" mIsDfPipe="true">
-      <basicBlocks>39</basicBlocks>
+    <cfgRegions mId="1" mTag="bgsub" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="4362846" mMaxLatency="-1" mIsDfPipe="true">
+      <basicBlocks>24</basicBlocks>
       <mDfPipe allPipePinInst="//@CFGRegionsRoot/@cfgRegions.0/@mDfPipe/@processe_list.0/@pins.0/@inst">
-        <processe_list name="bgsub_Block_proc_U0" ssdmobj_id="37">
+        <processe_list name="bgsub_Block_proc_U0" ssdmobj_id="22">
           <pins>
             <port name="init" dir="DirEnd"/>
-            <inst name="bgsub_Block_proc_U0" ssdmobj_id="37" object_id="_72"/>
+            <inst name="bgsub_Block_proc_U0" ssdmobj_id="22" object_id="_31"/>
           </pins>
           <pins>
-            <port name="bgmodel_sortKey" dir="DirOut" type="MEMType"/>
-            <inst name="bgsub_Block_proc_U0" ssdmobj_id="37" object_id="_72"/>
+            <port name="bgmodel" dir="DirOut" type="MEMType"/>
+            <inst name="bgsub_Block_proc_U0" ssdmobj_id="22" object_id="_31"/>
           </pins>
           <pins>
-            <port name="bgmodel_sortKey1" dir="DirEnd"/>
-            <inst name="bgsub_Block_proc_U0" ssdmobj_id="37" object_id="_72"/>
-          </pins>
-          <pins>
-            <port name="bgmodel_weight" dir="DirEnd"/>
-            <inst name="bgsub_Block_proc_U0" ssdmobj_id="37" object_id="_72"/>
-          </pins>
-          <pins>
-            <port name="bgmodel_mean" dir="DirEnd"/>
-            <inst name="bgsub_Block_proc_U0" ssdmobj_id="37" object_id="_72"/>
-          </pins>
-          <pins>
-            <port name="bgmodel_var" dir="DirEnd"/>
-            <inst name="bgsub_Block_proc_U0" ssdmobj_id="37" object_id="_72"/>
+            <port name="bgmodel1" dir="DirEnd"/>
+            <inst name="bgsub_Block_proc_U0" ssdmobj_id="22" object_id="_31"/>
           </pins>
           <pins>
             <port name="frame_out" dir="DirOut" type="MEMType"/>
-            <inst name="bgsub_Block_proc_U0" ssdmobj_id="37" object_id="_72"/>
+            <inst name="bgsub_Block_proc_U0" ssdmobj_id="22" object_id="_31"/>
           </pins>
           <pins>
             <port name="frame_out2" dir="DirEnd"/>
-            <inst name="bgsub_Block_proc_U0" ssdmobj_id="37" object_id="_72"/>
+            <inst name="bgsub_Block_proc_U0" ssdmobj_id="22" object_id="_31"/>
           </pins>
           <pins>
             <port name="frame_in" dir="DirEnd"/>
-            <inst name="bgsub_Block_proc_U0" ssdmobj_id="37" object_id="_72"/>
+            <inst name="bgsub_Block_proc_U0" ssdmobj_id="22" object_id="_31"/>
           </pins>
         </processe_list>
       </mDfPipe>

@@ -1,8 +1,8 @@
 # This script segment is generated automatically by AutoPilot
 
 # Memory (RAM/ROM)  definition:
-set ID 16
-set MemName bgsub_Block_proc_part_bgmodel_sortKey
+set ID 13
+set MemName bgsub_Block_proc_part_bgmodel
 set CoreName ap_simcore_mem
 set PortList { 2 2 }
 set DataWd 32
@@ -83,13 +83,13 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 
 
 # Memory (RAM/ROM)  definition:
-set ID 17
+set ID 14
 set MemName bgsub_Block_proc_part_frame_in
 set CoreName ap_simcore_mem
 set PortList { 2 3 }
 set DataWd 8
-set AddrRange 1280
-set AddrWd 11
+set AddrRange 320
+set AddrWd 9
 set impl_style block
 set TrueReset 0
 set HasInitializer 0
@@ -165,13 +165,13 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 
 
 # Memory (RAM/ROM)  definition:
-set ID 18
+set ID 15
 set MemName bgsub_Block_proc_part_frame_out
 set CoreName ap_simcore_mem
 set PortList { 2 3 }
 set DataWd 1
-set AddrRange 1280
-set AddrWd 11
+set AddrRange 320
+set AddrWd 9
 set impl_style block
 set TrueReset 0
 set HasInitializer 0
@@ -179,7 +179,7 @@ set IsROM 0
 set ROMData {}
 set NumOfStage 2
 set MaxLatency -1
-set DelayBudget 2.71
+set DelayBudget 2.39
 set ClkPeriod 10
 set RegisteredInput 0
 if {${::AESL::PGuard_simmodel_gen}} {
@@ -256,7 +256,7 @@ if {${::AESL::PGuard_autoexp_gen}} {
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 19 \
+    id 16 \
     name init \
     type other \
     dir I \
@@ -271,82 +271,37 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 20 \
-    name bgmodel_sortKey \
+    id 17 \
+    name bgmodel \
     type other \
     dir IO \
     reset_level 1 \
     sync_rst true \
-    corename dc_bgmodel_sortKey \
+    corename dc_bgmodel \
     op interface \
-    ports { m_axi_bgmodel_sortKey_AWVALID { O 1 bit } m_axi_bgmodel_sortKey_AWREADY { I 1 bit } m_axi_bgmodel_sortKey_AWADDR { O 32 vector } m_axi_bgmodel_sortKey_AWID { O 1 vector } m_axi_bgmodel_sortKey_AWLEN { O 32 vector } m_axi_bgmodel_sortKey_AWSIZE { O 3 vector } m_axi_bgmodel_sortKey_AWBURST { O 2 vector } m_axi_bgmodel_sortKey_AWLOCK { O 2 vector } m_axi_bgmodel_sortKey_AWCACHE { O 4 vector } m_axi_bgmodel_sortKey_AWPROT { O 3 vector } m_axi_bgmodel_sortKey_AWQOS { O 4 vector } m_axi_bgmodel_sortKey_AWREGION { O 4 vector } m_axi_bgmodel_sortKey_AWUSER { O 1 vector } m_axi_bgmodel_sortKey_WVALID { O 1 bit } m_axi_bgmodel_sortKey_WREADY { I 1 bit } m_axi_bgmodel_sortKey_WDATA { O 32 vector } m_axi_bgmodel_sortKey_WSTRB { O 4 vector } m_axi_bgmodel_sortKey_WLAST { O 1 bit } m_axi_bgmodel_sortKey_WID { O 1 vector } m_axi_bgmodel_sortKey_WUSER { O 1 vector } m_axi_bgmodel_sortKey_ARVALID { O 1 bit } m_axi_bgmodel_sortKey_ARREADY { I 1 bit } m_axi_bgmodel_sortKey_ARADDR { O 32 vector } m_axi_bgmodel_sortKey_ARID { O 1 vector } m_axi_bgmodel_sortKey_ARLEN { O 32 vector } m_axi_bgmodel_sortKey_ARSIZE { O 3 vector } m_axi_bgmodel_sortKey_ARBURST { O 2 vector } m_axi_bgmodel_sortKey_ARLOCK { O 2 vector } m_axi_bgmodel_sortKey_ARCACHE { O 4 vector } m_axi_bgmodel_sortKey_ARPROT { O 3 vector } m_axi_bgmodel_sortKey_ARQOS { O 4 vector } m_axi_bgmodel_sortKey_ARREGION { O 4 vector } m_axi_bgmodel_sortKey_ARUSER { O 1 vector } m_axi_bgmodel_sortKey_RVALID { I 1 bit } m_axi_bgmodel_sortKey_RREADY { O 1 bit } m_axi_bgmodel_sortKey_RDATA { I 32 vector } m_axi_bgmodel_sortKey_RLAST { I 1 bit } m_axi_bgmodel_sortKey_RID { I 1 vector } m_axi_bgmodel_sortKey_RUSER { I 1 vector } m_axi_bgmodel_sortKey_RRESP { I 2 vector } m_axi_bgmodel_sortKey_BVALID { I 1 bit } m_axi_bgmodel_sortKey_BREADY { O 1 bit } m_axi_bgmodel_sortKey_BRESP { I 2 vector } m_axi_bgmodel_sortKey_BID { I 1 vector } m_axi_bgmodel_sortKey_BUSER { I 1 vector } } \
+    ports { m_axi_bgmodel_AWVALID { O 1 bit } m_axi_bgmodel_AWREADY { I 1 bit } m_axi_bgmodel_AWADDR { O 32 vector } m_axi_bgmodel_AWID { O 1 vector } m_axi_bgmodel_AWLEN { O 32 vector } m_axi_bgmodel_AWSIZE { O 3 vector } m_axi_bgmodel_AWBURST { O 2 vector } m_axi_bgmodel_AWLOCK { O 2 vector } m_axi_bgmodel_AWCACHE { O 4 vector } m_axi_bgmodel_AWPROT { O 3 vector } m_axi_bgmodel_AWQOS { O 4 vector } m_axi_bgmodel_AWREGION { O 4 vector } m_axi_bgmodel_AWUSER { O 1 vector } m_axi_bgmodel_WVALID { O 1 bit } m_axi_bgmodel_WREADY { I 1 bit } m_axi_bgmodel_WDATA { O 32 vector } m_axi_bgmodel_WSTRB { O 4 vector } m_axi_bgmodel_WLAST { O 1 bit } m_axi_bgmodel_WID { O 1 vector } m_axi_bgmodel_WUSER { O 1 vector } m_axi_bgmodel_ARVALID { O 1 bit } m_axi_bgmodel_ARREADY { I 1 bit } m_axi_bgmodel_ARADDR { O 32 vector } m_axi_bgmodel_ARID { O 1 vector } m_axi_bgmodel_ARLEN { O 32 vector } m_axi_bgmodel_ARSIZE { O 3 vector } m_axi_bgmodel_ARBURST { O 2 vector } m_axi_bgmodel_ARLOCK { O 2 vector } m_axi_bgmodel_ARCACHE { O 4 vector } m_axi_bgmodel_ARPROT { O 3 vector } m_axi_bgmodel_ARQOS { O 4 vector } m_axi_bgmodel_ARREGION { O 4 vector } m_axi_bgmodel_ARUSER { O 1 vector } m_axi_bgmodel_RVALID { I 1 bit } m_axi_bgmodel_RREADY { O 1 bit } m_axi_bgmodel_RDATA { I 32 vector } m_axi_bgmodel_RLAST { I 1 bit } m_axi_bgmodel_RID { I 1 vector } m_axi_bgmodel_RUSER { I 1 vector } m_axi_bgmodel_RRESP { I 2 vector } m_axi_bgmodel_BVALID { I 1 bit } m_axi_bgmodel_BREADY { O 1 bit } m_axi_bgmodel_BRESP { I 2 vector } m_axi_bgmodel_BID { I 1 vector } m_axi_bgmodel_BUSER { I 1 vector } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 21 \
-    name bgmodel_sortKey1 \
+    id 18 \
+    name bgmodel1 \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_bgmodel_sortKey1 \
+    corename dc_bgmodel1 \
     op interface \
-    ports { bgmodel_sortKey1 { I 32 vector } } \
+    ports { bgmodel1 { I 32 vector } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 22 \
-    name bgmodel_weight \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_bgmodel_weight \
-    op interface \
-    ports { bgmodel_weight { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 23 \
-    name bgmodel_mean \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_bgmodel_mean \
-    op interface \
-    ports { bgmodel_mean { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 24 \
-    name bgmodel_var \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_bgmodel_var \
-    op interface \
-    ports { bgmodel_var { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 25 \
+    id 19 \
     name frame_out \
     type other \
     dir IO \
@@ -361,7 +316,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 26 \
+    id 20 \
     name frame_out2 \
     type other \
     dir I \
@@ -376,7 +331,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 27 \
+    id 21 \
     name frame_in \
     type other \
     dir I \

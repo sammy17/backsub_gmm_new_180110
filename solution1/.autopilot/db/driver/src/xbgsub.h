@@ -87,14 +87,8 @@ void XBgsub_Set_frame_out(XBgsub *InstancePtr, u32 Data);
 u32 XBgsub_Get_frame_out(XBgsub *InstancePtr);
 void XBgsub_Set_init(XBgsub *InstancePtr, u32 Data);
 u32 XBgsub_Get_init(XBgsub *InstancePtr);
-void XBgsub_Set_bgmodel_sortKey(XBgsub *InstancePtr, u32 Data);
-u32 XBgsub_Get_bgmodel_sortKey(XBgsub *InstancePtr);
-void XBgsub_Set_bgmodel_weight(XBgsub *InstancePtr, u32 Data);
-u32 XBgsub_Get_bgmodel_weight(XBgsub *InstancePtr);
-void XBgsub_Set_bgmodel_mean(XBgsub *InstancePtr, u32 Data);
-u32 XBgsub_Get_bgmodel_mean(XBgsub *InstancePtr);
-void XBgsub_Set_bgmodel_var(XBgsub *InstancePtr, u32 Data);
-u32 XBgsub_Get_bgmodel_var(XBgsub *InstancePtr);
+void XBgsub_Set_bgmodel(XBgsub *InstancePtr, u32 Data);
+u32 XBgsub_Get_bgmodel(XBgsub *InstancePtr);
 
 #ifdef __cplusplus
 }

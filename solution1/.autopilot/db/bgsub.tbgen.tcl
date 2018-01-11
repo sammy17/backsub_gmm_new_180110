@@ -1,8 +1,6 @@
 set C_TypeInfoList {{ 
-"bgsub" : [[], { "return": [[], "void"]} , [{"ExternC" : 0}], [ {"frame_in": [[], {"array": ["0", [76800]]}] }, {"frame_out": [[], {"array": ["0", [76800]]}] }, {"init": [[], {"scalar": "bool"}] }, {"bgmodel": [[], {"array": ["1", [153600]]}] }],[],""], 
-"0": [ "uint8_t", {"typedef": [[[], {"scalar": "unsigned char"}],""]}], 
-"1": [ "MixData", {"struct": [[],[],[{ "sortKey": [[32], "2"]},{ "weight": [[32], "2"]},{ "mean": [[32], "2"]},{ "var": [[32], "2"]}],""]}], 
-"2": [ "data_t", {"typedef": [[[], {"scalar": "float"}],""]}]
+"bgsub" : [[], { "return": [[], "void"]} , [{"ExternC" : 0}], [ {"frame_in": [[], {"array": ["0", [38400]]}] }, {"frame_out": [[], {"array": ["0", [38400]]}] }, {"init": [[], {"scalar": "bool"}] }, {"bgmodel": [[], {"array": [ {"scalar": "float"}, [307200]]}] }],[],""], 
+"0": [ "uint8_t", {"typedef": [[[], {"scalar": "unsigned char"}],""]}]
 }}
 set moduleName bgsub
 set isCombinational 0
@@ -19,34 +17,28 @@ set C_modelArgList {
 	{ frame_in int 32 regular {axi_slave 0}  }
 	{ frame_out int 32 regular {axi_slave 0}  }
 	{ init int 1 regular {axi_slave 0}  }
-	{ bgmodel_sortKey int 32 regular {axi_slave 0}  }
-	{ bgmodel_weight int 32 regular {axi_slave 0}  }
-	{ bgmodel_mean int 32 regular {axi_slave 0}  }
-	{ bgmodel_var int 32 regular {axi_slave 0}  }
+	{ bgmodel int 32 regular {axi_slave 0}  }
 }
 set C_modelArgMapList {[ 
-	{ "Name" : "gmem", "interface" : "axi_master", "bitwidth" : 8, "direction" : "READWRITE", "bitSlice":[{"low":0,"up":7,"cElement": [{"cName": "frame_in","cData": "unsigned char","bit_use": { "low": 0,"up": 7},"offset": { "type": "dynamic","port_name": "frame_in","bundle": "AXILiteS"},"direction": "READONLY","cArray": [{"low" : 0,"up" : 76799,"step" : 1}]},{"cName": "frame_out","cData": "unsigned char","bit_use": { "low": 0,"up": 7},"offset": { "type": "dynamic","port_name": "frame_out","bundle": "AXILiteS"},"direction": "WRITEONLY","cArray": [{"low" : 0,"up" : 76799,"step" : 1}]}]}]} , 
- 	{ "Name" : "gmem_offset", "interface" : "axi_master", "bitwidth" : 32, "direction" : "READWRITE", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "bgmodel.sortKey","cData": "float","bit_use": { "low": 0,"up": 31},"offset": { "type": "dynamic","port_name": "bgmodel_sortKey","bundle": "AXILiteS"},"direction": "READWRITE","cArray": [{"low" : 0,"up" : 153599,"step" : 1}]},{"cName": "bgmodel.weight","cData": "float","bit_use": { "low": 0,"up": 31},"offset": { "type": "dynamic","port_name": "bgmodel_weight","bundle": "AXILiteS"},"direction": "READWRITE","cArray": [{"low" : 0,"up" : 153599,"step" : 1}]},{"cName": "bgmodel.mean","cData": "float","bit_use": { "low": 0,"up": 31},"offset": { "type": "dynamic","port_name": "bgmodel_mean","bundle": "AXILiteS"},"direction": "READWRITE","cArray": [{"low" : 0,"up" : 153599,"step" : 1}]},{"cName": "bgmodel.var","cData": "float","bit_use": { "low": 0,"up": 31},"offset": { "type": "dynamic","port_name": "bgmodel_var","bundle": "AXILiteS"},"direction": "READWRITE","cArray": [{"low" : 0,"up" : 153599,"step" : 1}]}]}]} , 
+	{ "Name" : "gmem", "interface" : "axi_master", "bitwidth" : 8, "direction" : "READWRITE", "bitSlice":[{"low":0,"up":7,"cElement": [{"cName": "frame_in","cData": "unsigned char","bit_use": { "low": 0,"up": 7},"offset": { "type": "dynamic","port_name": "frame_in","bundle": "AXILiteS"},"direction": "READONLY","cArray": [{"low" : 0,"up" : 38399,"step" : 1}]},{"cName": "frame_out","cData": "unsigned char","bit_use": { "low": 0,"up": 7},"offset": { "type": "dynamic","port_name": "frame_out","bundle": "AXILiteS"},"direction": "WRITEONLY","cArray": [{"low" : 0,"up" : 38399,"step" : 1}]}]}]} , 
+ 	{ "Name" : "gmem_offset", "interface" : "axi_master", "bitwidth" : 32, "direction" : "READWRITE", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "bgmodel","cData": "float","bit_use": { "low": 0,"up": 31},"offset": { "type": "dynamic","port_name": "bgmodel","bundle": "AXILiteS"},"direction": "READWRITE","cArray": [{"low" : 0,"up" : 307199,"step" : 1}]}]}]} , 
  	{ "Name" : "frame_in", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_none","bitwidth" : 32, "direction" : "READONLY", "offset" : {"in":16}, "offset_end" : {"in":23}} , 
  	{ "Name" : "frame_out", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_none","bitwidth" : 32, "direction" : "READONLY", "offset" : {"in":24}, "offset_end" : {"in":31}} , 
  	{ "Name" : "init", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_none","bitwidth" : 1, "direction" : "READONLY", "bitSlice":[{"low":0,"up":0,"cElement": [{"cName": "init","cData": "bool","bit_use": { "low": 0,"up": 0},"cArray": [{"low" : 0,"up" : 0,"step" : 0}]}]}], "offset" : {"in":32}, "offset_end" : {"in":39}} , 
- 	{ "Name" : "bgmodel_sortKey", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_none","bitwidth" : 32, "direction" : "READONLY", "offset" : {"in":40}, "offset_end" : {"in":47}} , 
- 	{ "Name" : "bgmodel_weight", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_none","bitwidth" : 32, "direction" : "READONLY", "offset" : {"in":48}, "offset_end" : {"in":55}} , 
- 	{ "Name" : "bgmodel_mean", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_none","bitwidth" : 32, "direction" : "READONLY", "offset" : {"in":56}, "offset_end" : {"in":63}} , 
- 	{ "Name" : "bgmodel_var", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_none","bitwidth" : 32, "direction" : "READONLY", "offset" : {"in":64}, "offset_end" : {"in":71}} ]}
+ 	{ "Name" : "bgmodel", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_none","bitwidth" : 32, "direction" : "READONLY", "offset" : {"in":40}, "offset_end" : {"in":47}} ]}
 # RTL Port declarations: 
 set portNum 113
 set portList { 
 	{ s_axi_AXILiteS_AWVALID sc_in sc_logic 1 signal -1 } 
 	{ s_axi_AXILiteS_AWREADY sc_out sc_logic 1 signal -1 } 
-	{ s_axi_AXILiteS_AWADDR sc_in sc_lv 7 signal -1 } 
+	{ s_axi_AXILiteS_AWADDR sc_in sc_lv 6 signal -1 } 
 	{ s_axi_AXILiteS_WVALID sc_in sc_logic 1 signal -1 } 
 	{ s_axi_AXILiteS_WREADY sc_out sc_logic 1 signal -1 } 
 	{ s_axi_AXILiteS_WDATA sc_in sc_lv 32 signal -1 } 
 	{ s_axi_AXILiteS_WSTRB sc_in sc_lv 4 signal -1 } 
 	{ s_axi_AXILiteS_ARVALID sc_in sc_logic 1 signal -1 } 
 	{ s_axi_AXILiteS_ARREADY sc_out sc_logic 1 signal -1 } 
-	{ s_axi_AXILiteS_ARADDR sc_in sc_lv 7 signal -1 } 
+	{ s_axi_AXILiteS_ARADDR sc_in sc_lv 6 signal -1 } 
 	{ s_axi_AXILiteS_RVALID sc_out sc_logic 1 signal -1 } 
 	{ s_axi_AXILiteS_RREADY sc_in sc_logic 1 signal -1 } 
 	{ s_axi_AXILiteS_RDATA sc_out sc_lv 32 signal -1 } 
@@ -152,14 +144,14 @@ set portList {
 	{ ap_ready sc_out sc_logic 1 ready -1 } 
 }
 set NewPortList {[ 
-	{ "name": "s_axi_AXILiteS_AWADDR", "direction": "in", "datatype": "sc_lv", "bitwidth":7, "type": "signal", "bundle":{"name": "AXILiteS", "role": "AWADDR" },"address":[{"name":"frame_in","role":"data","value":"16"},{"name":"frame_out","role":"data","value":"24"},{"name":"init","role":"data","value":"32"},{"name":"bgmodel_sortKey","role":"data","value":"40"},{"name":"bgmodel_weight","role":"data","value":"48"},{"name":"bgmodel_mean","role":"data","value":"56"},{"name":"bgmodel_var","role":"data","value":"64"}] },
+	{ "name": "s_axi_AXILiteS_AWADDR", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "AXILiteS", "role": "AWADDR" },"address":[{"name":"frame_in","role":"data","value":"16"},{"name":"frame_out","role":"data","value":"24"},{"name":"init","role":"data","value":"32"},{"name":"bgmodel","role":"data","value":"40"}] },
 	{ "name": "s_axi_AXILiteS_AWVALID", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "AXILiteS", "role": "AWVALID" } },
 	{ "name": "s_axi_AXILiteS_AWREADY", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "AXILiteS", "role": "AWREADY" } },
 	{ "name": "s_axi_AXILiteS_WVALID", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "AXILiteS", "role": "WVALID" } },
 	{ "name": "s_axi_AXILiteS_WREADY", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "AXILiteS", "role": "WREADY" } },
 	{ "name": "s_axi_AXILiteS_WDATA", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "AXILiteS", "role": "WDATA" } },
 	{ "name": "s_axi_AXILiteS_WSTRB", "direction": "in", "datatype": "sc_lv", "bitwidth":4, "type": "signal", "bundle":{"name": "AXILiteS", "role": "WSTRB" } },
-	{ "name": "s_axi_AXILiteS_ARADDR", "direction": "in", "datatype": "sc_lv", "bitwidth":7, "type": "signal", "bundle":{"name": "AXILiteS", "role": "ARADDR" },"address":[] },
+	{ "name": "s_axi_AXILiteS_ARADDR", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "AXILiteS", "role": "ARADDR" },"address":[] },
 	{ "name": "s_axi_AXILiteS_ARVALID", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "AXILiteS", "role": "ARVALID" } },
 	{ "name": "s_axi_AXILiteS_ARREADY", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "AXILiteS", "role": "ARREADY" } },
 	{ "name": "s_axi_AXILiteS_RVALID", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "AXILiteS", "role": "RVALID" } },

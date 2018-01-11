@@ -8,7 +8,7 @@
 `timescale 1ns/1ps
 module bgsub_AXILiteS_s_axi
 #(parameter
-    C_S_AXI_ADDR_WIDTH = 7,
+    C_S_AXI_ADDR_WIDTH = 6,
     C_S_AXI_DATA_WIDTH = 32
 )(
     // axi4 lite slave signals
@@ -36,10 +36,7 @@ module bgsub_AXILiteS_s_axi
     output wire [31:0]                   frame_in,
     output wire [31:0]                   frame_out,
     output wire [0:0]                    init,
-    output wire [31:0]                   bgmodel_sortKey,
-    output wire [31:0]                   bgmodel_weight,
-    output wire [31:0]                   bgmodel_mean,
-    output wire [31:0]                   bgmodel_var
+    output wire [31:0]                   bgmodel
 );
 //------------------------Address Info-------------------
 // 0x00 : reserved
@@ -56,42 +53,27 @@ module bgsub_AXILiteS_s_axi
 //        bit 0  - init[0] (Read/Write)
 //        others - reserved
 // 0x24 : reserved
-// 0x28 : Data signal of bgmodel_sortKey
-//        bit 31~0 - bgmodel_sortKey[31:0] (Read/Write)
+// 0x28 : Data signal of bgmodel
+//        bit 31~0 - bgmodel[31:0] (Read/Write)
 // 0x2c : reserved
-// 0x30 : Data signal of bgmodel_weight
-//        bit 31~0 - bgmodel_weight[31:0] (Read/Write)
-// 0x34 : reserved
-// 0x38 : Data signal of bgmodel_mean
-//        bit 31~0 - bgmodel_mean[31:0] (Read/Write)
-// 0x3c : reserved
-// 0x40 : Data signal of bgmodel_var
-//        bit 31~0 - bgmodel_var[31:0] (Read/Write)
-// 0x44 : reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 //------------------------Parameter----------------------
 localparam
-    ADDR_FRAME_IN_DATA_0        = 7'h10,
-    ADDR_FRAME_IN_CTRL          = 7'h14,
-    ADDR_FRAME_OUT_DATA_0       = 7'h18,
-    ADDR_FRAME_OUT_CTRL         = 7'h1c,
-    ADDR_INIT_DATA_0            = 7'h20,
-    ADDR_INIT_CTRL              = 7'h24,
-    ADDR_BGMODEL_SORTKEY_DATA_0 = 7'h28,
-    ADDR_BGMODEL_SORTKEY_CTRL   = 7'h2c,
-    ADDR_BGMODEL_WEIGHT_DATA_0  = 7'h30,
-    ADDR_BGMODEL_WEIGHT_CTRL    = 7'h34,
-    ADDR_BGMODEL_MEAN_DATA_0    = 7'h38,
-    ADDR_BGMODEL_MEAN_CTRL      = 7'h3c,
-    ADDR_BGMODEL_VAR_DATA_0     = 7'h40,
-    ADDR_BGMODEL_VAR_CTRL       = 7'h44,
-    WRIDLE                      = 2'd0,
-    WRDATA                      = 2'd1,
-    WRRESP                      = 2'd2,
-    RDIDLE                      = 2'd0,
-    RDDATA                      = 2'd1,
-    ADDR_BITS         = 7;
+    ADDR_FRAME_IN_DATA_0  = 6'h10,
+    ADDR_FRAME_IN_CTRL    = 6'h14,
+    ADDR_FRAME_OUT_DATA_0 = 6'h18,
+    ADDR_FRAME_OUT_CTRL   = 6'h1c,
+    ADDR_INIT_DATA_0      = 6'h20,
+    ADDR_INIT_CTRL        = 6'h24,
+    ADDR_BGMODEL_DATA_0   = 6'h28,
+    ADDR_BGMODEL_CTRL     = 6'h2c,
+    WRIDLE                = 2'd0,
+    WRDATA                = 2'd1,
+    WRRESP                = 2'd2,
+    RDIDLE                = 2'd0,
+    RDDATA                = 2'd1,
+    ADDR_BITS         = 6;
 
 //------------------------Local signal-------------------
     reg  [1:0]                    wstate;
@@ -109,10 +91,7 @@ localparam
     reg  [31:0]                   int_frame_in;
     reg  [31:0]                   int_frame_out;
     reg  [0:0]                    int_init;
-    reg  [31:0]                   int_bgmodel_sortKey;
-    reg  [31:0]                   int_bgmodel_weight;
-    reg  [31:0]                   int_bgmodel_mean;
-    reg  [31:0]                   int_bgmodel_var;
+    reg  [31:0]                   int_bgmodel;
 
 //------------------------Instantiation------------------
 
@@ -213,17 +192,8 @@ always @(posedge ACLK) begin
                 ADDR_INIT_DATA_0: begin
                     rdata <= int_init[0:0];
                 end
-                ADDR_BGMODEL_SORTKEY_DATA_0: begin
-                    rdata <= int_bgmodel_sortKey[31:0];
-                end
-                ADDR_BGMODEL_WEIGHT_DATA_0: begin
-                    rdata <= int_bgmodel_weight[31:0];
-                end
-                ADDR_BGMODEL_MEAN_DATA_0: begin
-                    rdata <= int_bgmodel_mean[31:0];
-                end
-                ADDR_BGMODEL_VAR_DATA_0: begin
-                    rdata <= int_bgmodel_var[31:0];
+                ADDR_BGMODEL_DATA_0: begin
+                    rdata <= int_bgmodel[31:0];
                 end
             endcase
         end
@@ -232,13 +202,10 @@ end
 
 
 //------------------------Register logic-----------------
-assign frame_in        = int_frame_in;
-assign frame_out       = int_frame_out;
-assign init            = int_init;
-assign bgmodel_sortKey = int_bgmodel_sortKey;
-assign bgmodel_weight  = int_bgmodel_weight;
-assign bgmodel_mean    = int_bgmodel_mean;
-assign bgmodel_var     = int_bgmodel_var;
+assign frame_in  = int_frame_in;
+assign frame_out = int_frame_out;
+assign init      = int_init;
+assign bgmodel   = int_bgmodel;
 // int_frame_in[31:0]
 always @(posedge ACLK) begin
     if (ARESET)
@@ -269,43 +236,13 @@ always @(posedge ACLK) begin
     end
 end
 
-// int_bgmodel_sortKey[31:0]
+// int_bgmodel[31:0]
 always @(posedge ACLK) begin
     if (ARESET)
-        int_bgmodel_sortKey[31:0] <= 0;
+        int_bgmodel[31:0] <= 0;
     else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_BGMODEL_SORTKEY_DATA_0)
-            int_bgmodel_sortKey[31:0] <= (WDATA[31:0] & wmask) | (int_bgmodel_sortKey[31:0] & ~wmask);
-    end
-end
-
-// int_bgmodel_weight[31:0]
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_bgmodel_weight[31:0] <= 0;
-    else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_BGMODEL_WEIGHT_DATA_0)
-            int_bgmodel_weight[31:0] <= (WDATA[31:0] & wmask) | (int_bgmodel_weight[31:0] & ~wmask);
-    end
-end
-
-// int_bgmodel_mean[31:0]
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_bgmodel_mean[31:0] <= 0;
-    else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_BGMODEL_MEAN_DATA_0)
-            int_bgmodel_mean[31:0] <= (WDATA[31:0] & wmask) | (int_bgmodel_mean[31:0] & ~wmask);
-    end
-end
-
-// int_bgmodel_var[31:0]
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_bgmodel_var[31:0] <= 0;
-    else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_BGMODEL_VAR_DATA_0)
-            int_bgmodel_var[31:0] <= (WDATA[31:0] & wmask) | (int_bgmodel_var[31:0] & ~wmask);
+        if (w_hs && waddr == ADDR_BGMODEL_DATA_0)
+            int_bgmodel[31:0] <= (WDATA[31:0] & wmask) | (int_bgmodel[31:0] & ~wmask);
     end
 end
 

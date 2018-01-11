@@ -72,71 +72,20 @@ u32 XBgsub_Get_init(XBgsub *InstancePtr) {
     return Data;
 }
 
-void XBgsub_Set_bgmodel_sortKey(XBgsub *InstancePtr, u32 Data) {
+void XBgsub_Set_bgmodel(XBgsub *InstancePtr, u32 Data) {
     Xil_AssertVoid(InstancePtr != NULL);
     Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    XBgsub_WriteReg(InstancePtr->Axilites_BaseAddress, XBGSUB_AXILITES_ADDR_BGMODEL_SORTKEY_DATA, Data);
+    XBgsub_WriteReg(InstancePtr->Axilites_BaseAddress, XBGSUB_AXILITES_ADDR_BGMODEL_DATA, Data);
 }
 
-u32 XBgsub_Get_bgmodel_sortKey(XBgsub *InstancePtr) {
+u32 XBgsub_Get_bgmodel(XBgsub *InstancePtr) {
     u32 Data;
 
     Xil_AssertNonvoid(InstancePtr != NULL);
     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    Data = XBgsub_ReadReg(InstancePtr->Axilites_BaseAddress, XBGSUB_AXILITES_ADDR_BGMODEL_SORTKEY_DATA);
-    return Data;
-}
-
-void XBgsub_Set_bgmodel_weight(XBgsub *InstancePtr, u32 Data) {
-    Xil_AssertVoid(InstancePtr != NULL);
-    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
-
-    XBgsub_WriteReg(InstancePtr->Axilites_BaseAddress, XBGSUB_AXILITES_ADDR_BGMODEL_WEIGHT_DATA, Data);
-}
-
-u32 XBgsub_Get_bgmodel_weight(XBgsub *InstancePtr) {
-    u32 Data;
-
-    Xil_AssertNonvoid(InstancePtr != NULL);
-    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
-
-    Data = XBgsub_ReadReg(InstancePtr->Axilites_BaseAddress, XBGSUB_AXILITES_ADDR_BGMODEL_WEIGHT_DATA);
-    return Data;
-}
-
-void XBgsub_Set_bgmodel_mean(XBgsub *InstancePtr, u32 Data) {
-    Xil_AssertVoid(InstancePtr != NULL);
-    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
-
-    XBgsub_WriteReg(InstancePtr->Axilites_BaseAddress, XBGSUB_AXILITES_ADDR_BGMODEL_MEAN_DATA, Data);
-}
-
-u32 XBgsub_Get_bgmodel_mean(XBgsub *InstancePtr) {
-    u32 Data;
-
-    Xil_AssertNonvoid(InstancePtr != NULL);
-    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
-
-    Data = XBgsub_ReadReg(InstancePtr->Axilites_BaseAddress, XBGSUB_AXILITES_ADDR_BGMODEL_MEAN_DATA);
-    return Data;
-}
-
-void XBgsub_Set_bgmodel_var(XBgsub *InstancePtr, u32 Data) {
-    Xil_AssertVoid(InstancePtr != NULL);
-    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
-
-    XBgsub_WriteReg(InstancePtr->Axilites_BaseAddress, XBGSUB_AXILITES_ADDR_BGMODEL_VAR_DATA, Data);
-}
-
-u32 XBgsub_Get_bgmodel_var(XBgsub *InstancePtr) {
-    u32 Data;
-
-    Xil_AssertNonvoid(InstancePtr != NULL);
-    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
-
-    Data = XBgsub_ReadReg(InstancePtr->Axilites_BaseAddress, XBGSUB_AXILITES_ADDR_BGMODEL_VAR_DATA);
+    Data = XBgsub_ReadReg(InstancePtr->Axilites_BaseAddress, XBGSUB_AXILITES_ADDR_BGMODEL_DATA);
     return Data;
 }
 

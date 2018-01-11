@@ -14,16 +14,21 @@ Copyright (C) 2015 Xilinx Inc. All rights reserved.
 @I [XFORM-603] Inlining function 'std::min<int>' into 'process' (backsub_gmm_new_180110/core.cpp:76).
 @I [HLS-10] Checking synthesizability ...
 @I [XFORM-602] Inlining function 'std::sqrt' into 'process' (backsub_gmm_new_180110/core.cpp:59) automatically.
-@I [XFORM-602] Inlining function 'std::swap<MixData>' into 'process' (backsub_gmm_new_180110/core.cpp:66) automatically.
+@I [XFORM-602] Inlining function 'std::swap<float>' into 'process' (backsub_gmm_new_180110/core.cpp:66) automatically.
 @I [XFORM-602] Inlining function 'std::sqrt' into 'process' (backsub_gmm_new_180110/core.cpp:59) automatically.
-@I [XFORM-602] Inlining function 'std::swap<MixData>' into 'process' (backsub_gmm_new_180110/core.cpp:66) automatically.
+@I [XFORM-602] Inlining function 'std::swap<float>' into 'process' (backsub_gmm_new_180110/core.cpp:66) automatically.
 @I [XFORM-712] Applying dataflow to function 'bgsub' (backsub_gmm_new_180110/core.cpp:148), detected/extracted 1 process function(s):
 	 'Block__proc'.
-@I [XFORM-811] Inferring bus burst write of length 1280 on port 'frame_out' (backsub_gmm_new_180110/core.cpp:210:9).
-@I [XFORM-811] Inferring bus burst write of length 1280 on port 'frame_out' (backsub_gmm_new_180110/core.cpp:208:9).
-@I [XFORM-811] Inferring bus burst read of length 1280 on port 'frame_out' (backsub_gmm_new_180110/core.cpp:193:9).
-@I [XFORM-811] Inferring bus burst read of length 1280 on port 'frame_out' (backsub_gmm_new_180110/core.cpp:195:9).
-@I [HLS-111] Elapsed time: 4.41041 seconds; current memory usage: 142 MB.
+@I [XFORM-811] Inferring bus burst write of length 307200 on port 'bgmodel' (backsub_gmm_new_180110/core.cpp:179:13).
+@I [XFORM-811] Inferring bus burst write of length 320 on port 'frame_out' (backsub_gmm_new_180110/core.cpp:211:9).
+@I [XFORM-811] Inferring bus burst write of length 2560 on port 'bgmodel' (backsub_gmm_new_180110/core.cpp:210:9).
+@I [XFORM-811] Inferring bus burst write of length 320 on port 'frame_out' (backsub_gmm_new_180110/core.cpp:209:9).
+@I [XFORM-811] Inferring bus burst read of length 320 on port 'frame_out' (backsub_gmm_new_180110/core.cpp:194:9).
+@I [XFORM-811] Inferring bus burst read of length 2560 on port 'bgmodel' (backsub_gmm_new_180110/core.cpp:195:9).
+@I [XFORM-811] Inferring bus burst read of length 320 on port 'frame_out' (backsub_gmm_new_180110/core.cpp:196:9).
+@I [XFORM-811] Inferring bus burst read of length 2560 on port 'bgmodel' (backsub_gmm_new_180110/core.cpp:197:9).
+@I [XFORM-811] Inferring bus burst write of length 2560 on port 'bgmodel' (backsub_gmm_new_180110/core.cpp:208:9).
+@I [HLS-111] Elapsed time: 4.35639 seconds; current memory usage: 141 MB.
 @I [HLS-10] Starting hardware synthesis ...
 @I [HLS-10] Synthesizing 'bgsub' ...
 @W [SYN-103] Legalizing function name 'bgsub_Block__proc' to 'bgsub_Block_proc'.
@@ -32,7 +37,7 @@ Copyright (C) 2015 Xilinx Inc. All rights reserved.
 @I [HLS-10] ----------------------------------------------------------------
 @I [SCHED-11] Starting scheduling ...
 @I [SCHED-11] Finished scheduling.
-@I [HLS-111] Elapsed time: 0.144221 seconds; current memory usage: 144 MB.
+@I [HLS-111] Elapsed time: 0.139585 seconds; current memory usage: 143 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Exploring micro-architecture for module 'bgsub_process' 
 @I [HLS-10] ----------------------------------------------------------------
@@ -41,65 +46,29 @@ Copyright (C) 2015 Xilinx Inc. All rights reserved.
 @I [BIND-101] Exploring resource sharing.
 @I [BIND-101] Binding ...
 @I [BIND-100] Finished micro-architecture generation.
-@I [HLS-111] Elapsed time: 0.090957 seconds; current memory usage: 146 MB.
+@I [HLS-111] Elapsed time: 0.088981 seconds; current memory usage: 145 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Scheduling module 'bgsub_Block_proc' 
 @I [HLS-10] ----------------------------------------------------------------
 @I [SCHED-11] Starting scheduling ...
 @I [SCHED-61] Pipelining loop 'memcpy..frame_in'.
 @I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 3.
-@I [SCHED-61] Pipelining loop 'memcpy.part_bgmodel.sortKey.addr.bgmodel.var'.
-@W [SCHED-68] Unable to enforce a carried dependency constraint (II = 1, distance = 1)
-   between bus request on port 'bgmodel_sortKey' (backsub_gmm_new_180110/core.cpp:194) and bus request on port 'bgmodel_sortKey' (backsub_gmm_new_180110/core.cpp:194).
-@W [SCHED-68] Unable to enforce a carried dependency constraint (II = 2, distance = 1)
-   between bus request on port 'bgmodel_sortKey' (backsub_gmm_new_180110/core.cpp:194) and bus request on port 'bgmodel_sortKey' (backsub_gmm_new_180110/core.cpp:194).
-@W [SCHED-68] Unable to enforce a carried dependency constraint (II = 3, distance = 1)
-   between bus request on port 'bgmodel_sortKey' (backsub_gmm_new_180110/core.cpp:194) and bus request on port 'bgmodel_sortKey' (backsub_gmm_new_180110/core.cpp:194).
-@I [SCHED-61] Pipelining result: Target II: 1, Final II: 4, Depth: 13.
+@I [SCHED-61] Pipelining loop 'memcpy.part_bgmodel.bgmodel'.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 3.
 @I [SCHED-61] Pipelining loop 'memcpy..frame_in'.
 @I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 3.
-@I [SCHED-61] Pipelining loop 'memcpy.part2_bgmodel.sortKey.addr.bgmodel.var'.
-@W [SCHED-68] Unable to enforce a carried dependency constraint (II = 1, distance = 1)
-   between bus request on port 'bgmodel_sortKey' (backsub_gmm_new_180110/core.cpp:196) and bus request on port 'bgmodel_sortKey' (backsub_gmm_new_180110/core.cpp:196).
-@W [SCHED-68] Unable to enforce a carried dependency constraint (II = 2, distance = 1)
-   between bus request on port 'bgmodel_sortKey' (backsub_gmm_new_180110/core.cpp:196) and bus request on port 'bgmodel_sortKey' (backsub_gmm_new_180110/core.cpp:196).
-@W [SCHED-68] Unable to enforce a carried dependency constraint (II = 3, distance = 1)
-   between bus request on port 'bgmodel_sortKey' (backsub_gmm_new_180110/core.cpp:196) and bus request on port 'bgmodel_sortKey' (backsub_gmm_new_180110/core.cpp:196).
-@I [SCHED-61] Pipelining result: Target II: 1, Final II: 4, Depth: 13.
-@I [SCHED-61] Pipelining loop 'memcpy.bgmodel.var.part_bgmodel.sortKey.addr'.
-@W [SCHED-68] Unable to enforce a carried dependency constraint (II = 1, distance = 1)
-   between bus request on port 'bgmodel_sortKey' (backsub_gmm_new_180110/core.cpp:207) and bus request on port 'bgmodel_sortKey' (backsub_gmm_new_180110/core.cpp:207).
-@W [SCHED-68] Unable to enforce a carried dependency constraint (II = 2, distance = 1)
-   between bus request on port 'bgmodel_sortKey' (backsub_gmm_new_180110/core.cpp:207) and bus request on port 'bgmodel_sortKey' (backsub_gmm_new_180110/core.cpp:207).
-@W [SCHED-68] Unable to enforce a carried dependency constraint (II = 3, distance = 1)
-   between bus request on port 'bgmodel_sortKey' (backsub_gmm_new_180110/core.cpp:207) and bus request on port 'bgmodel_sortKey' (backsub_gmm_new_180110/core.cpp:207).
-@W [SCHED-68] Unable to enforce a carried dependency constraint (II = 4, distance = 1)
-   between bus request on port 'bgmodel_sortKey' (backsub_gmm_new_180110/core.cpp:207) and bus request on port 'bgmodel_sortKey' (backsub_gmm_new_180110/core.cpp:207).
-@W [SCHED-68] Unable to enforce a carried dependency constraint (II = 5, distance = 1)
-   between bus request on port 'bgmodel_sortKey' (backsub_gmm_new_180110/core.cpp:207) and bus request on port 'bgmodel_sortKey' (backsub_gmm_new_180110/core.cpp:207).
-@W [SCHED-68] Unable to enforce a carried dependency constraint (II = 6, distance = 1)
-   between bus request on port 'bgmodel_sortKey' (backsub_gmm_new_180110/core.cpp:207) and bus request on port 'bgmodel_sortKey' (backsub_gmm_new_180110/core.cpp:207).
-@I [SCHED-61] Pipelining result: Target II: 1, Final II: 7, Depth: 14.
+@I [SCHED-61] Pipelining loop 'memcpy.part2_bgmodel.bgmodel'.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 3.
+@I [SCHED-61] Pipelining loop 'memcpy.bgmodel.part_bgmodel.gep'.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 3.
 @I [SCHED-61] Pipelining loop 'memcpy.frame_out.'.
 @I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 3.
-@I [SCHED-61] Pipelining loop 'memcpy.bgmodel.var.part2_bgmodel.sortKey.addr'.
-@W [SCHED-68] Unable to enforce a carried dependency constraint (II = 1, distance = 1)
-   between bus request on port 'bgmodel_sortKey' (backsub_gmm_new_180110/core.cpp:209) and bus request on port 'bgmodel_sortKey' (backsub_gmm_new_180110/core.cpp:209).
-@W [SCHED-68] Unable to enforce a carried dependency constraint (II = 2, distance = 1)
-   between bus request on port 'bgmodel_sortKey' (backsub_gmm_new_180110/core.cpp:209) and bus request on port 'bgmodel_sortKey' (backsub_gmm_new_180110/core.cpp:209).
-@W [SCHED-68] Unable to enforce a carried dependency constraint (II = 3, distance = 1)
-   between bus request on port 'bgmodel_sortKey' (backsub_gmm_new_180110/core.cpp:209) and bus request on port 'bgmodel_sortKey' (backsub_gmm_new_180110/core.cpp:209).
-@W [SCHED-68] Unable to enforce a carried dependency constraint (II = 4, distance = 1)
-   between bus request on port 'bgmodel_sortKey' (backsub_gmm_new_180110/core.cpp:209) and bus request on port 'bgmodel_sortKey' (backsub_gmm_new_180110/core.cpp:209).
-@W [SCHED-68] Unable to enforce a carried dependency constraint (II = 5, distance = 1)
-   between bus request on port 'bgmodel_sortKey' (backsub_gmm_new_180110/core.cpp:209) and bus request on port 'bgmodel_sortKey' (backsub_gmm_new_180110/core.cpp:209).
-@W [SCHED-68] Unable to enforce a carried dependency constraint (II = 6, distance = 1)
-   between bus request on port 'bgmodel_sortKey' (backsub_gmm_new_180110/core.cpp:209) and bus request on port 'bgmodel_sortKey' (backsub_gmm_new_180110/core.cpp:209).
-@I [SCHED-61] Pipelining result: Target II: 1, Final II: 7, Depth: 14.
+@I [SCHED-61] Pipelining loop 'memcpy.bgmodel.part2_bgmodel.gep'.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 3.
 @I [SCHED-61] Pipelining loop 'memcpy.frame_out.'.
 @I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 3.
 @I [SCHED-11] Finished scheduling.
-@I [HLS-111] Elapsed time: 0.268111 seconds; current memory usage: 148 MB.
+@I [HLS-111] Elapsed time: 0.159952 seconds; current memory usage: 146 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Exploring micro-architecture for module 'bgsub_Block_proc' 
 @I [HLS-10] ----------------------------------------------------------------
@@ -108,13 +77,13 @@ Copyright (C) 2015 Xilinx Inc. All rights reserved.
 @I [BIND-101] Exploring resource sharing.
 @I [BIND-101] Binding ...
 @I [BIND-100] Finished micro-architecture generation.
-@I [HLS-111] Elapsed time: 0.158475 seconds; current memory usage: 149 MB.
+@I [HLS-111] Elapsed time: 0.098725 seconds; current memory usage: 147 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Scheduling module 'bgsub' 
 @I [HLS-10] ----------------------------------------------------------------
 @I [SCHED-11] Starting scheduling ...
 @I [SCHED-11] Finished scheduling.
-@I [HLS-111] Elapsed time: 0.203596 seconds; current memory usage: 150 MB.
+@I [HLS-111] Elapsed time: 0.163334 seconds; current memory usage: 147 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Exploring micro-architecture for module 'bgsub' 
 @I [HLS-10] ----------------------------------------------------------------
@@ -123,7 +92,7 @@ Copyright (C) 2015 Xilinx Inc. All rights reserved.
 @I [BIND-101] Exploring resource sharing.
 @I [BIND-101] Binding ...
 @I [BIND-100] Finished micro-architecture generation.
-@I [HLS-111] Elapsed time: 0.052855 seconds; current memory usage: 150 MB.
+@I [HLS-111] Elapsed time: 0.047065 seconds; current memory usage: 147 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Generating RTL for module 'bgsub_process' 
 @I [HLS-10] ----------------------------------------------------------------
@@ -134,12 +103,12 @@ Copyright (C) 2015 Xilinx Inc. All rights reserved.
 @I [RTGEN-100] Generating core module 'bgsub_fsqrt_32ns_32ns_32_12': 1 instance(s).
 @I [RTGEN-100] Generating core module 'bgsub_sitofp_32ns_32_6': 1 instance(s).
 @I [RTGEN-100] Finished creating RTL model for 'bgsub_process'.
-@I [HLS-111] Elapsed time: 0.222728 seconds; current memory usage: 152 MB.
+@I [HLS-111] Elapsed time: 0.218194 seconds; current memory usage: 150 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Generating RTL for module 'bgsub_Block_proc' 
 @I [HLS-10] ----------------------------------------------------------------
 @I [RTGEN-100] Finished creating RTL model for 'bgsub_Block_proc'.
-@I [HLS-111] Elapsed time: 0.386024 seconds; current memory usage: 161 MB.
+@I [HLS-111] Elapsed time: 0.351128 seconds; current memory usage: 157 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Generating RTL for module 'bgsub' 
 @I [HLS-10] ----------------------------------------------------------------
@@ -148,18 +117,15 @@ Copyright (C) 2015 Xilinx Inc. All rights reserved.
 @I [RTGEN-500] Setting interface mode on port 'bgsub/frame_in' to 's_axilite & ap_none'.
 @I [RTGEN-500] Setting interface mode on port 'bgsub/frame_out' to 's_axilite & ap_none'.
 @I [RTGEN-500] Setting interface mode on port 'bgsub/init' to 's_axilite & ap_none'.
-@I [RTGEN-500] Setting interface mode on port 'bgsub/bgmodel_sortKey' to 's_axilite & ap_none'.
-@I [RTGEN-500] Setting interface mode on port 'bgsub/bgmodel_weight' to 's_axilite & ap_none'.
-@I [RTGEN-500] Setting interface mode on port 'bgsub/bgmodel_mean' to 's_axilite & ap_none'.
-@I [RTGEN-500] Setting interface mode on port 'bgsub/bgmodel_var' to 's_axilite & ap_none'.
+@I [RTGEN-500] Setting interface mode on port 'bgsub/bgmodel' to 's_axilite & ap_none'.
 @I [RTGEN-500] Setting interface mode on function 'bgsub' to 'ap_ctrl_hs'.
 @I [RTGEN-100] Finished creating RTL model for 'bgsub'.
-@I [HLS-111] Elapsed time: 0.373768 seconds; current memory usage: 167 MB.
-@I [RTMG-278] Implementing memory 'bgsub_Block_proc_part_bgmodel_sortKey_ram' using block RAMs.
+@I [HLS-111] Elapsed time: 0.263749 seconds; current memory usage: 161 MB.
+@I [RTMG-278] Implementing memory 'bgsub_Block_proc_part_bgmodel_ram' using block RAMs.
 @I [RTMG-278] Implementing memory 'bgsub_Block_proc_part_frame_in_ram' using block RAMs.
-@I [RTMG-278] Implementing memory 'bgsub_Block_proc_part_frame_out_ram' using block RAMs.
+@I [RTMG-278] Implementing memory 'bgsub_Block_proc_part_frame_out_ram' using distributed RAMs.
 @I [HLS-10] Finished generating all RTL models.
 @I [WSYSC-301] Generating RTL SystemC for 'bgsub'.
 @I [WVHDL-304] Generating RTL VHDL for 'bgsub'.
 @I [WVLOG-307] Generating RTL Verilog for 'bgsub'.
-@I [HLS-112] Total elapsed time: 23.971 seconds; peak memory usage: 167 MB.
+@I [HLS-112] Total elapsed time: 23.733 seconds; peak memory usage: 161 MB.

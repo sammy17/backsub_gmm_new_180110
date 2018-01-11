@@ -4,7 +4,7 @@ bgsub_fdiv_32ns_32ns_32_16
 bgsub_sitofp_32ns_32_6
 bgsub_fcmp_32ns_32ns_1_1
 bgsub_fsqrt_32ns_32ns_32_12
-bgsub_Block_proc_part_bgmodel_sortKey
+bgsub_Block_proc_part_bgmodel
 bgsub_Block_proc_part_frame_in
 bgsub_Block_proc_part_frame_out
 bgsub_AXILiteS_s_axi

@@ -16,12 +16,12 @@ const data_t minVar = defaultNoiseSigma*defaultNoiseSigma;
 
 void process(uint8_t frame_in[IMG_SIZE/PARTS],
              uint8_t frame_out[IMG_SIZE/PARTS],
-			 MixData bgmodel[BGM_SIZE/PARTS],
+			 float bgmodel[4*BGM_SIZE/PARTS],
 			 const data_t learningRate)
 {
     int x, y, k, k1, rows = HEIGHT/PARTS, cols = WIDTH;
     data_t alpha = learningRate, T = defaultBackgroundRatio, vT = defaultVarThreshold;
-    MixData* mptr = bgmodel;
+    data_t* mptr = bgmodel;
 
 
 
@@ -32,7 +32,7 @@ void process(uint8_t frame_in[IMG_SIZE/PARTS],
 
         if( alpha > 0 )
         {
-            for( x = 0; x < cols; x++, mptr += K)
+            for( x = 0; x < cols; x++, mptr += K*4)
             {
             	data_t wsum = 0;
             	data_t pix = src[x];
@@ -40,30 +40,30 @@ void process(uint8_t frame_in[IMG_SIZE/PARTS],
 
                 for( k = 0; k < K; k++ )
                 {
-                	data_t w = mptr[k].weight;
+                	data_t w = mptr[k*4+1];//weight;
                     wsum += w;
                     if( w < FLT_EPSILON )
                         break;
-                    data_t mu = mptr[k].mean;
-                    data_t var = mptr[k].var;
+                    data_t mu = mptr[k*4+2];//.mean;
+                    data_t var = mptr[k*4+3];//.var;
                     data_t diff = pix - mu;
                     data_t d2 = diff*diff;
                     if( d2 < vT*var )
                     {
                         wsum -= w;
                         data_t dw = alpha*(1.f - w);
-                        mptr[k].weight = w + dw;
-                        mptr[k].mean = mu + alpha*diff;
+                        mptr[k*4+1] = w + dw;
+                        mptr[k*4+2] = mu + alpha*diff;
                         var = std::max(var + alpha*(d2 - var), minVar);
-                        mptr[k].var = var;
-                        mptr[k].sortKey = w/std::sqrt(var);
+                        mptr[k*4+3] = var;
+                        mptr[k*4] = w/std::sqrt(var);
 
                         for( k1 = k-1; k1 >= 0; k1-- )
                         {
 #pragma HLS LOOP_TRIPCOUNT min=0 max=1 avg=1
-                            if( mptr[k1].sortKey >= mptr[k1+1].sortKey )
+                            if( mptr[k1*4] >= mptr[k1*4+1] )
                                 break;
-                            std::swap( mptr[k1], mptr[k1+1] );
+                            std::swap( mptr[k1*4], mptr[k1*4+1] );
                         }
 
                         kHit = k1+1;
@@ -73,19 +73,19 @@ void process(uint8_t frame_in[IMG_SIZE/PARTS],
 
                 if( kHit < 0 ) // no appropriate gaussian mixture found at all, remove the weakest mixture and create a new one
                 {
-                    kHit = k = std::min(k, K-1);
-                    wsum += w0 - mptr[k].weight;
-                    mptr[k].weight = w0;
-                    mptr[k].mean = pix;
-                    mptr[k].var = var0;
-                    mptr[k].sortKey = sk0;
+                    kHit = k = std::min(k, (K-1));
+                    wsum += w0 - mptr[k*4+1];//.weight;
+                    mptr[k*4+1] = w0;
+                    mptr[k*4+2] = pix;
+                    mptr[k*4+3] = var0;
+                    mptr[k*4] = sk0;
                 }
                 else
                 {
                 	for( ; k < K; k++ )
                 	{
 #pragma HLS LOOP_TRIPCOUNT min=1 max=2 avg=2
-                		wsum += mptr[k].weight;
+                		wsum += mptr[k*4+1];//.weight;
                 	}
                 }
 
@@ -94,8 +94,8 @@ void process(uint8_t frame_in[IMG_SIZE/PARTS],
                 wsum = 0;
                 for( k = 0; k < K; k++ )
                 {
-                    wsum += mptr[k].weight *= wscale;
-                    mptr[k].sortKey *= wscale;
+                    wsum += mptr[k*4+1] *= wscale;
+                    mptr[k*4] *= wscale;
                     if( wsum > T && kForeground < 0 )
                         kForeground = k+1;
                 }
@@ -105,17 +105,17 @@ void process(uint8_t frame_in[IMG_SIZE/PARTS],
         }
         else
         {
-            for( x = 0; x < cols; x++, mptr += K )
+            for( x = 0; x < cols; x++, mptr += K*4 )
             {
             	data_t pix = src[x];
                 int kHit = -1, kForeground = -1;
 
                 for( k = 0; k < K; k++ )
                 {
-                    if( mptr[k].weight < FLT_EPSILON )
+                    if( mptr[k*4+1] < FLT_EPSILON )
                         break;
-                    data_t mu = mptr[k].mean;
-                    data_t var = mptr[k].var;
+                    data_t mu = mptr[k*4+2];
+                    data_t var = mptr[k*4+3];
                     data_t diff = pix - mu;
                     data_t d2 = diff*diff;
                     if( d2 < vT*var )
@@ -130,7 +130,7 @@ void process(uint8_t frame_in[IMG_SIZE/PARTS],
                 	data_t wsum = 0;
                     for( k = 0; k < K; k++ )
                     {
-                        wsum += mptr[k].weight;
+                        wsum += mptr[k*4+1];
                         if( wsum > T )
                         {
                             kForeground = k+1;
@@ -148,21 +148,21 @@ void process(uint8_t frame_in[IMG_SIZE/PARTS],
 void bgsub(uint8_t frame_in[IMG_SIZE],
            uint8_t frame_out[IMG_SIZE],
 		   bool init,
-		   MixData bgmodel[BGM_SIZE])
+		   float bgmodel[4*BGM_SIZE])
 {
 #pragma HLS DATAFLOW
-#pragma HLS INTERFACE m_axi depth=153600 port=bgmodel offset=slave
+#pragma HLS INTERFACE m_axi depth=153600*4 port=bgmodel offset=slave
 #pragma HLS INTERFACE s_axilite depth=1 port=init
 #pragma HLS INTERFACE m_axi depth=76800 port=frame_out offset=slave
 #pragma HLS INTERFACE m_axi depth=76800 port=frame_in offset=slave
 
 
-    MixData part_bgmodel[BGM_SIZE/PARTS];
+    data_t part_bgmodel[4*BGM_SIZE/PARTS];
     uint8_t part_frame_in[IMG_SIZE/PARTS];
     uint8_t part_frame_out[IMG_SIZE/PARTS];
     data_t learningRate;
 
-    MixData part2_bgmodel[BGM_SIZE/PARTS];
+    data_t part2_bgmodel[4*BGM_SIZE/PARTS];
     uint8_t part2_frame_in[IMG_SIZE/PARTS];
     uint8_t part2_frame_out[IMG_SIZE/PARTS];
     data_t learningRate2;
@@ -170,13 +170,14 @@ void bgsub(uint8_t frame_in[IMG_SIZE],
     if( init )
     {
 
-        MixData tmp;
-        tmp.mean = 0;
-        tmp.var = 0;
-        tmp.sortKey = 0;
-        tmp.weight = 0;
-        for(int p=0;p<BGM_SIZE;p++)
-            bgmodel[p] = tmp;
+//        MixData tmp;
+//        tmp.mean = 0;
+//        tmp.var = 0;
+//        tmp.sortKey = 0;
+//        tmp.weight = 0;
+        for(int p=0;p<BGM_SIZE*4;p++)
+            bgmodel[p] = 0;
+//    	memset(bgmodel,0,sizeof(float)*BGM_SIZE*4);
 
         learningRate = 1;
         learningRate2 = 1;
@@ -191,9 +192,9 @@ void bgsub(uint8_t frame_in[IMG_SIZE],
     {
     	read_mem:{
         memcpy(part_frame_in,&frame_in[(IMG_SIZE/PARTS)*part],sizeof(uint8_t)*(IMG_SIZE/PARTS));
-        memcpy(part_bgmodel,&bgmodel[(BGM_SIZE/PARTS)*part],4*sizeof(data_t)*(BGM_SIZE/PARTS));
+        memcpy(part_bgmodel,&bgmodel[(4*BGM_SIZE/PARTS)*part],4*sizeof(data_t)*(BGM_SIZE/PARTS));
         memcpy(part2_frame_in,&frame_in[(IMG_SIZE/PARTS)*(part+1)],sizeof(uint8_t)*(IMG_SIZE/PARTS));
-        memcpy(part2_bgmodel,&bgmodel[(BGM_SIZE/PARTS)*(part+1)],4*sizeof(data_t)*(BGM_SIZE/PARTS));
+        memcpy(part2_bgmodel,&bgmodel[(4*BGM_SIZE/PARTS)*(part+1)],4*sizeof(data_t)*(BGM_SIZE/PARTS));
     	}
 
     	processing:{
@@ -204,9 +205,9 @@ void bgsub(uint8_t frame_in[IMG_SIZE],
 
 
     	write_mem:{
-        memcpy(&bgmodel[(BGM_SIZE/PARTS)*part],part_bgmodel,4*sizeof(data_t)*(BGM_SIZE/PARTS));
+        memcpy(&bgmodel[(4*BGM_SIZE/PARTS)*part],part_bgmodel,4*sizeof(data_t)*(BGM_SIZE/PARTS));
         memcpy(&frame_out[(IMG_SIZE/PARTS)*part],part_frame_out,sizeof(uint8_t)*(IMG_SIZE/PARTS));
-        memcpy(&bgmodel[(BGM_SIZE/PARTS)*(part+1)],part2_bgmodel,4*sizeof(data_t)*(BGM_SIZE/PARTS));
+        memcpy(&bgmodel[(4*BGM_SIZE/PARTS)*(part+1)],part2_bgmodel,4*sizeof(data_t)*(BGM_SIZE/PARTS));
         memcpy(&frame_out[(IMG_SIZE/PARTS)*(part+1)],part2_frame_out,sizeof(uint8_t)*(IMG_SIZE/PARTS));
     	}
 

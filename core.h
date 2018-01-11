@@ -9,11 +9,11 @@
 using namespace std;
 
 #define WIDTH 320
-#define HEIGHT 240
+#define HEIGHT 240/2
 #define IMG_SIZE WIDTH*HEIGHT
 #define K  2 // no of gaussian mxitures
 #define BGM_SIZE IMG_SIZE*K
-#define PARTS 60
+#define PARTS 120
 typedef float data_t;
 
 
@@ -33,9 +33,9 @@ struct MixData
 void bgsub(uint8_t frame_in[IMG_SIZE],
            uint8_t frame_out[IMG_SIZE],
 		   bool init,
-		   MixData bgmodel[BGM_SIZE]);
+		   data_t bgmodel[4*BGM_SIZE]);
 
 void process(uint8_t frame_in[IMG_SIZE/PARTS],
              uint8_t frame_out[IMG_SIZE/PARTS],
-			 MixData bgmodel[BGM_SIZE/PARTS],
+			 float bgmodel[4*BGM_SIZE/PARTS],
 			 const data_t learningRate);

@@ -9,8 +9,8 @@
 module bgsub_Block_proc_part_frame_in_ram (addr0, ce0, d0, we0, q0,  clk);
 
 parameter DWIDTH = 8;
-parameter AWIDTH = 11;
-parameter MEM_SIZE = 1280;
+parameter AWIDTH = 9;
+parameter MEM_SIZE = 320;
 
 input[AWIDTH-1:0] addr0;
 input ce0;
@@ -53,8 +53,8 @@ module bgsub_Block_proc_part_frame_in(
     q0);
 
 parameter DataWidth = 32'd8;
-parameter AddressRange = 32'd1280;
-parameter AddressWidth = 32'd11;
+parameter AddressRange = 32'd320;
+parameter AddressWidth = 32'd9;
 input reset;
 input clk;
 input[AddressWidth - 1:0] address0;

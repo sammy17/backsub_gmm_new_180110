@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'bgsub_process'
 ================================================================
-* Date:           Thu Jan 11 21:03:38 2018
+* Date:           Fri Jan 12 01:07:13 2018
 
 * Version:        2015.4 (Build 1412921 on Wed Nov 18 09:58:55 AM 2015)
 * Project:        backsub_gmm_new_180110
@@ -25,32 +25,32 @@
 
 + Latency (clock cycles): 
     * Summary: 
-    +-------+--------+-------+--------+---------+
-    |     Latency    |    Interval    | Pipeline|
-    |  min  |   max  |  min  |   max  |   Type  |
-    +-------+--------+-------+--------+---------+
-    |  34570|  225290|  34570|  225290|   none  |
-    +-------+--------+-------+--------+---------+
+    +------+-------+------+-------+---------+
+    |    Latency   |   Interval   | Pipeline|
+    |  min |  max  |  min |  max  |   Type  |
+    +------+-------+------+-------+---------+
+    |  8644|  56004|  8644|  56004|   none  |
+    +------+-------+------+-------+---------+
 
     + Detail: 
         * Instance: 
         N/A
 
         * Loop: 
-        +-----------------+-------+--------+--------------+-----------+-----------+-------+----------+
-        |                 |     Latency    |   Iteration  |  Initiation Interval  |  Trip |          |
-        |    Loop Name    |  min  |   max  |    Latency   |  achieved |   target  | Count | Pipelined|
-        +-----------------+-------+--------+--------------+-----------+-----------+-------+----------+
-        |- Loop 1         |  34568|  225288| 8642 ~ 56322 |          -|          -|      4|    no    |
-        | + Loop 1.1      |  24960|   56320|   78 ~ 176   |          -|          -|    320|    no    |
-        |  ++ Loop 1.1.1  |     19|      56|            19|          -|          -| 1 ~ 2 |    no    |
-        |  ++ Loop 1.1.2  |      0|       9|             6|          -|          -| 0 ~ 1 |    no    |
-        |  ++ Loop 1.1.3  |      7|      14|             7|          -|          -| 1 ~ 2 |    no    |
-        |  ++ Loop 1.1.4  |     24|      24|            12|          -|          -|      2|    no    |
-        | + Loop 1.2      |   8640|   25920|    27 ~ 81   |          -|          -|    320|    no    |
-        |  ++ Loop 1.2.1  |     15|      44|            15|          -|          -| 1 ~ 2 |    no    |
-        |  ++ Loop 1.2.2  |      8|      23|             8|          -|          -| 1 ~ 2 |    no    |
-        +-----------------+-------+--------+--------------+-----------+-----------+-------+----------+
+        +-----------------+-------+-------+--------------+-----------+-----------+-------+----------+
+        |                 |    Latency    |   Iteration  |  Initiation Interval  |  Trip |          |
+        |    Loop Name    |  min  |  max  |    Latency   |  achieved |   target  | Count | Pipelined|
+        +-----------------+-------+-------+--------------+-----------+-----------+-------+----------+
+        |- Loop 1         |   8642|  56002| 8642 ~ 56002 |          -|          -|      1|    no    |
+        | + Loop 1.1      |  24960|  56000|   78 ~ 175   |          -|          -|    320|    no    |
+        |  ++ Loop 1.1.1  |     19|     56|            19|          -|          -| 1 ~ 2 |    no    |
+        |  ++ Loop 1.1.2  |      0|      8|             5|          -|          -| 0 ~ 1 |    no    |
+        |  ++ Loop 1.1.3  |      7|     14|             7|          -|          -| 1 ~ 2 |    no    |
+        |  ++ Loop 1.1.4  |     24|     24|            12|          -|          -|      2|    no    |
+        | + Loop 1.2      |   8640|  25920|    27 ~ 81   |          -|          -|    320|    no    |
+        |  ++ Loop 1.2.1  |     15|     44|            15|          -|          -| 1 ~ 2 |    no    |
+        |  ++ Loop 1.2.2  |      8|     23|             8|          -|          -| 1 ~ 2 |    no    |
+        +-----------------+-------+-------+--------------+-----------+-----------+-------+----------+
 
 ============================================================
 + Verbose Summary: Synthesis Manager
@@ -78,7 +78,7 @@ IsGatedGlobalClock: 0
 ============================================================
 + Verbose Summary: Schedule
 ============================================================
-* Number of FSM states: 158
+* Number of FSM states: 157
 * Pipeline: 0
 * Dataflow Pipeline: 0
 
@@ -88,11 +88,11 @@ IsGatedGlobalClock: 0
 2 --> 
 	3  / true
 3 --> 
-	4  / (!exitcond1)
+	4  / (!y)
 4 --> 
-	5  / (!tmp_s & !exitcond)
-	37  / (tmp_s & !exitcond2)
-	3  / (!tmp_s & exitcond) | (tmp_s & exitcond2)
+	5  / (!tmp_4 & !exitcond)
+	37  / (tmp_4 & !exitcond2)
+	3  / (!tmp_4 & exitcond) | (tmp_4 & exitcond2)
 5 --> 
 	6  / true
 6 --> 
@@ -108,13 +108,13 @@ IsGatedGlobalClock: 0
 11 --> 
 	12  / true
 12 --> 
-	13  / (!tmp_16)
-	14  / (tmp_16)
+	13  / (!tmp_7)
+	14  / (tmp_7)
 13 --> 
 	14  / true
 14 --> 
-	15  / (!tmp_16 & !tmp_34)
-	27  / (tmp_16) | (tmp_34)
+	15  / (!tmp_7 & !tmp_38)
+	27  / (tmp_7) | (tmp_38)
 15 --> 
 	16  / true
 16 --> 
@@ -138,14 +138,14 @@ IsGatedGlobalClock: 0
 25 --> 
 	26  / true
 26 --> 
-	12  / (!tmp_52)
-	27  / (tmp_52)
+	12  / (!tmp_66)
+	27  / (tmp_66)
 27 --> 
-	28  / (!tmp_58)
-	35  / (tmp_58)
+	28  / (!tmp_72)
+	35  / (tmp_72)
 28 --> 
-	29  / (!tmp_59)
-	35  / (tmp_59)
+	29  / (!tmp_74)
+	35  / (tmp_74)
 29 --> 
 	30  / true
 30 --> 
@@ -159,8 +159,8 @@ IsGatedGlobalClock: 0
 34 --> 
 	35  / true
 35 --> 
-	28  / (!tmp_58 & !tmp_59 & !tmp_71)
-	36  / (tmp_58) | (tmp_59) | (tmp_71)
+	28  / (!tmp_72 & !tmp_74 & !tmp_85)
+	36  / (tmp_72) | (tmp_74) | (tmp_85)
 36 --> 
 	4  / true
 37 --> 
@@ -178,8 +178,8 @@ IsGatedGlobalClock: 0
 43 --> 
 	44  / true
 44 --> 
-	45  / (!tmp_7)
-	110  / (tmp_7)
+	45  / (!tmp_6)
+	110  / (tmp_6)
 45 --> 
 	46  / true
 46 --> 
@@ -193,8 +193,8 @@ IsGatedGlobalClock: 0
 50 --> 
 	51  / true
 51 --> 
-	52  / (!tmp_25)
-	110  / (tmp_25)
+	52  / (!tmp_23)
+	110  / (tmp_23)
 52 --> 
 	53  / true
 53 --> 
@@ -216,8 +216,8 @@ IsGatedGlobalClock: 0
 61 --> 
 	62  / true
 62 --> 
-	44  / (!tmp_43)
-	63  / (tmp_43)
+	44  / (!tmp_55)
+	63  / (tmp_55)
 63 --> 
 	64  / true
 64 --> 
@@ -307,23 +307,23 @@ IsGatedGlobalClock: 0
 106 --> 
 	107  / true
 107 --> 
-	108  / (tmp_18)
-	110  / (!tmp_18)
+	108  / (tmp_25)
+	110  / (!tmp_25)
 108 --> 
 	109  / true
 109 --> 
 	110  / true
 110 --> 
-	111  / (!tmp_7 & !tmp_25 & tmp_18 & !tmp_72)
-	113  / (tmp_7 & !tmp_74) | (tmp_25 & !tmp_74) | (!tmp_18 & !tmp_74) | (tmp_72 & !tmp_74)
-	120  / (tmp_7 & tmp_74) | (tmp_25 & tmp_74) | (!tmp_18 & tmp_74) | (tmp_72 & tmp_74)
+	111  / (!tmp_6 & !tmp_23 & tmp_25 & !tmp_90)
+	112  / (tmp_6 & !tmp_92) | (tmp_23 & !tmp_92) | (!tmp_25 & !tmp_92) | (tmp_90 & !tmp_92)
+	119  / (tmp_6 & tmp_92) | (tmp_23 & tmp_92) | (!tmp_25 & tmp_92) | (tmp_90 & tmp_92)
 111 --> 
-	112  / true
-112 --> 
 	107  / true
+112 --> 
+	113  / (!exitcond4)
+	130  / (exitcond4)
 113 --> 
-	114  / (!exitcond4)
-	131  / (exitcond4)
+	114  / true
 114 --> 
 	115  / true
 115 --> 
@@ -333,9 +333,9 @@ IsGatedGlobalClock: 0
 117 --> 
 	118  / true
 118 --> 
-	119  / true
+	112  / true
 119 --> 
-	113  / true
+	120  / true
 120 --> 
 	121  / true
 121 --> 
@@ -357,9 +357,9 @@ IsGatedGlobalClock: 0
 129 --> 
 	130  / true
 130 --> 
-	131  / true
+	131  / (tmp_92) | (exitcond4)
 131 --> 
-	132  / (tmp_74) | (exitcond4)
+	132  / true
 132 --> 
 	133  / true
 133 --> 
@@ -389,10 +389,10 @@ IsGatedGlobalClock: 0
 145 --> 
 	146  / true
 146 --> 
-	147  / true
-147 --> 
-	148  / (!exitcond3)
+	147  / (!exitcond3)
 	4  / (exitcond3)
+147 --> 
+	148  / true
 148 --> 
 	149  / true
 149 --> 
@@ -412,9 +412,7 @@ IsGatedGlobalClock: 0
 156 --> 
 	157  / true
 157 --> 
-	158  / true
-158 --> 
-	147  / true
+	146  / true
 * FSM state operations: 
 
  <State 1>: 1.04ns
@@ -429,66 +427,51 @@ ST_2: learningRate_to_int [1/1] 0.00ns
 ST_2: tmp [1/1] 0.00ns
 :2  %tmp = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %learningRate_to_int, i32 23, i32 30)
 
-ST_2: tmp_3 [1/1] 0.00ns
-:3  %tmp_3 = trunc i32 %learningRate_to_int to i23
+ST_2: tmp_1 [1/1] 0.00ns
+:3  %tmp_1 = trunc i32 %learningRate_to_int to i23
 
 ST_2: notlhs [1/1] 2.00ns
 :4  %notlhs = icmp ne i8 %tmp, -1
 
 ST_2: notrhs [1/1] 2.39ns
-:5  %notrhs = icmp eq i23 %tmp_3, 0
+:5  %notrhs = icmp eq i23 %tmp_1, 0
 
-ST_2: tmp_5 [1/1] 1.37ns
-:6  %tmp_5 = or i1 %notrhs, %notlhs
+ST_2: tmp_2 [1/1] 1.37ns
+:6  %tmp_2 = or i1 %notrhs, %notlhs
 
-ST_2: tmp_9 [1/1] 6.79ns
-:7  %tmp_9 = fcmp ogt float %learningRate_read, 0.000000e+00
+ST_2: tmp_3 [1/1] 6.79ns
+:7  %tmp_3 = fcmp ogt float %learningRate_read, 0.000000e+00
 
-ST_2: tmp_s [1/1] 1.37ns
-:8  %tmp_s = and i1 %tmp_5, %tmp_9
+ST_2: tmp_4 [1/1] 1.37ns
+:8  %tmp_4 = and i1 %tmp_2, %tmp_3
 
-ST_2: stg_168 [1/1] 1.57ns
+ST_2: stg_167 [1/1] 1.57ns
 :9  br label %1
 
 
- <State 3>: 1.62ns
+ <State 3>: 1.57ns
 ST_3: mptr_0_rec [1/1] 0.00ns
 :0  %mptr_0_rec = phi i12 [ 0, %0 ], [ %mptr_3_rec, %.loopexit42 ]
 
 ST_3: y [1/1] 0.00ns
-:1  %y = phi i3 [ 0, %0 ], [ %y_1, %.loopexit42 ]
+:1  %y = phi i1 [ false, %0 ], [ true, %.loopexit42 ]
 
-ST_3: exitcond1 [1/1] 1.62ns
-:2  %exitcond1 = icmp eq i3 %y, -4
+ST_3: stg_170 [1/1] 0.00ns
+:2  call void (...)* @_ssdm_op_SpecLoopTripCount(i64 1, i64 1, i64 1)
 
-ST_3: stg_172 [1/1] 0.00ns
-:3  call void (...)* @_ssdm_op_SpecLoopTripCount(i64 4, i64 4, i64 4)
+ST_3: stg_171 [1/1] 0.00ns
+:3  br i1 %y, label %22, label %2
 
-ST_3: y_1 [1/1] 0.80ns
-:4  %y_1 = add i3 %y, 1
+ST_3: stg_172 [1/1] 1.57ns
+:0  br i1 %tmp_4, label %.preheader46, label %.preheader41
 
-ST_3: stg_174 [1/1] 0.00ns
-:5  br i1 %exitcond1, label %22, label %2
-
-ST_3: tmp_6 [1/1] 0.00ns
-:0  %tmp_6 = trunc i3 %y to i2
-
-ST_3: tmp_1 [1/1] 0.00ns
-:1  %tmp_1 = call i10 @_ssdm_op_BitConcatenate.i10.i2.i2.i6(i2 %tmp_6, i2 %tmp_6, i6 0)
-
-ST_3: tmp_2_cast [1/1] 0.00ns
-:2  %tmp_2_cast = zext i10 %tmp_1 to i11
-
-ST_3: stg_178 [1/1] 1.57ns
-:3  br i1 %tmp_s, label %.preheader46, label %.preheader41
-
-ST_3: stg_179 [1/1] 0.00ns
+ST_3: stg_173 [1/1] 0.00ns
 :0  ret void
 
 
- <State 4>: 4.55ns
+ <State 4>: 2.71ns
 ST_4: mptr_2_rec [1/1] 0.00ns
-.preheader41:0  %mptr_2_rec = phi i10 [ %p_rec, %.loopexit ], [ 0, %2 ]
+.preheader41:0  %mptr_2_rec = phi i12 [ %p_rec, %.loopexit ], [ 0, %2 ]
 
 ST_4: x_1 [1/1] 0.00ns
 .preheader41:1  %x_1 = phi i9 [ %x_2, %.loopexit ], [ 0, %2 ]
@@ -496,32 +479,26 @@ ST_4: x_1 [1/1] 0.00ns
 ST_4: exitcond [1/1] 2.03ns
 .preheader41:2  %exitcond = icmp eq i9 %x_1, -192
 
-ST_4: stg_183 [1/1] 0.00ns
+ST_4: stg_177 [1/1] 0.00ns
 .preheader41:3  call void (...)* @_ssdm_op_SpecLoopTripCount(i64 320, i64 320, i64 320)
 
 ST_4: x_2 [1/1] 1.84ns
 .preheader41:4  %x_2 = add i9 %x_1, 1
 
-ST_4: stg_185 [1/1] 0.00ns
+ST_4: stg_179 [1/1] 0.00ns
 .preheader41:5  br i1 %exitcond, label %.loopexit42, label %16
 
-ST_4: tmp_4_cast [1/1] 0.00ns
-:0  %tmp_4_cast = zext i9 %x_1 to i11
-
-ST_4: sum2 [1/1] 1.84ns
-:1  %sum2 = add i11 %tmp_2_cast, %tmp_4_cast
-
 ST_4: sum2_cast [1/1] 0.00ns
-:2  %sum2_cast = zext i11 %sum2 to i64
+:0  %sum2_cast = zext i9 %x_1 to i64
 
 ST_4: frame_in_addr_1 [1/1] 0.00ns
-:3  %frame_in_addr_1 = getelementptr [1280 x i8]* %frame_in, i64 0, i64 %sum2_cast
+:1  %frame_in_addr_1 = getelementptr [320 x i8]* %frame_in, i64 0, i64 %sum2_cast
 
 ST_4: frame_in_load_1 [2/2] 2.71ns
-:4  %frame_in_load_1 = load i8* %frame_in_addr_1, align 1
+:2  %frame_in_load_1 = load i8* %frame_in_addr_1, align 1
 
 ST_4: mptr_1_rec [1/1] 0.00ns
-.preheader46:0  %mptr_1_rec = phi i10 [ %p_rec1, %15 ], [ 0, %2 ]
+.preheader46:0  %mptr_1_rec = phi i12 [ %p_rec1, %15 ], [ 0, %2 ]
 
 ST_4: x [1/1] 0.00ns
 .preheader46:1  %x = phi i9 [ %x_3, %15 ], [ 0, %2 ]
@@ -529,484 +506,508 @@ ST_4: x [1/1] 0.00ns
 ST_4: exitcond2 [1/1] 2.03ns
 .preheader46:2  %exitcond2 = icmp eq i9 %x, -192
 
-ST_4: stg_194 [1/1] 0.00ns
+ST_4: stg_186 [1/1] 0.00ns
 .preheader46:3  call void (...)* @_ssdm_op_SpecLoopTripCount(i64 320, i64 320, i64 320)
 
 ST_4: x_3 [1/1] 1.84ns
 .preheader46:4  %x_3 = add i9 %x, 1
 
-ST_4: stg_196 [1/1] 0.00ns
+ST_4: stg_188 [1/1] 0.00ns
 .preheader46:5  br i1 %exitcond2, label %.loopexit42, label %3
 
-ST_4: tmp_3_cast [1/1] 0.00ns
-:0  %tmp_3_cast = zext i9 %x to i11
-
-ST_4: sum [1/1] 1.84ns
-:1  %sum = add i11 %tmp_2_cast, %tmp_3_cast
-
 ST_4: sum_cast [1/1] 0.00ns
-:2  %sum_cast = zext i11 %sum to i64
+:0  %sum_cast = zext i9 %x to i64
 
 ST_4: frame_in_addr [1/1] 0.00ns
-:3  %frame_in_addr = getelementptr [1280 x i8]* %frame_in, i64 0, i64 %sum_cast
+:1  %frame_in_addr = getelementptr [320 x i8]* %frame_in, i64 0, i64 %sum_cast
 
 ST_4: frame_in_load [2/2] 2.71ns
-:4  %frame_in_load = load i8* %frame_in_addr, align 1
+:2  %frame_in_load = load i8* %frame_in_addr, align 1
 
 ST_4: mptr_3_rec [1/1] 1.84ns
-.loopexit42:0  %mptr_3_rec = add i12 %mptr_0_rec, 640
+.loopexit42:0  %mptr_3_rec = add i12 %mptr_0_rec, -1536
 
-ST_4: stg_203 [1/1] 0.00ns
+ST_4: stg_193 [1/1] 0.00ns
 .loopexit42:1  br label %1
 
 
  <State 5>: 2.71ns
 ST_5: frame_in_load_1 [1/2] 2.71ns
-:4  %frame_in_load_1 = load i8* %frame_in_addr_1, align 1
+:2  %frame_in_load_1 = load i8* %frame_in_addr_1, align 1
 
 
  <State 6>: 6.41ns
 ST_6: pix_s [1/1] 0.00ns
-:5  %pix_s = zext i8 %frame_in_load_1 to i32
+:3  %pix_s = zext i8 %frame_in_load_1 to i32
 
 ST_6: pix_1 [6/6] 6.41ns
-:6  %pix_1 = sitofp i32 %pix_s to float
+:4  %pix_1 = sitofp i32 %pix_s to float
 
 
  <State 7>: 6.41ns
 ST_7: pix_1 [5/6] 6.41ns
-:6  %pix_1 = sitofp i32 %pix_s to float
+:4  %pix_1 = sitofp i32 %pix_s to float
 
 
  <State 8>: 6.41ns
 ST_8: pix_1 [4/6] 6.41ns
-:6  %pix_1 = sitofp i32 %pix_s to float
+:4  %pix_1 = sitofp i32 %pix_s to float
 
 
  <State 9>: 6.41ns
 ST_9: pix_1 [3/6] 6.41ns
-:6  %pix_1 = sitofp i32 %pix_s to float
+:4  %pix_1 = sitofp i32 %pix_s to float
 
 
  <State 10>: 6.41ns
 ST_10: pix_1 [2/6] 6.41ns
-:6  %pix_1 = sitofp i32 %pix_s to float
+:4  %pix_1 = sitofp i32 %pix_s to float
 
 
  <State 11>: 6.41ns
 ST_11: pix_1 [1/6] 6.41ns
-:6  %pix_1 = sitofp i32 %pix_s to float
-
-ST_11: mptr_2_rec_cast [1/1] 0.00ns
-:7  %mptr_2_rec_cast = zext i10 %mptr_2_rec to i12
+:4  %pix_1 = sitofp i32 %pix_s to float
 
 ST_11: mptr_2_sum [1/1] 1.84ns
-:8  %mptr_2_sum = add i12 %mptr_0_rec, %mptr_2_rec_cast
+:5  %mptr_2_sum = add i12 %mptr_0_rec, %mptr_2_rec
 
-ST_11: stg_214 [1/1] 1.57ns
-:9  br label %17
+ST_11: stg_203 [1/1] 1.57ns
+:6  br label %17
 
 
- <State 12>: 4.55ns
+ <State 12>: 2.71ns
 ST_12: kHit_4 [1/1] 0.00ns
 :0  %kHit_4 = phi i2 [ 0, %16 ], [ %k_4, %19 ]
 
-ST_12: tmp_16 [1/1] 0.00ns
-:1  %tmp_16 = call i1 @_ssdm_op_BitSelect.i1.i2.i32(i2 %kHit_4, i32 1)
+ST_12: kHit_4_cast [1/1] 0.00ns
+:1  %kHit_4_cast = zext i2 %kHit_4 to i3
 
-ST_12: stg_217 [1/1] 0.00ns
-:2  call void (...)* @_ssdm_op_SpecLoopTripCount(i64 1, i64 2, i64 1)
+ST_12: tmp_7 [1/1] 0.00ns
+:2  %tmp_7 = call i1 @_ssdm_op_BitSelect.i1.i2.i32(i2 %kHit_4, i32 1)
+
+ST_12: stg_207 [1/1] 0.00ns
+:3  call void (...)* @_ssdm_op_SpecLoopTripCount(i64 1, i64 2, i64 1)
 
 ST_12: k_4 [1/1] 0.80ns
-:3  %k_4 = add i2 %kHit_4, 1
+:4  %k_4 = add i2 %kHit_4, 1
 
-ST_12: stg_219 [1/1] 0.00ns
-:4  br i1 %tmp_16, label %.loopexit7.loopexit, label %18
+ST_12: stg_209 [1/1] 0.00ns
+:5  br i1 %tmp_7, label %.loopexit7.loopexit, label %18
 
-ST_12: tmp_5_cast [1/1] 0.00ns
-:0  %tmp_5_cast = zext i2 %kHit_4 to i12
+ST_12: tmp_29 [1/1] 0.00ns
+:0  %tmp_29 = trunc i2 %kHit_4 to i1
 
-ST_12: sum3 [1/1] 1.84ns
-:1  %sum3 = add i12 %mptr_2_sum, %tmp_5_cast
+ST_12: tmp_s [1/1] 0.00ns
+:1  %tmp_s = call i3 @_ssdm_op_BitConcatenate.i3.i1.i2(i1 %tmp_29, i2 0)
+
+ST_12: tmp_28 [1/1] 0.00ns
+:2  %tmp_28 = or i3 %tmp_s, 1
+
+ST_12: tmp_30 [1/1] 0.00ns
+:3  %tmp_30 = call i9 @_ssdm_op_PartSelect.i9.i12.i32.i32(i12 %mptr_2_sum, i32 3, i32 11)
+
+ST_12: sum3 [1/1] 0.00ns
+:4  %sum3 = call i12 @_ssdm_op_BitConcatenate.i12.i9.i3(i9 %tmp_30, i3 %tmp_28)
 
 ST_12: sum3_cast [1/1] 0.00ns
-:2  %sum3_cast = zext i12 %sum3 to i64
+:5  %sum3_cast = zext i12 %sum3 to i64
 
-ST_12: bgmodel_weight_addr_1 [1/1] 0.00ns
-:3  %bgmodel_weight_addr_1 = getelementptr [2560 x float]* %bgmodel_weight, i64 0, i64 %sum3_cast
+ST_12: bgmodel_addr_1 [1/1] 0.00ns
+:6  %bgmodel_addr_1 = getelementptr [2560 x float]* %bgmodel, i64 0, i64 %sum3_cast
 
-ST_12: bgmodel_weight_load [2/2] 2.71ns
-:4  %bgmodel_weight_load = load float* %bgmodel_weight_addr_1, align 4
+ST_12: bgmodel_load [2/2] 2.71ns
+:7  %bgmodel_load = load float* %bgmodel_addr_1, align 4
 
 
  <State 13>: 2.71ns
-ST_13: bgmodel_weight_load [1/2] 2.71ns
-:4  %bgmodel_weight_load = load float* %bgmodel_weight_addr_1, align 4
+ST_13: bgmodel_load [1/2] 2.71ns
+:7  %bgmodel_load = load float* %bgmodel_addr_1, align 4
 
 
  <State 14>: 8.16ns
-ST_14: bgmodel_weight_load_to_int [1/1] 0.00ns
-:5  %bgmodel_weight_load_to_int = bitcast float %bgmodel_weight_load to i32
+ST_14: bgmodel_load_to_int [1/1] 0.00ns
+:8  %bgmodel_load_to_int = bitcast float %bgmodel_load to i32
 
-ST_14: tmp_26 [1/1] 0.00ns
-:6  %tmp_26 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %bgmodel_weight_load_to_int, i32 23, i32 30)
+ST_14: tmp_31 [1/1] 0.00ns
+:9  %tmp_31 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %bgmodel_load_to_int, i32 23, i32 30)
 
-ST_14: tmp_27 [1/1] 0.00ns
-:7  %tmp_27 = trunc i32 %bgmodel_weight_load_to_int to i23
+ST_14: tmp_33 [1/1] 0.00ns
+:10  %tmp_33 = trunc i32 %bgmodel_load_to_int to i23
 
 ST_14: notlhs2 [1/1] 2.00ns
-:8  %notlhs2 = icmp ne i8 %tmp_26, -1
+:11  %notlhs2 = icmp ne i8 %tmp_31, -1
 
 ST_14: notrhs2 [1/1] 2.39ns
-:9  %notrhs2 = icmp eq i23 %tmp_27, 0
+:12  %notrhs2 = icmp eq i23 %tmp_33, 0
 
-ST_14: tmp_30 [1/1] 1.37ns
-:10  %tmp_30 = or i1 %notrhs2, %notlhs2
+ST_14: tmp_35 [1/1] 1.37ns
+:13  %tmp_35 = or i1 %notrhs2, %notlhs2
 
-ST_14: tmp_33 [1/1] 6.79ns
-:11  %tmp_33 = fcmp olt float %bgmodel_weight_load, 0x3E80000000000000
+ST_14: tmp_36 [1/1] 6.79ns
+:14  %tmp_36 = fcmp olt float %bgmodel_load, 0x3E80000000000000
 
-ST_14: tmp_34 [1/1] 1.37ns
-:12  %tmp_34 = and i1 %tmp_30, %tmp_33
+ST_14: tmp_38 [1/1] 1.37ns
+:15  %tmp_38 = and i1 %tmp_35, %tmp_36
 
-ST_14: stg_234 [1/1] 0.00ns
-:13  br i1 %tmp_34, label %.loopexit7.loopexit, label %19
+ST_14: stg_227 [1/1] 0.00ns
+:16  br i1 %tmp_38, label %.loopexit7.loopexit, label %19
 
-ST_14: bgmodel_mean_addr_1 [1/1] 0.00ns
-:0  %bgmodel_mean_addr_1 = getelementptr [2560 x float]* %bgmodel_mean, i64 0, i64 %sum3_cast
+ST_14: tmp_56 [1/1] 0.00ns
+:0  %tmp_56 = or i3 %tmp_s, 2
+
+ST_14: sum6 [1/1] 0.00ns
+:1  %sum6 = call i12 @_ssdm_op_BitConcatenate.i12.i9.i3(i9 %tmp_30, i3 %tmp_56)
+
+ST_14: sum6_cast [1/1] 0.00ns
+:2  %sum6_cast = zext i12 %sum6 to i64
+
+ST_14: bgmodel_addr_4 [1/1] 0.00ns
+:3  %bgmodel_addr_4 = getelementptr [2560 x float]* %bgmodel, i64 0, i64 %sum6_cast
 
 ST_14: mu_1 [2/2] 2.71ns
-:1  %mu_1 = load float* %bgmodel_mean_addr_1, align 4
+:4  %mu_1 = load float* %bgmodel_addr_4, align 4
 
-ST_14: bgmodel_var_addr_1 [1/1] 0.00ns
-:2  %bgmodel_var_addr_1 = getelementptr [2560 x float]* %bgmodel_var, i64 0, i64 %sum3_cast
-
-ST_14: var_1 [2/2] 2.71ns
-:3  %var_1 = load float* %bgmodel_var_addr_1, align 4
-
-ST_14: stg_239 [1/1] 1.57ns
+ST_14: stg_233 [1/1] 1.57ns
 .loopexit7.loopexit:0  br label %.loopexit7
 
 
  <State 15>: 2.71ns
 ST_15: mu_1 [1/2] 2.71ns
-:1  %mu_1 = load float* %bgmodel_mean_addr_1, align 4
-
-ST_15: var_1 [1/2] 2.71ns
-:3  %var_1 = load float* %bgmodel_var_addr_1, align 4
+:4  %mu_1 = load float* %bgmodel_addr_4, align 4
 
 
  <State 16>: 7.26ns
 ST_16: diff_1 [5/5] 7.26ns
-:4  %diff_1 = fsub float %pix_1, %mu_1
+:10  %diff_1 = fsub float %pix_1, %mu_1
 
 
  <State 17>: 7.26ns
 ST_17: diff_1 [4/5] 7.26ns
-:4  %diff_1 = fsub float %pix_1, %mu_1
+:10  %diff_1 = fsub float %pix_1, %mu_1
 
 
  <State 18>: 7.26ns
 ST_18: diff_1 [3/5] 7.26ns
-:4  %diff_1 = fsub float %pix_1, %mu_1
+:10  %diff_1 = fsub float %pix_1, %mu_1
 
 
  <State 19>: 7.26ns
 ST_19: diff_1 [2/5] 7.26ns
-:4  %diff_1 = fsub float %pix_1, %mu_1
+:10  %diff_1 = fsub float %pix_1, %mu_1
 
 
  <State 20>: 7.26ns
+ST_20: tmp_57 [1/1] 0.00ns
+:5  %tmp_57 = or i3 %tmp_s, 3
+
+ST_20: sum7 [1/1] 0.00ns
+:6  %sum7 = call i12 @_ssdm_op_BitConcatenate.i12.i9.i3(i9 %tmp_30, i3 %tmp_57)
+
+ST_20: sum7_cast [1/1] 0.00ns
+:7  %sum7_cast = zext i12 %sum7 to i64
+
+ST_20: bgmodel_addr_5 [1/1] 0.00ns
+:8  %bgmodel_addr_5 = getelementptr [2560 x float]* %bgmodel, i64 0, i64 %sum7_cast
+
+ST_20: var_1 [2/2] 2.71ns
+:9  %var_1 = load float* %bgmodel_addr_5, align 4
+
 ST_20: diff_1 [1/5] 7.26ns
-:4  %diff_1 = fsub float %pix_1, %mu_1
+:10  %diff_1 = fsub float %pix_1, %mu_1
 
 
- <State 21>: 5.70ns
+ <State 21>: 8.41ns
+ST_21: var_1 [1/2] 2.71ns
+:9  %var_1 = load float* %bgmodel_addr_5, align 4
+
 ST_21: d2_1 [4/4] 5.70ns
-:5  %d2_1 = fmul float %diff_1, %diff_1
+:11  %d2_1 = fmul float %diff_1, %diff_1
 
-ST_21: tmp_4 [4/4] 5.70ns
-:6  %tmp_4 = fmul float %var_1, 6.250000e+00
+ST_21: tmp_14 [4/4] 5.70ns
+:12  %tmp_14 = fmul float %var_1, 6.250000e+00
 
 
  <State 22>: 5.70ns
 ST_22: d2_1 [3/4] 5.70ns
-:5  %d2_1 = fmul float %diff_1, %diff_1
+:11  %d2_1 = fmul float %diff_1, %diff_1
 
-ST_22: tmp_4 [3/4] 5.70ns
-:6  %tmp_4 = fmul float %var_1, 6.250000e+00
+ST_22: tmp_14 [3/4] 5.70ns
+:12  %tmp_14 = fmul float %var_1, 6.250000e+00
 
 
  <State 23>: 5.70ns
 ST_23: d2_1 [2/4] 5.70ns
-:5  %d2_1 = fmul float %diff_1, %diff_1
+:11  %d2_1 = fmul float %diff_1, %diff_1
 
-ST_23: tmp_4 [2/4] 5.70ns
-:6  %tmp_4 = fmul float %var_1, 6.250000e+00
+ST_23: tmp_14 [2/4] 5.70ns
+:12  %tmp_14 = fmul float %var_1, 6.250000e+00
 
 
  <State 24>: 5.70ns
 ST_24: d2_1 [1/4] 5.70ns
-:5  %d2_1 = fmul float %diff_1, %diff_1
+:11  %d2_1 = fmul float %diff_1, %diff_1
 
-ST_24: tmp_4 [1/4] 5.70ns
-:6  %tmp_4 = fmul float %var_1, 6.250000e+00
+ST_24: tmp_14 [1/4] 5.70ns
+:12  %tmp_14 = fmul float %var_1, 6.250000e+00
 
 
  <State 25>: 8.16ns
 ST_25: d2_1_to_int [1/1] 0.00ns
-:7  %d2_1_to_int = bitcast float %d2_1 to i32
+:13  %d2_1_to_int = bitcast float %d2_1 to i32
 
-ST_25: tmp_44 [1/1] 0.00ns
-:8  %tmp_44 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %d2_1_to_int, i32 23, i32 30)
+ST_25: tmp_58 [1/1] 0.00ns
+:14  %tmp_58 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %d2_1_to_int, i32 23, i32 30)
 
-ST_25: tmp_45 [1/1] 0.00ns
-:9  %tmp_45 = trunc i32 %d2_1_to_int to i23
+ST_25: tmp_59 [1/1] 0.00ns
+:15  %tmp_59 = trunc i32 %d2_1_to_int to i23
 
-ST_25: tmp_4_to_int [1/1] 0.00ns
-:10  %tmp_4_to_int = bitcast float %tmp_4 to i32
+ST_25: tmp_14_to_int [1/1] 0.00ns
+:16  %tmp_14_to_int = bitcast float %tmp_14 to i32
 
-ST_25: tmp_46 [1/1] 0.00ns
-:11  %tmp_46 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %tmp_4_to_int, i32 23, i32 30)
+ST_25: tmp_60 [1/1] 0.00ns
+:17  %tmp_60 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %tmp_14_to_int, i32 23, i32 30)
 
-ST_25: tmp_47 [1/1] 0.00ns
-:12  %tmp_47 = trunc i32 %tmp_4_to_int to i23
+ST_25: tmp_61 [1/1] 0.00ns
+:18  %tmp_61 = trunc i32 %tmp_14_to_int to i23
 
 ST_25: notlhs5 [1/1] 2.00ns
-:13  %notlhs5 = icmp ne i8 %tmp_44, -1
+:19  %notlhs5 = icmp ne i8 %tmp_58, -1
 
 ST_25: notrhs5 [1/1] 2.39ns
-:14  %notrhs5 = icmp eq i23 %tmp_45, 0
+:20  %notrhs5 = icmp eq i23 %tmp_59, 0
 
-ST_25: tmp_48 [1/1] 1.37ns
-:15  %tmp_48 = or i1 %notrhs5, %notlhs5
+ST_25: tmp_62 [1/1] 1.37ns
+:21  %tmp_62 = or i1 %notrhs5, %notlhs5
 
 ST_25: notlhs6 [1/1] 2.00ns
-:16  %notlhs6 = icmp ne i8 %tmp_46, -1
+:22  %notlhs6 = icmp ne i8 %tmp_60, -1
 
 ST_25: notrhs6 [1/1] 2.39ns
-:17  %notrhs6 = icmp eq i23 %tmp_47, 0
+:23  %notrhs6 = icmp eq i23 %tmp_61, 0
 
-ST_25: tmp_49 [1/1] 1.37ns
-:18  %tmp_49 = or i1 %notrhs6, %notlhs6
+ST_25: tmp_63 [1/1] 1.37ns
+:24  %tmp_63 = or i1 %notrhs6, %notlhs6
 
-ST_25: tmp_50 [1/1] 1.37ns
-:19  %tmp_50 = and i1 %tmp_48, %tmp_49
+ST_25: tmp_64 [1/1] 1.37ns
+:25  %tmp_64 = and i1 %tmp_62, %tmp_63
 
-ST_25: tmp_51 [1/1] 6.79ns
-:20  %tmp_51 = fcmp olt float %d2_1, %tmp_4
+ST_25: tmp_65 [1/1] 6.79ns
+:26  %tmp_65 = fcmp olt float %d2_1, %tmp_14
 
-ST_25: tmp_52 [1/1] 1.37ns
-:21  %tmp_52 = and i1 %tmp_50, %tmp_51
+ST_25: tmp_66 [1/1] 1.37ns
+:27  %tmp_66 = and i1 %tmp_64, %tmp_65
 
 
  <State 26>: 1.57ns
-ST_26: stg_270 [1/1] 1.57ns
-:22  br i1 %tmp_52, label %.loopexit7, label %17
+ST_26: stg_269 [1/1] 1.57ns
+:28  br i1 %tmp_66, label %.loopexit7, label %17
 
 
  <State 27>: 1.57ns
 ST_27: kHit2 [1/1] 0.00ns
-.loopexit7:0  %kHit2 = phi i2 [ -1, %.loopexit7.loopexit ], [ %kHit_4, %19 ]
+.loopexit7:0  %kHit2 = phi i3 [ -1, %.loopexit7.loopexit ], [ %kHit_4_cast, %19 ]
 
-ST_27: kHit2_cast [1/1] 0.00ns
-.loopexit7:1  %kHit2_cast = sext i2 %kHit2 to i3
+ST_27: tmp_72 [1/1] 0.00ns
+.loopexit7:1  %tmp_72 = call i1 @_ssdm_op_BitSelect.i1.i3.i32(i3 %kHit2, i32 2)
 
-ST_27: tmp_58 [1/1] 0.00ns
-.loopexit7:2  %tmp_58 = call i1 @_ssdm_op_BitSelect.i1.i2.i32(i2 %kHit2, i32 1)
-
-ST_27: stg_274 [1/1] 1.57ns
-.loopexit7:3  br i1 %tmp_58, label %.loopexit, label %.preheader
+ST_27: stg_272 [1/1] 1.57ns
+.loopexit7:2  br i1 %tmp_72, label %.loopexit, label %.preheader
 
 
- <State 28>: 4.55ns
+ <State 28>: 2.71ns
 ST_28: k_5 [1/1] 0.00ns
 .preheader:0  %k_5 = phi i2 [ %k_11, %20 ], [ 0, %.loopexit7 ]
 
 ST_28: wsum8 [1/1] 0.00ns
 .preheader:1  %wsum8 = phi float [ %wsum_8, %20 ], [ 0.000000e+00, %.loopexit7 ]
 
-ST_28: tmp_59 [1/1] 0.00ns
-.preheader:2  %tmp_59 = call i1 @_ssdm_op_BitSelect.i1.i2.i32(i2 %k_5, i32 1)
+ST_28: tmp_74 [1/1] 0.00ns
+.preheader:2  %tmp_74 = call i1 @_ssdm_op_BitSelect.i1.i2.i32(i2 %k_5, i32 1)
 
-ST_28: stg_278 [1/1] 0.00ns
+ST_28: stg_276 [1/1] 0.00ns
 .preheader:3  call void (...)* @_ssdm_op_SpecLoopTripCount(i64 1, i64 2, i64 1)
 
 ST_28: k_11 [1/1] 0.80ns
 .preheader:4  %k_11 = add i2 %k_5, 1
 
-ST_28: stg_280 [1/1] 1.57ns
-.preheader:5  br i1 %tmp_59, label %.loopexit, label %20
+ST_28: stg_278 [1/1] 1.57ns
+.preheader:5  br i1 %tmp_74, label %.loopexit, label %20
 
-ST_28: tmp_34_cast [1/1] 0.00ns
-:0  %tmp_34_cast = zext i2 %k_5 to i12
+ST_28: tmp_93 [1/1] 0.00ns
+:0  %tmp_93 = trunc i2 %k_5 to i1
 
-ST_28: sum4 [1/1] 1.84ns
-:1  %sum4 = add i12 %tmp_34_cast, %mptr_2_sum
+ST_28: tmp_37 [1/1] 0.00ns
+:1  %tmp_37 = call i3 @_ssdm_op_BitConcatenate.i3.i1.i2(i1 %tmp_93, i2 0)
 
-ST_28: sum4_cast [1/1] 0.00ns
-:2  %sum4_cast = zext i12 %sum4 to i64
+ST_28: tmp_79 [1/1] 0.00ns
+:2  %tmp_79 = or i3 %tmp_37, 1
 
-ST_28: bgmodel_weight_addr_2 [1/1] 0.00ns
-:3  %bgmodel_weight_addr_2 = getelementptr [2560 x float]* %bgmodel_weight, i64 0, i64 %sum4_cast
+ST_28: tmp_80 [1/1] 0.00ns
+:3  %tmp_80 = call i9 @_ssdm_op_PartSelect.i9.i12.i32.i32(i12 %mptr_2_sum, i32 3, i32 11)
 
-ST_28: bgmodel_weight_load_2 [2/2] 2.71ns
-:4  %bgmodel_weight_load_2 = load float* %bgmodel_weight_addr_2, align 4
+ST_28: sum9 [1/1] 0.00ns
+:4  %sum9 = call i12 @_ssdm_op_BitConcatenate.i12.i9.i3(i9 %tmp_80, i3 %tmp_79)
+
+ST_28: sum9_cast [1/1] 0.00ns
+:5  %sum9_cast = zext i12 %sum9 to i64
+
+ST_28: bgmodel_addr_7 [1/1] 0.00ns
+:6  %bgmodel_addr_7 = getelementptr [2560 x float]* %bgmodel, i64 0, i64 %sum9_cast
+
+ST_28: bgmodel_load_6 [2/2] 2.71ns
+:7  %bgmodel_load_6 = load float* %bgmodel_addr_7, align 4
 
 
  <State 29>: 2.71ns
-ST_29: bgmodel_weight_load_2 [1/2] 2.71ns
-:4  %bgmodel_weight_load_2 = load float* %bgmodel_weight_addr_2, align 4
+ST_29: bgmodel_load_6 [1/2] 2.71ns
+:7  %bgmodel_load_6 = load float* %bgmodel_addr_7, align 4
 
 
  <State 30>: 7.26ns
 ST_30: wsum_8 [5/5] 7.26ns
-:5  %wsum_8 = fadd float %wsum8, %bgmodel_weight_load_2
+:8  %wsum_8 = fadd float %wsum8, %bgmodel_load_6
 
 
  <State 31>: 7.26ns
 ST_31: wsum_8 [4/5] 7.26ns
-:5  %wsum_8 = fadd float %wsum8, %bgmodel_weight_load_2
+:8  %wsum_8 = fadd float %wsum8, %bgmodel_load_6
 
 
  <State 32>: 7.26ns
 ST_32: wsum_8 [3/5] 7.26ns
-:5  %wsum_8 = fadd float %wsum8, %bgmodel_weight_load_2
+:8  %wsum_8 = fadd float %wsum8, %bgmodel_load_6
 
 
  <State 33>: 7.26ns
 ST_33: wsum_8 [2/5] 7.26ns
-:5  %wsum_8 = fadd float %wsum8, %bgmodel_weight_load_2
+:8  %wsum_8 = fadd float %wsum8, %bgmodel_load_6
 
 
  <State 34>: 7.26ns
 ST_34: wsum_8 [1/5] 7.26ns
-:5  %wsum_8 = fadd float %wsum8, %bgmodel_weight_load_2
+:8  %wsum_8 = fadd float %wsum8, %bgmodel_load_6
 
 
  <State 35>: 8.16ns
 ST_35: wsum_8_to_int [1/1] 0.00ns
-:6  %wsum_8_to_int = bitcast float %wsum_8 to i32
+:9  %wsum_8_to_int = bitcast float %wsum_8 to i32
 
-ST_35: tmp_67 [1/1] 0.00ns
-:7  %tmp_67 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %wsum_8_to_int, i32 23, i32 30)
+ST_35: tmp_81 [1/1] 0.00ns
+:10  %tmp_81 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %wsum_8_to_int, i32 23, i32 30)
 
-ST_35: tmp_75 [1/1] 0.00ns
-:8  %tmp_75 = trunc i32 %wsum_8_to_int to i23
+ST_35: tmp_94 [1/1] 0.00ns
+:11  %tmp_94 = trunc i32 %wsum_8_to_int to i23
 
 ST_35: notlhs8 [1/1] 2.00ns
-:9  %notlhs8 = icmp ne i8 %tmp_67, -1
+:12  %notlhs8 = icmp ne i8 %tmp_81, -1
 
 ST_35: notrhs9 [1/1] 2.39ns
-:10  %notrhs9 = icmp eq i23 %tmp_75, 0
+:13  %notrhs9 = icmp eq i23 %tmp_94, 0
 
-ST_35: tmp_69 [1/1] 1.37ns
-:11  %tmp_69 = or i1 %notrhs9, %notlhs8
+ST_35: tmp_83 [1/1] 1.37ns
+:14  %tmp_83 = or i1 %notrhs9, %notlhs8
 
-ST_35: tmp_70 [1/1] 6.79ns
-:12  %tmp_70 = fcmp ogt float %wsum_8, 0x3FE6666660000000
+ST_35: tmp_84 [1/1] 6.79ns
+:15  %tmp_84 = fcmp ogt float %wsum_8, 0x3FE6666660000000
 
-ST_35: tmp_71 [1/1] 1.37ns
-:13  %tmp_71 = and i1 %tmp_69, %tmp_70
+ST_35: tmp_85 [1/1] 1.37ns
+:16  %tmp_85 = and i1 %tmp_83, %tmp_84
 
-ST_35: stg_300 [1/1] 0.00ns
-:14  br i1 %tmp_71, label %21, label %.preheader
+ST_35: stg_301 [1/1] 0.00ns
+:17  br i1 %tmp_85, label %21, label %.preheader
 
 ST_35: kForeground_cast [1/1] 0.00ns
 :0  %kForeground_cast = zext i2 %k_11 to i3
 
-ST_35: stg_302 [1/1] 1.57ns
+ST_35: stg_303 [1/1] 1.57ns
 :1  br label %.loopexit
 
-ST_35: tmp_79 [1/1] 0.00ns
-.loopexit:1  %tmp_79 = call i1 @_ssdm_op_BitSelect.i1.i2.i32(i2 %kHit2, i32 1)
-
 ST_35: p_rec [1/1] 1.84ns
-.loopexit:7  %p_rec = add i10 %mptr_2_rec, 2
+.loopexit:7  %p_rec = add i12 %mptr_2_rec, 8
 
 
- <State 36>: 7.07ns
+ <State 36>: 6.75ns
 ST_36: kForeground3_1 [1/1] 0.00ns
 .loopexit:0  %kForeground3_1 = phi i3 [ %kForeground_cast, %21 ], [ -1, %.loopexit7 ], [ -1, %.preheader ]
 
+ST_36: tmp_107 [1/1] 0.00ns
+.loopexit:1  %tmp_107 = call i1 @_ssdm_op_BitSelect.i1.i3.i32(i3 %kHit2, i32 2)
+
 ST_36: slt1 [1/1] 1.62ns
-.loopexit:2  %slt1 = icmp slt i3 %kHit2_cast, %kForeground3_1
+.loopexit:2  %slt1 = icmp slt i3 %kHit2, %kForeground3_1
 
 ST_36: rev1 [1/1] 1.37ns
 .loopexit:3  %rev1 = xor i1 %slt1, true
 
-ST_36: tmp_28 [1/1] 1.37ns
-.loopexit:4  %tmp_28 = or i1 %tmp_79, %rev1
+ST_36: tmp_42 [1/1] 1.37ns
+.loopexit:4  %tmp_42 = or i1 %tmp_107, %rev1
 
 ST_36: frame_out_addr [1/1] 0.00ns
-.loopexit:5  %frame_out_addr = getelementptr [1280 x i1]* %frame_out, i64 0, i64 %sum2_cast
+.loopexit:5  %frame_out_addr = getelementptr [320 x i1]* %frame_out, i64 0, i64 %sum2_cast
 
-ST_36: stg_310 [1/1] 2.71ns
-.loopexit:6  store i1 %tmp_28, i1* %frame_out_addr, align 1
+ST_36: stg_311 [1/1] 2.39ns
+.loopexit:6  store i1 %tmp_42, i1* %frame_out_addr, align 1
 
-ST_36: stg_311 [1/1] 0.00ns
+ST_36: stg_312 [1/1] 0.00ns
 .loopexit:8  br label %.preheader41
 
 
  <State 37>: 2.71ns
 ST_37: frame_in_load [1/2] 2.71ns
-:4  %frame_in_load = load i8* %frame_in_addr, align 1
+:2  %frame_in_load = load i8* %frame_in_addr, align 1
 
 
  <State 38>: 6.41ns
 ST_38: pix1 [1/1] 0.00ns
-:5  %pix1 = zext i8 %frame_in_load to i32
+:3  %pix1 = zext i8 %frame_in_load to i32
 
 ST_38: pix [6/6] 6.41ns
-:6  %pix = sitofp i32 %pix1 to float
+:4  %pix = sitofp i32 %pix1 to float
 
 
  <State 39>: 6.41ns
 ST_39: pix [5/6] 6.41ns
-:6  %pix = sitofp i32 %pix1 to float
+:4  %pix = sitofp i32 %pix1 to float
 
 
  <State 40>: 6.41ns
 ST_40: pix [4/6] 6.41ns
-:6  %pix = sitofp i32 %pix1 to float
+:4  %pix = sitofp i32 %pix1 to float
 
 
  <State 41>: 6.41ns
 ST_41: pix [3/6] 6.41ns
-:6  %pix = sitofp i32 %pix1 to float
+:4  %pix = sitofp i32 %pix1 to float
 
 
  <State 42>: 6.41ns
 ST_42: pix [2/6] 6.41ns
-:6  %pix = sitofp i32 %pix1 to float
+:4  %pix = sitofp i32 %pix1 to float
 
 
  <State 43>: 6.41ns
 ST_43: pix [1/6] 6.41ns
-:6  %pix = sitofp i32 %pix1 to float
-
-ST_43: mptr_1_rec_cast [1/1] 0.00ns
-:7  %mptr_1_rec_cast = zext i10 %mptr_1_rec to i12
+:4  %pix = sitofp i32 %pix1 to float
 
 ST_43: mptr_1_sum [1/1] 1.84ns
-:8  %mptr_1_sum = add i12 %mptr_0_rec, %mptr_1_rec_cast
+:5  %mptr_1_sum = add i12 %mptr_0_rec, %mptr_1_rec
 
 ST_43: mptr_1_sum_cast [1/1] 0.00ns
-:9  %mptr_1_sum_cast = zext i12 %mptr_1_sum to i13
+:6  %mptr_1_sum_cast = zext i12 %mptr_1_sum to i13
 
 ST_43: stg_323 [1/1] 1.57ns
-:10  br label %4
+:7  br label %4
 
 
- <State 44>: 4.55ns
+ <State 44>: 2.71ns
 ST_44: k [1/1] 0.00ns
 :0  %k = phi i2 [ 0, %3 ], [ %k_2, %6 ]
 
 ST_44: wsum [1/1] 0.00ns
 :1  %wsum = phi float [ 0.000000e+00, %3 ], [ %wsum_5, %6 ]
 
-ST_44: tmp_7 [1/1] 0.00ns
-:2  %tmp_7 = call i1 @_ssdm_op_BitSelect.i1.i2.i32(i2 %k, i32 1)
+ST_44: tmp_6 [1/1] 0.00ns
+:2  %tmp_6 = call i1 @_ssdm_op_BitSelect.i1.i2.i32(i2 %k, i32 1)
 
 ST_44: stg_327 [1/1] 0.00ns
 :3  call void (...)* @_ssdm_op_SpecLoopTripCount(i64 1, i64 2, i64 1)
@@ -1015,388 +1016,415 @@ ST_44: k_2 [1/1] 0.80ns
 :4  %k_2 = add i2 %k, 1
 
 ST_44: stg_329 [1/1] 1.57ns
-:5  br i1 %tmp_7, label %.loopexit11, label %5
+:5  br i1 %tmp_6, label %.loopexit11, label %5
 
-ST_44: tmp_8_cast [1/1] 0.00ns
-:0  %tmp_8_cast = zext i2 %k to i12
+ST_44: tmp_12 [1/1] 0.00ns
+:0  %tmp_12 = trunc i2 %k to i1
 
-ST_44: sum1 [1/1] 1.84ns
-:1  %sum1 = add i12 %mptr_1_sum, %tmp_8_cast
+ST_44: tmp_8 [1/1] 0.00ns
+:1  %tmp_8 = call i3 @_ssdm_op_BitConcatenate.i3.i1.i2(i1 %tmp_12, i2 0)
+
+ST_44: tmp_5 [1/1] 0.00ns
+:2  %tmp_5 = or i3 %tmp_8, 1
+
+ST_44: tmp_9 [1/1] 0.00ns
+:3  %tmp_9 = call i9 @_ssdm_op_PartSelect.i9.i12.i32.i32(i12 %mptr_1_sum, i32 3, i32 11)
+
+ST_44: sum1 [1/1] 0.00ns
+:4  %sum1 = call i12 @_ssdm_op_BitConcatenate.i12.i9.i3(i9 %tmp_9, i3 %tmp_5)
 
 ST_44: sum1_cast [1/1] 0.00ns
-:2  %sum1_cast = zext i12 %sum1 to i64
+:5  %sum1_cast = zext i12 %sum1 to i64
 
-ST_44: bgmodel_weight_addr [1/1] 0.00ns
-:3  %bgmodel_weight_addr = getelementptr [2560 x float]* %bgmodel_weight, i64 0, i64 %sum1_cast
+ST_44: bgmodel_addr [1/1] 0.00ns
+:6  %bgmodel_addr = getelementptr [2560 x float]* %bgmodel, i64 0, i64 %sum1_cast
 
 ST_44: w [2/2] 2.71ns
-:4  %w = load float* %bgmodel_weight_addr, align 4
+:7  %w = load float* %bgmodel_addr, align 4
 
 
  <State 45>: 2.71ns
 ST_45: w [1/2] 2.71ns
-:4  %w = load float* %bgmodel_weight_addr, align 4
+:7  %w = load float* %bgmodel_addr, align 4
 
 
  <State 46>: 7.26ns
 ST_46: wsum_5 [5/5] 7.26ns
-:5  %wsum_5 = fadd float %wsum, %w
+:8  %wsum_5 = fadd float %wsum, %w
 
 
  <State 47>: 7.26ns
 ST_47: wsum_5 [4/5] 7.26ns
-:5  %wsum_5 = fadd float %wsum, %w
+:8  %wsum_5 = fadd float %wsum, %w
 
 
  <State 48>: 7.26ns
 ST_48: wsum_5 [3/5] 7.26ns
-:5  %wsum_5 = fadd float %wsum, %w
+:8  %wsum_5 = fadd float %wsum, %w
 
 
  <State 49>: 7.26ns
 ST_49: wsum_5 [2/5] 7.26ns
-:5  %wsum_5 = fadd float %wsum, %w
+:8  %wsum_5 = fadd float %wsum, %w
 
 
  <State 50>: 7.26ns
 ST_50: wsum_5 [1/5] 7.26ns
-:5  %wsum_5 = fadd float %wsum, %w
+:8  %wsum_5 = fadd float %wsum, %w
 
-ST_50: tmp_23 [1/1] 6.79ns
-:12  %tmp_23 = fcmp olt float %w, 0x3E80000000000000
+ST_50: tmp_15 [1/1] 6.79ns
+:15  %tmp_15 = fcmp olt float %w, 0x3E80000000000000
 
 
  <State 51>: 6.70ns
 ST_51: w_to_int [1/1] 0.00ns
-:6  %w_to_int = bitcast float %w to i32
+:9  %w_to_int = bitcast float %w to i32
 
-ST_51: tmp_19 [1/1] 0.00ns
-:7  %tmp_19 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %w_to_int, i32 23, i32 30)
+ST_51: tmp_11 [1/1] 0.00ns
+:10  %tmp_11 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %w_to_int, i32 23, i32 30)
 
-ST_51: tmp_21 [1/1] 0.00ns
-:8  %tmp_21 = trunc i32 %w_to_int to i23
+ST_51: tmp_26 [1/1] 0.00ns
+:11  %tmp_26 = trunc i32 %w_to_int to i23
 
 ST_51: notlhs1 [1/1] 2.00ns
-:9  %notlhs1 = icmp ne i8 %tmp_19, -1
+:12  %notlhs1 = icmp ne i8 %tmp_11, -1
 
 ST_51: notrhs1 [1/1] 2.39ns
-:10  %notrhs1 = icmp eq i23 %tmp_21, 0
+:13  %notrhs1 = icmp eq i23 %tmp_26, 0
 
-ST_51: tmp_22 [1/1] 1.37ns
-:11  %tmp_22 = or i1 %notrhs1, %notlhs1
+ST_51: tmp_13 [1/1] 1.37ns
+:14  %tmp_13 = or i1 %notrhs1, %notlhs1
 
-ST_51: tmp_25 [1/1] 1.37ns
-:13  %tmp_25 = and i1 %tmp_22, %tmp_23
+ST_51: tmp_23 [1/1] 1.37ns
+:16  %tmp_23 = and i1 %tmp_13, %tmp_15
 
-ST_51: stg_349 [1/1] 1.57ns
-:14  br i1 %tmp_25, label %.loopexit11, label %6
+ST_51: stg_352 [1/1] 1.57ns
+:17  br i1 %tmp_23, label %.loopexit11, label %6
 
-ST_51: bgmodel_mean_addr [1/1] 0.00ns
-:0  %bgmodel_mean_addr = getelementptr [2560 x float]* %bgmodel_mean, i64 0, i64 %sum1_cast
+ST_51: tmp_39 [1/1] 0.00ns
+:0  %tmp_39 = or i3 %tmp_8, 2
+
+ST_51: sum4 [1/1] 0.00ns
+:1  %sum4 = call i12 @_ssdm_op_BitConcatenate.i12.i9.i3(i9 %tmp_9, i3 %tmp_39)
+
+ST_51: sum4_cast [1/1] 0.00ns
+:2  %sum4_cast = zext i12 %sum4 to i64
+
+ST_51: bgmodel_addr_2 [1/1] 0.00ns
+:3  %bgmodel_addr_2 = getelementptr [2560 x float]* %bgmodel, i64 0, i64 %sum4_cast
 
 ST_51: mu [2/2] 2.71ns
-:1  %mu = load float* %bgmodel_mean_addr, align 4
+:4  %mu = load float* %bgmodel_addr_2, align 4
 
 
  <State 52>: 2.71ns
 ST_52: mu [1/2] 2.71ns
-:1  %mu = load float* %bgmodel_mean_addr, align 4
+:4  %mu = load float* %bgmodel_addr_2, align 4
 
 
  <State 53>: 7.26ns
 ST_53: diff [5/5] 7.26ns
-:4  %diff = fsub float %pix, %mu
+:10  %diff = fsub float %pix, %mu
 
 
  <State 54>: 7.26ns
 ST_54: diff [4/5] 7.26ns
-:4  %diff = fsub float %pix, %mu
+:10  %diff = fsub float %pix, %mu
 
 
  <State 55>: 7.26ns
 ST_55: diff [3/5] 7.26ns
-:4  %diff = fsub float %pix, %mu
+:10  %diff = fsub float %pix, %mu
 
 
  <State 56>: 7.26ns
 ST_56: diff [2/5] 7.26ns
-:4  %diff = fsub float %pix, %mu
+:10  %diff = fsub float %pix, %mu
 
 
  <State 57>: 7.26ns
-ST_57: bgmodel_var_addr [1/1] 0.00ns
-:2  %bgmodel_var_addr = getelementptr [2560 x float]* %bgmodel_var, i64 0, i64 %sum1_cast
+ST_57: tmp_40 [1/1] 0.00ns
+:5  %tmp_40 = or i3 %tmp_8, 3
+
+ST_57: sum5 [1/1] 0.00ns
+:6  %sum5 = call i12 @_ssdm_op_BitConcatenate.i12.i9.i3(i9 %tmp_9, i3 %tmp_40)
+
+ST_57: sum5_cast [1/1] 0.00ns
+:7  %sum5_cast = zext i12 %sum5 to i64
+
+ST_57: bgmodel_addr_3 [1/1] 0.00ns
+:8  %bgmodel_addr_3 = getelementptr [2560 x float]* %bgmodel, i64 0, i64 %sum5_cast
 
 ST_57: var [2/2] 2.71ns
-:3  %var = load float* %bgmodel_var_addr, align 4
+:9  %var = load float* %bgmodel_addr_3, align 4
 
 ST_57: diff [1/5] 7.26ns
-:4  %diff = fsub float %pix, %mu
+:10  %diff = fsub float %pix, %mu
 
 
  <State 58>: 8.41ns
 ST_58: var [1/2] 2.71ns
-:3  %var = load float* %bgmodel_var_addr, align 4
+:9  %var = load float* %bgmodel_addr_3, align 4
 
 ST_58: d2 [4/4] 5.70ns
-:5  %d2 = fmul float %diff, %diff
+:11  %d2 = fmul float %diff, %diff
 
-ST_58: tmp_2 [4/4] 5.70ns
-:6  %tmp_2 = fmul float %var, 6.250000e+00
+ST_58: tmp_10 [4/4] 5.70ns
+:12  %tmp_10 = fmul float %var, 6.250000e+00
 
 
  <State 59>: 5.70ns
 ST_59: d2 [3/4] 5.70ns
-:5  %d2 = fmul float %diff, %diff
+:11  %d2 = fmul float %diff, %diff
 
-ST_59: tmp_2 [3/4] 5.70ns
-:6  %tmp_2 = fmul float %var, 6.250000e+00
+ST_59: tmp_10 [3/4] 5.70ns
+:12  %tmp_10 = fmul float %var, 6.250000e+00
 
 
  <State 60>: 5.70ns
 ST_60: d2 [2/4] 5.70ns
-:5  %d2 = fmul float %diff, %diff
+:11  %d2 = fmul float %diff, %diff
 
-ST_60: tmp_2 [2/4] 5.70ns
-:6  %tmp_2 = fmul float %var, 6.250000e+00
+ST_60: tmp_10 [2/4] 5.70ns
+:12  %tmp_10 = fmul float %var, 6.250000e+00
 
 
  <State 61>: 5.70ns
 ST_61: d2 [1/4] 5.70ns
-:5  %d2 = fmul float %diff, %diff
+:11  %d2 = fmul float %diff, %diff
 
-ST_61: tmp_2 [1/4] 5.70ns
-:6  %tmp_2 = fmul float %var, 6.250000e+00
+ST_61: tmp_10 [1/4] 5.70ns
+:12  %tmp_10 = fmul float %var, 6.250000e+00
 
 
  <State 62>: 8.16ns
 ST_62: d2_to_int [1/1] 0.00ns
-:7  %d2_to_int = bitcast float %d2 to i32
+:13  %d2_to_int = bitcast float %d2 to i32
 
-ST_62: tmp_35 [1/1] 0.00ns
-:8  %tmp_35 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %d2_to_int, i32 23, i32 30)
+ST_62: tmp_41 [1/1] 0.00ns
+:14  %tmp_41 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %d2_to_int, i32 23, i32 30)
 
-ST_62: tmp_36 [1/1] 0.00ns
-:9  %tmp_36 = trunc i32 %d2_to_int to i23
+ST_62: tmp_44 [1/1] 0.00ns
+:15  %tmp_44 = trunc i32 %d2_to_int to i23
 
-ST_62: tmp_2_to_int [1/1] 0.00ns
-:10  %tmp_2_to_int = bitcast float %tmp_2 to i32
+ST_62: tmp_10_to_int [1/1] 0.00ns
+:16  %tmp_10_to_int = bitcast float %tmp_10 to i32
 
-ST_62: tmp_37 [1/1] 0.00ns
-:11  %tmp_37 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %tmp_2_to_int, i32 23, i32 30)
+ST_62: tmp_46 [1/1] 0.00ns
+:17  %tmp_46 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %tmp_10_to_int, i32 23, i32 30)
 
-ST_62: tmp_38 [1/1] 0.00ns
-:12  %tmp_38 = trunc i32 %tmp_2_to_int to i23
+ST_62: tmp_48 [1/1] 0.00ns
+:18  %tmp_48 = trunc i32 %tmp_10_to_int to i23
 
 ST_62: notlhs3 [1/1] 2.00ns
-:13  %notlhs3 = icmp ne i8 %tmp_35, -1
+:19  %notlhs3 = icmp ne i8 %tmp_41, -1
 
 ST_62: notrhs3 [1/1] 2.39ns
-:14  %notrhs3 = icmp eq i23 %tmp_36, 0
+:20  %notrhs3 = icmp eq i23 %tmp_44, 0
 
-ST_62: tmp_39 [1/1] 1.37ns
-:15  %tmp_39 = or i1 %notrhs3, %notlhs3
+ST_62: tmp_51 [1/1] 1.37ns
+:21  %tmp_51 = or i1 %notrhs3, %notlhs3
 
 ST_62: notlhs4 [1/1] 2.00ns
-:16  %notlhs4 = icmp ne i8 %tmp_37, -1
+:22  %notlhs4 = icmp ne i8 %tmp_46, -1
 
 ST_62: notrhs4 [1/1] 2.39ns
-:17  %notrhs4 = icmp eq i23 %tmp_38, 0
+:23  %notrhs4 = icmp eq i23 %tmp_48, 0
 
-ST_62: tmp_40 [1/1] 1.37ns
-:18  %tmp_40 = or i1 %notrhs4, %notlhs4
+ST_62: tmp_52 [1/1] 1.37ns
+:24  %tmp_52 = or i1 %notrhs4, %notlhs4
 
-ST_62: tmp_41 [1/1] 1.37ns
-:19  %tmp_41 = and i1 %tmp_39, %tmp_40
+ST_62: tmp_53 [1/1] 1.37ns
+:25  %tmp_53 = and i1 %tmp_51, %tmp_52
 
-ST_62: tmp_42 [1/1] 6.79ns
-:20  %tmp_42 = fcmp olt float %d2, %tmp_2
+ST_62: tmp_54 [1/1] 6.79ns
+:26  %tmp_54 = fcmp olt float %d2, %tmp_10
 
-ST_62: tmp_43 [1/1] 1.37ns
-:21  %tmp_43 = and i1 %tmp_41, %tmp_42
+ST_62: tmp_55 [1/1] 1.37ns
+:27  %tmp_55 = and i1 %tmp_53, %tmp_54
 
-ST_62: stg_384 [1/1] 0.00ns
-:22  br i1 %tmp_43, label %7, label %4
+ST_62: stg_393 [1/1] 0.00ns
+:28  br i1 %tmp_55, label %7, label %4
 
-ST_62: tmp_8 [5/5] 7.26ns
-:1  %tmp_8 = fsub float 1.000000e+00, %w
+ST_62: tmp_16 [5/5] 7.26ns
+:1  %tmp_16 = fsub float 1.000000e+00, %w
 
-ST_62: tmp_11 [4/4] 5.70ns
-:5  %tmp_11 = fmul float %diff, %learningRate_read
+ST_62: tmp_18 [4/4] 5.70ns
+:5  %tmp_18 = fmul float %diff, %learningRate_read
 
-ST_62: tmp_13 [5/5] 7.26ns
-:8  %tmp_13 = fsub float %d2, %var
+ST_62: tmp_20 [5/5] 7.26ns
+:8  %tmp_20 = fsub float %d2, %var
 
 
  <State 63>: 7.26ns
-ST_63: tmp_8 [4/5] 7.26ns
-:1  %tmp_8 = fsub float 1.000000e+00, %w
+ST_63: tmp_16 [4/5] 7.26ns
+:1  %tmp_16 = fsub float 1.000000e+00, %w
 
-ST_63: tmp_11 [3/4] 5.70ns
-:5  %tmp_11 = fmul float %diff, %learningRate_read
+ST_63: tmp_18 [3/4] 5.70ns
+:5  %tmp_18 = fmul float %diff, %learningRate_read
 
-ST_63: tmp_13 [4/5] 7.26ns
-:8  %tmp_13 = fsub float %d2, %var
+ST_63: tmp_20 [4/5] 7.26ns
+:8  %tmp_20 = fsub float %d2, %var
 
 
  <State 64>: 7.26ns
-ST_64: tmp_8 [3/5] 7.26ns
-:1  %tmp_8 = fsub float 1.000000e+00, %w
+ST_64: tmp_16 [3/5] 7.26ns
+:1  %tmp_16 = fsub float 1.000000e+00, %w
 
-ST_64: tmp_11 [2/4] 5.70ns
-:5  %tmp_11 = fmul float %diff, %learningRate_read
+ST_64: tmp_18 [2/4] 5.70ns
+:5  %tmp_18 = fmul float %diff, %learningRate_read
 
-ST_64: tmp_13 [3/5] 7.26ns
-:8  %tmp_13 = fsub float %d2, %var
+ST_64: tmp_20 [3/5] 7.26ns
+:8  %tmp_20 = fsub float %d2, %var
 
 
  <State 65>: 7.26ns
-ST_65: tmp_8 [2/5] 7.26ns
-:1  %tmp_8 = fsub float 1.000000e+00, %w
+ST_65: tmp_16 [2/5] 7.26ns
+:1  %tmp_16 = fsub float 1.000000e+00, %w
 
-ST_65: tmp_11 [1/4] 5.70ns
-:5  %tmp_11 = fmul float %diff, %learningRate_read
+ST_65: tmp_18 [1/4] 5.70ns
+:5  %tmp_18 = fmul float %diff, %learningRate_read
 
-ST_65: tmp_13 [2/5] 7.26ns
-:8  %tmp_13 = fsub float %d2, %var
+ST_65: tmp_20 [2/5] 7.26ns
+:8  %tmp_20 = fsub float %d2, %var
 
 
  <State 66>: 7.26ns
-ST_66: tmp_8 [1/5] 7.26ns
-:1  %tmp_8 = fsub float 1.000000e+00, %w
+ST_66: tmp_16 [1/5] 7.26ns
+:1  %tmp_16 = fsub float 1.000000e+00, %w
 
-ST_66: tmp_12 [5/5] 7.26ns
-:6  %tmp_12 = fadd float %mu, %tmp_11
+ST_66: tmp_19 [5/5] 7.26ns
+:6  %tmp_19 = fadd float %mu, %tmp_18
 
-ST_66: tmp_13 [1/5] 7.26ns
-:8  %tmp_13 = fsub float %d2, %var
+ST_66: tmp_20 [1/5] 7.26ns
+:8  %tmp_20 = fsub float %d2, %var
 
 
  <State 67>: 7.26ns
 ST_67: dw [4/4] 5.70ns
-:2  %dw = fmul float %tmp_8, %learningRate_read
+:2  %dw = fmul float %tmp_16, %learningRate_read
 
-ST_67: tmp_12 [4/5] 7.26ns
-:6  %tmp_12 = fadd float %mu, %tmp_11
+ST_67: tmp_19 [4/5] 7.26ns
+:6  %tmp_19 = fadd float %mu, %tmp_18
 
-ST_67: tmp_14 [4/4] 5.70ns
-:9  %tmp_14 = fmul float %tmp_13, %learningRate_read
+ST_67: tmp_21 [4/4] 5.70ns
+:9  %tmp_21 = fmul float %tmp_20, %learningRate_read
 
 
  <State 68>: 7.26ns
 ST_68: dw [3/4] 5.70ns
-:2  %dw = fmul float %tmp_8, %learningRate_read
+:2  %dw = fmul float %tmp_16, %learningRate_read
 
-ST_68: tmp_12 [3/5] 7.26ns
-:6  %tmp_12 = fadd float %mu, %tmp_11
+ST_68: tmp_19 [3/5] 7.26ns
+:6  %tmp_19 = fadd float %mu, %tmp_18
 
-ST_68: tmp_14 [3/4] 5.70ns
-:9  %tmp_14 = fmul float %tmp_13, %learningRate_read
+ST_68: tmp_21 [3/4] 5.70ns
+:9  %tmp_21 = fmul float %tmp_20, %learningRate_read
 
 
  <State 69>: 7.26ns
 ST_69: dw [2/4] 5.70ns
-:2  %dw = fmul float %tmp_8, %learningRate_read
+:2  %dw = fmul float %tmp_16, %learningRate_read
 
-ST_69: tmp_12 [2/5] 7.26ns
-:6  %tmp_12 = fadd float %mu, %tmp_11
+ST_69: tmp_19 [2/5] 7.26ns
+:6  %tmp_19 = fadd float %mu, %tmp_18
 
-ST_69: tmp_14 [2/4] 5.70ns
-:9  %tmp_14 = fmul float %tmp_13, %learningRate_read
+ST_69: tmp_21 [2/4] 5.70ns
+:9  %tmp_21 = fmul float %tmp_20, %learningRate_read
 
 
  <State 70>: 7.26ns
 ST_70: dw [1/4] 5.70ns
-:2  %dw = fmul float %tmp_8, %learningRate_read
+:2  %dw = fmul float %tmp_16, %learningRate_read
 
-ST_70: tmp_12 [1/5] 7.26ns
-:6  %tmp_12 = fadd float %mu, %tmp_11
+ST_70: tmp_19 [1/5] 7.26ns
+:6  %tmp_19 = fadd float %mu, %tmp_18
 
-ST_70: tmp_14 [1/4] 5.70ns
-:9  %tmp_14 = fmul float %tmp_13, %learningRate_read
+ST_70: tmp_21 [1/4] 5.70ns
+:9  %tmp_21 = fmul float %tmp_20, %learningRate_read
 
 
  <State 71>: 7.26ns
-ST_71: tmp_10 [5/5] 7.26ns
-:3  %tmp_10 = fadd float %w, %dw
+ST_71: tmp_17 [5/5] 7.26ns
+:3  %tmp_17 = fadd float %w, %dw
 
-ST_71: stg_413 [1/1] 2.71ns
-:7  store float %tmp_12, float* %bgmodel_mean_addr, align 4
-
-ST_71: tmp_15 [5/5] 7.26ns
-:10  %tmp_15 = fadd float %var, %tmp_14
+ST_71: tmp_22 [5/5] 7.26ns
+:10  %tmp_22 = fadd float %var, %tmp_21
 
 
  <State 72>: 7.26ns
-ST_72: tmp_10 [4/5] 7.26ns
-:3  %tmp_10 = fadd float %w, %dw
+ST_72: tmp_17 [4/5] 7.26ns
+:3  %tmp_17 = fadd float %w, %dw
 
-ST_72: tmp_15 [4/5] 7.26ns
-:10  %tmp_15 = fadd float %var, %tmp_14
+ST_72: tmp_22 [4/5] 7.26ns
+:10  %tmp_22 = fadd float %var, %tmp_21
 
 
  <State 73>: 7.26ns
-ST_73: tmp_10 [3/5] 7.26ns
-:3  %tmp_10 = fadd float %w, %dw
+ST_73: tmp_17 [3/5] 7.26ns
+:3  %tmp_17 = fadd float %w, %dw
 
-ST_73: tmp_15 [3/5] 7.26ns
-:10  %tmp_15 = fadd float %var, %tmp_14
+ST_73: tmp_22 [3/5] 7.26ns
+:10  %tmp_22 = fadd float %var, %tmp_21
 
 
  <State 74>: 7.26ns
-ST_74: tmp_10 [2/5] 7.26ns
-:3  %tmp_10 = fadd float %w, %dw
+ST_74: tmp_17 [2/5] 7.26ns
+:3  %tmp_17 = fadd float %w, %dw
 
-ST_74: tmp_15 [2/5] 7.26ns
-:10  %tmp_15 = fadd float %var, %tmp_14
+ST_74: tmp_22 [2/5] 7.26ns
+:10  %tmp_22 = fadd float %var, %tmp_21
 
 
  <State 75>: 7.26ns
-ST_75: tmp_10 [1/5] 7.26ns
-:3  %tmp_10 = fadd float %w, %dw
+ST_75: tmp_17 [1/5] 7.26ns
+:3  %tmp_17 = fadd float %w, %dw
 
-ST_75: tmp_15 [1/5] 7.26ns
-:10  %tmp_15 = fadd float %var, %tmp_14
-
-
- <State 76>: 8.16ns
-ST_76: stg_423 [1/1] 2.71ns
-:4  store float %tmp_10, float* %bgmodel_weight_addr, align 4
-
-ST_76: tmp_15_to_int [1/1] 0.00ns
-:11  %tmp_15_to_int = bitcast float %tmp_15 to i32
-
-ST_76: tmp_53 [1/1] 0.00ns
-:12  %tmp_53 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %tmp_15_to_int, i32 23, i32 30)
-
-ST_76: tmp_54 [1/1] 0.00ns
-:13  %tmp_54 = trunc i32 %tmp_15_to_int to i23
-
-ST_76: notlhs7 [1/1] 2.00ns
-:14  %notlhs7 = icmp ne i8 %tmp_53, -1
-
-ST_76: notrhs7 [1/1] 2.39ns
-:15  %notrhs7 = icmp eq i23 %tmp_54, 0
-
-ST_76: tmp_55 [1/1] 1.37ns
-:16  %tmp_55 = or i1 %notrhs7, %notlhs7
-
-ST_76: tmp_56 [1/1] 6.79ns
-:17  %tmp_56 = fcmp olt float %tmp_15, 2.250000e+02
-
-ST_76: tmp_57 [1/1] 1.37ns
-:18  %tmp_57 = and i1 %tmp_55, %tmp_56
+ST_75: tmp_22 [1/5] 7.26ns
+:10  %tmp_22 = fadd float %var, %tmp_21
 
 
- <State 77>: 4.08ns
-ST_77: var_2 [1/1] 1.37ns
-:19  %var_2 = select i1 %tmp_57, float 2.250000e+02, float %tmp_15
+ <State 76>: 6.79ns
+ST_76: stg_431 [1/1] 2.71ns
+:4  store float %tmp_17, float* %bgmodel_addr, align 4
 
+ST_76: tmp_70 [1/1] 6.79ns
+:17  %tmp_70 = fcmp olt float %tmp_22, 2.250000e+02
+
+
+ <State 77>: 6.50ns
 ST_77: stg_433 [1/1] 2.71ns
-:20  store float %var_2, float* %bgmodel_var_addr, align 4
+:7  store float %tmp_19, float* %bgmodel_addr_2, align 4
+
+ST_77: tmp_22_to_int [1/1] 0.00ns
+:11  %tmp_22_to_int = bitcast float %tmp_22 to i32
+
+ST_77: tmp_67 [1/1] 0.00ns
+:12  %tmp_67 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %tmp_22_to_int, i32 23, i32 30)
+
+ST_77: tmp_68 [1/1] 0.00ns
+:13  %tmp_68 = trunc i32 %tmp_22_to_int to i23
+
+ST_77: notlhs7 [1/1] 2.00ns
+:14  %notlhs7 = icmp ne i8 %tmp_67, -1
+
+ST_77: notrhs7 [1/1] 2.39ns
+:15  %notrhs7 = icmp eq i23 %tmp_68, 0
+
+ST_77: tmp_69 [1/1] 1.37ns
+:16  %tmp_69 = or i1 %notrhs7, %notlhs7
+
+ST_77: tmp_71 [1/1] 1.37ns
+:18  %tmp_71 = and i1 %tmp_69, %tmp_70
+
+ST_77: var_2 [1/1] 1.37ns
+:19  %var_2 = select i1 %tmp_71, float 2.250000e+02, float %tmp_22
 
 
  <State 78>: 8.13ns
+ST_78: stg_442 [1/1] 2.71ns
+:20  store float %var_2, float* %bgmodel_addr_3, align 4
+
 ST_78: tmp_i [12/12] 8.13ns
 :21  %tmp_i = call float @llvm.sqrt.f32(float %var_2) nounwind
 
@@ -1457,255 +1485,228 @@ ST_89: tmp_i [1/12] 8.13ns
 
 
  <State 90>: 6.08ns
-ST_90: tmp_17 [16/16] 6.08ns
-:22  %tmp_17 = fdiv float %w, %tmp_i
+ST_90: tmp_24 [16/16] 6.08ns
+:22  %tmp_24 = fdiv float %w, %tmp_i
 
 
  <State 91>: 6.08ns
-ST_91: tmp_17 [15/16] 6.08ns
-:22  %tmp_17 = fdiv float %w, %tmp_i
+ST_91: tmp_24 [15/16] 6.08ns
+:22  %tmp_24 = fdiv float %w, %tmp_i
 
 
  <State 92>: 6.08ns
-ST_92: tmp_17 [14/16] 6.08ns
-:22  %tmp_17 = fdiv float %w, %tmp_i
+ST_92: tmp_24 [14/16] 6.08ns
+:22  %tmp_24 = fdiv float %w, %tmp_i
 
 
  <State 93>: 6.08ns
-ST_93: tmp_17 [13/16] 6.08ns
-:22  %tmp_17 = fdiv float %w, %tmp_i
+ST_93: tmp_24 [13/16] 6.08ns
+:22  %tmp_24 = fdiv float %w, %tmp_i
 
 
  <State 94>: 6.08ns
-ST_94: tmp_17 [12/16] 6.08ns
-:22  %tmp_17 = fdiv float %w, %tmp_i
+ST_94: tmp_24 [12/16] 6.08ns
+:22  %tmp_24 = fdiv float %w, %tmp_i
 
 
  <State 95>: 6.08ns
-ST_95: tmp_17 [11/16] 6.08ns
-:22  %tmp_17 = fdiv float %w, %tmp_i
+ST_95: tmp_24 [11/16] 6.08ns
+:22  %tmp_24 = fdiv float %w, %tmp_i
 
 
  <State 96>: 6.08ns
-ST_96: tmp_17 [10/16] 6.08ns
-:22  %tmp_17 = fdiv float %w, %tmp_i
+ST_96: tmp_24 [10/16] 6.08ns
+:22  %tmp_24 = fdiv float %w, %tmp_i
 
 
  <State 97>: 6.08ns
-ST_97: tmp_17 [9/16] 6.08ns
-:22  %tmp_17 = fdiv float %w, %tmp_i
+ST_97: tmp_24 [9/16] 6.08ns
+:22  %tmp_24 = fdiv float %w, %tmp_i
 
 
  <State 98>: 6.08ns
-ST_98: tmp_17 [8/16] 6.08ns
-:22  %tmp_17 = fdiv float %w, %tmp_i
+ST_98: tmp_24 [8/16] 6.08ns
+:22  %tmp_24 = fdiv float %w, %tmp_i
 
 
  <State 99>: 6.08ns
-ST_99: tmp_17 [7/16] 6.08ns
-:22  %tmp_17 = fdiv float %w, %tmp_i
+ST_99: tmp_24 [7/16] 6.08ns
+:22  %tmp_24 = fdiv float %w, %tmp_i
 
 
  <State 100>: 6.08ns
-ST_100: tmp_17 [6/16] 6.08ns
-:22  %tmp_17 = fdiv float %w, %tmp_i
+ST_100: tmp_24 [6/16] 6.08ns
+:22  %tmp_24 = fdiv float %w, %tmp_i
 
 
  <State 101>: 6.08ns
-ST_101: tmp_17 [5/16] 6.08ns
-:22  %tmp_17 = fdiv float %w, %tmp_i
+ST_101: tmp_24 [5/16] 6.08ns
+:22  %tmp_24 = fdiv float %w, %tmp_i
 
 
  <State 102>: 7.26ns
 ST_102: wsum_6 [5/5] 7.26ns
 :0  %wsum_6 = fsub float %wsum_5, %w
 
-ST_102: tmp_17 [4/16] 6.08ns
-:22  %tmp_17 = fdiv float %w, %tmp_i
+ST_102: tmp_24 [4/16] 6.08ns
+:22  %tmp_24 = fdiv float %w, %tmp_i
 
 
  <State 103>: 7.26ns
 ST_103: wsum_6 [4/5] 7.26ns
 :0  %wsum_6 = fsub float %wsum_5, %w
 
-ST_103: tmp_17 [3/16] 6.08ns
-:22  %tmp_17 = fdiv float %w, %tmp_i
+ST_103: tmp_24 [3/16] 6.08ns
+:22  %tmp_24 = fdiv float %w, %tmp_i
 
 
  <State 104>: 7.26ns
 ST_104: wsum_6 [3/5] 7.26ns
 :0  %wsum_6 = fsub float %wsum_5, %w
 
-ST_104: tmp_17 [2/16] 6.08ns
-:22  %tmp_17 = fdiv float %w, %tmp_i
+ST_104: tmp_24 [2/16] 6.08ns
+:22  %tmp_24 = fdiv float %w, %tmp_i
 
 
  <State 105>: 7.26ns
 ST_105: wsum_6 [2/5] 7.26ns
 :0  %wsum_6 = fsub float %wsum_5, %w
 
-ST_105: tmp_17 [1/16] 6.08ns
-:22  %tmp_17 = fdiv float %w, %tmp_i
+ST_105: tmp_24 [1/16] 6.08ns
+:22  %tmp_24 = fdiv float %w, %tmp_i
 
 
  <State 106>: 7.26ns
 ST_106: wsum_6 [1/5] 7.26ns
 :0  %wsum_6 = fsub float %wsum_5, %w
 
-ST_106: bgmodel_sortKey_addr [1/1] 0.00ns
-:23  %bgmodel_sortKey_addr = getelementptr [2560 x float]* %bgmodel_sortKey, i64 0, i64 %sum1_cast
+ST_106: sum8 [1/1] 0.00ns
+:23  %sum8 = call i12 @_ssdm_op_BitConcatenate.i12.i9.i1.i2(i9 %tmp_9, i1 %tmp_12, i2 0)
 
-ST_106: stg_468 [1/1] 2.71ns
-:24  store float %tmp_17, float* %bgmodel_sortKey_addr, align 4
+ST_106: sum8_cast [1/1] 0.00ns
+:24  %sum8_cast = zext i12 %sum8 to i64
 
-ST_106: sum6 [1/1] 0.00ns
-:25  %sum6 = or i12 %mptr_1_sum, 1
+ST_106: bgmodel_addr_6 [1/1] 0.00ns
+:25  %bgmodel_addr_6 = getelementptr [2560 x float]* %bgmodel, i64 0, i64 %sum8_cast
 
-ST_106: sum6_cast [1/1] 0.00ns
-:26  %sum6_cast = zext i12 %sum6 to i64
+ST_106: stg_479 [1/1] 2.71ns
+:26  store float %tmp_24, float* %bgmodel_addr_6, align 4
 
-ST_106: bgmodel_sortKey_addr_2 [1/1] 0.00ns
-:27  %bgmodel_sortKey_addr_2 = getelementptr [2560 x float]* %bgmodel_sortKey, i64 0, i64 %sum6_cast
+ST_106: sum [1/1] 0.00ns
+:27  %sum = or i12 %mptr_1_sum, 1
 
-ST_106: bgmodel_weight_addr_4 [1/1] 0.00ns
-:28  %bgmodel_weight_addr_4 = getelementptr [2560 x float]* %bgmodel_weight, i64 0, i64 %sum6_cast
+ST_106: sum11_cast [1/1] 0.00ns
+:28  %sum11_cast = zext i12 %sum to i64
 
-ST_106: bgmodel_mean_addr_3 [1/1] 0.00ns
-:29  %bgmodel_mean_addr_3 = getelementptr [2560 x float]* %bgmodel_mean, i64 0, i64 %sum6_cast
+ST_106: bgmodel_addr_9 [1/1] 0.00ns
+:29  %bgmodel_addr_9 = getelementptr [2560 x float]* %bgmodel, i64 0, i64 %sum11_cast
 
-ST_106: bgmodel_var_addr_3 [1/1] 0.00ns
-:30  %bgmodel_var_addr_3 = getelementptr [2560 x float]* %bgmodel_var, i64 0, i64 %sum6_cast
-
-ST_106: stg_475 [1/1] 1.57ns
-:31  br label %8
+ST_106: stg_483 [1/1] 1.57ns
+:30  br label %8
 
 
- <State 107>: 5.35ns
+ <State 107>: 3.51ns
 ST_107: kHit [1/1] 0.00ns
 :0  %kHit = phi i2 [ %k, %7 ], [ %k1, %10 ]
 
 ST_107: k1 [1/1] 0.80ns
-:1  %k1 = add i2 %kHit, -1
+:1  %k1 = add i2 -1, %kHit
 
-ST_107: tmp_18 [1/1] 1.36ns
-:2  %tmp_18 = icmp eq i2 %kHit, 1
+ST_107: tmp_73 [1/1] 0.00ns
+:2  %tmp_73 = trunc i2 %k1 to i1
 
-ST_107: stg_479 [1/1] 1.57ns
-:3  br i1 %tmp_18, label %9, label %.loopexit11
+ST_107: tmp_25 [1/1] 1.36ns
+:3  %tmp_25 = icmp eq i2 %kHit, 1
 
-ST_107: tmp_26_cast [1/1] 0.00ns
-:2  %tmp_26_cast = zext i2 %k1 to i12
+ST_107: stg_488 [1/1] 1.57ns
+:4  br i1 %tmp_25, label %9, label %.loopexit11
 
-ST_107: sum5 [1/1] 1.84ns
-:3  %sum5 = add i12 %mptr_1_sum, %tmp_26_cast
+ST_107: tmp_75 [1/1] 0.00ns
+:2  %tmp_75 = call i11 @_ssdm_op_PartSelect.i11.i12.i32.i32(i12 %mptr_1_sum, i32 1, i32 11)
 
-ST_107: sum5_cast [1/1] 0.00ns
-:4  %sum5_cast = zext i12 %sum5 to i64
+ST_107: sum2 [1/1] 0.00ns
+:3  %sum2 = call i12 @_ssdm_op_BitConcatenate.i12.i11.i1(i11 %tmp_75, i1 %tmp_73)
 
-ST_107: bgmodel_sortKey_addr_1 [1/1] 0.00ns
-:5  %bgmodel_sortKey_addr_1 = getelementptr [2560 x float]* %bgmodel_sortKey, i64 0, i64 %sum5_cast
+ST_107: sum10_cast [1/1] 0.00ns
+:4  %sum10_cast = zext i12 %sum2 to i64
 
-ST_107: p_tmp_sortKey [2/2] 2.71ns
-:6  %p_tmp_sortKey = load float* %bgmodel_sortKey_addr_1, align 4
+ST_107: bgmodel_addr_8 [1/1] 0.00ns
+:5  %bgmodel_addr_8 = getelementptr [2560 x float]* %bgmodel, i64 0, i64 %sum10_cast
 
-ST_107: bgmodel_sortKey_load_2 [2/2] 2.71ns
-:7  %bgmodel_sortKey_load_2 = load float* %bgmodel_sortKey_addr_2, align 4
+ST_107: p_tmp [2/2] 2.71ns
+:6  %p_tmp = load float* %bgmodel_addr_8, align 4
+
+ST_107: bgmodel_load_12 [2/2] 2.71ns
+:7  %bgmodel_load_12 = load float* %bgmodel_addr_9, align 4
 
 
  <State 108>: 2.71ns
-ST_108: p_tmp_sortKey [1/2] 2.71ns
-:6  %p_tmp_sortKey = load float* %bgmodel_sortKey_addr_1, align 4
+ST_108: p_tmp [1/2] 2.71ns
+:6  %p_tmp = load float* %bgmodel_addr_8, align 4
 
-ST_108: bgmodel_sortKey_load_2 [1/2] 2.71ns
-:7  %bgmodel_sortKey_load_2 = load float* %bgmodel_sortKey_addr_2, align 4
+ST_108: bgmodel_load_12 [1/2] 2.71ns
+:7  %bgmodel_load_12 = load float* %bgmodel_addr_9, align 4
 
 
  <State 109>: 8.16ns
-ST_109: p_a_sortKey_read_assign_to_int [1/1] 0.00ns
-:8  %p_a_sortKey_read_assign_to_int = bitcast float %p_tmp_sortKey to i32
+ST_109: p_a_read_assign_to_int [1/1] 0.00ns
+:8  %p_a_read_assign_to_int = bitcast float %p_tmp to i32
 
-ST_109: tmp_60 [1/1] 0.00ns
-:9  %tmp_60 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %p_a_sortKey_read_assign_to_int, i32 23, i32 30)
+ST_109: tmp_76 [1/1] 0.00ns
+:9  %tmp_76 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %p_a_read_assign_to_int, i32 23, i32 30)
 
-ST_109: tmp_61 [1/1] 0.00ns
-:10  %tmp_61 = trunc i32 %p_a_sortKey_read_assign_to_int to i23
+ST_109: tmp_77 [1/1] 0.00ns
+:10  %tmp_77 = trunc i32 %p_a_read_assign_to_int to i23
 
-ST_109: p_b_sortKey_read_assign_to_int [1/1] 0.00ns
-:11  %p_b_sortKey_read_assign_to_int = bitcast float %bgmodel_sortKey_load_2 to i32
+ST_109: p_b_read_assign_to_int [1/1] 0.00ns
+:11  %p_b_read_assign_to_int = bitcast float %bgmodel_load_12 to i32
 
-ST_109: tmp_62 [1/1] 0.00ns
-:12  %tmp_62 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %p_b_sortKey_read_assign_to_int, i32 23, i32 30)
+ST_109: tmp_78 [1/1] 0.00ns
+:12  %tmp_78 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %p_b_read_assign_to_int, i32 23, i32 30)
 
-ST_109: tmp_63 [1/1] 0.00ns
-:13  %tmp_63 = trunc i32 %p_b_sortKey_read_assign_to_int to i23
+ST_109: tmp_82 [1/1] 0.00ns
+:13  %tmp_82 = trunc i32 %p_b_read_assign_to_int to i23
 
 ST_109: notlhs9 [1/1] 2.00ns
-:14  %notlhs9 = icmp ne i8 %tmp_60, -1
+:14  %notlhs9 = icmp ne i8 %tmp_76, -1
 
 ST_109: notrhs8 [1/1] 2.39ns
-:15  %notrhs8 = icmp eq i23 %tmp_61, 0
+:15  %notrhs8 = icmp eq i23 %tmp_77, 0
 
-ST_109: tmp_64 [1/1] 1.37ns
-:16  %tmp_64 = or i1 %notrhs8, %notlhs9
+ST_109: tmp_86 [1/1] 1.37ns
+:16  %tmp_86 = or i1 %notrhs8, %notlhs9
 
 ST_109: notlhs10 [1/1] 2.00ns
-:17  %notlhs10 = icmp ne i8 %tmp_62, -1
+:17  %notlhs10 = icmp ne i8 %tmp_78, -1
 
 ST_109: notrhs10 [1/1] 2.39ns
-:18  %notrhs10 = icmp eq i23 %tmp_63, 0
+:18  %notrhs10 = icmp eq i23 %tmp_82, 0
 
-ST_109: tmp_65 [1/1] 1.37ns
-:19  %tmp_65 = or i1 %notrhs10, %notlhs10
+ST_109: tmp_87 [1/1] 1.37ns
+:19  %tmp_87 = or i1 %notrhs10, %notlhs10
 
-ST_109: tmp_66 [1/1] 1.37ns
-:20  %tmp_66 = and i1 %tmp_64, %tmp_65
+ST_109: tmp_88 [1/1] 1.37ns
+:20  %tmp_88 = and i1 %tmp_86, %tmp_87
 
-ST_109: tmp_68 [1/1] 6.79ns
-:21  %tmp_68 = fcmp oge float %p_tmp_sortKey, %bgmodel_sortKey_load_2
+ST_109: tmp_89 [1/1] 6.79ns
+:21  %tmp_89 = fcmp oge float %p_tmp, %bgmodel_load_12
 
-ST_109: tmp_72 [1/1] 1.37ns
-:22  %tmp_72 = and i1 %tmp_66, %tmp_68
+ST_109: tmp_90 [1/1] 1.37ns
+:22  %tmp_90 = and i1 %tmp_88, %tmp_89
 
 
  <State 110>: 4.08ns
-ST_110: tmp_20 [1/1] 0.00ns
-:0  %tmp_20 = call i32 (...)* @_ssdm_op_SpecRegionBegin([12 x i8]* @p_str1804)
+ST_110: tmp_27 [1/1] 0.00ns
+:0  %tmp_27 = call i32 (...)* @_ssdm_op_SpecRegionBegin([12 x i8]* @p_str1804)
 
-ST_110: stg_504 [1/1] 0.00ns
+ST_110: stg_513 [1/1] 0.00ns
 :1  call void (...)* @_ssdm_op_SpecLoopTripCount(i32 0, i32 1, i32 1, [1 x i8]* @p_str1805) nounwind
 
-ST_110: stg_505 [1/1] 1.57ns
-:23  br i1 %tmp_72, label %.loopexit11, label %10
-
-ST_110: bgmodel_weight_addr_3 [1/1] 0.00ns
-:0  %bgmodel_weight_addr_3 = getelementptr [2560 x float]* %bgmodel_weight, i64 0, i64 %sum5_cast
-
-ST_110: bgmodel_mean_addr_2 [1/1] 0.00ns
-:1  %bgmodel_mean_addr_2 = getelementptr [2560 x float]* %bgmodel_mean, i64 0, i64 %sum5_cast
-
-ST_110: bgmodel_var_addr_2 [1/1] 0.00ns
-:2  %bgmodel_var_addr_2 = getelementptr [2560 x float]* %bgmodel_var, i64 0, i64 %sum5_cast
-
-ST_110: p_tmp_weight [2/2] 2.71ns
-:3  %p_tmp_weight = load float* %bgmodel_weight_addr_3, align 4
-
-ST_110: p_tmp_mean [2/2] 2.71ns
-:4  %p_tmp_mean = load float* %bgmodel_mean_addr_2, align 4
-
-ST_110: p_tmp_var [2/2] 2.71ns
-:5  %p_tmp_var = load float* %bgmodel_var_addr_2, align 4
-
-ST_110: bgmodel_weight_load_7 [2/2] 2.71ns
-:6  %bgmodel_weight_load_7 = load float* %bgmodel_weight_addr_4, align 4
-
-ST_110: bgmodel_mean_load_1 [2/2] 2.71ns
-:7  %bgmodel_mean_load_1 = load float* %bgmodel_mean_addr_3, align 4
-
-ST_110: bgmodel_var_load_1 [2/2] 2.71ns
-:8  %bgmodel_var_load_1 = load float* %bgmodel_var_addr_3, align 4
+ST_110: stg_514 [1/1] 1.57ns
+:23  br i1 %tmp_90, label %.loopexit11, label %10
 
 ST_110: stg_515 [1/1] 2.71ns
-:9  store float %bgmodel_sortKey_load_2, float* %bgmodel_sortKey_addr_1, align 4
+:0  store float %bgmodel_load_12, float* %bgmodel_addr_8, align 4
 
 ST_110: wsum_1 [1/1] 0.00ns
 .loopexit11:0  %wsum_1 = phi float [ %wsum_6, %8 ], [ %wsum_6, %9 ], [ %wsum_5, %5 ], [ %wsum, %4 ]
@@ -1713,509 +1714,522 @@ ST_110: wsum_1 [1/1] 0.00ns
 ST_110: kHit1 [1/1] 0.00ns
 .loopexit11:1  %kHit1 = phi i2 [ 1, %9 ], [ %kHit, %8 ], [ -1, %4 ], [ -1, %5 ]
 
-ST_110: k_cast3 [1/1] 0.00ns
-.loopexit11:2  %k_cast3 = zext i2 %k to i32
+ST_110: k_cast4 [1/1] 0.00ns
+.loopexit11:2  %k_cast4 = zext i2 %k to i32
 
-ST_110: tmp_73 [1/1] 0.00ns
-.loopexit11:3  %tmp_73 = trunc i2 %k to i1
+ST_110: tmp_91 [1/1] 0.00ns
+.loopexit11:3  %tmp_91 = trunc i2 %k to i1
 
-ST_110: tmp_74 [1/1] 0.00ns
-.loopexit11:4  %tmp_74 = call i1 @_ssdm_op_BitSelect.i1.i2.i32(i2 %kHit1, i32 1)
+ST_110: tmp_92 [1/1] 0.00ns
+.loopexit11:4  %tmp_92 = call i1 @_ssdm_op_BitSelect.i1.i2.i32(i2 %kHit1, i32 1)
 
 ST_110: stg_521 [1/1] 1.57ns
-.loopexit11:5  br i1 %tmp_74, label %11, label %.preheader43
+.loopexit11:5  br i1 %tmp_92, label %11, label %.preheader43
 
-ST_110: tmp_76 [1/1] 0.00ns
-:0  %tmp_76 = call i1 @_ssdm_op_BitSelect.i1.i2.i32(i2 %k, i32 1)
+ST_110: tmp_95 [1/1] 0.00ns
+:0  %tmp_95 = call i1 @_ssdm_op_BitSelect.i1.i2.i32(i2 %k, i32 1)
 
 ST_110: k_10 [1/1] 1.37ns
-:1  %k_10 = or i1 %tmp_76, %tmp_73
+:1  %k_10 = or i1 %tmp_95, %tmp_91
 
-ST_110: tmp_77 [1/1] 0.00ns
-:3  %tmp_77 = call i11 @_ssdm_op_PartSelect.i11.i12.i32.i32(i12 %mptr_1_sum, i32 1, i32 11)
+ST_110: tmp_32 [1/1] 0.00ns
+:3  %tmp_32 = call i3 @_ssdm_op_BitConcatenate.i3.i1.i2(i1 %k_10, i2 0)
 
-ST_110: sum7 [1/1] 0.00ns
-:4  %sum7 = call i12 @_ssdm_op_BitConcatenate.i12.i11.i1(i11 %tmp_77, i1 %k_10)
+ST_110: tmp_96 [1/1] 0.00ns
+:4  %tmp_96 = or i3 %tmp_32, 1
 
-ST_110: sum7_cast [1/1] 0.00ns
-:5  %sum7_cast = zext i12 %sum7 to i64
+ST_110: tmp_97 [1/1] 0.00ns
+:5  %tmp_97 = call i9 @_ssdm_op_PartSelect.i9.i12.i32.i32(i12 %mptr_1_sum, i32 3, i32 11)
 
-ST_110: bgmodel_weight_addr_5 [1/1] 0.00ns
-:6  %bgmodel_weight_addr_5 = getelementptr [2560 x float]* %bgmodel_weight, i64 0, i64 %sum7_cast
+ST_110: sum10 [1/1] 0.00ns
+:6  %sum10 = call i12 @_ssdm_op_BitConcatenate.i12.i9.i3(i9 %tmp_97, i3 %tmp_96)
 
-ST_110: bgmodel_weight_load_1 [2/2] 2.71ns
-:7  %bgmodel_weight_load_1 = load float* %bgmodel_weight_addr_5, align 4
+ST_110: sum12_cast [1/1] 0.00ns
+:7  %sum12_cast = zext i12 %sum10 to i64
 
-ST_110: bgmodel_mean_addr_4 [1/1] 0.00ns
-:11  %bgmodel_mean_addr_4 = getelementptr [2560 x float]* %bgmodel_mean, i64 0, i64 %sum7_cast
+ST_110: bgmodel_addr_10 [1/1] 0.00ns
+:8  %bgmodel_addr_10 = getelementptr [2560 x float]* %bgmodel, i64 0, i64 %sum12_cast
 
-ST_110: stg_530 [1/1] 2.71ns
-:12  store float %pix, float* %bgmodel_mean_addr_4, align 4
-
-ST_110: bgmodel_var_addr_4 [1/1] 0.00ns
-:13  %bgmodel_var_addr_4 = getelementptr [2560 x float]* %bgmodel_var, i64 0, i64 %sum7_cast
-
-ST_110: stg_532 [1/1] 2.71ns
-:14  store float 9.000000e+02, float* %bgmodel_var_addr_4, align 4
-
-ST_110: bgmodel_sortKey_addr_3 [1/1] 0.00ns
-:15  %bgmodel_sortKey_addr_3 = getelementptr [2560 x float]* %bgmodel_sortKey, i64 0, i64 %sum7_cast
-
-ST_110: stg_534 [1/1] 2.71ns
-:16  store float 0x3F5B4E81C0000000, float* %bgmodel_sortKey_addr_3, align 4
+ST_110: bgmodel_load_7 [2/2] 2.71ns
+:9  %bgmodel_load_7 = load float* %bgmodel_addr_10, align 4
 
 
- <State 111>: 5.42ns
-ST_111: p_tmp_weight [1/2] 2.71ns
-:3  %p_tmp_weight = load float* %bgmodel_weight_addr_3, align 4
+ <State 111>: 2.71ns
+ST_111: stg_531 [1/1] 2.71ns
+:1  store float %p_tmp, float* %bgmodel_addr_9, align 4
 
-ST_111: p_tmp_mean [1/2] 2.71ns
-:4  %p_tmp_mean = load float* %bgmodel_mean_addr_2, align 4
+ST_111: empty [1/1] 0.00ns
+:2  %empty = call i32 (...)* @_ssdm_op_SpecRegionEnd([12 x i8]* @p_str1804, i32 %tmp_27)
 
-ST_111: p_tmp_var [1/2] 2.71ns
-:5  %p_tmp_var = load float* %bgmodel_var_addr_2, align 4
-
-ST_111: bgmodel_weight_load_7 [1/2] 2.71ns
-:6  %bgmodel_weight_load_7 = load float* %bgmodel_weight_addr_4, align 4
-
-ST_111: bgmodel_mean_load_1 [1/2] 2.71ns
-:7  %bgmodel_mean_load_1 = load float* %bgmodel_mean_addr_3, align 4
-
-ST_111: bgmodel_var_load_1 [1/2] 2.71ns
-:8  %bgmodel_var_load_1 = load float* %bgmodel_var_addr_3, align 4
-
-ST_111: stg_541 [1/1] 2.71ns
-:10  store float %bgmodel_weight_load_7, float* %bgmodel_weight_addr_3, align 4
-
-ST_111: stg_542 [1/1] 2.71ns
-:11  store float %bgmodel_mean_load_1, float* %bgmodel_mean_addr_2, align 4
-
-ST_111: stg_543 [1/1] 2.71ns
-:12  store float %bgmodel_var_load_1, float* %bgmodel_var_addr_2, align 4
-
-ST_111: stg_544 [1/1] 2.71ns
-:13  store float %p_tmp_sortKey, float* %bgmodel_sortKey_addr_2, align 4
+ST_111: stg_533 [1/1] 0.00ns
+:3  br label %8
 
 
- <State 112>: 2.71ns
-ST_112: stg_545 [1/1] 2.71ns
-:14  store float %p_tmp_weight, float* %bgmodel_weight_addr_4, align 4
+ <State 112>: 4.67ns
+ST_112: k_1 [1/1] 0.00ns
+.preheader43:0  %k_1 = phi i32 [ %k_8, %12 ], [ %k_cast4, %.loopexit11 ]
 
-ST_112: stg_546 [1/1] 2.71ns
-:15  store float %p_tmp_mean, float* %bgmodel_mean_addr_3, align 4
-
-ST_112: stg_547 [1/1] 2.71ns
-:16  store float %p_tmp_var, float* %bgmodel_var_addr_3, align 4
-
-ST_112: empty [1/1] 0.00ns
-:17  %empty = call i32 (...)* @_ssdm_op_SpecRegionEnd([12 x i8]* @p_str1804, i32 %tmp_20)
-
-ST_112: stg_549 [1/1] 0.00ns
-:18  br label %8
-
-
- <State 113>: 4.67ns
-ST_113: k_1 [1/1] 0.00ns
-.preheader43:0  %k_1 = phi i32 [ %k_8, %12 ], [ %k_cast3, %.loopexit11 ]
-
-ST_113: wsum_2 [1/1] 0.00ns
+ST_112: wsum_2 [1/1] 0.00ns
 .preheader43:1  %wsum_2 = phi float [ %wsum_9, %12 ], [ %wsum_1, %.loopexit11 ]
 
-ST_113: exitcond4 [1/1] 2.52ns
+ST_112: exitcond4 [1/1] 2.52ns
 .preheader43:2  %exitcond4 = icmp eq i32 %k_1, 2
 
-ST_113: stg_553 [1/1] 1.57ns
+ST_112: stg_537 [1/1] 1.57ns
 .preheader43:3  br i1 %exitcond4, label %.loopexit44, label %12
 
-ST_113: tmp_78 [1/1] 0.00ns
-:2  %tmp_78 = trunc i32 %k_1 to i13
+ST_112: tmp_103 [1/1] 0.00ns
+:2  %tmp_103 = trunc i32 %k_1 to i11
 
-ST_113: sum8 [1/1] 1.96ns
-:3  %sum8 = add i13 %tmp_78, %mptr_1_sum_cast
+ST_112: tmp_45 [1/1] 0.00ns
+:3  %tmp_45 = call i13 @_ssdm_op_BitConcatenate.i13.i11.i2(i11 %tmp_103, i2 0)
 
-ST_113: sum8_cast [1/1] 0.00ns
-:4  %sum8_cast = zext i13 %sum8 to i64
+ST_112: tmp_64_cast [1/1] 0.00ns
+:4  %tmp_64_cast = or i13 %tmp_45, 1
 
-ST_113: bgmodel_weight_addr_6 [1/1] 0.00ns
-:5  %bgmodel_weight_addr_6 = getelementptr [2560 x float]* %bgmodel_weight, i64 0, i64 %sum8_cast
+ST_112: sum14 [1/1] 1.96ns
+:5  %sum14 = add i13 %mptr_1_sum_cast, %tmp_64_cast
 
-ST_113: bgmodel_weight_load_3 [2/2] 2.71ns
-:6  %bgmodel_weight_load_3 = load float* %bgmodel_weight_addr_6, align 4
+ST_112: sum16_cast [1/1] 0.00ns
+:6  %sum16_cast = zext i13 %sum14 to i64
 
-ST_113: k_8 [1/1] 2.44ns
-:9  %k_8 = add nsw i32 1, %k_1
+ST_112: bgmodel_addr_14 [1/1] 0.00ns
+:7  %bgmodel_addr_14 = getelementptr [2560 x float]* %bgmodel, i64 0, i64 %sum16_cast
+
+ST_112: bgmodel_load_9 [2/2] 2.71ns
+:8  %bgmodel_load_9 = load float* %bgmodel_addr_14, align 4
+
+ST_112: k_8 [1/1] 2.44ns
+:11  %k_8 = add nsw i32 1, %k_1
 
 
- <State 114>: 2.71ns
-ST_114: bgmodel_weight_load_3 [1/2] 2.71ns
-:6  %bgmodel_weight_load_3 = load float* %bgmodel_weight_addr_6, align 4
+ <State 113>: 2.71ns
+ST_113: bgmodel_load_9 [1/2] 2.71ns
+:8  %bgmodel_load_9 = load float* %bgmodel_addr_14, align 4
+
+
+ <State 114>: 7.26ns
+ST_114: wsum_9 [5/5] 7.26ns
+:9  %wsum_9 = fadd float %wsum_2, %bgmodel_load_9
 
 
  <State 115>: 7.26ns
-ST_115: wsum_9 [5/5] 7.26ns
-:7  %wsum_9 = fadd float %wsum_2, %bgmodel_weight_load_3
+ST_115: wsum_9 [4/5] 7.26ns
+:9  %wsum_9 = fadd float %wsum_2, %bgmodel_load_9
 
 
  <State 116>: 7.26ns
-ST_116: wsum_9 [4/5] 7.26ns
-:7  %wsum_9 = fadd float %wsum_2, %bgmodel_weight_load_3
+ST_116: wsum_9 [3/5] 7.26ns
+:9  %wsum_9 = fadd float %wsum_2, %bgmodel_load_9
 
 
  <State 117>: 7.26ns
-ST_117: wsum_9 [3/5] 7.26ns
-:7  %wsum_9 = fadd float %wsum_2, %bgmodel_weight_load_3
+ST_117: wsum_9 [2/5] 7.26ns
+:9  %wsum_9 = fadd float %wsum_2, %bgmodel_load_9
 
 
  <State 118>: 7.26ns
-ST_118: wsum_9 [2/5] 7.26ns
-:7  %wsum_9 = fadd float %wsum_2, %bgmodel_weight_load_3
+ST_118: tmp_43 [1/1] 0.00ns
+:0  %tmp_43 = call i32 (...)* @_ssdm_op_SpecRegionBegin([12 x i8]* @p_str1806)
 
-
- <State 119>: 7.26ns
-ST_119: tmp_29 [1/1] 0.00ns
-:0  %tmp_29 = call i32 (...)* @_ssdm_op_SpecRegionBegin([12 x i8]* @p_str1806)
-
-ST_119: stg_566 [1/1] 0.00ns
+ST_118: stg_552 [1/1] 0.00ns
 :1  call void (...)* @_ssdm_op_SpecLoopTripCount(i32 1, i32 2, i32 2, [1 x i8]* @p_str1805) nounwind
 
-ST_119: wsum_9 [1/5] 7.26ns
-:7  %wsum_9 = fadd float %wsum_2, %bgmodel_weight_load_3
+ST_118: wsum_9 [1/5] 7.26ns
+:9  %wsum_9 = fadd float %wsum_2, %bgmodel_load_9
 
-ST_119: empty_7 [1/1] 0.00ns
-:8  %empty_7 = call i32 (...)* @_ssdm_op_SpecRegionEnd([12 x i8]* @p_str1806, i32 %tmp_29)
+ST_118: empty_7 [1/1] 0.00ns
+:10  %empty_7 = call i32 (...)* @_ssdm_op_SpecRegionEnd([12 x i8]* @p_str1806, i32 %tmp_43)
 
-ST_119: stg_569 [1/1] 0.00ns
-:10  br label %.preheader43
+ST_118: stg_555 [1/1] 0.00ns
+:12  br label %.preheader43
 
 
- <State 120>: 2.71ns
-ST_120: bgmodel_weight_load_1 [1/2] 2.71ns
-:7  %bgmodel_weight_load_1 = load float* %bgmodel_weight_addr_5, align 4
+ <State 119>: 2.71ns
+ST_119: bgmodel_load_7 [1/2] 2.71ns
+:9  %bgmodel_load_7 = load float* %bgmodel_addr_10, align 4
 
-ST_120: stg_571 [1/1] 2.71ns
-:10  store float 0x3FA99999A0000000, float* %bgmodel_weight_addr_5, align 4
+ST_119: stg_557 [1/1] 2.71ns
+:12  store float 0x3FA99999A0000000, float* %bgmodel_addr_10, align 4
+
+
+ <State 120>: 7.26ns
+ST_120: tmp_34 [5/5] 7.26ns
+:10  %tmp_34 = fsub float 0x3FA99999A0000000, %bgmodel_load_7
+
+ST_120: tmp_98 [1/1] 0.00ns
+:13  %tmp_98 = or i3 %tmp_32, 2
+
+ST_120: sum11 [1/1] 0.00ns
+:14  %sum11 = call i12 @_ssdm_op_BitConcatenate.i12.i9.i3(i9 %tmp_97, i3 %tmp_98)
+
+ST_120: sum13_cast [1/1] 0.00ns
+:15  %sum13_cast = zext i12 %sum11 to i64
+
+ST_120: bgmodel_addr_11 [1/1] 0.00ns
+:16  %bgmodel_addr_11 = getelementptr [2560 x float]* %bgmodel, i64 0, i64 %sum13_cast
+
+ST_120: stg_563 [1/1] 2.71ns
+:17  store float %pix, float* %bgmodel_addr_11, align 4
 
 
  <State 121>: 7.26ns
-ST_121: tmp_24 [5/5] 7.26ns
-:8  %tmp_24 = fsub float 0x3FA99999A0000000, %bgmodel_weight_load_1
+ST_121: tmp_34 [4/5] 7.26ns
+:10  %tmp_34 = fsub float 0x3FA99999A0000000, %bgmodel_load_7
+
+ST_121: tmp_99 [1/1] 0.00ns
+:18  %tmp_99 = or i3 %tmp_32, 3
+
+ST_121: sum12 [1/1] 0.00ns
+:19  %sum12 = call i12 @_ssdm_op_BitConcatenate.i12.i9.i3(i9 %tmp_97, i3 %tmp_99)
+
+ST_121: sum14_cast [1/1] 0.00ns
+:20  %sum14_cast = zext i12 %sum12 to i64
+
+ST_121: bgmodel_addr_12 [1/1] 0.00ns
+:21  %bgmodel_addr_12 = getelementptr [2560 x float]* %bgmodel, i64 0, i64 %sum14_cast
+
+ST_121: stg_569 [1/1] 2.71ns
+:22  store float 9.000000e+02, float* %bgmodel_addr_12, align 4
 
 
  <State 122>: 7.26ns
-ST_122: tmp_24 [4/5] 7.26ns
-:8  %tmp_24 = fsub float 0x3FA99999A0000000, %bgmodel_weight_load_1
+ST_122: tmp_34 [3/5] 7.26ns
+:10  %tmp_34 = fsub float 0x3FA99999A0000000, %bgmodel_load_7
+
+ST_122: sum13 [1/1] 0.00ns
+:23  %sum13 = call i12 @_ssdm_op_BitConcatenate.i12.i9.i1.i2(i9 %tmp_97, i1 %k_10, i2 0)
+
+ST_122: sum15_cast [1/1] 0.00ns
+:24  %sum15_cast = zext i12 %sum13 to i64
+
+ST_122: bgmodel_addr_13 [1/1] 0.00ns
+:25  %bgmodel_addr_13 = getelementptr [2560 x float]* %bgmodel, i64 0, i64 %sum15_cast
+
+ST_122: stg_574 [1/1] 2.71ns
+:26  store float 0x3F5B4E81C0000000, float* %bgmodel_addr_13, align 4
 
 
  <State 123>: 7.26ns
-ST_123: tmp_24 [3/5] 7.26ns
-:8  %tmp_24 = fsub float 0x3FA99999A0000000, %bgmodel_weight_load_1
+ST_123: tmp_34 [2/5] 7.26ns
+:10  %tmp_34 = fsub float 0x3FA99999A0000000, %bgmodel_load_7
 
 
  <State 124>: 7.26ns
-ST_124: tmp_24 [2/5] 7.26ns
-:8  %tmp_24 = fsub float 0x3FA99999A0000000, %bgmodel_weight_load_1
+ST_124: tmp_34 [1/5] 7.26ns
+:10  %tmp_34 = fsub float 0x3FA99999A0000000, %bgmodel_load_7
 
 
  <State 125>: 7.26ns
-ST_125: tmp_24 [1/5] 7.26ns
-:8  %tmp_24 = fsub float 0x3FA99999A0000000, %bgmodel_weight_load_1
+ST_125: wsum_7 [5/5] 7.26ns
+:11  %wsum_7 = fadd float %wsum_1, %tmp_34
 
 
  <State 126>: 7.26ns
-ST_126: wsum_7 [5/5] 7.26ns
-:9  %wsum_7 = fadd float %wsum_1, %tmp_24
+ST_126: wsum_7 [4/5] 7.26ns
+:11  %wsum_7 = fadd float %wsum_1, %tmp_34
 
 
  <State 127>: 7.26ns
-ST_127: wsum_7 [4/5] 7.26ns
-:9  %wsum_7 = fadd float %wsum_1, %tmp_24
+ST_127: wsum_7 [3/5] 7.26ns
+:11  %wsum_7 = fadd float %wsum_1, %tmp_34
 
 
  <State 128>: 7.26ns
-ST_128: wsum_7 [3/5] 7.26ns
-:9  %wsum_7 = fadd float %wsum_1, %tmp_24
+ST_128: wsum_7 [2/5] 7.26ns
+:11  %wsum_7 = fadd float %wsum_1, %tmp_34
 
 
  <State 129>: 7.26ns
-ST_129: wsum_7 [2/5] 7.26ns
-:9  %wsum_7 = fadd float %wsum_1, %tmp_24
+ST_129: wsum_7 [1/5] 7.26ns
+:11  %wsum_7 = fadd float %wsum_1, %tmp_34
 
 
- <State 130>: 7.26ns
-ST_130: wsum_7 [1/5] 7.26ns
-:9  %wsum_7 = fadd float %wsum_1, %tmp_24
+ <State 130>: 7.65ns
+ST_130: k_10_cast1 [1/1] 0.00ns
+:2  %k_10_cast1 = zext i1 %k_10 to i2
 
+ST_130: stg_583 [1/1] 1.57ns
+:27  br label %.loopexit44
 
- <State 131>: 7.65ns
-ST_131: k_10_cast [1/1] 0.00ns
-:2  %k_10_cast = zext i1 %k_10 to i2
-
-ST_131: stg_583 [1/1] 1.57ns
-:17  br label %.loopexit44
-
-ST_131: wsum_3 [1/1] 0.00ns
+ST_130: wsum_3 [1/1] 0.00ns
 .loopexit44:0  %wsum_3 = phi float [ %wsum_7, %11 ], [ %wsum_2, %.preheader43 ]
 
-ST_131: wscale [16/16] 6.08ns
+ST_130: wscale [16/16] 6.08ns
+.loopexit44:3  %wscale = fdiv float 1.000000e+00, %wsum_3
+
+
+ <State 131>: 6.08ns
+ST_131: kHit_1 [1/1] 0.00ns
+.loopexit44:1  %kHit_1 = phi i2 [ %k_10_cast1, %11 ], [ %kHit1, %.preheader43 ]
+
+ST_131: wscale [15/16] 6.08ns
 .loopexit44:3  %wscale = fdiv float 1.000000e+00, %wsum_3
 
 
  <State 132>: 6.08ns
-ST_132: kHit_1 [1/1] 0.00ns
-.loopexit44:1  %kHit_1 = phi i2 [ %k_10_cast, %11 ], [ %kHit1, %.preheader43 ]
-
-ST_132: wscale [15/16] 6.08ns
+ST_132: wscale [14/16] 6.08ns
 .loopexit44:3  %wscale = fdiv float 1.000000e+00, %wsum_3
 
 
  <State 133>: 6.08ns
-ST_133: wscale [14/16] 6.08ns
+ST_133: wscale [13/16] 6.08ns
 .loopexit44:3  %wscale = fdiv float 1.000000e+00, %wsum_3
 
 
  <State 134>: 6.08ns
-ST_134: wscale [13/16] 6.08ns
+ST_134: wscale [12/16] 6.08ns
 .loopexit44:3  %wscale = fdiv float 1.000000e+00, %wsum_3
 
 
  <State 135>: 6.08ns
-ST_135: wscale [12/16] 6.08ns
+ST_135: wscale [11/16] 6.08ns
 .loopexit44:3  %wscale = fdiv float 1.000000e+00, %wsum_3
 
 
  <State 136>: 6.08ns
-ST_136: wscale [11/16] 6.08ns
+ST_136: wscale [10/16] 6.08ns
 .loopexit44:3  %wscale = fdiv float 1.000000e+00, %wsum_3
 
 
  <State 137>: 6.08ns
-ST_137: wscale [10/16] 6.08ns
+ST_137: wscale [9/16] 6.08ns
 .loopexit44:3  %wscale = fdiv float 1.000000e+00, %wsum_3
 
 
  <State 138>: 6.08ns
-ST_138: wscale [9/16] 6.08ns
+ST_138: wscale [8/16] 6.08ns
 .loopexit44:3  %wscale = fdiv float 1.000000e+00, %wsum_3
 
 
  <State 139>: 6.08ns
-ST_139: wscale [8/16] 6.08ns
+ST_139: wscale [7/16] 6.08ns
 .loopexit44:3  %wscale = fdiv float 1.000000e+00, %wsum_3
 
 
  <State 140>: 6.08ns
-ST_140: wscale [7/16] 6.08ns
+ST_140: wscale [6/16] 6.08ns
 .loopexit44:3  %wscale = fdiv float 1.000000e+00, %wsum_3
 
 
  <State 141>: 6.08ns
-ST_141: wscale [6/16] 6.08ns
+ST_141: wscale [5/16] 6.08ns
 .loopexit44:3  %wscale = fdiv float 1.000000e+00, %wsum_3
 
 
  <State 142>: 6.08ns
-ST_142: wscale [5/16] 6.08ns
+ST_142: wscale [4/16] 6.08ns
 .loopexit44:3  %wscale = fdiv float 1.000000e+00, %wsum_3
 
 
  <State 143>: 6.08ns
-ST_143: wscale [4/16] 6.08ns
+ST_143: wscale [3/16] 6.08ns
 .loopexit44:3  %wscale = fdiv float 1.000000e+00, %wsum_3
 
 
  <State 144>: 6.08ns
-ST_144: wscale [3/16] 6.08ns
+ST_144: wscale [2/16] 6.08ns
 .loopexit44:3  %wscale = fdiv float 1.000000e+00, %wsum_3
 
 
  <State 145>: 6.08ns
-ST_145: wscale [2/16] 6.08ns
-.loopexit44:3  %wscale = fdiv float 1.000000e+00, %wsum_3
-
-
- <State 146>: 6.08ns
-ST_146: kHit_1_cast [1/1] 0.00ns
+ST_145: kHit_1_cast [1/1] 0.00ns
 .loopexit44:2  %kHit_1_cast = sext i2 %kHit_1 to i32
 
-ST_146: wscale [1/16] 6.08ns
+ST_145: wscale [1/16] 6.08ns
 .loopexit44:3  %wscale = fdiv float 1.000000e+00, %wsum_3
 
-ST_146: stg_603 [1/1] 1.57ns
+ST_145: stg_603 [1/1] 1.57ns
 .loopexit44:4  br label %13
 
 
- <State 147>: 6.60ns
-ST_147: k_9 [1/1] 0.00ns
+ <State 146>: 6.28ns
+ST_146: k_9 [1/1] 0.00ns
 :0  %k_9 = phi i2 [ 0, %.loopexit44 ], [ %kForeground_1, %14 ]
 
-ST_147: wsum_4 [1/1] 0.00ns
+ST_146: wsum_4 [1/1] 0.00ns
 :1  %wsum_4 = phi float [ 0.000000e+00, %.loopexit44 ], [ %wsum_10, %14 ]
 
-ST_147: kForeground1 [1/1] 0.00ns
+ST_146: kForeground1 [1/1] 0.00ns
 :2  %kForeground1 = phi i32 [ -1, %.loopexit44 ], [ %p_kForeground, %14 ]
 
-ST_147: exitcond3 [1/1] 1.36ns
+ST_146: exitcond3 [1/1] 1.36ns
 :3  %exitcond3 = icmp eq i2 %k_9, -2
 
-ST_147: stg_608 [1/1] 0.00ns
+ST_146: stg_608 [1/1] 0.00ns
 :4  call void (...)* @_ssdm_op_SpecLoopTripCount(i64 2, i64 2, i64 2)
 
-ST_147: kForeground_1 [1/1] 0.80ns
+ST_146: kForeground_1 [1/1] 0.80ns
 :5  %kForeground_1 = add i2 %k_9, 1
 
-ST_147: stg_610 [1/1] 0.00ns
+ST_146: stg_610 [1/1] 0.00ns
 :6  br i1 %exitcond3, label %15, label %14
 
-ST_147: tmp_43_cast [1/1] 0.00ns
-:0  %tmp_43_cast = zext i2 %k_9 to i12
+ST_146: tmp_108 [1/1] 0.00ns
+:0  %tmp_108 = trunc i2 %k_9 to i1
 
-ST_147: sum9 [1/1] 1.84ns
-:1  %sum9 = add i12 %tmp_43_cast, %mptr_1_sum
+ST_146: tmp_47 [1/1] 0.00ns
+:1  %tmp_47 = call i3 @_ssdm_op_BitConcatenate.i3.i1.i2(i1 %tmp_108, i2 0)
 
-ST_147: sum9_cast [1/1] 0.00ns
-:2  %sum9_cast = zext i12 %sum9 to i64
+ST_146: tmp_100 [1/1] 0.00ns
+:2  %tmp_100 = or i3 %tmp_47, 1
 
-ST_147: bgmodel_weight_addr_7 [1/1] 0.00ns
-:3  %bgmodel_weight_addr_7 = getelementptr [2560 x float]* %bgmodel_weight, i64 0, i64 %sum9_cast
+ST_146: tmp_101 [1/1] 0.00ns
+:3  %tmp_101 = call i9 @_ssdm_op_PartSelect.i9.i12.i32.i32(i12 %mptr_1_sum, i32 3, i32 11)
 
-ST_147: bgmodel_weight_load_4 [2/2] 2.71ns
-:4  %bgmodel_weight_load_4 = load float* %bgmodel_weight_addr_7, align 4
+ST_146: sum15 [1/1] 0.00ns
+:4  %sum15 = call i12 @_ssdm_op_BitConcatenate.i12.i9.i3(i9 %tmp_101, i3 %tmp_100)
 
-ST_147: bgmodel_sortKey_addr_4 [1/1] 0.00ns
-:8  %bgmodel_sortKey_addr_4 = getelementptr [2560 x float]* %bgmodel_sortKey, i64 0, i64 %sum9_cast
+ST_146: sum17_cast [1/1] 0.00ns
+:5  %sum17_cast = zext i12 %sum15 to i64
 
-ST_147: bgmodel_sortKey_load [2/2] 2.71ns
-:9  %bgmodel_sortKey_load = load float* %bgmodel_sortKey_addr_4, align 4
+ST_146: bgmodel_addr_15 [1/1] 0.00ns
+:6  %bgmodel_addr_15 = getelementptr [2560 x float]* %bgmodel, i64 0, i64 %sum17_cast
 
-ST_147: slt [1/1] 2.52ns
+ST_146: bgmodel_load_10 [2/2] 2.71ns
+:7  %bgmodel_load_10 = load float* %bgmodel_addr_15, align 4
+
+ST_146: slt [1/1] 2.52ns
 :0  %slt = icmp slt i32 %kHit_1_cast, %kForeground1
 
-ST_147: rev [1/1] 1.37ns
+ST_146: rev [1/1] 1.37ns
 :1  %rev = xor i1 %slt, true
 
-ST_147: frame_out_addr_1 [1/1] 0.00ns
-:2  %frame_out_addr_1 = getelementptr [1280 x i1]* %frame_out, i64 0, i64 %sum_cast
+ST_146: frame_out_addr_1 [1/1] 0.00ns
+:2  %frame_out_addr_1 = getelementptr [320 x i1]* %frame_out, i64 0, i64 %sum_cast
 
-ST_147: stg_621 [1/1] 2.71ns
+ST_146: stg_622 [1/1] 2.39ns
 :3  store i1 %rev, i1* %frame_out_addr_1, align 1
 
-ST_147: p_rec1 [1/1] 1.84ns
-:4  %p_rec1 = add i10 %mptr_1_rec, 2
+ST_146: p_rec1 [1/1] 1.84ns
+:4  %p_rec1 = add i12 %mptr_1_rec, 8
 
-ST_147: stg_623 [1/1] 0.00ns
+ST_146: stg_624 [1/1] 0.00ns
 :5  br label %.preheader46
 
 
- <State 148>: 8.41ns
-ST_148: bgmodel_weight_load_4 [1/2] 2.71ns
-:4  %bgmodel_weight_load_4 = load float* %bgmodel_weight_addr_7, align 4
+ <State 147>: 8.41ns
+ST_147: bgmodel_load_10 [1/2] 2.71ns
+:7  %bgmodel_load_10 = load float* %bgmodel_addr_15, align 4
 
-ST_148: tmp_31 [4/4] 5.70ns
-:5  %tmp_31 = fmul float %bgmodel_weight_load_4, %wscale
+ST_147: tmp_49 [4/4] 5.70ns
+:8  %tmp_49 = fmul float %bgmodel_load_10, %wscale
 
-ST_148: bgmodel_sortKey_load [1/2] 2.71ns
-:9  %bgmodel_sortKey_load = load float* %bgmodel_sortKey_addr_4, align 4
 
-ST_148: tmp_32 [4/4] 5.70ns
-:10  %tmp_32 = fmul float %bgmodel_sortKey_load, %wscale
+ <State 148>: 5.70ns
+ST_148: tmp_49 [3/4] 5.70ns
+:8  %tmp_49 = fmul float %bgmodel_load_10, %wscale
 
 
  <State 149>: 5.70ns
-ST_149: tmp_31 [3/4] 5.70ns
-:5  %tmp_31 = fmul float %bgmodel_weight_load_4, %wscale
-
-ST_149: tmp_32 [3/4] 5.70ns
-:10  %tmp_32 = fmul float %bgmodel_sortKey_load, %wscale
+ST_149: tmp_49 [2/4] 5.70ns
+:8  %tmp_49 = fmul float %bgmodel_load_10, %wscale
 
 
- <State 150>: 5.70ns
-ST_150: tmp_31 [2/4] 5.70ns
-:5  %tmp_31 = fmul float %bgmodel_weight_load_4, %wscale
+ <State 150>: 8.41ns
+ST_150: tmp_49 [1/4] 5.70ns
+:8  %tmp_49 = fmul float %bgmodel_load_10, %wscale
 
-ST_150: tmp_32 [2/4] 5.70ns
-:10  %tmp_32 = fmul float %bgmodel_sortKey_load, %wscale
-
-
- <State 151>: 8.41ns
-ST_151: tmp_31 [1/4] 5.70ns
-:5  %tmp_31 = fmul float %bgmodel_weight_load_4, %wscale
-
-ST_151: stg_633 [1/1] 2.71ns
-:6  store float %tmp_31, float* %bgmodel_weight_addr_7, align 4
-
-ST_151: tmp_32 [1/4] 5.70ns
-:10  %tmp_32 = fmul float %bgmodel_sortKey_load, %wscale
-
-ST_151: stg_635 [1/1] 2.71ns
-:11  store float %tmp_32, float* %bgmodel_sortKey_addr_4, align 4
+ST_150: stg_630 [1/1] 2.71ns
+:9  store float %tmp_49, float* %bgmodel_addr_15, align 4
 
 
- <State 152>: 7.26ns
-ST_152: wsum_10 [5/5] 7.26ns
-:7  %wsum_10 = fadd float %wsum_4, %tmp_31
+ <State 151>: 7.26ns
+ST_151: wsum_10 [5/5] 7.26ns
+:10  %wsum_10 = fadd float %wsum_4, %tmp_49
+
+ST_151: sum16 [1/1] 0.00ns
+:11  %sum16 = call i12 @_ssdm_op_BitConcatenate.i12.i9.i1.i2(i9 %tmp_101, i1 %tmp_108, i2 0)
+
+ST_151: sum18_cast [1/1] 0.00ns
+:12  %sum18_cast = zext i12 %sum16 to i64
+
+ST_151: bgmodel_addr_16 [1/1] 0.00ns
+:13  %bgmodel_addr_16 = getelementptr [2560 x float]* %bgmodel, i64 0, i64 %sum18_cast
+
+ST_151: bgmodel_load_11 [2/2] 2.71ns
+:14  %bgmodel_load_11 = load float* %bgmodel_addr_16, align 4
+
+
+ <State 152>: 8.41ns
+ST_152: wsum_10 [4/5] 7.26ns
+:10  %wsum_10 = fadd float %wsum_4, %tmp_49
+
+ST_152: bgmodel_load_11 [1/2] 2.71ns
+:14  %bgmodel_load_11 = load float* %bgmodel_addr_16, align 4
+
+ST_152: tmp_50 [4/4] 5.70ns
+:15  %tmp_50 = fmul float %bgmodel_load_11, %wscale
 
 
  <State 153>: 7.26ns
-ST_153: wsum_10 [4/5] 7.26ns
-:7  %wsum_10 = fadd float %wsum_4, %tmp_31
+ST_153: wsum_10 [3/5] 7.26ns
+:10  %wsum_10 = fadd float %wsum_4, %tmp_49
+
+ST_153: tmp_50 [3/4] 5.70ns
+:15  %tmp_50 = fmul float %bgmodel_load_11, %wscale
 
 
  <State 154>: 7.26ns
-ST_154: wsum_10 [3/5] 7.26ns
-:7  %wsum_10 = fadd float %wsum_4, %tmp_31
+ST_154: wsum_10 [2/5] 7.26ns
+:10  %wsum_10 = fadd float %wsum_4, %tmp_49
+
+ST_154: tmp_50 [2/4] 5.70ns
+:15  %tmp_50 = fmul float %bgmodel_load_11, %wscale
 
 
- <State 155>: 7.26ns
-ST_155: wsum_10 [2/5] 7.26ns
-:7  %wsum_10 = fadd float %wsum_4, %tmp_31
+ <State 155>: 8.41ns
+ST_155: wsum_10 [1/5] 7.26ns
+:10  %wsum_10 = fadd float %wsum_4, %tmp_49
+
+ST_155: tmp_50 [1/4] 5.70ns
+:15  %tmp_50 = fmul float %bgmodel_load_11, %wscale
+
+ST_155: stg_645 [1/1] 2.71ns
+:16  store float %tmp_50, float* %bgmodel_addr_16, align 4
 
 
- <State 156>: 7.26ns
-ST_156: wsum_10 [1/5] 7.26ns
-:7  %wsum_10 = fadd float %wsum_4, %tmp_31
+ <State 156>: 8.16ns
+ST_156: wsum_10_to_int [1/1] 0.00ns
+:17  %wsum_10_to_int = bitcast float %wsum_10 to i32
+
+ST_156: tmp_102 [1/1] 0.00ns
+:18  %tmp_102 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %wsum_10_to_int, i32 23, i32 30)
+
+ST_156: tmp_109 [1/1] 0.00ns
+:19  %tmp_109 = trunc i32 %wsum_10_to_int to i23
+
+ST_156: notlhs11 [1/1] 2.00ns
+:20  %notlhs11 = icmp ne i8 %tmp_102, -1
+
+ST_156: notrhs11 [1/1] 2.39ns
+:21  %notrhs11 = icmp eq i23 %tmp_109, 0
+
+ST_156: tmp_104 [1/1] 1.37ns
+:22  %tmp_104 = or i1 %notrhs11, %notlhs11
+
+ST_156: tmp_105 [1/1] 6.79ns
+:23  %tmp_105 = fcmp ogt float %wsum_10, 0x3FE6666660000000
+
+ST_156: tmp_106 [1/1] 1.37ns
+:24  %tmp_106 = and i1 %tmp_104, %tmp_105
 
 
- <State 157>: 8.16ns
-ST_157: wsum_10_to_int [1/1] 0.00ns
-:12  %wsum_10_to_int = bitcast float %wsum_10 to i32
+ <State 157>: 2.74ns
+ST_157: tmp_110 [1/1] 0.00ns
+:25  %tmp_110 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %kForeground1, i32 31)
 
-ST_157: tmp_80 [1/1] 0.00ns
-:13  %tmp_80 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %wsum_10_to_int, i32 23, i32 30)
+ST_157: or_cond [1/1] 1.37ns
+:26  %or_cond = and i1 %tmp_106, %tmp_110
 
-ST_157: tmp_81 [1/1] 0.00ns
-:14  %tmp_81 = trunc i32 %wsum_10_to_int to i23
+ST_157: kForeground_1_cast [1/1] 0.00ns
+:27  %kForeground_1_cast = zext i2 %kForeground_1 to i32
 
-ST_157: notlhs11 [1/1] 2.00ns
-:15  %notlhs11 = icmp ne i8 %tmp_80, -1
+ST_157: p_kForeground [1/1] 1.37ns
+:28  %p_kForeground = select i1 %or_cond, i32 %kForeground_1_cast, i32 %kForeground1
 
-ST_157: notrhs11 [1/1] 2.39ns
-:16  %notrhs11 = icmp eq i23 %tmp_81, 0
-
-ST_157: tmp_82 [1/1] 1.37ns
-:17  %tmp_82 = or i1 %notrhs11, %notlhs11
-
-ST_157: tmp_83 [1/1] 6.79ns
-:18  %tmp_83 = fcmp ogt float %wsum_10, 0x3FE6666660000000
-
-ST_157: tmp_84 [1/1] 1.37ns
-:19  %tmp_84 = and i1 %tmp_82, %tmp_83
-
-
- <State 158>: 2.74ns
-ST_158: tmp_85 [1/1] 0.00ns
-:20  %tmp_85 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %kForeground1, i32 31)
-
-ST_158: or_cond [1/1] 1.37ns
-:21  %or_cond = and i1 %tmp_84, %tmp_85
-
-ST_158: kForeground_1_cast [1/1] 0.00ns
-:22  %kForeground_1_cast = zext i2 %kForeground_1 to i32
-
-ST_158: p_kForeground [1/1] 1.37ns
-:23  %p_kForeground = select i1 %or_cond, i32 %kForeground_1_cast, i32 %kForeground1
-
-ST_158: stg_653 [1/1] 0.00ns
-:24  br label %13
+ST_157: stg_658 [1/1] 0.00ns
+:29  br label %13
 
 
 
@@ -2383,7 +2397,6 @@ N/A
 	State 155
 	State 156
 	State 157
-	State 158
 
 
 ============================================================

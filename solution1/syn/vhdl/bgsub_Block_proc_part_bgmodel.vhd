@@ -10,7 +10,7 @@ library ieee;
 use ieee.std_logic_1164.all; 
 use ieee.std_logic_unsigned.all;
 
-entity bgsub_Block_proc_part_bgmodel_sortKey_ram is 
+entity bgsub_Block_proc_part_bgmodel_ram is 
     generic(
             mem_type    : string := "block"; 
             dwidth     : integer := 32; 
@@ -33,7 +33,7 @@ entity bgsub_Block_proc_part_bgmodel_sortKey_ram is
 end entity; 
 
 
-architecture rtl of bgsub_Block_proc_part_bgmodel_sortKey_ram is 
+architecture rtl of bgsub_Block_proc_part_bgmodel_ram is 
 
 signal addr0_tmp : std_logic_vector(awidth-1 downto 0); 
 signal addr1_tmp : std_logic_vector(awidth-1 downto 0); 
@@ -104,7 +104,7 @@ end rtl;
 Library IEEE;
 use IEEE.std_logic_1164.all;
 
-entity bgsub_Block_proc_part_bgmodel_sortKey is
+entity bgsub_Block_proc_part_bgmodel is
     generic (
         DataWidth : INTEGER := 32;
         AddressRange : INTEGER := 2560;
@@ -124,8 +124,8 @@ entity bgsub_Block_proc_part_bgmodel_sortKey is
         q1 : OUT STD_LOGIC_VECTOR(DataWidth - 1 DOWNTO 0));
 end entity;
 
-architecture arch of bgsub_Block_proc_part_bgmodel_sortKey is
-    component bgsub_Block_proc_part_bgmodel_sortKey_ram is
+architecture arch of bgsub_Block_proc_part_bgmodel is
+    component bgsub_Block_proc_part_bgmodel_ram is
         port (
             clk : IN STD_LOGIC;
             addr0 : IN STD_LOGIC_VECTOR;
@@ -143,7 +143,7 @@ architecture arch of bgsub_Block_proc_part_bgmodel_sortKey is
 
 
 begin
-    bgsub_Block_proc_part_bgmodel_sortKey_ram_U :  component bgsub_Block_proc_part_bgmodel_sortKey_ram
+    bgsub_Block_proc_part_bgmodel_ram_U :  component bgsub_Block_proc_part_bgmodel_ram
     port map (
         clk => clk,
         addr0 => address0,

@@ -59,10 +59,7 @@ bgsub::bgsub(sc_module_name name) : sc_module(name), mVcdFile(0) {
     bgsub_AXILiteS_s_axi_U->frame_in(frame_in);
     bgsub_AXILiteS_s_axi_U->frame_out(frame_out);
     bgsub_AXILiteS_s_axi_U->init(init);
-    bgsub_AXILiteS_s_axi_U->bgmodel_sortKey(bgmodel_sortKey);
-    bgsub_AXILiteS_s_axi_U->bgmodel_weight(bgmodel_weight);
-    bgsub_AXILiteS_s_axi_U->bgmodel_mean(bgmodel_mean);
-    bgsub_AXILiteS_s_axi_U->bgmodel_var(bgmodel_var);
+    bgsub_AXILiteS_s_axi_U->bgmodel(bgmodel);
     bgsub_gmem_m_axi_U = new bgsub_gmem_m_axi<8,32,5,C_M_AXI_GMEM_ID_WIDTH,C_M_AXI_GMEM_ADDR_WIDTH,C_M_AXI_GMEM_DATA_WIDTH,C_M_AXI_GMEM_AWUSER_WIDTH,C_M_AXI_GMEM_ARUSER_WIDTH,C_M_AXI_GMEM_WUSER_WIDTH,C_M_AXI_GMEM_RUSER_WIDTH,C_M_AXI_GMEM_BUSER_WIDTH,C_M_AXI_GMEM_USER_VALUE,C_M_AXI_GMEM_PROT_VALUE,C_M_AXI_GMEM_CACHE_VALUE>("bgsub_gmem_m_axi_U");
     bgsub_gmem_m_axi_U->AWVALID(m_axi_gmem_AWVALID);
     bgsub_gmem_m_axi_U->AWREADY(m_axi_gmem_AWREADY);
@@ -260,55 +257,52 @@ bgsub::bgsub(sc_module_name name) : sc_module(name), mVcdFile(0) {
     bgsub_Block_proc_U0->ap_idle(bgsub_Block_proc_U0_ap_idle);
     bgsub_Block_proc_U0->ap_ready(bgsub_Block_proc_U0_ap_ready);
     bgsub_Block_proc_U0->init(bgsub_Block_proc_U0_init);
-    bgsub_Block_proc_U0->m_axi_bgmodel_sortKey_AWVALID(bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWVALID);
-    bgsub_Block_proc_U0->m_axi_bgmodel_sortKey_AWREADY(bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWREADY);
-    bgsub_Block_proc_U0->m_axi_bgmodel_sortKey_AWADDR(bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWADDR);
-    bgsub_Block_proc_U0->m_axi_bgmodel_sortKey_AWID(bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWID);
-    bgsub_Block_proc_U0->m_axi_bgmodel_sortKey_AWLEN(bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWLEN);
-    bgsub_Block_proc_U0->m_axi_bgmodel_sortKey_AWSIZE(bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWSIZE);
-    bgsub_Block_proc_U0->m_axi_bgmodel_sortKey_AWBURST(bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWBURST);
-    bgsub_Block_proc_U0->m_axi_bgmodel_sortKey_AWLOCK(bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWLOCK);
-    bgsub_Block_proc_U0->m_axi_bgmodel_sortKey_AWCACHE(bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWCACHE);
-    bgsub_Block_proc_U0->m_axi_bgmodel_sortKey_AWPROT(bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWPROT);
-    bgsub_Block_proc_U0->m_axi_bgmodel_sortKey_AWQOS(bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWQOS);
-    bgsub_Block_proc_U0->m_axi_bgmodel_sortKey_AWREGION(bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWREGION);
-    bgsub_Block_proc_U0->m_axi_bgmodel_sortKey_AWUSER(bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWUSER);
-    bgsub_Block_proc_U0->m_axi_bgmodel_sortKey_WVALID(bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_WVALID);
-    bgsub_Block_proc_U0->m_axi_bgmodel_sortKey_WREADY(bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_WREADY);
-    bgsub_Block_proc_U0->m_axi_bgmodel_sortKey_WDATA(bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_WDATA);
-    bgsub_Block_proc_U0->m_axi_bgmodel_sortKey_WSTRB(bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_WSTRB);
-    bgsub_Block_proc_U0->m_axi_bgmodel_sortKey_WLAST(bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_WLAST);
-    bgsub_Block_proc_U0->m_axi_bgmodel_sortKey_WID(bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_WID);
-    bgsub_Block_proc_U0->m_axi_bgmodel_sortKey_WUSER(bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_WUSER);
-    bgsub_Block_proc_U0->m_axi_bgmodel_sortKey_ARVALID(bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARVALID);
-    bgsub_Block_proc_U0->m_axi_bgmodel_sortKey_ARREADY(bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARREADY);
-    bgsub_Block_proc_U0->m_axi_bgmodel_sortKey_ARADDR(bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARADDR);
-    bgsub_Block_proc_U0->m_axi_bgmodel_sortKey_ARID(bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARID);
-    bgsub_Block_proc_U0->m_axi_bgmodel_sortKey_ARLEN(bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARLEN);
-    bgsub_Block_proc_U0->m_axi_bgmodel_sortKey_ARSIZE(bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARSIZE);
-    bgsub_Block_proc_U0->m_axi_bgmodel_sortKey_ARBURST(bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARBURST);
-    bgsub_Block_proc_U0->m_axi_bgmodel_sortKey_ARLOCK(bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARLOCK);
-    bgsub_Block_proc_U0->m_axi_bgmodel_sortKey_ARCACHE(bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARCACHE);
-    bgsub_Block_proc_U0->m_axi_bgmodel_sortKey_ARPROT(bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARPROT);
-    bgsub_Block_proc_U0->m_axi_bgmodel_sortKey_ARQOS(bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARQOS);
-    bgsub_Block_proc_U0->m_axi_bgmodel_sortKey_ARREGION(bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARREGION);
-    bgsub_Block_proc_U0->m_axi_bgmodel_sortKey_ARUSER(bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARUSER);
-    bgsub_Block_proc_U0->m_axi_bgmodel_sortKey_RVALID(bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_RVALID);
-    bgsub_Block_proc_U0->m_axi_bgmodel_sortKey_RREADY(bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_RREADY);
-    bgsub_Block_proc_U0->m_axi_bgmodel_sortKey_RDATA(bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_RDATA);
-    bgsub_Block_proc_U0->m_axi_bgmodel_sortKey_RLAST(bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_RLAST);
-    bgsub_Block_proc_U0->m_axi_bgmodel_sortKey_RID(bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_RID);
-    bgsub_Block_proc_U0->m_axi_bgmodel_sortKey_RUSER(bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_RUSER);
-    bgsub_Block_proc_U0->m_axi_bgmodel_sortKey_RRESP(bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_RRESP);
-    bgsub_Block_proc_U0->m_axi_bgmodel_sortKey_BVALID(bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_BVALID);
-    bgsub_Block_proc_U0->m_axi_bgmodel_sortKey_BREADY(bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_BREADY);
-    bgsub_Block_proc_U0->m_axi_bgmodel_sortKey_BRESP(bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_BRESP);
-    bgsub_Block_proc_U0->m_axi_bgmodel_sortKey_BID(bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_BID);
-    bgsub_Block_proc_U0->m_axi_bgmodel_sortKey_BUSER(bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_BUSER);
-    bgsub_Block_proc_U0->bgmodel_sortKey1(bgsub_Block_proc_U0_bgmodel_sortKey1);
-    bgsub_Block_proc_U0->bgmodel_weight(bgsub_Block_proc_U0_bgmodel_weight);
-    bgsub_Block_proc_U0->bgmodel_mean(bgsub_Block_proc_U0_bgmodel_mean);
-    bgsub_Block_proc_U0->bgmodel_var(bgsub_Block_proc_U0_bgmodel_var);
+    bgsub_Block_proc_U0->m_axi_bgmodel_AWVALID(bgsub_Block_proc_U0_m_axi_bgmodel_AWVALID);
+    bgsub_Block_proc_U0->m_axi_bgmodel_AWREADY(bgsub_Block_proc_U0_m_axi_bgmodel_AWREADY);
+    bgsub_Block_proc_U0->m_axi_bgmodel_AWADDR(bgsub_Block_proc_U0_m_axi_bgmodel_AWADDR);
+    bgsub_Block_proc_U0->m_axi_bgmodel_AWID(bgsub_Block_proc_U0_m_axi_bgmodel_AWID);
+    bgsub_Block_proc_U0->m_axi_bgmodel_AWLEN(bgsub_Block_proc_U0_m_axi_bgmodel_AWLEN);
+    bgsub_Block_proc_U0->m_axi_bgmodel_AWSIZE(bgsub_Block_proc_U0_m_axi_bgmodel_AWSIZE);
+    bgsub_Block_proc_U0->m_axi_bgmodel_AWBURST(bgsub_Block_proc_U0_m_axi_bgmodel_AWBURST);
+    bgsub_Block_proc_U0->m_axi_bgmodel_AWLOCK(bgsub_Block_proc_U0_m_axi_bgmodel_AWLOCK);
+    bgsub_Block_proc_U0->m_axi_bgmodel_AWCACHE(bgsub_Block_proc_U0_m_axi_bgmodel_AWCACHE);
+    bgsub_Block_proc_U0->m_axi_bgmodel_AWPROT(bgsub_Block_proc_U0_m_axi_bgmodel_AWPROT);
+    bgsub_Block_proc_U0->m_axi_bgmodel_AWQOS(bgsub_Block_proc_U0_m_axi_bgmodel_AWQOS);
+    bgsub_Block_proc_U0->m_axi_bgmodel_AWREGION(bgsub_Block_proc_U0_m_axi_bgmodel_AWREGION);
+    bgsub_Block_proc_U0->m_axi_bgmodel_AWUSER(bgsub_Block_proc_U0_m_axi_bgmodel_AWUSER);
+    bgsub_Block_proc_U0->m_axi_bgmodel_WVALID(bgsub_Block_proc_U0_m_axi_bgmodel_WVALID);
+    bgsub_Block_proc_U0->m_axi_bgmodel_WREADY(bgsub_Block_proc_U0_m_axi_bgmodel_WREADY);
+    bgsub_Block_proc_U0->m_axi_bgmodel_WDATA(bgsub_Block_proc_U0_m_axi_bgmodel_WDATA);
+    bgsub_Block_proc_U0->m_axi_bgmodel_WSTRB(bgsub_Block_proc_U0_m_axi_bgmodel_WSTRB);
+    bgsub_Block_proc_U0->m_axi_bgmodel_WLAST(bgsub_Block_proc_U0_m_axi_bgmodel_WLAST);
+    bgsub_Block_proc_U0->m_axi_bgmodel_WID(bgsub_Block_proc_U0_m_axi_bgmodel_WID);
+    bgsub_Block_proc_U0->m_axi_bgmodel_WUSER(bgsub_Block_proc_U0_m_axi_bgmodel_WUSER);
+    bgsub_Block_proc_U0->m_axi_bgmodel_ARVALID(bgsub_Block_proc_U0_m_axi_bgmodel_ARVALID);
+    bgsub_Block_proc_U0->m_axi_bgmodel_ARREADY(bgsub_Block_proc_U0_m_axi_bgmodel_ARREADY);
+    bgsub_Block_proc_U0->m_axi_bgmodel_ARADDR(bgsub_Block_proc_U0_m_axi_bgmodel_ARADDR);
+    bgsub_Block_proc_U0->m_axi_bgmodel_ARID(bgsub_Block_proc_U0_m_axi_bgmodel_ARID);
+    bgsub_Block_proc_U0->m_axi_bgmodel_ARLEN(bgsub_Block_proc_U0_m_axi_bgmodel_ARLEN);
+    bgsub_Block_proc_U0->m_axi_bgmodel_ARSIZE(bgsub_Block_proc_U0_m_axi_bgmodel_ARSIZE);
+    bgsub_Block_proc_U0->m_axi_bgmodel_ARBURST(bgsub_Block_proc_U0_m_axi_bgmodel_ARBURST);
+    bgsub_Block_proc_U0->m_axi_bgmodel_ARLOCK(bgsub_Block_proc_U0_m_axi_bgmodel_ARLOCK);
+    bgsub_Block_proc_U0->m_axi_bgmodel_ARCACHE(bgsub_Block_proc_U0_m_axi_bgmodel_ARCACHE);
+    bgsub_Block_proc_U0->m_axi_bgmodel_ARPROT(bgsub_Block_proc_U0_m_axi_bgmodel_ARPROT);
+    bgsub_Block_proc_U0->m_axi_bgmodel_ARQOS(bgsub_Block_proc_U0_m_axi_bgmodel_ARQOS);
+    bgsub_Block_proc_U0->m_axi_bgmodel_ARREGION(bgsub_Block_proc_U0_m_axi_bgmodel_ARREGION);
+    bgsub_Block_proc_U0->m_axi_bgmodel_ARUSER(bgsub_Block_proc_U0_m_axi_bgmodel_ARUSER);
+    bgsub_Block_proc_U0->m_axi_bgmodel_RVALID(bgsub_Block_proc_U0_m_axi_bgmodel_RVALID);
+    bgsub_Block_proc_U0->m_axi_bgmodel_RREADY(bgsub_Block_proc_U0_m_axi_bgmodel_RREADY);
+    bgsub_Block_proc_U0->m_axi_bgmodel_RDATA(bgsub_Block_proc_U0_m_axi_bgmodel_RDATA);
+    bgsub_Block_proc_U0->m_axi_bgmodel_RLAST(bgsub_Block_proc_U0_m_axi_bgmodel_RLAST);
+    bgsub_Block_proc_U0->m_axi_bgmodel_RID(bgsub_Block_proc_U0_m_axi_bgmodel_RID);
+    bgsub_Block_proc_U0->m_axi_bgmodel_RUSER(bgsub_Block_proc_U0_m_axi_bgmodel_RUSER);
+    bgsub_Block_proc_U0->m_axi_bgmodel_RRESP(bgsub_Block_proc_U0_m_axi_bgmodel_RRESP);
+    bgsub_Block_proc_U0->m_axi_bgmodel_BVALID(bgsub_Block_proc_U0_m_axi_bgmodel_BVALID);
+    bgsub_Block_proc_U0->m_axi_bgmodel_BREADY(bgsub_Block_proc_U0_m_axi_bgmodel_BREADY);
+    bgsub_Block_proc_U0->m_axi_bgmodel_BRESP(bgsub_Block_proc_U0_m_axi_bgmodel_BRESP);
+    bgsub_Block_proc_U0->m_axi_bgmodel_BID(bgsub_Block_proc_U0_m_axi_bgmodel_BID);
+    bgsub_Block_proc_U0->m_axi_bgmodel_BUSER(bgsub_Block_proc_U0_m_axi_bgmodel_BUSER);
+    bgsub_Block_proc_U0->bgmodel1(bgsub_Block_proc_U0_bgmodel1);
     bgsub_Block_proc_U0->m_axi_frame_out_AWVALID(bgsub_Block_proc_U0_m_axi_frame_out_AWVALID);
     bgsub_Block_proc_U0->m_axi_frame_out_AWREADY(bgsub_Block_proc_U0_m_axi_frame_out_AWREADY);
     bgsub_Block_proc_U0->m_axi_frame_out_AWADDR(bgsub_Block_proc_U0_m_axi_frame_out_AWADDR);
@@ -388,17 +382,8 @@ bgsub::bgsub(sc_module_name name) : sc_module(name), mVcdFile(0) {
     SC_METHOD(thread_bgsub_Block_proc_U0_ap_start);
     sensitive << ( ap_start );
 
-    SC_METHOD(thread_bgsub_Block_proc_U0_bgmodel_mean);
-    sensitive << ( bgmodel_mean );
-
-    SC_METHOD(thread_bgsub_Block_proc_U0_bgmodel_sortKey1);
-    sensitive << ( bgmodel_sortKey );
-
-    SC_METHOD(thread_bgsub_Block_proc_U0_bgmodel_var);
-    sensitive << ( bgmodel_var );
-
-    SC_METHOD(thread_bgsub_Block_proc_U0_bgmodel_weight);
-    sensitive << ( bgmodel_weight );
+    SC_METHOD(thread_bgsub_Block_proc_U0_bgmodel1);
+    sensitive << ( bgmodel );
 
     SC_METHOD(thread_bgsub_Block_proc_U0_frame_in);
     sensitive << ( frame_in );
@@ -409,43 +394,43 @@ bgsub::bgsub(sc_module_name name) : sc_module(name), mVcdFile(0) {
     SC_METHOD(thread_bgsub_Block_proc_U0_init);
     sensitive << ( init );
 
-    SC_METHOD(thread_bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARREADY);
+    SC_METHOD(thread_bgsub_Block_proc_U0_m_axi_bgmodel_ARREADY);
     sensitive << ( gmem_offset_ARREADY );
 
-    SC_METHOD(thread_bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWREADY);
+    SC_METHOD(thread_bgsub_Block_proc_U0_m_axi_bgmodel_AWREADY);
     sensitive << ( gmem_offset_AWREADY );
 
-    SC_METHOD(thread_bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_BID);
+    SC_METHOD(thread_bgsub_Block_proc_U0_m_axi_bgmodel_BID);
     sensitive << ( gmem_offset_BID );
 
-    SC_METHOD(thread_bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_BRESP);
+    SC_METHOD(thread_bgsub_Block_proc_U0_m_axi_bgmodel_BRESP);
     sensitive << ( gmem_offset_BRESP );
 
-    SC_METHOD(thread_bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_BUSER);
+    SC_METHOD(thread_bgsub_Block_proc_U0_m_axi_bgmodel_BUSER);
     sensitive << ( gmem_offset_BUSER );
 
-    SC_METHOD(thread_bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_BVALID);
+    SC_METHOD(thread_bgsub_Block_proc_U0_m_axi_bgmodel_BVALID);
     sensitive << ( gmem_offset_BVALID );
 
-    SC_METHOD(thread_bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_RDATA);
+    SC_METHOD(thread_bgsub_Block_proc_U0_m_axi_bgmodel_RDATA);
     sensitive << ( gmem_offset_RDATA );
 
-    SC_METHOD(thread_bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_RID);
+    SC_METHOD(thread_bgsub_Block_proc_U0_m_axi_bgmodel_RID);
     sensitive << ( gmem_offset_RID );
 
-    SC_METHOD(thread_bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_RLAST);
+    SC_METHOD(thread_bgsub_Block_proc_U0_m_axi_bgmodel_RLAST);
     sensitive << ( gmem_offset_RLAST );
 
-    SC_METHOD(thread_bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_RRESP);
+    SC_METHOD(thread_bgsub_Block_proc_U0_m_axi_bgmodel_RRESP);
     sensitive << ( gmem_offset_RRESP );
 
-    SC_METHOD(thread_bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_RUSER);
+    SC_METHOD(thread_bgsub_Block_proc_U0_m_axi_bgmodel_RUSER);
     sensitive << ( gmem_offset_RUSER );
 
-    SC_METHOD(thread_bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_RVALID);
+    SC_METHOD(thread_bgsub_Block_proc_U0_m_axi_bgmodel_RVALID);
     sensitive << ( gmem_offset_RVALID );
 
-    SC_METHOD(thread_bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_WREADY);
+    SC_METHOD(thread_bgsub_Block_proc_U0_m_axi_bgmodel_WREADY);
     sensitive << ( gmem_offset_WREADY );
 
     SC_METHOD(thread_bgsub_Block_proc_U0_m_axi_frame_out_ARREADY);
@@ -588,100 +573,100 @@ bgsub::bgsub(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sensitive << ( bgsub_Block_proc_U0_m_axi_frame_out_WVALID );
 
     SC_METHOD(thread_gmem_offset_ARADDR);
-    sensitive << ( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARADDR );
+    sensitive << ( bgsub_Block_proc_U0_m_axi_bgmodel_ARADDR );
 
     SC_METHOD(thread_gmem_offset_ARBURST);
-    sensitive << ( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARBURST );
+    sensitive << ( bgsub_Block_proc_U0_m_axi_bgmodel_ARBURST );
 
     SC_METHOD(thread_gmem_offset_ARCACHE);
-    sensitive << ( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARCACHE );
+    sensitive << ( bgsub_Block_proc_U0_m_axi_bgmodel_ARCACHE );
 
     SC_METHOD(thread_gmem_offset_ARID);
-    sensitive << ( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARID );
+    sensitive << ( bgsub_Block_proc_U0_m_axi_bgmodel_ARID );
 
     SC_METHOD(thread_gmem_offset_ARLEN);
-    sensitive << ( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARLEN );
+    sensitive << ( bgsub_Block_proc_U0_m_axi_bgmodel_ARLEN );
 
     SC_METHOD(thread_gmem_offset_ARLOCK);
-    sensitive << ( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARLOCK );
+    sensitive << ( bgsub_Block_proc_U0_m_axi_bgmodel_ARLOCK );
 
     SC_METHOD(thread_gmem_offset_ARPROT);
-    sensitive << ( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARPROT );
+    sensitive << ( bgsub_Block_proc_U0_m_axi_bgmodel_ARPROT );
 
     SC_METHOD(thread_gmem_offset_ARQOS);
-    sensitive << ( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARQOS );
+    sensitive << ( bgsub_Block_proc_U0_m_axi_bgmodel_ARQOS );
 
     SC_METHOD(thread_gmem_offset_ARREGION);
-    sensitive << ( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARREGION );
+    sensitive << ( bgsub_Block_proc_U0_m_axi_bgmodel_ARREGION );
 
     SC_METHOD(thread_gmem_offset_ARSIZE);
-    sensitive << ( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARSIZE );
+    sensitive << ( bgsub_Block_proc_U0_m_axi_bgmodel_ARSIZE );
 
     SC_METHOD(thread_gmem_offset_ARUSER);
-    sensitive << ( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARUSER );
+    sensitive << ( bgsub_Block_proc_U0_m_axi_bgmodel_ARUSER );
 
     SC_METHOD(thread_gmem_offset_ARVALID);
-    sensitive << ( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARVALID );
+    sensitive << ( bgsub_Block_proc_U0_m_axi_bgmodel_ARVALID );
 
     SC_METHOD(thread_gmem_offset_AWADDR);
-    sensitive << ( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWADDR );
+    sensitive << ( bgsub_Block_proc_U0_m_axi_bgmodel_AWADDR );
 
     SC_METHOD(thread_gmem_offset_AWBURST);
-    sensitive << ( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWBURST );
+    sensitive << ( bgsub_Block_proc_U0_m_axi_bgmodel_AWBURST );
 
     SC_METHOD(thread_gmem_offset_AWCACHE);
-    sensitive << ( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWCACHE );
+    sensitive << ( bgsub_Block_proc_U0_m_axi_bgmodel_AWCACHE );
 
     SC_METHOD(thread_gmem_offset_AWID);
-    sensitive << ( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWID );
+    sensitive << ( bgsub_Block_proc_U0_m_axi_bgmodel_AWID );
 
     SC_METHOD(thread_gmem_offset_AWLEN);
-    sensitive << ( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWLEN );
+    sensitive << ( bgsub_Block_proc_U0_m_axi_bgmodel_AWLEN );
 
     SC_METHOD(thread_gmem_offset_AWLOCK);
-    sensitive << ( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWLOCK );
+    sensitive << ( bgsub_Block_proc_U0_m_axi_bgmodel_AWLOCK );
 
     SC_METHOD(thread_gmem_offset_AWPROT);
-    sensitive << ( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWPROT );
+    sensitive << ( bgsub_Block_proc_U0_m_axi_bgmodel_AWPROT );
 
     SC_METHOD(thread_gmem_offset_AWQOS);
-    sensitive << ( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWQOS );
+    sensitive << ( bgsub_Block_proc_U0_m_axi_bgmodel_AWQOS );
 
     SC_METHOD(thread_gmem_offset_AWREGION);
-    sensitive << ( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWREGION );
+    sensitive << ( bgsub_Block_proc_U0_m_axi_bgmodel_AWREGION );
 
     SC_METHOD(thread_gmem_offset_AWSIZE);
-    sensitive << ( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWSIZE );
+    sensitive << ( bgsub_Block_proc_U0_m_axi_bgmodel_AWSIZE );
 
     SC_METHOD(thread_gmem_offset_AWUSER);
-    sensitive << ( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWUSER );
+    sensitive << ( bgsub_Block_proc_U0_m_axi_bgmodel_AWUSER );
 
     SC_METHOD(thread_gmem_offset_AWVALID);
-    sensitive << ( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWVALID );
+    sensitive << ( bgsub_Block_proc_U0_m_axi_bgmodel_AWVALID );
 
     SC_METHOD(thread_gmem_offset_BREADY);
-    sensitive << ( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_BREADY );
+    sensitive << ( bgsub_Block_proc_U0_m_axi_bgmodel_BREADY );
 
     SC_METHOD(thread_gmem_offset_RREADY);
-    sensitive << ( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_RREADY );
+    sensitive << ( bgsub_Block_proc_U0_m_axi_bgmodel_RREADY );
 
     SC_METHOD(thread_gmem_offset_WDATA);
-    sensitive << ( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_WDATA );
+    sensitive << ( bgsub_Block_proc_U0_m_axi_bgmodel_WDATA );
 
     SC_METHOD(thread_gmem_offset_WID);
-    sensitive << ( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_WID );
+    sensitive << ( bgsub_Block_proc_U0_m_axi_bgmodel_WID );
 
     SC_METHOD(thread_gmem_offset_WLAST);
-    sensitive << ( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_WLAST );
+    sensitive << ( bgsub_Block_proc_U0_m_axi_bgmodel_WLAST );
 
     SC_METHOD(thread_gmem_offset_WSTRB);
-    sensitive << ( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_WSTRB );
+    sensitive << ( bgsub_Block_proc_U0_m_axi_bgmodel_WSTRB );
 
     SC_METHOD(thread_gmem_offset_WUSER);
-    sensitive << ( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_WUSER );
+    sensitive << ( bgsub_Block_proc_U0_m_axi_bgmodel_WUSER );
 
     SC_METHOD(thread_gmem_offset_WVALID);
-    sensitive << ( bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_WVALID );
+    sensitive << ( bgsub_Block_proc_U0_m_axi_bgmodel_WVALID );
 
     SC_THREAD(thread_hdltv_gen);
     sensitive << ( ap_clk.pos() );
@@ -815,10 +800,7 @@ bgsub::bgsub(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sc_trace(mVcdFile, frame_in, "frame_in");
     sc_trace(mVcdFile, frame_out, "frame_out");
     sc_trace(mVcdFile, init, "init");
-    sc_trace(mVcdFile, bgmodel_sortKey, "bgmodel_sortKey");
-    sc_trace(mVcdFile, bgmodel_weight, "bgmodel_weight");
-    sc_trace(mVcdFile, bgmodel_mean, "bgmodel_mean");
-    sc_trace(mVcdFile, bgmodel_var, "bgmodel_var");
+    sc_trace(mVcdFile, bgmodel, "bgmodel");
     sc_trace(mVcdFile, gmem_AWVALID, "gmem_AWVALID");
     sc_trace(mVcdFile, gmem_AWREADY, "gmem_AWREADY");
     sc_trace(mVcdFile, gmem_AWADDR, "gmem_AWADDR");
@@ -917,55 +899,52 @@ bgsub::bgsub(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sc_trace(mVcdFile, bgsub_Block_proc_U0_ap_idle, "bgsub_Block_proc_U0_ap_idle");
     sc_trace(mVcdFile, bgsub_Block_proc_U0_ap_ready, "bgsub_Block_proc_U0_ap_ready");
     sc_trace(mVcdFile, bgsub_Block_proc_U0_init, "bgsub_Block_proc_U0_init");
-    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWVALID, "bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWVALID");
-    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWREADY, "bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWREADY");
-    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWADDR, "bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWADDR");
-    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWID, "bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWID");
-    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWLEN, "bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWLEN");
-    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWSIZE, "bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWSIZE");
-    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWBURST, "bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWBURST");
-    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWLOCK, "bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWLOCK");
-    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWCACHE, "bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWCACHE");
-    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWPROT, "bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWPROT");
-    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWQOS, "bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWQOS");
-    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWREGION, "bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWREGION");
-    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWUSER, "bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWUSER");
-    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_WVALID, "bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_WVALID");
-    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_WREADY, "bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_WREADY");
-    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_WDATA, "bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_WDATA");
-    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_WSTRB, "bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_WSTRB");
-    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_WLAST, "bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_WLAST");
-    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_WID, "bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_WID");
-    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_WUSER, "bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_WUSER");
-    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARVALID, "bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARVALID");
-    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARREADY, "bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARREADY");
-    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARADDR, "bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARADDR");
-    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARID, "bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARID");
-    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARLEN, "bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARLEN");
-    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARSIZE, "bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARSIZE");
-    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARBURST, "bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARBURST");
-    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARLOCK, "bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARLOCK");
-    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARCACHE, "bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARCACHE");
-    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARPROT, "bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARPROT");
-    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARQOS, "bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARQOS");
-    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARREGION, "bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARREGION");
-    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARUSER, "bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARUSER");
-    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_RVALID, "bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_RVALID");
-    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_RREADY, "bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_RREADY");
-    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_RDATA, "bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_RDATA");
-    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_RLAST, "bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_RLAST");
-    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_RID, "bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_RID");
-    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_RUSER, "bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_RUSER");
-    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_RRESP, "bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_RRESP");
-    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_BVALID, "bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_BVALID");
-    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_BREADY, "bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_BREADY");
-    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_BRESP, "bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_BRESP");
-    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_BID, "bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_BID");
-    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_BUSER, "bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_BUSER");
-    sc_trace(mVcdFile, bgsub_Block_proc_U0_bgmodel_sortKey1, "bgsub_Block_proc_U0_bgmodel_sortKey1");
-    sc_trace(mVcdFile, bgsub_Block_proc_U0_bgmodel_weight, "bgsub_Block_proc_U0_bgmodel_weight");
-    sc_trace(mVcdFile, bgsub_Block_proc_U0_bgmodel_mean, "bgsub_Block_proc_U0_bgmodel_mean");
-    sc_trace(mVcdFile, bgsub_Block_proc_U0_bgmodel_var, "bgsub_Block_proc_U0_bgmodel_var");
+    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_AWVALID, "bgsub_Block_proc_U0_m_axi_bgmodel_AWVALID");
+    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_AWREADY, "bgsub_Block_proc_U0_m_axi_bgmodel_AWREADY");
+    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_AWADDR, "bgsub_Block_proc_U0_m_axi_bgmodel_AWADDR");
+    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_AWID, "bgsub_Block_proc_U0_m_axi_bgmodel_AWID");
+    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_AWLEN, "bgsub_Block_proc_U0_m_axi_bgmodel_AWLEN");
+    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_AWSIZE, "bgsub_Block_proc_U0_m_axi_bgmodel_AWSIZE");
+    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_AWBURST, "bgsub_Block_proc_U0_m_axi_bgmodel_AWBURST");
+    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_AWLOCK, "bgsub_Block_proc_U0_m_axi_bgmodel_AWLOCK");
+    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_AWCACHE, "bgsub_Block_proc_U0_m_axi_bgmodel_AWCACHE");
+    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_AWPROT, "bgsub_Block_proc_U0_m_axi_bgmodel_AWPROT");
+    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_AWQOS, "bgsub_Block_proc_U0_m_axi_bgmodel_AWQOS");
+    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_AWREGION, "bgsub_Block_proc_U0_m_axi_bgmodel_AWREGION");
+    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_AWUSER, "bgsub_Block_proc_U0_m_axi_bgmodel_AWUSER");
+    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_WVALID, "bgsub_Block_proc_U0_m_axi_bgmodel_WVALID");
+    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_WREADY, "bgsub_Block_proc_U0_m_axi_bgmodel_WREADY");
+    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_WDATA, "bgsub_Block_proc_U0_m_axi_bgmodel_WDATA");
+    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_WSTRB, "bgsub_Block_proc_U0_m_axi_bgmodel_WSTRB");
+    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_WLAST, "bgsub_Block_proc_U0_m_axi_bgmodel_WLAST");
+    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_WID, "bgsub_Block_proc_U0_m_axi_bgmodel_WID");
+    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_WUSER, "bgsub_Block_proc_U0_m_axi_bgmodel_WUSER");
+    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_ARVALID, "bgsub_Block_proc_U0_m_axi_bgmodel_ARVALID");
+    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_ARREADY, "bgsub_Block_proc_U0_m_axi_bgmodel_ARREADY");
+    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_ARADDR, "bgsub_Block_proc_U0_m_axi_bgmodel_ARADDR");
+    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_ARID, "bgsub_Block_proc_U0_m_axi_bgmodel_ARID");
+    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_ARLEN, "bgsub_Block_proc_U0_m_axi_bgmodel_ARLEN");
+    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_ARSIZE, "bgsub_Block_proc_U0_m_axi_bgmodel_ARSIZE");
+    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_ARBURST, "bgsub_Block_proc_U0_m_axi_bgmodel_ARBURST");
+    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_ARLOCK, "bgsub_Block_proc_U0_m_axi_bgmodel_ARLOCK");
+    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_ARCACHE, "bgsub_Block_proc_U0_m_axi_bgmodel_ARCACHE");
+    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_ARPROT, "bgsub_Block_proc_U0_m_axi_bgmodel_ARPROT");
+    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_ARQOS, "bgsub_Block_proc_U0_m_axi_bgmodel_ARQOS");
+    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_ARREGION, "bgsub_Block_proc_U0_m_axi_bgmodel_ARREGION");
+    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_ARUSER, "bgsub_Block_proc_U0_m_axi_bgmodel_ARUSER");
+    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_RVALID, "bgsub_Block_proc_U0_m_axi_bgmodel_RVALID");
+    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_RREADY, "bgsub_Block_proc_U0_m_axi_bgmodel_RREADY");
+    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_RDATA, "bgsub_Block_proc_U0_m_axi_bgmodel_RDATA");
+    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_RLAST, "bgsub_Block_proc_U0_m_axi_bgmodel_RLAST");
+    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_RID, "bgsub_Block_proc_U0_m_axi_bgmodel_RID");
+    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_RUSER, "bgsub_Block_proc_U0_m_axi_bgmodel_RUSER");
+    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_RRESP, "bgsub_Block_proc_U0_m_axi_bgmodel_RRESP");
+    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_BVALID, "bgsub_Block_proc_U0_m_axi_bgmodel_BVALID");
+    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_BREADY, "bgsub_Block_proc_U0_m_axi_bgmodel_BREADY");
+    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_BRESP, "bgsub_Block_proc_U0_m_axi_bgmodel_BRESP");
+    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_BID, "bgsub_Block_proc_U0_m_axi_bgmodel_BID");
+    sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_bgmodel_BUSER, "bgsub_Block_proc_U0_m_axi_bgmodel_BUSER");
+    sc_trace(mVcdFile, bgsub_Block_proc_U0_bgmodel1, "bgsub_Block_proc_U0_bgmodel1");
     sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_frame_out_AWVALID, "bgsub_Block_proc_U0_m_axi_frame_out_AWVALID");
     sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_frame_out_AWREADY, "bgsub_Block_proc_U0_m_axi_frame_out_AWREADY");
     sc_trace(mVcdFile, bgsub_Block_proc_U0_m_axi_frame_out_AWADDR, "bgsub_Block_proc_U0_m_axi_frame_out_AWADDR");
@@ -1100,20 +1079,8 @@ void bgsub::thread_bgsub_Block_proc_U0_ap_start() {
     bgsub_Block_proc_U0_ap_start = ap_start.read();
 }
 
-void bgsub::thread_bgsub_Block_proc_U0_bgmodel_mean() {
-    bgsub_Block_proc_U0_bgmodel_mean = bgmodel_mean.read();
-}
-
-void bgsub::thread_bgsub_Block_proc_U0_bgmodel_sortKey1() {
-    bgsub_Block_proc_U0_bgmodel_sortKey1 = bgmodel_sortKey.read();
-}
-
-void bgsub::thread_bgsub_Block_proc_U0_bgmodel_var() {
-    bgsub_Block_proc_U0_bgmodel_var = bgmodel_var.read();
-}
-
-void bgsub::thread_bgsub_Block_proc_U0_bgmodel_weight() {
-    bgsub_Block_proc_U0_bgmodel_weight = bgmodel_weight.read();
+void bgsub::thread_bgsub_Block_proc_U0_bgmodel1() {
+    bgsub_Block_proc_U0_bgmodel1 = bgmodel.read();
 }
 
 void bgsub::thread_bgsub_Block_proc_U0_frame_in() {
@@ -1128,56 +1095,56 @@ void bgsub::thread_bgsub_Block_proc_U0_init() {
     bgsub_Block_proc_U0_init =  (sc_lv<1>) (init.read());
 }
 
-void bgsub::thread_bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARREADY() {
-    bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARREADY = gmem_offset_ARREADY.read();
+void bgsub::thread_bgsub_Block_proc_U0_m_axi_bgmodel_ARREADY() {
+    bgsub_Block_proc_U0_m_axi_bgmodel_ARREADY = gmem_offset_ARREADY.read();
 }
 
-void bgsub::thread_bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWREADY() {
-    bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWREADY = gmem_offset_AWREADY.read();
+void bgsub::thread_bgsub_Block_proc_U0_m_axi_bgmodel_AWREADY() {
+    bgsub_Block_proc_U0_m_axi_bgmodel_AWREADY = gmem_offset_AWREADY.read();
 }
 
-void bgsub::thread_bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_BID() {
-    bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_BID = gmem_offset_BID.read();
+void bgsub::thread_bgsub_Block_proc_U0_m_axi_bgmodel_BID() {
+    bgsub_Block_proc_U0_m_axi_bgmodel_BID = gmem_offset_BID.read();
 }
 
-void bgsub::thread_bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_BRESP() {
-    bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_BRESP = gmem_offset_BRESP.read();
+void bgsub::thread_bgsub_Block_proc_U0_m_axi_bgmodel_BRESP() {
+    bgsub_Block_proc_U0_m_axi_bgmodel_BRESP = gmem_offset_BRESP.read();
 }
 
-void bgsub::thread_bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_BUSER() {
-    bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_BUSER = gmem_offset_BUSER.read();
+void bgsub::thread_bgsub_Block_proc_U0_m_axi_bgmodel_BUSER() {
+    bgsub_Block_proc_U0_m_axi_bgmodel_BUSER = gmem_offset_BUSER.read();
 }
 
-void bgsub::thread_bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_BVALID() {
-    bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_BVALID = gmem_offset_BVALID.read();
+void bgsub::thread_bgsub_Block_proc_U0_m_axi_bgmodel_BVALID() {
+    bgsub_Block_proc_U0_m_axi_bgmodel_BVALID = gmem_offset_BVALID.read();
 }
 
-void bgsub::thread_bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_RDATA() {
-    bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_RDATA = gmem_offset_RDATA.read();
+void bgsub::thread_bgsub_Block_proc_U0_m_axi_bgmodel_RDATA() {
+    bgsub_Block_proc_U0_m_axi_bgmodel_RDATA = gmem_offset_RDATA.read();
 }
 
-void bgsub::thread_bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_RID() {
-    bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_RID = gmem_offset_RID.read();
+void bgsub::thread_bgsub_Block_proc_U0_m_axi_bgmodel_RID() {
+    bgsub_Block_proc_U0_m_axi_bgmodel_RID = gmem_offset_RID.read();
 }
 
-void bgsub::thread_bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_RLAST() {
-    bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_RLAST = gmem_offset_RLAST.read();
+void bgsub::thread_bgsub_Block_proc_U0_m_axi_bgmodel_RLAST() {
+    bgsub_Block_proc_U0_m_axi_bgmodel_RLAST = gmem_offset_RLAST.read();
 }
 
-void bgsub::thread_bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_RRESP() {
-    bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_RRESP = gmem_offset_RRESP.read();
+void bgsub::thread_bgsub_Block_proc_U0_m_axi_bgmodel_RRESP() {
+    bgsub_Block_proc_U0_m_axi_bgmodel_RRESP = gmem_offset_RRESP.read();
 }
 
-void bgsub::thread_bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_RUSER() {
-    bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_RUSER = gmem_offset_RUSER.read();
+void bgsub::thread_bgsub_Block_proc_U0_m_axi_bgmodel_RUSER() {
+    bgsub_Block_proc_U0_m_axi_bgmodel_RUSER = gmem_offset_RUSER.read();
 }
 
-void bgsub::thread_bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_RVALID() {
-    bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_RVALID = gmem_offset_RVALID.read();
+void bgsub::thread_bgsub_Block_proc_U0_m_axi_bgmodel_RVALID() {
+    bgsub_Block_proc_U0_m_axi_bgmodel_RVALID = gmem_offset_RVALID.read();
 }
 
-void bgsub::thread_bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_WREADY() {
-    bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_WREADY = gmem_offset_WREADY.read();
+void bgsub::thread_bgsub_Block_proc_U0_m_axi_bgmodel_WREADY() {
+    bgsub_Block_proc_U0_m_axi_bgmodel_WREADY = gmem_offset_WREADY.read();
 }
 
 void bgsub::thread_bgsub_Block_proc_U0_m_axi_frame_out_ARREADY() {
@@ -1369,131 +1336,131 @@ void bgsub::thread_gmem_WVALID() {
 }
 
 void bgsub::thread_gmem_offset_ARADDR() {
-    gmem_offset_ARADDR = bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARADDR.read();
+    gmem_offset_ARADDR = bgsub_Block_proc_U0_m_axi_bgmodel_ARADDR.read();
 }
 
 void bgsub::thread_gmem_offset_ARBURST() {
-    gmem_offset_ARBURST = bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARBURST.read();
+    gmem_offset_ARBURST = bgsub_Block_proc_U0_m_axi_bgmodel_ARBURST.read();
 }
 
 void bgsub::thread_gmem_offset_ARCACHE() {
-    gmem_offset_ARCACHE = bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARCACHE.read();
+    gmem_offset_ARCACHE = bgsub_Block_proc_U0_m_axi_bgmodel_ARCACHE.read();
 }
 
 void bgsub::thread_gmem_offset_ARID() {
-    gmem_offset_ARID = bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARID.read();
+    gmem_offset_ARID = bgsub_Block_proc_U0_m_axi_bgmodel_ARID.read();
 }
 
 void bgsub::thread_gmem_offset_ARLEN() {
-    gmem_offset_ARLEN = bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARLEN.read();
+    gmem_offset_ARLEN = bgsub_Block_proc_U0_m_axi_bgmodel_ARLEN.read();
 }
 
 void bgsub::thread_gmem_offset_ARLOCK() {
-    gmem_offset_ARLOCK = bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARLOCK.read();
+    gmem_offset_ARLOCK = bgsub_Block_proc_U0_m_axi_bgmodel_ARLOCK.read();
 }
 
 void bgsub::thread_gmem_offset_ARPROT() {
-    gmem_offset_ARPROT = bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARPROT.read();
+    gmem_offset_ARPROT = bgsub_Block_proc_U0_m_axi_bgmodel_ARPROT.read();
 }
 
 void bgsub::thread_gmem_offset_ARQOS() {
-    gmem_offset_ARQOS = bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARQOS.read();
+    gmem_offset_ARQOS = bgsub_Block_proc_U0_m_axi_bgmodel_ARQOS.read();
 }
 
 void bgsub::thread_gmem_offset_ARREGION() {
-    gmem_offset_ARREGION = bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARREGION.read();
+    gmem_offset_ARREGION = bgsub_Block_proc_U0_m_axi_bgmodel_ARREGION.read();
 }
 
 void bgsub::thread_gmem_offset_ARSIZE() {
-    gmem_offset_ARSIZE = bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARSIZE.read();
+    gmem_offset_ARSIZE = bgsub_Block_proc_U0_m_axi_bgmodel_ARSIZE.read();
 }
 
 void bgsub::thread_gmem_offset_ARUSER() {
-    gmem_offset_ARUSER = bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARUSER.read();
+    gmem_offset_ARUSER = bgsub_Block_proc_U0_m_axi_bgmodel_ARUSER.read();
 }
 
 void bgsub::thread_gmem_offset_ARVALID() {
-    gmem_offset_ARVALID = bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_ARVALID.read();
+    gmem_offset_ARVALID = bgsub_Block_proc_U0_m_axi_bgmodel_ARVALID.read();
 }
 
 void bgsub::thread_gmem_offset_AWADDR() {
-    gmem_offset_AWADDR = bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWADDR.read();
+    gmem_offset_AWADDR = bgsub_Block_proc_U0_m_axi_bgmodel_AWADDR.read();
 }
 
 void bgsub::thread_gmem_offset_AWBURST() {
-    gmem_offset_AWBURST = bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWBURST.read();
+    gmem_offset_AWBURST = bgsub_Block_proc_U0_m_axi_bgmodel_AWBURST.read();
 }
 
 void bgsub::thread_gmem_offset_AWCACHE() {
-    gmem_offset_AWCACHE = bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWCACHE.read();
+    gmem_offset_AWCACHE = bgsub_Block_proc_U0_m_axi_bgmodel_AWCACHE.read();
 }
 
 void bgsub::thread_gmem_offset_AWID() {
-    gmem_offset_AWID = bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWID.read();
+    gmem_offset_AWID = bgsub_Block_proc_U0_m_axi_bgmodel_AWID.read();
 }
 
 void bgsub::thread_gmem_offset_AWLEN() {
-    gmem_offset_AWLEN = bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWLEN.read();
+    gmem_offset_AWLEN = bgsub_Block_proc_U0_m_axi_bgmodel_AWLEN.read();
 }
 
 void bgsub::thread_gmem_offset_AWLOCK() {
-    gmem_offset_AWLOCK = bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWLOCK.read();
+    gmem_offset_AWLOCK = bgsub_Block_proc_U0_m_axi_bgmodel_AWLOCK.read();
 }
 
 void bgsub::thread_gmem_offset_AWPROT() {
-    gmem_offset_AWPROT = bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWPROT.read();
+    gmem_offset_AWPROT = bgsub_Block_proc_U0_m_axi_bgmodel_AWPROT.read();
 }
 
 void bgsub::thread_gmem_offset_AWQOS() {
-    gmem_offset_AWQOS = bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWQOS.read();
+    gmem_offset_AWQOS = bgsub_Block_proc_U0_m_axi_bgmodel_AWQOS.read();
 }
 
 void bgsub::thread_gmem_offset_AWREGION() {
-    gmem_offset_AWREGION = bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWREGION.read();
+    gmem_offset_AWREGION = bgsub_Block_proc_U0_m_axi_bgmodel_AWREGION.read();
 }
 
 void bgsub::thread_gmem_offset_AWSIZE() {
-    gmem_offset_AWSIZE = bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWSIZE.read();
+    gmem_offset_AWSIZE = bgsub_Block_proc_U0_m_axi_bgmodel_AWSIZE.read();
 }
 
 void bgsub::thread_gmem_offset_AWUSER() {
-    gmem_offset_AWUSER = bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWUSER.read();
+    gmem_offset_AWUSER = bgsub_Block_proc_U0_m_axi_bgmodel_AWUSER.read();
 }
 
 void bgsub::thread_gmem_offset_AWVALID() {
-    gmem_offset_AWVALID = bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_AWVALID.read();
+    gmem_offset_AWVALID = bgsub_Block_proc_U0_m_axi_bgmodel_AWVALID.read();
 }
 
 void bgsub::thread_gmem_offset_BREADY() {
-    gmem_offset_BREADY = bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_BREADY.read();
+    gmem_offset_BREADY = bgsub_Block_proc_U0_m_axi_bgmodel_BREADY.read();
 }
 
 void bgsub::thread_gmem_offset_RREADY() {
-    gmem_offset_RREADY = bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_RREADY.read();
+    gmem_offset_RREADY = bgsub_Block_proc_U0_m_axi_bgmodel_RREADY.read();
 }
 
 void bgsub::thread_gmem_offset_WDATA() {
-    gmem_offset_WDATA = bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_WDATA.read();
+    gmem_offset_WDATA = bgsub_Block_proc_U0_m_axi_bgmodel_WDATA.read();
 }
 
 void bgsub::thread_gmem_offset_WID() {
-    gmem_offset_WID = bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_WID.read();
+    gmem_offset_WID = bgsub_Block_proc_U0_m_axi_bgmodel_WID.read();
 }
 
 void bgsub::thread_gmem_offset_WLAST() {
-    gmem_offset_WLAST = bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_WLAST.read();
+    gmem_offset_WLAST = bgsub_Block_proc_U0_m_axi_bgmodel_WLAST.read();
 }
 
 void bgsub::thread_gmem_offset_WSTRB() {
-    gmem_offset_WSTRB = bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_WSTRB.read();
+    gmem_offset_WSTRB = bgsub_Block_proc_U0_m_axi_bgmodel_WSTRB.read();
 }
 
 void bgsub::thread_gmem_offset_WUSER() {
-    gmem_offset_WUSER = bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_WUSER.read();
+    gmem_offset_WUSER = bgsub_Block_proc_U0_m_axi_bgmodel_WUSER.read();
 }
 
 void bgsub::thread_gmem_offset_WVALID() {
-    gmem_offset_WVALID = bgsub_Block_proc_U0_m_axi_bgmodel_sortKey_WVALID.read();
+    gmem_offset_WVALID = bgsub_Block_proc_U0_m_axi_bgmodel_WVALID.read();
 }
 
 void bgsub::thread_hdltv_gen() {

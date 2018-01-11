@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'bgsub'
 ================================================================
-* Date:           Thu Jan 11 21:03:39 2018
+* Date:           Fri Jan 12 01:07:13 2018
 
 * Version:        2015.4 (Build 1412921 on Wed Nov 18 09:58:55 AM 2015)
 * Project:        backsub_gmm_new_180110
@@ -25,12 +25,12 @@
 
 + Latency (clock cycles): 
     * Summary: 
-    +---------+----------+---------+----------+----------+
-    |       Latency      |      Interval      | Pipeline |
-    |   min   |    max   |   min   |    max   |   Type   |
-    +---------+----------+---------+----------+----------+
-    |  2882522|  10754522|  2882523|  10754523| dataflow |
-    +---------+----------+---------+----------+----------+
+    +---------+---------+---------+---------+----------+
+    |      Latency      |      Interval     | Pipeline |
+    |   min   |   max   |   min   |   max   |   Type   |
+    +---------+---------+---------+---------+----------+
+    |  1214042|  4362846|  1214043|  4362847| dataflow |
+    +---------+---------+---------+---------+----------+
 
     + Detail: 
         * Instance: 
@@ -65,109 +65,77 @@ IsGatedGlobalClock: 0
 ============================================================
 + Verbose Summary: Schedule
 ============================================================
-* Number of FSM states: 2
+* Number of FSM states: 3
 * Pipeline: 0
 * Dataflow Pipeline: 1
-  DF-Pipeline-0: Size = 2, States = { 1 2 }
+  DF-Pipeline-0: Size = 3, States = { 1 2 3 }
 
 * FSM state transitions: 
 1 --> 
 	2  / true
 2 --> 
+	3  / true
+3 --> 
 * FSM state operations: 
 
- <State 1>: 2.57ns
-ST_1: bgmodel_var_read [1/1] 1.00ns
-codeRepl:0  %bgmodel_var_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %bgmodel_var)
-
-ST_1: bgmodel_mean_read [1/1] 1.00ns
-codeRepl:1  %bgmodel_mean_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %bgmodel_mean)
-
-ST_1: bgmodel_weight_read [1/1] 1.00ns
-codeRepl:2  %bgmodel_weight_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %bgmodel_weight)
-
-ST_1: bgmodel_sortKey_read [1/1] 1.00ns
-codeRepl:3  %bgmodel_sortKey_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %bgmodel_sortKey)
+ <State 1>: 1.00ns
+ST_1: bgmodel_read [1/1] 1.00ns
+codeRepl:11  %bgmodel_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %bgmodel)
 
 ST_1: init_read [1/1] 1.00ns
-codeRepl:4  %init_read = call i1 @_ssdm_op_Read.s_axilite.i1(i1 %init)
+codeRepl:12  %init_read = call i1 @_ssdm_op_Read.s_axilite.i1(i1 %init)
 
 ST_1: frame_out_read [1/1] 1.00ns
-codeRepl:5  %frame_out_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %frame_out)
+codeRepl:13  %frame_out_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %frame_out)
 
 ST_1: frame_in_read [1/1] 1.00ns
-codeRepl:6  %frame_in_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %frame_in)
-
-ST_1: bgmodel_var1 [1/1] 0.00ns
-codeRepl:7  %bgmodel_var1 = call i30 @_ssdm_op_PartSelect.i30.i32.i32.i32(i32 %bgmodel_var_read, i32 2, i32 31)
-
-ST_1: tmp [1/1] 0.00ns
-codeRepl:8  %tmp = zext i30 %bgmodel_var1 to i64
-
-ST_1: gmem_offset_addr [1/1] 0.00ns
-codeRepl:9  %gmem_offset_addr = getelementptr float* %gmem_offset, i64 %tmp
-
-ST_1: bgmodel_mean9 [1/1] 0.00ns
-codeRepl:10  %bgmodel_mean9 = call i30 @_ssdm_op_PartSelect.i30.i32.i32.i32(i32 %bgmodel_mean_read, i32 2, i32 31)
-
-ST_1: tmp_36 [1/1] 0.00ns
-codeRepl:11  %tmp_36 = zext i30 %bgmodel_mean9 to i64
-
-ST_1: gmem_offset_addr_1 [1/1] 0.00ns
-codeRepl:12  %gmem_offset_addr_1 = getelementptr float* %gmem_offset, i64 %tmp_36
-
-ST_1: bgmodel_weight7 [1/1] 0.00ns
-codeRepl:13  %bgmodel_weight7 = call i30 @_ssdm_op_PartSelect.i30.i32.i32.i32(i32 %bgmodel_weight_read, i32 2, i32 31)
-
-ST_1: tmp_37 [1/1] 0.00ns
-codeRepl:14  %tmp_37 = zext i30 %bgmodel_weight7 to i64
-
-ST_1: gmem_offset_addr_2 [1/1] 0.00ns
-codeRepl:15  %gmem_offset_addr_2 = getelementptr float* %gmem_offset, i64 %tmp_37
-
-ST_1: stg_19 [1/1] 0.00ns
-codeRepl:21  call void (...)* @_ssdm_op_SpecInterface(float* %gmem_offset, float* %gmem_offset_addr_2, float* %gmem_offset_addr_1, float* %gmem_offset_addr, [6 x i8]* @p_str1807, i32 0, i32 0, i32 0, i32 153600, [1 x i8]* @p_str1805, [6 x i8]* @p_str1808, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805)
-
-ST_1: stg_20 [2/2] 1.57ns
-codeRepl:27  call fastcc void @bgsub_Block__proc(i1 %init_read, float* %gmem_offset, i32 %bgmodel_sortKey_read, i32 %bgmodel_weight_read, i32 %bgmodel_mean_read, i32 %bgmodel_var_read, i8* %gmem, i32 %frame_out_read, i32 %frame_in_read)
+codeRepl:14  %frame_in_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %frame_in)
 
 
- <State 2>: 0.00ns
-ST_2: stg_21 [1/1] 0.00ns
-codeRepl:16  call void (...)* @_ssdm_op_SpecBitsMap(float* %gmem_offset), !map !15
+ <State 2>: 8.75ns
+ST_2: stg_8 [2/2] 8.75ns
+codeRepl:15  call fastcc void @bgsub_Block__proc(i1 %init_read, float* %gmem_offset, i32 %bgmodel_read, i8* %gmem, i32 %frame_out_read, i32 %frame_in_read)
 
-ST_2: stg_22 [1/1] 0.00ns
-codeRepl:17  call void (...)* @_ssdm_op_SpecBitsMap(i8* %gmem), !map !24
 
-ST_2: stg_23 [1/1] 0.00ns
-codeRepl:18  call void (...)* @_ssdm_op_SpecDataflowPipeline(i32 -1, [1 x i8]* @p_str1805) nounwind
+ <State 3>: 0.00ns
+ST_3: stg_9 [1/1] 0.00ns
+codeRepl:0  call void (...)* @_ssdm_op_SpecBitsMap(float* %gmem_offset), !map !12
 
-ST_2: stg_24 [1/1] 0.00ns
-codeRepl:19  call void (...)* @_ssdm_op_SpecBitsMap(i1 %init), !map !31
+ST_3: stg_10 [1/1] 0.00ns
+codeRepl:1  call void (...)* @_ssdm_op_SpecBitsMap(i8* %gmem), !map !18
 
-ST_2: stg_25 [1/1] 0.00ns
-codeRepl:20  call void (...)* @_ssdm_op_SpecTopModule([6 x i8]* @bgsub_str) nounwind
+ST_3: stg_11 [1/1] 0.00ns
+codeRepl:2  call void (...)* @_ssdm_op_SpecDataflowPipeline(i32 -1, [1 x i8]* @p_str1805) nounwind
 
-ST_2: stg_26 [1/1] 0.00ns
-codeRepl:22  call void (...)* @_ssdm_op_SpecInterface(i32 %bgmodel_sortKey, i32 %bgmodel_weight, i32 %bgmodel_mean, i32 %bgmodel_var, [10 x i8]* @mode13, i32 0, i32 0, i32 0, i32 153600, [1 x i8]* @bundle14, [6 x i8]* @p_str1808, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805)
+ST_3: stg_12 [1/1] 0.00ns
+codeRepl:3  call void (...)* @_ssdm_op_SpecBitsMap(i1 %init) nounwind, !map !25
 
-ST_2: stg_27 [1/1] 0.00ns
-codeRepl:23  call void (...)* @_ssdm_op_SpecInterface(i1 %init, [10 x i8]* @p_str1809, i32 0, i32 0, i32 0, i32 1, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805) nounwind
+ST_3: stg_13 [1/1] 0.00ns
+codeRepl:4  call void (...)* @_ssdm_op_SpecTopModule([6 x i8]* @bgsub_str) nounwind
 
-ST_2: stg_28 [1/1] 0.00ns
-codeRepl:24  call void (...)* @_ssdm_op_SpecInterface(i32 %frame_out, [10 x i8]* @mode5, i32 0, i32 0, i32 0, i32 76800, [1 x i8]* @bundle6, [6 x i8]* @p_str1808, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805)
+ST_3: stg_14 [1/1] 0.00ns
+codeRepl:5  call void (...)* @_ssdm_op_SpecInterface(float* %gmem_offset, [6 x i8]* @p_str1807, i32 0, i32 0, i32 0, i32 614400, [1 x i8]* @p_str1805, [6 x i8]* @p_str1808, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805)
 
-ST_2: stg_29 [1/1] 0.00ns
-codeRepl:25  call void (...)* @_ssdm_op_SpecInterface(i8* %gmem, [6 x i8]* @p_str1807, i32 0, i32 0, i32 0, i32 76800, [1 x i8]* @p_str1805, [6 x i8]* @p_str1808, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805)
+ST_3: stg_15 [1/1] 0.00ns
+codeRepl:6  call void (...)* @_ssdm_op_SpecInterface(i32 %bgmodel, [10 x i8]* @mode7, i32 0, i32 0, i32 0, i32 614400, [1 x i8]* @bundle8, [6 x i8]* @p_str1808, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805)
 
-ST_2: stg_30 [1/1] 0.00ns
-codeRepl:26  call void (...)* @_ssdm_op_SpecInterface(i32 %frame_in, [10 x i8]* @mode, i32 0, i32 0, i32 0, i32 76800, [1 x i8]* @bundle, [6 x i8]* @p_str1808, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805)
+ST_3: stg_16 [1/1] 0.00ns
+codeRepl:7  call void (...)* @_ssdm_op_SpecInterface(i1 %init, [10 x i8]* @p_str1809, i32 0, i32 0, i32 0, i32 1, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805) nounwind
 
-ST_2: stg_31 [1/2] 0.00ns
-codeRepl:27  call fastcc void @bgsub_Block__proc(i1 %init_read, float* %gmem_offset, i32 %bgmodel_sortKey_read, i32 %bgmodel_weight_read, i32 %bgmodel_mean_read, i32 %bgmodel_var_read, i8* %gmem, i32 %frame_out_read, i32 %frame_in_read)
+ST_3: stg_17 [1/1] 0.00ns
+codeRepl:8  call void (...)* @_ssdm_op_SpecInterface(i32 %frame_out, [10 x i8]* @mode5, i32 0, i32 0, i32 0, i32 76800, [1 x i8]* @bundle6, [6 x i8]* @p_str1808, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805)
 
-ST_2: stg_32 [1/1] 0.00ns
-codeRepl:28  ret void
+ST_3: stg_18 [1/1] 0.00ns
+codeRepl:9  call void (...)* @_ssdm_op_SpecInterface(i8* %gmem, [6 x i8]* @p_str1807, i32 0, i32 0, i32 0, i32 76800, [1 x i8]* @p_str1805, [6 x i8]* @p_str1808, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805)
+
+ST_3: stg_19 [1/1] 0.00ns
+codeRepl:10  call void (...)* @_ssdm_op_SpecInterface(i32 %frame_in, [10 x i8]* @mode, i32 0, i32 0, i32 0, i32 76800, [1 x i8]* @bundle, [6 x i8]* @p_str1808, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805)
+
+ST_3: stg_20 [1/2] 0.00ns
+codeRepl:15  call fastcc void @bgsub_Block__proc(i1 %init_read, float* %gmem_offset, i32 %bgmodel_read, i8* %gmem, i32 %frame_out_read, i32 %frame_in_read)
+
+ST_3: stg_21 [1/1] 0.00ns
+codeRepl:16  ret void
 
 
 
@@ -180,6 +148,7 @@ N/A
   - Chain level:
 	State 1
 	State 2
+	State 3
 
 
 ============================================================

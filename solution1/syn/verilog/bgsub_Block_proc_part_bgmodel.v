@@ -6,7 +6,7 @@
 // ==============================================================
 
 `timescale 1 ns / 1 ps
-module bgsub_Block_proc_part_bgmodel_sortKey_ram (addr0, ce0, d0, we0, q0, addr1, ce1, d1, we1, q1,  clk);
+module bgsub_Block_proc_part_bgmodel_ram (addr0, ce0, d0, we0, q0, addr1, ce1, d1, we1, q1,  clk);
 
 parameter DWIDTH = 32;
 parameter AWIDTH = 12;
@@ -63,7 +63,7 @@ endmodule
 
 
 `timescale 1 ns / 1 ps
-module bgsub_Block_proc_part_bgmodel_sortKey(
+module bgsub_Block_proc_part_bgmodel(
     reset,
     clk,
     address0,
@@ -95,7 +95,7 @@ output[DataWidth - 1:0] q1;
 
 
 
-bgsub_Block_proc_part_bgmodel_sortKey_ram bgsub_Block_proc_part_bgmodel_sortKey_ram_U(
+bgsub_Block_proc_part_bgmodel_ram bgsub_Block_proc_part_bgmodel_ram_U(
     .clk( clk ),
     .addr0( address0 ),
     .ce0( ce0 ),

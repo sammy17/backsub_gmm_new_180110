@@ -420,7 +420,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir I \
     corename frame_in \
     op interface \
-    ports { frame_in_address0 { O 11 vector } frame_in_ce0 { O 1 bit } frame_in_q0 { I 8 vector } } \
+    ports { frame_in_address0 { O 9 vector } frame_in_ce0 { O 1 bit } frame_in_q0 { I 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'frame_in'"
@@ -439,7 +439,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename frame_out \
     op interface \
-    ports { frame_out_address0 { O 11 vector } frame_out_ce0 { O 1 bit } frame_out_we0 { O 1 bit } frame_out_d0 { O 1 vector } } \
+    ports { frame_out_address0 { O 9 vector } frame_out_ce0 { O 1 bit } frame_out_we0 { O 1 bit } frame_out_d0 { O 1 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'frame_out'"
@@ -452,73 +452,16 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     id 11 \
-    name bgmodel_sortKey \
+    name bgmodel \
     reset_level 1 \
     sync_rst true \
     dir IO \
-    corename bgmodel_sortKey \
+    corename bgmodel \
     op interface \
-    ports { bgmodel_sortKey_address0 { O 12 vector } bgmodel_sortKey_ce0 { O 1 bit } bgmodel_sortKey_we0 { O 1 bit } bgmodel_sortKey_d0 { O 32 vector } bgmodel_sortKey_q0 { I 32 vector } bgmodel_sortKey_address1 { O 12 vector } bgmodel_sortKey_ce1 { O 1 bit } bgmodel_sortKey_we1 { O 1 bit } bgmodel_sortKey_d1 { O 32 vector } bgmodel_sortKey_q1 { I 32 vector } } \
+    ports { bgmodel_address0 { O 12 vector } bgmodel_ce0 { O 1 bit } bgmodel_we0 { O 1 bit } bgmodel_d0 { O 32 vector } bgmodel_q0 { I 32 vector } bgmodel_address1 { O 12 vector } bgmodel_ce1 { O 1 bit } bgmodel_we1 { O 1 bit } bgmodel_d1 { O 32 vector } bgmodel_q1 { I 32 vector } } \
 } "
 } else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'bgmodel_sortKey'"
-}
-}
-
-
-# XIL_BRAM:
-if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 12 \
-    name bgmodel_weight \
-    reset_level 1 \
-    sync_rst true \
-    dir IO \
-    corename bgmodel_weight \
-    op interface \
-    ports { bgmodel_weight_address0 { O 12 vector } bgmodel_weight_ce0 { O 1 bit } bgmodel_weight_we0 { O 1 bit } bgmodel_weight_d0 { O 32 vector } bgmodel_weight_q0 { I 32 vector } bgmodel_weight_address1 { O 12 vector } bgmodel_weight_ce1 { O 1 bit } bgmodel_weight_we1 { O 1 bit } bgmodel_weight_d1 { O 32 vector } bgmodel_weight_q1 { I 32 vector } } \
-} "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'bgmodel_weight'"
-}
-}
-
-
-# XIL_BRAM:
-if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 13 \
-    name bgmodel_mean \
-    reset_level 1 \
-    sync_rst true \
-    dir IO \
-    corename bgmodel_mean \
-    op interface \
-    ports { bgmodel_mean_address0 { O 12 vector } bgmodel_mean_ce0 { O 1 bit } bgmodel_mean_we0 { O 1 bit } bgmodel_mean_d0 { O 32 vector } bgmodel_mean_q0 { I 32 vector } bgmodel_mean_address1 { O 12 vector } bgmodel_mean_ce1 { O 1 bit } bgmodel_mean_we1 { O 1 bit } bgmodel_mean_d1 { O 32 vector } bgmodel_mean_q1 { I 32 vector } } \
-} "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'bgmodel_mean'"
-}
-}
-
-
-# XIL_BRAM:
-if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 14 \
-    name bgmodel_var \
-    reset_level 1 \
-    sync_rst true \
-    dir IO \
-    corename bgmodel_var \
-    op interface \
-    ports { bgmodel_var_address0 { O 12 vector } bgmodel_var_ce0 { O 1 bit } bgmodel_var_we0 { O 1 bit } bgmodel_var_d0 { O 32 vector } bgmodel_var_q0 { I 32 vector } bgmodel_var_address1 { O 12 vector } bgmodel_var_ce1 { O 1 bit } bgmodel_var_we1 { O 1 bit } bgmodel_var_d1 { O 32 vector } bgmodel_var_q1 { I 32 vector } } \
-} "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'bgmodel_var'"
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'bgmodel'"
 }
 }
 
@@ -526,7 +469,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 15 \
+    id 12 \
     name learningRate \
     type other \
     dir I \

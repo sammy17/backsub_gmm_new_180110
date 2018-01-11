@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'bgsub_Block_proc'" level="0">
-<item name = "Date">Thu Jan 11 21:03:39 2018
+<item name = "Date">Fri Jan 12 01:07:13 2018
 </item>
 <item name = "Version">2015.4 (Build 1412921 on Wed Nov 18 09:58:55 AM 2015)</item>
 <item name = "Project">backsub_gmm_new_180110</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">2882522, 10754522, 2882522, 10754522, none</column>
+<column name="">1214042, 4362846, 1214042, 4362846, none</column>
 </table>
 </item>
 <item name = "Detail">
@@ -35,16 +35,16 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- Loop 1">2150400, 2150400, 14, -, -, 153600, no</column>
-<column name="- Loop 2">2882520, 8604120, 96084 ~ 286804, -, -, 30, no</column>
-<column name=" + memcpy..frame_in">1281, 1281, 3, 1, 1, 1280, yes</column>
-<column name=" + memcpy.part_bgmodel.sortKey.addr.bgmodel.var">10248, 10248, 13, 4, 1, 2560, yes</column>
-<column name=" + memcpy..frame_in">1281, 1281, 3, 1, 1, 1280, yes</column>
-<column name=" + memcpy.part2_bgmodel.sortKey.addr.bgmodel.var">10248, 10248, 13, 4, 1, 2560, yes</column>
-<column name=" + memcpy.bgmodel.var.part_bgmodel.sortKey.addr">17926, 17926, 14, 7, 1, 2560, yes</column>
-<column name=" + memcpy.frame_out.">1281, 1281, 3, 1, 1, 1280, yes</column>
-<column name=" + memcpy.bgmodel.var.part2_bgmodel.sortKey.addr">17926, 17926, 14, 7, 1, 2560, yes</column>
-<column name=" + memcpy.frame_out.">1281, 1281, 3, 1, 1, 1280, yes</column>
+<column name="- Loop 1">307200, 307200, 1, -, -, 307200, no</column>
+<column name="- Loop 2">1214040, 4055640, 20234 ~ 67594, -, -, 60, no</column>
+<column name=" + memcpy..frame_in">321, 321, 3, 1, 1, 320, yes</column>
+<column name=" + memcpy.part_bgmodel.bgmodel">2561, 2561, 3, 1, 1, 2560, yes</column>
+<column name=" + memcpy..frame_in">321, 321, 3, 1, 1, 320, yes</column>
+<column name=" + memcpy.part2_bgmodel.bgmodel">2561, 2561, 3, 1, 1, 2560, yes</column>
+<column name=" + memcpy.bgmodel.part_bgmodel.gep">2561, 2561, 3, 1, 1, 2560, yes</column>
+<column name=" + memcpy.frame_out.">321, 321, 3, 1, 1, 320, yes</column>
+<column name=" + memcpy.bgmodel.part2_bgmodel.gep">2561, 2561, 3, 1, 1, 2560, yes</column>
+<column name=" + memcpy.frame_out.">321, 321, 3, 1, 1, 320, yes</column>
 </table>
 </item>
 </section>

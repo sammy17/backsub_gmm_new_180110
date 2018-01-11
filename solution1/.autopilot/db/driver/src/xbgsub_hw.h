@@ -20,32 +20,17 @@
 //        bit 0  - init[0] (Read/Write)
 //        others - reserved
 // 0x24 : reserved
-// 0x28 : Data signal of bgmodel_sortKey
-//        bit 31~0 - bgmodel_sortKey[31:0] (Read/Write)
+// 0x28 : Data signal of bgmodel
+//        bit 31~0 - bgmodel[31:0] (Read/Write)
 // 0x2c : reserved
-// 0x30 : Data signal of bgmodel_weight
-//        bit 31~0 - bgmodel_weight[31:0] (Read/Write)
-// 0x34 : reserved
-// 0x38 : Data signal of bgmodel_mean
-//        bit 31~0 - bgmodel_mean[31:0] (Read/Write)
-// 0x3c : reserved
-// 0x40 : Data signal of bgmodel_var
-//        bit 31~0 - bgmodel_var[31:0] (Read/Write)
-// 0x44 : reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
-#define XBGSUB_AXILITES_ADDR_FRAME_IN_DATA        0x10
-#define XBGSUB_AXILITES_BITS_FRAME_IN_DATA        32
-#define XBGSUB_AXILITES_ADDR_FRAME_OUT_DATA       0x18
-#define XBGSUB_AXILITES_BITS_FRAME_OUT_DATA       32
-#define XBGSUB_AXILITES_ADDR_INIT_DATA            0x20
-#define XBGSUB_AXILITES_BITS_INIT_DATA            1
-#define XBGSUB_AXILITES_ADDR_BGMODEL_SORTKEY_DATA 0x28
-#define XBGSUB_AXILITES_BITS_BGMODEL_SORTKEY_DATA 32
-#define XBGSUB_AXILITES_ADDR_BGMODEL_WEIGHT_DATA  0x30
-#define XBGSUB_AXILITES_BITS_BGMODEL_WEIGHT_DATA  32
-#define XBGSUB_AXILITES_ADDR_BGMODEL_MEAN_DATA    0x38
-#define XBGSUB_AXILITES_BITS_BGMODEL_MEAN_DATA    32
-#define XBGSUB_AXILITES_ADDR_BGMODEL_VAR_DATA     0x40
-#define XBGSUB_AXILITES_BITS_BGMODEL_VAR_DATA     32
+#define XBGSUB_AXILITES_ADDR_FRAME_IN_DATA  0x10
+#define XBGSUB_AXILITES_BITS_FRAME_IN_DATA  32
+#define XBGSUB_AXILITES_ADDR_FRAME_OUT_DATA 0x18
+#define XBGSUB_AXILITES_BITS_FRAME_OUT_DATA 32
+#define XBGSUB_AXILITES_ADDR_INIT_DATA      0x20
+#define XBGSUB_AXILITES_BITS_INIT_DATA      1
+#define XBGSUB_AXILITES_ADDR_BGMODEL_DATA   0x28
+#define XBGSUB_AXILITES_BITS_BGMODEL_DATA   32
 

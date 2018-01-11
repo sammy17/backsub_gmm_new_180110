@@ -11,7 +11,7 @@ use IEEE.NUMERIC_STD.all;
 
 entity bgsub_AXILiteS_s_axi is
 generic (
-    C_S_AXI_ADDR_WIDTH    : INTEGER := 7;
+    C_S_AXI_ADDR_WIDTH    : INTEGER := 6;
     C_S_AXI_DATA_WIDTH    : INTEGER := 32);
 port (
     -- axi4 lite slave signals
@@ -39,10 +39,7 @@ port (
     frame_in              :out  STD_LOGIC_VECTOR(31 downto 0);
     frame_out             :out  STD_LOGIC_VECTOR(31 downto 0);
     init                  :out  STD_LOGIC_VECTOR(0 downto 0);
-    bgmodel_sortKey       :out  STD_LOGIC_VECTOR(31 downto 0);
-    bgmodel_weight        :out  STD_LOGIC_VECTOR(31 downto 0);
-    bgmodel_mean          :out  STD_LOGIC_VECTOR(31 downto 0);
-    bgmodel_var           :out  STD_LOGIC_VECTOR(31 downto 0)
+    bgmodel               :out  STD_LOGIC_VECTOR(31 downto 0)
 );
 end entity bgsub_AXILiteS_s_axi;
 
@@ -61,38 +58,23 @@ end entity bgsub_AXILiteS_s_axi;
 --        bit 0  - init[0] (Read/Write)
 --        others - reserved
 -- 0x24 : reserved
--- 0x28 : Data signal of bgmodel_sortKey
---        bit 31~0 - bgmodel_sortKey[31:0] (Read/Write)
+-- 0x28 : Data signal of bgmodel
+--        bit 31~0 - bgmodel[31:0] (Read/Write)
 -- 0x2c : reserved
--- 0x30 : Data signal of bgmodel_weight
---        bit 31~0 - bgmodel_weight[31:0] (Read/Write)
--- 0x34 : reserved
--- 0x38 : Data signal of bgmodel_mean
---        bit 31~0 - bgmodel_mean[31:0] (Read/Write)
--- 0x3c : reserved
--- 0x40 : Data signal of bgmodel_var
---        bit 31~0 - bgmodel_var[31:0] (Read/Write)
--- 0x44 : reserved
 -- (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 architecture behave of bgsub_AXILiteS_s_axi is
     type states is (wridle, wrdata, wrresp, rdidle, rddata);  -- read and write fsm states
     signal wstate, wnext, rstate, rnext: states;
-    constant ADDR_FRAME_IN_DATA_0        : INTEGER := 16#10#;
-    constant ADDR_FRAME_IN_CTRL          : INTEGER := 16#14#;
-    constant ADDR_FRAME_OUT_DATA_0       : INTEGER := 16#18#;
-    constant ADDR_FRAME_OUT_CTRL         : INTEGER := 16#1c#;
-    constant ADDR_INIT_DATA_0            : INTEGER := 16#20#;
-    constant ADDR_INIT_CTRL              : INTEGER := 16#24#;
-    constant ADDR_BGMODEL_SORTKEY_DATA_0 : INTEGER := 16#28#;
-    constant ADDR_BGMODEL_SORTKEY_CTRL   : INTEGER := 16#2c#;
-    constant ADDR_BGMODEL_WEIGHT_DATA_0  : INTEGER := 16#30#;
-    constant ADDR_BGMODEL_WEIGHT_CTRL    : INTEGER := 16#34#;
-    constant ADDR_BGMODEL_MEAN_DATA_0    : INTEGER := 16#38#;
-    constant ADDR_BGMODEL_MEAN_CTRL      : INTEGER := 16#3c#;
-    constant ADDR_BGMODEL_VAR_DATA_0     : INTEGER := 16#40#;
-    constant ADDR_BGMODEL_VAR_CTRL       : INTEGER := 16#44#;
-    constant ADDR_BITS         : INTEGER := 7;
+    constant ADDR_FRAME_IN_DATA_0  : INTEGER := 16#10#;
+    constant ADDR_FRAME_IN_CTRL    : INTEGER := 16#14#;
+    constant ADDR_FRAME_OUT_DATA_0 : INTEGER := 16#18#;
+    constant ADDR_FRAME_OUT_CTRL   : INTEGER := 16#1c#;
+    constant ADDR_INIT_DATA_0      : INTEGER := 16#20#;
+    constant ADDR_INIT_CTRL        : INTEGER := 16#24#;
+    constant ADDR_BGMODEL_DATA_0   : INTEGER := 16#28#;
+    constant ADDR_BGMODEL_CTRL     : INTEGER := 16#2c#;
+    constant ADDR_BITS         : INTEGER := 6;
 
     signal waddr               : UNSIGNED(ADDR_BITS-1 downto 0);
     signal wmask               : UNSIGNED(31 downto 0);
@@ -109,10 +91,7 @@ architecture behave of bgsub_AXILiteS_s_axi is
     signal int_frame_in        : UNSIGNED(31 downto 0);
     signal int_frame_out       : UNSIGNED(31 downto 0);
     signal int_init            : UNSIGNED(0 downto 0);
-    signal int_bgmodel_sortKey : UNSIGNED(31 downto 0);
-    signal int_bgmodel_weight  : UNSIGNED(31 downto 0);
-    signal int_bgmodel_mean    : UNSIGNED(31 downto 0);
-    signal int_bgmodel_var     : UNSIGNED(31 downto 0);
+    signal int_bgmodel         : UNSIGNED(31 downto 0);
 
 
 begin
@@ -229,14 +208,8 @@ begin
                     rdata_data <= RESIZE(int_frame_out(31 downto 0), 32);
                 when ADDR_INIT_DATA_0 =>
                     rdata_data <= RESIZE(int_init(0 downto 0), 32);
-                when ADDR_BGMODEL_SORTKEY_DATA_0 =>
-                    rdata_data <= RESIZE(int_bgmodel_sortKey(31 downto 0), 32);
-                when ADDR_BGMODEL_WEIGHT_DATA_0 =>
-                    rdata_data <= RESIZE(int_bgmodel_weight(31 downto 0), 32);
-                when ADDR_BGMODEL_MEAN_DATA_0 =>
-                    rdata_data <= RESIZE(int_bgmodel_mean(31 downto 0), 32);
-                when ADDR_BGMODEL_VAR_DATA_0 =>
-                    rdata_data <= RESIZE(int_bgmodel_var(31 downto 0), 32);
+                when ADDR_BGMODEL_DATA_0 =>
+                    rdata_data <= RESIZE(int_bgmodel(31 downto 0), 32);
                 when others =>
                     rdata_data <= (others => '0');
                 end case;
@@ -248,10 +221,7 @@ begin
     frame_in             <= STD_LOGIC_VECTOR(int_frame_in);
     frame_out            <= STD_LOGIC_VECTOR(int_frame_out);
     init                 <= STD_LOGIC_VECTOR(int_init);
-    bgmodel_sortKey      <= STD_LOGIC_VECTOR(int_bgmodel_sortKey);
-    bgmodel_weight       <= STD_LOGIC_VECTOR(int_bgmodel_weight);
-    bgmodel_mean         <= STD_LOGIC_VECTOR(int_bgmodel_mean);
-    bgmodel_var          <= STD_LOGIC_VECTOR(int_bgmodel_var);
+    bgmodel              <= STD_LOGIC_VECTOR(int_bgmodel);
 
     process (ACLK)
     begin
@@ -290,41 +260,8 @@ begin
     begin
         if (ACLK'event and ACLK = '1') then
             if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_BGMODEL_SORTKEY_DATA_0) then
-                    int_bgmodel_sortKey(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_bgmodel_sortKey(31 downto 0));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_BGMODEL_WEIGHT_DATA_0) then
-                    int_bgmodel_weight(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_bgmodel_weight(31 downto 0));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_BGMODEL_MEAN_DATA_0) then
-                    int_bgmodel_mean(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_bgmodel_mean(31 downto 0));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_BGMODEL_VAR_DATA_0) then
-                    int_bgmodel_var(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_bgmodel_var(31 downto 0));
+                if (w_hs = '1' and waddr = ADDR_BGMODEL_DATA_0) then
+                    int_bgmodel(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_bgmodel(31 downto 0));
                 end if;
             end if;
         end if;
