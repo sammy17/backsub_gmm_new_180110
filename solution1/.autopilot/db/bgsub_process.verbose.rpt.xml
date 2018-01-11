@@ -1,0 +1,419 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'bgsub_process'" level="0">
+<item name = "Date">Thu Jan 11 21:03:39 2018
+</item>
+<item name = "Version">2015.4 (Build 1412921 on Wed Nov 18 09:58:55 AM 2015)</item>
+<item name = "Project">backsub_gmm_new_180110</item>
+<item name = "Solution">solution1</item>
+<item name = "Product family">zynq</item>
+<item name = "Target device">xc7z020clg484-1</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00, 9.58, 1.25</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">34570, 225290, 34570, 225290, none</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- Loop 1">34568, 225288, 8642 ~ 56322, -, -, 4, no</column>
+<column name=" + Loop 1.1">24960, 56320, 78 ~ 176, -, -, 320, no</column>
+<column name="  ++ Loop 1.1.1">19, 56, 19, -, -, 1 ~ 2, no</column>
+<column name="  ++ Loop 1.1.2">0, 9, 6, -, -, 0 ~ 1, no</column>
+<column name="  ++ Loop 1.1.3">7, 14, 7, -, -, 1 ~ 2, no</column>
+<column name="  ++ Loop 1.1.4">24, 24, 12, -, -, 2, no</column>
+<column name=" + Loop 1.2">8640, 25920, 27 ~ 81, -, -, 320, no</column>
+<column name="  ++ Loop 1.2.1">15, 44, 15, -, -, 1 ~ 2, no</column>
+<column name="  ++ Loop 1.2.2">8, 23, 8, -, -, 1 ~ 2, no</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="5">Name, BRAM_18K, DSP48E, FF, LUT</keys>
+<column name="DSP">-, -, -, -</column>
+<column name="Expression">-, -, 0, 492</column>
+<column name="FIFO">-, -, -, -</column>
+<column name="Instance">-, 10, 2268, 3824</column>
+<column name="Memory">-, -, -, -</column>
+<column name="Multiplexer">-, -, -, 1738</column>
+<column name="Register">-, -, 1519, -</column>
+<specialColumn name="Available">280, 220, 106400, 53200</specialColumn>
+<specialColumn name="Utilization (%)">0, 4, 3, 11</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="6">Instance, Module, BRAM_18K, DSP48E, FF, LUT</keys>
+<column name="bgsub_faddfsub_32ns_32ns_32_5_full_dsp_U1">bgsub_faddfsub_32ns_32ns_32_5_full_dsp, 0, 2, 205, 390</column>
+<column name="bgsub_faddfsub_32ns_32ns_32_5_full_dsp_U2">bgsub_faddfsub_32ns_32ns_32_5_full_dsp, 0, 2, 205, 390</column>
+<column name="bgsub_fcmp_32ns_32ns_1_1_U7">bgsub_fcmp_32ns_32ns_1_1, 0, 0, 66, 239</column>
+<column name="bgsub_fdiv_32ns_32ns_32_16_U5">bgsub_fdiv_32ns_32ns_32_16, 0, 0, 761, 994</column>
+<column name="bgsub_fmul_32ns_32ns_32_4_max_dsp_U3">bgsub_fmul_32ns_32ns_32_4_max_dsp, 0, 3, 143, 321</column>
+<column name="bgsub_fmul_32ns_32ns_32_4_max_dsp_U4">bgsub_fmul_32ns_32ns_32_4_max_dsp, 0, 3, 143, 321</column>
+<column name="bgsub_fsqrt_32ns_32ns_32_12_U8">bgsub_fsqrt_32ns_32ns_32_12, 0, 0, 405, 615</column>
+<column name="bgsub_sitofp_32ns_32_6_U6">bgsub_sitofp_32ns_32_6, 0, 0, 340, 554</column>
+</table>
+</item>
+<item name = "DSP48"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="9">Memory, Module, BRAM_18K, FF, LUT, Words, Bits, Banks, W*Bits*Banks</keys>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="7">Name, BRAM_18K, FF, LUT, Depth, Bits, Size:D*B</keys>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="k1_fu_1426_p2">+, 0, 0, 2, 2, 2</column>
+<column name="kForeground_1_fu_1620_p2">+, 0, 0, 2, 2, 1</column>
+<column name="k_11_fu_1112_p2">+, 0, 0, 2, 2, 1</column>
+<column name="k_2_fu_1218_p2">+, 0, 0, 2, 2, 1</column>
+<column name="k_4_fu_955_p2">+, 0, 0, 2, 2, 1</column>
+<column name="k_8_fu_1601_p2">+, 0, 0, 32, 1, 32</column>
+<column name="mptr_1_sum_fu_1208_p2">+, 0, 0, 12, 12, 12</column>
+<column name="mptr_2_sum_fu_941_p2">+, 0, 0, 12, 12, 12</column>
+<column name="mptr_3_rec_fu_926_p2">+, 0, 0, 12, 12, 10</column>
+<column name="p_rec1_fu_1653_p2">+, 0, 0, 10, 10, 2</column>
+<column name="p_rec_fu_1176_p2">+, 0, 0, 10, 10, 2</column>
+<column name="sum1_fu_1228_p2">+, 0, 0, 12, 12, 12</column>
+<column name="sum2_fu_890_p2">+, 0, 0, 11, 11, 11</column>
+<column name="sum3_fu_965_p2">+, 0, 0, 12, 12, 12</column>
+<column name="sum4_fu_1122_p2">+, 0, 0, 12, 12, 12</column>
+<column name="sum5_fu_1442_p2">+, 0, 0, 12, 12, 12</column>
+<column name="sum8_fu_1591_p2">+, 0, 0, 13, 13, 13</column>
+<column name="sum9_fu_1630_p2">+, 0, 0, 12, 12, 12</column>
+<column name="sum_fu_916_p2">+, 0, 0, 11, 11, 11</column>
+<column name="x_2_fu_880_p2">+, 0, 0, 9, 9, 1</column>
+<column name="x_3_fu_906_p2">+, 0, 0, 9, 9, 1</column>
+<column name="y_1_fu_850_p2">+, 0, 0, 3, 3, 1</column>
+<column name="p_kForeground_fu_1716_p3">Select, 0, 0, 32, 1, 32</column>
+<column name="var_2_fu_1405_p3">Select, 0, 0, 32, 1, 31</column>
+<column name="ap_sig_bdd_496">and, 0, 0, 1, 1, 1</column>
+<column name="ap_sig_bdd_508">and, 0, 0, 1, 1, 1</column>
+<column name="or_cond_fu_1708_p2">and, 0, 0, 1, 1, 1</column>
+<column name="tmp_25_fu_1274_p2">and, 0, 0, 1, 1, 1</column>
+<column name="tmp_34_fu_1010_p2">and, 0, 0, 1, 1, 1</column>
+<column name="tmp_41_fu_1351_p2">and, 0, 0, 1, 1, 1</column>
+<column name="tmp_43_fu_1357_p2">and, 0, 0, 1, 1, 1</column>
+<column name="tmp_50_fu_1088_p2">and, 0, 0, 1, 1, 1</column>
+<column name="tmp_52_fu_1094_p2">and, 0, 0, 1, 1, 1</column>
+<column name="tmp_57_fu_1399_p2">and, 0, 0, 1, 1, 1</column>
+<column name="tmp_66_fu_1522_p2">and, 0, 0, 1, 1, 1</column>
+<column name="tmp_71_fu_1167_p2">and, 0, 0, 1, 1, 1</column>
+<column name="tmp_72_fu_1528_p2">and, 0, 0, 1, 1, 1</column>
+<column name="tmp_84_fu_1694_p2">and, 0, 0, 1, 1, 1</column>
+<column name="tmp_s_fu_838_p2">and, 0, 0, 1, 1, 1</column>
+<column name="exitcond1_fu_844_p2">icmp, 0, 0, 2, 3, 4</column>
+<column name="exitcond2_fu_900_p2">icmp, 0, 0, 3, 9, 9</column>
+<column name="exitcond3_fu_1614_p2">icmp, 0, 0, 2, 2, 3</column>
+<column name="exitcond4_fu_1581_p2">icmp, 0, 0, 11, 32, 2</column>
+<column name="exitcond_fu_874_p2">icmp, 0, 0, 3, 9, 9</column>
+<column name="notlhs10_fu_1504_p2">icmp, 0, 0, 3, 8, 2</column>
+<column name="notlhs11_fu_1676_p2">icmp, 0, 0, 3, 8, 2</column>
+<column name="notlhs1_fu_1256_p2">icmp, 0, 0, 3, 8, 2</column>
+<column name="notlhs2_fu_992_p2">icmp, 0, 0, 3, 8, 2</column>
+<column name="notlhs3_fu_1315_p2">icmp, 0, 0, 3, 8, 2</column>
+<column name="notlhs4_fu_1333_p2">icmp, 0, 0, 3, 8, 2</column>
+<column name="notlhs5_fu_1052_p2">icmp, 0, 0, 3, 8, 2</column>
+<column name="notlhs6_fu_1070_p2">icmp, 0, 0, 3, 8, 2</column>
+<column name="notlhs7_fu_1381_p2">icmp, 0, 0, 3, 8, 2</column>
+<column name="notlhs8_fu_1149_p2">icmp, 0, 0, 3, 8, 2</column>
+<column name="notlhs9_fu_1486_p2">icmp, 0, 0, 3, 8, 2</column>
+<column name="notlhs_fu_820_p2">icmp, 0, 0, 3, 8, 2</column>
+<column name="notrhs10_fu_1510_p2">icmp, 0, 0, 8, 23, 1</column>
+<column name="notrhs11_fu_1682_p2">icmp, 0, 0, 8, 23, 1</column>
+<column name="notrhs1_fu_1262_p2">icmp, 0, 0, 8, 23, 1</column>
+<column name="notrhs2_fu_998_p2">icmp, 0, 0, 8, 23, 1</column>
+<column name="notrhs3_fu_1321_p2">icmp, 0, 0, 8, 23, 1</column>
+<column name="notrhs4_fu_1339_p2">icmp, 0, 0, 8, 23, 1</column>
+<column name="notrhs5_fu_1058_p2">icmp, 0, 0, 8, 23, 1</column>
+<column name="notrhs6_fu_1076_p2">icmp, 0, 0, 8, 23, 1</column>
+<column name="notrhs7_fu_1387_p2">icmp, 0, 0, 8, 23, 1</column>
+<column name="notrhs8_fu_1492_p2">icmp, 0, 0, 8, 23, 1</column>
+<column name="notrhs9_fu_1155_p2">icmp, 0, 0, 8, 23, 1</column>
+<column name="notrhs_fu_826_p2">icmp, 0, 0, 8, 23, 1</column>
+<column name="slt1_fu_1182_p2">icmp, 0, 0, 2, 3, 3</column>
+<column name="slt_fu_1641_p2">icmp, 0, 0, 11, 32, 32</column>
+<column name="tmp_18_fu_1432_p2">icmp, 0, 0, 1, 2, 1</column>
+<column name="k_10_fu_1550_p2">or, 0, 0, 1, 1, 1</column>
+<column name="sum6_fu_1413_p2">or, 0, 0, 14, 12, 1</column>
+<column name="tmp_22_fu_1268_p2">or, 0, 0, 1, 1, 1</column>
+<column name="tmp_28_fu_1193_p2">or, 0, 0, 1, 1, 1</column>
+<column name="tmp_30_fu_1004_p2">or, 0, 0, 1, 1, 1</column>
+<column name="tmp_39_fu_1327_p2">or, 0, 0, 1, 1, 1</column>
+<column name="tmp_40_fu_1345_p2">or, 0, 0, 1, 1, 1</column>
+<column name="tmp_48_fu_1064_p2">or, 0, 0, 1, 1, 1</column>
+<column name="tmp_49_fu_1082_p2">or, 0, 0, 1, 1, 1</column>
+<column name="tmp_55_fu_1393_p2">or, 0, 0, 1, 1, 1</column>
+<column name="tmp_5_fu_832_p2">or, 0, 0, 1, 1, 1</column>
+<column name="tmp_64_fu_1498_p2">or, 0, 0, 1, 1, 1</column>
+<column name="tmp_65_fu_1516_p2">or, 0, 0, 1, 1, 1</column>
+<column name="tmp_69_fu_1161_p2">or, 0, 0, 1, 1, 1</column>
+<column name="tmp_82_fu_1688_p2">or, 0, 0, 1, 1, 1</column>
+<column name="rev1_fu_1187_p2">xor, 0, 0, 2, 1, 2</column>
+<column name="rev_fu_1646_p2">xor, 0, 0, 2, 1, 2</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="ap_NS_fsm">400, 159, 1, 159</column>
+<column name="bgmodel_mean_address0">12, 6, 12, 72</column>
+<column name="bgmodel_mean_address1">12, 3, 12, 36</column>
+<column name="bgmodel_mean_d0">32, 3, 32, 96</column>
+<column name="bgmodel_mean_d1">32, 3, 32, 96</column>
+<column name="bgmodel_sortKey_address0">12, 5, 12, 60</column>
+<column name="bgmodel_sortKey_address1">12, 5, 12, 60</column>
+<column name="bgmodel_sortKey_d0">32, 3, 32, 96</column>
+<column name="bgmodel_sortKey_d1">32, 4, 32, 128</column>
+<column name="bgmodel_var_address0">12, 6, 12, 72</column>
+<column name="bgmodel_var_address1">12, 3, 12, 36</column>
+<column name="bgmodel_var_d0">32, 3, 32, 96</column>
+<column name="bgmodel_var_d1">32, 3, 32, 96</column>
+<column name="bgmodel_weight_address0">24, 8, 12, 96</column>
+<column name="bgmodel_weight_address1">12, 6, 12, 72</column>
+<column name="bgmodel_weight_d0">32, 3, 32, 96</column>
+<column name="bgmodel_weight_d1">32, 4, 32, 128</column>
+<column name="frame_in_address0">11, 3, 11, 33</column>
+<column name="frame_out_address0">11, 3, 11, 33</column>
+<column name="frame_out_d0">1, 3, 1, 3</column>
+<column name="grp_fu_663_opcode">2, 3, 2, 6</column>
+<column name="grp_fu_663_p0">96, 12, 32, 384</column>
+<column name="grp_fu_663_p1">32, 6, 32, 192</column>
+<column name="grp_fu_670_opcode">2, 3, 2, 6</column>
+<column name="grp_fu_670_p0">32, 3, 32, 96</column>
+<column name="grp_fu_670_p1">32, 3, 32, 96</column>
+<column name="grp_fu_678_p0">32, 3, 32, 96</column>
+<column name="grp_fu_678_p1">32, 4, 32, 128</column>
+<column name="grp_fu_682_p0">32, 5, 32, 160</column>
+<column name="grp_fu_682_p1">32, 4, 32, 128</column>
+<column name="grp_fu_692_p0">32, 3, 32, 96</column>
+<column name="grp_fu_692_p1">32, 3, 32, 96</column>
+<column name="grp_fu_698_p0">32, 3, 32, 96</column>
+<column name="grp_fu_701_opcode">5, 4, 5, 20</column>
+<column name="grp_fu_701_p0">64, 9, 32, 288</column>
+<column name="grp_fu_701_p1">32, 7, 32, 224</column>
+<column name="grp_fu_714_p1">2, 3, 2, 6</column>
+<column name="grp_fu_723_p1">2, 3, 2, 6</column>
+<column name="kForeground1_reg_651">32, 2, 32, 64</column>
+<column name="kForeground3_1_reg_503">3, 2, 3, 6</column>
+<column name="kHit1_phi_fu_571_p8">2, 2, 2, 4</column>
+<column name="kHit1_reg_567">2, 3, 2, 6</column>
+<column name="kHit2_reg_467">2, 2, 2, 4</column>
+<column name="kHit_1_reg_617">2, 2, 2, 4</column>
+<column name="kHit_4_reg_455">2, 2, 2, 4</column>
+<column name="kHit_reg_541">2, 2, 2, 4</column>
+<column name="k_1_reg_586">32, 2, 32, 64</column>
+<column name="k_5_reg_480">2, 2, 2, 4</column>
+<column name="k_9_reg_628">2, 2, 2, 4</column>
+<column name="k_reg_517">2, 2, 2, 4</column>
+<column name="mptr_0_rec_reg_386">12, 2, 12, 24</column>
+<column name="mptr_1_rec_reg_432">10, 2, 10, 20</column>
+<column name="mptr_2_rec_reg_409">10, 2, 10, 20</column>
+<column name="reg_779">32, 2, 32, 64</column>
+<column name="wsum8_reg_491">32, 2, 32, 64</column>
+<column name="wsum_1_phi_fu_555_p8">32, 2, 32, 64</column>
+<column name="wsum_1_reg_552">32, 3, 32, 96</column>
+<column name="wsum_2_reg_595">32, 2, 32, 64</column>
+<column name="wsum_3_phi_fu_609_p4">32, 2, 32, 64</column>
+<column name="wsum_3_reg_606">32, 2, 32, 64</column>
+<column name="wsum_4_reg_639">32, 2, 32, 64</column>
+<column name="wsum_reg_529">32, 2, 32, 64</column>
+<column name="x_1_reg_421">9, 2, 9, 18</column>
+<column name="x_reg_444">9, 2, 9, 18</column>
+<column name="y_reg_398">3, 2, 3, 6</column>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="ap_CS_fsm">158, 0, 158, 0</column>
+<column name="bgmodel_mean_addr_2_reg_2056">12, 0, 12, 0</column>
+<column name="bgmodel_mean_addr_3_reg_2000">11, 0, 12, 1</column>
+<column name="bgmodel_mean_addr_reg_1950">12, 0, 12, 0</column>
+<column name="bgmodel_sortKey_addr_1_reg_2026">12, 0, 12, 0</column>
+<column name="bgmodel_sortKey_addr_2_reg_1989">11, 0, 12, 1</column>
+<column name="bgmodel_sortKey_addr_4_reg_2137">12, 0, 12, 0</column>
+<column name="bgmodel_sortKey_load_2_reg_2039">32, 0, 32, 0</column>
+<column name="bgmodel_var_addr_2_reg_2062">12, 0, 12, 0</column>
+<column name="bgmodel_var_addr_3_reg_2005">11, 0, 12, 1</column>
+<column name="bgmodel_var_addr_reg_1955">12, 0, 12, 0</column>
+<column name="bgmodel_weight_addr_3_reg_2050">12, 0, 12, 0</column>
+<column name="bgmodel_weight_addr_4_reg_1995">11, 0, 12, 1</column>
+<column name="bgmodel_weight_addr_5_reg_2082">12, 0, 12, 0</column>
+<column name="bgmodel_weight_addr_7_reg_2131">12, 0, 12, 0</column>
+<column name="bgmodel_weight_addr_reg_1929">12, 0, 12, 0</column>
+<column name="bgmodel_weight_load_reg_1822">32, 0, 32, 0</column>
+<column name="k1_reg_2010">2, 0, 2, 0</column>
+<column name="kForeground1_reg_651">32, 0, 32, 0</column>
+<column name="kForeground3_1_reg_503">3, 0, 3, 0</column>
+<column name="kForeground_1_reg_2125">2, 0, 2, 0</column>
+<column name="kHit1_reg_567">2, 0, 2, 0</column>
+<column name="kHit2_cast_reg_1845">3, 0, 3, 0</column>
+<column name="kHit2_reg_467">2, 0, 2, 0</column>
+<column name="kHit_1_cast_reg_2117">32, 0, 32, 0</column>
+<column name="kHit_1_reg_617">2, 0, 2, 0</column>
+<column name="kHit_4_reg_455">2, 0, 2, 0</column>
+<column name="kHit_reg_541">2, 0, 2, 0</column>
+<column name="k_10_reg_2077">1, 0, 1, 0</column>
+<column name="k_11_reg_1858">2, 0, 2, 0</column>
+<column name="k_1_reg_586">32, 0, 32, 0</column>
+<column name="k_2_reg_1917">2, 0, 2, 0</column>
+<column name="k_4_reg_1806">2, 0, 2, 0</column>
+<column name="k_5_reg_480">2, 0, 2, 0</column>
+<column name="k_8_reg_2097">32, 0, 32, 0</column>
+<column name="k_9_reg_628">2, 0, 2, 0</column>
+<column name="k_reg_517">2, 0, 2, 0</column>
+<column name="mptr_0_rec_reg_386">12, 0, 12, 0</column>
+<column name="mptr_1_rec_reg_432">10, 0, 10, 0</column>
+<column name="mptr_1_sum_cast_reg_1908">12, 0, 13, 1</column>
+<column name="mptr_1_sum_reg_1899">12, 0, 12, 0</column>
+<column name="mptr_2_rec_reg_409">10, 0, 10, 0</column>
+<column name="mptr_2_sum_reg_1796">12, 0, 12, 0</column>
+<column name="p_rec_reg_1889">10, 0, 10, 0</column>
+<column name="p_tmp_sortKey_reg_2032">32, 0, 32, 0</column>
+<column name="reg_732">8, 0, 8, 0</column>
+<column name="reg_736">32, 0, 32, 0</column>
+<column name="reg_742">32, 0, 32, 0</column>
+<column name="reg_749">32, 0, 32, 0</column>
+<column name="reg_757">32, 0, 32, 0</column>
+<column name="reg_766">32, 0, 32, 0</column>
+<column name="reg_773">32, 0, 32, 0</column>
+<column name="reg_779">32, 0, 32, 0</column>
+<column name="reg_790">32, 0, 32, 0</column>
+<column name="reg_796">32, 0, 32, 0</column>
+<column name="sum1_cast_reg_1922">12, 0, 64, 52</column>
+<column name="sum2_cast_reg_1758">11, 0, 64, 53</column>
+<column name="sum3_cast_reg_1811">12, 0, 64, 52</column>
+<column name="sum5_cast_reg_2019">12, 0, 64, 52</column>
+<column name="sum_cast_reg_1776">11, 0, 64, 53</column>
+<column name="tmp_11_reg_1963">32, 0, 32, 0</column>
+<column name="tmp_16_reg_1802">1, 0, 1, 0</column>
+<column name="tmp_18_reg_2015">1, 0, 1, 0</column>
+<column name="tmp_23_reg_1941">1, 0, 1, 0</column>
+<column name="tmp_25_reg_1946">1, 0, 1, 0</column>
+<column name="tmp_2_cast_reg_1744">4, 0, 11, 7</column>
+<column name="tmp_52_reg_1841">1, 0, 1, 0</column>
+<column name="tmp_57_reg_1968">1, 0, 1, 0</column>
+<column name="tmp_58_reg_1850">1, 0, 1, 0</column>
+<column name="tmp_59_reg_1854">1, 0, 1, 0</column>
+<column name="tmp_72_reg_2046">1, 0, 1, 0</column>
+<column name="tmp_74_reg_2073">1, 0, 1, 0</column>
+<column name="tmp_79_reg_1884">1, 0, 1, 0</column>
+<column name="tmp_7_reg_1913">1, 0, 1, 0</column>
+<column name="tmp_84_reg_2160">1, 0, 1, 0</column>
+<column name="tmp_i_reg_1978">32, 0, 32, 0</column>
+<column name="tmp_s_reg_1732">1, 0, 1, 0</column>
+<column name="var_2_reg_1973">32, 0, 32, 0</column>
+<column name="wsum8_reg_491">32, 0, 32, 0</column>
+<column name="wsum_10_reg_2153">32, 0, 32, 0</column>
+<column name="wsum_1_reg_552">32, 0, 32, 0</column>
+<column name="wsum_2_reg_595">32, 0, 32, 0</column>
+<column name="wsum_3_reg_606">32, 0, 32, 0</column>
+<column name="wsum_4_reg_639">32, 0, 32, 0</column>
+<column name="wsum_5_reg_1934">32, 0, 32, 0</column>
+<column name="wsum_6_reg_1983">32, 0, 32, 0</column>
+<column name="wsum_7_reg_2107">32, 0, 32, 0</column>
+<column name="wsum_8_reg_1869">32, 0, 32, 0</column>
+<column name="wsum_reg_529">32, 0, 32, 0</column>
+<column name="x_1_reg_421">9, 0, 9, 0</column>
+<column name="x_2_reg_1753">9, 0, 9, 0</column>
+<column name="x_3_reg_1771">9, 0, 9, 0</column>
+<column name="x_reg_444">9, 0, 9, 0</column>
+<column name="y_1_reg_1739">3, 0, 3, 0</column>
+<column name="y_reg_398">3, 0, 3, 0</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="ap_clk">in, 1, ap_ctrl_hs, bgsub_process, return value</column>
+<column name="ap_rst">in, 1, ap_ctrl_hs, bgsub_process, return value</column>
+<column name="ap_start">in, 1, ap_ctrl_hs, bgsub_process, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_hs, bgsub_process, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_hs, bgsub_process, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_hs, bgsub_process, return value</column>
+<column name="frame_in_address0">out, 11, ap_memory, frame_in, array</column>
+<column name="frame_in_ce0">out, 1, ap_memory, frame_in, array</column>
+<column name="frame_in_q0">in, 8, ap_memory, frame_in, array</column>
+<column name="frame_out_address0">out, 11, ap_memory, frame_out, array</column>
+<column name="frame_out_ce0">out, 1, ap_memory, frame_out, array</column>
+<column name="frame_out_we0">out, 1, ap_memory, frame_out, array</column>
+<column name="frame_out_d0">out, 1, ap_memory, frame_out, array</column>
+<column name="bgmodel_sortKey_address0">out, 12, ap_memory, bgmodel_sortKey, array</column>
+<column name="bgmodel_sortKey_ce0">out, 1, ap_memory, bgmodel_sortKey, array</column>
+<column name="bgmodel_sortKey_we0">out, 1, ap_memory, bgmodel_sortKey, array</column>
+<column name="bgmodel_sortKey_d0">out, 32, ap_memory, bgmodel_sortKey, array</column>
+<column name="bgmodel_sortKey_q0">in, 32, ap_memory, bgmodel_sortKey, array</column>
+<column name="bgmodel_sortKey_address1">out, 12, ap_memory, bgmodel_sortKey, array</column>
+<column name="bgmodel_sortKey_ce1">out, 1, ap_memory, bgmodel_sortKey, array</column>
+<column name="bgmodel_sortKey_we1">out, 1, ap_memory, bgmodel_sortKey, array</column>
+<column name="bgmodel_sortKey_d1">out, 32, ap_memory, bgmodel_sortKey, array</column>
+<column name="bgmodel_sortKey_q1">in, 32, ap_memory, bgmodel_sortKey, array</column>
+<column name="bgmodel_weight_address0">out, 12, ap_memory, bgmodel_weight, array</column>
+<column name="bgmodel_weight_ce0">out, 1, ap_memory, bgmodel_weight, array</column>
+<column name="bgmodel_weight_we0">out, 1, ap_memory, bgmodel_weight, array</column>
+<column name="bgmodel_weight_d0">out, 32, ap_memory, bgmodel_weight, array</column>
+<column name="bgmodel_weight_q0">in, 32, ap_memory, bgmodel_weight, array</column>
+<column name="bgmodel_weight_address1">out, 12, ap_memory, bgmodel_weight, array</column>
+<column name="bgmodel_weight_ce1">out, 1, ap_memory, bgmodel_weight, array</column>
+<column name="bgmodel_weight_we1">out, 1, ap_memory, bgmodel_weight, array</column>
+<column name="bgmodel_weight_d1">out, 32, ap_memory, bgmodel_weight, array</column>
+<column name="bgmodel_weight_q1">in, 32, ap_memory, bgmodel_weight, array</column>
+<column name="bgmodel_mean_address0">out, 12, ap_memory, bgmodel_mean, array</column>
+<column name="bgmodel_mean_ce0">out, 1, ap_memory, bgmodel_mean, array</column>
+<column name="bgmodel_mean_we0">out, 1, ap_memory, bgmodel_mean, array</column>
+<column name="bgmodel_mean_d0">out, 32, ap_memory, bgmodel_mean, array</column>
+<column name="bgmodel_mean_q0">in, 32, ap_memory, bgmodel_mean, array</column>
+<column name="bgmodel_mean_address1">out, 12, ap_memory, bgmodel_mean, array</column>
+<column name="bgmodel_mean_ce1">out, 1, ap_memory, bgmodel_mean, array</column>
+<column name="bgmodel_mean_we1">out, 1, ap_memory, bgmodel_mean, array</column>
+<column name="bgmodel_mean_d1">out, 32, ap_memory, bgmodel_mean, array</column>
+<column name="bgmodel_mean_q1">in, 32, ap_memory, bgmodel_mean, array</column>
+<column name="bgmodel_var_address0">out, 12, ap_memory, bgmodel_var, array</column>
+<column name="bgmodel_var_ce0">out, 1, ap_memory, bgmodel_var, array</column>
+<column name="bgmodel_var_we0">out, 1, ap_memory, bgmodel_var, array</column>
+<column name="bgmodel_var_d0">out, 32, ap_memory, bgmodel_var, array</column>
+<column name="bgmodel_var_q0">in, 32, ap_memory, bgmodel_var, array</column>
+<column name="bgmodel_var_address1">out, 12, ap_memory, bgmodel_var, array</column>
+<column name="bgmodel_var_ce1">out, 1, ap_memory, bgmodel_var, array</column>
+<column name="bgmodel_var_we1">out, 1, ap_memory, bgmodel_var, array</column>
+<column name="bgmodel_var_d1">out, 32, ap_memory, bgmodel_var, array</column>
+<column name="bgmodel_var_q1">in, 32, ap_memory, bgmodel_var, array</column>
+<column name="learningRate">in, 32, ap_none, learningRate, scalar</column>
+</table>
+</item>
+</section>
+</profile>

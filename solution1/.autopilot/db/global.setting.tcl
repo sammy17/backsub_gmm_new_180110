@@ -1,11 +1,11 @@
 
-set TopModule "backsub"
+set TopModule "bgsub"
 set ClockPeriod "10.000000"
 set ClockList {ap_clk}
 set multiClockList {}
 set PortClockMap {}
 set CombLogicFlag 0
-set PipelineFlag 0
+set PipelineFlag 1
 set DataflowTaskPipelineFlag  1
 set TrivialPipelineFlag 0
 set noPortSwitchingFlag 0
@@ -43,7 +43,7 @@ set SCTraceOption "all"
 set TargetInfo "xc7z020:clg484:-1"
 set SourceFiles {sc {} c ../core.cpp}
 set SourceFlags {sc {} c {{}}}
-set DirectiveFile {/home/zynq-fyp/Desktop/maxi_latest/backsub_gmm_new_180110/solution1/solution1.directive}
+set DirectiveFile {/home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/solution1.directive}
 set TBFiles {verilog {../test.cpp ../output.avi ../cut_out.avi} bc {../test.cpp ../output.avi ../cut_out.avi} vhdl {../test.cpp ../output.avi ../cut_out.avi} sc {../test.cpp ../output.avi ../cut_out.avi} cas {../test.cpp ../output.avi ../cut_out.avi} c {}}
 set SpecLanguage "C"
 set TVInFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}

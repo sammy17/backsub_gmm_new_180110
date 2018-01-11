@@ -4,13 +4,15 @@
 #include <climits>
 #include <iostream>
 #include "core.h"
-MixData bgmodel[BGM_SIZE];
+
 cv::Mat outImg1(HEIGHT, WIDTH, CV_8UC1);
 cv::Mat IMG1(HEIGHT, WIDTH, CV_8UC1);
 
 
-uint8_t frame_in1[IMG_SIZE];
-uint8_t frame_out1[IMG_SIZE] = {0};
+uint8_t frame_in[IMG_SIZE];
+uint8_t frame_out[IMG_SIZE] = {0};
+
+MixData bgmodel[BGM_SIZE];
 
 
 int main()
@@ -32,20 +34,11 @@ int main()
         std::cerr << "ERROR! Unable to open camera\n";
         return -1;
     }
-    cap.read(frame);
-    //cv::GaussianBlur(frame0, frame, cv::Size(5, 5), 2.0);
-    printf("height = %d, width = %d\n", frame.rows, frame.cols);
-    cv::cvtColor(frame, IMG1, CV_BGR2GRAY);
 
-    bool init = 1;
 
-    init = 0;
-//    cv::namedWindow("Live1");
-//    cv::imshow("Live1", IMG1);
-//
-//    cv::namedWindow("Live2");
-//    cv::imshow("Live2", outImg1);
-//    cv::waitKey(0);
+
+
+    bool init = true;
 
     for (;;) {
         // wait for a new frame from camera and store it into 'frame'
@@ -57,11 +50,13 @@ int main()
         }
         cv::cvtColor(frame, IMG1, CV_BGR2GRAY);
 
-        memcpy(frame_in1, IMG1.data, IMG_SIZE);
+        memcpy(frame_in, IMG1.data, IMG_SIZE);
 
-        backsub(frame_in1,frame_out1,0,bgmodel);
+        bgsub(frame_in,frame_out,init, bgmodel);
 
-        memcpy(outImg1.data, frame_out1, IMG_SIZE);
+        if(init) init = false;
+
+        memcpy(outImg1.data, frame_out, IMG_SIZE);
 
         cv::namedWindow("Live1");
         cv::imshow("Live1", IMG1);
