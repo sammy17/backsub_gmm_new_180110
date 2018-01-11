@@ -19,7 +19,7 @@ set DataType4 "int"
 set Port4 [list $PortName4 $Interface4 $DataType4 $Pointer4 $Dims4 $Const4 $Volatile4 $ArrayOpt4 $Initializer4 $External4 $NameSpace4]
 lappend globalVariable $Port4
 set PortName5 "frame_out_glob"
-set BitWidth5 "20480"
+set BitWidth5 "61440"
 set ArrayOpt5 ""
 set Const5 "0"
 set Volatile5 "0"
@@ -27,14 +27,14 @@ set Pointer5 "0"
 set Reference5 "0"
 set Initializer5 ""
 set External5 0
-set Dims5 [list  2560]
+set Dims5 [list  7680]
 set Interface5 "wire"
 set NameSpace5 [list ]
 set DataType5 "unsigned char"
 set Port5 [list $PortName5 $Interface5 $DataType5 $Pointer5 $Dims5 $Const5 $Volatile5 $ArrayOpt5 $Initializer5 $External5 $NameSpace5]
 lappend globalVariable $Port5
 set PortName6 "frame_in_glob"
-set BitWidth6 "20480"
+set BitWidth6 "61440"
 set ArrayOpt6 ""
 set Const6 "0"
 set Volatile6 "0"
@@ -42,14 +42,14 @@ set Pointer6 "0"
 set Reference6 "0"
 set Initializer6 ""
 set External6 0
-set Dims6 [list  2560]
+set Dims6 [list  7680]
 set Interface6 "wire"
 set NameSpace6 [list ]
 set DataType6 "unsigned char"
 set Port6 [list $PortName6 $Interface6 $DataType6 $Pointer6 $Dims6 $Const6 $Volatile6 $ArrayOpt6 $Initializer6 $External6 $NameSpace6]
 lappend globalVariable $Port6
 set PortName7 "bgmo"
-set BitWidth7 "655360"
+set BitWidth7 "1966080"
 set ArrayOpt7 ""
 set Const7 "0"
 set Volatile7 "0"
@@ -57,7 +57,7 @@ set Pointer7 "0"
 set Reference7 "0"
 set Initializer7 ""
 set External7 0
-set Dims7 [list  5120]
+set Dims7 [list  15360]
 set Interface7 "wire"
 set NameSpace7 [list ]
 set structMem7 ""

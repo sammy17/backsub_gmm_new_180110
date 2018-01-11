@@ -11,7 +11,7 @@ using namespace std;
 #define IMG_SIZE WIDTH*HEIGHT
 #define K  2 // no of gaussian mxitures
 #define BGM_SIZE IMG_SIZE*K
-#define PARTS 240
+#define PARTS 80
 #define LEVELS 8
 //typedef ap_fixed<24,16> data_t;
 

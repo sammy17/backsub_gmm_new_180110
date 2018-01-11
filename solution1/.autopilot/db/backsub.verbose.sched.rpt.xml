@@ -1,0 +1,52 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'backsub'" level="0">
+<item name = "Date">Thu Jan 11 16:44:53 2018
+</item>
+<item name = "Version">2015.4 (Build 1412921 on Wed Nov 18 09:58:55 AM 2015)</item>
+<item name = "Project">backsub_gmm_new_180110</item>
+<item name = "Solution">solution1</item>
+<item name = "Product family">zynq</item>
+<item name = "Target device">xc7z020clg484-1</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00, 8.75, 1.25</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">13902585, 72885026, 13902586, 72885027, none</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- Loop 1">153600, 153600, 1, -, -, 153600, no</column>
+<column name="- Loop 2">13902580, 72731380, 1390258 ~ 7273138, -, -, 10, no</column>
+<column name=" + memcpy..bgmodel.var">15376, 15376, 18, 1, 1, 15360, yes</column>
+<column name=" + memcpy..frame_i">7695, 7695, 17, 1, 1, 7680, yes</column>
+<column name=" + Loop 2.3">1344080, 7226960, 168010 ~ 903370, -, -, 8, no</column>
+<column name=" + memcpy.frame_o.frame_out_glob.gep">7697, 7697, 19, 1, 1, 7680, yes</column>
+<column name=" + memcpy.bgmodel.var.">15378, 15378, 20, 1, 1, 15360, yes</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+</profile>

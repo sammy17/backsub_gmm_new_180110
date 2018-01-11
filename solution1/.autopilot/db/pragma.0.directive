@@ -31,6 +31,14 @@
 </pragma>
 </directive>
 <directive functionLabel="" functionName="backsub" label="">
+<pragma name="ARRAY_PARTITION">
+<option name="variable" positionalBoolean="4" value="bgmo"/>
+<option name="block" positionalBoolean="type" value=""/>
+<option name="factor" value="8"/>
+<option name="dim" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="backsub" label="">
 <pragma name="INTERFACE">
 <option name="m_axi" positionalBoolean="mode" value=""/>
 <option name="port" positionalBoolean="4" value="bgmodel"/>
@@ -63,9 +71,6 @@
 <option name="port" positionalBoolean="4" value="frame_i"/>
 <option name="offset" value="slave"/>
 </pragma>
-</directive>
-<directive functionLabel="" functionName="backsub" label="">
-<pragma name="PIPELINE"/>
 </directive>
 </sourceFile>
 </AutoPilot:ProjectResources>

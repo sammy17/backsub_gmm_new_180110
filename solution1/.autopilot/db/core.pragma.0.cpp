@@ -52545,9 +52545,9 @@ extern char *basename (const char *__filename) throw () __attribute__ ((__nonnul
 }
 #3 "backsub_gmm_new_180110/core.cpp" 2
 //MixData<data_t> bgmodel[BGM_SIZE];
-MixData bgmo[(320*240*2 /* no of gaussian mxitures*/ / 240) * 8];
-uint8_t frame_in_glob[(320*240 / 240) * 8];
-uint8_t frame_out_glob[(320*240 / 240) * 8];
+MixData bgmo[(320*240*2 /* no of gaussian mxitures*/ / 80) * 8];
+uint8_t frame_in_glob[(320*240 / 80) * 8];
+uint8_t frame_out_glob[(320*240 / 80) * 8];
 
 static const int defaultNMixtures = 5;
 static const int defaultHistory = 200;
@@ -52558,10 +52558,11 @@ static const float defaultInitialWeight = 0.05;
 
 int nframes = 0;
 
-void process(uint8_t frame_in[320*240 / 240],
-  uint8_t frame_out[320*240 / 240], float learningRate,
+void process(uint8_t frame_in[320*240 / 80],
+  uint8_t frame_out[320*240 / 80], float learningRate,
   float backgroundRatio, float varThreshold, float noiseSigma,
-  MixData bgmodel[320*240*2 /* no of gaussian mxitures*/ / 240]) {_ssdm_SpecArrayDimSize(frame_in,320*240 / 240);_ssdm_SpecArrayDimSize(bgmodel,320*240*2 /* no of gaussian mxitures*/ / 240);_ssdm_SpecArrayDimSize(frame_out,320*240 / 240);
+  MixData bgmodel[320*240*2 /* no of gaussian mxitures*/ / 80]) {_ssdm_SpecArrayDimSize(frame_in,320*240 / 80);_ssdm_SpecArrayDimSize(bgmodel,320*240*2 /* no of gaussian mxitures*/ / 80);_ssdm_SpecArrayDimSize(frame_out,320*240 / 80);
+//#pragma HLS protocol fixed
  int x, y, k, k1, rows = 240, cols = 320;
  float alpha = (float) learningRate, T = (float) backgroundRatio, vT =
    (float) varThreshold;
@@ -52572,7 +52573,7 @@ void process(uint8_t frame_in[320*240 / 240],
  const float var0 = defaultNoiseSigma * defaultNoiseSigma * 4;
  const float minVar = noiseSigma * noiseSigma;
 
- for (y = 0; y < 240 / 240; y++) {
+ for (y = 0; y < 240 / 80; y++) {
   const uint8_t * src = frame_in + y * rows;
   uint8_t * dst = frame_out + y * rows;
 
@@ -52677,6 +52678,7 @@ void backsub(uint8_t frame_i[320*240], uint8_t frame_o[320*240],
   float learningRate, MixData bgmodel[320*240*2 /* no of gaussian mxitures*/]) {_ssdm_SpecArrayDimSize(frame_o,320*240);_ssdm_SpecArrayDimSize(frame_i,320*240);_ssdm_SpecArrayDimSize(bgmodel,320*240*2);
 #pragma HLS ARRAY_PARTITION variable=frame_out_glob block factor=8 dim=1
 #pragma HLS ARRAY_PARTITION variable=frame_in_glob block factor=8 dim=1
+#pragma HLS ARRAY_PARTITION variable=bgmo block factor=8 dim=1
 #pragma HLS INTERFACE m_axi port=bgmodel
 #pragma HLS INTERFACE port=return
 #pragma HLS INTERFACE s_axilite port=learningRate bundle=CRTL_BUS
@@ -52702,27 +52704,31 @@ void backsub(uint8_t frame_i[320*240], uint8_t frame_o[320*240],
    learningRate >= 0 && nframes > 1 ?
      learningRate : 1. / std::min(nframes, defaultHistory);
 
- for (int x = 0; x < 240/8; x++) {
+ for (int x = 0; x < 80/8; x++) {
 //#pragma HLS LOOP_FLATTEN
-#pragma HLS PIPELINE
- memcpy(bgmo, &bgmodel[x * (320*240*2 /* no of gaussian mxitures*/ / 240)*8],sizeof(float) * 8 * 4 * 320*240*2 /* no of gaussian mxitures*/ / 240);
-  memcpy(frame_in_glob, &frame_i[x * 8 * (320*240 / 240)],sizeof(uint8_t) * 8 * 320*240 / 240);
+//#pragma HLS PIPELINE
+  memcpy(bgmo, &bgmodel[x * (320*240*2 /* no of gaussian mxitures*/ / 80)*8],sizeof(float) * 8 * 4 * 320*240*2 /* no of gaussian mxitures*/ / 80);
+  memcpy(frame_in_glob, &frame_i[x * 8 * (320*240 / 80)],sizeof(uint8_t) * 8 * 320*240 / 80);
 
-//		for (int r=0;r<LEVELS;r++){
-//#pragma HLS UNROLL factor=8
-  proces:{
-
-  process(&frame_in_glob[(320*240/240)*0], &frame_out_glob[(320*240/240)*0], learningRate,defaultBackgroundRatio, defaultVarThreshold, defaultNoiseSigma,&bgmo[(320*240*2 /* no of gaussian mxitures*//240)*0]);
-  process(&frame_in_glob[(320*240/240)*1], &frame_out_glob[(320*240/240)*1], learningRate,defaultBackgroundRatio, defaultVarThreshold, defaultNoiseSigma,&bgmo[(320*240*2 /* no of gaussian mxitures*//240)*1]);
-  process(&frame_in_glob[(320*240/240)*2], &frame_out_glob[(320*240/240)*2], learningRate,defaultBackgroundRatio, defaultVarThreshold, defaultNoiseSigma,&bgmo[(320*240*2 /* no of gaussian mxitures*//240)*2]);
-  process(&frame_in_glob[(320*240/240)*3], &frame_out_glob[(320*240/240)*3], learningRate,defaultBackgroundRatio, defaultVarThreshold, defaultNoiseSigma,&bgmo[(320*240*2 /* no of gaussian mxitures*//240)*3]);
-  process(&frame_in_glob[(320*240/240)*4], &frame_out_glob[(320*240/240)*4], learningRate,defaultBackgroundRatio, defaultVarThreshold, defaultNoiseSigma,&bgmo[(320*240*2 /* no of gaussian mxitures*//240)*4]);
-  process(&frame_in_glob[(320*240/240)*5], &frame_out_glob[(320*240/240)*5], learningRate,defaultBackgroundRatio, defaultVarThreshold, defaultNoiseSigma,&bgmo[(320*240*2 /* no of gaussian mxitures*//240)*5]);
-  process(&frame_in_glob[(320*240/240)*6], &frame_out_glob[(320*240/240)*6], learningRate,defaultBackgroundRatio, defaultVarThreshold, defaultNoiseSigma,&bgmo[(320*240*2 /* no of gaussian mxitures*//240)*6]);
-  process(&frame_in_glob[(320*240/240)*7], &frame_out_glob[(320*240/240)*7], learningRate,defaultBackgroundRatio, defaultVarThreshold, defaultNoiseSigma,&bgmo[(320*240*2 /* no of gaussian mxitures*//240)*7]);
+  for (int r=0;r<8;r++){
+//#pragma HLS PIPELINE
+   process(&frame_in_glob[(320*240/80)*r], &frame_out_glob[(320*240/80)*r], learningRate,defaultBackgroundRatio, defaultVarThreshold, defaultNoiseSigma,&bgmo[(320*240*2 /* no of gaussian mxitures*//80)*r]);
   }
-  memcpy(&frame_o[x * (320*240 / 240) * 8], frame_out_glob,sizeof(uint8_t) * 8 * 320*240 / 240);
-  memcpy(&bgmodel[x * (320*240*2 /* no of gaussian mxitures*/ / 240) * 8], bgmo,sizeof(float) * 8 * 4 * 320*240*2 /* no of gaussian mxitures*/ / 240);
+
+//#pragma HLS UNROLL factor=8
+//		proces:{
+//
+//		process(&frame_in_glob[(IMG_SIZE/PARTS)*0], &frame_out_glob[(IMG_SIZE/PARTS)*0], learningRate,defaultBackgroundRatio, defaultVarThreshold, defaultNoiseSigma,&bgmo[(BGM_SIZE/PARTS)*0]);
+//		process(&frame_in_glob[(IMG_SIZE/PARTS)*1], &frame_out_glob[(IMG_SIZE/PARTS)*1], learningRate,defaultBackgroundRatio, defaultVarThreshold, defaultNoiseSigma,&bgmo[(BGM_SIZE/PARTS)*1]);
+//		process(&frame_in_glob[(IMG_SIZE/PARTS)*2], &frame_out_glob[(IMG_SIZE/PARTS)*2], learningRate,defaultBackgroundRatio, defaultVarThreshold, defaultNoiseSigma,&bgmo[(BGM_SIZE/PARTS)*2]);
+//		process(&frame_in_glob[(IMG_SIZE/PARTS)*3], &frame_out_glob[(IMG_SIZE/PARTS)*3], learningRate,defaultBackgroundRatio, defaultVarThreshold, defaultNoiseSigma,&bgmo[(BGM_SIZE/PARTS)*3]);
+//		process(&frame_in_glob[(IMG_SIZE/PARTS)*4], &frame_out_glob[(IMG_SIZE/PARTS)*4], learningRate,defaultBackgroundRatio, defaultVarThreshold, defaultNoiseSigma,&bgmo[(BGM_SIZE/PARTS)*4]);
+//		process(&frame_in_glob[(IMG_SIZE/PARTS)*5], &frame_out_glob[(IMG_SIZE/PARTS)*5], learningRate,defaultBackgroundRatio, defaultVarThreshold, defaultNoiseSigma,&bgmo[(BGM_SIZE/PARTS)*5]);
+//		process(&frame_in_glob[(IMG_SIZE/PARTS)*6], &frame_out_glob[(IMG_SIZE/PARTS)*6], learningRate,defaultBackgroundRatio, defaultVarThreshold, defaultNoiseSigma,&bgmo[(BGM_SIZE/PARTS)*6]);
+//		process(&frame_in_glob[(IMG_SIZE/PARTS)*7], &frame_out_glob[(IMG_SIZE/PARTS)*7], learningRate,defaultBackgroundRatio, defaultVarThreshold, defaultNoiseSigma,&bgmo[(BGM_SIZE/PARTS)*7]);
+//		}
+  memcpy(&frame_o[x * (320*240 / 80) * 8], frame_out_glob,sizeof(uint8_t) * 8 * 320*240 / 80);
+  memcpy(&bgmodel[x * (320*240*2 /* no of gaussian mxitures*/ / 80) * 8], bgmo,sizeof(float) * 8 * 4 * 320*240*2 /* no of gaussian mxitures*/ / 80);
  }
 }
 

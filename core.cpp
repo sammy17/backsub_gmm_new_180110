@@ -18,6 +18,7 @@ void process(uint8_t frame_in[IMG_SIZE / PARTS],
 		uint8_t frame_out[IMG_SIZE / PARTS], float learningRate,
 		float backgroundRatio, float varThreshold, float noiseSigma,
 		MixData bgmodel[BGM_SIZE / PARTS]) {
+//#pragma HLS protocol fixed
 	int x, y, k, k1, rows = HEIGHT, cols = WIDTH;
 	float alpha = (float) learningRate, T = (float) backgroundRatio, vT =
 			(float) varThreshold;
@@ -133,6 +134,7 @@ void backsub(uint8_t frame_i[IMG_SIZE], uint8_t frame_o[IMG_SIZE],
 		float learningRate, MixData bgmodel[BGM_SIZE]) {
 #pragma HLS ARRAY_PARTITION variable=frame_out_glob block factor=8 dim=1
 #pragma HLS ARRAY_PARTITION variable=frame_in_glob block factor=8 dim=1
+#pragma HLS ARRAY_PARTITION variable=bgmo block factor=8 dim=1
 #pragma HLS INTERFACE m_axi port=bgmodel
 #pragma HLS INTERFACE port=return
 #pragma HLS INTERFACE s_axilite port=learningRate bundle=CRTL_BUS
@@ -160,23 +162,27 @@ void backsub(uint8_t frame_i[IMG_SIZE], uint8_t frame_o[IMG_SIZE],
 
 	for (int x = 0; x < PARTS/LEVELS; x++) {
 //#pragma HLS LOOP_FLATTEN
-#pragma HLS PIPELINE
+//#pragma HLS PIPELINE
 		memcpy(bgmo, &bgmodel[x * (BGM_SIZE / PARTS)*LEVELS],sizeof(float) * LEVELS * 4 * BGM_SIZE / PARTS);
 		memcpy(frame_in_glob, &frame_i[x * LEVELS * (IMG_SIZE / PARTS)],sizeof(uint8_t) * LEVELS * IMG_SIZE / PARTS);
 
-//		for (int r=0;r<LEVELS;r++){
-//#pragma HLS UNROLL factor=8
-		proces:{
-
-		process(&frame_in_glob[(IMG_SIZE/PARTS)*0], &frame_out_glob[(IMG_SIZE/PARTS)*0], learningRate,defaultBackgroundRatio, defaultVarThreshold, defaultNoiseSigma,&bgmo[(BGM_SIZE/PARTS)*0]);
-		process(&frame_in_glob[(IMG_SIZE/PARTS)*1], &frame_out_glob[(IMG_SIZE/PARTS)*1], learningRate,defaultBackgroundRatio, defaultVarThreshold, defaultNoiseSigma,&bgmo[(BGM_SIZE/PARTS)*1]);
-		process(&frame_in_glob[(IMG_SIZE/PARTS)*2], &frame_out_glob[(IMG_SIZE/PARTS)*2], learningRate,defaultBackgroundRatio, defaultVarThreshold, defaultNoiseSigma,&bgmo[(BGM_SIZE/PARTS)*2]);
-		process(&frame_in_glob[(IMG_SIZE/PARTS)*3], &frame_out_glob[(IMG_SIZE/PARTS)*3], learningRate,defaultBackgroundRatio, defaultVarThreshold, defaultNoiseSigma,&bgmo[(BGM_SIZE/PARTS)*3]);
-		process(&frame_in_glob[(IMG_SIZE/PARTS)*4], &frame_out_glob[(IMG_SIZE/PARTS)*4], learningRate,defaultBackgroundRatio, defaultVarThreshold, defaultNoiseSigma,&bgmo[(BGM_SIZE/PARTS)*4]);
-		process(&frame_in_glob[(IMG_SIZE/PARTS)*5], &frame_out_glob[(IMG_SIZE/PARTS)*5], learningRate,defaultBackgroundRatio, defaultVarThreshold, defaultNoiseSigma,&bgmo[(BGM_SIZE/PARTS)*5]);
-		process(&frame_in_glob[(IMG_SIZE/PARTS)*6], &frame_out_glob[(IMG_SIZE/PARTS)*6], learningRate,defaultBackgroundRatio, defaultVarThreshold, defaultNoiseSigma,&bgmo[(BGM_SIZE/PARTS)*6]);
-		process(&frame_in_glob[(IMG_SIZE/PARTS)*7], &frame_out_glob[(IMG_SIZE/PARTS)*7], learningRate,defaultBackgroundRatio, defaultVarThreshold, defaultNoiseSigma,&bgmo[(BGM_SIZE/PARTS)*7]);
+		for (int r=0;r<LEVELS;r++){
+//#pragma HLS PIPELINE
+			process(&frame_in_glob[(IMG_SIZE/PARTS)*r], &frame_out_glob[(IMG_SIZE/PARTS)*r], learningRate,defaultBackgroundRatio, defaultVarThreshold, defaultNoiseSigma,&bgmo[(BGM_SIZE/PARTS)*r]);
 		}
+
+//#pragma HLS UNROLL factor=8
+//		proces:{
+//
+//		process(&frame_in_glob[(IMG_SIZE/PARTS)*0], &frame_out_glob[(IMG_SIZE/PARTS)*0], learningRate,defaultBackgroundRatio, defaultVarThreshold, defaultNoiseSigma,&bgmo[(BGM_SIZE/PARTS)*0]);
+//		process(&frame_in_glob[(IMG_SIZE/PARTS)*1], &frame_out_glob[(IMG_SIZE/PARTS)*1], learningRate,defaultBackgroundRatio, defaultVarThreshold, defaultNoiseSigma,&bgmo[(BGM_SIZE/PARTS)*1]);
+//		process(&frame_in_glob[(IMG_SIZE/PARTS)*2], &frame_out_glob[(IMG_SIZE/PARTS)*2], learningRate,defaultBackgroundRatio, defaultVarThreshold, defaultNoiseSigma,&bgmo[(BGM_SIZE/PARTS)*2]);
+//		process(&frame_in_glob[(IMG_SIZE/PARTS)*3], &frame_out_glob[(IMG_SIZE/PARTS)*3], learningRate,defaultBackgroundRatio, defaultVarThreshold, defaultNoiseSigma,&bgmo[(BGM_SIZE/PARTS)*3]);
+//		process(&frame_in_glob[(IMG_SIZE/PARTS)*4], &frame_out_glob[(IMG_SIZE/PARTS)*4], learningRate,defaultBackgroundRatio, defaultVarThreshold, defaultNoiseSigma,&bgmo[(BGM_SIZE/PARTS)*4]);
+//		process(&frame_in_glob[(IMG_SIZE/PARTS)*5], &frame_out_glob[(IMG_SIZE/PARTS)*5], learningRate,defaultBackgroundRatio, defaultVarThreshold, defaultNoiseSigma,&bgmo[(BGM_SIZE/PARTS)*5]);
+//		process(&frame_in_glob[(IMG_SIZE/PARTS)*6], &frame_out_glob[(IMG_SIZE/PARTS)*6], learningRate,defaultBackgroundRatio, defaultVarThreshold, defaultNoiseSigma,&bgmo[(BGM_SIZE/PARTS)*6]);
+//		process(&frame_in_glob[(IMG_SIZE/PARTS)*7], &frame_out_glob[(IMG_SIZE/PARTS)*7], learningRate,defaultBackgroundRatio, defaultVarThreshold, defaultNoiseSigma,&bgmo[(BGM_SIZE/PARTS)*7]);
+//		}
 		memcpy(&frame_o[x * (IMG_SIZE / PARTS) * LEVELS], frame_out_glob,sizeof(uint8_t) * LEVELS * IMG_SIZE / PARTS);
 		memcpy(&bgmodel[x * (BGM_SIZE / PARTS) * LEVELS], bgmo,sizeof(float) * LEVELS * 4 * BGM_SIZE / PARTS);
 	}

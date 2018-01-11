@@ -1,0 +1,2794 @@
+
+
+================================================================
+== Vivado HLS Report for 'backsub'
+================================================================
+* Date:           Thu Jan 11 16:44:53 2018
+
+* Version:        2015.4 (Build 1412921 on Wed Nov 18 09:58:55 AM 2015)
+* Project:        backsub_gmm_new_180110
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      8.75|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +----------+----------+----------+----------+---------+
+    |       Latency       |       Interval      | Pipeline|
+    |    min   |    max   |    min   |    max   |   Type  |
+    +----------+----------+----------+----------+---------+
+    |  13902585|  72885026|  13902586|  72885027|   none  |
+    +----------+----------+----------+----------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +--------------------------------------+----------+----------+-------------------+-----------+-----------+--------+----------+
+        |                                      |       Latency       |     Iteration     |  Initiation Interval  |  Trip  |          |
+        |               Loop Name              |    min   |    max   |      Latency      |  achieved |   target  |  Count | Pipelined|
+        +--------------------------------------+----------+----------+-------------------+-----------+-----------+--------+----------+
+        |- Loop 1                              |    153600|    153600|                  1|          -|          -|  153600|    no    |
+        |- Loop 2                              |  13902580|  72731380| 1390258 ~ 7273138 |          -|          -|      10|    no    |
+        | + memcpy..bgmodel.var                |     15376|     15376|                 18|          1|          1|   15360|    yes   |
+        | + memcpy..frame_i                    |      7695|      7695|                 17|          1|          1|    7680|    yes   |
+        | + Loop 2.3                           |   1344080|   7226960|  168010 ~ 903370  |          -|          -|       8|    no    |
+        | + memcpy.frame_o.frame_out_glob.gep  |      7697|      7697|                 19|          1|          1|    7680|    yes   |
+        | + memcpy.bgmodel.var.                |     15378|     15378|                 20|          1|          1|   15360|    yes   |
+        +--------------------------------------+----------+----------+-------------------+-----------+-----------+--------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 18
+  * Pipeline-1: initiation interval (II) = 1, depth = 17
+  * Pipeline-2: initiation interval (II) = 1, depth = 19
+  * Pipeline-3: initiation interval (II) = 1, depth = 20
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states: 150
+* Pipeline: 4
+  Pipeline-0: II = 1, D = 18, States = { 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 }
+  Pipeline-1: II = 1, D = 17, States = { 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 }
+  Pipeline-2: II = 1, D = 19, States = { 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 }
+  Pipeline-3: II = 1, D = 20, States = { 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 144 145 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	7  / (!or_cond4)
+	3  / (or_cond4)
+3 --> 
+	4  / (exitcond2)
+	3  / (!exitcond2)
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / (!or_cond)
+	46  / (or_cond)
+9 --> 
+	10  / true
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+	13  / true
+13 --> 
+	14  / true
+14 --> 
+	15  / true
+15 --> 
+	16  / true
+16 --> 
+	17  / true
+17 --> 
+	18  / true
+18 --> 
+	19  / true
+19 --> 
+	20  / true
+20 --> 
+	21  / true
+21 --> 
+	22  / true
+22 --> 
+	23  / true
+23 --> 
+	24  / true
+24 --> 
+	25  / true
+25 --> 
+	26  / true
+26 --> 
+	27  / true
+27 --> 
+	28  / true
+28 --> 
+	29  / true
+29 --> 
+	30  / true
+30 --> 
+	31  / true
+31 --> 
+	32  / true
+32 --> 
+	33  / true
+33 --> 
+	34  / true
+34 --> 
+	35  / true
+35 --> 
+	36  / true
+36 --> 
+	37  / true
+37 --> 
+	38  / true
+38 --> 
+	39  / true
+39 --> 
+	40  / true
+40 --> 
+	41  / true
+41 --> 
+	42  / true
+42 --> 
+	43  / true
+43 --> 
+	44  / true
+44 --> 
+	45  / true
+45 --> 
+	46  / true
+46 --> 
+	47  / true
+47 --> 
+	48  / (!exitcond1)
+48 --> 
+	49  / true
+49 --> 
+	50  / true
+50 --> 
+	51  / true
+51 --> 
+	52  / true
+52 --> 
+	53  / true
+53 --> 
+	54  / true
+54 --> 
+	55  / true
+55 --> 
+	73  / (exitcond5)
+	56  / (!exitcond5)
+56 --> 
+	57  / true
+57 --> 
+	58  / true
+58 --> 
+	59  / true
+59 --> 
+	60  / true
+60 --> 
+	61  / true
+61 --> 
+	62  / true
+62 --> 
+	63  / true
+63 --> 
+	64  / true
+64 --> 
+	65  / true
+65 --> 
+	66  / true
+66 --> 
+	67  / true
+67 --> 
+	68  / true
+68 --> 
+	69  / true
+69 --> 
+	70  / true
+70 --> 
+	71  / true
+71 --> 
+	72  / true
+72 --> 
+	55  / true
+73 --> 
+	74  / true
+74 --> 
+	75  / true
+75 --> 
+	76  / true
+76 --> 
+	77  / true
+77 --> 
+	78  / true
+78 --> 
+	79  / true
+79 --> 
+	80  / true
+80 --> 
+	81  / true
+81 --> 
+	98  / (exitcond6)
+	82  / (!exitcond6)
+82 --> 
+	83  / true
+83 --> 
+	84  / true
+84 --> 
+	85  / true
+85 --> 
+	86  / true
+86 --> 
+	87  / true
+87 --> 
+	88  / true
+88 --> 
+	89  / true
+89 --> 
+	90  / true
+90 --> 
+	91  / true
+91 --> 
+	92  / true
+92 --> 
+	93  / true
+93 --> 
+	94  / true
+94 --> 
+	95  / true
+95 --> 
+	96  / true
+96 --> 
+	97  / true
+97 --> 
+	81  / true
+98 --> 
+	99  / (!exitcond)
+	101  / (exitcond)
+99 --> 
+	100  / true
+100 --> 
+	98  / true
+101 --> 
+	102  / true
+102 --> 
+	121  / (exitcond4)
+	103  / (!exitcond4)
+103 --> 
+	104  / true
+104 --> 
+	105  / true
+105 --> 
+	106  / true
+106 --> 
+	107  / true
+107 --> 
+	108  / true
+108 --> 
+	109  / true
+109 --> 
+	110  / true
+110 --> 
+	111  / true
+111 --> 
+	112  / true
+112 --> 
+	113  / true
+113 --> 
+	114  / true
+114 --> 
+	115  / true
+115 --> 
+	116  / true
+116 --> 
+	117  / true
+117 --> 
+	118  / true
+118 --> 
+	119  / true
+119 --> 
+	120  / true
+120 --> 
+	102  / true
+121 --> 
+	122  / true
+122 --> 
+	123  / true
+123 --> 
+	124  / true
+124 --> 
+	125  / true
+125 --> 
+	126  / true
+126 --> 
+	146  / (exitcond7)
+	127  / (!exitcond7)
+127 --> 
+	128  / true
+128 --> 
+	129  / true
+129 --> 
+	130  / true
+130 --> 
+	131  / true
+131 --> 
+	132  / true
+132 --> 
+	133  / true
+133 --> 
+	134  / true
+134 --> 
+	135  / true
+135 --> 
+	136  / true
+136 --> 
+	137  / true
+137 --> 
+	138  / true
+138 --> 
+	139  / true
+139 --> 
+	140  / true
+140 --> 
+	141  / true
+141 --> 
+	142  / true
+142 --> 
+	143  / true
+143 --> 
+	144  / true
+144 --> 
+	145  / true
+145 --> 
+	126  / true
+146 --> 
+	147  / true
+147 --> 
+	148  / true
+148 --> 
+	149  / true
+149 --> 
+	150  / true
+150 --> 
+	47  / true
+* FSM state operations: 
+
+ <State 1>: 7.79ns
+ST_1: learningRate_read [1/1] 1.00ns
+:0  %learningRate_read = call float @_ssdm_op_Read.s_axilite.float(float %learningRate)
+
+ST_1: frame_o_read [1/1] 1.00ns
+:1  %frame_o_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %frame_o)
+
+ST_1: frame_i_read [1/1] 1.00ns
+:2  %frame_i_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %frame_i)
+
+ST_1: tmp_98 [1/1] 6.79ns
+:27  %tmp_98 = fcmp oge float %learningRate_read, 1.000000e+00
+
+
+ <State 2>: 8.75ns
+ST_2: tmp_1_cast [1/1] 0.00ns
+:3  %tmp_1_cast = sext i32 %frame_o_read to i34
+
+ST_2: tmp_2_cast [1/1] 0.00ns
+:4  %tmp_2_cast = sext i32 %frame_i_read to i34
+
+ST_2: stg_157 [1/1] 0.00ns
+:5  call void (...)* @_ssdm_op_SpecBitsMap(i8* %gmem), !map !321
+
+ST_2: stg_158 [1/1] 0.00ns
+:6  call void (...)* @_ssdm_op_SpecBitsMap(float %learningRate), !map !328
+
+ST_2: stg_159 [1/1] 0.00ns
+:7  call void (...)* @_ssdm_op_SpecBitsMap(float* %bgmodel_sortKey), !map !334
+
+ST_2: stg_160 [1/1] 0.00ns
+:8  call void (...)* @_ssdm_op_SpecBitsMap(float* %bgmodel_weight), !map !340
+
+ST_2: stg_161 [1/1] 0.00ns
+:9  call void (...)* @_ssdm_op_SpecBitsMap(float* %bgmodel_mean), !map !344
+
+ST_2: stg_162 [1/1] 0.00ns
+:10  call void (...)* @_ssdm_op_SpecBitsMap(float* %bgmodel_var), !map !348
+
+ST_2: stg_163 [1/1] 0.00ns
+:11  call void (...)* @_ssdm_op_SpecTopModule([8 x i8]* @backsub_str) nounwind
+
+ST_2: stg_164 [1/1] 0.00ns
+:12  call void (...)* @_ssdm_op_SpecInterface(float* %bgmodel_sortKey, float* %bgmodel_weight, float* %bgmodel_mean, float* %bgmodel_var, [6 x i8]* @p_str1808, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805)
+
+ST_2: stg_165 [1/1] 0.00ns
+:13  call void (...)* @_ssdm_op_SpecInterface(i32 0, [1 x i8]* @p_str1805, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805) nounwind
+
+ST_2: tmp [1/1] 5.55ns
+:14  %tmp = fpext float %learningRate_read to double
+
+ST_2: stg_167 [1/1] 0.00ns
+:15  call void (...)* @_ssdm_op_SpecInterface(float %learningRate, [10 x i8]* @p_str1809, i32 0, i32 0, i32 0, i32 0, [9 x i8]* @p_str1810, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805) nounwind
+
+ST_2: stg_168 [1/1] 0.00ns
+:16  call void (...)* @_ssdm_op_SpecInterface(i32 %frame_o, [10 x i8]* @mode3, i32 0, i32 0, i32 0, i32 76800, [1 x i8]* @bundle4, [6 x i8]* @p_str1811, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805)
+
+ST_2: stg_169 [1/1] 0.00ns
+:17  call void (...)* @_ssdm_op_SpecInterface(i8* %gmem, [6 x i8]* @p_str1808, i32 0, i32 0, i32 0, i32 76800, [1 x i8]* @p_str1805, [6 x i8]* @p_str1811, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805)
+
+ST_2: stg_170 [1/1] 0.00ns
+:18  call void (...)* @_ssdm_op_SpecInterface(i32 %frame_i, [10 x i8]* @mode, i32 0, i32 0, i32 0, i32 76800, [1 x i8]* @bundle, [6 x i8]* @p_str1811, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805)
+
+ST_2: nframes_load [1/1] 0.00ns
+:19  %nframes_load = load i32* @nframes, align 4
+
+ST_2: tmp_s [1/1] 2.52ns
+:20  %tmp_s = icmp eq i32 %nframes_load, 0
+
+ST_2: learningRate_to_int [1/1] 0.00ns
+:21  %learningRate_to_int = bitcast float %learningRate_read to i32
+
+ST_2: tmp_96 [1/1] 0.00ns
+:22  %tmp_96 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %learningRate_to_int, i32 23, i32 30)
+
+ST_2: tmp_129 [1/1] 0.00ns
+:23  %tmp_129 = trunc i32 %learningRate_to_int to i23
+
+ST_2: notlhs [1/1] 2.00ns
+:24  %notlhs = icmp ne i8 %tmp_96, -1
+
+ST_2: notrhs [1/1] 2.39ns
+:25  %notrhs = icmp eq i23 %tmp_129, 0
+
+ST_2: tmp_97 [1/1] 1.37ns
+:26  %tmp_97 = or i1 %notrhs, %notlhs
+
+ST_2: tmp_99 [1/1] 1.37ns
+:28  %tmp_99 = and i1 %tmp_97, %tmp_98
+
+ST_2: or_cond4 [1/1] 1.37ns
+:29  %or_cond4 = or i1 %tmp_s, %tmp_99
+
+ST_2: stg_181 [1/1] 1.57ns
+:30  br i1 %or_cond4, label %.critedge.preheader, label %.loopexit
+
+ST_2: p_wr_req [1/1] 8.75ns
+.critedge.preheader:0  %p_wr_req = call i1 @_ssdm_op_WriteReq.m_axi.floatP(float* %bgmodel_weight, i32 153600)
+
+ST_2: p_wr_req21 [1/1] 8.75ns
+.critedge.preheader:1  %p_wr_req21 = call i1 @_ssdm_op_WriteReq.m_axi.floatP(float* %bgmodel_sortKey, i32 153600)
+
+ST_2: p_wr_req23 [1/1] 8.75ns
+.critedge.preheader:2  %p_wr_req23 = call i1 @_ssdm_op_WriteReq.m_axi.floatP(float* %bgmodel_mean, i32 153600)
+
+ST_2: p_wr_req25 [1/1] 8.75ns
+.critedge.preheader:3  %p_wr_req25 = call i1 @_ssdm_op_WriteReq.m_axi.floatP(float* %bgmodel_var, i32 153600)
+
+ST_2: stg_186 [1/1] 1.57ns
+.critedge.preheader:4  br label %.critedge
+
+
+ <State 3>: 8.75ns
+ST_3: p [1/1] 0.00ns
+.critedge:0  %p = phi i18 [ %p_1, %1 ], [ 0, %.critedge.preheader ]
+
+ST_3: exitcond2 [1/1] 2.31ns
+.critedge:1  %exitcond2 = icmp eq i18 %p, -108544
+
+ST_3: stg_189 [1/1] 0.00ns
+.critedge:2  call void (...)* @_ssdm_op_SpecLoopTripCount(i64 153600, i64 153600, i64 153600)
+
+ST_3: p_1 [1/1] 2.08ns
+.critedge:3  %p_1 = add i18 %p, 1
+
+ST_3: stg_191 [1/1] 0.00ns
+.critedge:4  br i1 %exitcond2, label %.loopexit.loopexit, label %1
+
+ST_3: stg_192 [1/1] 8.75ns
+:0  call void @_ssdm_op_Write.m_axi.floatP(float* %bgmodel_sortKey, float 0.000000e+00, i4 -1)
+
+ST_3: stg_193 [1/1] 8.75ns
+:1  call void @_ssdm_op_Write.m_axi.floatP(float* %bgmodel_weight, float 0.000000e+00, i4 -1)
+
+ST_3: stg_194 [1/1] 8.75ns
+:2  call void @_ssdm_op_Write.m_axi.floatP(float* %bgmodel_mean, float 0.000000e+00, i4 -1)
+
+ST_3: stg_195 [1/1] 8.75ns
+:3  call void @_ssdm_op_Write.m_axi.floatP(float* %bgmodel_var, float 0.000000e+00, i4 -1)
+
+ST_3: stg_196 [1/1] 0.00ns
+:4  br label %.critedge
+
+ST_3: p_wr_resp26 [5/5] 8.75ns
+.loopexit.loopexit:0  %p_wr_resp26 = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %bgmodel_var)
+
+ST_3: p_wr_resp24 [5/5] 8.75ns
+.loopexit.loopexit:1  %p_wr_resp24 = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %bgmodel_mean)
+
+ST_3: p_wr_resp22 [5/5] 8.75ns
+.loopexit.loopexit:2  %p_wr_resp22 = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %bgmodel_sortKey)
+
+ST_3: p_wr_resp [5/5] 8.75ns
+.loopexit.loopexit:3  %p_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %bgmodel_weight)
+
+
+ <State 4>: 8.75ns
+ST_4: p_wr_resp26 [4/5] 8.75ns
+.loopexit.loopexit:0  %p_wr_resp26 = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %bgmodel_var)
+
+ST_4: p_wr_resp24 [4/5] 8.75ns
+.loopexit.loopexit:1  %p_wr_resp24 = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %bgmodel_mean)
+
+ST_4: p_wr_resp22 [4/5] 8.75ns
+.loopexit.loopexit:2  %p_wr_resp22 = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %bgmodel_sortKey)
+
+ST_4: p_wr_resp [4/5] 8.75ns
+.loopexit.loopexit:3  %p_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %bgmodel_weight)
+
+
+ <State 5>: 8.75ns
+ST_5: p_wr_resp26 [3/5] 8.75ns
+.loopexit.loopexit:0  %p_wr_resp26 = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %bgmodel_var)
+
+ST_5: p_wr_resp24 [3/5] 8.75ns
+.loopexit.loopexit:1  %p_wr_resp24 = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %bgmodel_mean)
+
+ST_5: p_wr_resp22 [3/5] 8.75ns
+.loopexit.loopexit:2  %p_wr_resp22 = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %bgmodel_sortKey)
+
+ST_5: p_wr_resp [3/5] 8.75ns
+.loopexit.loopexit:3  %p_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %bgmodel_weight)
+
+
+ <State 6>: 8.75ns
+ST_6: p_wr_resp26 [2/5] 8.75ns
+.loopexit.loopexit:0  %p_wr_resp26 = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %bgmodel_var)
+
+ST_6: p_wr_resp24 [2/5] 8.75ns
+.loopexit.loopexit:1  %p_wr_resp24 = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %bgmodel_mean)
+
+ST_6: p_wr_resp22 [2/5] 8.75ns
+.loopexit.loopexit:2  %p_wr_resp22 = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %bgmodel_sortKey)
+
+ST_6: p_wr_resp [2/5] 8.75ns
+.loopexit.loopexit:3  %p_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %bgmodel_weight)
+
+
+ <State 7>: 8.75ns
+ST_7: p_wr_resp26 [1/5] 8.75ns
+.loopexit.loopexit:0  %p_wr_resp26 = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %bgmodel_var)
+
+ST_7: p_wr_resp24 [1/5] 8.75ns
+.loopexit.loopexit:1  %p_wr_resp24 = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %bgmodel_mean)
+
+ST_7: p_wr_resp22 [1/5] 8.75ns
+.loopexit.loopexit:2  %p_wr_resp22 = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %bgmodel_sortKey)
+
+ST_7: p_wr_resp [1/5] 8.75ns
+.loopexit.loopexit:3  %p_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %bgmodel_weight)
+
+ST_7: stg_217 [1/1] 1.57ns
+.loopexit.loopexit:4  br label %.loopexit
+
+ST_7: tmp_100 [1/1] 6.79ns
+.loopexit:3  %tmp_100 = fcmp oge float %learningRate_read, 0.000000e+00
+
+ST_7: tmp_101 [1/1] 1.37ns
+.loopexit:4  %tmp_101 = and i1 %tmp_97, %tmp_100
+
+
+ <State 8>: 5.46ns
+ST_8: nframes_load_1 [1/1] 0.00ns
+.loopexit:0  %nframes_load_1 = phi i32 [ %nframes_load, %0 ], [ 0, %.loopexit.loopexit ]
+
+ST_8: tmp_46 [1/1] 2.44ns
+.loopexit:1  %tmp_46 = add nsw i32 %nframes_load_1, 1
+
+ST_8: stg_222 [1/1] 0.00ns
+.loopexit:2  store i32 %tmp_46, i32* @nframes, align 4
+
+ST_8: tmp_47 [1/1] 2.52ns
+.loopexit:5  %tmp_47 = icmp sgt i32 %nframes_load_1, 0
+
+ST_8: or_cond [1/1] 1.37ns
+.loopexit:6  %or_cond = and i1 %tmp_101, %tmp_47
+
+ST_8: stg_225 [1/1] 1.57ns
+.loopexit:7  br i1 %or_cond, label %3, label %2
+
+ST_8: tmp_49 [1/1] 2.52ns
+:0  %tmp_49 = icmp sgt i32 %tmp_46, 200
+
+
+ <State 9>: 6.28ns
+ST_9: tmp_50 [6/6] 6.28ns
+:1  %tmp_50 = sitofp i32 %tmp_46 to double
+
+
+ <State 10>: 6.28ns
+ST_10: tmp_50 [5/6] 6.28ns
+:1  %tmp_50 = sitofp i32 %tmp_46 to double
+
+
+ <State 11>: 6.28ns
+ST_11: tmp_50 [4/6] 6.28ns
+:1  %tmp_50 = sitofp i32 %tmp_46 to double
+
+
+ <State 12>: 6.28ns
+ST_12: tmp_50 [3/6] 6.28ns
+:1  %tmp_50 = sitofp i32 %tmp_46 to double
+
+
+ <State 13>: 6.28ns
+ST_13: tmp_50 [2/6] 6.28ns
+:1  %tmp_50 = sitofp i32 %tmp_46 to double
+
+
+ <State 14>: 7.65ns
+ST_14: tmp_50 [1/6] 6.28ns
+:1  %tmp_50 = sitofp i32 %tmp_46 to double
+
+ST_14: tmp_51 [1/1] 1.37ns
+:2  %tmp_51 = select i1 %tmp_49, double 2.000000e+02, double %tmp_50
+
+
+ <State 15>: 8.62ns
+ST_15: tmp_52 [31/31] 8.62ns
+:3  %tmp_52 = fdiv double 1.000000e+00, %tmp_51
+
+
+ <State 16>: 8.62ns
+ST_16: tmp_52 [30/31] 8.62ns
+:3  %tmp_52 = fdiv double 1.000000e+00, %tmp_51
+
+
+ <State 17>: 8.62ns
+ST_17: tmp_52 [29/31] 8.62ns
+:3  %tmp_52 = fdiv double 1.000000e+00, %tmp_51
+
+
+ <State 18>: 8.62ns
+ST_18: tmp_52 [28/31] 8.62ns
+:3  %tmp_52 = fdiv double 1.000000e+00, %tmp_51
+
+
+ <State 19>: 8.62ns
+ST_19: tmp_52 [27/31] 8.62ns
+:3  %tmp_52 = fdiv double 1.000000e+00, %tmp_51
+
+
+ <State 20>: 8.62ns
+ST_20: tmp_52 [26/31] 8.62ns
+:3  %tmp_52 = fdiv double 1.000000e+00, %tmp_51
+
+
+ <State 21>: 8.62ns
+ST_21: tmp_52 [25/31] 8.62ns
+:3  %tmp_52 = fdiv double 1.000000e+00, %tmp_51
+
+
+ <State 22>: 8.62ns
+ST_22: tmp_52 [24/31] 8.62ns
+:3  %tmp_52 = fdiv double 1.000000e+00, %tmp_51
+
+
+ <State 23>: 8.62ns
+ST_23: tmp_52 [23/31] 8.62ns
+:3  %tmp_52 = fdiv double 1.000000e+00, %tmp_51
+
+
+ <State 24>: 8.62ns
+ST_24: tmp_52 [22/31] 8.62ns
+:3  %tmp_52 = fdiv double 1.000000e+00, %tmp_51
+
+
+ <State 25>: 8.62ns
+ST_25: tmp_52 [21/31] 8.62ns
+:3  %tmp_52 = fdiv double 1.000000e+00, %tmp_51
+
+
+ <State 26>: 8.62ns
+ST_26: tmp_52 [20/31] 8.62ns
+:3  %tmp_52 = fdiv double 1.000000e+00, %tmp_51
+
+
+ <State 27>: 8.62ns
+ST_27: tmp_52 [19/31] 8.62ns
+:3  %tmp_52 = fdiv double 1.000000e+00, %tmp_51
+
+
+ <State 28>: 8.62ns
+ST_28: tmp_52 [18/31] 8.62ns
+:3  %tmp_52 = fdiv double 1.000000e+00, %tmp_51
+
+
+ <State 29>: 8.62ns
+ST_29: tmp_52 [17/31] 8.62ns
+:3  %tmp_52 = fdiv double 1.000000e+00, %tmp_51
+
+
+ <State 30>: 8.62ns
+ST_30: tmp_52 [16/31] 8.62ns
+:3  %tmp_52 = fdiv double 1.000000e+00, %tmp_51
+
+
+ <State 31>: 8.62ns
+ST_31: tmp_52 [15/31] 8.62ns
+:3  %tmp_52 = fdiv double 1.000000e+00, %tmp_51
+
+
+ <State 32>: 8.62ns
+ST_32: tmp_52 [14/31] 8.62ns
+:3  %tmp_52 = fdiv double 1.000000e+00, %tmp_51
+
+
+ <State 33>: 8.62ns
+ST_33: tmp_52 [13/31] 8.62ns
+:3  %tmp_52 = fdiv double 1.000000e+00, %tmp_51
+
+
+ <State 34>: 8.62ns
+ST_34: tmp_52 [12/31] 8.62ns
+:3  %tmp_52 = fdiv double 1.000000e+00, %tmp_51
+
+
+ <State 35>: 8.62ns
+ST_35: tmp_52 [11/31] 8.62ns
+:3  %tmp_52 = fdiv double 1.000000e+00, %tmp_51
+
+
+ <State 36>: 8.62ns
+ST_36: tmp_52 [10/31] 8.62ns
+:3  %tmp_52 = fdiv double 1.000000e+00, %tmp_51
+
+
+ <State 37>: 8.62ns
+ST_37: tmp_52 [9/31] 8.62ns
+:3  %tmp_52 = fdiv double 1.000000e+00, %tmp_51
+
+
+ <State 38>: 8.62ns
+ST_38: tmp_52 [8/31] 8.62ns
+:3  %tmp_52 = fdiv double 1.000000e+00, %tmp_51
+
+
+ <State 39>: 8.62ns
+ST_39: tmp_52 [7/31] 8.62ns
+:3  %tmp_52 = fdiv double 1.000000e+00, %tmp_51
+
+
+ <State 40>: 8.62ns
+ST_40: tmp_52 [6/31] 8.62ns
+:3  %tmp_52 = fdiv double 1.000000e+00, %tmp_51
+
+
+ <State 41>: 8.62ns
+ST_41: tmp_52 [5/31] 8.62ns
+:3  %tmp_52 = fdiv double 1.000000e+00, %tmp_51
+
+
+ <State 42>: 8.62ns
+ST_42: tmp_52 [4/31] 8.62ns
+:3  %tmp_52 = fdiv double 1.000000e+00, %tmp_51
+
+
+ <State 43>: 8.62ns
+ST_43: tmp_52 [3/31] 8.62ns
+:3  %tmp_52 = fdiv double 1.000000e+00, %tmp_51
+
+
+ <State 44>: 8.62ns
+ST_44: tmp_52 [2/31] 8.62ns
+:3  %tmp_52 = fdiv double 1.000000e+00, %tmp_51
+
+
+ <State 45>: 8.62ns
+ST_45: tmp_52 [1/31] 8.62ns
+:3  %tmp_52 = fdiv double 1.000000e+00, %tmp_51
+
+
+ <State 46>: 8.07ns
+ST_46: stg_265 [1/1] 1.57ns
+:4  br label %3
+
+ST_46: tmp_53 [1/1] 0.00ns
+:0  %tmp_53 = phi double [ %tmp_52, %2 ], [ %tmp, %.loopexit ]
+
+ST_46: learningRate_assign [1/1] 6.50ns
+:1  %learningRate_assign = fptrunc double %tmp_53 to float
+
+ST_46: stg_268 [1/1] 1.57ns
+:2  br label %4
+
+
+ <State 47>: 3.25ns
+ST_47: x [1/1] 0.00ns
+:0  %x = phi i4 [ 0, %3 ], [ %x_4, %burst.wr.end52 ]
+
+ST_47: exitcond1 [1/1] 1.88ns
+:1  %exitcond1 = icmp eq i4 %x, -6
+
+ST_47: stg_271 [1/1] 0.00ns
+:2  call void (...)* @_ssdm_op_SpecLoopTripCount(i64 10, i64 10, i64 10)
+
+ST_47: x_4 [1/1] 0.80ns
+:3  %x_4 = add i4 %x, 1
+
+ST_47: stg_273 [1/1] 0.00ns
+:4  br i1 %exitcond1, label %7, label %5
+
+ST_47: p_shl [1/1] 0.00ns
+:0  %p_shl = call i18 @_ssdm_op_BitConcatenate.i18.i4.i14(i4 %x, i14 0)
+
+ST_47: p_shl_cast [1/1] 0.00ns
+:1  %p_shl_cast = zext i18 %p_shl to i19
+
+ST_47: p_shl2 [1/1] 0.00ns
+:2  %p_shl2 = call i14 @_ssdm_op_BitConcatenate.i14.i4.i10(i4 %x, i10 0)
+
+ST_47: p_shl2_cast [1/1] 0.00ns
+:3  %p_shl2_cast = zext i14 %p_shl2 to i19
+
+ST_47: tmp_54 [1/1] 2.08ns
+:4  %tmp_54 = sub i19 %p_shl_cast, %p_shl2_cast
+
+ST_47: stg_279 [1/1] 0.00ns
+:0  ret void
+
+
+ <State 48>: 8.75ns
+ST_48: tmp_130 [1/1] 0.00ns
+:5  %tmp_130 = sext i19 %tmp_54 to i32
+
+ST_48: tmp_131 [1/1] 0.00ns
+:6  %tmp_131 = zext i32 %tmp_130 to i64
+
+ST_48: bgmodel_sortKey_addr [1/1] 0.00ns
+:7  %bgmodel_sortKey_addr = getelementptr float* %bgmodel_sortKey, i64 %tmp_131
+
+ST_48: p_rd_req [7/7] 8.75ns
+:8  %p_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %bgmodel_sortKey_addr, i32 15360)
+
+ST_48: bgmodel_weight_addr [1/1] 0.00ns
+:9  %bgmodel_weight_addr = getelementptr float* %bgmodel_weight, i64 %tmp_131
+
+ST_48: p_rd_req27 [7/7] 8.75ns
+:10  %p_rd_req27 = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %bgmodel_weight_addr, i32 15360)
+
+ST_48: bgmodel_mean_addr [1/1] 0.00ns
+:11  %bgmodel_mean_addr = getelementptr float* %bgmodel_mean, i64 %tmp_131
+
+ST_48: p_rd_req28 [7/7] 8.75ns
+:12  %p_rd_req28 = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %bgmodel_mean_addr, i32 15360)
+
+ST_48: bgmodel_var_addr [1/1] 0.00ns
+:13  %bgmodel_var_addr = getelementptr float* %bgmodel_var, i64 %tmp_131
+
+ST_48: p_rd_req29 [7/7] 8.75ns
+:14  %p_rd_req29 = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %bgmodel_var_addr, i32 15360)
+
+
+ <State 49>: 8.75ns
+ST_49: p_rd_req [6/7] 8.75ns
+:8  %p_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %bgmodel_sortKey_addr, i32 15360)
+
+ST_49: p_rd_req27 [6/7] 8.75ns
+:10  %p_rd_req27 = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %bgmodel_weight_addr, i32 15360)
+
+ST_49: p_rd_req28 [6/7] 8.75ns
+:12  %p_rd_req28 = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %bgmodel_mean_addr, i32 15360)
+
+ST_49: p_rd_req29 [6/7] 8.75ns
+:14  %p_rd_req29 = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %bgmodel_var_addr, i32 15360)
+
+
+ <State 50>: 8.75ns
+ST_50: p_rd_req [5/7] 8.75ns
+:8  %p_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %bgmodel_sortKey_addr, i32 15360)
+
+ST_50: p_rd_req27 [5/7] 8.75ns
+:10  %p_rd_req27 = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %bgmodel_weight_addr, i32 15360)
+
+ST_50: p_rd_req28 [5/7] 8.75ns
+:12  %p_rd_req28 = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %bgmodel_mean_addr, i32 15360)
+
+ST_50: p_rd_req29 [5/7] 8.75ns
+:14  %p_rd_req29 = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %bgmodel_var_addr, i32 15360)
+
+
+ <State 51>: 8.75ns
+ST_51: p_rd_req [4/7] 8.75ns
+:8  %p_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %bgmodel_sortKey_addr, i32 15360)
+
+ST_51: p_rd_req27 [4/7] 8.75ns
+:10  %p_rd_req27 = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %bgmodel_weight_addr, i32 15360)
+
+ST_51: p_rd_req28 [4/7] 8.75ns
+:12  %p_rd_req28 = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %bgmodel_mean_addr, i32 15360)
+
+ST_51: p_rd_req29 [4/7] 8.75ns
+:14  %p_rd_req29 = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %bgmodel_var_addr, i32 15360)
+
+
+ <State 52>: 8.75ns
+ST_52: p_rd_req [3/7] 8.75ns
+:8  %p_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %bgmodel_sortKey_addr, i32 15360)
+
+ST_52: p_rd_req27 [3/7] 8.75ns
+:10  %p_rd_req27 = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %bgmodel_weight_addr, i32 15360)
+
+ST_52: p_rd_req28 [3/7] 8.75ns
+:12  %p_rd_req28 = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %bgmodel_mean_addr, i32 15360)
+
+ST_52: p_rd_req29 [3/7] 8.75ns
+:14  %p_rd_req29 = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %bgmodel_var_addr, i32 15360)
+
+
+ <State 53>: 8.75ns
+ST_53: p_rd_req [2/7] 8.75ns
+:8  %p_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %bgmodel_sortKey_addr, i32 15360)
+
+ST_53: p_rd_req27 [2/7] 8.75ns
+:10  %p_rd_req27 = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %bgmodel_weight_addr, i32 15360)
+
+ST_53: p_rd_req28 [2/7] 8.75ns
+:12  %p_rd_req28 = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %bgmodel_mean_addr, i32 15360)
+
+ST_53: p_rd_req29 [2/7] 8.75ns
+:14  %p_rd_req29 = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %bgmodel_var_addr, i32 15360)
+
+
+ <State 54>: 8.75ns
+ST_54: p_rd_req [1/7] 8.75ns
+:8  %p_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %bgmodel_sortKey_addr, i32 15360)
+
+ST_54: p_rd_req27 [1/7] 8.75ns
+:10  %p_rd_req27 = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %bgmodel_weight_addr, i32 15360)
+
+ST_54: p_rd_req28 [1/7] 8.75ns
+:12  %p_rd_req28 = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %bgmodel_mean_addr, i32 15360)
+
+ST_54: p_rd_req29 [1/7] 8.75ns
+:14  %p_rd_req29 = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %bgmodel_var_addr, i32 15360)
+
+ST_54: stg_314 [1/1] 1.57ns
+:15  br label %burst.rd.header26
+
+
+ <State 55>: 3.73ns
+ST_55: indvar2 [1/1] 0.00ns
+burst.rd.header26:0  %indvar2 = phi i14 [ 0, %5 ], [ %indvar_next2, %burst.rd.body27138161184207 ]
+
+ST_55: phi_mul [1/1] 0.00ns
+burst.rd.header26:1  %phi_mul = phi i29 [ 0, %5 ], [ %next_mul, %burst.rd.body27138161184207 ]
+
+ST_55: exitcond5 [1/1] 2.21ns
+burst.rd.header26:2  %exitcond5 = icmp eq i14 %indvar2, -1024
+
+ST_55: stg_318 [1/1] 0.00ns
+burst.rd.header26:3  call void (...)* @_ssdm_op_SpecLoopTripCount(i64 15360, i64 15360, i64 15360)
+
+ST_55: indvar_next2 [1/1] 1.96ns
+burst.rd.header26:4  %indvar_next2 = add i14 %indvar2, 1
+
+ST_55: stg_320 [1/1] 0.00ns
+burst.rd.header26:5  br i1 %exitcond5, label %burst.rd.end25, label %burst.rd.body27
+
+ST_55: next_mul [1/1] 2.44ns
+burst.rd.body27:4  %next_mul = add i29 %phi_mul, 17477
+
+ST_55: tmp_136 [1/1] 0.00ns
+burst.rd.body27:5  %tmp_136 = call i4 @_ssdm_op_PartSelect.i4.i29.i32.i32(i29 %phi_mul, i32 25, i32 28)
+
+ST_55: newIndex27 [18/18] 3.73ns
+burst.rd.body27:6  %newIndex27 = urem i14 %indvar2, 1920
+
+ST_55: stg_324 [1/1] 0.00ns
+branch14:1  br label %burst.rd.body27138
+
+ST_55: stg_325 [1/1] 0.00ns
+branch13:1  br label %burst.rd.body27138
+
+ST_55: stg_326 [1/1] 0.00ns
+branch12:1  br label %burst.rd.body27138
+
+ST_55: stg_327 [1/1] 0.00ns
+branch11:1  br label %burst.rd.body27138
+
+ST_55: stg_328 [1/1] 0.00ns
+branch10:1  br label %burst.rd.body27138
+
+ST_55: stg_329 [1/1] 0.00ns
+branch9:1  br label %burst.rd.body27138
+
+ST_55: stg_330 [1/1] 0.00ns
+branch8:1  br label %burst.rd.body27138
+
+ST_55: stg_331 [1/1] 0.00ns
+branch15:1  br label %burst.rd.body27138
+
+ST_55: stg_332 [1/1] 0.00ns
+branch22:1  br label %burst.rd.body27138161
+
+ST_55: stg_333 [1/1] 0.00ns
+branch21:1  br label %burst.rd.body27138161
+
+ST_55: stg_334 [1/1] 0.00ns
+branch20:1  br label %burst.rd.body27138161
+
+ST_55: stg_335 [1/1] 0.00ns
+branch19:1  br label %burst.rd.body27138161
+
+ST_55: stg_336 [1/1] 0.00ns
+branch18:1  br label %burst.rd.body27138161
+
+ST_55: stg_337 [1/1] 0.00ns
+branch17:1  br label %burst.rd.body27138161
+
+ST_55: stg_338 [1/1] 0.00ns
+branch16:1  br label %burst.rd.body27138161
+
+ST_55: stg_339 [1/1] 0.00ns
+branch23:1  br label %burst.rd.body27138161
+
+ST_55: stg_340 [1/1] 0.00ns
+branch30:1  br label %burst.rd.body27138161184
+
+ST_55: stg_341 [1/1] 0.00ns
+branch29:1  br label %burst.rd.body27138161184
+
+ST_55: stg_342 [1/1] 0.00ns
+branch28:1  br label %burst.rd.body27138161184
+
+ST_55: stg_343 [1/1] 0.00ns
+branch27:1  br label %burst.rd.body27138161184
+
+ST_55: stg_344 [1/1] 0.00ns
+branch26:1  br label %burst.rd.body27138161184
+
+ST_55: stg_345 [1/1] 0.00ns
+branch25:1  br label %burst.rd.body27138161184
+
+ST_55: stg_346 [1/1] 0.00ns
+branch24:1  br label %burst.rd.body27138161184
+
+ST_55: stg_347 [1/1] 0.00ns
+branch31:1  br label %burst.rd.body27138161184
+
+
+ <State 56>: 3.73ns
+ST_56: newIndex27 [17/18] 3.73ns
+burst.rd.body27:6  %newIndex27 = urem i14 %indvar2, 1920
+
+ST_56: stg_349 [1/1] 1.91ns
+burst.rd.body27:16  switch i4 %tmp_136, label %branch15 [
+    i4 0, label %branch8
+    i4 1, label %branch9
+    i4 2, label %branch10
+    i4 3, label %branch11
+    i4 4, label %branch12
+    i4 5, label %branch13
+    i4 6, label %branch14
+  ]
+
+ST_56: stg_350 [1/1] 1.91ns
+burst.rd.body27138:9  switch i4 %tmp_136, label %branch23 [
+    i4 0, label %branch16
+    i4 1, label %branch17
+    i4 2, label %branch18
+    i4 3, label %branch19
+    i4 4, label %branch20
+    i4 5, label %branch21
+    i4 6, label %branch22
+  ]
+
+ST_56: stg_351 [1/1] 1.91ns
+burst.rd.body27138161:9  switch i4 %tmp_136, label %branch31 [
+    i4 0, label %branch24
+    i4 1, label %branch25
+    i4 2, label %branch26
+    i4 3, label %branch27
+    i4 4, label %branch28
+    i4 5, label %branch29
+    i4 6, label %branch30
+  ]
+
+ST_56: stg_352 [1/1] 1.91ns
+burst.rd.body27138161184:9  switch i4 %tmp_136, label %branch39 [
+    i4 0, label %branch32
+    i4 1, label %branch33
+    i4 2, label %branch34
+    i4 3, label %branch35
+    i4 4, label %branch36
+    i4 5, label %branch37
+    i4 6, label %branch38
+  ]
+
+
+ <State 57>: 3.73ns
+ST_57: newIndex27 [16/18] 3.73ns
+burst.rd.body27:6  %newIndex27 = urem i14 %indvar2, 1920
+
+
+ <State 58>: 3.73ns
+ST_58: newIndex27 [15/18] 3.73ns
+burst.rd.body27:6  %newIndex27 = urem i14 %indvar2, 1920
+
+
+ <State 59>: 3.73ns
+ST_59: newIndex27 [14/18] 3.73ns
+burst.rd.body27:6  %newIndex27 = urem i14 %indvar2, 1920
+
+
+ <State 60>: 3.73ns
+ST_60: newIndex27 [13/18] 3.73ns
+burst.rd.body27:6  %newIndex27 = urem i14 %indvar2, 1920
+
+
+ <State 61>: 3.73ns
+ST_61: newIndex27 [12/18] 3.73ns
+burst.rd.body27:6  %newIndex27 = urem i14 %indvar2, 1920
+
+
+ <State 62>: 3.73ns
+ST_62: newIndex27 [11/18] 3.73ns
+burst.rd.body27:6  %newIndex27 = urem i14 %indvar2, 1920
+
+
+ <State 63>: 3.73ns
+ST_63: newIndex27 [10/18] 3.73ns
+burst.rd.body27:6  %newIndex27 = urem i14 %indvar2, 1920
+
+
+ <State 64>: 3.73ns
+ST_64: newIndex27 [9/18] 3.73ns
+burst.rd.body27:6  %newIndex27 = urem i14 %indvar2, 1920
+
+
+ <State 65>: 3.73ns
+ST_65: newIndex27 [8/18] 3.73ns
+burst.rd.body27:6  %newIndex27 = urem i14 %indvar2, 1920
+
+
+ <State 66>: 3.73ns
+ST_66: newIndex27 [7/18] 3.73ns
+burst.rd.body27:6  %newIndex27 = urem i14 %indvar2, 1920
+
+
+ <State 67>: 3.73ns
+ST_67: newIndex27 [6/18] 3.73ns
+burst.rd.body27:6  %newIndex27 = urem i14 %indvar2, 1920
+
+
+ <State 68>: 3.73ns
+ST_68: newIndex27 [5/18] 3.73ns
+burst.rd.body27:6  %newIndex27 = urem i14 %indvar2, 1920
+
+
+ <State 69>: 3.73ns
+ST_69: newIndex27 [4/18] 3.73ns
+burst.rd.body27:6  %newIndex27 = urem i14 %indvar2, 1920
+
+
+ <State 70>: 3.73ns
+ST_70: newIndex27 [3/18] 3.73ns
+burst.rd.body27:6  %newIndex27 = urem i14 %indvar2, 1920
+
+
+ <State 71>: 8.75ns
+ST_71: bgmodel_sortKey_addr_read [1/1] 8.75ns
+burst.rd.body27:3  %bgmodel_sortKey_addr_read = call float @_ssdm_op_Read.m_axi.floatP(float* %bgmodel_sortKey_addr)
+
+ST_71: newIndex27 [2/18] 3.73ns
+burst.rd.body27:6  %newIndex27 = urem i14 %indvar2, 1920
+
+ST_71: bgmodel_weight_addr_read [1/1] 8.75ns
+burst.rd.body27138:0  %bgmodel_weight_addr_read = call float @_ssdm_op_Read.m_axi.floatP(float* %bgmodel_weight_addr)
+
+ST_71: bgmodel_mean_addr_read [1/1] 8.75ns
+burst.rd.body27138161:0  %bgmodel_mean_addr_read = call float @_ssdm_op_Read.m_axi.floatP(float* %bgmodel_mean_addr)
+
+ST_71: bgmodel_var_addr_read [1/1] 8.75ns
+burst.rd.body27138161184:0  %bgmodel_var_addr_read = call float @_ssdm_op_Read.m_axi.floatP(float* %bgmodel_var_addr)
+
+ST_71: stg_372 [1/1] 0.00ns
+branch38:1  br label %burst.rd.body27138161184207
+
+ST_71: stg_373 [1/1] 0.00ns
+branch37:1  br label %burst.rd.body27138161184207
+
+ST_71: stg_374 [1/1] 0.00ns
+branch36:1  br label %burst.rd.body27138161184207
+
+ST_71: stg_375 [1/1] 0.00ns
+branch35:1  br label %burst.rd.body27138161184207
+
+ST_71: stg_376 [1/1] 0.00ns
+branch34:1  br label %burst.rd.body27138161184207
+
+ST_71: stg_377 [1/1] 0.00ns
+branch33:1  br label %burst.rd.body27138161184207
+
+ST_71: stg_378 [1/1] 0.00ns
+branch32:1  br label %burst.rd.body27138161184207
+
+ST_71: stg_379 [1/1] 0.00ns
+branch39:1  br label %burst.rd.body27138161184207
+
+
+ <State 72>: 6.44ns
+ST_72: burstread_rbegin1 [1/1] 0.00ns
+burst.rd.body27:0  %burstread_rbegin1 = call i32 (...)* @_ssdm_op_SpecRegionBegin([17 x i8]* @burstread_OC_region_str)
+
+ST_72: empty [1/1] 0.00ns
+burst.rd.body27:1  %empty = call i32 (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str)
+
+ST_72: empty_17 [1/1] 0.00ns
+burst.rd.body27:2  %empty_17 = call i32 (...)* @_ssdm_op_SpecLoopName([20 x i8]* @memcpy_OC_OC_bgmodel_OC_var_s)
+
+ST_72: newIndex27 [1/18] 3.73ns
+burst.rd.body27:6  %newIndex27 = urem i14 %indvar2, 1920
+
+ST_72: newIndex28 [1/1] 0.00ns
+burst.rd.body27:7  %newIndex28 = zext i14 %newIndex27 to i64
+
+ST_72: bgmo_sortKey_0_addr [1/1] 0.00ns
+burst.rd.body27:8  %bgmo_sortKey_0_addr = getelementptr [1920 x float]* @bgmo_sortKey_0, i64 0, i64 %newIndex28
+
+ST_72: bgmo_sortKey_1_addr [1/1] 0.00ns
+burst.rd.body27:9  %bgmo_sortKey_1_addr = getelementptr [1920 x float]* @bgmo_sortKey_1, i64 0, i64 %newIndex28
+
+ST_72: bgmo_sortKey_2_addr [1/1] 0.00ns
+burst.rd.body27:10  %bgmo_sortKey_2_addr = getelementptr [1920 x float]* @bgmo_sortKey_2, i64 0, i64 %newIndex28
+
+ST_72: bgmo_sortKey_3_addr [1/1] 0.00ns
+burst.rd.body27:11  %bgmo_sortKey_3_addr = getelementptr [1920 x float]* @bgmo_sortKey_3, i64 0, i64 %newIndex28
+
+ST_72: bgmo_sortKey_4_addr [1/1] 0.00ns
+burst.rd.body27:12  %bgmo_sortKey_4_addr = getelementptr [1920 x float]* @bgmo_sortKey_4, i64 0, i64 %newIndex28
+
+ST_72: bgmo_sortKey_5_addr [1/1] 0.00ns
+burst.rd.body27:13  %bgmo_sortKey_5_addr = getelementptr [1920 x float]* @bgmo_sortKey_5, i64 0, i64 %newIndex28
+
+ST_72: bgmo_sortKey_6_addr [1/1] 0.00ns
+burst.rd.body27:14  %bgmo_sortKey_6_addr = getelementptr [1920 x float]* @bgmo_sortKey_6, i64 0, i64 %newIndex28
+
+ST_72: bgmo_sortKey_7_addr [1/1] 0.00ns
+burst.rd.body27:15  %bgmo_sortKey_7_addr = getelementptr [1920 x float]* @bgmo_sortKey_7, i64 0, i64 %newIndex28
+
+ST_72: stg_393 [1/1] 2.71ns
+branch14:0  store float %bgmodel_sortKey_addr_read, float* %bgmo_sortKey_6_addr, align 4
+
+ST_72: stg_394 [1/1] 2.71ns
+branch13:0  store float %bgmodel_sortKey_addr_read, float* %bgmo_sortKey_5_addr, align 4
+
+ST_72: stg_395 [1/1] 2.71ns
+branch12:0  store float %bgmodel_sortKey_addr_read, float* %bgmo_sortKey_4_addr, align 4
+
+ST_72: stg_396 [1/1] 2.71ns
+branch11:0  store float %bgmodel_sortKey_addr_read, float* %bgmo_sortKey_3_addr, align 4
+
+ST_72: stg_397 [1/1] 2.71ns
+branch10:0  store float %bgmodel_sortKey_addr_read, float* %bgmo_sortKey_2_addr, align 4
+
+ST_72: stg_398 [1/1] 2.71ns
+branch9:0  store float %bgmodel_sortKey_addr_read, float* %bgmo_sortKey_1_addr, align 4
+
+ST_72: stg_399 [1/1] 2.71ns
+branch8:0  store float %bgmodel_sortKey_addr_read, float* %bgmo_sortKey_0_addr, align 4
+
+ST_72: stg_400 [1/1] 2.71ns
+branch15:0  store float %bgmodel_sortKey_addr_read, float* %bgmo_sortKey_7_addr, align 4
+
+ST_72: bgmo_weight_0_addr [1/1] 0.00ns
+burst.rd.body27138:1  %bgmo_weight_0_addr = getelementptr [1920 x float]* @bgmo_weight_0, i64 0, i64 %newIndex28
+
+ST_72: bgmo_weight_1_addr [1/1] 0.00ns
+burst.rd.body27138:2  %bgmo_weight_1_addr = getelementptr [1920 x float]* @bgmo_weight_1, i64 0, i64 %newIndex28
+
+ST_72: bgmo_weight_2_addr [1/1] 0.00ns
+burst.rd.body27138:3  %bgmo_weight_2_addr = getelementptr [1920 x float]* @bgmo_weight_2, i64 0, i64 %newIndex28
+
+ST_72: bgmo_weight_3_addr [1/1] 0.00ns
+burst.rd.body27138:4  %bgmo_weight_3_addr = getelementptr [1920 x float]* @bgmo_weight_3, i64 0, i64 %newIndex28
+
+ST_72: bgmo_weight_4_addr [1/1] 0.00ns
+burst.rd.body27138:5  %bgmo_weight_4_addr = getelementptr [1920 x float]* @bgmo_weight_4, i64 0, i64 %newIndex28
+
+ST_72: bgmo_weight_5_addr [1/1] 0.00ns
+burst.rd.body27138:6  %bgmo_weight_5_addr = getelementptr [1920 x float]* @bgmo_weight_5, i64 0, i64 %newIndex28
+
+ST_72: bgmo_weight_6_addr [1/1] 0.00ns
+burst.rd.body27138:7  %bgmo_weight_6_addr = getelementptr [1920 x float]* @bgmo_weight_6, i64 0, i64 %newIndex28
+
+ST_72: bgmo_weight_7_addr [1/1] 0.00ns
+burst.rd.body27138:8  %bgmo_weight_7_addr = getelementptr [1920 x float]* @bgmo_weight_7, i64 0, i64 %newIndex28
+
+ST_72: stg_409 [1/1] 2.71ns
+branch22:0  store float %bgmodel_weight_addr_read, float* %bgmo_weight_6_addr, align 4
+
+ST_72: stg_410 [1/1] 2.71ns
+branch21:0  store float %bgmodel_weight_addr_read, float* %bgmo_weight_5_addr, align 4
+
+ST_72: stg_411 [1/1] 2.71ns
+branch20:0  store float %bgmodel_weight_addr_read, float* %bgmo_weight_4_addr, align 4
+
+ST_72: stg_412 [1/1] 2.71ns
+branch19:0  store float %bgmodel_weight_addr_read, float* %bgmo_weight_3_addr, align 4
+
+ST_72: stg_413 [1/1] 2.71ns
+branch18:0  store float %bgmodel_weight_addr_read, float* %bgmo_weight_2_addr, align 4
+
+ST_72: stg_414 [1/1] 2.71ns
+branch17:0  store float %bgmodel_weight_addr_read, float* %bgmo_weight_1_addr, align 4
+
+ST_72: stg_415 [1/1] 2.71ns
+branch16:0  store float %bgmodel_weight_addr_read, float* %bgmo_weight_0_addr, align 4
+
+ST_72: stg_416 [1/1] 2.71ns
+branch23:0  store float %bgmodel_weight_addr_read, float* %bgmo_weight_7_addr, align 4
+
+ST_72: bgmo_mean_0_addr [1/1] 0.00ns
+burst.rd.body27138161:1  %bgmo_mean_0_addr = getelementptr [1920 x float]* @bgmo_mean_0, i64 0, i64 %newIndex28
+
+ST_72: bgmo_mean_1_addr [1/1] 0.00ns
+burst.rd.body27138161:2  %bgmo_mean_1_addr = getelementptr [1920 x float]* @bgmo_mean_1, i64 0, i64 %newIndex28
+
+ST_72: bgmo_mean_2_addr [1/1] 0.00ns
+burst.rd.body27138161:3  %bgmo_mean_2_addr = getelementptr [1920 x float]* @bgmo_mean_2, i64 0, i64 %newIndex28
+
+ST_72: bgmo_mean_3_addr [1/1] 0.00ns
+burst.rd.body27138161:4  %bgmo_mean_3_addr = getelementptr [1920 x float]* @bgmo_mean_3, i64 0, i64 %newIndex28
+
+ST_72: bgmo_mean_4_addr [1/1] 0.00ns
+burst.rd.body27138161:5  %bgmo_mean_4_addr = getelementptr [1920 x float]* @bgmo_mean_4, i64 0, i64 %newIndex28
+
+ST_72: bgmo_mean_5_addr [1/1] 0.00ns
+burst.rd.body27138161:6  %bgmo_mean_5_addr = getelementptr [1920 x float]* @bgmo_mean_5, i64 0, i64 %newIndex28
+
+ST_72: bgmo_mean_6_addr [1/1] 0.00ns
+burst.rd.body27138161:7  %bgmo_mean_6_addr = getelementptr [1920 x float]* @bgmo_mean_6, i64 0, i64 %newIndex28
+
+ST_72: bgmo_mean_7_addr [1/1] 0.00ns
+burst.rd.body27138161:8  %bgmo_mean_7_addr = getelementptr [1920 x float]* @bgmo_mean_7, i64 0, i64 %newIndex28
+
+ST_72: stg_425 [1/1] 2.71ns
+branch30:0  store float %bgmodel_mean_addr_read, float* %bgmo_mean_6_addr, align 4
+
+ST_72: stg_426 [1/1] 2.71ns
+branch29:0  store float %bgmodel_mean_addr_read, float* %bgmo_mean_5_addr, align 4
+
+ST_72: stg_427 [1/1] 2.71ns
+branch28:0  store float %bgmodel_mean_addr_read, float* %bgmo_mean_4_addr, align 4
+
+ST_72: stg_428 [1/1] 2.71ns
+branch27:0  store float %bgmodel_mean_addr_read, float* %bgmo_mean_3_addr, align 4
+
+ST_72: stg_429 [1/1] 2.71ns
+branch26:0  store float %bgmodel_mean_addr_read, float* %bgmo_mean_2_addr, align 4
+
+ST_72: stg_430 [1/1] 2.71ns
+branch25:0  store float %bgmodel_mean_addr_read, float* %bgmo_mean_1_addr, align 4
+
+ST_72: stg_431 [1/1] 2.71ns
+branch24:0  store float %bgmodel_mean_addr_read, float* %bgmo_mean_0_addr, align 4
+
+ST_72: stg_432 [1/1] 2.71ns
+branch31:0  store float %bgmodel_mean_addr_read, float* %bgmo_mean_7_addr, align 4
+
+ST_72: bgmo_var_0_addr [1/1] 0.00ns
+burst.rd.body27138161184:1  %bgmo_var_0_addr = getelementptr [1920 x float]* @bgmo_var_0, i64 0, i64 %newIndex28
+
+ST_72: bgmo_var_1_addr [1/1] 0.00ns
+burst.rd.body27138161184:2  %bgmo_var_1_addr = getelementptr [1920 x float]* @bgmo_var_1, i64 0, i64 %newIndex28
+
+ST_72: bgmo_var_2_addr [1/1] 0.00ns
+burst.rd.body27138161184:3  %bgmo_var_2_addr = getelementptr [1920 x float]* @bgmo_var_2, i64 0, i64 %newIndex28
+
+ST_72: bgmo_var_3_addr [1/1] 0.00ns
+burst.rd.body27138161184:4  %bgmo_var_3_addr = getelementptr [1920 x float]* @bgmo_var_3, i64 0, i64 %newIndex28
+
+ST_72: bgmo_var_4_addr [1/1] 0.00ns
+burst.rd.body27138161184:5  %bgmo_var_4_addr = getelementptr [1920 x float]* @bgmo_var_4, i64 0, i64 %newIndex28
+
+ST_72: bgmo_var_5_addr [1/1] 0.00ns
+burst.rd.body27138161184:6  %bgmo_var_5_addr = getelementptr [1920 x float]* @bgmo_var_5, i64 0, i64 %newIndex28
+
+ST_72: bgmo_var_6_addr [1/1] 0.00ns
+burst.rd.body27138161184:7  %bgmo_var_6_addr = getelementptr [1920 x float]* @bgmo_var_6, i64 0, i64 %newIndex28
+
+ST_72: bgmo_var_7_addr [1/1] 0.00ns
+burst.rd.body27138161184:8  %bgmo_var_7_addr = getelementptr [1920 x float]* @bgmo_var_7, i64 0, i64 %newIndex28
+
+ST_72: stg_441 [1/1] 2.71ns
+branch38:0  store float %bgmodel_var_addr_read, float* %bgmo_var_6_addr, align 4
+
+ST_72: stg_442 [1/1] 2.71ns
+branch37:0  store float %bgmodel_var_addr_read, float* %bgmo_var_5_addr, align 4
+
+ST_72: stg_443 [1/1] 2.71ns
+branch36:0  store float %bgmodel_var_addr_read, float* %bgmo_var_4_addr, align 4
+
+ST_72: stg_444 [1/1] 2.71ns
+branch35:0  store float %bgmodel_var_addr_read, float* %bgmo_var_3_addr, align 4
+
+ST_72: stg_445 [1/1] 2.71ns
+branch34:0  store float %bgmodel_var_addr_read, float* %bgmo_var_2_addr, align 4
+
+ST_72: stg_446 [1/1] 2.71ns
+branch33:0  store float %bgmodel_var_addr_read, float* %bgmo_var_1_addr, align 4
+
+ST_72: stg_447 [1/1] 2.71ns
+branch32:0  store float %bgmodel_var_addr_read, float* %bgmo_var_0_addr, align 4
+
+ST_72: stg_448 [1/1] 2.71ns
+branch39:0  store float %bgmodel_var_addr_read, float* %bgmo_var_7_addr, align 4
+
+ST_72: burstread_rend50 [1/1] 0.00ns
+burst.rd.body27138161184207:0  %burstread_rend50 = call i32 (...)* @_ssdm_op_SpecRegionEnd([17 x i8]* @burstread_OC_region_str, i32 %burstread_rbegin1)
+
+ST_72: stg_450 [1/1] 0.00ns
+burst.rd.body27138161184207:1  br label %burst.rd.header26
+
+
+ <State 73>: 4.52ns
+ST_73: p_shl3 [1/1] 0.00ns
+burst.rd.end25:0  %p_shl3 = call i17 @_ssdm_op_BitConcatenate.i17.i4.i13(i4 %x, i13 0)
+
+ST_73: p_shl3_cast [1/1] 0.00ns
+burst.rd.end25:1  %p_shl3_cast = zext i17 %p_shl3 to i18
+
+ST_73: p_shl4 [1/1] 0.00ns
+burst.rd.end25:2  %p_shl4 = call i13 @_ssdm_op_BitConcatenate.i13.i4.i9(i4 %x, i9 0)
+
+ST_73: p_shl4_cast [1/1] 0.00ns
+burst.rd.end25:3  %p_shl4_cast = zext i13 %p_shl4 to i18
+
+ST_73: tmp_55 [1/1] 2.08ns
+burst.rd.end25:4  %tmp_55 = sub i18 %p_shl3_cast, %p_shl4_cast
+
+ST_73: tmp_132 [1/1] 0.00ns
+burst.rd.end25:5  %tmp_132 = sext i18 %tmp_55 to i32
+
+ST_73: tmp_133 [1/1] 0.00ns
+burst.rd.end25:6  %tmp_133 = zext i32 %tmp_132 to i34
+
+ST_73: tmp_134 [1/1] 2.44ns
+burst.rd.end25:7  %tmp_134 = add i34 %tmp_133, %tmp_2_cast
+
+ST_73: tmp_135 [1/1] 0.00ns
+burst.rd.end25:8  %tmp_135 = sext i34 %tmp_134 to i64
+
+ST_73: gmem_addr [1/1] 0.00ns
+burst.rd.end25:9  %gmem_addr = getelementptr i8* %gmem, i64 %tmp_135
+
+
+ <State 74>: 8.75ns
+ST_74: p_rd_req30 [7/7] 8.75ns
+burst.rd.end25:10  %p_rd_req30 = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %gmem_addr, i32 7680)
+
+
+ <State 75>: 8.75ns
+ST_75: p_rd_req30 [6/7] 8.75ns
+burst.rd.end25:10  %p_rd_req30 = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %gmem_addr, i32 7680)
+
+
+ <State 76>: 8.75ns
+ST_76: p_rd_req30 [5/7] 8.75ns
+burst.rd.end25:10  %p_rd_req30 = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %gmem_addr, i32 7680)
+
+
+ <State 77>: 8.75ns
+ST_77: p_rd_req30 [4/7] 8.75ns
+burst.rd.end25:10  %p_rd_req30 = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %gmem_addr, i32 7680)
+
+
+ <State 78>: 8.75ns
+ST_78: p_rd_req30 [3/7] 8.75ns
+burst.rd.end25:10  %p_rd_req30 = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %gmem_addr, i32 7680)
+
+
+ <State 79>: 8.75ns
+ST_79: p_rd_req30 [2/7] 8.75ns
+burst.rd.end25:10  %p_rd_req30 = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %gmem_addr, i32 7680)
+
+
+ <State 80>: 8.75ns
+ST_80: p_rd_req30 [1/7] 8.75ns
+burst.rd.end25:10  %p_rd_req30 = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %gmem_addr, i32 7680)
+
+ST_80: stg_468 [1/1] 1.57ns
+burst.rd.end25:11  br label %burst.rd.header
+
+
+ <State 81>: 3.75ns
+ST_81: indvar [1/1] 0.00ns
+burst.rd.header:0  %indvar = phi i13 [ 0, %burst.rd.end25 ], [ %indvar_next, %burst.rd.body115 ]
+
+ST_81: phi_mul1 [1/1] 0.00ns
+burst.rd.header:1  %phi_mul1 = phi i27 [ 0, %burst.rd.end25 ], [ %next_mul1, %burst.rd.body115 ]
+
+ST_81: exitcond6 [1/1] 2.18ns
+burst.rd.header:2  %exitcond6 = icmp eq i13 %indvar, -512
+
+ST_81: stg_472 [1/1] 0.00ns
+burst.rd.header:3  call void (...)* @_ssdm_op_SpecLoopTripCount(i64 7680, i64 7680, i64 7680)
+
+ST_81: indvar_next [1/1] 1.96ns
+burst.rd.header:4  %indvar_next = add i13 %indvar, 1
+
+ST_81: stg_474 [1/1] 1.57ns
+burst.rd.header:5  br i1 %exitcond6, label %burst.rd.end, label %burst.rd.body
+
+ST_81: next_mul1 [1/1] 2.32ns
+burst.rd.body:4  %next_mul1 = add i27 %phi_mul1, 8739
+
+ST_81: tmp_137 [1/1] 0.00ns
+burst.rd.body:5  %tmp_137 = call i4 @_ssdm_op_PartSelect.i4.i27.i32.i32(i27 %phi_mul1, i32 23, i32 26)
+
+ST_81: newIndex29 [17/17] 3.66ns
+burst.rd.body:6  %newIndex29 = urem i13 %indvar, 960
+
+ST_81: stg_478 [1/1] 1.91ns
+burst.rd.body:16  switch i4 %tmp_137, label %branch7 [
+    i4 0, label %branch0
+    i4 1, label %branch1
+    i4 2, label %branch2
+    i4 3, label %branch3
+    i4 4, label %branch4
+    i4 5, label %branch5
+    i4 6, label %branch6
+  ]
+
+
+ <State 82>: 3.66ns
+ST_82: newIndex29 [16/17] 3.66ns
+burst.rd.body:6  %newIndex29 = urem i13 %indvar, 960
+
+
+ <State 83>: 3.66ns
+ST_83: newIndex29 [15/17] 3.66ns
+burst.rd.body:6  %newIndex29 = urem i13 %indvar, 960
+
+
+ <State 84>: 3.66ns
+ST_84: newIndex29 [14/17] 3.66ns
+burst.rd.body:6  %newIndex29 = urem i13 %indvar, 960
+
+
+ <State 85>: 3.66ns
+ST_85: newIndex29 [13/17] 3.66ns
+burst.rd.body:6  %newIndex29 = urem i13 %indvar, 960
+
+
+ <State 86>: 3.66ns
+ST_86: newIndex29 [12/17] 3.66ns
+burst.rd.body:6  %newIndex29 = urem i13 %indvar, 960
+
+
+ <State 87>: 3.66ns
+ST_87: newIndex29 [11/17] 3.66ns
+burst.rd.body:6  %newIndex29 = urem i13 %indvar, 960
+
+
+ <State 88>: 3.66ns
+ST_88: newIndex29 [10/17] 3.66ns
+burst.rd.body:6  %newIndex29 = urem i13 %indvar, 960
+
+
+ <State 89>: 3.66ns
+ST_89: newIndex29 [9/17] 3.66ns
+burst.rd.body:6  %newIndex29 = urem i13 %indvar, 960
+
+
+ <State 90>: 3.66ns
+ST_90: newIndex29 [8/17] 3.66ns
+burst.rd.body:6  %newIndex29 = urem i13 %indvar, 960
+
+
+ <State 91>: 3.66ns
+ST_91: newIndex29 [7/17] 3.66ns
+burst.rd.body:6  %newIndex29 = urem i13 %indvar, 960
+
+
+ <State 92>: 3.66ns
+ST_92: newIndex29 [6/17] 3.66ns
+burst.rd.body:6  %newIndex29 = urem i13 %indvar, 960
+
+
+ <State 93>: 3.66ns
+ST_93: newIndex29 [5/17] 3.66ns
+burst.rd.body:6  %newIndex29 = urem i13 %indvar, 960
+
+
+ <State 94>: 3.66ns
+ST_94: newIndex29 [4/17] 3.66ns
+burst.rd.body:6  %newIndex29 = urem i13 %indvar, 960
+
+
+ <State 95>: 3.66ns
+ST_95: newIndex29 [3/17] 3.66ns
+burst.rd.body:6  %newIndex29 = urem i13 %indvar, 960
+
+
+ <State 96>: 8.75ns
+ST_96: gmem_addr_read [1/1] 8.75ns
+burst.rd.body:3  %gmem_addr_read = call i8 @_ssdm_op_Read.m_axi.i8P(i8* %gmem_addr)
+
+ST_96: newIndex29 [2/17] 3.66ns
+burst.rd.body:6  %newIndex29 = urem i13 %indvar, 960
+
+ST_96: stg_495 [1/1] 0.00ns
+branch6:1  br label %burst.rd.body115
+
+ST_96: stg_496 [1/1] 0.00ns
+branch5:1  br label %burst.rd.body115
+
+ST_96: stg_497 [1/1] 0.00ns
+branch4:1  br label %burst.rd.body115
+
+ST_96: stg_498 [1/1] 0.00ns
+branch3:1  br label %burst.rd.body115
+
+ST_96: stg_499 [1/1] 0.00ns
+branch2:1  br label %burst.rd.body115
+
+ST_96: stg_500 [1/1] 0.00ns
+branch1:1  br label %burst.rd.body115
+
+ST_96: stg_501 [1/1] 0.00ns
+branch0:1  br label %burst.rd.body115
+
+ST_96: stg_502 [1/1] 0.00ns
+branch7:1  br label %burst.rd.body115
+
+
+ <State 97>: 6.37ns
+ST_97: burstread_rbegin [1/1] 0.00ns
+burst.rd.body:0  %burstread_rbegin = call i32 (...)* @_ssdm_op_SpecRegionBegin([17 x i8]* @burstread_OC_region_str) nounwind
+
+ST_97: empty_18 [1/1] 0.00ns
+burst.rd.body:1  %empty_18 = call i32 (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str1) nounwind
+
+ST_97: empty_19 [1/1] 0.00ns
+burst.rd.body:2  %empty_19 = call i32 (...)* @_ssdm_op_SpecLoopName([16 x i8]* @memcpy_OC_OC_frame_i_str) nounwind
+
+ST_97: newIndex29 [1/17] 3.66ns
+burst.rd.body:6  %newIndex29 = urem i13 %indvar, 960
+
+ST_97: newIndex30 [1/1] 0.00ns
+burst.rd.body:7  %newIndex30 = zext i13 %newIndex29 to i64
+
+ST_97: frame_in_glob_0_addr [1/1] 0.00ns
+burst.rd.body:8  %frame_in_glob_0_addr = getelementptr [960 x i8]* @frame_in_glob_0, i64 0, i64 %newIndex30
+
+ST_97: frame_in_glob_1_addr [1/1] 0.00ns
+burst.rd.body:9  %frame_in_glob_1_addr = getelementptr [960 x i8]* @frame_in_glob_1, i64 0, i64 %newIndex30
+
+ST_97: frame_in_glob_2_addr [1/1] 0.00ns
+burst.rd.body:10  %frame_in_glob_2_addr = getelementptr [960 x i8]* @frame_in_glob_2, i64 0, i64 %newIndex30
+
+ST_97: frame_in_glob_3_addr [1/1] 0.00ns
+burst.rd.body:11  %frame_in_glob_3_addr = getelementptr [960 x i8]* @frame_in_glob_3, i64 0, i64 %newIndex30
+
+ST_97: frame_in_glob_4_addr [1/1] 0.00ns
+burst.rd.body:12  %frame_in_glob_4_addr = getelementptr [960 x i8]* @frame_in_glob_4, i64 0, i64 %newIndex30
+
+ST_97: frame_in_glob_5_addr [1/1] 0.00ns
+burst.rd.body:13  %frame_in_glob_5_addr = getelementptr [960 x i8]* @frame_in_glob_5, i64 0, i64 %newIndex30
+
+ST_97: frame_in_glob_6_addr [1/1] 0.00ns
+burst.rd.body:14  %frame_in_glob_6_addr = getelementptr [960 x i8]* @frame_in_glob_6, i64 0, i64 %newIndex30
+
+ST_97: frame_in_glob_7_addr [1/1] 0.00ns
+burst.rd.body:15  %frame_in_glob_7_addr = getelementptr [960 x i8]* @frame_in_glob_7, i64 0, i64 %newIndex30
+
+ST_97: stg_516 [1/1] 2.71ns
+branch6:0  store i8 %gmem_addr_read, i8* %frame_in_glob_6_addr, align 1
+
+ST_97: stg_517 [1/1] 2.71ns
+branch5:0  store i8 %gmem_addr_read, i8* %frame_in_glob_5_addr, align 1
+
+ST_97: stg_518 [1/1] 2.71ns
+branch4:0  store i8 %gmem_addr_read, i8* %frame_in_glob_4_addr, align 1
+
+ST_97: stg_519 [1/1] 2.71ns
+branch3:0  store i8 %gmem_addr_read, i8* %frame_in_glob_3_addr, align 1
+
+ST_97: stg_520 [1/1] 2.71ns
+branch2:0  store i8 %gmem_addr_read, i8* %frame_in_glob_2_addr, align 1
+
+ST_97: stg_521 [1/1] 2.71ns
+branch1:0  store i8 %gmem_addr_read, i8* %frame_in_glob_1_addr, align 1
+
+ST_97: stg_522 [1/1] 2.71ns
+branch0:0  store i8 %gmem_addr_read, i8* %frame_in_glob_0_addr, align 1
+
+ST_97: stg_523 [1/1] 2.71ns
+branch7:0  store i8 %gmem_addr_read, i8* %frame_in_glob_7_addr, align 1
+
+ST_97: burstread_rend [1/1] 0.00ns
+burst.rd.body115:0  %burstread_rend = call i32 (...)* @_ssdm_op_SpecRegionEnd([17 x i8]* @burstread_OC_region_str, i32 %burstread_rbegin) nounwind
+
+ST_97: stg_525 [1/1] 0.00ns
+burst.rd.body115:1  br label %burst.rd.header
+
+
+ <State 98>: 3.25ns
+ST_98: r [1/1] 0.00ns
+burst.rd.end:0  %r = phi i4 [ %r_1, %6 ], [ 0, %burst.rd.header ]
+
+ST_98: exitcond [1/1] 1.88ns
+burst.rd.end:1  %exitcond = icmp eq i4 %r, -8
+
+ST_98: stg_528 [1/1] 0.00ns
+burst.rd.end:2  call void (...)* @_ssdm_op_SpecLoopTripCount(i64 8, i64 8, i64 8)
+
+ST_98: r_1 [1/1] 0.80ns
+burst.rd.end:3  %r_1 = add i4 %r, 1
+
+ST_98: stg_530 [1/1] 0.00ns
+burst.rd.end:4  br i1 %exitcond, label %burst.wr.header.preheader, label %6
+
+ST_98: tmp_140 [1/1] 0.00ns
+:0  %tmp_140 = trunc i4 %r to i3
+
+ST_98: p_shl5 [1/1] 0.00ns
+:1  %p_shl5 = call i13 @_ssdm_op_BitConcatenate.i13.i3.i10(i3 %tmp_140, i10 0)
+
+ST_98: p_shl5_cast [1/1] 0.00ns
+:2  %p_shl5_cast = zext i13 %p_shl5 to i14
+
+ST_98: p_shl6 [1/1] 0.00ns
+:3  %p_shl6 = call i9 @_ssdm_op_BitConcatenate.i9.i3.i6(i3 %tmp_140, i6 0)
+
+ST_98: p_shl6_cast [1/1] 0.00ns
+:4  %p_shl6_cast = zext i9 %p_shl6 to i14
+
+ST_98: tmp_59 [1/1] 1.96ns
+:5  %tmp_59 = sub i14 %p_shl5_cast, %p_shl6_cast
+
+ST_98: p_shl7 [1/1] 0.00ns
+:8  %p_shl7 = call i14 @_ssdm_op_BitConcatenate.i14.i3.i11(i3 %tmp_140, i11 0)
+
+ST_98: p_shl7_cast [1/1] 0.00ns
+:9  %p_shl7_cast = zext i14 %p_shl7 to i15
+
+ST_98: p_shl8 [1/1] 0.00ns
+:10  %p_shl8 = call i10 @_ssdm_op_BitConcatenate.i10.i3.i7(i3 %tmp_140, i7 0)
+
+ST_98: p_shl8_cast [1/1] 0.00ns
+:11  %p_shl8_cast = zext i10 %p_shl8 to i15
+
+ST_98: tmp_61 [1/1] 1.96ns
+:12  %tmp_61 = sub i15 %p_shl7_cast, %p_shl8_cast
+
+ST_98: tmp_138 [1/1] 2.44ns
+burst.wr.header.preheader:0  %tmp_138 = add i34 %tmp_133, %tmp_1_cast
+
+ST_98: tmp_139 [1/1] 0.00ns
+burst.wr.header.preheader:1  %tmp_139 = sext i34 %tmp_138 to i64
+
+ST_98: gmem_addr_1 [1/1] 0.00ns
+burst.wr.header.preheader:2  %gmem_addr_1 = getelementptr i8* %gmem, i64 %tmp_139
+
+
+ <State 99>: 8.16ns
+ST_99: tmp_61_cast [1/1] 0.00ns
+:6  %tmp_61_cast = sext i14 %tmp_59 to i32
+
+ST_99: tmp_60 [1/1] 0.00ns
+:7  %tmp_60 = zext i32 %tmp_61_cast to i64
+
+ST_99: tmp_63_cast [1/1] 0.00ns
+:13  %tmp_63_cast = sext i15 %tmp_61 to i32
+
+ST_99: tmp_62 [1/1] 0.00ns
+:14  %tmp_62 = zext i32 %tmp_63_cast to i64
+
+ST_99: stg_549 [2/2] 8.16ns
+:15  call fastcc void @backsub_process([960 x i8]* @frame_in_glob_0, [960 x i8]* @frame_in_glob_1, [960 x i8]* @frame_in_glob_2, [960 x i8]* @frame_in_glob_3, [960 x i8]* @frame_in_glob_4, [960 x i8]* @frame_in_glob_5, [960 x i8]* @frame_in_glob_6, [960 x i8]* @frame_in_glob_7, i64 %tmp_60, [960 x i8]* @frame_out_glob_0, [960 x i8]* @frame_out_glob_1, [960 x i8]* @frame_out_glob_2, [960 x i8]* @frame_out_glob_3, [960 x i8]* @frame_out_glob_4, [960 x i8]* @frame_out_glob_5, [960 x i8]* @frame_out_glob_6, [960 x i8]* @frame_out_glob_7, i64 %tmp_60, float %learningRate_assign, [1920 x float]* @bgmo_sortKey_0, [1920 x float]* @bgmo_sortKey_1, [1920 x float]* @bgmo_sortKey_2, [1920 x float]* @bgmo_sortKey_3, [1920 x float]* @bgmo_sortKey_4, [1920 x float]* @bgmo_sortKey_5, [1920 x float]* @bgmo_sortKey_6, [1920 x float]* @bgmo_sortKey_7, i64 %tmp_62, [1920 x float]* @bgmo_weight_0, [1920 x float]* @bgmo_weight_1, [1920 x float]* @bgmo_weight_2, [1920 x float]* @bgmo_weight_3, [1920 x float]* @bgmo_weight_4, [1920 x float]* @bgmo_weight_5, [1920 x float]* @bgmo_weight_6, [1920 x float]* @bgmo_weight_7, i64 %tmp_62, [1920 x float]* @bgmo_mean_0, [1920 x float]* @bgmo_mean_1, [1920 x float]* @bgmo_mean_2, [1920 x float]* @bgmo_mean_3, [1920 x float]* @bgmo_mean_4, [1920 x float]* @bgmo_mean_5, [1920 x float]* @bgmo_mean_6, [1920 x float]* @bgmo_mean_7, i64 %tmp_62, [1920 x float]* @bgmo_var_0, [1920 x float]* @bgmo_var_1, [1920 x float]* @bgmo_var_2, [1920 x float]* @bgmo_var_3, [1920 x float]* @bgmo_var_4, [1920 x float]* @bgmo_var_5, [1920 x float]* @bgmo_var_6, [1920 x float]* @bgmo_var_7, i64 %tmp_62)
+
+
+ <State 100>: 0.00ns
+ST_100: stg_550 [1/2] 0.00ns
+:15  call fastcc void @backsub_process([960 x i8]* @frame_in_glob_0, [960 x i8]* @frame_in_glob_1, [960 x i8]* @frame_in_glob_2, [960 x i8]* @frame_in_glob_3, [960 x i8]* @frame_in_glob_4, [960 x i8]* @frame_in_glob_5, [960 x i8]* @frame_in_glob_6, [960 x i8]* @frame_in_glob_7, i64 %tmp_60, [960 x i8]* @frame_out_glob_0, [960 x i8]* @frame_out_glob_1, [960 x i8]* @frame_out_glob_2, [960 x i8]* @frame_out_glob_3, [960 x i8]* @frame_out_glob_4, [960 x i8]* @frame_out_glob_5, [960 x i8]* @frame_out_glob_6, [960 x i8]* @frame_out_glob_7, i64 %tmp_60, float %learningRate_assign, [1920 x float]* @bgmo_sortKey_0, [1920 x float]* @bgmo_sortKey_1, [1920 x float]* @bgmo_sortKey_2, [1920 x float]* @bgmo_sortKey_3, [1920 x float]* @bgmo_sortKey_4, [1920 x float]* @bgmo_sortKey_5, [1920 x float]* @bgmo_sortKey_6, [1920 x float]* @bgmo_sortKey_7, i64 %tmp_62, [1920 x float]* @bgmo_weight_0, [1920 x float]* @bgmo_weight_1, [1920 x float]* @bgmo_weight_2, [1920 x float]* @bgmo_weight_3, [1920 x float]* @bgmo_weight_4, [1920 x float]* @bgmo_weight_5, [1920 x float]* @bgmo_weight_6, [1920 x float]* @bgmo_weight_7, i64 %tmp_62, [1920 x float]* @bgmo_mean_0, [1920 x float]* @bgmo_mean_1, [1920 x float]* @bgmo_mean_2, [1920 x float]* @bgmo_mean_3, [1920 x float]* @bgmo_mean_4, [1920 x float]* @bgmo_mean_5, [1920 x float]* @bgmo_mean_6, [1920 x float]* @bgmo_mean_7, i64 %tmp_62, [1920 x float]* @bgmo_var_0, [1920 x float]* @bgmo_var_1, [1920 x float]* @bgmo_var_2, [1920 x float]* @bgmo_var_3, [1920 x float]* @bgmo_var_4, [1920 x float]* @bgmo_var_5, [1920 x float]* @bgmo_var_6, [1920 x float]* @bgmo_var_7, i64 %tmp_62)
+
+ST_100: stg_551 [1/1] 0.00ns
+:16  br label %burst.rd.end
+
+
+ <State 101>: 8.75ns
+ST_101: p_wr_req31 [1/1] 8.75ns
+burst.wr.header.preheader:3  %p_wr_req31 = call i1 @_ssdm_op_WriteReq.m_axi.i8P(i8* %gmem_addr_1, i32 7680)
+
+ST_101: stg_553 [1/1] 1.57ns
+burst.wr.header.preheader:4  br label %burst.wr.header
+
+
+ <State 102>: 3.66ns
+ST_102: indvar1 [1/1] 0.00ns
+burst.wr.header:0  %indvar1 = phi i13 [ %indvar_next1, %burst.wr.body ], [ 0, %burst.wr.header.preheader ]
+
+ST_102: phi_mul2 [1/1] 0.00ns
+burst.wr.header:1  %phi_mul2 = phi i27 [ %next_mul2, %burst.wr.body ], [ 0, %burst.wr.header.preheader ]
+
+ST_102: exitcond4 [1/1] 2.18ns
+burst.wr.header:2  %exitcond4 = icmp eq i13 %indvar1, -512
+
+ST_102: stg_557 [1/1] 0.00ns
+burst.wr.header:3  call void (...)* @_ssdm_op_SpecLoopTripCount(i64 7680, i64 7680, i64 7680)
+
+ST_102: indvar_next1 [1/1] 1.96ns
+burst.wr.header:4  %indvar_next1 = add i13 %indvar1, 1
+
+ST_102: stg_559 [1/1] 0.00ns
+burst.wr.header:5  br i1 %exitcond4, label %burst.wr.header53.preheader, label %burst.wr.body
+
+ST_102: next_mul2 [1/1] 2.32ns
+burst.wr.body:3  %next_mul2 = add i27 %phi_mul2, 8739
+
+ST_102: tmp_141 [1/1] 0.00ns
+burst.wr.body:4  %tmp_141 = call i4 @_ssdm_op_PartSelect.i4.i27.i32.i32(i27 %phi_mul2, i32 23, i32 26)
+
+ST_102: newIndex [17/17] 3.66ns
+burst.wr.body:6  %newIndex = urem i13 %indvar1, 960
+
+
+ <State 103>: 3.66ns
+ST_103: newIndex [16/17] 3.66ns
+burst.wr.body:6  %newIndex = urem i13 %indvar1, 960
+
+
+ <State 104>: 3.66ns
+ST_104: newIndex [15/17] 3.66ns
+burst.wr.body:6  %newIndex = urem i13 %indvar1, 960
+
+
+ <State 105>: 3.66ns
+ST_105: newIndex [14/17] 3.66ns
+burst.wr.body:6  %newIndex = urem i13 %indvar1, 960
+
+
+ <State 106>: 3.66ns
+ST_106: newIndex [13/17] 3.66ns
+burst.wr.body:6  %newIndex = urem i13 %indvar1, 960
+
+
+ <State 107>: 3.66ns
+ST_107: newIndex [12/17] 3.66ns
+burst.wr.body:6  %newIndex = urem i13 %indvar1, 960
+
+
+ <State 108>: 3.66ns
+ST_108: newIndex [11/17] 3.66ns
+burst.wr.body:6  %newIndex = urem i13 %indvar1, 960
+
+
+ <State 109>: 3.66ns
+ST_109: newIndex [10/17] 3.66ns
+burst.wr.body:6  %newIndex = urem i13 %indvar1, 960
+
+
+ <State 110>: 3.66ns
+ST_110: newIndex [9/17] 3.66ns
+burst.wr.body:6  %newIndex = urem i13 %indvar1, 960
+
+
+ <State 111>: 3.66ns
+ST_111: newIndex [8/17] 3.66ns
+burst.wr.body:6  %newIndex = urem i13 %indvar1, 960
+
+
+ <State 112>: 3.66ns
+ST_112: newIndex [7/17] 3.66ns
+burst.wr.body:6  %newIndex = urem i13 %indvar1, 960
+
+
+ <State 113>: 3.66ns
+ST_113: newIndex [6/17] 3.66ns
+burst.wr.body:6  %newIndex = urem i13 %indvar1, 960
+
+
+ <State 114>: 3.66ns
+ST_114: newIndex [5/17] 3.66ns
+burst.wr.body:6  %newIndex = urem i13 %indvar1, 960
+
+
+ <State 115>: 3.66ns
+ST_115: newIndex [4/17] 3.66ns
+burst.wr.body:6  %newIndex = urem i13 %indvar1, 960
+
+
+ <State 116>: 3.66ns
+ST_116: newIndex [3/17] 3.66ns
+burst.wr.body:6  %newIndex = urem i13 %indvar1, 960
+
+
+ <State 117>: 3.66ns
+ST_117: newIndex [2/17] 3.66ns
+burst.wr.body:6  %newIndex = urem i13 %indvar1, 960
+
+
+ <State 118>: 6.37ns
+ST_118: newIndex [1/17] 3.66ns
+burst.wr.body:6  %newIndex = urem i13 %indvar1, 960
+
+ST_118: newIndex31 [1/1] 0.00ns
+burst.wr.body:7  %newIndex31 = zext i13 %newIndex to i64
+
+ST_118: frame_out_glob_0_addr [1/1] 0.00ns
+burst.wr.body:8  %frame_out_glob_0_addr = getelementptr [960 x i8]* @frame_out_glob_0, i64 0, i64 %newIndex31
+
+ST_118: frame_out_glob_0_load [2/2] 2.71ns
+burst.wr.body:9  %frame_out_glob_0_load = load i8* %frame_out_glob_0_addr, align 1
+
+ST_118: frame_out_glob_1_addr [1/1] 0.00ns
+burst.wr.body:10  %frame_out_glob_1_addr = getelementptr [960 x i8]* @frame_out_glob_1, i64 0, i64 %newIndex31
+
+ST_118: frame_out_glob_1_load [2/2] 2.71ns
+burst.wr.body:11  %frame_out_glob_1_load = load i8* %frame_out_glob_1_addr, align 1
+
+ST_118: frame_out_glob_2_addr [1/1] 0.00ns
+burst.wr.body:12  %frame_out_glob_2_addr = getelementptr [960 x i8]* @frame_out_glob_2, i64 0, i64 %newIndex31
+
+ST_118: frame_out_glob_2_load [2/2] 2.71ns
+burst.wr.body:13  %frame_out_glob_2_load = load i8* %frame_out_glob_2_addr, align 1
+
+ST_118: frame_out_glob_3_addr [1/1] 0.00ns
+burst.wr.body:14  %frame_out_glob_3_addr = getelementptr [960 x i8]* @frame_out_glob_3, i64 0, i64 %newIndex31
+
+ST_118: frame_out_glob_3_load [2/2] 2.71ns
+burst.wr.body:15  %frame_out_glob_3_load = load i8* %frame_out_glob_3_addr, align 1
+
+ST_118: frame_out_glob_4_addr [1/1] 0.00ns
+burst.wr.body:16  %frame_out_glob_4_addr = getelementptr [960 x i8]* @frame_out_glob_4, i64 0, i64 %newIndex31
+
+ST_118: frame_out_glob_4_load [2/2] 2.71ns
+burst.wr.body:17  %frame_out_glob_4_load = load i8* %frame_out_glob_4_addr, align 1
+
+ST_118: frame_out_glob_5_addr [1/1] 0.00ns
+burst.wr.body:18  %frame_out_glob_5_addr = getelementptr [960 x i8]* @frame_out_glob_5, i64 0, i64 %newIndex31
+
+ST_118: frame_out_glob_5_load [2/2] 2.71ns
+burst.wr.body:19  %frame_out_glob_5_load = load i8* %frame_out_glob_5_addr, align 1
+
+ST_118: frame_out_glob_6_addr [1/1] 0.00ns
+burst.wr.body:20  %frame_out_glob_6_addr = getelementptr [960 x i8]* @frame_out_glob_6, i64 0, i64 %newIndex31
+
+ST_118: frame_out_glob_6_load [2/2] 2.71ns
+burst.wr.body:21  %frame_out_glob_6_load = load i8* %frame_out_glob_6_addr, align 1
+
+ST_118: frame_out_glob_7_addr [1/1] 0.00ns
+burst.wr.body:22  %frame_out_glob_7_addr = getelementptr [960 x i8]* @frame_out_glob_7, i64 0, i64 %newIndex31
+
+ST_118: frame_out_glob_7_load [2/2] 2.71ns
+burst.wr.body:23  %frame_out_glob_7_load = load i8* %frame_out_glob_7_addr, align 1
+
+
+ <State 119>: 4.65ns
+ST_119: arrayNo_cast [1/1] 0.00ns
+burst.wr.body:5  %arrayNo_cast = zext i4 %tmp_141 to i32
+
+ST_119: frame_out_glob_0_load [1/2] 2.71ns
+burst.wr.body:9  %frame_out_glob_0_load = load i8* %frame_out_glob_0_addr, align 1
+
+ST_119: frame_out_glob_1_load [1/2] 2.71ns
+burst.wr.body:11  %frame_out_glob_1_load = load i8* %frame_out_glob_1_addr, align 1
+
+ST_119: frame_out_glob_2_load [1/2] 2.71ns
+burst.wr.body:13  %frame_out_glob_2_load = load i8* %frame_out_glob_2_addr, align 1
+
+ST_119: frame_out_glob_3_load [1/2] 2.71ns
+burst.wr.body:15  %frame_out_glob_3_load = load i8* %frame_out_glob_3_addr, align 1
+
+ST_119: frame_out_glob_4_load [1/2] 2.71ns
+burst.wr.body:17  %frame_out_glob_4_load = load i8* %frame_out_glob_4_addr, align 1
+
+ST_119: frame_out_glob_5_load [1/2] 2.71ns
+burst.wr.body:19  %frame_out_glob_5_load = load i8* %frame_out_glob_5_addr, align 1
+
+ST_119: frame_out_glob_6_load [1/2] 2.71ns
+burst.wr.body:21  %frame_out_glob_6_load = load i8* %frame_out_glob_6_addr, align 1
+
+ST_119: frame_out_glob_7_load [1/2] 2.71ns
+burst.wr.body:23  %frame_out_glob_7_load = load i8* %frame_out_glob_7_addr, align 1
+
+ST_119: tmp_102 [1/1] 1.94ns
+burst.wr.body:24  %tmp_102 = call i8 @_ssdm_op_Mux.ap_auto.8i8.i32(i8 %frame_out_glob_0_load, i8 %frame_out_glob_1_load, i8 %frame_out_glob_2_load, i8 %frame_out_glob_3_load, i8 %frame_out_glob_4_load, i8 %frame_out_glob_5_load, i8 %frame_out_glob_6_load, i8 %frame_out_glob_7_load, i32 %arrayNo_cast)
+
+
+ <State 120>: 8.75ns
+ST_120: burstwrite_rbegin [1/1] 0.00ns
+burst.wr.body:0  %burstwrite_rbegin = call i32 (...)* @_ssdm_op_SpecRegionBegin([18 x i8]* @burstwrite_OC_region_str) nounwind
+
+ST_120: empty_20 [1/1] 0.00ns
+burst.wr.body:1  %empty_20 = call i32 (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str2) nounwind
+
+ST_120: empty_21 [1/1] 0.00ns
+burst.wr.body:2  %empty_21 = call i32 (...)* @_ssdm_op_SpecLoopName([34 x i8]* @memcpy_OC_frame_o_OC_frame_out) nounwind
+
+ST_120: stg_609 [1/1] 8.75ns
+burst.wr.body:25  call void @_ssdm_op_Write.m_axi.i8P(i8* %gmem_addr_1, i8 %tmp_102, i1 true)
+
+ST_120: burstwrite_rend [1/1] 0.00ns
+burst.wr.body:26  %burstwrite_rend = call i32 (...)* @_ssdm_op_SpecRegionEnd([18 x i8]* @burstwrite_OC_region_str, i32 %burstwrite_rbegin) nounwind
+
+ST_120: stg_611 [1/1] 0.00ns
+burst.wr.body:27  br label %burst.wr.header
+
+
+ <State 121>: 8.75ns
+ST_121: p_wr_resp32 [5/5] 8.75ns
+burst.wr.header53.preheader:0  %p_wr_resp32 = call i1 @_ssdm_op_WriteResp.m_axi.i8P(i8* %gmem_addr_1)
+
+
+ <State 122>: 8.75ns
+ST_122: p_wr_resp32 [4/5] 8.75ns
+burst.wr.header53.preheader:0  %p_wr_resp32 = call i1 @_ssdm_op_WriteResp.m_axi.i8P(i8* %gmem_addr_1)
+
+
+ <State 123>: 8.75ns
+ST_123: p_wr_resp32 [3/5] 8.75ns
+burst.wr.header53.preheader:0  %p_wr_resp32 = call i1 @_ssdm_op_WriteResp.m_axi.i8P(i8* %gmem_addr_1)
+
+
+ <State 124>: 8.75ns
+ST_124: p_wr_resp32 [2/5] 8.75ns
+burst.wr.header53.preheader:0  %p_wr_resp32 = call i1 @_ssdm_op_WriteResp.m_axi.i8P(i8* %gmem_addr_1)
+
+
+ <State 125>: 8.75ns
+ST_125: p_wr_resp32 [1/5] 8.75ns
+burst.wr.header53.preheader:0  %p_wr_resp32 = call i1 @_ssdm_op_WriteResp.m_axi.i8P(i8* %gmem_addr_1)
+
+ST_125: p_wr_req33 [1/1] 8.75ns
+burst.wr.header53.preheader:1  %p_wr_req33 = call i1 @_ssdm_op_WriteReq.m_axi.floatP(float* %bgmodel_weight_addr, i32 15360)
+
+ST_125: p_wr_req35 [1/1] 8.75ns
+burst.wr.header53.preheader:2  %p_wr_req35 = call i1 @_ssdm_op_WriteReq.m_axi.floatP(float* %bgmodel_sortKey_addr, i32 15360)
+
+ST_125: p_wr_req37 [1/1] 8.75ns
+burst.wr.header53.preheader:3  %p_wr_req37 = call i1 @_ssdm_op_WriteReq.m_axi.floatP(float* %bgmodel_mean_addr, i32 15360)
+
+ST_125: p_wr_req39 [1/1] 8.75ns
+burst.wr.header53.preheader:4  %p_wr_req39 = call i1 @_ssdm_op_WriteReq.m_axi.floatP(float* %bgmodel_var_addr, i32 15360)
+
+ST_125: stg_621 [1/1] 1.57ns
+burst.wr.header53.preheader:5  br label %burst.wr.header53
+
+
+ <State 126>: 3.73ns
+ST_126: indvar3 [1/1] 0.00ns
+burst.wr.header53:0  %indvar3 = phi i14 [ %indvar_next3, %burst.wr.body54 ], [ 0, %burst.wr.header53.preheader ]
+
+ST_126: phi_mul3 [1/1] 0.00ns
+burst.wr.header53:1  %phi_mul3 = phi i29 [ %next_mul3, %burst.wr.body54 ], [ 0, %burst.wr.header53.preheader ]
+
+ST_126: exitcond7 [1/1] 2.21ns
+burst.wr.header53:2  %exitcond7 = icmp eq i14 %indvar3, -1024
+
+ST_126: stg_625 [1/1] 0.00ns
+burst.wr.header53:3  call void (...)* @_ssdm_op_SpecLoopTripCount(i64 15360, i64 15360, i64 15360)
+
+ST_126: indvar_next3 [1/1] 1.96ns
+burst.wr.header53:4  %indvar_next3 = add i14 %indvar3, 1
+
+ST_126: stg_627 [1/1] 0.00ns
+burst.wr.header53:5  br i1 %exitcond7, label %burst.wr.end52, label %burst.wr.body54
+
+ST_126: next_mul3 [1/1] 2.44ns
+burst.wr.body54:3  %next_mul3 = add i29 %phi_mul3, 17477
+
+ST_126: tmp_142 [1/1] 0.00ns
+burst.wr.body54:4  %tmp_142 = call i4 @_ssdm_op_PartSelect.i4.i29.i32.i32(i29 %phi_mul3, i32 25, i32 28)
+
+ST_126: newIndex32 [18/18] 3.73ns
+burst.wr.body54:6  %newIndex32 = urem i14 %indvar3, 1920
+
+
+ <State 127>: 3.73ns
+ST_127: newIndex32 [17/18] 3.73ns
+burst.wr.body54:6  %newIndex32 = urem i14 %indvar3, 1920
+
+
+ <State 128>: 3.73ns
+ST_128: newIndex32 [16/18] 3.73ns
+burst.wr.body54:6  %newIndex32 = urem i14 %indvar3, 1920
+
+
+ <State 129>: 3.73ns
+ST_129: newIndex32 [15/18] 3.73ns
+burst.wr.body54:6  %newIndex32 = urem i14 %indvar3, 1920
+
+
+ <State 130>: 3.73ns
+ST_130: newIndex32 [14/18] 3.73ns
+burst.wr.body54:6  %newIndex32 = urem i14 %indvar3, 1920
+
+
+ <State 131>: 3.73ns
+ST_131: newIndex32 [13/18] 3.73ns
+burst.wr.body54:6  %newIndex32 = urem i14 %indvar3, 1920
+
+
+ <State 132>: 3.73ns
+ST_132: newIndex32 [12/18] 3.73ns
+burst.wr.body54:6  %newIndex32 = urem i14 %indvar3, 1920
+
+
+ <State 133>: 3.73ns
+ST_133: newIndex32 [11/18] 3.73ns
+burst.wr.body54:6  %newIndex32 = urem i14 %indvar3, 1920
+
+
+ <State 134>: 3.73ns
+ST_134: newIndex32 [10/18] 3.73ns
+burst.wr.body54:6  %newIndex32 = urem i14 %indvar3, 1920
+
+
+ <State 135>: 3.73ns
+ST_135: newIndex32 [9/18] 3.73ns
+burst.wr.body54:6  %newIndex32 = urem i14 %indvar3, 1920
+
+
+ <State 136>: 3.73ns
+ST_136: newIndex32 [8/18] 3.73ns
+burst.wr.body54:6  %newIndex32 = urem i14 %indvar3, 1920
+
+
+ <State 137>: 3.73ns
+ST_137: newIndex32 [7/18] 3.73ns
+burst.wr.body54:6  %newIndex32 = urem i14 %indvar3, 1920
+
+
+ <State 138>: 3.73ns
+ST_138: newIndex32 [6/18] 3.73ns
+burst.wr.body54:6  %newIndex32 = urem i14 %indvar3, 1920
+
+
+ <State 139>: 3.73ns
+ST_139: newIndex32 [5/18] 3.73ns
+burst.wr.body54:6  %newIndex32 = urem i14 %indvar3, 1920
+
+
+ <State 140>: 3.73ns
+ST_140: newIndex32 [4/18] 3.73ns
+burst.wr.body54:6  %newIndex32 = urem i14 %indvar3, 1920
+
+
+ <State 141>: 3.73ns
+ST_141: newIndex32 [3/18] 3.73ns
+burst.wr.body54:6  %newIndex32 = urem i14 %indvar3, 1920
+
+
+ <State 142>: 3.73ns
+ST_142: newIndex32 [2/18] 3.73ns
+burst.wr.body54:6  %newIndex32 = urem i14 %indvar3, 1920
+
+
+ <State 143>: 6.44ns
+ST_143: newIndex32 [1/18] 3.73ns
+burst.wr.body54:6  %newIndex32 = urem i14 %indvar3, 1920
+
+ST_143: newIndex33 [1/1] 0.00ns
+burst.wr.body54:7  %newIndex33 = zext i14 %newIndex32 to i64
+
+ST_143: bgmo_sortKey_0_addr_1 [1/1] 0.00ns
+burst.wr.body54:8  %bgmo_sortKey_0_addr_1 = getelementptr [1920 x float]* @bgmo_sortKey_0, i64 0, i64 %newIndex33
+
+ST_143: bgmo_sortKey_0_load [2/2] 2.71ns
+burst.wr.body54:9  %bgmo_sortKey_0_load = load float* %bgmo_sortKey_0_addr_1, align 4
+
+ST_143: bgmo_sortKey_1_addr_1 [1/1] 0.00ns
+burst.wr.body54:10  %bgmo_sortKey_1_addr_1 = getelementptr [1920 x float]* @bgmo_sortKey_1, i64 0, i64 %newIndex33
+
+ST_143: bgmo_sortKey_1_load [2/2] 2.71ns
+burst.wr.body54:11  %bgmo_sortKey_1_load = load float* %bgmo_sortKey_1_addr_1, align 4
+
+ST_143: bgmo_sortKey_2_addr_1 [1/1] 0.00ns
+burst.wr.body54:12  %bgmo_sortKey_2_addr_1 = getelementptr [1920 x float]* @bgmo_sortKey_2, i64 0, i64 %newIndex33
+
+ST_143: bgmo_sortKey_2_load [2/2] 2.71ns
+burst.wr.body54:13  %bgmo_sortKey_2_load = load float* %bgmo_sortKey_2_addr_1, align 4
+
+ST_143: bgmo_sortKey_3_addr_1 [1/1] 0.00ns
+burst.wr.body54:14  %bgmo_sortKey_3_addr_1 = getelementptr [1920 x float]* @bgmo_sortKey_3, i64 0, i64 %newIndex33
+
+ST_143: bgmo_sortKey_3_load [2/2] 2.71ns
+burst.wr.body54:15  %bgmo_sortKey_3_load = load float* %bgmo_sortKey_3_addr_1, align 4
+
+ST_143: bgmo_sortKey_4_addr_1 [1/1] 0.00ns
+burst.wr.body54:16  %bgmo_sortKey_4_addr_1 = getelementptr [1920 x float]* @bgmo_sortKey_4, i64 0, i64 %newIndex33
+
+ST_143: bgmo_sortKey_4_load [2/2] 2.71ns
+burst.wr.body54:17  %bgmo_sortKey_4_load = load float* %bgmo_sortKey_4_addr_1, align 4
+
+ST_143: bgmo_sortKey_5_addr_1 [1/1] 0.00ns
+burst.wr.body54:18  %bgmo_sortKey_5_addr_1 = getelementptr [1920 x float]* @bgmo_sortKey_5, i64 0, i64 %newIndex33
+
+ST_143: bgmo_sortKey_5_load [2/2] 2.71ns
+burst.wr.body54:19  %bgmo_sortKey_5_load = load float* %bgmo_sortKey_5_addr_1, align 4
+
+ST_143: bgmo_sortKey_6_addr_1 [1/1] 0.00ns
+burst.wr.body54:20  %bgmo_sortKey_6_addr_1 = getelementptr [1920 x float]* @bgmo_sortKey_6, i64 0, i64 %newIndex33
+
+ST_143: bgmo_sortKey_6_load [2/2] 2.71ns
+burst.wr.body54:21  %bgmo_sortKey_6_load = load float* %bgmo_sortKey_6_addr_1, align 4
+
+ST_143: bgmo_sortKey_7_addr_1 [1/1] 0.00ns
+burst.wr.body54:22  %bgmo_sortKey_7_addr_1 = getelementptr [1920 x float]* @bgmo_sortKey_7, i64 0, i64 %newIndex33
+
+ST_143: bgmo_sortKey_7_load [2/2] 2.71ns
+burst.wr.body54:23  %bgmo_sortKey_7_load = load float* %bgmo_sortKey_7_addr_1, align 4
+
+ST_143: bgmo_weight_0_addr_1 [1/1] 0.00ns
+burst.wr.body54:26  %bgmo_weight_0_addr_1 = getelementptr [1920 x float]* @bgmo_weight_0, i64 0, i64 %newIndex33
+
+ST_143: bgmo_weight_0_load [2/2] 2.71ns
+burst.wr.body54:27  %bgmo_weight_0_load = load float* %bgmo_weight_0_addr_1, align 4
+
+ST_143: bgmo_weight_1_addr_1 [1/1] 0.00ns
+burst.wr.body54:28  %bgmo_weight_1_addr_1 = getelementptr [1920 x float]* @bgmo_weight_1, i64 0, i64 %newIndex33
+
+ST_143: bgmo_weight_1_load [2/2] 2.71ns
+burst.wr.body54:29  %bgmo_weight_1_load = load float* %bgmo_weight_1_addr_1, align 4
+
+ST_143: bgmo_weight_2_addr_1 [1/1] 0.00ns
+burst.wr.body54:30  %bgmo_weight_2_addr_1 = getelementptr [1920 x float]* @bgmo_weight_2, i64 0, i64 %newIndex33
+
+ST_143: bgmo_weight_2_load [2/2] 2.71ns
+burst.wr.body54:31  %bgmo_weight_2_load = load float* %bgmo_weight_2_addr_1, align 4
+
+ST_143: bgmo_weight_3_addr_1 [1/1] 0.00ns
+burst.wr.body54:32  %bgmo_weight_3_addr_1 = getelementptr [1920 x float]* @bgmo_weight_3, i64 0, i64 %newIndex33
+
+ST_143: bgmo_weight_3_load [2/2] 2.71ns
+burst.wr.body54:33  %bgmo_weight_3_load = load float* %bgmo_weight_3_addr_1, align 4
+
+ST_143: bgmo_weight_4_addr_1 [1/1] 0.00ns
+burst.wr.body54:34  %bgmo_weight_4_addr_1 = getelementptr [1920 x float]* @bgmo_weight_4, i64 0, i64 %newIndex33
+
+ST_143: bgmo_weight_4_load [2/2] 2.71ns
+burst.wr.body54:35  %bgmo_weight_4_load = load float* %bgmo_weight_4_addr_1, align 4
+
+ST_143: bgmo_weight_5_addr_1 [1/1] 0.00ns
+burst.wr.body54:36  %bgmo_weight_5_addr_1 = getelementptr [1920 x float]* @bgmo_weight_5, i64 0, i64 %newIndex33
+
+ST_143: bgmo_weight_5_load [2/2] 2.71ns
+burst.wr.body54:37  %bgmo_weight_5_load = load float* %bgmo_weight_5_addr_1, align 4
+
+ST_143: bgmo_weight_6_addr_1 [1/1] 0.00ns
+burst.wr.body54:38  %bgmo_weight_6_addr_1 = getelementptr [1920 x float]* @bgmo_weight_6, i64 0, i64 %newIndex33
+
+ST_143: bgmo_weight_6_load [2/2] 2.71ns
+burst.wr.body54:39  %bgmo_weight_6_load = load float* %bgmo_weight_6_addr_1, align 4
+
+ST_143: bgmo_weight_7_addr_1 [1/1] 0.00ns
+burst.wr.body54:40  %bgmo_weight_7_addr_1 = getelementptr [1920 x float]* @bgmo_weight_7, i64 0, i64 %newIndex33
+
+ST_143: bgmo_weight_7_load [2/2] 2.71ns
+burst.wr.body54:41  %bgmo_weight_7_load = load float* %bgmo_weight_7_addr_1, align 4
+
+ST_143: bgmo_mean_0_addr_1 [1/1] 0.00ns
+burst.wr.body54:44  %bgmo_mean_0_addr_1 = getelementptr [1920 x float]* @bgmo_mean_0, i64 0, i64 %newIndex33
+
+ST_143: bgmo_mean_0_load [2/2] 2.71ns
+burst.wr.body54:45  %bgmo_mean_0_load = load float* %bgmo_mean_0_addr_1, align 4
+
+ST_143: bgmo_mean_1_addr_1 [1/1] 0.00ns
+burst.wr.body54:46  %bgmo_mean_1_addr_1 = getelementptr [1920 x float]* @bgmo_mean_1, i64 0, i64 %newIndex33
+
+ST_143: bgmo_mean_1_load [2/2] 2.71ns
+burst.wr.body54:47  %bgmo_mean_1_load = load float* %bgmo_mean_1_addr_1, align 4
+
+ST_143: bgmo_mean_2_addr_1 [1/1] 0.00ns
+burst.wr.body54:48  %bgmo_mean_2_addr_1 = getelementptr [1920 x float]* @bgmo_mean_2, i64 0, i64 %newIndex33
+
+ST_143: bgmo_mean_2_load [2/2] 2.71ns
+burst.wr.body54:49  %bgmo_mean_2_load = load float* %bgmo_mean_2_addr_1, align 4
+
+ST_143: bgmo_mean_3_addr_1 [1/1] 0.00ns
+burst.wr.body54:50  %bgmo_mean_3_addr_1 = getelementptr [1920 x float]* @bgmo_mean_3, i64 0, i64 %newIndex33
+
+ST_143: bgmo_mean_3_load [2/2] 2.71ns
+burst.wr.body54:51  %bgmo_mean_3_load = load float* %bgmo_mean_3_addr_1, align 4
+
+ST_143: bgmo_mean_4_addr_1 [1/1] 0.00ns
+burst.wr.body54:52  %bgmo_mean_4_addr_1 = getelementptr [1920 x float]* @bgmo_mean_4, i64 0, i64 %newIndex33
+
+ST_143: bgmo_mean_4_load [2/2] 2.71ns
+burst.wr.body54:53  %bgmo_mean_4_load = load float* %bgmo_mean_4_addr_1, align 4
+
+ST_143: bgmo_mean_5_addr_1 [1/1] 0.00ns
+burst.wr.body54:54  %bgmo_mean_5_addr_1 = getelementptr [1920 x float]* @bgmo_mean_5, i64 0, i64 %newIndex33
+
+ST_143: bgmo_mean_5_load [2/2] 2.71ns
+burst.wr.body54:55  %bgmo_mean_5_load = load float* %bgmo_mean_5_addr_1, align 4
+
+ST_143: bgmo_mean_6_addr_1 [1/1] 0.00ns
+burst.wr.body54:56  %bgmo_mean_6_addr_1 = getelementptr [1920 x float]* @bgmo_mean_6, i64 0, i64 %newIndex33
+
+ST_143: bgmo_mean_6_load [2/2] 2.71ns
+burst.wr.body54:57  %bgmo_mean_6_load = load float* %bgmo_mean_6_addr_1, align 4
+
+ST_143: bgmo_mean_7_addr_1 [1/1] 0.00ns
+burst.wr.body54:58  %bgmo_mean_7_addr_1 = getelementptr [1920 x float]* @bgmo_mean_7, i64 0, i64 %newIndex33
+
+ST_143: bgmo_mean_7_load [2/2] 2.71ns
+burst.wr.body54:59  %bgmo_mean_7_load = load float* %bgmo_mean_7_addr_1, align 4
+
+ST_143: bgmo_var_0_addr_1 [1/1] 0.00ns
+burst.wr.body54:62  %bgmo_var_0_addr_1 = getelementptr [1920 x float]* @bgmo_var_0, i64 0, i64 %newIndex33
+
+ST_143: bgmo_var_0_load [2/2] 2.71ns
+burst.wr.body54:63  %bgmo_var_0_load = load float* %bgmo_var_0_addr_1, align 4
+
+ST_143: bgmo_var_1_addr_1 [1/1] 0.00ns
+burst.wr.body54:64  %bgmo_var_1_addr_1 = getelementptr [1920 x float]* @bgmo_var_1, i64 0, i64 %newIndex33
+
+ST_143: bgmo_var_1_load [2/2] 2.71ns
+burst.wr.body54:65  %bgmo_var_1_load = load float* %bgmo_var_1_addr_1, align 4
+
+ST_143: bgmo_var_2_addr_1 [1/1] 0.00ns
+burst.wr.body54:66  %bgmo_var_2_addr_1 = getelementptr [1920 x float]* @bgmo_var_2, i64 0, i64 %newIndex33
+
+ST_143: bgmo_var_2_load [2/2] 2.71ns
+burst.wr.body54:67  %bgmo_var_2_load = load float* %bgmo_var_2_addr_1, align 4
+
+ST_143: bgmo_var_3_addr_1 [1/1] 0.00ns
+burst.wr.body54:68  %bgmo_var_3_addr_1 = getelementptr [1920 x float]* @bgmo_var_3, i64 0, i64 %newIndex33
+
+ST_143: bgmo_var_3_load [2/2] 2.71ns
+burst.wr.body54:69  %bgmo_var_3_load = load float* %bgmo_var_3_addr_1, align 4
+
+ST_143: bgmo_var_4_addr_1 [1/1] 0.00ns
+burst.wr.body54:70  %bgmo_var_4_addr_1 = getelementptr [1920 x float]* @bgmo_var_4, i64 0, i64 %newIndex33
+
+ST_143: bgmo_var_4_load [2/2] 2.71ns
+burst.wr.body54:71  %bgmo_var_4_load = load float* %bgmo_var_4_addr_1, align 4
+
+ST_143: bgmo_var_5_addr_1 [1/1] 0.00ns
+burst.wr.body54:72  %bgmo_var_5_addr_1 = getelementptr [1920 x float]* @bgmo_var_5, i64 0, i64 %newIndex33
+
+ST_143: bgmo_var_5_load [2/2] 2.71ns
+burst.wr.body54:73  %bgmo_var_5_load = load float* %bgmo_var_5_addr_1, align 4
+
+ST_143: bgmo_var_6_addr_1 [1/1] 0.00ns
+burst.wr.body54:74  %bgmo_var_6_addr_1 = getelementptr [1920 x float]* @bgmo_var_6, i64 0, i64 %newIndex33
+
+ST_143: bgmo_var_6_load [2/2] 2.71ns
+burst.wr.body54:75  %bgmo_var_6_load = load float* %bgmo_var_6_addr_1, align 4
+
+ST_143: bgmo_var_7_addr_1 [1/1] 0.00ns
+burst.wr.body54:76  %bgmo_var_7_addr_1 = getelementptr [1920 x float]* @bgmo_var_7, i64 0, i64 %newIndex33
+
+ST_143: bgmo_var_7_load [2/2] 2.71ns
+burst.wr.body54:77  %bgmo_var_7_load = load float* %bgmo_var_7_addr_1, align 4
+
+
+ <State 144>: 4.65ns
+ST_144: arrayNo29_cast [1/1] 0.00ns
+burst.wr.body54:5  %arrayNo29_cast = zext i4 %tmp_142 to i32
+
+ST_144: bgmo_sortKey_0_load [1/2] 2.71ns
+burst.wr.body54:9  %bgmo_sortKey_0_load = load float* %bgmo_sortKey_0_addr_1, align 4
+
+ST_144: bgmo_sortKey_1_load [1/2] 2.71ns
+burst.wr.body54:11  %bgmo_sortKey_1_load = load float* %bgmo_sortKey_1_addr_1, align 4
+
+ST_144: bgmo_sortKey_2_load [1/2] 2.71ns
+burst.wr.body54:13  %bgmo_sortKey_2_load = load float* %bgmo_sortKey_2_addr_1, align 4
+
+ST_144: bgmo_sortKey_3_load [1/2] 2.71ns
+burst.wr.body54:15  %bgmo_sortKey_3_load = load float* %bgmo_sortKey_3_addr_1, align 4
+
+ST_144: bgmo_sortKey_4_load [1/2] 2.71ns
+burst.wr.body54:17  %bgmo_sortKey_4_load = load float* %bgmo_sortKey_4_addr_1, align 4
+
+ST_144: bgmo_sortKey_5_load [1/2] 2.71ns
+burst.wr.body54:19  %bgmo_sortKey_5_load = load float* %bgmo_sortKey_5_addr_1, align 4
+
+ST_144: bgmo_sortKey_6_load [1/2] 2.71ns
+burst.wr.body54:21  %bgmo_sortKey_6_load = load float* %bgmo_sortKey_6_addr_1, align 4
+
+ST_144: bgmo_sortKey_7_load [1/2] 2.71ns
+burst.wr.body54:23  %bgmo_sortKey_7_load = load float* %bgmo_sortKey_7_addr_1, align 4
+
+ST_144: tmp_103 [1/1] 1.94ns
+burst.wr.body54:24  %tmp_103 = call float @_ssdm_op_Mux.ap_auto.8float.i32(float %bgmo_sortKey_0_load, float %bgmo_sortKey_1_load, float %bgmo_sortKey_2_load, float %bgmo_sortKey_3_load, float %bgmo_sortKey_4_load, float %bgmo_sortKey_5_load, float %bgmo_sortKey_6_load, float %bgmo_sortKey_7_load, i32 %arrayNo29_cast)
+
+ST_144: bgmo_weight_0_load [1/2] 2.71ns
+burst.wr.body54:27  %bgmo_weight_0_load = load float* %bgmo_weight_0_addr_1, align 4
+
+ST_144: bgmo_weight_1_load [1/2] 2.71ns
+burst.wr.body54:29  %bgmo_weight_1_load = load float* %bgmo_weight_1_addr_1, align 4
+
+ST_144: bgmo_weight_2_load [1/2] 2.71ns
+burst.wr.body54:31  %bgmo_weight_2_load = load float* %bgmo_weight_2_addr_1, align 4
+
+ST_144: bgmo_weight_3_load [1/2] 2.71ns
+burst.wr.body54:33  %bgmo_weight_3_load = load float* %bgmo_weight_3_addr_1, align 4
+
+ST_144: bgmo_weight_4_load [1/2] 2.71ns
+burst.wr.body54:35  %bgmo_weight_4_load = load float* %bgmo_weight_4_addr_1, align 4
+
+ST_144: bgmo_weight_5_load [1/2] 2.71ns
+burst.wr.body54:37  %bgmo_weight_5_load = load float* %bgmo_weight_5_addr_1, align 4
+
+ST_144: bgmo_weight_6_load [1/2] 2.71ns
+burst.wr.body54:39  %bgmo_weight_6_load = load float* %bgmo_weight_6_addr_1, align 4
+
+ST_144: bgmo_weight_7_load [1/2] 2.71ns
+burst.wr.body54:41  %bgmo_weight_7_load = load float* %bgmo_weight_7_addr_1, align 4
+
+ST_144: tmp_104 [1/1] 1.94ns
+burst.wr.body54:42  %tmp_104 = call float @_ssdm_op_Mux.ap_auto.8float.i32(float %bgmo_weight_0_load, float %bgmo_weight_1_load, float %bgmo_weight_2_load, float %bgmo_weight_3_load, float %bgmo_weight_4_load, float %bgmo_weight_5_load, float %bgmo_weight_6_load, float %bgmo_weight_7_load, i32 %arrayNo29_cast)
+
+ST_144: bgmo_mean_0_load [1/2] 2.71ns
+burst.wr.body54:45  %bgmo_mean_0_load = load float* %bgmo_mean_0_addr_1, align 4
+
+ST_144: bgmo_mean_1_load [1/2] 2.71ns
+burst.wr.body54:47  %bgmo_mean_1_load = load float* %bgmo_mean_1_addr_1, align 4
+
+ST_144: bgmo_mean_2_load [1/2] 2.71ns
+burst.wr.body54:49  %bgmo_mean_2_load = load float* %bgmo_mean_2_addr_1, align 4
+
+ST_144: bgmo_mean_3_load [1/2] 2.71ns
+burst.wr.body54:51  %bgmo_mean_3_load = load float* %bgmo_mean_3_addr_1, align 4
+
+ST_144: bgmo_mean_4_load [1/2] 2.71ns
+burst.wr.body54:53  %bgmo_mean_4_load = load float* %bgmo_mean_4_addr_1, align 4
+
+ST_144: bgmo_mean_5_load [1/2] 2.71ns
+burst.wr.body54:55  %bgmo_mean_5_load = load float* %bgmo_mean_5_addr_1, align 4
+
+ST_144: bgmo_mean_6_load [1/2] 2.71ns
+burst.wr.body54:57  %bgmo_mean_6_load = load float* %bgmo_mean_6_addr_1, align 4
+
+ST_144: bgmo_mean_7_load [1/2] 2.71ns
+burst.wr.body54:59  %bgmo_mean_7_load = load float* %bgmo_mean_7_addr_1, align 4
+
+ST_144: tmp_105 [1/1] 1.94ns
+burst.wr.body54:60  %tmp_105 = call float @_ssdm_op_Mux.ap_auto.8float.i32(float %bgmo_mean_0_load, float %bgmo_mean_1_load, float %bgmo_mean_2_load, float %bgmo_mean_3_load, float %bgmo_mean_4_load, float %bgmo_mean_5_load, float %bgmo_mean_6_load, float %bgmo_mean_7_load, i32 %arrayNo29_cast)
+
+ST_144: bgmo_var_0_load [1/2] 2.71ns
+burst.wr.body54:63  %bgmo_var_0_load = load float* %bgmo_var_0_addr_1, align 4
+
+ST_144: bgmo_var_1_load [1/2] 2.71ns
+burst.wr.body54:65  %bgmo_var_1_load = load float* %bgmo_var_1_addr_1, align 4
+
+ST_144: bgmo_var_2_load [1/2] 2.71ns
+burst.wr.body54:67  %bgmo_var_2_load = load float* %bgmo_var_2_addr_1, align 4
+
+ST_144: bgmo_var_3_load [1/2] 2.71ns
+burst.wr.body54:69  %bgmo_var_3_load = load float* %bgmo_var_3_addr_1, align 4
+
+ST_144: bgmo_var_4_load [1/2] 2.71ns
+burst.wr.body54:71  %bgmo_var_4_load = load float* %bgmo_var_4_addr_1, align 4
+
+ST_144: bgmo_var_5_load [1/2] 2.71ns
+burst.wr.body54:73  %bgmo_var_5_load = load float* %bgmo_var_5_addr_1, align 4
+
+ST_144: bgmo_var_6_load [1/2] 2.71ns
+burst.wr.body54:75  %bgmo_var_6_load = load float* %bgmo_var_6_addr_1, align 4
+
+ST_144: bgmo_var_7_load [1/2] 2.71ns
+burst.wr.body54:77  %bgmo_var_7_load = load float* %bgmo_var_7_addr_1, align 4
+
+ST_144: tmp_106 [1/1] 1.94ns
+burst.wr.body54:78  %tmp_106 = call float @_ssdm_op_Mux.ap_auto.8float.i32(float %bgmo_var_0_load, float %bgmo_var_1_load, float %bgmo_var_2_load, float %bgmo_var_3_load, float %bgmo_var_4_load, float %bgmo_var_5_load, float %bgmo_var_6_load, float %bgmo_var_7_load, i32 %arrayNo29_cast)
+
+
+ <State 145>: 8.75ns
+ST_145: burstwrite_rbegin1 [1/1] 0.00ns
+burst.wr.body54:0  %burstwrite_rbegin1 = call i32 (...)* @_ssdm_op_SpecRegionBegin([18 x i8]* @burstwrite_OC_region_str)
+
+ST_145: empty_22 [1/1] 0.00ns
+burst.wr.body54:1  %empty_22 = call i32 (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str)
+
+ST_145: empty_23 [1/1] 0.00ns
+burst.wr.body54:2  %empty_23 = call i32 (...)* @_ssdm_op_SpecLoopName([20 x i8]* @memcpy_OC_bgmodel_OC_var_OC_s)
+
+ST_145: stg_753 [1/1] 8.75ns
+burst.wr.body54:25  call void @_ssdm_op_Write.m_axi.floatP(float* %bgmodel_sortKey_addr, float %tmp_103, i4 -1)
+
+ST_145: stg_754 [1/1] 8.75ns
+burst.wr.body54:43  call void @_ssdm_op_Write.m_axi.floatP(float* %bgmodel_weight_addr, float %tmp_104, i4 -1)
+
+ST_145: stg_755 [1/1] 8.75ns
+burst.wr.body54:61  call void @_ssdm_op_Write.m_axi.floatP(float* %bgmodel_mean_addr, float %tmp_105, i4 -1)
+
+ST_145: stg_756 [1/1] 8.75ns
+burst.wr.body54:79  call void @_ssdm_op_Write.m_axi.floatP(float* %bgmodel_var_addr, float %tmp_106, i4 -1)
+
+ST_145: burstwrite_rend87 [1/1] 0.00ns
+burst.wr.body54:80  %burstwrite_rend87 = call i32 (...)* @_ssdm_op_SpecRegionEnd([18 x i8]* @burstwrite_OC_region_str, i32 %burstwrite_rbegin1)
+
+ST_145: stg_758 [1/1] 0.00ns
+burst.wr.body54:81  br label %burst.wr.header53
+
+
+ <State 146>: 8.75ns
+ST_146: p_wr_resp40 [5/5] 8.75ns
+burst.wr.end52:0  %p_wr_resp40 = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %bgmodel_var_addr)
+
+ST_146: p_wr_resp38 [5/5] 8.75ns
+burst.wr.end52:1  %p_wr_resp38 = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %bgmodel_mean_addr)
+
+ST_146: p_wr_resp36 [5/5] 8.75ns
+burst.wr.end52:2  %p_wr_resp36 = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %bgmodel_sortKey_addr)
+
+ST_146: p_wr_resp34 [5/5] 8.75ns
+burst.wr.end52:3  %p_wr_resp34 = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %bgmodel_weight_addr)
+
+
+ <State 147>: 8.75ns
+ST_147: p_wr_resp40 [4/5] 8.75ns
+burst.wr.end52:0  %p_wr_resp40 = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %bgmodel_var_addr)
+
+ST_147: p_wr_resp38 [4/5] 8.75ns
+burst.wr.end52:1  %p_wr_resp38 = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %bgmodel_mean_addr)
+
+ST_147: p_wr_resp36 [4/5] 8.75ns
+burst.wr.end52:2  %p_wr_resp36 = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %bgmodel_sortKey_addr)
+
+ST_147: p_wr_resp34 [4/5] 8.75ns
+burst.wr.end52:3  %p_wr_resp34 = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %bgmodel_weight_addr)
+
+
+ <State 148>: 8.75ns
+ST_148: p_wr_resp40 [3/5] 8.75ns
+burst.wr.end52:0  %p_wr_resp40 = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %bgmodel_var_addr)
+
+ST_148: p_wr_resp38 [3/5] 8.75ns
+burst.wr.end52:1  %p_wr_resp38 = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %bgmodel_mean_addr)
+
+ST_148: p_wr_resp36 [3/5] 8.75ns
+burst.wr.end52:2  %p_wr_resp36 = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %bgmodel_sortKey_addr)
+
+ST_148: p_wr_resp34 [3/5] 8.75ns
+burst.wr.end52:3  %p_wr_resp34 = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %bgmodel_weight_addr)
+
+
+ <State 149>: 8.75ns
+ST_149: p_wr_resp40 [2/5] 8.75ns
+burst.wr.end52:0  %p_wr_resp40 = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %bgmodel_var_addr)
+
+ST_149: p_wr_resp38 [2/5] 8.75ns
+burst.wr.end52:1  %p_wr_resp38 = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %bgmodel_mean_addr)
+
+ST_149: p_wr_resp36 [2/5] 8.75ns
+burst.wr.end52:2  %p_wr_resp36 = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %bgmodel_sortKey_addr)
+
+ST_149: p_wr_resp34 [2/5] 8.75ns
+burst.wr.end52:3  %p_wr_resp34 = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %bgmodel_weight_addr)
+
+
+ <State 150>: 8.75ns
+ST_150: p_wr_resp40 [1/5] 8.75ns
+burst.wr.end52:0  %p_wr_resp40 = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %bgmodel_var_addr)
+
+ST_150: p_wr_resp38 [1/5] 8.75ns
+burst.wr.end52:1  %p_wr_resp38 = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %bgmodel_mean_addr)
+
+ST_150: p_wr_resp36 [1/5] 8.75ns
+burst.wr.end52:2  %p_wr_resp36 = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %bgmodel_sortKey_addr)
+
+ST_150: p_wr_resp34 [1/5] 8.75ns
+burst.wr.end52:3  %p_wr_resp34 = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %bgmodel_weight_addr)
+
+ST_150: stg_779 [1/1] 0.00ns
+burst.wr.end52:4  br label %4
+
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+	State 33
+	State 34
+	State 35
+	State 36
+	State 37
+	State 38
+	State 39
+	State 40
+	State 41
+	State 42
+	State 43
+	State 44
+	State 45
+	State 46
+	State 47
+	State 48
+	State 49
+	State 50
+	State 51
+	State 52
+	State 53
+	State 54
+	State 55
+	State 56
+	State 57
+	State 58
+	State 59
+	State 60
+	State 61
+	State 62
+	State 63
+	State 64
+	State 65
+	State 66
+	State 67
+	State 68
+	State 69
+	State 70
+	State 71
+	State 72
+	State 73
+	State 74
+	State 75
+	State 76
+	State 77
+	State 78
+	State 79
+	State 80
+	State 81
+	State 82
+	State 83
+	State 84
+	State 85
+	State 86
+	State 87
+	State 88
+	State 89
+	State 90
+	State 91
+	State 92
+	State 93
+	State 94
+	State 95
+	State 96
+	State 97
+	State 98
+	State 99
+	State 100
+	State 101
+	State 102
+	State 103
+	State 104
+	State 105
+	State 106
+	State 107
+	State 108
+	State 109
+	State 110
+	State 111
+	State 112
+	State 113
+	State 114
+	State 115
+	State 116
+	State 117
+	State 118
+	State 119
+	State 120
+	State 121
+	State 122
+	State 123
+	State 124
+	State 125
+	State 126
+	State 127
+	State 128
+	State 129
+	State 130
+	State 131
+	State 132
+	State 133
+	State 134
+	State 135
+	State 136
+	State 137
+	State 138
+	State 139
+	State 140
+	State 141
+	State 142
+	State 143
+	State 144
+	State 145
+	State 146
+	State 147
+	State 148
+	State 149
+	State 150
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A
