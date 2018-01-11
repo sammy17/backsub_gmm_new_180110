@@ -10,25 +10,29 @@ Copyright (C) 2015 Xilinx Inc. All rights reserved.
 @I [HLS-10] Analyzing design file 'backsub_gmm_new_180110/core.cpp' ... 
 @I [HLS-10] Validating synthesis directives ...
 @I [HLS-10] Starting code transformations ...
-@I [XFORM-603] Inlining function 'std::max<float>' into 'process' (backsub_gmm_new_180110/core.cpp:57).
-@I [XFORM-603] Inlining function 'std::min<int>' into 'process' (backsub_gmm_new_180110/core.cpp:76).
+@I [XFORM-603] Inlining function 'std::max<float>' into 'process' (backsub_gmm_new_180110/core.cpp:55).
+@I [XFORM-603] Inlining function 'std::min<int>' into 'process' (backsub_gmm_new_180110/core.cpp:74).
 @I [HLS-10] Checking synthesizability ...
-@I [XFORM-602] Inlining function 'std::sqrt' into 'process' (backsub_gmm_new_180110/core.cpp:59) automatically.
-@I [XFORM-602] Inlining function 'std::swap<float>' into 'process' (backsub_gmm_new_180110/core.cpp:66) automatically.
-@I [XFORM-602] Inlining function 'std::sqrt' into 'process' (backsub_gmm_new_180110/core.cpp:59) automatically.
-@I [XFORM-602] Inlining function 'std::swap<float>' into 'process' (backsub_gmm_new_180110/core.cpp:66) automatically.
-@I [XFORM-712] Applying dataflow to function 'bgsub' (backsub_gmm_new_180110/core.cpp:148), detected/extracted 1 process function(s):
+@I [XFORM-602] Inlining function 'std::sqrt' into 'process' (backsub_gmm_new_180110/core.cpp:57) automatically.
+@I [XFORM-602] Inlining function 'std::swap<float>' into 'process' (backsub_gmm_new_180110/core.cpp:64) automatically.
+@I [XFORM-602] Inlining function 'std::sqrt' into 'process' (backsub_gmm_new_180110/core.cpp:57) automatically.
+@I [XFORM-602] Inlining function 'std::swap<float>' into 'process' (backsub_gmm_new_180110/core.cpp:64) automatically.
+@I [XFORM-712] Applying dataflow to function 'bgsub' (backsub_gmm_new_180110/core.cpp:146), detected/extracted 1 process function(s):
 	 'Block__proc'.
-@I [XFORM-811] Inferring bus burst write of length 307200 on port 'bgmodel' (backsub_gmm_new_180110/core.cpp:179:13).
-@I [XFORM-811] Inferring bus burst write of length 320 on port 'frame_out' (backsub_gmm_new_180110/core.cpp:211:9).
-@I [XFORM-811] Inferring bus burst write of length 2560 on port 'bgmodel' (backsub_gmm_new_180110/core.cpp:210:9).
-@I [XFORM-811] Inferring bus burst write of length 320 on port 'frame_out' (backsub_gmm_new_180110/core.cpp:209:9).
-@I [XFORM-811] Inferring bus burst read of length 320 on port 'frame_out' (backsub_gmm_new_180110/core.cpp:194:9).
-@I [XFORM-811] Inferring bus burst read of length 2560 on port 'bgmodel' (backsub_gmm_new_180110/core.cpp:195:9).
-@I [XFORM-811] Inferring bus burst read of length 320 on port 'frame_out' (backsub_gmm_new_180110/core.cpp:196:9).
-@I [XFORM-811] Inferring bus burst read of length 2560 on port 'bgmodel' (backsub_gmm_new_180110/core.cpp:197:9).
-@I [XFORM-811] Inferring bus burst write of length 2560 on port 'bgmodel' (backsub_gmm_new_180110/core.cpp:208:9).
-@I [HLS-111] Elapsed time: 4.35639 seconds; current memory usage: 141 MB.
+@I [XFORM-811] Inferring bus burst write of length 614400 on port 'bgmodel' (backsub_gmm_new_180110/core.cpp:182:13).
+@I [XFORM-811] Inferring bus burst write of length 640 on port 'frame_out' (backsub_gmm_new_180110/core.cpp:220:9).
+@I [XFORM-811] Inferring bus burst write of length 5120 on port 'bgmodel' (backsub_gmm_new_180110/core.cpp:219:9).
+@I [XFORM-811] Inferring bus burst write of length 640 on port 'frame_out' (backsub_gmm_new_180110/core.cpp:218:9).
+@I [XFORM-811] Inferring bus burst write of length 5120 on port 'bgmodel' (backsub_gmm_new_180110/core.cpp:217:9).
+@I [XFORM-811] Inferring bus burst write of length 640 on port 'frame_out' (backsub_gmm_new_180110/core.cpp:216:9).
+@I [XFORM-811] Inferring bus burst read of length 640 on port 'frame_out' (backsub_gmm_new_180110/core.cpp:199:9).
+@I [XFORM-811] Inferring bus burst read of length 5120 on port 'bgmodel' (backsub_gmm_new_180110/core.cpp:200:9).
+@I [XFORM-811] Inferring bus burst read of length 640 on port 'frame_out' (backsub_gmm_new_180110/core.cpp:201:9).
+@I [XFORM-811] Inferring bus burst read of length 5120 on port 'bgmodel' (backsub_gmm_new_180110/core.cpp:202:9).
+@I [XFORM-811] Inferring bus burst read of length 640 on port 'frame_out' (backsub_gmm_new_180110/core.cpp:203:9).
+@I [XFORM-811] Inferring bus burst read of length 5120 on port 'bgmodel' (backsub_gmm_new_180110/core.cpp:204:9).
+@I [XFORM-811] Inferring bus burst write of length 5120 on port 'bgmodel' (backsub_gmm_new_180110/core.cpp:215:9).
+@I [HLS-111] Elapsed time: 79.325 seconds; current memory usage: 159 MB.
 @I [HLS-10] Starting hardware synthesis ...
 @I [HLS-10] Synthesizing 'bgsub' ...
 @W [SYN-103] Legalizing function name 'bgsub_Block__proc' to 'bgsub_Block_proc'.
@@ -37,7 +41,7 @@ Copyright (C) 2015 Xilinx Inc. All rights reserved.
 @I [HLS-10] ----------------------------------------------------------------
 @I [SCHED-11] Starting scheduling ...
 @I [SCHED-11] Finished scheduling.
-@I [HLS-111] Elapsed time: 0.139585 seconds; current memory usage: 143 MB.
+@I [HLS-111] Elapsed time: 0.551 seconds; current memory usage: 163 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Exploring micro-architecture for module 'bgsub_process' 
 @I [HLS-10] ----------------------------------------------------------------
@@ -46,7 +50,7 @@ Copyright (C) 2015 Xilinx Inc. All rights reserved.
 @I [BIND-101] Exploring resource sharing.
 @I [BIND-101] Binding ...
 @I [BIND-100] Finished micro-architecture generation.
-@I [HLS-111] Elapsed time: 0.088981 seconds; current memory usage: 145 MB.
+@I [HLS-111] Elapsed time: 0.601 seconds; current memory usage: 163 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Scheduling module 'bgsub_Block_proc' 
 @I [HLS-10] ----------------------------------------------------------------
@@ -59,6 +63,10 @@ Copyright (C) 2015 Xilinx Inc. All rights reserved.
 @I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 3.
 @I [SCHED-61] Pipelining loop 'memcpy.part2_bgmodel.bgmodel'.
 @I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 3.
+@I [SCHED-61] Pipelining loop 'memcpy..frame_in'.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 3.
+@I [SCHED-61] Pipelining loop 'memcpy.part3_bgmodel.bgmodel'.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 3.
 @I [SCHED-61] Pipelining loop 'memcpy.bgmodel.part_bgmodel.gep'.
 @I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 3.
 @I [SCHED-61] Pipelining loop 'memcpy.frame_out.'.
@@ -67,8 +75,12 @@ Copyright (C) 2015 Xilinx Inc. All rights reserved.
 @I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 3.
 @I [SCHED-61] Pipelining loop 'memcpy.frame_out.'.
 @I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 3.
+@I [SCHED-61] Pipelining loop 'memcpy.bgmodel.part3_bgmodel.gep'.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 3.
+@I [SCHED-61] Pipelining loop 'memcpy.frame_out.'.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 3.
 @I [SCHED-11] Finished scheduling.
-@I [HLS-111] Elapsed time: 0.159952 seconds; current memory usage: 146 MB.
+@I [HLS-111] Elapsed time: 0.827 seconds; current memory usage: 166 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Exploring micro-architecture for module 'bgsub_Block_proc' 
 @I [HLS-10] ----------------------------------------------------------------
@@ -77,13 +89,13 @@ Copyright (C) 2015 Xilinx Inc. All rights reserved.
 @I [BIND-101] Exploring resource sharing.
 @I [BIND-101] Binding ...
 @I [BIND-100] Finished micro-architecture generation.
-@I [HLS-111] Elapsed time: 0.098725 seconds; current memory usage: 147 MB.
+@I [HLS-111] Elapsed time: 0.754 seconds; current memory usage: 166 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Scheduling module 'bgsub' 
 @I [HLS-10] ----------------------------------------------------------------
 @I [SCHED-11] Starting scheduling ...
 @I [SCHED-11] Finished scheduling.
-@I [HLS-111] Elapsed time: 0.163334 seconds; current memory usage: 147 MB.
+@I [HLS-111] Elapsed time: 0.966 seconds; current memory usage: 166 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Exploring micro-architecture for module 'bgsub' 
 @I [HLS-10] ----------------------------------------------------------------
@@ -92,7 +104,7 @@ Copyright (C) 2015 Xilinx Inc. All rights reserved.
 @I [BIND-101] Exploring resource sharing.
 @I [BIND-101] Binding ...
 @I [BIND-100] Finished micro-architecture generation.
-@I [HLS-111] Elapsed time: 0.047065 seconds; current memory usage: 147 MB.
+@I [HLS-111] Elapsed time: 0.437 seconds; current memory usage: 166 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Generating RTL for module 'bgsub_process' 
 @I [HLS-10] ----------------------------------------------------------------
@@ -103,12 +115,12 @@ Copyright (C) 2015 Xilinx Inc. All rights reserved.
 @I [RTGEN-100] Generating core module 'bgsub_fsqrt_32ns_32ns_32_12': 1 instance(s).
 @I [RTGEN-100] Generating core module 'bgsub_sitofp_32ns_32_6': 1 instance(s).
 @I [RTGEN-100] Finished creating RTL model for 'bgsub_process'.
-@I [HLS-111] Elapsed time: 0.218194 seconds; current memory usage: 150 MB.
+@I [HLS-111] Elapsed time: 1.229 seconds; current memory usage: 169 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Generating RTL for module 'bgsub_Block_proc' 
 @I [HLS-10] ----------------------------------------------------------------
 @I [RTGEN-100] Finished creating RTL model for 'bgsub_Block_proc'.
-@I [HLS-111] Elapsed time: 0.351128 seconds; current memory usage: 157 MB.
+@I [HLS-111] Elapsed time: 1.93 seconds; current memory usage: 172 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Generating RTL for module 'bgsub' 
 @I [HLS-10] ----------------------------------------------------------------
@@ -120,7 +132,7 @@ Copyright (C) 2015 Xilinx Inc. All rights reserved.
 @I [RTGEN-500] Setting interface mode on port 'bgsub/bgmodel' to 's_axilite & ap_none'.
 @I [RTGEN-500] Setting interface mode on function 'bgsub' to 'ap_ctrl_hs'.
 @I [RTGEN-100] Finished creating RTL model for 'bgsub'.
-@I [HLS-111] Elapsed time: 0.263749 seconds; current memory usage: 161 MB.
+@I [HLS-111] Elapsed time: 1.587 seconds; current memory usage: 174 MB.
 @I [RTMG-278] Implementing memory 'bgsub_Block_proc_part_bgmodel_ram' using block RAMs.
 @I [RTMG-278] Implementing memory 'bgsub_Block_proc_part_frame_in_ram' using block RAMs.
 @I [RTMG-278] Implementing memory 'bgsub_Block_proc_part_frame_out_ram' using distributed RAMs.
@@ -128,4 +140,4 @@ Copyright (C) 2015 Xilinx Inc. All rights reserved.
 @I [WSYSC-301] Generating RTL SystemC for 'bgsub'.
 @I [WVHDL-304] Generating RTL VHDL for 'bgsub'.
 @I [WVLOG-307] Generating RTL Verilog for 'bgsub'.
-@I [HLS-112] Total elapsed time: 23.733 seconds; peak memory usage: 161 MB.
+@I [HLS-112] Total elapsed time: 91.765 seconds; peak memory usage: 174 MB.

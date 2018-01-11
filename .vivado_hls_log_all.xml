@@ -12,7 +12,7 @@
   <warningLogs>
     <logs>
       <synLog>
-        <logs message="@W [SYN-103] Legalizing function name 'bgsub_Block__proc' to 'bgsub_Block_proc'." projectName="backsub_gmm_new_180110" solutionName="solution1" date="2018-01-12T01:07:13.216+0530" type="Warning"/>
+        <logs message="@W [SYN-103] Legalizing function name 'bgsub_Block__proc' to 'bgsub_Block_proc'." projectName="backsub_gmm_new_180110" solutionName="solution1" date="2018-01-12T01:16:01.058+0530" type="Warning"/>
       </synLog>
       <simLog/>
       <mgLog/>

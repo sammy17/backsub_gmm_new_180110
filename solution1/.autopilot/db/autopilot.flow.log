@@ -1,267 +1,263 @@
-@I [HLS-0] Workspace /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1 opened at Fri Jan 12 01:06:51 +0530 2018
+@I [HLS-0] Workspace F:/maxi_latest/backsub_gmm_new_180110/solution1 opened at Fri Jan 12 01:14:42 +0530 2018
 @I [HLS-100] Command "config_clock -quiet -name default -period 10 -default=false "
 @I [SYN-201] Setting up clock 'default' with a period of 10ns.
-@I [HLS-100] Command 'config_clock' returned 0; elapsed 4e-05Total elapsed time: 0.134 sec.
+@I [HLS-100] Command 'config_clock' returned 0; elapsed 0Total elapsed time: 0.759 sec.
 @I [HLS-100] Command "open_platform DefaultPlatform "
-@I [HLS-100] Command 'open_platform' returned 0; elapsed 2.4e-05Total elapsed time: 0.135 sec.
-@I [HLS-100] Command "import_lib /opt/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/zynq/zynq "
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/common/xilinx.lib "
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/interface/xilinx_interface.lib "
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/interface/plb46.lib "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000245Total elapsed time: 0.135 sec.
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/interface/fsl.lib "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000117Total elapsed time: 0.135 sec.
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/interface/axi4.lib "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000188Total elapsed time: 0.136 sec.
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/interface/maxi.lib "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000204Total elapsed time: 0.136 sec.
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/interface/saxilite.lib "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 9e-05Total elapsed time: 0.136 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001138Total elapsed time: 0.136 sec.
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/common/dsp48.lib "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 8.8e-05Total elapsed time: 0.136 sec.
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/ip/dds_compiler.lib "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 5.9e-05Total elapsed time: 0.136 sec.
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/ip/xfft.lib "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 5.4e-05Total elapsed time: 0.137 sec.
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/ip/xfir.lib "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 4.8e-05Total elapsed time: 0.137 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.003427Total elapsed time: 0.138 sec.
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/common/xilinx_old.lib "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000564Total elapsed time: 0.140 sec.
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/common/xilinx_vivado.lib "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000532Total elapsed time: 0.141 sec.
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/common/xilinx.hlp "
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/common/target_info.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 8.6e-05Total elapsed time: 0.143 sec.
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/interface/xilinx_interface.hlp "
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/interface/maxi.hlp "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 6.5e-05Total elapsed time: 0.143 sec.
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/interface/saxilite.hlp "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 6.6e-05Total elapsed time: 0.143 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000234Total elapsed time: 0.143 sec.
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/common/dsp48.hlp "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00052Total elapsed time: 0.144 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001742Total elapsed time: 0.144 sec.
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/zynq/dsp48e1.hlp "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 6.1e-05Total elapsed time: 0.144 sec.
+@I [HLS-100] Command 'open_platform' returned 0; elapsed 0Total elapsed time: 0.760 sec.
+@I [HLS-100] Command "import_lib F:/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/zynq/zynq "
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/common/xilinx.lib "
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/interface/xilinx_interface.lib "
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/interface/plb46.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.762 sec.
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/interface/fsl.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.762 sec.
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/interface/axi4.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.763 sec.
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/interface/maxi.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 0.764 sec.
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/interface/saxilite.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.764 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.003Total elapsed time: 0.764 sec.
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/common/dsp48.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.764 sec.
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/ip/dds_compiler.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.765 sec.
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/ip/xfft.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 0.766 sec.
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/ip/xfir.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.766 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.007Total elapsed time: 0.768 sec.
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/common/xilinx_old.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 0.770 sec.
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/common/xilinx_vivado.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 0.771 sec.
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/common/xilinx.hlp "
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/common/target_info.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 0.777 sec.
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/interface/xilinx_interface.hlp "
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/interface/maxi.hlp "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 0.778 sec.
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/interface/saxilite.hlp "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.778 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 0.778 sec.
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/common/dsp48.hlp "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002Total elapsed time: 0.780 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.005Total elapsed time: 0.780 sec.
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/zynq/dsp48e1.hlp "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.781 sec.
 @I [HLS-100] Command "get_default_platform "
-@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 4e-06Total elapsed time: 0.144 sec.
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 0.781 sec.
 @I [HLS-100] Command "config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  "
-@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 1.3e-05Total elapsed time: 0.144 sec.
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 0.782 sec.
 @I [HLS-100] Command "config_chip_info -quiet -speed medium "
-@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 4e-06Total elapsed time: 0.145 sec.
-@I [HLS-100] Command 'import_lib' returned 0; elapsed 0.010878Total elapsed time: 0.146 sec.
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/zynq/zynq.gen "
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/common/virtex.gen "
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/common/xilinx.gen "
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/interface/plb46.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000852Total elapsed time: 0.147 sec.
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/interface/fsl.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000305Total elapsed time: 0.147 sec.
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/interface/axi4.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001572Total elapsed time: 0.149 sec.
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/interface/nativeAXI4.gen "
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/interface/saxilite.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002723Total elapsed time: 0.152 sec.
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/interface/maxi.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.005519Total elapsed time: 0.157 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00836Total elapsed time: 0.157 sec.
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/scripts/xilinxcoregen.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.006664Total elapsed time: 0.164 sec.
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/interface/XilEDKCoreGen.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.006423Total elapsed time: 0.170 sec.
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/ip/xfir.gen "
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/tps/tcl/tcllib1.11.1/struct/list.tcl "
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/tps/tcl/tcllib1.11.1/cmdline/cmdline.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000375Total elapsed time: 0.182 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000873Total elapsed time: 0.183 sec.
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/tps/tcl/tcllib1.11.1/math/bignum.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000304Total elapsed time: 0.188 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.021501Total elapsed time: 0.192 sec.
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/ip/dds_compiler.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001763Total elapsed time: 0.194 sec.
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/ip/xfft.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.05909Total elapsed time: 0.253 sec.
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/ip/util.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 8.8e-05Total elapsed time: 0.253 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.107151Total elapsed time: 0.253 sec.
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/common/dsp48.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 6.4e-05Total elapsed time: 0.254 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.108256Total elapsed time: 0.254 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.108334Total elapsed time: 0.254 sec.
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 0.782 sec.
+@I [HLS-100] Command 'import_lib' returned 0; elapsed 0.023Total elapsed time: 0.783 sec.
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/zynq/zynq.gen "
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/common/virtex.gen "
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/common/xilinx.gen "
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/interface/plb46.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002Total elapsed time: 0.788 sec.
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/interface/fsl.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 0.789 sec.
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/interface/axi4.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.003Total elapsed time: 0.792 sec.
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/interface/nativeAXI4.gen "
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/interface/saxilite.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.005Total elapsed time: 0.797 sec.
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/interface/maxi.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.011Total elapsed time: 0.808 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.016Total elapsed time: 0.808 sec.
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/scripts/xilinxcoregen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.013Total elapsed time: 0.821 sec.
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/interface/XilEDKCoreGen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.012Total elapsed time: 0.833 sec.
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/ip/dds_compiler.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.006Total elapsed time: 0.839 sec.
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/ip/util.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 0.839 sec.
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/ip/xfft.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.179Total elapsed time: 1.19 sec.
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/ip/xfir.gen "
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/tps/tcl/tcllib1.11.1/struct/list.tcl "
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/tps/tcl/tcllib1.11.1/cmdline/cmdline.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002Total elapsed time: 1.110 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.067Total elapsed time: 1.111 sec.
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/tps/tcl/tcllib1.11.1/math/bignum.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002Total elapsed time: 1.129 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.12Total elapsed time: 1.138 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.354Total elapsed time: 1.138 sec.
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/common/dsp48.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.140 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.357Total elapsed time: 1.141 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.357Total elapsed time: 1.141 sec.
 @I [HLS-100] Command "open_platform DefaultPlatform "
-@I [HLS-100] Command 'open_platform' returned 0; elapsed 5e-06Total elapsed time: 0.254 sec.
-@I [HLS-100] Command "import_lib /opt/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/zynq/zynq_fpv6 "
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/common/xilinx_fpv7.lib "
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/common/xilinx_hp.lib "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000375Total elapsed time: 0.255 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001884Total elapsed time: 0.256 sec.
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/common/xilinx_fpv.hlp "
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/common/xilinx.hlp "
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/common/target_info.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 8.6e-05Total elapsed time: 0.259 sec.
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/interface/xilinx_interface.hlp "
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/interface/maxi.hlp "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 4.7e-05Total elapsed time: 0.260 sec.
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/interface/saxilite.hlp "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 6.2e-05Total elapsed time: 0.260 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000172Total elapsed time: 0.260 sec.
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/common/dsp48.hlp "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000305Total elapsed time: 0.260 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001181Total elapsed time: 0.260 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00147Total elapsed time: 0.261 sec.
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/zynq/zynq_hp.hlp "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000469Total elapsed time: 0.261 sec.
-@I [HLS-100] Command 'import_lib' returned 0; elapsed 0.009405Total elapsed time: 0.264 sec.
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/zynq/zynq_fpv6.gen "
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/common/xilinx_fpv6.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000822Total elapsed time: 0.265 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000892Total elapsed time: 0.265 sec.
+@I [HLS-100] Command 'open_platform' returned 0; elapsed 0Total elapsed time: 1.141 sec.
+@I [HLS-100] Command "import_lib F:/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/zynq/zynq_fpv6 "
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/common/xilinx_fpv7.lib "
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/common/xilinx_hp.lib "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 1.142 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.003Total elapsed time: 1.144 sec.
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/common/xilinx_fpv.hlp "
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/common/xilinx.hlp "
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/common/target_info.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.038Total elapsed time: 1.191 sec.
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/interface/xilinx_interface.hlp "
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/interface/maxi.hlp "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 1.191 sec.
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/interface/saxilite.hlp "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 1.192 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 1.192 sec.
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/common/dsp48.hlp "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 1.193 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.041Total elapsed time: 1.193 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.043Total elapsed time: 1.194 sec.
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/zynq/zynq_hp.hlp "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 1.195 sec.
+@I [HLS-100] Command 'import_lib' returned 0; elapsed 0.063Total elapsed time: 1.203 sec.
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/zynq/zynq_fpv6.gen "
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/common/xilinx_fpv6.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.005Total elapsed time: 1.208 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.005Total elapsed time: 1.208 sec.
 @I [HLS-100] Command "set_part xc7z020clg484-1 "
 @I [HLS-100] Command "add_library xilinx/zynq/zynq:xc7z020:clg484:-1 "
 @I [HLS-100] Command "get_default_platform "
-@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 4e-06Total elapsed time: 0.267 sec.
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 1.218 sec.
 @I [HLS-100] Command "license_isbetapart xc7z020 "
-@I [HLS-100] Command 'license_isbetapart' returned 1; elapsed 0.004138Total elapsed time: 0.271 sec.
+@I [HLS-100] Command 'license_isbetapart' returned 1; elapsed 0.04Total elapsed time: 1.260 sec.
 @I [HLS-100] Command "get_default_platform "
-@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 6e-06Total elapsed time: 0.272 sec.
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 1.274 sec.
 @I [HLS-100] Command "config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  "
-@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 1e-05Total elapsed time: 0.272 sec.
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 1.275 sec.
 @I [HLS-100] Command "config_chip_info -quiet -speed slow "
-@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 2e-06Total elapsed time: 0.272 sec.
-@I [HLS-100] Command 'add_library' returned 0; elapsed 0.005777Total elapsed time: 0.272 sec.
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 1.275 sec.
+@I [HLS-100] Command 'add_library' returned 0; elapsed 0.082Total elapsed time: 1.299 sec.
 @I [HLS-100] Command "add_library xilinx/zynq/zynq_fpv6 "
 @I [HLS-100] Command "get_default_platform "
-@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 2e-06Total elapsed time: 0.273 sec.
-@I [HLS-100] Command 'add_library' returned 0; elapsed 0.000926Total elapsed time: 0.273 sec.
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 1.301 sec.
+@I [HLS-100] Command 'add_library' returned 0; elapsed 0.007Total elapsed time: 1.307 sec.
 @I [HLS-10] Setting target device to 'xc7z020clg484-1'
-@I [HLS-100] Command 'set_part' returned 0; elapsed 0.008485Total elapsed time: 0.273 sec.
+@I [HLS-100] Command 'set_part' returned 0; elapsed 0.097Total elapsed time: 1.307 sec.
 @I [HLS-100] Command "get_default_platform "
-@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 2e-06Total elapsed time: 0.273 sec.
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 1.308 sec.
 @I [HLS-100] Command "config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  "
-@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 7e-06Total elapsed time: 0.273 sec.
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 1.308 sec.
 @I [HLS-100] Command "config_chip_info -quiet -speed slow "
-@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 2e-06Total elapsed time: 0.274 sec.
-@I [HLS-100] Command 'open_solution' returned 0; elapsed 0.142629Total elapsed time: 0.274 sec.
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 1.308 sec.
+@I [HLS-100] Command 'open_solution' returned 0; elapsed 0.712Total elapsed time: 1.312 sec.
 @I [HLS-100] Command "set_part xc7z020clg484-1 "
 @I [HLS-100] Command "add_library xilinx/zynq/zynq:xc7z020:clg484:-1 "
 @I [HLS-100] Command "get_default_platform "
-@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 3e-06Total elapsed time: 0.275 sec.
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 1.342 sec.
 @I [HLS-100] Command "license_isbetapart xc7z020 "
-@I [HLS-100] Command 'license_isbetapart' returned 1; elapsed 3.1e-05Total elapsed time: 0.275 sec.
+@I [HLS-100] Command 'license_isbetapart' returned 1; elapsed 0Total elapsed time: 1.342 sec.
 @I [HLS-100] Command "get_default_platform "
-@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 3e-06Total elapsed time: 0.276 sec.
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 1.344 sec.
 @I [HLS-100] Command "config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  "
-@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 1e-05Total elapsed time: 0.276 sec.
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 1.344 sec.
 @I [HLS-100] Command "config_chip_info -quiet -speed slow "
-@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 3e-06Total elapsed time: 0.276 sec.
-@I [HLS-100] Command 'add_library' returned 0; elapsed 0.001553Total elapsed time: 0.276 sec.
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 1.344 sec.
+@I [HLS-100] Command 'add_library' returned 0; elapsed 0.005Total elapsed time: 1.346 sec.
 @I [HLS-100] Command "add_library xilinx/zynq/zynq_fpv6 "
 @I [HLS-100] Command "get_default_platform "
-@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 3e-06Total elapsed time: 0.277 sec.
-@I [HLS-100] Command 'add_library' returned 0; elapsed 0.000969Total elapsed time: 0.277 sec.
-@I [HLS-100] Command 'set_part' returned 0; elapsed 0.003415Total elapsed time: 0.277 sec.
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 1.347 sec.
+@I [HLS-100] Command 'add_library' returned 0; elapsed 0.003Total elapsed time: 1.349 sec.
+@I [HLS-100] Command 'set_part' returned 0; elapsed 0.037Total elapsed time: 1.349 sec.
 @I [HLS-100] Command "create_clock -period 10 -name default "
-@I [HLS-100] Command 'create_clock' returned 0; elapsed 0.000618Total elapsed time: 0.278 sec.
+@I [HLS-100] Command 'create_clock' returned 0; elapsed 0.003Total elapsed time: 1.352 sec.
 @I [HLS-100] Command "csynth_design "
 @I [HLS-100] Command "elaborate -effort=medium -skip_syncheck=0 -keep_printf=0 -lm=0 -skip_cdt=0 -skip_transform=0 -ng=0 -g=0 -opt_fp=0 "
 @I [HLS-10] Analyzing design file 'backsub_gmm_new_180110/core.cpp' ... 
 @0 [HLS-0] Analyzing design file 'backsub_gmm_new_180110/core.cpp' ... 
 @I [HLS-0] Compiling one TU...
 @I [HLS-0] 
-Checking before pre-process: exec clang -fno-limit-debug-info -gcc-toolchain "/opt/Xilinx/Vivado_HLS/2015.4/lnx64/tools/gcc" -hls    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit   -I "/opt/Xilinx/Vivado_HLS/2015.4/lnx64/tools/systemc/include" -I "/opt/Xilinx/Vivado_HLS/2015.4/include" -I "/opt/Xilinx/Vivado_HLS/2015.4/include/ap_sysc" -fexceptions -I "/opt/Xilinx/Vivado_HLS/2015.4/common/technology/autopilot" -include etc/autopilot_ssdm_op.h "backsub_gmm_new_180110/core.cpp"  -o "/home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/core.pp.00.o"
+Checking before pre-process: exec clang -fno-limit-debug-info -gcc-toolchain "F:/Xilinx/Vivado_HLS/2015.4/msys" -hls    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__cdecl=   -I "F:/Xilinx/Vivado_HLS/2015.4/win64/tools/systemc/include" -I "F:/Xilinx/Vivado_HLS/2015.4/include" -I "F:/Xilinx/Vivado_HLS/2015.4/include/ap_sysc" -fexceptions -I "F:/Xilinx/Vivado_HLS/2015.4/common/technology/autopilot" -include etc/autopilot_ssdm_op.h "backsub_gmm_new_180110/core.cpp"  -o "F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/core.pp.00.o"
 
-@I [HLS-100] Command "is_encrypted /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/core.pp.00.o "
-@I [HLS-100] Command 'is_encrypted' returned 0; elapsed 6.5e-05Total elapsed time: 7.837 sec.
-@I [HLS-0] Syntax Checker time: 7 seconds per iteration
+@I [HLS-100] Command "is_encrypted F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/core.pp.00.o "
+@I [HLS-100] Command 'is_encrypted' returned 0; elapsed 0Total elapsed time: 22.686 sec.
+@I [HLS-0] Syntax Checker time: 21 seconds per iteration
 @I [HLS-0] 
-Source preprocessing: exec clang -fno-limit-debug-info -gcc-toolchain "/opt/Xilinx/Vivado_HLS/2015.4/lnx64/tools/gcc" -hls -fno-exceptions  -D__llvm__  -CC -E "backsub_gmm_new_180110/core.cpp"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/opt/Xilinx/Vivado_HLS/2015.4/common/technology/autopilot" -I "/opt/Xilinx/Vivado_HLS/2015.4/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h  -o "/home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/core.pp.0.cpp"
+Source preprocessing: exec clang -fno-limit-debug-info -gcc-toolchain "F:/Xilinx/Vivado_HLS/2015.4/msys" -hls -fno-exceptions  -D__llvm__  -CC -E "backsub_gmm_new_180110/core.cpp"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "F:/Xilinx/Vivado_HLS/2015.4/common/technology/autopilot" -I "F:/Xilinx/Vivado_HLS/2015.4/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h  -o "F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/core.pp.0.cpp"
 
-@I [HLS-0] GCC PP time: 0 seconds per iteration
+@I [HLS-0] GCC PP time: 1 seconds per iteration
 @I [HLS-100] Command "list_core -type functional_unit "
-@I [HLS-100] Command 'list_core' returned 0; elapsed 6.6e-05Total elapsed time: 7.922 sec.
-@I [HLS-0] Marker-Pragma convertor: /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/core.pp.0.cpp /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/core.pp.0.cpp.ap-line.cpp /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/core.pp.0.cpp.ap-line.cpp.CXX 1
+@I [HLS-100] Command 'list_core' returned 0; elapsed 0Total elapsed time: 23.992 sec.
+@I [HLS-0] Marker-Pragma convertor: F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/core.pp.0.cpp F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/core.pp.0.cpp.ap-line.cpp F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/core.pp.0.cpp.ap-line.cpp.CXX 1
 @I [HLS-0] 
-Source processor: exec /opt/Xilinx/Vivado_HLS/2015.4/tps/lnx64/jre/bin/java -Xmx512m -classpath   "/opt/Xilinx/Vivado_HLS/2015.4/lib/classes/autopilot.sourceprocessor.jar:/opt/Xilinx/Vivado_HLS/2015.4/lib/classes/org.eclipse.cdt.core_5.3.0.xilinx_patch.jar:/opt/Xilinx/Vivado_HLS/2015.4/lib/classes/org.eclipse.core.runtime_3.7.0.v20110110.jar:/opt/Xilinx/Vivado_HLS/2015.4/lib/classes/org.eclipse.equinox.common_3.6.0.v20110523.jar:/opt/Xilinx/Vivado_HLS/2015.4/lib/classes/com.ibm.icu_4.4.2.v20110208.jar:/opt/Xilinx/Vivado_HLS/2015.4/lib/classes/jargs.jar:/opt/Xilinx/Vivado_HLS/2015.4/lnx64/tools/eclipse/plugins/org.eclipse.emf.common_2.10.1.v20150123-0348.jar:/opt/Xilinx/Vivado_HLS/2015.4/lnx64/tools/eclipse/plugins/org.eclipse.emf.ecore_2.10.2.v20150123-0348.jar:/opt/Xilinx/Vivado_HLS/2015.4/lnx64/tools/eclipse/plugins/org.eclipse.emf.ecore.xmi_2.10.2.v20150123-0348.jar:/opt/Xilinx/Vivado_HLS/2015.4/lnx64/tools/eclipse/plugins/com.autoesl.autopilot.ui.directiveFileModel_1.0.0.jar:/opt/Xilinx/Vivado_HLS/2015.4/lnx64/tools/eclipse/plugins/com.autoesl.autopilot.ui.common_1.0.0.jar"  autopilot.sourceprocessor.CParser  "/home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/core.pp.0.cpp.ap-line.cpp"  -m "bgsub" -o "/home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/core.pp.0.cpp.ap-cdt.cpp" --pp --directive /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/solution1.directive --source /home/fyp-zc702/FYP/backsub_gmm_new_180110/core.cpp --error /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db --funcunit "AddSub AddSub_DSP AddSubnS DAddSub_fulldsp DAddSub_nodsp DDiv DExp_fulldsp DExp_meddsp DExp_nodsp DLog_fulldsp DLog_meddsp DLog_nodsp DMul_fulldsp DMul_maxdsp DMul_meddsp DMul_nodsp DRSqrt DRecip DSqrt DivnS FAddSub_fulldsp FAddSub_nodsp FDiv FExp_fulldsp FExp_meddsp FExp_nodsp FLog_fulldsp FLog_meddsp FLog_nodsp FMul_fulldsp FMul_maxdsp FMul_meddsp FMul_nodsp FRSqrt_fulldsp FRSqrt_nodsp FRecip_fulldsp FRecip_nodsp FSqrt HAddSub_nodsp HDiv HMul_fulldsp HMul_maxdsp HMul_nodsp HSqrt Mul Mul2S Mul3S Mul4S Mul5S Mul6S Mul_LUT MulnS MuxnS" --ve --vetcl /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db --ca --es --gf --df --pd --p2d /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db --sd --scff /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/.systemc_flag --ad
+Source processor: exec F:/Xilinx/Vivado_HLS/2015.4/tps/win64/jre/bin/java -Xmx512m -classpath   "F:/Xilinx/Vivado_HLS/2015.4/lib/classes/autopilot.sourceprocessor.jar;F:/Xilinx/Vivado_HLS/2015.4/lib/classes/org.eclipse.cdt.core_5.3.0.xilinx_patch.jar;F:/Xilinx/Vivado_HLS/2015.4/lib/classes/org.eclipse.core.runtime_3.7.0.v20110110.jar;F:/Xilinx/Vivado_HLS/2015.4/lib/classes/org.eclipse.equinox.common_3.6.0.v20110523.jar;F:/Xilinx/Vivado_HLS/2015.4/lib/classes/com.ibm.icu_4.4.2.v20110208.jar;F:/Xilinx/Vivado_HLS/2015.4/lib/classes/jargs.jar;F:/Xilinx/Vivado_HLS/2015.4/win64/tools/eclipse/plugins/org.eclipse.emf.common_2.10.1.v20150123-0348.jar;F:/Xilinx/Vivado_HLS/2015.4/win64/tools/eclipse/plugins/org.eclipse.emf.ecore_2.10.2.v20150123-0348.jar;F:/Xilinx/Vivado_HLS/2015.4/win64/tools/eclipse/plugins/org.eclipse.emf.ecore.xmi_2.10.2.v20150123-0348.jar;F:/Xilinx/Vivado_HLS/2015.4/win64/tools/eclipse/plugins/com.autoesl.autopilot.ui.directiveFileModel_1.0.0.jar;F:/Xilinx/Vivado_HLS/2015.4/win64/tools/eclipse/plugins/com.autoesl.autopilot.ui.common_1.0.0.jar"  autopilot.sourceprocessor.CParser  "F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/core.pp.0.cpp.ap-line.cpp"  -m "bgsub" -o "F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/core.pp.0.cpp.ap-cdt.cpp" --pp --directive F:/maxi_latest/backsub_gmm_new_180110/solution1/solution1.directive --source F:/maxi_latest/backsub_gmm_new_180110/core.cpp --error F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db --funcunit "AddSub AddSub_DSP AddSubnS DAddSub_fulldsp DAddSub_nodsp DDiv DExp_fulldsp DExp_meddsp DExp_nodsp DLog_fulldsp DLog_meddsp DLog_nodsp DMul_fulldsp DMul_maxdsp DMul_meddsp DMul_nodsp DRSqrt DRecip DSqrt DivnS FAddSub_fulldsp FAddSub_nodsp FDiv FExp_fulldsp FExp_meddsp FExp_nodsp FLog_fulldsp FLog_meddsp FLog_nodsp FMul_fulldsp FMul_maxdsp FMul_meddsp FMul_nodsp FRSqrt_fulldsp FRSqrt_nodsp FRecip_fulldsp FRecip_nodsp FSqrt HAddSub_nodsp HDiv HMul_fulldsp HMul_maxdsp HMul_nodsp HSqrt Mul Mul2S Mul3S Mul4S Mul5S Mul6S Mul_LUT MulnS MuxnS" --ve --vetcl F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db --ca --es --gf --df --pd --p2d F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db --sd --scff F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/.systemc_flag --ad
 
-@I [HLS-0] Error:Syntax error in source:for (__decltype(__n + 0) __niter = __n;
-Error:Missing ; in source:t
-Error:Syntax error in source:)
- *__first = __value;
-Error:Syntax error in source:for (__decltype(__n + 0) __niter = __n;
-Error:Missing ; in source:t
-Error:Syntax error in source:)
- *__first = __tmp;
-@I [HLS-0] Marker-Pragma convertor: /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/core.pp.0.cpp.ap-cdt.cpp /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/core.pragma.0.cpp /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/core.pragma.0.cpp.ap-line.CXX 0
-@I [HLS-100] Command "source /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/pragma.status.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 4.6e-05Total elapsed time: 14.284 sec.
-@I [HLS-0] CDT processor time: 6 seconds per iteration
-@I [HLS-0] Pragma handling time: 0 seconds per iteration
+@I [HLS-0] Marker-Pragma convertor: F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/core.pp.0.cpp.ap-cdt.cpp F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/core.pragma.0.cpp F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/core.pragma.0.cpp.ap-line.CXX 0
+@I [HLS-100] Command "source F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/pragma.status.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 54.343 sec.
+@I [HLS-0] CDT processor time: 30 seconds per iteration
+@I [HLS-0] Pragma handling time: 1 seconds per iteration
 @I [HLS-0] 
-Source preprocessing: exec clang -fno-limit-debug-info -gcc-toolchain "/opt/Xilinx/Vivado_HLS/2015.4/lnx64/tools/gcc" -hls -fno-exceptions  -D__llvm__  -CC -E "/home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/core.pragma.1.cpp"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/opt/Xilinx/Vivado_HLS/2015.4/common/technology/autopilot" -I "/opt/Xilinx/Vivado_HLS/2015.4/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h  -o "/home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/core.pragma.2.cpp"
+Source preprocessing: exec clang -fno-limit-debug-info -gcc-toolchain "F:/Xilinx/Vivado_HLS/2015.4/msys" -hls -fno-exceptions  -D__llvm__  -CC -E "F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/core.pragma.1.cpp"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "F:/Xilinx/Vivado_HLS/2015.4/common/technology/autopilot" -I "F:/Xilinx/Vivado_HLS/2015.4/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h  -o "F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/core.pragma.2.cpp"
 
-@I [HLS-0] exec clang -fno-limit-debug-info -gcc-toolchain /opt/Xilinx/Vivado_HLS/2015.4/lnx64/tools/gcc -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions  -D__llvm__  -w  "/home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/core.pragma.2.cpp"    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/opt/Xilinx/Vivado_HLS/2015.4/common/technology/autopilot" -I "/opt/Xilinx/Vivado_HLS/2015.4/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -g -o "/home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/core.g.bc"
-@I [HLS-100] Command "source /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/ve_warning.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 4.7e-05Total elapsed time: 17.900 sec.
+@I [HLS-0] exec clang -fno-limit-debug-info -gcc-toolchain F:/Xilinx/Vivado_HLS/2015.4/msys -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions  -D__llvm__  -w  "F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/core.pragma.2.cpp"    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "F:/Xilinx/Vivado_HLS/2015.4/common/technology/autopilot" -I "F:/Xilinx/Vivado_HLS/2015.4/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -g -o "F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/core.g.bc"
+@I [HLS-100] Command "source F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/ve_warning.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 67.607 sec.
 @I [HLS-10] Validating synthesis directives ...
 @0 [HLS-0] Validating synthesis directives ...
-@I [HLS-100] Command "source /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/pragma.status.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 4.1e-05Total elapsed time: 17.900 sec.
+@I [HLS-100] Command "source F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/pragma.status.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.048Total elapsed time: 67.657 sec.
 @I [HLS-0] Linking all ...
-@I [HLS-0] exec llvm-ld  "/home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/core.bc"  -disable-opt  -L/opt/Xilinx/Vivado_HLS/2015.4/lnx64/lib -lm_basic -o "/home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/a.o.pre"
-@I [HLS-0] Link time: 0 seconds per iteration
+@I [HLS-0] exec llvm-ld  "F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/core.bc"  -disable-opt  -LF:/Xilinx/Vivado_HLS/2015.4/win64/lib -lm_basic -o "F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/a.o.pre"
+@I [HLS-0] Link time: 1 seconds per iteration
 @I [HLS-0] Linking all ...
-@I [HLS-0] exec llvm-ld  "/home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/core.g.bc"  -disable-opt  -L/opt/Xilinx/Vivado_HLS/2015.4/lnx64/lib -lm_basic -o "/home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/a.g.pre"
-@I [HLS-0] Link time: 0 seconds per iteration
+@I [HLS-0] exec llvm-ld  "F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/core.g.bc"  -disable-opt  -LF:/Xilinx/Vivado_HLS/2015.4/win64/lib -lm_basic -o "F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/a.g.pre"
+@I [HLS-0] Link time: 1 seconds per iteration
 @I [HLS-100] Command "opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 -keep_printf=0 "
 @I [HLS-100] Command "cleanup_all_models "
-@I [HLS-100] Command 'cleanup_all_models' returned 0; elapsed 1e-05Total elapsed time: 18.634 sec.
+@I [HLS-100] Command 'cleanup_all_models' returned 0; elapsed 0Total elapsed time: 71.340 sec.
 @I [HLS-10] Starting code transformations ...
 @0 [HLS-0] Starting code transformations ...
-@I [HLS-0] std xform: transform -hls -share-std-xform -always-inline -promote-dbg-pointer  -interface-preproc  -scalarrepl -mem2reg -keep-read-access -instcombine -dce  -promote-dbg-pointer  -bitop-raise  -indvars -loop-simplify -xunroll  -constprop -instcombine -simplifycfg -indvars  -simplifycfg -dce -globaldce  -basicaa  -simplifycfg -mem2reg -globalopt  -global-constprop -deadargelim -instcombine -simplifycfg  -prune-eh -simplifycfg  -scalarrepl -instcombine -reassociate -licm  -simplifycfg -loop-simplify -indvars -instcombine  -simplifycfg -mem2reg -loop-simplify -indvars -instcombine  -gvn -gvn -instcombine -adce  -break-crit-edges  -simplifycfg -loop-delete  -global-array-opt -dce -dse -adce  -find-syn-modules -top bgsub  -deadargelim  -mem2reg -instcombine -dce  -presyn-prepare -auto-rom-infer  -interface-preproc  -syn-check -check-rec-only  -find-region -simplifycfg -func-extr -function-inline  -globaldce -mem2reg -instcombine -dce   -gvn -globaldce -adce -adse  -constprop -instcombine -bit-constprop  -instcombine -dce -simplifycfg -bitop-raise  -simplifycfg -dce -loop-delete -reassociate  -globalopt -global-privatize -mem2reg -dce  -global-constprop -pointer-simplify -constprop -dce  -func-inst -deadargelim  -promote-dbg-pointer  -norm-name   /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/a.g.0.bc -o /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/a.g.1.bc -f  -phase std-opt
-@I [XFORM-603] Inlining function 'std::max<float>' into 'process' (backsub_gmm_new_180110/core.cpp:57).
-@I [XFORM-603] Inlining function 'std::min<int>' into 'process' (backsub_gmm_new_180110/core.cpp:76).
-@I [HLS-0] Std xform time: 0 seconds per iteration
-@I [HLS-100] Command "is_encrypted /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/a.g.1.bc "
-@I [HLS-100] Command 'is_encrypted' returned 0; elapsed 0.000106Total elapsed time: 19.579 sec.
+@I [HLS-0] std xform: transform -hls -share-std-xform -always-inline -promote-dbg-pointer  -interface-preproc  -scalarrepl -mem2reg -keep-read-access -instcombine -dce  -promote-dbg-pointer  -bitop-raise  -indvars -loop-simplify -xunroll  -constprop -instcombine -simplifycfg -indvars  -simplifycfg -dce -globaldce  -basicaa  -simplifycfg -mem2reg -globalopt  -global-constprop -deadargelim -instcombine -simplifycfg  -prune-eh -simplifycfg  -scalarrepl -instcombine -reassociate -licm  -simplifycfg -loop-simplify -indvars -instcombine  -simplifycfg -mem2reg -loop-simplify -indvars -instcombine  -gvn -gvn -instcombine -adce  -break-crit-edges  -simplifycfg -loop-delete  -global-array-opt -dce -dse -adce  -find-syn-modules -top bgsub  -deadargelim  -mem2reg -instcombine -dce  -presyn-prepare -auto-rom-infer  -interface-preproc  -syn-check -check-rec-only  -find-region -simplifycfg -func-extr -function-inline  -globaldce -mem2reg -instcombine -dce   -gvn -globaldce -adce -adse  -constprop -instcombine -bit-constprop  -instcombine -dce -simplifycfg -bitop-raise  -simplifycfg -dce -loop-delete -reassociate  -globalopt -global-privatize -mem2reg -dce  -global-constprop -pointer-simplify -constprop -dce  -func-inst -deadargelim  -promote-dbg-pointer  -norm-name   F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/a.g.0.bc -o F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/a.g.1.bc -f  -phase std-opt
+@I [XFORM-603] Inlining function 'std::max<float>' into 'process' (backsub_gmm_new_180110/core.cpp:55).
+@I [XFORM-603] Inlining function 'std::min<int>' into 'process' (backsub_gmm_new_180110/core.cpp:74).
+@I [HLS-0] Std xform time: 1 seconds per iteration
+@I [HLS-100] Command "is_encrypted F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/a.g.1.bc "
+@I [HLS-100] Command 'is_encrypted' returned 0; elapsed 0Total elapsed time: 74.575 sec.
 @I [HLS-10] Checking synthesizability ...
 @0 [HLS-0] Checking synthesizability ...
-@I [HLS-0] syn check 1/2: transform -hls -syn-check -check-rec-only -disaggr -scalarrepl -norm-name -dce  -mem2reg -instcombine  -function-uniquify -directive-preproc -mem2reg -dse -dce -auto-rom-infer -dce  -array-normalize -instcombine -dce  -array-seg-normalize -instcombine -dce  -array-flatten -instcombine -dce  -array-burst -dce  -deadargelim -promote-global-argument  -function-inline -globaldce -dce  -doublePtrSimplify -doublePtrElim -dce  -doublePtrSimplify -promote-dbg-pointer  -dce -scalarrepl -dse -adse -instcombine  -ptrLegalization  -simplifycfg -dce -instcombine  -pointer-simplify -ptrArgReplace -dce -instcombine   -disaggr -scalarrepl -norm-name -dce  -mem2reg -instcombine -ptrLegalization   -simplifycfg -deadargelim  -instcombine -dce -inst-simplify  -function-uniquify -directive-preproc -mem2reg -dse -dce  -globaldce    /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/a.g.1.bc -o /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/a.g.2.prechk.bc -f
-@I [XFORM-602] Inlining function 'std::sqrt' into 'process' (backsub_gmm_new_180110/core.cpp:59) automatically.
-@I [XFORM-602] Inlining function 'std::swap<float>' into 'process' (backsub_gmm_new_180110/core.cpp:66) automatically.
+@I [HLS-0] syn check 1/2: transform -hls -syn-check -check-rec-only -disaggr -scalarrepl -norm-name -dce  -mem2reg -instcombine  -function-uniquify -directive-preproc -mem2reg -dse -dce -auto-rom-infer -dce  -array-normalize -instcombine -dce  -array-seg-normalize -instcombine -dce  -array-flatten -instcombine -dce  -array-burst -dce  -deadargelim -promote-global-argument  -function-inline -globaldce -dce  -doublePtrSimplify -doublePtrElim -dce  -doublePtrSimplify -promote-dbg-pointer  -dce -scalarrepl -dse -adse -instcombine  -ptrLegalization  -simplifycfg -dce -instcombine  -pointer-simplify -ptrArgReplace -dce -instcombine   -disaggr -scalarrepl -norm-name -dce  -mem2reg -instcombine -ptrLegalization   -simplifycfg -deadargelim  -instcombine -dce -inst-simplify  -function-uniquify -directive-preproc -mem2reg -dse -dce  -globaldce    F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/a.g.1.bc -o F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/a.g.2.prechk.bc -f
+@I [XFORM-602] Inlining function 'std::sqrt' into 'process' (backsub_gmm_new_180110/core.cpp:57) automatically.
+@I [XFORM-602] Inlining function 'std::swap<float>' into 'process' (backsub_gmm_new_180110/core.cpp:64) automatically.
 @I [HLS-0] Syn check 1/2 time: 0 seconds per iteration
-@I [HLS-0] syn check 2/2: transform -syn-check   /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/a.g.2.prechk.bc -o /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/a.g.2.bc -f  -phase syn-check
+@I [HLS-0] syn check 2/2: transform -syn-check   F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/a.g.2.prechk.bc -o F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/a.g.2.bc -f  -phase syn-check
 @I [HLS-0] Syn check 2/2 time: 0 seconds per iteration
 @I [HLS-0] Compiler optimizing ...
-@I [HLS-0] Share syncheck's 1.bc for syn flow: copy /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/a.g.1.bc to /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/a.o.1.bc
-@I [HLS-0] presyn 1: transform -hls -tmp /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db -type-info  -function-uniquify -directive-preproc -mem2reg -dse -dce  -disaggr -scalarrepl -norm-name -deadargelim  -mem2reg -instcombine -dce -auto-rom-infer -dce -function-uniquify  -resource-proc  -clib-intrinsic-prepare -dce  -func-buffer -dce -array-normalize  -func-legal -instcombine -gvn -constprop -dce   -ptrArgReplace -mem2reg -instcombine -dce  -array-seg-normalize -deadargelim  -instcombine -dce  -pointer-simplify -dce  -port-alignment -dce  -interface-preproc  -data-pack -instcombine -dce   -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn  -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce  -loop-simplify -indvars -instcombine  -gvn -loop-simplify -mem2reg -dce -simplifycfg  -find-region -instcombine  -auto-loop-pipeline  -inst-simplify  -interface-preproc  -indvars -auto-loop-unroll -loop-simplify -loop-bound -xunroll  -constprop -instcombine -simplifycfg -indvars  -simplifycfg -dce -globaldce  -attach-range  -gvn -inst-simplify  -constprop -simplifycfg -dce  -pointer-simplify -dce  -globalopt -constprop -dce  -array-promote -constprop -instcombine -dce  -ptrArgReplace -mem2reg  -instcombine -simplifycfg -dce  -auto-par -instcombine -dce  -array-transform-check  -array-reshape -instcombine -simplifycfg -dce  -ptrArgReplace -deadargelim -mem2reg  -instcombine -simplifycfg -dce   -duplicate-dataflow-processes -globaldce  -array-partition -instcombine -simplifycfg -dce  -ptrArgReplace -global-constprop -deadargelim -mem2reg  -func-legal -instcombine -dce -global-constprop -deadargelim -mem2reg  -instcombine -simplifycfg -dce   -globalopt -constprop -dce  -array-promote -constprop -instcombine -dce  -ptrArgReplace -mem2reg  -instcombine -simplifycfg -dce   -mem-intrinsic-preproc -dce  -global-privatize  -mem2reg -globaldce  -promote-global-argument  -ptrArgReplace -mem2reg -instcombine -dce  -globalopt -mergereturn -simplify-global-access -mem2reg -dce  -pointer-simplify -dce  -functionattrs  -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn  -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce  -inst-simplify -dce -norm-name  -function-inline -globaldce  -func-inst -constprop -instcombine -simplifycfg -dce  -func-legal -dce   -loop-bound  -arraycheck -bitwidthmin -on-by-dataflow  -loop-delete -instcombine -simplifycfg  -globaldce -dce -gvn -deadargelim -dce -loop-simplify -clean-region -simplifycfg -propagate-stable-arguments  -loop-stream -instcombine -simplifycfg -dce -globaldce  -stream-intrinsic-preproc -dce  -check-ap-stream -loop-simplify -eliminate-keepreads  -extract-dataflow-in-loop -loop-simplify -dce -gvn -deadargelim  -check-dataflow-syntax  -legalize-stream-variable -legalize-global -legalize-global-1  -extract-subproc -dce -dead-channel-elimination  -canonicalize-gep -globaldce -dce -gvn -deadargelim  -scalar-propagation -deadargelim -globaldce -mem2reg  -check-dataflow-channels -function-stream -dce -globaldce  -prop-fifo-spec -internal-stream-gen  -canonicalize-gep -globaldce -dce -gvn -deadargelim   -mergereturn -indvars -loop-simplify  -array-stream -instcombine -simplifycfg -dce  -bundle-memfifo-ops -deadargelim    -function-uniquify -directive-preproc -mem2reg -dse -dce  -group-axi-access    -licm -simplifycfg -dce -loop-delete  -norm-name  /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/a.o.1.bc -o /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/a.o.1.tmp.bc -f
-@I [XFORM-602] Inlining function 'std::sqrt' into 'process' (backsub_gmm_new_180110/core.cpp:59) automatically.
-@I [XFORM-602] Inlining function 'std::swap<float>' into 'process' (backsub_gmm_new_180110/core.cpp:66) automatically.
-@I [XFORM-712] Applying dataflow to function 'bgsub' (backsub_gmm_new_180110/core.cpp:148), detected/extracted 1 process function(s):
+@I [HLS-0] Share syncheck's 1.bc for syn flow: copy F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/a.g.1.bc to F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/a.o.1.bc
+@I [HLS-0] presyn 1: transform -hls -tmp F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db -type-info  -function-uniquify -directive-preproc -mem2reg -dse -dce  -disaggr -scalarrepl -norm-name -deadargelim  -mem2reg -instcombine -dce -auto-rom-infer -dce -function-uniquify  -resource-proc  -clib-intrinsic-prepare -dce  -func-buffer -dce -array-normalize  -func-legal -instcombine -gvn -constprop -dce   -ptrArgReplace -mem2reg -instcombine -dce  -array-seg-normalize -deadargelim  -instcombine -dce  -pointer-simplify -dce  -port-alignment -dce  -interface-preproc  -data-pack -instcombine -dce   -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn  -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce  -loop-simplify -indvars -instcombine  -gvn -loop-simplify -mem2reg -dce -simplifycfg  -find-region -instcombine  -auto-loop-pipeline  -inst-simplify  -interface-preproc  -indvars -auto-loop-unroll -loop-simplify -loop-bound -xunroll  -constprop -instcombine -simplifycfg -indvars  -simplifycfg -dce -globaldce  -attach-range  -gvn -inst-simplify  -constprop -simplifycfg -dce  -pointer-simplify -dce  -globalopt -constprop -dce  -array-promote -constprop -instcombine -dce  -ptrArgReplace -mem2reg  -instcombine -simplifycfg -dce  -auto-par -instcombine -dce  -array-transform-check  -array-reshape -instcombine -simplifycfg -dce  -ptrArgReplace -deadargelim -mem2reg  -instcombine -simplifycfg -dce   -duplicate-dataflow-processes -globaldce  -array-partition -instcombine -simplifycfg -dce  -ptrArgReplace -global-constprop -deadargelim -mem2reg  -func-legal -instcombine -dce -global-constprop -deadargelim -mem2reg  -instcombine -simplifycfg -dce   -globalopt -constprop -dce  -array-promote -constprop -instcombine -dce  -ptrArgReplace -mem2reg  -instcombine -simplifycfg -dce   -mem-intrinsic-preproc -dce  -global-privatize  -mem2reg -globaldce  -promote-global-argument  -ptrArgReplace -mem2reg -instcombine -dce  -globalopt -mergereturn -simplify-global-access -mem2reg -dce  -pointer-simplify -dce  -functionattrs  -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn  -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce  -inst-simplify -dce -norm-name  -function-inline -globaldce  -func-inst -constprop -instcombine -simplifycfg -dce  -func-legal -dce   -loop-bound  -arraycheck -bitwidthmin -on-by-dataflow  -loop-delete -instcombine -simplifycfg  -globaldce -dce -gvn -deadargelim -dce -loop-simplify -clean-region -simplifycfg -propagate-stable-arguments  -loop-stream -instcombine -simplifycfg -dce -globaldce  -stream-intrinsic-preproc -dce  -check-ap-stream -loop-simplify -eliminate-keepreads  -extract-dataflow-in-loop -loop-simplify -dce -gvn -deadargelim  -check-dataflow-syntax  -legalize-stream-variable -legalize-global -legalize-global-1  -extract-subproc -dce -dead-channel-elimination  -canonicalize-gep -globaldce -dce -gvn -deadargelim  -scalar-propagation -deadargelim -globaldce -mem2reg  -check-dataflow-channels -function-stream -dce -globaldce  -prop-fifo-spec -internal-stream-gen  -canonicalize-gep -globaldce -dce -gvn -deadargelim   -mergereturn -indvars -loop-simplify  -array-stream -instcombine -simplifycfg -dce  -bundle-memfifo-ops -deadargelim    -function-uniquify -directive-preproc -mem2reg -dse -dce  -group-axi-access    -licm -simplifycfg -dce -loop-delete  -norm-name  F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/a.o.1.bc -o F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/a.o.1.tmp.bc -f
+@I [XFORM-602] Inlining function 'std::sqrt' into 'process' (backsub_gmm_new_180110/core.cpp:57) automatically.
+@I [XFORM-602] Inlining function 'std::swap<float>' into 'process' (backsub_gmm_new_180110/core.cpp:64) automatically.
+@I [XFORM-712] Applying dataflow to function 'bgsub' (backsub_gmm_new_180110/core.cpp:146), detected/extracted 1 process function(s):
 	 'Block__proc'.
-@I [HLS-0] Presyn 1 time: 0 seconds per iteration
-@I [HLS-0] presyn 2: transform -hls -keep-callgraph -scalarrepl -mem2reg  -port-alignment -attach-range -dce  -pipe-mux-gen  -indvars -loop-bound  -inst-simplify -instcombine -dce  -merge-array-access -mem2reg -dce  -clean-region -mergereturn -if-conv  -instcombine -dce -constprop  -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn  -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce  -scalarrepl -mem2reg  -global-constprop -deadargelim -deadargelim  -instcombine -dce -simplifycfg    -ptrArgReplace -mem2reg -function-inline  -globaldce -mem2reg -instcombine -dce -expr-balance  -instcombine -dce  -bitwidthmin  -directive-preproc  -inst-rectify -instcombine -dce  -functionattrs  -constprop -instcombine -bit-constprop  -simplify-global-access  -globalopt -globaldce  -inst-simplify -instcombine -elimdeaddata -dce  -loop-delete -simplifycfg   -norm-name /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/a.o.1.tmp.bc -o /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/a.o.2.bc -f  -phase presyn
+@I [HLS-0] Presyn 1 time: 1 seconds per iteration
+@I [HLS-0] presyn 2: transform -hls -keep-callgraph -scalarrepl -mem2reg  -port-alignment -attach-range -dce  -pipe-mux-gen  -indvars -loop-bound  -inst-simplify -instcombine -dce  -merge-array-access -mem2reg -dce  -clean-region -mergereturn -if-conv  -instcombine -dce -constprop  -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn  -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce  -scalarrepl -mem2reg  -global-constprop -deadargelim -deadargelim  -instcombine -dce -simplifycfg    -ptrArgReplace -mem2reg -function-inline  -globaldce -mem2reg -instcombine -dce -expr-balance  -instcombine -dce  -bitwidthmin  -directive-preproc  -inst-rectify -instcombine -dce  -functionattrs  -constprop -instcombine -bit-constprop  -simplify-global-access  -globalopt -globaldce  -inst-simplify -instcombine -elimdeaddata -dce  -loop-delete -simplifycfg   -norm-name F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/a.o.1.tmp.bc -o F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/a.o.2.bc -f  -phase presyn
 @I [HLS-0] Presyn 2 time: 0 seconds per iteration
-@I [HLS-100] Command "is_encrypted /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/a.o.2.bc "
-@I [HLS-100] Command 'is_encrypted' returned 0; elapsed 8.3e-05Total elapsed time: 20.846 sec.
-@I [HLS-0] build ssdm: transform -hls  -function-uniquify -auto-function-inline -globaldce  -ptrArgReplace -mem2reg -instcombine -dce  -reset-lda  -loop-simplify -indvars -licm -loop-dep  -loop-bound -licm -loop-simplify -flattenloopnest  -array-flatten -gvn -instcombine -dce  -array-map -dce -func-legal  -gvn -adce -instcombine -cfgopt -simplifycfg -loop-simplify   -array-burst -promote-global-argument -dce  -axi4-lower -array-seg-normalize  -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn  -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm  -inst-simplify -dce  -globaldce -array-stream -eliminate-keepreads -instcombine  -dce   -deadargelim -doublePtrSimplify  -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer  -dce -scalarrepl -mem2reg -disaggr -norm-name -mem2reg  -instcombine  -dse -adse -adce -ptrLegalization -dce -auto-rom-infer -array-flatten -dce -instcombine  -loop-rot -constprop -cfgopt -simplifycfg -loop-simplify -indvars -pointer-simplify -dce -loop-bound  -loop-simplify -loop-preproc  -constprop -global-constprop -gvn -mem2reg -instcombine -dce  -loop-merge -dce  -bitwidthmin  -deadargelim -dce  -scalar-propagation -deadargelim -globaldce -mem2reg  -interface-preproc -interface-gen  -deadargelim -directive-preproc -inst-simplify -dce  -gvn -mem2reg -instcombine -dce -adse  -loop-bound  -instcombine -cfgopt -simplifycfg -loop-simplify  -clean-region -io-protocol  -find-region -mem2reg  -bitop-raise  -inst-simplify -inst-rectify -instcombine -adce -deadargelim  -loop-simplify -phi-opt -bitop-raise  -cfgopt -simplifycfg -strip-dead-prototypes  -interface-lower -bitop-lower -intrinsic-lower -auto-function-inline  -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa  -inst-simplify -simplifycfg   -mergereturn -inst-simplify -inst-rectify  -dce -bitop-lower  -loop-rewind -pointer-simplify -dce -cfgopt  -read-loop-dep -dce -bitwidth -norm-name -legalize    -cdfg-build  /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/a.o.2.bc -o /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/a.o.3.bc -f  -phase build-ssdm
-@I [XFORM-811] Inferring bus burst write of length 307200 on port 'bgmodel' (backsub_gmm_new_180110/core.cpp:179:13).
-@I [XFORM-811] Inferring bus burst write of length 320 on port 'frame_out' (backsub_gmm_new_180110/core.cpp:211:9).
-@I [XFORM-811] Inferring bus burst write of length 2560 on port 'bgmodel' (backsub_gmm_new_180110/core.cpp:210:9).
-@I [XFORM-811] Inferring bus burst write of length 320 on port 'frame_out' (backsub_gmm_new_180110/core.cpp:209:9).
-@I [XFORM-811] Inferring bus burst read of length 320 on port 'frame_out' (backsub_gmm_new_180110/core.cpp:194:9).
-@I [XFORM-811] Inferring bus burst read of length 2560 on port 'bgmodel' (backsub_gmm_new_180110/core.cpp:195:9).
-@I [XFORM-811] Inferring bus burst read of length 320 on port 'frame_out' (backsub_gmm_new_180110/core.cpp:196:9).
-@I [XFORM-811] Inferring bus burst read of length 2560 on port 'bgmodel' (backsub_gmm_new_180110/core.cpp:197:9).
-@I [XFORM-811] Inferring bus burst write of length 2560 on port 'bgmodel' (backsub_gmm_new_180110/core.cpp:208:9).
-@I [HLS-0] Build ssdm time: 0 seconds per iteration
-@I [HLS-100] Command "is_encrypted /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/a.o.3.bc "
-@I [HLS-100] Command 'is_encrypted' returned 0; elapsed 5.6e-05Total elapsed time: 21.717 sec.
+@I [HLS-100] Command "is_encrypted F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/a.o.2.bc "
+@I [HLS-100] Command 'is_encrypted' returned 0; elapsed 0Total elapsed time: 77.370 sec.
+@I [HLS-0] build ssdm: transform -hls  -function-uniquify -auto-function-inline -globaldce  -ptrArgReplace -mem2reg -instcombine -dce  -reset-lda  -loop-simplify -indvars -licm -loop-dep  -loop-bound -licm -loop-simplify -flattenloopnest  -array-flatten -gvn -instcombine -dce  -array-map -dce -func-legal  -gvn -adce -instcombine -cfgopt -simplifycfg -loop-simplify   -array-burst -promote-global-argument -dce  -axi4-lower -array-seg-normalize  -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn  -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm  -inst-simplify -dce  -globaldce -array-stream -eliminate-keepreads -instcombine  -dce   -deadargelim -doublePtrSimplify  -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer  -dce -scalarrepl -mem2reg -disaggr -norm-name -mem2reg  -instcombine  -dse -adse -adce -ptrLegalization -dce -auto-rom-infer -array-flatten -dce -instcombine  -loop-rot -constprop -cfgopt -simplifycfg -loop-simplify -indvars -pointer-simplify -dce -loop-bound  -loop-simplify -loop-preproc  -constprop -global-constprop -gvn -mem2reg -instcombine -dce  -loop-merge -dce  -bitwidthmin  -deadargelim -dce  -scalar-propagation -deadargelim -globaldce -mem2reg  -interface-preproc -interface-gen  -deadargelim -directive-preproc -inst-simplify -dce  -gvn -mem2reg -instcombine -dce -adse  -loop-bound  -instcombine -cfgopt -simplifycfg -loop-simplify  -clean-region -io-protocol  -find-region -mem2reg  -bitop-raise  -inst-simplify -inst-rectify -instcombine -adce -deadargelim  -loop-simplify -phi-opt -bitop-raise  -cfgopt -simplifycfg -strip-dead-prototypes  -interface-lower -bitop-lower -intrinsic-lower -auto-function-inline  -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa  -inst-simplify -simplifycfg   -mergereturn -inst-simplify -inst-rectify  -dce -bitop-lower  -loop-rewind -pointer-simplify -dce -cfgopt  -read-loop-dep -dce -bitwidth -norm-name -legalize    -cdfg-build  F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/a.o.2.bc -o F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/a.o.3.bc -f  -phase build-ssdm
+@I [XFORM-811] Inferring bus burst write of length 614400 on port 'bgmodel' (backsub_gmm_new_180110/core.cpp:182:13).
+@I [XFORM-811] Inferring bus burst write of length 640 on port 'frame_out' (backsub_gmm_new_180110/core.cpp:220:9).
+@I [XFORM-811] Inferring bus burst write of length 5120 on port 'bgmodel' (backsub_gmm_new_180110/core.cpp:219:9).
+@I [XFORM-811] Inferring bus burst write of length 640 on port 'frame_out' (backsub_gmm_new_180110/core.cpp:218:9).
+@I [XFORM-811] Inferring bus burst write of length 5120 on port 'bgmodel' (backsub_gmm_new_180110/core.cpp:217:9).
+@I [XFORM-811] Inferring bus burst write of length 640 on port 'frame_out' (backsub_gmm_new_180110/core.cpp:216:9).
+@I [XFORM-811] Inferring bus burst read of length 640 on port 'frame_out' (backsub_gmm_new_180110/core.cpp:199:9).
+@I [XFORM-811] Inferring bus burst read of length 5120 on port 'bgmodel' (backsub_gmm_new_180110/core.cpp:200:9).
+@I [XFORM-811] Inferring bus burst read of length 640 on port 'frame_out' (backsub_gmm_new_180110/core.cpp:201:9).
+@I [XFORM-811] Inferring bus burst read of length 5120 on port 'bgmodel' (backsub_gmm_new_180110/core.cpp:202:9).
+@I [XFORM-811] Inferring bus burst read of length 640 on port 'frame_out' (backsub_gmm_new_180110/core.cpp:203:9).
+@I [XFORM-811] Inferring bus burst read of length 5120 on port 'bgmodel' (backsub_gmm_new_180110/core.cpp:204:9).
+@I [XFORM-811] Inferring bus burst write of length 5120 on port 'bgmodel' (backsub_gmm_new_180110/core.cpp:215:9).
+@I [HLS-0] Build ssdm time: 1 seconds per iteration
+@I [HLS-100] Command "is_encrypted F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/a.o.3.bc "
+@I [HLS-100] Command 'is_encrypted' returned 0; elapsed 0Total elapsed time: 79.186 sec.
 @I [HLS-0] Finish building internal data model.
-@I [HLS-100] Command 'opt_and_import_c' returned 0; elapsed 2.74226Total elapsed time: 21.737 sec.
-@I [HLS-111] Elapsed time: 4.35639 seconds; current memory usage: 141 MB.
-@I [HLS-100] Command 'elaborate' returned 0; elapsed 4.07792Total elapsed time: 21.738 sec.
+@I [HLS-100] Command 'opt_and_import_c' returned 0; elapsed 7.934Total elapsed time: 79.274 sec.
+@I [HLS-111] Elapsed time: 79.325 seconds; current memory usage: 159 MB.
+@I [HLS-100] Command 'elaborate' returned 0; elapsed 77.969Total elapsed time: 79.320 sec.
 @I [HLS-100] Command "autosyn "
 @I [HLS-10] Starting hardware synthesis ...
 @0 [HLS-0] Starting hardware synthesis ...
@@ -270,55 +266,55 @@ Source preprocessing: exec clang -fno-limit-debug-info -gcc-toolchain "/opt/Xili
 @0 [HLS-0] Synthesizing 'bgsub' ...
 @I [HLS-100] Command "ap_set_top_model bgsub "
 @W [SYN-103] Legalizing function name 'bgsub_Block__proc' to 'bgsub_Block_proc'.
-@I [HLS-100] Command 'ap_set_top_model' returned 0; elapsed 0.000124Total elapsed time: 21.738 sec.
+@I [HLS-100] Command 'ap_set_top_model' returned 0; elapsed 0Total elapsed time: 79.374 sec.
 @I [HLS-100] Command "get_model_list bgsub -filter all-wo-channel -topdown "
-@I [HLS-100] Command 'get_model_list' returned 0; elapsed 3.2e-05Total elapsed time: 21.738 sec.
+@I [HLS-100] Command 'get_model_list' returned 0; elapsed 0Total elapsed time: 79.374 sec.
 @I [HLS-100] Command "preproc_iomode -model bgsub "
-@I [HLS-100] Command 'preproc_iomode' returned 0; elapsed 0.000143Total elapsed time: 21.739 sec.
+@I [HLS-100] Command 'preproc_iomode' returned 0; elapsed 0Total elapsed time: 79.374 sec.
 @I [HLS-100] Command "preproc_iomode -model bgsub_Block__proc "
-@I [HLS-100] Command 'preproc_iomode' returned 0; elapsed 3.6e-05Total elapsed time: 21.739 sec.
+@I [HLS-100] Command 'preproc_iomode' returned 0; elapsed 0Total elapsed time: 79.374 sec.
 @I [HLS-100] Command "preproc_iomode -model bgsub_process "
-@I [HLS-100] Command 'preproc_iomode' returned 0; elapsed 1.6e-05Total elapsed time: 21.739 sec.
+@I [HLS-100] Command 'preproc_iomode' returned 0; elapsed 0Total elapsed time: 79.375 sec.
 @I [HLS-100] Command "get_model_list bgsub -filter all-wo-channel "
-@I [HLS-100] Command 'get_model_list' returned 0; elapsed 1.7e-05Total elapsed time: 21.739 sec.
+@I [HLS-100] Command 'get_model_list' returned 0; elapsed 0Total elapsed time: 79.375 sec.
 @I [HLS-0] Model list for configure: bgsub_process bgsub_Block__proc bgsub
 @I [HLS-0] Configuring Module : bgsub_process ...
 @I [HLS-100] Command "set_default_model bgsub_process "
-@I [HLS-100] Command 'set_default_model' returned 0; elapsed 1e-05Total elapsed time: 21.739 sec.
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 79.375 sec.
 @I [HLS-100] Command "apply_spec_resource_limit bgsub_process "
-@I [HLS-100] Command 'apply_spec_resource_limit' returned 0; elapsed 4.8e-05Total elapsed time: 21.739 sec.
+@I [HLS-100] Command 'apply_spec_resource_limit' returned 0; elapsed 0Total elapsed time: 79.375 sec.
 @I [HLS-0] Configuring Module : bgsub_Block__proc ...
 @I [HLS-100] Command "set_default_model bgsub_Block__proc "
-@I [HLS-100] Command 'set_default_model' returned 0; elapsed 1.3e-05Total elapsed time: 21.739 sec.
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 79.375 sec.
 @I [HLS-100] Command "apply_spec_resource_limit bgsub_Block__proc "
-@I [HLS-100] Command 'apply_spec_resource_limit' returned 0; elapsed 2.3e-05Total elapsed time: 21.739 sec.
+@I [HLS-100] Command 'apply_spec_resource_limit' returned 0; elapsed 0Total elapsed time: 79.375 sec.
 @I [HLS-0] Configuring Module : bgsub ...
 @I [HLS-100] Command "set_default_model bgsub "
-@I [HLS-100] Command 'set_default_model' returned 0; elapsed 1.3e-05Total elapsed time: 21.739 sec.
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 79.376 sec.
 @I [HLS-100] Command "apply_spec_resource_limit bgsub "
-@I [HLS-100] Command 'apply_spec_resource_limit' returned 0; elapsed 4e-06Total elapsed time: 21.739 sec.
+@I [HLS-100] Command 'apply_spec_resource_limit' returned 0; elapsed 0Total elapsed time: 79.376 sec.
 @I [HLS-0] Model list for preprocess: bgsub_process bgsub_Block__proc bgsub
 @I [HLS-0] Preprocessing Module: bgsub_process ...
 @I [HLS-100] Command "set_default_model bgsub_process "
-@I [HLS-100] Command 'set_default_model' returned 0; elapsed 4e-06Total elapsed time: 21.739 sec.
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 79.376 sec.
 @I [HLS-100] Command "cdfg_preprocess -model bgsub_process "
-@I [HLS-100] Command 'cdfg_preprocess' returned 0; elapsed 0.001994Total elapsed time: 21.741 sec.
+@I [HLS-100] Command 'cdfg_preprocess' returned 0; elapsed 0.003Total elapsed time: 79.378 sec.
 @I [HLS-100] Command "rtl_gen_preprocess bgsub_process "
-@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0.000617Total elapsed time: 21.742 sec.
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 79.379 sec.
 @I [HLS-0] Preprocessing Module: bgsub_Block__proc ...
 @I [HLS-100] Command "set_default_model bgsub_Block__proc "
-@I [HLS-100] Command 'set_default_model' returned 0; elapsed 1.1e-05Total elapsed time: 21.742 sec.
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 79.379 sec.
 @I [HLS-100] Command "cdfg_preprocess -model bgsub_Block__proc "
-@I [HLS-100] Command 'cdfg_preprocess' returned 0; elapsed 0.003165Total elapsed time: 21.745 sec.
+@I [HLS-100] Command 'cdfg_preprocess' returned 0; elapsed 0.013Total elapsed time: 79.392 sec.
 @I [HLS-100] Command "rtl_gen_preprocess bgsub_Block__proc "
-@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0.000457Total elapsed time: 21.746 sec.
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0.002Total elapsed time: 79.395 sec.
 @I [HLS-0] Preprocessing Module: bgsub ...
 @I [HLS-100] Command "set_default_model bgsub "
-@I [HLS-100] Command 'set_default_model' returned 0; elapsed 1.3e-05Total elapsed time: 21.746 sec.
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 79.396 sec.
 @I [HLS-100] Command "cdfg_preprocess -model bgsub "
-@I [HLS-100] Command 'cdfg_preprocess' returned 0; elapsed 0.000106Total elapsed time: 21.746 sec.
+@I [HLS-100] Command 'cdfg_preprocess' returned 0; elapsed 0.001Total elapsed time: 79.397 sec.
 @I [HLS-100] Command "rtl_gen_preprocess bgsub "
-@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0.000456Total elapsed time: 21.746 sec.
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0.002Total elapsed time: 79.398 sec.
 @I [HLS-0] Model list for synthesis: bgsub_process bgsub_Block__proc bgsub
 @I [HLS-10] ----------------------------------------------------------------
 @0 [HLS-0] ----------------------------------------------------------------
@@ -327,16 +323,16 @@ Source preprocessing: exec clang -fno-limit-debug-info -gcc-toolchain "/opt/Xili
 @I [HLS-10] ----------------------------------------------------------------
 @0 [HLS-0] ----------------------------------------------------------------
 @I [HLS-100] Command "set_default_model bgsub_process "
-@I [HLS-100] Command 'set_default_model' returned 0; elapsed 5e-06Total elapsed time: 21.746 sec.
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 79.401 sec.
 @I [HLS-100] Command "schedule -model bgsub_process "
 @I [SCHED-11] Starting scheduling ...
 @I [SCHED-11] Finished scheduling.
-@I [HLS-100] Command 'schedule' returned 0; elapsed 0.130513Total elapsed time: 21.877 sec.
-@I [HLS-111] Elapsed time: 0.139585 seconds; current memory usage: 143 MB.
-@I [HLS-100] Command "report -o /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/bgsub_process.verbose.sched.rpt -verbose -f "
-@I [HLS-100] Command 'report' returned 0; elapsed 0.014663Total elapsed time: 21.892 sec.
-@I [HLS-100] Command "db_write -o /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/bgsub_process.sched.adb -f "
-@I [HLS-100] Command 'db_write' returned 0; elapsed 0.021254Total elapsed time: 21.913 sec.
+@I [HLS-100] Command 'schedule' returned 0; elapsed 0.416Total elapsed time: 79.817 sec.
+@I [HLS-111] Elapsed time: 0.551 seconds; current memory usage: 163 MB.
+@I [HLS-100] Command "report -o F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/bgsub_process.verbose.sched.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.073Total elapsed time: 79.967 sec.
+@I [HLS-100] Command "db_write -o F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/bgsub_process.sched.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.154Total elapsed time: 80.121 sec.
 @I [HLS-0] Finish scheduling bgsub_process.
 @I [HLS-10] ----------------------------------------------------------------
 @0 [HLS-0] ----------------------------------------------------------------
@@ -345,7 +341,7 @@ Source preprocessing: exec clang -fno-limit-debug-info -gcc-toolchain "/opt/Xili
 @I [HLS-10] ----------------------------------------------------------------
 @0 [HLS-0] ----------------------------------------------------------------
 @I [HLS-100] Command "set_default_model bgsub_process "
-@I [HLS-100] Command 'set_default_model' returned 0; elapsed 1.3e-05Total elapsed time: 21.914 sec.
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 80.255 sec.
 @I [HLS-100] Command "bind -model bgsub_process "
 @I [BIND-110] clear=
 @I [BIND-110] debug=
@@ -380,12 +376,12 @@ Source preprocessing: exec clang -fno-limit-debug-info -gcc-toolchain "/opt/Xili
 @I [BIND-101] Exploring resource sharing.
 @I [BIND-101] Binding ...
 @I [BIND-100] Finished micro-architecture generation.
-@I [HLS-100] Command 'bind' returned 0; elapsed 0.052228Total elapsed time: 21.966 sec.
-@I [HLS-111] Elapsed time: 0.088981 seconds; current memory usage: 145 MB.
-@I [HLS-100] Command "report -o /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/bgsub_process.verbose.bind.rpt -verbose -f "
-@I [HLS-100] Command 'report' returned 0; elapsed 0.077829Total elapsed time: 22.44 sec.
-@I [HLS-100] Command "db_write -o /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/bgsub_process.bind.adb -f "
-@I [HLS-100] Command 'db_write' returned 0; elapsed 0.025811Total elapsed time: 22.70 sec.
+@I [HLS-100] Command 'bind' returned 0; elapsed 0.154Total elapsed time: 80.409 sec.
+@I [HLS-111] Elapsed time: 0.601 seconds; current memory usage: 163 MB.
+@I [HLS-100] Command "report -o F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/bgsub_process.verbose.bind.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.278Total elapsed time: 80.751 sec.
+@I [HLS-100] Command "db_write -o F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/bgsub_process.bind.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.193Total elapsed time: 80.945 sec.
 @I [HLS-0] Finish binding bgsub_process.
 @I [HLS-10] ----------------------------------------------------------------
 @0 [HLS-0] ----------------------------------------------------------------
@@ -394,7 +390,7 @@ Source preprocessing: exec clang -fno-limit-debug-info -gcc-toolchain "/opt/Xili
 @I [HLS-10] ----------------------------------------------------------------
 @0 [HLS-0] ----------------------------------------------------------------
 @I [HLS-100] Command "set_default_model bgsub_Block__proc "
-@I [HLS-100] Command 'set_default_model' returned 0; elapsed 3.5e-05Total elapsed time: 22.70 sec.
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 80.946 sec.
 @I [HLS-100] Command "schedule -model bgsub_Block__proc "
 @I [SCHED-11] Starting scheduling ...
 @I [SCHED-61] Pipelining loop 'memcpy..frame_in'.
@@ -405,6 +401,10 @@ Source preprocessing: exec clang -fno-limit-debug-info -gcc-toolchain "/opt/Xili
 @I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 3.
 @I [SCHED-61] Pipelining loop 'memcpy.part2_bgmodel.bgmodel'.
 @I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 3.
+@I [SCHED-61] Pipelining loop 'memcpy..frame_in'.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 3.
+@I [SCHED-61] Pipelining loop 'memcpy.part3_bgmodel.bgmodel'.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 3.
 @I [SCHED-61] Pipelining loop 'memcpy.bgmodel.part_bgmodel.gep'.
 @I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 3.
 @I [SCHED-61] Pipelining loop 'memcpy.frame_out.'.
@@ -413,13 +413,17 @@ Source preprocessing: exec clang -fno-limit-debug-info -gcc-toolchain "/opt/Xili
 @I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 3.
 @I [SCHED-61] Pipelining loop 'memcpy.frame_out.'.
 @I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 3.
+@I [SCHED-61] Pipelining loop 'memcpy.bgmodel.part3_bgmodel.gep'.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 3.
+@I [SCHED-61] Pipelining loop 'memcpy.frame_out.'.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 3.
 @I [SCHED-11] Finished scheduling.
-@I [HLS-100] Command 'schedule' returned 0; elapsed 0.055795Total elapsed time: 22.126 sec.
-@I [HLS-111] Elapsed time: 0.159952 seconds; current memory usage: 146 MB.
-@I [HLS-100] Command "report -o /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/bgsub_Block_proc.verbose.sched.rpt -verbose -f "
-@I [HLS-100] Command 'report' returned 0; elapsed 0.017165Total elapsed time: 22.144 sec.
-@I [HLS-100] Command "db_write -o /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/bgsub_Block_proc.sched.adb -f "
-@I [HLS-100] Command 'db_write' returned 0; elapsed 0.011964Total elapsed time: 22.156 sec.
+@I [HLS-100] Command 'schedule' returned 0; elapsed 0.303Total elapsed time: 81.248 sec.
+@I [HLS-111] Elapsed time: 0.827 seconds; current memory usage: 166 MB.
+@I [HLS-100] Command "report -o F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/bgsub_Block_proc.verbose.sched.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.117Total elapsed time: 81.543 sec.
+@I [HLS-100] Command "db_write -o F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/bgsub_Block_proc.sched.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.104Total elapsed time: 81.647 sec.
 @I [HLS-0] Finish scheduling bgsub_Block__proc.
 @I [HLS-10] ----------------------------------------------------------------
 @0 [HLS-0] ----------------------------------------------------------------
@@ -428,7 +432,7 @@ Source preprocessing: exec clang -fno-limit-debug-info -gcc-toolchain "/opt/Xili
 @I [HLS-10] ----------------------------------------------------------------
 @0 [HLS-0] ----------------------------------------------------------------
 @I [HLS-100] Command "set_default_model bgsub_Block__proc "
-@I [HLS-100] Command 'set_default_model' returned 0; elapsed 3.7e-05Total elapsed time: 22.156 sec.
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 81.696 sec.
 @I [HLS-100] Command "bind -model bgsub_Block__proc "
 @I [BIND-110] clear=
 @I [BIND-110] debug=
@@ -463,12 +467,12 @@ Source preprocessing: exec clang -fno-limit-debug-info -gcc-toolchain "/opt/Xili
 @I [BIND-101] Exploring resource sharing.
 @I [BIND-101] Binding ...
 @I [BIND-100] Finished micro-architecture generation.
-@I [HLS-100] Command 'bind' returned 0; elapsed 0.069118Total elapsed time: 22.225 sec.
-@I [HLS-111] Elapsed time: 0.098725 seconds; current memory usage: 147 MB.
-@I [HLS-100] Command "report -o /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/bgsub_Block_proc.verbose.bind.rpt -verbose -f "
-@I [HLS-100] Command 'report' returned 0; elapsed 0.146435Total elapsed time: 22.371 sec.
-@I [HLS-100] Command "db_write -o /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/bgsub_Block_proc.bind.adb -f "
-@I [HLS-100] Command 'db_write' returned 0; elapsed 0.013935Total elapsed time: 22.385 sec.
+@I [HLS-100] Command 'bind' returned 0; elapsed 0.306Total elapsed time: 82.2 sec.
+@I [HLS-111] Elapsed time: 0.754 seconds; current memory usage: 166 MB.
+@I [HLS-100] Command "report -o F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/bgsub_Block_proc.verbose.bind.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.758Total elapsed time: 82.813 sec.
+@I [HLS-100] Command "db_write -o F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/bgsub_Block_proc.bind.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.14Total elapsed time: 82.953 sec.
 @I [HLS-0] Finish binding bgsub_Block__proc.
 @I [HLS-10] ----------------------------------------------------------------
 @0 [HLS-0] ----------------------------------------------------------------
@@ -477,16 +481,16 @@ Source preprocessing: exec clang -fno-limit-debug-info -gcc-toolchain "/opt/Xili
 @I [HLS-10] ----------------------------------------------------------------
 @0 [HLS-0] ----------------------------------------------------------------
 @I [HLS-100] Command "set_default_model bgsub "
-@I [HLS-100] Command 'set_default_model' returned 0; elapsed 3.9e-05Total elapsed time: 22.386 sec.
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 82.954 sec.
 @I [HLS-100] Command "schedule -model bgsub "
 @I [SCHED-11] Starting scheduling ...
 @I [SCHED-11] Finished scheduling.
-@I [HLS-100] Command 'schedule' returned 0; elapsed 0.002522Total elapsed time: 22.388 sec.
-@I [HLS-111] Elapsed time: 0.163334 seconds; current memory usage: 147 MB.
-@I [HLS-100] Command "report -o /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/bgsub.verbose.sched.rpt -verbose -f "
-@I [HLS-100] Command 'report' returned 0; elapsed 0.000837Total elapsed time: 22.389 sec.
-@I [HLS-100] Command "db_write -o /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/bgsub.sched.adb -f "
-@I [HLS-100] Command 'db_write' returned 0; elapsed 0.000853Total elapsed time: 22.390 sec.
+@I [HLS-100] Command 'schedule' returned 0; elapsed 0.016Total elapsed time: 82.969 sec.
+@I [HLS-111] Elapsed time: 0.966 seconds; current memory usage: 166 MB.
+@I [HLS-100] Command "report -o F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/bgsub.verbose.sched.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.017Total elapsed time: 83.89 sec.
+@I [HLS-100] Command "db_write -o F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/bgsub.sched.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.026Total elapsed time: 83.116 sec.
 @I [HLS-0] Finish scheduling bgsub.
 @I [HLS-10] ----------------------------------------------------------------
 @0 [HLS-0] ----------------------------------------------------------------
@@ -495,7 +499,7 @@ Source preprocessing: exec clang -fno-limit-debug-info -gcc-toolchain "/opt/Xili
 @I [HLS-10] ----------------------------------------------------------------
 @0 [HLS-0] ----------------------------------------------------------------
 @I [HLS-100] Command "set_default_model bgsub "
-@I [HLS-100] Command 'set_default_model' returned 0; elapsed 1.6e-05Total elapsed time: 22.390 sec.
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 83.161 sec.
 @I [HLS-100] Command "bind -model bgsub "
 @I [BIND-110] clear=
 @I [BIND-110] debug=
@@ -530,22 +534,22 @@ Source preprocessing: exec clang -fno-limit-debug-info -gcc-toolchain "/opt/Xili
 @I [BIND-101] Exploring resource sharing.
 @I [BIND-101] Binding ...
 @I [BIND-100] Finished micro-architecture generation.
-@I [HLS-100] Command 'bind' returned 0; elapsed 0.04499Total elapsed time: 22.435 sec.
-@I [HLS-111] Elapsed time: 0.047065 seconds; current memory usage: 147 MB.
-@I [HLS-100] Command "report -o /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/bgsub.verbose.bind.rpt -verbose -f "
-@I [HLS-100] Command 'report' returned 0; elapsed 0.131224Total elapsed time: 22.567 sec.
-@I [HLS-100] Command "db_write -o /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/bgsub.bind.adb -f "
-@I [HLS-100] Command 'db_write' returned 0; elapsed 0.001237Total elapsed time: 22.568 sec.
+@I [HLS-100] Command 'bind' returned 0; elapsed 0.244Total elapsed time: 83.406 sec.
+@I [HLS-111] Elapsed time: 0.437 seconds; current memory usage: 166 MB.
+@I [HLS-100] Command "report -o F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/bgsub.verbose.bind.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.721Total elapsed time: 84.178 sec.
+@I [HLS-100] Command "db_write -o F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/bgsub.bind.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.026Total elapsed time: 84.205 sec.
 @I [HLS-0] Finish binding bgsub.
 @I [HLS-100] Command "get_model_list bgsub -filter all-wo-channel "
-@I [HLS-100] Command 'get_model_list' returned 0; elapsed 6.1e-05Total elapsed time: 22.568 sec.
+@I [HLS-100] Command 'get_model_list' returned 0; elapsed 0Total elapsed time: 84.206 sec.
 @I [HLS-0] Preprocessing for RTLGen ...
 @I [HLS-100] Command "rtl_gen_preprocess bgsub_process "
-@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0.000341Total elapsed time: 22.568 sec.
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 84.207 sec.
 @I [HLS-100] Command "rtl_gen_preprocess bgsub_Block__proc "
-@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0.000462Total elapsed time: 22.569 sec.
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0.001Total elapsed time: 84.208 sec.
 @I [HLS-100] Command "rtl_gen_preprocess bgsub "
-@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0.000421Total elapsed time: 22.569 sec.
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0.001Total elapsed time: 84.209 sec.
 @I [HLS-0] Model list for RTL generation: bgsub_process bgsub_Block__proc bgsub
 @I [HLS-10] ----------------------------------------------------------------
 @0 [HLS-0] ----------------------------------------------------------------
@@ -553,7 +557,7 @@ Source preprocessing: exec clang -fno-limit-debug-info -gcc-toolchain "/opt/Xili
 @0 [HLS-0] -- Generating RTL for module 'bgsub_process' 
 @I [HLS-10] ----------------------------------------------------------------
 @0 [HLS-0] ----------------------------------------------------------------
-@I [HLS-100] Command "create_rtl_model bgsub_process -vendor xilinx -mg_file /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/bgsub_process.compgen.tcl "
+@I [HLS-100] Command "create_rtl_model bgsub_process -vendor xilinx -mg_file F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/bgsub_process.compgen.tcl "
 @I [RTGEN-100] Generating core module 'bgsub_faddfsub_32ns_32ns_32_5_full_dsp': 2 instance(s).
 @I [RTGEN-100] Generating core module 'bgsub_fcmp_32ns_32ns_1_1': 1 instance(s).
 @I [RTGEN-100] Generating core module 'bgsub_fdiv_32ns_32ns_32_16': 1 instance(s).
@@ -561,61 +565,61 @@ Source preprocessing: exec clang -fno-limit-debug-info -gcc-toolchain "/opt/Xili
 @I [RTGEN-100] Generating core module 'bgsub_fsqrt_32ns_32ns_32_12': 1 instance(s).
 @I [RTGEN-100] Generating core module 'bgsub_sitofp_32ns_32_6': 1 instance(s).
 @I [RTGEN-100] Finished creating RTL model for 'bgsub_process'.
-@I [HLS-100] Command 'create_rtl_model' returned 0; elapsed 0.083601Total elapsed time: 22.654 sec.
-@I [HLS-111] Elapsed time: 0.218194 seconds; current memory usage: 150 MB.
-@I [HLS-100] Command "source /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/bgsub.rtl_wrap.cfg.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000157Total elapsed time: 22.654 sec.
-@I [HLS-100] Command "gen_rtl bgsub_process -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/syn/systemc/bgsub_process -synmodules bgsub_process bgsub_Block__proc bgsub "
-@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.006156Total elapsed time: 22.661 sec.
-@I [HLS-100] Command "gen_rtl bgsub_process -style xilinx -f -lang vhdl -o /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/syn/vhdl/bgsub_process "
-@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.004936Total elapsed time: 22.666 sec.
-@I [HLS-100] Command "gen_rtl bgsub_process -style xilinx -f -lang vlog -o /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/syn/verilog/bgsub_process "
-@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.006001Total elapsed time: 22.672 sec.
-@I [HLS-100] Command "gen_tb_info bgsub_process -o /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/bgsub_process -p /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db "
-@I [HLS-100] Command 'gen_tb_info' returned 0; elapsed 0.025109Total elapsed time: 22.697 sec.
-@I [HLS-100] Command "report -model bgsub_process -o /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/syn/report/bgsub_process_csynth.rpt -f "
-@I [HLS-100] Command 'report' returned 0; elapsed 0.029069Total elapsed time: 22.726 sec.
-@I [HLS-100] Command "report -model bgsub_process -o /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/syn/report/bgsub_process_csynth.xml -f -x "
-@I [HLS-100] Command 'report' returned 0; elapsed 0.02499Total elapsed time: 22.751 sec.
-@I [HLS-100] Command "report -model bgsub_process -o /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/bgsub_process.verbose.rpt -verbose -f "
-@I [HLS-100] Command 'report' returned 0; elapsed 0.109176Total elapsed time: 22.860 sec.
-@I [HLS-100] Command "db_write -model bgsub_process -o /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/bgsub_process.adb -f "
-@I [HLS-100] Command 'db_write' returned 0; elapsed 0.055509Total elapsed time: 22.916 sec.
+@I [HLS-100] Command 'create_rtl_model' returned 0; elapsed 0.347Total elapsed time: 84.615 sec.
+@I [HLS-111] Elapsed time: 1.229 seconds; current memory usage: 169 MB.
+@I [HLS-100] Command "source F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/bgsub.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 84.722 sec.
+@I [HLS-100] Command "gen_rtl bgsub_process -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o F:/maxi_latest/backsub_gmm_new_180110/solution1/syn/systemc/bgsub_process -synmodules bgsub_process bgsub_Block__proc bgsub "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.051Total elapsed time: 84.774 sec.
+@I [HLS-100] Command "gen_rtl bgsub_process -style xilinx -f -lang vhdl -o F:/maxi_latest/backsub_gmm_new_180110/solution1/syn/vhdl/bgsub_process "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.045Total elapsed time: 84.819 sec.
+@I [HLS-100] Command "gen_rtl bgsub_process -style xilinx -f -lang vlog -o F:/maxi_latest/backsub_gmm_new_180110/solution1/syn/verilog/bgsub_process "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.061Total elapsed time: 84.879 sec.
+@I [HLS-100] Command "gen_tb_info bgsub_process -o F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/bgsub_process -p F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db "
+@I [HLS-100] Command 'gen_tb_info' returned 0; elapsed 0.107Total elapsed time: 84.988 sec.
+@I [HLS-100] Command "report -model bgsub_process -o F:/maxi_latest/backsub_gmm_new_180110/solution1/syn/report/bgsub_process_csynth.rpt -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.222Total elapsed time: 85.210 sec.
+@I [HLS-100] Command "report -model bgsub_process -o F:/maxi_latest/backsub_gmm_new_180110/solution1/syn/report/bgsub_process_csynth.xml -f -x "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.112Total elapsed time: 85.323 sec.
+@I [HLS-100] Command "report -model bgsub_process -o F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/bgsub_process.verbose.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.391Total elapsed time: 85.713 sec.
+@I [HLS-100] Command "db_write -model bgsub_process -o F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/bgsub_process.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.289Total elapsed time: 86.2 sec.
 @I [HLS-10] ----------------------------------------------------------------
 @0 [HLS-0] ----------------------------------------------------------------
 @I [HLS-10] -- Generating RTL for module 'bgsub_Block_proc' 
 @0 [HLS-0] -- Generating RTL for module 'bgsub_Block_proc' 
 @I [HLS-10] ----------------------------------------------------------------
 @0 [HLS-0] ----------------------------------------------------------------
-@I [HLS-100] Command "create_rtl_model bgsub_Block__proc -vendor xilinx -mg_file /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/bgsub_Block_proc.compgen.tcl "
+@I [HLS-100] Command "create_rtl_model bgsub_Block__proc -vendor xilinx -mg_file F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/bgsub_Block_proc.compgen.tcl "
 @I [RTGEN-100] Finished creating RTL model for 'bgsub_Block_proc'.
-@I [HLS-100] Command 'create_rtl_model' returned 0; elapsed 0.045886Total elapsed time: 23.5 sec.
-@I [HLS-111] Elapsed time: 0.351128 seconds; current memory usage: 157 MB.
-@I [HLS-100] Command "source /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/bgsub.rtl_wrap.cfg.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000129Total elapsed time: 23.5 sec.
-@I [HLS-100] Command "gen_rtl bgsub_Block__proc -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/syn/systemc/bgsub_Block_proc -synmodules bgsub_process bgsub_Block__proc bgsub "
-@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.004457Total elapsed time: 23.10 sec.
-@I [HLS-100] Command "gen_rtl bgsub_Block__proc -style xilinx -f -lang vhdl -o /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/syn/vhdl/bgsub_Block_proc "
-@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.003487Total elapsed time: 23.13 sec.
-@I [HLS-100] Command "gen_rtl bgsub_Block__proc -style xilinx -f -lang vlog -o /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/syn/verilog/bgsub_Block_proc "
-@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.004052Total elapsed time: 23.17 sec.
-@I [HLS-100] Command "gen_tb_info bgsub_Block__proc -o /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/bgsub_Block_proc -p /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db "
-@I [HLS-100] Command 'gen_tb_info' returned 0; elapsed 0.011036Total elapsed time: 23.28 sec.
-@I [HLS-100] Command "report -model bgsub_Block__proc -o /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/syn/report/bgsub_Block_proc_csynth.rpt -f "
-@I [HLS-100] Command 'report' returned 0; elapsed 0.014803Total elapsed time: 23.43 sec.
-@I [HLS-100] Command "report -model bgsub_Block__proc -o /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/syn/report/bgsub_Block_proc_csynth.xml -f -x "
-@I [HLS-100] Command 'report' returned 0; elapsed 0.011805Total elapsed time: 23.55 sec.
-@I [HLS-100] Command "report -model bgsub_Block__proc -o /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/bgsub_Block_proc.verbose.rpt -verbose -f "
-@I [HLS-100] Command 'report' returned 0; elapsed 0.161577Total elapsed time: 23.217 sec.
-@I [HLS-100] Command "db_write -model bgsub_Block__proc -o /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/bgsub_Block_proc.adb -f "
-@I [HLS-100] Command 'db_write' returned 0; elapsed 0.026674Total elapsed time: 23.243 sec.
+@I [HLS-100] Command 'create_rtl_model' returned 0; elapsed 0.212Total elapsed time: 86.551 sec.
+@I [HLS-111] Elapsed time: 1.93 seconds; current memory usage: 172 MB.
+@I [HLS-100] Command "source F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/bgsub.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 86.617 sec.
+@I [HLS-100] Command "gen_rtl bgsub_Block__proc -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o F:/maxi_latest/backsub_gmm_new_180110/solution1/syn/systemc/bgsub_Block_proc -synmodules bgsub_process bgsub_Block__proc bgsub "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.04Total elapsed time: 86.657 sec.
+@I [HLS-100] Command "gen_rtl bgsub_Block__proc -style xilinx -f -lang vhdl -o F:/maxi_latest/backsub_gmm_new_180110/solution1/syn/vhdl/bgsub_Block_proc "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.032Total elapsed time: 86.689 sec.
+@I [HLS-100] Command "gen_rtl bgsub_Block__proc -style xilinx -f -lang vlog -o F:/maxi_latest/backsub_gmm_new_180110/solution1/syn/verilog/bgsub_Block_proc "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.065Total elapsed time: 86.754 sec.
+@I [HLS-100] Command "gen_tb_info bgsub_Block__proc -o F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/bgsub_Block_proc -p F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db "
+@I [HLS-100] Command 'gen_tb_info' returned 0; elapsed 0.059Total elapsed time: 86.814 sec.
+@I [HLS-100] Command "report -model bgsub_Block__proc -o F:/maxi_latest/backsub_gmm_new_180110/solution1/syn/report/bgsub_Block_proc_csynth.rpt -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.07Total elapsed time: 86.885 sec.
+@I [HLS-100] Command "report -model bgsub_Block__proc -o F:/maxi_latest/backsub_gmm_new_180110/solution1/syn/report/bgsub_Block_proc_csynth.xml -f -x "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.059Total elapsed time: 86.943 sec.
+@I [HLS-100] Command "report -model bgsub_Block__proc -o F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/bgsub_Block_proc.verbose.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.774Total elapsed time: 87.717 sec.
+@I [HLS-100] Command "db_write -model bgsub_Block__proc -o F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/bgsub_Block_proc.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.2Total elapsed time: 87.917 sec.
 @I [HLS-10] ----------------------------------------------------------------
 @0 [HLS-0] ----------------------------------------------------------------
 @I [HLS-10] -- Generating RTL for module 'bgsub' 
 @0 [HLS-0] -- Generating RTL for module 'bgsub' 
 @I [HLS-10] ----------------------------------------------------------------
 @0 [HLS-0] ----------------------------------------------------------------
-@I [HLS-100] Command "create_rtl_model bgsub -vendor xilinx -mg_file /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/bgsub.compgen.tcl "
+@I [HLS-100] Command "create_rtl_model bgsub -vendor xilinx -mg_file F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/bgsub.compgen.tcl "
 @I [RTGEN-500] Setting interface mode on port 'bgsub/gmem' to 'm_axi'.
 @I [RTGEN-500] Setting interface mode on port 'bgsub/gmem_offset' to 'm_axi'.
 @I [RTGEN-500] Setting interface mode on port 'bgsub/frame_in' to 's_axilite & ap_none'.
@@ -624,39 +628,39 @@ Source preprocessing: exec clang -fno-limit-debug-info -gcc-toolchain "/opt/Xili
 @I [RTGEN-500] Setting interface mode on port 'bgsub/bgmodel' to 's_axilite & ap_none'.
 @I [RTGEN-500] Setting interface mode on function 'bgsub' to 'ap_ctrl_hs'.
 @I [RTGEN-100] Finished creating RTL model for 'bgsub'.
-@I [HLS-100] Command 'create_rtl_model' returned 0; elapsed 0.00244Total elapsed time: 23.268 sec.
-@I [HLS-111] Elapsed time: 0.263749 seconds; current memory usage: 161 MB.
-@I [HLS-100] Command "source /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/bgsub.rtl_wrap.cfg.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000118Total elapsed time: 23.269 sec.
-@I [HLS-100] Command "gen_rtl bgsub -istop -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/syn/systemc/bgsub -synmodules bgsub_process bgsub_Block__proc bgsub "
-@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.00089Total elapsed time: 23.270 sec.
-@I [HLS-100] Command "gen_rtl bgsub -istop -style xilinx -f -lang vhdl -o /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/syn/vhdl/bgsub "
-@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.002626Total elapsed time: 23.273 sec.
-@I [HLS-100] Command "gen_rtl bgsub -istop -style xilinx -f -lang vlog -o /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/syn/verilog/bgsub "
-@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.001347Total elapsed time: 23.274 sec.
-@I [HLS-100] Command "export_constraint_db -o /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/bgsub.constraint.tcl -f -tool general "
-@I [HLS-100] Command 'export_constraint_db' returned 0; elapsed 3.3e-05Total elapsed time: 23.274 sec.
-@I [HLS-100] Command "report -model bgsub -o /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/bgsub.design.xml -verbose -f -dv "
-@I [HLS-100] Command 'report' returned 0; elapsed 0.076684Total elapsed time: 23.351 sec.
-@I [HLS-100] Command "report -model bgsub -o /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/bgsub.sdaccel.xml -verbose -f -sdaccel "
-@I [HLS-100] Command 'report' returned 0; elapsed 0.002553Total elapsed time: 23.353 sec.
-@I [HLS-100] Command "gen_tb_info bgsub -o /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/bgsub -p /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db "
-@I [HLS-100] Command 'gen_tb_info' returned 0; elapsed 0.000435Total elapsed time: 23.354 sec.
-@I [HLS-100] Command "report -model bgsub -o /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/syn/report/bgsub_csynth.rpt -f "
-@I [HLS-100] Command 'report' returned 0; elapsed 0.002216Total elapsed time: 23.356 sec.
-@I [HLS-100] Command "report -model bgsub -o /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/syn/report/bgsub_csynth.xml -f -x "
-@I [HLS-100] Command 'report' returned 0; elapsed 0.0018Total elapsed time: 23.358 sec.
-@I [HLS-100] Command "report -model bgsub -o /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/bgsub.verbose.rpt -verbose -f "
-@I [HLS-100] Command 'report' returned 0; elapsed 0.134446Total elapsed time: 23.492 sec.
-@I [HLS-100] Command "db_write -model bgsub -o /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/bgsub.adb -f "
-@I [HLS-100] Command 'db_write' returned 0; elapsed 0.002Total elapsed time: 23.494 sec.
+@I [HLS-100] Command 'create_rtl_model' returned 0; elapsed 0.013Total elapsed time: 88.129 sec.
+@I [HLS-111] Elapsed time: 1.587 seconds; current memory usage: 174 MB.
+@I [HLS-100] Command "source F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/bgsub.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002Total elapsed time: 88.210 sec.
+@I [HLS-100] Command "gen_rtl bgsub -istop -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o F:/maxi_latest/backsub_gmm_new_180110/solution1/syn/systemc/bgsub -synmodules bgsub_process bgsub_Block__proc bgsub "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.016Total elapsed time: 88.225 sec.
+@I [HLS-100] Command "gen_rtl bgsub -istop -style xilinx -f -lang vhdl -o F:/maxi_latest/backsub_gmm_new_180110/solution1/syn/vhdl/bgsub "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.026Total elapsed time: 88.252 sec.
+@I [HLS-100] Command "gen_rtl bgsub -istop -style xilinx -f -lang vlog -o F:/maxi_latest/backsub_gmm_new_180110/solution1/syn/verilog/bgsub "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.024Total elapsed time: 88.275 sec.
+@I [HLS-100] Command "export_constraint_db -o F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/bgsub.constraint.tcl -f -tool general "
+@I [HLS-100] Command 'export_constraint_db' returned 0; elapsed 0.002Total elapsed time: 88.278 sec.
+@I [HLS-100] Command "report -model bgsub -o F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/bgsub.design.xml -verbose -f -dv "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.28Total elapsed time: 88.558 sec.
+@I [HLS-100] Command "report -model bgsub -o F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/bgsub.sdaccel.xml -verbose -f -sdaccel "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.022Total elapsed time: 88.580 sec.
+@I [HLS-100] Command "gen_tb_info bgsub -o F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/bgsub -p F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db "
+@I [HLS-100] Command 'gen_tb_info' returned 0; elapsed 0.043Total elapsed time: 88.623 sec.
+@I [HLS-100] Command "report -model bgsub -o F:/maxi_latest/backsub_gmm_new_180110/solution1/syn/report/bgsub_csynth.rpt -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.021Total elapsed time: 88.645 sec.
+@I [HLS-100] Command "report -model bgsub -o F:/maxi_latest/backsub_gmm_new_180110/solution1/syn/report/bgsub_csynth.xml -f -x "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.014Total elapsed time: 88.659 sec.
+@I [HLS-100] Command "report -model bgsub -o F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/bgsub.verbose.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.658Total elapsed time: 89.317 sec.
+@I [HLS-100] Command "db_write -model bgsub -o F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/bgsub.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.028Total elapsed time: 89.345 sec.
 @I [HLS-100] Command "sc_get_clocks bgsub "
-@I [HLS-100] Command 'sc_get_clocks' returned 0; elapsed 3e-06Total elapsed time: 23.496 sec.
+@I [HLS-100] Command 'sc_get_clocks' returned 0; elapsed 0Total elapsed time: 89.359 sec.
 @I [HLS-100] Command "sc_get_portdomain bgsub "
-@I [HLS-100] Command 'sc_get_portdomain' returned 0; elapsed 1e-06Total elapsed time: 23.496 sec.
+@I [HLS-100] Command 'sc_get_portdomain' returned 0; elapsed 0Total elapsed time: 89.359 sec.
 @I [HLS-0] Model list for RTL component generation: bgsub_process bgsub_Block__proc bgsub
 @I [HLS-0] Handling components in module [bgsub_process] ... 
-@I [HLS-100] Command "source /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/bgsub_process.compgen.tcl "
+@I [HLS-100] Command "source F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/bgsub_process.compgen.tcl "
 @I [HLS-0] Found component bgsub_faddfsub_32ns_32ns_32_5_full_dsp.
 @I [HLS-0] Append model bgsub_faddfsub_32ns_32ns_32_5_full_dsp
 @I [HLS-0] Found component bgsub_fmul_32ns_32ns_32_4_max_dsp.
@@ -669,25 +673,25 @@ Source preprocessing: exec clang -fno-limit-debug-info -gcc-toolchain "/opt/Xili
 @I [HLS-0] Append model bgsub_fcmp_32ns_32ns_1_1
 @I [HLS-0] Found component bgsub_fsqrt_32ns_32ns_32_12.
 @I [HLS-0] Append model bgsub_fsqrt_32ns_32ns_32_12
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000406Total elapsed time: 23.497 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.027Total elapsed time: 89.515 sec.
 @I [HLS-0] Handling components in module [bgsub_Block_proc] ... 
-@I [HLS-100] Command "source /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/bgsub_Block_proc.compgen.tcl "
+@I [HLS-100] Command "source F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/bgsub_Block_proc.compgen.tcl "
 @I [HLS-0] Found component bgsub_Block_proc_part_bgmodel.
 @I [HLS-0] Append model bgsub_Block_proc_part_bgmodel
 @I [HLS-0] Found component bgsub_Block_proc_part_frame_in.
 @I [HLS-0] Append model bgsub_Block_proc_part_frame_in
 @I [HLS-0] Found component bgsub_Block_proc_part_frame_out.
 @I [HLS-0] Append model bgsub_Block_proc_part_frame_out
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000251Total elapsed time: 23.498 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.023Total elapsed time: 89.581 sec.
 @I [HLS-0] Handling components in module [bgsub] ... 
-@I [HLS-100] Command "source /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/bgsub.compgen.tcl "
+@I [HLS-100] Command "source F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/bgsub.compgen.tcl "
 @I [HLS-0] Found component bgsub_AXILiteS_s_axi.
 @I [HLS-0] Append model bgsub_AXILiteS_s_axi
 @I [HLS-0] Found component bgsub_gmem_m_axi.
 @I [HLS-0] Append model bgsub_gmem_m_axi
 @I [HLS-0] Found component bgsub_gmem_offset_m_axi.
 @I [HLS-0] Append model bgsub_gmem_offset_m_axi
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000136Total elapsed time: 23.498 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.026Total elapsed time: 89.638 sec.
 @I [HLS-0] Append model bgsub_process
 @I [HLS-0] Append model bgsub_Block_proc
 @I [HLS-0] Append model bgsub
@@ -714,84 +718,84 @@ Source preprocessing: exec clang -fno-limit-debug-info -gcc-toolchain "/opt/Xili
 @I [HLS-0] RTL Generation done.
 @I [HLS-0] CAS Generation done.
 @I [HLS-0] CBC Generation done.
-@I [HLS-100] Command "export_ssdm /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/a.export.ll "
-@I [HLS-100] Command 'export_ssdm' returned 0; elapsed 0.000517Total elapsed time: 23.499 sec.
-@I [HLS-100] Command "source /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/global.setting.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 8.5e-05Total elapsed time: 23.500 sec.
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/common/technology/generic/autopilot/common.gen "
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/common/technology/generic/autopilot/APCoreGen.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000344Total elapsed time: 23.501 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000673Total elapsed time: 23.501 sec.
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/common/technology/generic/autopilot/op.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00019Total elapsed time: 23.502 sec.
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/common/technology/generic/autopilot/op_simcore.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000527Total elapsed time: 23.502 sec.
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/common/technology/generic/autopilot/interface.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 4.1e-05Total elapsed time: 23.502 sec.
-@I [HLS-100] Command "source /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/global.setting.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 7.8e-05Total elapsed time: 23.502 sec.
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/zynq/zynq.gen "
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/common/virtex.gen "
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/common/xilinx.gen "
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/interface/plb46.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000768Total elapsed time: 23.503 sec.
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/interface/fsl.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00024Total elapsed time: 23.504 sec.
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/interface/axi4.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00131Total elapsed time: 23.505 sec.
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/interface/nativeAXI4.gen "
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/interface/saxilite.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002024Total elapsed time: 23.507 sec.
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/interface/maxi.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.003754Total elapsed time: 23.511 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.005858Total elapsed time: 23.511 sec.
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/scripts/xilinxcoregen.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.004974Total elapsed time: 23.516 sec.
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/interface/XilEDKCoreGen.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.00451Total elapsed time: 23.520 sec.
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/ip/xfir.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01717Total elapsed time: 23.538 sec.
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/ip/dds_compiler.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001902Total elapsed time: 23.540 sec.
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/ip/xfft.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.056121Total elapsed time: 23.596 sec.
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/ip/util.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 9.6e-05Total elapsed time: 23.596 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.093337Total elapsed time: 23.596 sec.
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/common/dsp48.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 6.9e-05Total elapsed time: 23.597 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.094463Total elapsed time: 23.597 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.094519Total elapsed time: 23.597 sec.
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/zynq/zynq_fpv6.gen "
-@I [HLS-100] Command "source /opt/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/common/xilinx_fpv6.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000868Total elapsed time: 23.598 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.000925Total elapsed time: 23.598 sec.
-@I [HLS-100] Command "source /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/global.setting.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 7.9e-05Total elapsed time: 23.598 sec.
-@I [HLS-100] Command "source /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/global.setting.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 7.4e-05Total elapsed time: 23.598 sec.
-@I [HLS-100] Command "source /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/global.setting.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 7.3e-05Total elapsed time: 23.599 sec.
-@I [HLS-100] Command "source /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/global.setting.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 6.7e-05Total elapsed time: 23.599 sec.
-@I [HLS-100] Command "source /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/bgsub_process.compgen.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.039263Total elapsed time: 23.638 sec.
-@I [HLS-100] Command "source /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/bgsub_Block_proc.compgen.tcl "
+@I [HLS-100] Command "export_ssdm F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/a.export.ll "
+@I [HLS-100] Command 'export_ssdm' returned 0; elapsed 0.008Total elapsed time: 89.721 sec.
+@I [HLS-100] Command "source F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 89.726 sec.
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/common/technology/generic/autopilot/common.gen "
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/common/technology/generic/autopilot/APCoreGen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.027Total elapsed time: 89.781 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.054Total elapsed time: 89.781 sec.
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/common/technology/generic/autopilot/op.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 89.792 sec.
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/common/technology/generic/autopilot/op_simcore.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.025Total elapsed time: 89.818 sec.
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/common/technology/generic/autopilot/interface.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.018Total elapsed time: 89.837 sec.
+@I [HLS-100] Command "source F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.003Total elapsed time: 89.840 sec.
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/zynq/zynq.gen "
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/common/virtex.gen "
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/common/xilinx.gen "
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/interface/plb46.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002Total elapsed time: 89.846 sec.
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/interface/fsl.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 89.847 sec.
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/interface/axi4.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.003Total elapsed time: 89.851 sec.
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/interface/nativeAXI4.gen "
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/interface/saxilite.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.005Total elapsed time: 89.856 sec.
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/interface/maxi.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.015Total elapsed time: 89.870 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.02Total elapsed time: 89.871 sec.
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/scripts/xilinxcoregen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.017Total elapsed time: 89.887 sec.
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/interface/XilEDKCoreGen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.012Total elapsed time: 89.900 sec.
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/ip/dds_compiler.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.011Total elapsed time: 89.913 sec.
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/ip/util.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 89.913 sec.
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/ip/xfft.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.198Total elapsed time: 90.111 sec.
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/ip/xfir.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.054Total elapsed time: 90.165 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.321Total elapsed time: 90.165 sec.
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/common/dsp48.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.003Total elapsed time: 90.175 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.333Total elapsed time: 90.175 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.334Total elapsed time: 90.176 sec.
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/zynq/zynq_fpv6.gen "
+@I [HLS-100] Command "source F:/Xilinx/Vivado_HLS/2015.4/common/technology/xilinx/common/xilinx_fpv6.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002Total elapsed time: 90.180 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.003Total elapsed time: 90.180 sec.
+@I [HLS-100] Command "source F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002Total elapsed time: 90.240 sec.
+@I [HLS-100] Command "source F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 90.244 sec.
+@I [HLS-100] Command "source F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 90.247 sec.
+@I [HLS-100] Command "source F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 90.247 sec.
+@I [HLS-100] Command "source F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/bgsub_process.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.507Total elapsed time: 90.755 sec.
+@I [HLS-100] Command "source F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/bgsub_Block_proc.compgen.tcl "
 @I [RTMG-278] Implementing memory 'bgsub_Block_proc_part_bgmodel_ram' using block RAMs.
 @I [RTMG-278] Implementing memory 'bgsub_Block_proc_part_frame_in_ram' using block RAMs.
 @I [RTMG-278] Implementing memory 'bgsub_Block_proc_part_frame_out_ram' using distributed RAMs.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.015634Total elapsed time: 23.654 sec.
-@I [HLS-100] Command "source /home/fyp-zc702/FYP/backsub_gmm_new_180110/solution1/.autopilot/db/bgsub.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.166Total elapsed time: 90.921 sec.
+@I [HLS-100] Command "source F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/bgsub.compgen.tcl "
 @I [HLS-100] Command "source ./AXILiteS.slave.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 3.5e-05Total elapsed time: 23.661 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.053609Total elapsed time: 23.708 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 90.966 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.275Total elapsed time: 91.197 sec.
 @I [HLS-10] Finished generating all RTL models.
 @0 [HLS-0] Finished generating all RTL models.
 @I [WSYSC-301] Generating RTL SystemC for 'bgsub'.
 @I [WVHDL-304] Generating RTL VHDL for 'bgsub'.
 @I [WVLOG-307] Generating RTL Verilog for 'bgsub'.
-@I [HLS-100] Command 'autosyn' returned 0; elapsed 1.9763Total elapsed time: 23.714 sec.
-@I [HLS-100] Command 'csynth_design' returned 0; elapsed 6.05433Total elapsed time: 23.714 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 6.20708Total elapsed time: 23.714 sec.
+@I [HLS-100] Command 'autosyn' returned 0; elapsed 12.274Total elapsed time: 91.594 sec.
+@I [HLS-100] Command 'csynth_design' returned 0; elapsed 90.243Total elapsed time: 91.594 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 91.022Total elapsed time: 91.594 sec.
 @I [HLS-100] Command "cleanup_all "
-@I [HLS-100] Command 'cleanup_all' returned 0; elapsed 0.015175Total elapsed time: 23.729 sec.
+@I [HLS-100] Command 'cleanup_all' returned 0; elapsed 0.035Total elapsed time: 91.629 sec.

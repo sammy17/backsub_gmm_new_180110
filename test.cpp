@@ -12,7 +12,7 @@ cv::Mat IMG1(HEIGHT, WIDTH, CV_8UC1);
 uint8_t frame_in[IMG_SIZE];
 uint8_t frame_out[IMG_SIZE] = {0};
 
-float bgmodel[4*BGM_SIZE];
+data_t bgmodel[4*BGM_SIZE];
 
 
 int main()

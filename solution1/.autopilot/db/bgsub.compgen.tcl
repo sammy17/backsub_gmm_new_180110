@@ -47,7 +47,7 @@ bgmodel {
 if {${::AESL::PGuard_simmodel_gen}} {
 	if {[info proc ::AESL_LIB_XILADAPTER::s_axilite_gen] == "::AESL_LIB_XILADAPTER::s_axilite_gen"} {
 		eval "::AESL_LIB_XILADAPTER::s_axilite_gen { \
-			id 22 \
+			id 21 \
 			corename bgsub_AXILiteS_axilite \
 			name bgsub_AXILiteS_s_axi \
 			ports {$port_AXILiteS} \
@@ -66,7 +66,7 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::m_axi_gen] == "::AESL_LIB_XILADAPTER::m_axi_gen"} {
 eval "::AESL_LIB_XILADAPTER::m_axi_gen { \
-    id 23 \
+    id 22 \
     corename {m_axi} \
     op interface \
     max_latency -1 \ 
@@ -86,7 +86,7 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::m_axi_gen] == "::AESL_LIB_XILADAPTER::m_axi_gen"} {
 eval "::AESL_LIB_XILADAPTER::m_axi_gen { \
-    id 24 \
+    id 23 \
     corename {m_axi} \
     op interface \
     max_latency -1 \ 

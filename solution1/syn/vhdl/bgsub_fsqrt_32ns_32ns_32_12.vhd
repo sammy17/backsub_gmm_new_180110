@@ -10,7 +10,7 @@ use ieee.std_logic_1164.all;
 
 entity bgsub_fsqrt_32ns_32ns_32_12 is
     generic (
-        ID         : integer := 8;
+        ID         : integer := 7;
         NUM_STAGE  : integer := 12;
         din0_WIDTH : integer := 32;
         din1_WIDTH : integer := 32;

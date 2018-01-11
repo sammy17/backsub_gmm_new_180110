@@ -22,8 +22,8 @@ using namespace sc_dt;
 struct bgsub_Block_proc_part_frame_in_ram : public sc_core::sc_module {
 
   static const unsigned DataWidth = 8;
-  static const unsigned AddressRange = 320;
-  static const unsigned AddressWidth = 9;
+  static const unsigned AddressRange = 640;
+  static const unsigned AddressWidth = 10;
 
 //latency = 1
 //input_reg = 1
@@ -79,8 +79,8 @@ SC_MODULE(bgsub_Block_proc_part_frame_in) {
 
 
 static const unsigned DataWidth = 8;
-static const unsigned AddressRange = 320;
-static const unsigned AddressWidth = 9;
+static const unsigned AddressRange = 640;
+static const unsigned AddressWidth = 10;
 
 sc_core::sc_in <sc_lv<AddressWidth> > address0;
 sc_core::sc_in<sc_logic> ce0;

@@ -1,5 +1,5 @@
 set C_TypeInfoList {{ 
-"bgsub" : [[], { "return": [[], "void"]} , [{"ExternC" : 0}], [ {"frame_in": [[], {"array": ["0", [38400]]}] }, {"frame_out": [[], {"array": ["0", [38400]]}] }, {"init": [[], {"scalar": "bool"}] }, {"bgmodel": [[], {"array": [ {"scalar": "float"}, [307200]]}] }],[],""], 
+"bgsub" : [[], { "return": [[], "void"]} , [{"ExternC" : 0}], [ {"frame_in": [[], {"array": ["0", [76800]]}] }, {"frame_out": [[], {"array": ["0", [76800]]}] }, {"init": [[], {"scalar": "bool"}] }, {"bgmodel": [[], {"array": [ {"scalar": "float"}, [614400]]}] }],[],""], 
 "0": [ "uint8_t", {"typedef": [[[], {"scalar": "unsigned char"}],""]}]
 }}
 set moduleName bgsub
@@ -20,8 +20,8 @@ set C_modelArgList {
 	{ bgmodel int 32 regular {axi_slave 0}  }
 }
 set C_modelArgMapList {[ 
-	{ "Name" : "gmem", "interface" : "axi_master", "bitwidth" : 8, "direction" : "READWRITE", "bitSlice":[{"low":0,"up":7,"cElement": [{"cName": "frame_in","cData": "unsigned char","bit_use": { "low": 0,"up": 7},"offset": { "type": "dynamic","port_name": "frame_in","bundle": "AXILiteS"},"direction": "READONLY","cArray": [{"low" : 0,"up" : 38399,"step" : 1}]},{"cName": "frame_out","cData": "unsigned char","bit_use": { "low": 0,"up": 7},"offset": { "type": "dynamic","port_name": "frame_out","bundle": "AXILiteS"},"direction": "WRITEONLY","cArray": [{"low" : 0,"up" : 38399,"step" : 1}]}]}]} , 
- 	{ "Name" : "gmem_offset", "interface" : "axi_master", "bitwidth" : 32, "direction" : "READWRITE", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "bgmodel","cData": "float","bit_use": { "low": 0,"up": 31},"offset": { "type": "dynamic","port_name": "bgmodel","bundle": "AXILiteS"},"direction": "READWRITE","cArray": [{"low" : 0,"up" : 307199,"step" : 1}]}]}]} , 
+	{ "Name" : "gmem", "interface" : "axi_master", "bitwidth" : 8, "direction" : "READWRITE", "bitSlice":[{"low":0,"up":7,"cElement": [{"cName": "frame_in","cData": "unsigned char","bit_use": { "low": 0,"up": 7},"offset": { "type": "dynamic","port_name": "frame_in","bundle": "AXILiteS"},"direction": "READONLY","cArray": [{"low" : 0,"up" : 76799,"step" : 1}]},{"cName": "frame_out","cData": "unsigned char","bit_use": { "low": 0,"up": 7},"offset": { "type": "dynamic","port_name": "frame_out","bundle": "AXILiteS"},"direction": "WRITEONLY","cArray": [{"low" : 0,"up" : 76799,"step" : 1}]}]}]} , 
+ 	{ "Name" : "gmem_offset", "interface" : "axi_master", "bitwidth" : 32, "direction" : "READWRITE", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "bgmodel","cData": "float","bit_use": { "low": 0,"up": 31},"offset": { "type": "dynamic","port_name": "bgmodel","bundle": "AXILiteS"},"direction": "READWRITE","cArray": [{"low" : 0,"up" : 614399,"step" : 1}]}]}]} , 
  	{ "Name" : "frame_in", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_none","bitwidth" : 32, "direction" : "READONLY", "offset" : {"in":16}, "offset_end" : {"in":23}} , 
  	{ "Name" : "frame_out", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_none","bitwidth" : 32, "direction" : "READONLY", "offset" : {"in":24}, "offset_end" : {"in":31}} , 
  	{ "Name" : "init", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_none","bitwidth" : 1, "direction" : "READONLY", "bitSlice":[{"low":0,"up":0,"cElement": [{"cName": "init","cData": "bool","bit_use": { "low": 0,"up": 0},"cArray": [{"low" : 0,"up" : 0,"step" : 0}]}]}], "offset" : {"in":32}, "offset_end" : {"in":39}} , 

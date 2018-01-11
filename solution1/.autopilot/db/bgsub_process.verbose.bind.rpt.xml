@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'bgsub_process'" level="0">
-<item name = "Date">Fri Jan 12 01:07:13 2018
+<item name = "Date">Fri Jan 12 01:16:02 2018
 </item>
 <item name = "Version">2015.4 (Build 1412921 on Wed Nov 18 09:58:55 AM 2015)</item>
 <item name = "Project">backsub_gmm_new_180110</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">8644, 56004, 8644, 56004, none</column>
+<column name="">17286, 112006, 17286, 112006, none</column>
 </table>
 </item>
 <item name = "Detail">
@@ -35,7 +35,7 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- Loop 1">8642, 56002, 8642 ~ 56002, -, -, 1, no</column>
+<column name="- Loop 1">17284, 112004, 8642 ~ 56002, -, -, 2, no</column>
 <column name=" + Loop 1.1">24960, 56000, 78 ~ 175, -, -, 320, no</column>
 <column name="  ++ Loop 1.1.1">19, 56, 19, -, -, 1 ~ 2, no</column>
 <column name="  ++ Loop 1.1.2">0, 8, 5, -, -, 0 ~ 1, no</column>

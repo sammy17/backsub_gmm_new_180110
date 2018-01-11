@@ -1,7 +1,5 @@
 #include "core.h"
 
-
-
 static const int defaultNMixtures = 5;
 static const int defaultHistory = 200;
 static const data_t defaultBackgroundRatio = 0.7;
@@ -16,7 +14,7 @@ const data_t minVar = defaultNoiseSigma*defaultNoiseSigma;
 
 void process(uint8_t frame_in[IMG_SIZE/PARTS],
              uint8_t frame_out[IMG_SIZE/PARTS],
-			 float bgmodel[4*BGM_SIZE/PARTS],
+			 data_t bgmodel[4*BGM_SIZE/PARTS],
 			 const data_t learningRate)
 {
     int x, y, k, k1, rows = HEIGHT/PARTS, cols = WIDTH;
@@ -167,6 +165,11 @@ void bgsub(uint8_t frame_in[IMG_SIZE],
     uint8_t part2_frame_out[IMG_SIZE/PARTS];
     data_t learningRate2;
 
+    data_t part3_bgmodel[4*BGM_SIZE/PARTS];
+    uint8_t part3_frame_in[IMG_SIZE/PARTS];
+    uint8_t part3_frame_out[IMG_SIZE/PARTS];
+    data_t learningRate3;
+
     if( init )
     {
 
@@ -181,26 +184,30 @@ void bgsub(uint8_t frame_in[IMG_SIZE],
 
         learningRate = 1;
         learningRate2 = 1;
+        learningRate3 = 1;
     }
     else
     {
     	learningRate = 0;
     	learningRate2 = 0;
+    	learningRate3 = 0;
     }
 
-    for(int part=0;part<PARTS;part+=2)
+    for(int part=0;part<PARTS;part+=3)
     {
     	read_mem:{
         memcpy(part_frame_in,&frame_in[(IMG_SIZE/PARTS)*part],sizeof(uint8_t)*(IMG_SIZE/PARTS));
         memcpy(part_bgmodel,&bgmodel[(4*BGM_SIZE/PARTS)*part],4*sizeof(data_t)*(BGM_SIZE/PARTS));
         memcpy(part2_frame_in,&frame_in[(IMG_SIZE/PARTS)*(part+1)],sizeof(uint8_t)*(IMG_SIZE/PARTS));
         memcpy(part2_bgmodel,&bgmodel[(4*BGM_SIZE/PARTS)*(part+1)],4*sizeof(data_t)*(BGM_SIZE/PARTS));
+        memcpy(part3_frame_in,&frame_in[(IMG_SIZE/PARTS)*(part+2)],sizeof(uint8_t)*(IMG_SIZE/PARTS));
+        memcpy(part3_bgmodel,&bgmodel[(4*BGM_SIZE/PARTS)*(part+2)],4*sizeof(data_t)*(BGM_SIZE/PARTS));
     	}
 
     	processing:{
         process(part_frame_in,part_frame_out, part_bgmodel,learningRate);
-
         process(part2_frame_in,part2_frame_out, part2_bgmodel,learningRate2);
+        process(part3_frame_in,part3_frame_out, part3_bgmodel,learningRate3);
     	}
 
 
@@ -209,6 +216,8 @@ void bgsub(uint8_t frame_in[IMG_SIZE],
         memcpy(&frame_out[(IMG_SIZE/PARTS)*part],part_frame_out,sizeof(uint8_t)*(IMG_SIZE/PARTS));
         memcpy(&bgmodel[(4*BGM_SIZE/PARTS)*(part+1)],part2_bgmodel,4*sizeof(data_t)*(BGM_SIZE/PARTS));
         memcpy(&frame_out[(IMG_SIZE/PARTS)*(part+1)],part2_frame_out,sizeof(uint8_t)*(IMG_SIZE/PARTS));
+        memcpy(&bgmodel[(4*BGM_SIZE/PARTS)*(part+2)],part3_bgmodel,4*sizeof(data_t)*(BGM_SIZE/PARTS));
+        memcpy(&frame_out[(IMG_SIZE/PARTS)*(part+2)],part3_frame_out,sizeof(uint8_t)*(IMG_SIZE/PARTS));
     	}
 
 

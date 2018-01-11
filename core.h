@@ -9,13 +9,13 @@
 using namespace std;
 
 #define WIDTH 320
-#define HEIGHT 240/2
+#define HEIGHT 240
 #define IMG_SIZE WIDTH*HEIGHT
 #define K  2 // no of gaussian mxitures
 #define BGM_SIZE IMG_SIZE*K
 #define PARTS 120
 typedef float data_t;
-
+//typedef ap_fixed<32,16> data_t;
 
 
 

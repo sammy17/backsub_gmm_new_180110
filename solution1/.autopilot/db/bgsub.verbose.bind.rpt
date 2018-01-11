@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'bgsub'
 ================================================================
-* Date:           Fri Jan 12 01:07:13 2018
+* Date:           Fri Jan 12 01:16:05 2018
 
 * Version:        2015.4 (Build 1412921 on Wed Nov 18 09:58:55 AM 2015)
 * Project:        backsub_gmm_new_180110
@@ -29,7 +29,7 @@
     |      Latency      |      Interval     | Pipeline |
     |   min   |   max   |   min   |   max   |   Type   |
     +---------+---------+---------+---------+----------+
-    |  1214042|  4362846|  1214043|  4362847| dataflow |
+    |  2078002|  6481206|  2078003|  6481207| dataflow |
     +---------+---------+---------+---------+----------+
 
     + Detail: 
@@ -151,12 +151,12 @@ STG Binding:
 - Is pipelined: 0
 - Is top level: 1
 Port [ Return ] is wired: 1; IO mode=ap_ctrl_hs:ce=0
-Port [ gmem]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=2; type=4; mode=0x7ff3ed04de50; pingpong=0; private_global=0; IO mode=m_axi:ce=0
-Port [ gmem_offset]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=2; type=4; mode=0x7ff3f9333b50; pingpong=0; private_global=0; IO mode=m_axi:ce=0
-Port [ frame_in]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; mode=0x7ff3f9b2d170; pingpong=0; private_global=0; IO mode=ap_none:ce=0
-Port [ frame_out]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; mode=0x7ff3ecddf8d0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
-Port [ init]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; mode=0x7ff3ecbae1a0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
-Port [ bgmodel]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; mode=0x7ff3ecba97c0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ gmem]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=2; type=4; mode=0x157510555d0; pingpong=0; private_global=0; IO mode=m_axi:ce=0
+Port [ gmem_offset]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=2; type=4; mode=0x15751056230; pingpong=0; private_global=0; IO mode=m_axi:ce=0
+Port [ frame_in]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; mode=0x15751057430; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ frame_out]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; mode=0x15751055150; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ init]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; mode=0x15751055660; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ bgmodel]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; mode=0x157510558a0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
 ---------------- STG Properties END ------------------
 
 ---------------- Datapath Model BEGIN ----------------
@@ -615,14 +615,14 @@ stg_21         (ret                 ) [ 0000]
 |----------|----------------------------|---------|---------|---------|---------|---------|
 | Operation|       Functional Unit      |   BRAM  |  DSP48E |  Delay  |    FF   |   LUT   |
 |----------|----------------------------|---------|---------|---------|---------|---------|
-|   call   | grp_bgsub_Block_proc_fu_82 |    18   |    20   | 144.714 |   8703  |  10779  |
+|   call   | grp_bgsub_Block_proc_fu_82 |    51   |    30   | 204.503 |  13091  |  16266  |
 |----------|----------------------------|---------|---------|---------|---------|---------|
 |          |   bgmodel_read_read_fu_58  |    0    |    0    |    0    |    0    |    0    |
 |   read   |    init_read_read_fu_64    |    0    |    0    |    0    |    0    |    0    |
 |          |  frame_out_read_read_fu_70 |    0    |    0    |    0    |    0    |    0    |
 |          |  frame_in_read_read_fu_76  |    0    |    0    |    0    |    0    |    0    |
 |----------|----------------------------|---------|---------|---------|---------|---------|
-|   Total  |                            |    18   |    20   | 144.714 |   8703  |  10779  |
+|   Total  |                            |    51   |    30   | 204.503 |  13091  |  16266  |
 |----------|----------------------------|---------|---------|---------|---------|---------|
 
 Memories:
@@ -653,10 +653,10 @@ N/A
 +-----------+--------+--------+--------+--------+--------+
 |           |  BRAM  | DSP48E |  Delay |   FF   |   LUT  |
 +-----------+--------+--------+--------+--------+--------+
-|  Function |   18   |   20   |   144  |  8703  |  10779 |
+|  Function |   51   |   30   |   204  |  13091 |  16266 |
 |   Memory  |    -   |    -   |    -   |    -   |    -   |
 |Multiplexer|    -   |    -   |    -   |    -   |    -   |
 |  Register |    -   |    -   |    -   |   97   |    -   |
 +-----------+--------+--------+--------+--------+--------+
-|   Total   |   18   |   20   |   144  |  8800  |  10779 |
+|   Total   |   51   |   30   |   204  |  13188 |  16266 |
 +-----------+--------+--------+--------+--------+--------+

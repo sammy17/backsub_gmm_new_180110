@@ -335,13 +335,13 @@
               <name/>
               <fileName>backsub_gmm_new_180110/core.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>219</lineNumber>
+              <lineNumber>228</lineNumber>
               <contextFuncName>bgsub</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
                 <item_version>0</item_version>
                 <item class_id="11" tracking_level="0" version="0">
-                  <first>/home/fyp-zc702/FYP</first>
+                  <first>f:/maxi_latest</first>
                   <second class_id="12" tracking_level="0" version="0">
                     <count>1</count>
                     <item_version>0</item_version>
@@ -350,7 +350,7 @@
                         <first>backsub_gmm_new_180110/core.cpp</first>
                         <second>bgsub</second>
                       </first>
-                      <second>219</second>
+                      <second>228</second>
                     </item>
                   </second>
                 </item>
@@ -518,7 +518,7 @@
         <mDepth>-1</mDepth>
         <mMinTripCount>-1</mMinTripCount>
         <mMaxTripCount>-1</mMaxTripCount>
-        <mMinLatency>4362846</mMinLatency>
+        <mMinLatency>6481206</mMinLatency>
         <mMaxLatency>-1</mMaxLatency>
         <mIsDfPipe>1</mIsDfPipe>
         <mDfPipe class_id="23" tracking_level="1" version="0" object_id="_27">
@@ -783,19 +783,19 @@
             <item_version>0</item_version>
             <item>
               <first>BRAM</first>
-              <second>18</second>
+              <second>51</second>
             </item>
             <item>
               <first>DSP48E</first>
-              <second>20</second>
+              <second>30</second>
             </item>
             <item>
               <first>FF</first>
-              <second>8190</second>
+              <second>12290</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>12808</second>
+              <second>19240</second>
             </item>
           </second>
         </item>

@@ -14,8 +14,8 @@ entity bgsub_Block_proc_part_bgmodel_ram is
     generic(
             mem_type    : string := "block"; 
             dwidth     : integer := 32; 
-            awidth     : integer := 12; 
-            mem_size    : integer := 2560
+            awidth     : integer := 13; 
+            mem_size    : integer := 5120
     ); 
     port (
           addr0     : in std_logic_vector(awidth-1 downto 0); 
@@ -107,8 +107,8 @@ use IEEE.std_logic_1164.all;
 entity bgsub_Block_proc_part_bgmodel is
     generic (
         DataWidth : INTEGER := 32;
-        AddressRange : INTEGER := 2560;
-        AddressWidth : INTEGER := 12);
+        AddressRange : INTEGER := 5120;
+        AddressWidth : INTEGER := 13);
     port (
         reset : IN STD_LOGIC;
         clk : IN STD_LOGIC;
