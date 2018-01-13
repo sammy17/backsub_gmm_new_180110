@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'bgsub'
 ================================================================
-* Date:           Fri Jan 12 01:16:10 2018
+* Date:           Sat Jan 13 16:53:20 2018
 
 * Version:        2015.4 (Build 1412921 on Wed Nov 18 09:58:55 AM 2015)
 * Project:        backsub_gmm_new_180110
@@ -29,7 +29,7 @@
     |      Latency      |      Interval     | Pipeline |
     |   min   |   max   |   min   |   max   |   Type   |
     +---------+---------+---------+---------+----------+
-    |  2078002|  6481206|  2078003|  6481207| dataflow |
+    |  1905122|  5361126|  1905123|  5361127| dataflow |
     +---------+---------+---------+---------+----------+
 
     + Detail: 
@@ -38,7 +38,7 @@
         |                            |                  |      Latency      |      Interval     | Pipeline|
         |          Instance          |      Module      |   min   |   max   |   min   |   max   |   Type  |
         +----------------------------+------------------+---------+---------+---------+---------+---------+
-        |grp_bgsub_Block_proc_fu_82  |bgsub_Block_proc  |  2078002|  6481206|  2078002|  6481206|   none  |
+        |grp_bgsub_Block_proc_fu_84  |bgsub_Block_proc  |  1905122|  5361126|  1905122|  5361126|   none  |
         +----------------------------+------------------+---------+---------+---------+---------+---------+
 
         * Loop: 
@@ -56,16 +56,16 @@
 |DSP              |        -|      -|       -|      -|
 |Expression       |        -|      -|       -|      -|
 |FIFO             |        -|      -|       -|      -|
-|Instance         |       51|     30|   13537|  20874|
+|Instance         |       68|     40|   17593|  27304|
 |Memory           |        -|      -|       -|      -|
 |Multiplexer      |        -|      -|       -|      -|
 |Register         |        -|      -|       2|      -|
 +-----------------+---------+-------+--------+-------+
-|Total            |       51|     30|   13539|  20874|
+|Total            |       68|     40|   17595|  27304|
 +-----------------+---------+-------+--------+-------+
 |Available        |      280|    220|  106400|  53200|
 +-----------------+---------+-------+--------+-------+
-|Utilization (%)  |       18|     13|      12|     39|
+|Utilization (%)  |       24|     18|      16|     51|
 +-----------------+---------+-------+--------+-------+
 
 + Detail: 
@@ -73,12 +73,13 @@
     +---------------------------+-------------------------+---------+-------+-------+-------+
     |          Instance         |          Module         | BRAM_18K| DSP48E|   FF  |  LUT  |
     +---------------------------+-------------------------+---------+-------+-------+-------+
-    |bgsub_AXILiteS_s_axi_U     |bgsub_AXILiteS_s_axi     |        0|      0|    151|    234|
-    |bgsub_Block_proc_U0        |bgsub_Block_proc         |       51|     30|  12290|  19240|
+    |bgsub_AXILiteS_s_axi_U     |bgsub_AXILiteS_s_axi     |        0|      0|    144|    232|
+    |bgsub_Block_proc_U0        |bgsub_Block_proc         |       68|     40|  16310|  25630|
+    |bgsub_CRTL_BUS_s_axi_U     |bgsub_CRTL_BUS_s_axi     |        0|      0|     43|     42|
     |bgsub_gmem_m_axi_U         |bgsub_gmem_m_axi         |        0|      0|    548|    700|
     |bgsub_gmem_offset_m_axi_U  |bgsub_gmem_offset_m_axi  |        0|      0|    548|    700|
     +---------------------------+-------------------------+---------+-------+-------+-------+
-    |Total                      |                         |       51|     30|  13537|  20874|
+    |Total                      |                         |       68|     40|  17593|  27304|
     +---------------------------+-------------------------+---------+-------+-------+-------+
 
     * DSP48: 
@@ -132,12 +133,26 @@
 |s_axi_AXILiteS_BVALID       | out |    1|    s_axi   |   AXILiteS   |    scalar    |
 |s_axi_AXILiteS_BREADY       |  in |    1|    s_axi   |   AXILiteS   |    scalar    |
 |s_axi_AXILiteS_BRESP        | out |    2|    s_axi   |   AXILiteS   |    scalar    |
+|s_axi_CRTL_BUS_AWVALID      |  in |    1|    s_axi   |   CRTL_BUS   |    scalar    |
+|s_axi_CRTL_BUS_AWREADY      | out |    1|    s_axi   |   CRTL_BUS   |    scalar    |
+|s_axi_CRTL_BUS_AWADDR       |  in |    5|    s_axi   |   CRTL_BUS   |    scalar    |
+|s_axi_CRTL_BUS_WVALID       |  in |    1|    s_axi   |   CRTL_BUS   |    scalar    |
+|s_axi_CRTL_BUS_WREADY       | out |    1|    s_axi   |   CRTL_BUS   |    scalar    |
+|s_axi_CRTL_BUS_WDATA        |  in |   32|    s_axi   |   CRTL_BUS   |    scalar    |
+|s_axi_CRTL_BUS_WSTRB        |  in |    4|    s_axi   |   CRTL_BUS   |    scalar    |
+|s_axi_CRTL_BUS_ARVALID      |  in |    1|    s_axi   |   CRTL_BUS   |    scalar    |
+|s_axi_CRTL_BUS_ARREADY      | out |    1|    s_axi   |   CRTL_BUS   |    scalar    |
+|s_axi_CRTL_BUS_ARADDR       |  in |    5|    s_axi   |   CRTL_BUS   |    scalar    |
+|s_axi_CRTL_BUS_RVALID       | out |    1|    s_axi   |   CRTL_BUS   |    scalar    |
+|s_axi_CRTL_BUS_RREADY       |  in |    1|    s_axi   |   CRTL_BUS   |    scalar    |
+|s_axi_CRTL_BUS_RDATA        | out |   32|    s_axi   |   CRTL_BUS   |    scalar    |
+|s_axi_CRTL_BUS_RRESP        | out |    2|    s_axi   |   CRTL_BUS   |    scalar    |
+|s_axi_CRTL_BUS_BVALID       | out |    1|    s_axi   |   CRTL_BUS   |    scalar    |
+|s_axi_CRTL_BUS_BREADY       |  in |    1|    s_axi   |   CRTL_BUS   |    scalar    |
+|s_axi_CRTL_BUS_BRESP        | out |    2|    s_axi   |   CRTL_BUS   |    scalar    |
 |ap_clk                      |  in |    1| ap_ctrl_hs |     bgsub    | return value |
 |ap_rst_n                    |  in |    1| ap_ctrl_hs |     bgsub    | return value |
-|ap_done                     | out |    1| ap_ctrl_hs |     bgsub    | return value |
-|ap_start                    |  in |    1| ap_ctrl_hs |     bgsub    | return value |
-|ap_idle                     | out |    1| ap_ctrl_hs |     bgsub    | return value |
-|ap_ready                    | out |    1| ap_ctrl_hs |     bgsub    | return value |
+|interrupt                   | out |    1| ap_ctrl_hs |     bgsub    | return value |
 |m_axi_gmem_AWVALID          | out |    1|    m_axi   |     gmem     |    pointer   |
 |m_axi_gmem_AWREADY          |  in |    1|    m_axi   |     gmem     |    pointer   |
 |m_axi_gmem_AWADDR           | out |   32|    m_axi   |     gmem     |    pointer   |

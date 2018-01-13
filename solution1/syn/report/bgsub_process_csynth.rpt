@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'bgsub_process'
 ================================================================
-* Date:           Fri Jan 12 01:16:06 2018
+* Date:           Sat Jan 13 16:53:18 2018
 
 * Version:        2015.4 (Build 1412921 on Wed Nov 18 09:58:55 AM 2015)
 * Project:        backsub_gmm_new_180110
@@ -81,14 +81,14 @@
     +-------------------------------------------+----------------------------------------+---------+-------+-----+-----+
     |                  Instance                 |                 Module                 | BRAM_18K| DSP48E|  FF | LUT |
     +-------------------------------------------+----------------------------------------+---------+-------+-----+-----+
-    |bgsub_faddfsub_32ns_32ns_32_5_full_dsp_U0  |bgsub_faddfsub_32ns_32ns_32_5_full_dsp  |        0|      2|  205|  390|
     |bgsub_faddfsub_32ns_32ns_32_5_full_dsp_U1  |bgsub_faddfsub_32ns_32ns_32_5_full_dsp  |        0|      2|  205|  390|
-    |bgsub_fcmp_32ns_32ns_1_1_U6                |bgsub_fcmp_32ns_32ns_1_1                |        0|      0|   66|  239|
-    |bgsub_fdiv_32ns_32ns_32_16_U4              |bgsub_fdiv_32ns_32ns_32_16              |        0|      0|  761|  994|
-    |bgsub_fmul_32ns_32ns_32_4_max_dsp_U2       |bgsub_fmul_32ns_32ns_32_4_max_dsp       |        0|      3|  143|  321|
+    |bgsub_faddfsub_32ns_32ns_32_5_full_dsp_U2  |bgsub_faddfsub_32ns_32ns_32_5_full_dsp  |        0|      2|  205|  390|
+    |bgsub_fcmp_32ns_32ns_1_1_U7                |bgsub_fcmp_32ns_32ns_1_1                |        0|      0|   66|  239|
+    |bgsub_fdiv_32ns_32ns_32_16_U5              |bgsub_fdiv_32ns_32ns_32_16              |        0|      0|  761|  994|
     |bgsub_fmul_32ns_32ns_32_4_max_dsp_U3       |bgsub_fmul_32ns_32ns_32_4_max_dsp       |        0|      3|  143|  321|
-    |bgsub_fsqrt_32ns_32ns_32_12_U7             |bgsub_fsqrt_32ns_32ns_32_12             |        0|      0|  405|  615|
-    |bgsub_sitofp_32ns_32_6_U5                  |bgsub_sitofp_32ns_32_6                  |        0|      0|  340|  554|
+    |bgsub_fmul_32ns_32ns_32_4_max_dsp_U4       |bgsub_fmul_32ns_32ns_32_4_max_dsp       |        0|      3|  143|  321|
+    |bgsub_fsqrt_32ns_32ns_32_12_U8             |bgsub_fsqrt_32ns_32ns_32_12             |        0|      0|  405|  615|
+    |bgsub_sitofp_32ns_32_6_U6                  |bgsub_sitofp_32ns_32_6                  |        0|      0|  340|  554|
     +-------------------------------------------+----------------------------------------+---------+-------+-----+-----+
     |Total                                      |                                        |        0|     10| 2268| 3824|
     +-------------------------------------------+----------------------------------------+---------+-------+-----+-----+

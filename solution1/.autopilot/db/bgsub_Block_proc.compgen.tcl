@@ -1,7 +1,7 @@
 # This script segment is generated automatically by AutoPilot
 
 # Memory (RAM/ROM)  definition:
-set ID 12
+set ID 13
 set MemName bgsub_Block_proc_part_bgmodel
 set CoreName ap_simcore_mem
 set PortList { 2 2 }
@@ -83,7 +83,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 
 
 # Memory (RAM/ROM)  definition:
-set ID 13
+set ID 14
 set MemName bgsub_Block_proc_part_frame_in
 set CoreName ap_simcore_mem
 set PortList { 2 3 }
@@ -165,7 +165,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 
 
 # Memory (RAM/ROM)  definition:
-set ID 14
+set ID 15
 set MemName bgsub_Block_proc_part_frame_out
 set CoreName ap_simcore_mem
 set PortList { 2 3 }
@@ -256,7 +256,7 @@ if {${::AESL::PGuard_autoexp_gen}} {
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 15 \
+    id 16 \
     name init \
     type other \
     dir I \
@@ -271,7 +271,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 16 \
+    id 17 \
     name bgmodel \
     type other \
     dir IO \
@@ -286,7 +286,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 17 \
+    id 18 \
     name bgmodel1 \
     type other \
     dir I \
@@ -301,7 +301,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 18 \
+    id 19 \
     name frame_out \
     type other \
     dir IO \
@@ -316,7 +316,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 19 \
+    id 20 \
     name frame_out2 \
     type other \
     dir I \
@@ -331,7 +331,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 20 \
+    id 21 \
     name frame_in \
     type other \
     dir I \

@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'bgsub_process'
 ================================================================
-* Date:           Fri Jan 12 01:16:06 2018
+* Date:           Sat Jan 13 16:53:18 2018
 
 * Version:        2015.4 (Build 1412921 on Wed Nov 18 09:58:55 AM 2015)
 * Project:        backsub_gmm_new_180110
@@ -81,14 +81,14 @@
     +-------------------------------------------+----------------------------------------+---------+-------+-----+-----+
     |                  Instance                 |                 Module                 | BRAM_18K| DSP48E|  FF | LUT |
     +-------------------------------------------+----------------------------------------+---------+-------+-----+-----+
-    |bgsub_faddfsub_32ns_32ns_32_5_full_dsp_U0  |bgsub_faddfsub_32ns_32ns_32_5_full_dsp  |        0|      2|  205|  390|
     |bgsub_faddfsub_32ns_32ns_32_5_full_dsp_U1  |bgsub_faddfsub_32ns_32ns_32_5_full_dsp  |        0|      2|  205|  390|
-    |bgsub_fcmp_32ns_32ns_1_1_U6                |bgsub_fcmp_32ns_32ns_1_1                |        0|      0|   66|  239|
-    |bgsub_fdiv_32ns_32ns_32_16_U4              |bgsub_fdiv_32ns_32ns_32_16              |        0|      0|  761|  994|
-    |bgsub_fmul_32ns_32ns_32_4_max_dsp_U2       |bgsub_fmul_32ns_32ns_32_4_max_dsp       |        0|      3|  143|  321|
+    |bgsub_faddfsub_32ns_32ns_32_5_full_dsp_U2  |bgsub_faddfsub_32ns_32ns_32_5_full_dsp  |        0|      2|  205|  390|
+    |bgsub_fcmp_32ns_32ns_1_1_U7                |bgsub_fcmp_32ns_32ns_1_1                |        0|      0|   66|  239|
+    |bgsub_fdiv_32ns_32ns_32_16_U5              |bgsub_fdiv_32ns_32ns_32_16              |        0|      0|  761|  994|
     |bgsub_fmul_32ns_32ns_32_4_max_dsp_U3       |bgsub_fmul_32ns_32ns_32_4_max_dsp       |        0|      3|  143|  321|
-    |bgsub_fsqrt_32ns_32ns_32_12_U7             |bgsub_fsqrt_32ns_32ns_32_12             |        0|      0|  405|  615|
-    |bgsub_sitofp_32ns_32_6_U5                  |bgsub_sitofp_32ns_32_6                  |        0|      0|  340|  554|
+    |bgsub_fmul_32ns_32ns_32_4_max_dsp_U4       |bgsub_fmul_32ns_32ns_32_4_max_dsp       |        0|      3|  143|  321|
+    |bgsub_fsqrt_32ns_32ns_32_12_U8             |bgsub_fsqrt_32ns_32ns_32_12             |        0|      0|  405|  615|
+    |bgsub_sitofp_32ns_32_6_U6                  |bgsub_sitofp_32ns_32_6                  |        0|      0|  340|  554|
     +-------------------------------------------+----------------------------------------+---------+-------+-----+-----+
     |Total                                      |                                        |        0|     10| 2268| 3824|
     +-------------------------------------------+----------------------------------------+---------+-------+-----+-----+
@@ -2627,10 +2627,10 @@ STG Binding:
 - Is pipelined: 0
 - Is top level: 0
 Port [ Return ] is wired: 1; IO mode=ap_ctrl_hs:ce=0
-Port [ frame_in]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=1; mode=0x15751058b40; pingpong=0; private_global=0; MemPort=[13]; IO mode=ap_memory:ce=0
-Port [ frame_out]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=1; mode=0x15751057c10; pingpong=0; private_global=0; MemPort=[03]; IO mode=ap_memory:ce=0
-Port [ bgmodel]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=2; type=1; mode=0x157510598c0; pingpong=0; private_global=0; MemPort=[22]; IO mode=ap_memory:ce=0
-Port [ learningRate]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; mode=0x15751057ca0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ frame_in]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=1; mode=0x7f27c4e59b60; pingpong=0; private_global=0; MemPort=[13]; IO mode=ap_memory:ce=0
+Port [ frame_out]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=1; mode=0x7f27c401d890; pingpong=0; private_global=0; MemPort=[03]; IO mode=ap_memory:ce=0
+Port [ bgmodel]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=2; type=1; mode=0x7f27c4e5fde0; pingpong=0; private_global=0; MemPort=[22]; IO mode=ap_memory:ce=0
+Port [ learningRate]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; mode=0x7f27d76e5e20; pingpong=0; private_global=0; IO mode=ap_none:ce=0
 ---------------- STG Properties END ------------------
 
 ---------------- Datapath Model BEGIN ----------------

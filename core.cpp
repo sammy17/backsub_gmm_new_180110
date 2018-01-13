@@ -148,14 +148,15 @@ void bgsub(uint8_t frame_in[IMG_SIZE],
 		   bool init,
 		   float bgmodel[4*BGM_SIZE])
 {
-#pragma HLS DATAFLOW
+#pragma HLS INTERFACE s_axilite port=return bundle=CRTL_BUS
 #pragma HLS INTERFACE m_axi depth=153600*4 port=bgmodel offset=slave
-#pragma HLS INTERFACE s_axilite depth=1 port=init
+#pragma HLS INTERFACE s_axilite depth=1 port=init bundle=CRTL_BUS
 #pragma HLS INTERFACE m_axi depth=76800 port=frame_out offset=slave
 #pragma HLS INTERFACE m_axi depth=76800 port=frame_in offset=slave
 
 
-    data_t part_bgmodel[4*BGM_SIZE/PARTS];
+#pragma HLS DATAFLOW
+	data_t part_bgmodel[4*BGM_SIZE/PARTS];
     uint8_t part_frame_in[IMG_SIZE/PARTS];
     uint8_t part_frame_out[IMG_SIZE/PARTS];
     data_t learningRate;
@@ -169,6 +170,11 @@ void bgsub(uint8_t frame_in[IMG_SIZE],
     uint8_t part3_frame_in[IMG_SIZE/PARTS];
     uint8_t part3_frame_out[IMG_SIZE/PARTS];
     data_t learningRate3;
+
+    data_t part4_bgmodel[4*BGM_SIZE/PARTS];
+    uint8_t part4_frame_in[IMG_SIZE/PARTS];
+    uint8_t part4_frame_out[IMG_SIZE/PARTS];
+    data_t learningRate4;
 
     if( init )
     {
@@ -185,15 +191,17 @@ void bgsub(uint8_t frame_in[IMG_SIZE],
         learningRate = 1;
         learningRate2 = 1;
         learningRate3 = 1;
+        learningRate4 = 1;
     }
     else
     {
     	learningRate = 0;
     	learningRate2 = 0;
     	learningRate3 = 0;
+    	learningRate4 = 0;
     }
 
-    for(int part=0;part<PARTS;part+=3)
+    for(int part=0;part<PARTS;part+=4)
     {
     	read_mem:{
         memcpy(part_frame_in,&frame_in[(IMG_SIZE/PARTS)*part],sizeof(uint8_t)*(IMG_SIZE/PARTS));
@@ -202,12 +210,15 @@ void bgsub(uint8_t frame_in[IMG_SIZE],
         memcpy(part2_bgmodel,&bgmodel[(4*BGM_SIZE/PARTS)*(part+1)],4*sizeof(data_t)*(BGM_SIZE/PARTS));
         memcpy(part3_frame_in,&frame_in[(IMG_SIZE/PARTS)*(part+2)],sizeof(uint8_t)*(IMG_SIZE/PARTS));
         memcpy(part3_bgmodel,&bgmodel[(4*BGM_SIZE/PARTS)*(part+2)],4*sizeof(data_t)*(BGM_SIZE/PARTS));
+        memcpy(part4_frame_in,&frame_in[(IMG_SIZE/PARTS)*(part+3)],sizeof(uint8_t)*(IMG_SIZE/PARTS));
+        memcpy(part4_bgmodel,&bgmodel[(4*BGM_SIZE/PARTS)*(part+3)],4*sizeof(data_t)*(BGM_SIZE/PARTS));
     	}
 
     	processing:{
         process(part_frame_in,part_frame_out, part_bgmodel,learningRate);
         process(part2_frame_in,part2_frame_out, part2_bgmodel,learningRate2);
         process(part3_frame_in,part3_frame_out, part3_bgmodel,learningRate3);
+        process(part4_frame_in,part4_frame_out, part4_bgmodel,learningRate4);
     	}
 
 
@@ -218,6 +229,8 @@ void bgsub(uint8_t frame_in[IMG_SIZE],
         memcpy(&frame_out[(IMG_SIZE/PARTS)*(part+1)],part2_frame_out,sizeof(uint8_t)*(IMG_SIZE/PARTS));
         memcpy(&bgmodel[(4*BGM_SIZE/PARTS)*(part+2)],part3_bgmodel,4*sizeof(data_t)*(BGM_SIZE/PARTS));
         memcpy(&frame_out[(IMG_SIZE/PARTS)*(part+2)],part3_frame_out,sizeof(uint8_t)*(IMG_SIZE/PARTS));
+        memcpy(&bgmodel[(4*BGM_SIZE/PARTS)*(part+3)],part4_bgmodel,4*sizeof(data_t)*(BGM_SIZE/PARTS));
+        memcpy(&frame_out[(IMG_SIZE/PARTS)*(part+3)],part4_frame_out,sizeof(uint8_t)*(IMG_SIZE/PARTS));
     	}
 
 

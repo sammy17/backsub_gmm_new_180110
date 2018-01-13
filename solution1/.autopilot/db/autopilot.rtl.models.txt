@@ -8,6 +8,7 @@ bgsub_Block_proc_part_bgmodel
 bgsub_Block_proc_part_frame_in
 bgsub_Block_proc_part_frame_out
 bgsub_AXILiteS_s_axi
+bgsub_CRTL_BUS_s_axi
 bgsub_gmem_m_axi
 bgsub_gmem_offset_m_axi
 bgsub_process

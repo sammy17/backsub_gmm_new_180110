@@ -1,13 +1,7 @@
    Compiling ../../../test.cpp in debug mode
-In file included from F:/Xilinx/Vivado_HLS/2015.4/include/floating_point_v7_0_bitacc_cmodel.h:143:0,
-                 from F:/Xilinx/Vivado_HLS/2015.4/include/hls_half.h:40,
-                 from F:/Xilinx/Vivado_HLS/2015.4/include/hls/utils/x_hls_utils.h:37,
-                 from F:/Xilinx/Vivado_HLS/2015.4/include/hls_math.h:48,
-                 from ../../../core.h:5,
-                 from ../../../test.cpp:6:
-F:/Xilinx/Vivado_HLS/2015.4/include/gmp.h:62:0: warning: "__GMP_LIBGMP_DLL" redefined [enabled by default]
-F:/Xilinx/Vivado_HLS/2015.4/include/floating_point_v7_0_bitacc_cmodel.h:135:0: note: this is the location of the previous definition
-../../../test.cpp: In function 'int main()':
-../../../test.cpp:55:47: error: cannot convert 'float*' to 'data_t* {aka ap_fixed<32, 16>*}' for argument '4' to 'void bgsub(uint8_t*, uint8_t*, bool, data_t*)'
-make: *** [obj/test.o] Error 1
-@E [SIM-1] 'csim_design' failed: compilation error(s).
+   Compiling ../../../core.cpp in debug mode
+   Generating csim.exe
+
+(Live1:8644): Gtk-WARNING **: Unable to locate theme engine in module_path: "adwaita",
+ERROR! blank frame grabbed
+@I [SIM-1] CSim done with 0 errors.

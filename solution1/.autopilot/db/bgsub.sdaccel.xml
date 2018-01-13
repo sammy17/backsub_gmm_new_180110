@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'bgsub'" level="0">
-<item name = "Date">Fri Jan 12 01:16:10 2018
+<item name = "Date">Sat Jan 13 16:53:20 2018
 </item>
 <item name = "Version">2015.4 (Build 1412921 on Wed Nov 18 09:58:55 AM 2015)</item>
 <item name = "Project">backsub_gmm_new_180110</item>
@@ -22,14 +22,14 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">2078002, 6481206, 2078003, 6481207, dataflow</column>
+<column name="">1905122, 5361126, 1905123, 5361127, dataflow</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="7">Instance, Module, min, max, min, max, Type</keys>
-<column name="grp_bgsub_Block_proc_fu_82">bgsub_Block_proc, 2078002, 6481206, 2078002, 6481206, none</column>
+<column name="grp_bgsub_Block_proc_fu_84">bgsub_Block_proc, 1905122, 5361126, 1905122, 5361126, none</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
@@ -48,20 +48,21 @@
 <column name="DSP">-, -, -, -</column>
 <column name="Expression">-, -, -, -</column>
 <column name="FIFO">-, -, -, -</column>
-<column name="Instance">51, 30, 13537, 20874</column>
+<column name="Instance">68, 40, 17593, 27304</column>
 <column name="Memory">-, -, -, -</column>
 <column name="Multiplexer">-, -, -, -</column>
 <column name="Register">-, -, 2, -</column>
 <specialColumn name="Available">280, 220, 106400, 53200</specialColumn>
-<specialColumn name="Utilization (%)">18, 13, 12, 39</specialColumn>
+<specialColumn name="Utilization (%)">24, 18, 16, 51</specialColumn>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="6">Instance, Module, BRAM_18K, DSP48E, FF, LUT</keys>
-<column name="bgsub_AXILiteS_s_axi_U">bgsub_AXILiteS_s_axi, 0, 0, 151, 234</column>
-<column name="bgsub_Block_proc_U0">bgsub_Block_proc, 51, 30, 12290, 19240</column>
+<column name="bgsub_AXILiteS_s_axi_U">bgsub_AXILiteS_s_axi, 0, 0, 144, 232</column>
+<column name="bgsub_Block_proc_U0">bgsub_Block_proc, 68, 40, 16310, 25630</column>
+<column name="bgsub_CRTL_BUS_s_axi_U">bgsub_CRTL_BUS_s_axi, 0, 0, 43, 42</column>
 <column name="bgsub_gmem_m_axi_U">bgsub_gmem_m_axi, 0, 0, 548, 700</column>
 <column name="bgsub_gmem_offset_m_axi_U">bgsub_gmem_offset_m_axi, 0, 0, 548, 700</column>
 </table>
@@ -116,12 +117,26 @@
 <column name="s_axi_AXILiteS_BVALID">out, 1, s_axi, AXILiteS, scalar</column>
 <column name="s_axi_AXILiteS_BREADY">in, 1, s_axi, AXILiteS, scalar</column>
 <column name="s_axi_AXILiteS_BRESP">out, 2, s_axi, AXILiteS, scalar</column>
+<column name="s_axi_CRTL_BUS_AWVALID">in, 1, s_axi, CRTL_BUS, scalar</column>
+<column name="s_axi_CRTL_BUS_AWREADY">out, 1, s_axi, CRTL_BUS, scalar</column>
+<column name="s_axi_CRTL_BUS_AWADDR">in, 5, s_axi, CRTL_BUS, scalar</column>
+<column name="s_axi_CRTL_BUS_WVALID">in, 1, s_axi, CRTL_BUS, scalar</column>
+<column name="s_axi_CRTL_BUS_WREADY">out, 1, s_axi, CRTL_BUS, scalar</column>
+<column name="s_axi_CRTL_BUS_WDATA">in, 32, s_axi, CRTL_BUS, scalar</column>
+<column name="s_axi_CRTL_BUS_WSTRB">in, 4, s_axi, CRTL_BUS, scalar</column>
+<column name="s_axi_CRTL_BUS_ARVALID">in, 1, s_axi, CRTL_BUS, scalar</column>
+<column name="s_axi_CRTL_BUS_ARREADY">out, 1, s_axi, CRTL_BUS, scalar</column>
+<column name="s_axi_CRTL_BUS_ARADDR">in, 5, s_axi, CRTL_BUS, scalar</column>
+<column name="s_axi_CRTL_BUS_RVALID">out, 1, s_axi, CRTL_BUS, scalar</column>
+<column name="s_axi_CRTL_BUS_RREADY">in, 1, s_axi, CRTL_BUS, scalar</column>
+<column name="s_axi_CRTL_BUS_RDATA">out, 32, s_axi, CRTL_BUS, scalar</column>
+<column name="s_axi_CRTL_BUS_RRESP">out, 2, s_axi, CRTL_BUS, scalar</column>
+<column name="s_axi_CRTL_BUS_BVALID">out, 1, s_axi, CRTL_BUS, scalar</column>
+<column name="s_axi_CRTL_BUS_BREADY">in, 1, s_axi, CRTL_BUS, scalar</column>
+<column name="s_axi_CRTL_BUS_BRESP">out, 2, s_axi, CRTL_BUS, scalar</column>
 <column name="ap_clk">in, 1, ap_ctrl_hs, bgsub, return value</column>
 <column name="ap_rst_n">in, 1, ap_ctrl_hs, bgsub, return value</column>
-<column name="ap_done">out, 1, ap_ctrl_hs, bgsub, return value</column>
-<column name="ap_start">in, 1, ap_ctrl_hs, bgsub, return value</column>
-<column name="ap_idle">out, 1, ap_ctrl_hs, bgsub, return value</column>
-<column name="ap_ready">out, 1, ap_ctrl_hs, bgsub, return value</column>
+<column name="interrupt">out, 1, ap_ctrl_hs, bgsub, return value</column>
 <column name="m_axi_gmem_AWVALID">out, 1, m_axi, gmem, pointer</column>
 <column name="m_axi_gmem_AWREADY">in, 1, m_axi, gmem, pointer</column>
 <column name="m_axi_gmem_AWADDR">out, 32, m_axi, gmem, pointer</column>

@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'bgsub_process'" level="0">
-<item name = "Date">Fri Jan 12 01:16:02 2018
+<item name = "Date">Sat Jan 13 16:53:16 2018
 </item>
 <item name = "Version">2015.4 (Build 1412921 on Wed Nov 18 09:58:55 AM 2015)</item>
 <item name = "Project">backsub_gmm_new_180110</item>

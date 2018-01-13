@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'bgsub'
 ================================================================
-* Date:           Fri Jan 12 01:16:04 2018
+* Date:           Sat Jan 13 16:53:17 2018
 
 * Version:        2015.4 (Build 1412921 on Wed Nov 18 09:58:55 AM 2015)
 * Project:        backsub_gmm_new_180110
@@ -29,7 +29,7 @@
     |      Latency      |      Interval     | Pipeline |
     |   min   |   max   |   min   |   max   |   Type   |
     +---------+---------+---------+---------+----------+
-    |  2078002|  6481206|  2078003|  6481207| dataflow |
+    |  1905122|  5361126|  1905123|  5361127| dataflow |
     +---------+---------+---------+---------+----------+
 
     + Detail: 
@@ -80,21 +80,21 @@ IsGatedGlobalClock: 0
 
  <State 1>: 1.00ns
 ST_1: bgmodel_read [1/1] 1.00ns
-codeRepl:11  %bgmodel_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %bgmodel)
+codeRepl:12  %bgmodel_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %bgmodel)
 
 ST_1: init_read [1/1] 1.00ns
-codeRepl:12  %init_read = call i1 @_ssdm_op_Read.s_axilite.i1(i1 %init)
+codeRepl:13  %init_read = call i1 @_ssdm_op_Read.s_axilite.i1(i1 %init)
 
 ST_1: frame_out_read [1/1] 1.00ns
-codeRepl:13  %frame_out_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %frame_out)
+codeRepl:14  %frame_out_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %frame_out)
 
 ST_1: frame_in_read [1/1] 1.00ns
-codeRepl:14  %frame_in_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %frame_in)
+codeRepl:15  %frame_in_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %frame_in)
 
 
  <State 2>: 8.75ns
 ST_2: stg_8 [2/2] 8.75ns
-codeRepl:15  call fastcc void @bgsub_Block__proc(i1 %init_read, float* %gmem_offset, i32 %bgmodel_read, i8* %gmem, i32 %frame_out_read, i32 %frame_in_read)
+codeRepl:16  call fastcc void @bgsub_Block__proc(i1 %init_read, float* %gmem_offset, i32 %bgmodel_read, i8* %gmem, i32 %frame_out_read, i32 %frame_in_read)
 
 
  <State 3>: 0.00ns
@@ -114,28 +114,31 @@ ST_3: stg_13 [1/1] 0.00ns
 codeRepl:4  call void (...)* @_ssdm_op_SpecTopModule([6 x i8]* @bgsub_str) nounwind
 
 ST_3: stg_14 [1/1] 0.00ns
-codeRepl:5  call void (...)* @_ssdm_op_SpecInterface(float* %gmem_offset, [6 x i8]* @p_str1807, i32 0, i32 0, i32 0, i32 614400, [1 x i8]* @p_str1805, [6 x i8]* @p_str1808, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805)
+codeRepl:5  call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str1807, i32 0, i32 0, i32 0, i32 0, [9 x i8]* @p_str1808, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805) nounwind
 
 ST_3: stg_15 [1/1] 0.00ns
-codeRepl:6  call void (...)* @_ssdm_op_SpecInterface(i32 %bgmodel, [10 x i8]* @mode7, i32 0, i32 0, i32 0, i32 614400, [1 x i8]* @bundle8, [6 x i8]* @p_str1808, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805)
+codeRepl:6  call void (...)* @_ssdm_op_SpecInterface(float* %gmem_offset, [6 x i8]* @p_str1809, i32 0, i32 0, i32 0, i32 614400, [1 x i8]* @p_str1805, [6 x i8]* @p_str1810, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805)
 
 ST_3: stg_16 [1/1] 0.00ns
-codeRepl:7  call void (...)* @_ssdm_op_SpecInterface(i1 %init, [10 x i8]* @p_str1809, i32 0, i32 0, i32 0, i32 1, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805) nounwind
+codeRepl:7  call void (...)* @_ssdm_op_SpecInterface(i32 %bgmodel, [10 x i8]* @mode7, i32 0, i32 0, i32 0, i32 614400, [1 x i8]* @bundle8, [6 x i8]* @p_str1810, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805)
 
 ST_3: stg_17 [1/1] 0.00ns
-codeRepl:8  call void (...)* @_ssdm_op_SpecInterface(i32 %frame_out, [10 x i8]* @mode5, i32 0, i32 0, i32 0, i32 76800, [1 x i8]* @bundle6, [6 x i8]* @p_str1808, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805)
+codeRepl:8  call void (...)* @_ssdm_op_SpecInterface(i1 %init, [10 x i8]* @p_str1807, i32 0, i32 0, i32 0, i32 1, [9 x i8]* @p_str1808, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805) nounwind
 
 ST_3: stg_18 [1/1] 0.00ns
-codeRepl:9  call void (...)* @_ssdm_op_SpecInterface(i8* %gmem, [6 x i8]* @p_str1807, i32 0, i32 0, i32 0, i32 76800, [1 x i8]* @p_str1805, [6 x i8]* @p_str1808, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805)
+codeRepl:9  call void (...)* @_ssdm_op_SpecInterface(i32 %frame_out, [10 x i8]* @mode5, i32 0, i32 0, i32 0, i32 76800, [1 x i8]* @bundle6, [6 x i8]* @p_str1810, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805)
 
 ST_3: stg_19 [1/1] 0.00ns
-codeRepl:10  call void (...)* @_ssdm_op_SpecInterface(i32 %frame_in, [10 x i8]* @mode, i32 0, i32 0, i32 0, i32 76800, [1 x i8]* @bundle, [6 x i8]* @p_str1808, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805)
+codeRepl:10  call void (...)* @_ssdm_op_SpecInterface(i8* %gmem, [6 x i8]* @p_str1809, i32 0, i32 0, i32 0, i32 76800, [1 x i8]* @p_str1805, [6 x i8]* @p_str1810, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805)
 
-ST_3: stg_20 [1/2] 0.00ns
-codeRepl:15  call fastcc void @bgsub_Block__proc(i1 %init_read, float* %gmem_offset, i32 %bgmodel_read, i8* %gmem, i32 %frame_out_read, i32 %frame_in_read)
+ST_3: stg_20 [1/1] 0.00ns
+codeRepl:11  call void (...)* @_ssdm_op_SpecInterface(i32 %frame_in, [10 x i8]* @mode, i32 0, i32 0, i32 0, i32 76800, [1 x i8]* @bundle, [6 x i8]* @p_str1810, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805)
 
-ST_3: stg_21 [1/1] 0.00ns
-codeRepl:16  ret void
+ST_3: stg_21 [1/2] 0.00ns
+codeRepl:16  call fastcc void @bgsub_Block__proc(i1 %init_read, float* %gmem_offset, i32 %bgmodel_read, i8* %gmem, i32 %frame_out_read, i32 %frame_in_read)
+
+ST_3: stg_22 [1/1] 0.00ns
+codeRepl:17  ret void
 
 
 

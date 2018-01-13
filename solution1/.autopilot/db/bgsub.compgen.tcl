@@ -24,21 +24,13 @@ frame_out {
 	offset 24
 	offset_end 31
 }
-init { 
-	dir I
-	width 1
-	depth 1
-	mode ap_none
-	offset 32
-	offset_end 39
-}
 bgmodel { 
 	dir I
 	width 32
 	depth 1
 	mode ap_none
-	offset 40
-	offset_end 47
+	offset 32
+	offset_end 39
 }
 }
 
@@ -47,7 +39,7 @@ bgmodel {
 if {${::AESL::PGuard_simmodel_gen}} {
 	if {[info proc ::AESL_LIB_XILADAPTER::s_axilite_gen] == "::AESL_LIB_XILADAPTER::s_axilite_gen"} {
 		eval "::AESL_LIB_XILADAPTER::s_axilite_gen { \
-			id 21 \
+			id 22 \
 			corename bgsub_AXILiteS_axilite \
 			name bgsub_AXILiteS_s_axi \
 			ports {$port_AXILiteS} \
@@ -62,11 +54,46 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 	::AP::rtl_comp_handler bgsub_AXILiteS_s_axi
 }
 
+set port_CRTL_BUS {
+ap_start { }
+ap_done { }
+ap_ready { }
+ap_idle { }
+init { 
+	dir I
+	width 1
+	depth 1
+	mode ap_none
+	offset 16
+	offset_end 23
+}
+}
+
+
+# Native S_AXILite:
+if {${::AESL::PGuard_simmodel_gen}} {
+	if {[info proc ::AESL_LIB_XILADAPTER::s_axilite_gen] == "::AESL_LIB_XILADAPTER::s_axilite_gen"} {
+		eval "::AESL_LIB_XILADAPTER::s_axilite_gen { \
+			id 23 \
+			corename bgsub_CRTL_BUS_axilite \
+			name bgsub_CRTL_BUS_s_axi \
+			ports {$port_CRTL_BUS} \
+			op interface \
+		} "
+	} else {
+		puts "@W \[IMPL-110\] Cannot find AXI Lite interface model in the library. Ignored generation of AXI Lite  interface for 'CRTL_BUS'"
+	}
+}
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler bgsub_CRTL_BUS_s_axi
+}
+
 # Native M_AXI:
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::m_axi_gen] == "::AESL_LIB_XILADAPTER::m_axi_gen"} {
 eval "::AESL_LIB_XILADAPTER::m_axi_gen { \
-    id 22 \
+    id 24 \
     corename {m_axi} \
     op interface \
     max_latency -1 \ 
@@ -86,7 +113,7 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::m_axi_gen] == "::AESL_LIB_XILADAPTER::m_axi_gen"} {
 eval "::AESL_LIB_XILADAPTER::m_axi_gen { \
-    id 23 \
+    id 25 \
     corename {m_axi} \
     op interface \
     max_latency -1 \ 
@@ -102,20 +129,6 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 	::AP::rtl_comp_handler bgsub_gmem_offset_m_axi
 }
 
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id -1 \
-    name ap_ctrl \
-    type ap_ctrl \
-    reset_level 0 \
-    sync_rst true \
-    corename ap_ctrl \
-    op interface \
-    ports { ap_start { I 1 bit } ap_ready { O 1 bit } ap_done { O 1 bit } ap_idle { O 1 bit } } \
-} "
-}
-
 
 # Adapter definition:
 set PortName ap_clk
@@ -123,7 +136,7 @@ set DataWd 1
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc cg_default_interface_gen_clock] == "cg_default_interface_gen_clock"} {
 eval "cg_default_interface_gen_clock { \
-    id -2 \
+    id -1 \
     name ${PortName} \
     reset_level 0 \
     sync_rst true \
@@ -143,7 +156,7 @@ set DataWd 1
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc cg_default_interface_gen_reset] == "cg_default_interface_gen_reset"} {
 eval "cg_default_interface_gen_reset { \
-    id -3 \
+    id -2 \
     name ${PortName} \
     reset_level 0 \
     sync_rst true \

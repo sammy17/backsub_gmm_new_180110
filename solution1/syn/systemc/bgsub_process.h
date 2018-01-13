@@ -56,14 +56,14 @@ struct bgsub_process : public sc_module {
 
     sc_trace_file* mVcdFile;
 
-    bgsub_faddfsub_32ns_32ns_32_5_full_dsp<1,5,32,32,32>* bgsub_faddfsub_32ns_32ns_32_5_full_dsp_U0;
     bgsub_faddfsub_32ns_32ns_32_5_full_dsp<1,5,32,32,32>* bgsub_faddfsub_32ns_32ns_32_5_full_dsp_U1;
-    bgsub_fmul_32ns_32ns_32_4_max_dsp<1,4,32,32,32>* bgsub_fmul_32ns_32ns_32_4_max_dsp_U2;
+    bgsub_faddfsub_32ns_32ns_32_5_full_dsp<1,5,32,32,32>* bgsub_faddfsub_32ns_32ns_32_5_full_dsp_U2;
     bgsub_fmul_32ns_32ns_32_4_max_dsp<1,4,32,32,32>* bgsub_fmul_32ns_32ns_32_4_max_dsp_U3;
-    bgsub_fdiv_32ns_32ns_32_16<1,16,32,32,32>* bgsub_fdiv_32ns_32ns_32_16_U4;
-    bgsub_sitofp_32ns_32_6<1,6,32,32>* bgsub_sitofp_32ns_32_6_U5;
-    bgsub_fcmp_32ns_32ns_1_1<1,1,32,32,1>* bgsub_fcmp_32ns_32ns_1_1_U6;
-    bgsub_fsqrt_32ns_32ns_32_12<1,12,32,32,32>* bgsub_fsqrt_32ns_32ns_32_12_U7;
+    bgsub_fmul_32ns_32ns_32_4_max_dsp<1,4,32,32,32>* bgsub_fmul_32ns_32ns_32_4_max_dsp_U4;
+    bgsub_fdiv_32ns_32ns_32_16<1,16,32,32,32>* bgsub_fdiv_32ns_32ns_32_16_U5;
+    bgsub_sitofp_32ns_32_6<1,6,32,32>* bgsub_sitofp_32ns_32_6_U6;
+    bgsub_fcmp_32ns_32ns_1_1<1,1,32,32,1>* bgsub_fcmp_32ns_32ns_1_1_U7;
+    bgsub_fsqrt_32ns_32ns_32_12<1,12,32,32,32>* bgsub_fsqrt_32ns_32ns_32_12_U8;
     sc_signal< sc_lv<157> > ap_CS_fsm;
     sc_signal< sc_logic > ap_sig_cseq_ST_st1_fsm_0;
     sc_signal< bool > ap_sig_bdd_175;

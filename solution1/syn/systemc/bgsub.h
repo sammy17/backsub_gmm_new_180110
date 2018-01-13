@@ -13,6 +13,7 @@
 
 #include "bgsub_Block_proc.h"
 #include "bgsub_AXILiteS_s_axi.h"
+#include "bgsub_CRTL_BUS_s_axi.h"
 #include "bgsub_gmem_m_axi.h"
 #include "bgsub_gmem_offset_m_axi.h"
 
@@ -20,6 +21,8 @@ namespace ap_rtl {
 
 template<unsigned int C_S_AXI_AXILITES_ADDR_WIDTH = 6,
          unsigned int C_S_AXI_AXILITES_DATA_WIDTH = 32,
+         unsigned int C_S_AXI_CRTL_BUS_ADDR_WIDTH = 5,
+         unsigned int C_S_AXI_CRTL_BUS_DATA_WIDTH = 32,
          unsigned int C_M_AXI_GMEM_ADDR_WIDTH = 32,
          unsigned int C_M_AXI_GMEM_ID_WIDTH = 1,
          unsigned int C_M_AXI_GMEM_AWUSER_WIDTH = 1,
@@ -37,7 +40,7 @@ template<unsigned int C_S_AXI_AXILITES_ADDR_WIDTH = 6,
          unsigned int C_M_AXI_GMEM_OFFSET_RUSER_WIDTH = 1,
          unsigned int C_M_AXI_GMEM_OFFSET_BUSER_WIDTH = 1>
 struct bgsub : public sc_module {
-    // Port declarations 113
+    // Port declarations 127
     sc_in< sc_logic > s_axi_AXILiteS_AWVALID;
     sc_out< sc_logic > s_axi_AXILiteS_AWREADY;
     sc_in< sc_uint<C_S_AXI_AXILITES_ADDR_WIDTH> > s_axi_AXILiteS_AWADDR;
@@ -57,6 +60,24 @@ struct bgsub : public sc_module {
     sc_out< sc_lv<2> > s_axi_AXILiteS_BRESP;
     sc_in_clk ap_clk;
     sc_in< sc_logic > ap_rst_n;
+    sc_in< sc_logic > s_axi_CRTL_BUS_AWVALID;
+    sc_out< sc_logic > s_axi_CRTL_BUS_AWREADY;
+    sc_in< sc_uint<C_S_AXI_CRTL_BUS_ADDR_WIDTH> > s_axi_CRTL_BUS_AWADDR;
+    sc_in< sc_logic > s_axi_CRTL_BUS_WVALID;
+    sc_out< sc_logic > s_axi_CRTL_BUS_WREADY;
+    sc_in< sc_uint<C_S_AXI_CRTL_BUS_DATA_WIDTH> > s_axi_CRTL_BUS_WDATA;
+    sc_in< sc_uint<C_S_AXI_CRTL_BUS_DATA_WIDTH/8> > s_axi_CRTL_BUS_WSTRB;
+    sc_in< sc_logic > s_axi_CRTL_BUS_ARVALID;
+    sc_out< sc_logic > s_axi_CRTL_BUS_ARREADY;
+    sc_in< sc_uint<C_S_AXI_CRTL_BUS_ADDR_WIDTH> > s_axi_CRTL_BUS_ARADDR;
+    sc_out< sc_logic > s_axi_CRTL_BUS_RVALID;
+    sc_in< sc_logic > s_axi_CRTL_BUS_RREADY;
+    sc_out< sc_uint<C_S_AXI_CRTL_BUS_DATA_WIDTH> > s_axi_CRTL_BUS_RDATA;
+    sc_out< sc_lv<2> > s_axi_CRTL_BUS_RRESP;
+    sc_out< sc_logic > s_axi_CRTL_BUS_BVALID;
+    sc_in< sc_logic > s_axi_CRTL_BUS_BREADY;
+    sc_out< sc_lv<2> > s_axi_CRTL_BUS_BRESP;
+    sc_out< sc_logic > interrupt;
     sc_out< sc_logic > m_axi_gmem_AWVALID;
     sc_in< sc_logic > m_axi_gmem_AWREADY;
     sc_out< sc_uint<C_M_AXI_GMEM_ADDR_WIDTH> > m_axi_gmem_AWADDR;
@@ -147,10 +168,6 @@ struct bgsub : public sc_module {
     sc_in< sc_lv<2> > m_axi_gmem_offset_BRESP;
     sc_in< sc_uint<C_M_AXI_GMEM_OFFSET_ID_WIDTH> > m_axi_gmem_offset_BID;
     sc_in< sc_uint<C_M_AXI_GMEM_OFFSET_BUSER_WIDTH> > m_axi_gmem_offset_BUSER;
-    sc_out< sc_logic > ap_done;
-    sc_in< sc_logic > ap_start;
-    sc_out< sc_logic > ap_idle;
-    sc_out< sc_logic > ap_ready;
 
 
     // Module declarations
@@ -164,6 +181,7 @@ struct bgsub : public sc_module {
     ofstream mHdltvinHandle;
     ofstream mHdltvoutHandle;
     bgsub_AXILiteS_s_axi<C_S_AXI_AXILITES_ADDR_WIDTH,C_S_AXI_AXILITES_DATA_WIDTH>* bgsub_AXILiteS_s_axi_U;
+    bgsub_CRTL_BUS_s_axi<C_S_AXI_CRTL_BUS_ADDR_WIDTH,C_S_AXI_CRTL_BUS_DATA_WIDTH>* bgsub_CRTL_BUS_s_axi_U;
     bgsub_gmem_m_axi<8,32,5,C_M_AXI_GMEM_ID_WIDTH,C_M_AXI_GMEM_ADDR_WIDTH,C_M_AXI_GMEM_DATA_WIDTH,C_M_AXI_GMEM_AWUSER_WIDTH,C_M_AXI_GMEM_ARUSER_WIDTH,C_M_AXI_GMEM_WUSER_WIDTH,C_M_AXI_GMEM_RUSER_WIDTH,C_M_AXI_GMEM_BUSER_WIDTH,C_M_AXI_GMEM_USER_VALUE,C_M_AXI_GMEM_PROT_VALUE,C_M_AXI_GMEM_CACHE_VALUE>* bgsub_gmem_m_axi_U;
     bgsub_gmem_offset_m_axi<32,32,5,C_M_AXI_GMEM_OFFSET_ID_WIDTH,C_M_AXI_GMEM_OFFSET_ADDR_WIDTH,C_M_AXI_GMEM_OFFSET_DATA_WIDTH,C_M_AXI_GMEM_OFFSET_AWUSER_WIDTH,C_M_AXI_GMEM_OFFSET_ARUSER_WIDTH,C_M_AXI_GMEM_OFFSET_WUSER_WIDTH,C_M_AXI_GMEM_OFFSET_RUSER_WIDTH,C_M_AXI_GMEM_OFFSET_BUSER_WIDTH,C_M_AXI_GMEM_OFFSET_USER_VALUE,C_M_AXI_GMEM_OFFSET_PROT_VALUE,C_M_AXI_GMEM_OFFSET_CACHE_VALUE>* bgsub_gmem_offset_m_axi_U;
     bgsub_Block_proc* bgsub_Block_proc_U0;
@@ -171,8 +189,13 @@ struct bgsub : public sc_module {
     sc_signal< sc_logic > bgsub_AXILiteS_s_axi_U_ap_dummy_ce;
     sc_signal< sc_lv<32> > frame_in;
     sc_signal< sc_lv<32> > frame_out;
-    sc_signal< sc_logic > init;
     sc_signal< sc_lv<32> > bgmodel;
+    sc_signal< sc_logic > bgsub_CRTL_BUS_s_axi_U_ap_dummy_ce;
+    sc_signal< sc_logic > ap_start;
+    sc_signal< sc_logic > ap_ready;
+    sc_signal< sc_logic > ap_done;
+    sc_signal< sc_logic > ap_idle;
+    sc_signal< sc_logic > init;
     sc_signal< sc_logic > gmem_AWVALID;
     sc_signal< sc_logic > gmem_AWREADY;
     sc_signal< sc_lv<32> > gmem_AWADDR;
@@ -432,6 +455,7 @@ struct bgsub : public sc_module {
     void thread_bgsub_Block_proc_U0_m_axi_frame_out_RUSER();
     void thread_bgsub_Block_proc_U0_m_axi_frame_out_RVALID();
     void thread_bgsub_Block_proc_U0_m_axi_frame_out_WREADY();
+    void thread_bgsub_CRTL_BUS_s_axi_U_ap_dummy_ce();
     void thread_bgsub_gmem_m_axi_U_ap_dummy_ce();
     void thread_bgsub_gmem_offset_m_axi_U_ap_dummy_ce();
     void thread_gmem_ARADDR();

@@ -1,27 +1,33 @@
-; ModuleID = 'F:/maxi_latest/backsub_gmm_new_180110/solution1/.autopilot/db/a.o.3.bc'
+; ModuleID = '/home/chathura/Desktop/maxi_final_180113/backsub_gmm_new_180110/solution1/.autopilot/db/a.o.3.bc'
 target datalayout = "e-p:64:64:64-i1:8:8-i8:8:8-i16:16:16-i32:32:32-i64:64:64-f32:32:32-f64:64:64-v64:64:64-v128:128:128-a0:0:64-s0:64:64-f80:128:128-n8:16:32:64-S128"
-target triple = "x86_64-w64-mingw32"
+target triple = "x86_64-unknown-linux-gnu"
 
 @mode7 = internal constant [10 x i8] c"s_axilite\00" ; [#uses=1 type=[10 x i8]*]
 @mode5 = internal constant [10 x i8] c"s_axilite\00" ; [#uses=1 type=[10 x i8]*]
 @mode = internal constant [10 x i8] c"s_axilite\00" ; [#uses=1 type=[10 x i8]*]
 @memcpy_OC_part_bgmodel_OC_bgmo = internal unnamed_addr constant [28 x i8] c"memcpy.part_bgmodel.bgmodel\00" ; [#uses=1 type=[28 x i8]*]
+@memcpy_OC_part4_bgmodel_OC_bgm = internal unnamed_addr constant [29 x i8] c"memcpy.part4_bgmodel.bgmodel\00" ; [#uses=1 type=[29 x i8]*]
 @memcpy_OC_part3_bgmodel_OC_bgm = internal unnamed_addr constant [29 x i8] c"memcpy.part3_bgmodel.bgmodel\00" ; [#uses=1 type=[29 x i8]*]
 @memcpy_OC_part2_bgmodel_OC_bgm = internal unnamed_addr constant [29 x i8] c"memcpy.part2_bgmodel.bgmodel\00" ; [#uses=1 type=[29 x i8]*]
-@memcpy_OC_frame_out_OC_str = internal unnamed_addr constant [18 x i8] c"memcpy.frame_out.\00" ; [#uses=3 type=[18 x i8]*]
+@memcpy_OC_frame_out_OC_str = internal unnamed_addr constant [18 x i8] c"memcpy.frame_out.\00" ; [#uses=4 type=[18 x i8]*]
 @memcpy_OC_bgmodel_OC_part_bgmo = internal unnamed_addr constant [32 x i8] c"memcpy.bgmodel.part_bgmodel.gep\00" ; [#uses=1 type=[32 x i8]*]
+@memcpy_OC_bgmodel_OC_part4_bgm = internal unnamed_addr constant [33 x i8] c"memcpy.bgmodel.part4_bgmodel.gep\00" ; [#uses=1 type=[33 x i8]*]
 @memcpy_OC_bgmodel_OC_part3_bgm = internal unnamed_addr constant [33 x i8] c"memcpy.bgmodel.part3_bgmodel.gep\00" ; [#uses=1 type=[33 x i8]*]
 @memcpy_OC_bgmodel_OC_part2_bgm = internal unnamed_addr constant [33 x i8] c"memcpy.bgmodel.part2_bgmodel.gep\00" ; [#uses=1 type=[33 x i8]*]
-@memcpy_OC_OC_frame_in_str = internal unnamed_addr constant [17 x i8] c"memcpy..frame_in\00" ; [#uses=3 type=[17 x i8]*]
+@memcpy_OC_OC_frame_in_str = internal unnamed_addr constant [17 x i8] c"memcpy..frame_in\00" ; [#uses=4 type=[17 x i8]*]
 @llvm_global_ctors_1 = appending global [1 x void ()*] [void ()* @_GLOBAL__I_a] ; [#uses=0 type=[1 x void ()*]*]
 @llvm_global_ctors_0 = appending global [1 x i32] [i32 65535] ; [#uses=0 type=[1 x i32]*]
-@burstwrite_OC_region_str = internal unnamed_addr constant [18 x i8] c"burstwrite.region\00" ; [#uses=12 type=[18 x i8]*]
-@burstread_OC_region_str = internal unnamed_addr constant [17 x i8] c"burstread.region\00" ; [#uses=12 type=[17 x i8]*]
+@burstwrite_OC_region_str = internal unnamed_addr constant [18 x i8] c"burstwrite.region\00" ; [#uses=16 type=[18 x i8]*]
+@burstread_OC_region_str = internal unnamed_addr constant [17 x i8] c"burstread.region\00" ; [#uses=16 type=[17 x i8]*]
 @bundle8 = internal constant [1 x i8] zeroinitializer ; [#uses=1 type=[1 x i8]*]
 @bundle6 = internal constant [1 x i8] zeroinitializer ; [#uses=1 type=[1 x i8]*]
 @bundle = internal constant [1 x i8] zeroinitializer ; [#uses=1 type=[1 x i8]*]
 @bgsub_str = internal unnamed_addr constant [6 x i8] c"bgsub\00" ; [#uses=1 type=[6 x i8]*]
+@p_str606 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=1 type=[1 x i8]*]
+@p_str590 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=1 type=[1 x i8]*]
+@p_str552 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=1 type=[1 x i8]*]
 @p_str52 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=1 type=[1 x i8]*]
+@p_str488 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=1 type=[1 x i8]*]
 @p_str472 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=1 type=[1 x i8]*]
 @p_str433 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=1 type=[1 x i8]*]
 @p_str41 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=1 type=[1 x i8]*]
@@ -30,19 +36,20 @@ target triple = "x86_64-w64-mingw32"
 @p_str308 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=1 type=[1 x i8]*]
 @p_str29 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=1 type=[1 x i8]*]
 @p_str2 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=1 type=[1 x i8]*]
-@p_str1812 = private unnamed_addr constant [10 x i8] c"write_mem\00", align 1 ; [#uses=2 type=[10 x i8]*]
-@p_str1810 = private unnamed_addr constant [9 x i8] c"read_mem\00", align 1 ; [#uses=2 type=[9 x i8]*]
-@p_str1809 = private unnamed_addr constant [10 x i8] c"s_axilite\00", align 1 ; [#uses=1 type=[10 x i8]*]
-@p_str1808 = private unnamed_addr constant [6 x i8] c"slave\00", align 1 ; [#uses=8 type=[6 x i8]*]
-@p_str1807 = private unnamed_addr constant [6 x i8] c"m_axi\00", align 1 ; [#uses=5 type=[6 x i8]*]
+@p_str1813 = private unnamed_addr constant [10 x i8] c"write_mem\00", align 1 ; [#uses=2 type=[10 x i8]*]
+@p_str1811 = private unnamed_addr constant [9 x i8] c"read_mem\00", align 1 ; [#uses=2 type=[9 x i8]*]
+@p_str1810 = private unnamed_addr constant [6 x i8] c"slave\00", align 1 ; [#uses=8 type=[6 x i8]*]
+@p_str1809 = private unnamed_addr constant [6 x i8] c"m_axi\00", align 1 ; [#uses=5 type=[6 x i8]*]
+@p_str1808 = private unnamed_addr constant [9 x i8] c"CRTL_BUS\00", align 1 ; [#uses=2 type=[9 x i8]*]
+@p_str1807 = private unnamed_addr constant [10 x i8] c"s_axilite\00", align 1 ; [#uses=2 type=[10 x i8]*]
 @p_str1806 = private unnamed_addr constant [12 x i8] c"hls_label_1\00", align 1 ; [#uses=2 type=[12 x i8]*]
-@p_str1805 = private unnamed_addr constant [1 x i8] zeroinitializer, align 1 ; [#uses=28 type=[1 x i8]*]
+@p_str1805 = private unnamed_addr constant [1 x i8] zeroinitializer, align 1 ; [#uses=30 type=[1 x i8]*]
 @p_str1804 = private unnamed_addr constant [12 x i8] c"hls_label_0\00", align 1 ; [#uses=2 type=[12 x i8]*]
 @p_str180 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=1 type=[1 x i8]*]
 @p_str15 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=1 type=[1 x i8]*]
 @p_str1 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=1 type=[1 x i8]*]
 
-; [#uses=3]
+; [#uses=4]
 define internal fastcc void @bgsub_process([640 x i8]* nocapture %frame_in, [640 x i1]* nocapture %frame_out, [5120 x float]* nocapture %bgmodel, float %learningRate) {
   %learningRate_read = call float @_ssdm_op_Read.ap_auto.float(float %learningRate) ; [#uses=5 type=float]
   call void @llvm.dbg.value(metadata !{float %learningRate_read}, i64 0, metadata !12), !dbg !26 ; [debug line = 18:18] [debug variable = learningRate]
@@ -186,13 +193,13 @@ define internal fastcc void @bgsub_process([640 x i8]* nocapture %frame_in, [640
   %notlhs7 = icmp ne i8 %tmp_69, -1               ; [#uses=1 type=i1]
   %notrhs7 = icmp eq i23 %tmp_70, 0               ; [#uses=1 type=i1]
   %tmp_71 = or i1 %notrhs7, %notlhs7              ; [#uses=1 type=i1]
-  %tmp_72 = fcmp olt float %tmp_23, 2.250000e+02, !dbg !84 ; [#uses=1 type=i1] [debug line = 214:7@55:31]
-  %tmp_73 = and i1 %tmp_71, %tmp_72, !dbg !84     ; [#uses=1 type=i1] [debug line = 214:7@55:31]
+  %tmp_72 = fcmp olt float %tmp_23, 2.250000e+02, !dbg !84 ; [#uses=1 type=i1] [debug line = 215:7@55:31]
+  %tmp_73 = and i1 %tmp_71, %tmp_72, !dbg !84     ; [#uses=1 type=i1] [debug line = 215:7@55:31]
   %var_2 = select i1 %tmp_73, float 2.250000e+02, float %tmp_23, !dbg !83 ; [#uses=2 type=float] [debug line = 55:31]
   call void @llvm.dbg.value(metadata !{float %var_2}, i64 0, metadata !71), !dbg !83 ; [debug line = 55:31] [debug variable = var]
   store float %var_2, float* %bgmodel_addr_3, align 4, !dbg !95 ; [debug line = 56:25]
-  call void @llvm.dbg.value(metadata !{float %var_2}, i64 0, metadata !96) nounwind, !dbg !103 ; [debug line = 433:14@57:39] [debug variable = __x]
-  %tmp_i = call float @llvm.sqrt.f32(float %var_2) nounwind, !dbg !104 ; [#uses=1 type=float] [debug line = 434:12@57:39]
+  call void @llvm.dbg.value(metadata !{float %var_2}, i64 0, metadata !96) nounwind, !dbg !103 ; [debug line = 415:14@57:39] [debug variable = __x]
+  %tmp_i = call float @llvm.sqrt.f32(float %var_2) nounwind, !dbg !104 ; [#uses=1 type=float] [debug line = 416:12@57:39]
   %tmp_25 = fdiv float %w, %tmp_i, !dbg !102      ; [#uses=1 type=float] [debug line = 57:39]
   %sum8 = call i13 @_ssdm_op_BitConcatenate.i13.i10.i1.i2(i10 %tmp_12, i1 %tmp_14, i2 0) ; [#uses=1 type=i13]
   %sum8_cast = zext i13 %sum8 to i64              ; [#uses=1 type=i64]
@@ -239,11 +246,11 @@ define internal fastcc void @bgsub_process([640 x i8]* nocapture %frame_in, [640
   br i1 %tmp_92, label %.loopexit11, label %10, !dbg !106 ; [debug line = 62:2]
 
 ; <label>:10                                      ; preds = %9
-  call void @llvm.dbg.value(metadata !{float %p_tmp}, i64 0, metadata !115), !dbg !123 ; [debug line = 106:15@64:29] [debug variable = __a]
-  call void @llvm.dbg.value(metadata !{float %bgmodel_load_12}, i64 0, metadata !124), !dbg !125 ; [debug line = 106:25@64:29] [debug variable = __b]
-  call void @llvm.dbg.value(metadata !{float %p_tmp}, i64 0, metadata !126), !dbg !128 ; [debug line = 111:24@64:29] [debug variable = __tmp]
-  call void @llvm.dbg.value(metadata !{float %bgmodel_load_12}, i64 0, metadata !129), !dbg !123 ; [debug line = 106:15@64:29] [debug variable = __a]
-  call void @llvm.dbg.value(metadata !{float %p_tmp}, i64 0, metadata !130), !dbg !125 ; [debug line = 106:25@64:29] [debug variable = __b]
+  call void @llvm.dbg.value(metadata !{float %p_tmp}, i64 0, metadata !115), !dbg !123 ; [debug line = 122:15@64:29] [debug variable = __a]
+  call void @llvm.dbg.value(metadata !{float %bgmodel_load_12}, i64 0, metadata !124), !dbg !125 ; [debug line = 122:25@64:29] [debug variable = __b]
+  call void @llvm.dbg.value(metadata !{float %p_tmp}, i64 0, metadata !126), !dbg !128 ; [debug line = 127:24@64:29] [debug variable = __tmp]
+  call void @llvm.dbg.value(metadata !{float %bgmodel_load_12}, i64 0, metadata !129), !dbg !123 ; [debug line = 122:15@64:29] [debug variable = __a]
+  call void @llvm.dbg.value(metadata !{float %p_tmp}, i64 0, metadata !130), !dbg !125 ; [debug line = 122:25@64:29] [debug variable = __b]
   store float %bgmodel_load_12, float* %bgmodel_addr_8, align 4, !dbg !122 ; [debug line = 64:29]
   store float %p_tmp, float* %bgmodel_addr_9, align 4, !dbg !122 ; [debug line = 64:29]
   %empty = call i32 (...)* @_ssdm_op_SpecRegionEnd([12 x i8]* @p_str1804, i32 %tmp_28), !dbg !131 ; [#uses=0 type=i32] [debug line = 65:25]
@@ -258,7 +265,7 @@ define internal fastcc void @bgsub_process([640 x i8]* nocapture %frame_in, [640
   br i1 %tmp_94, label %11, label %.preheader43, !dbg !133 ; [debug line = 72:17]
 
 ; <label>:11                                      ; preds = %.loopexit11
-  %tmp_97 = call i1 @_ssdm_op_BitSelect.i1.i2.i32(i2 %k, i32 1), !dbg !134 ; [#uses=1 type=i1] [debug line = 191:7@74:32]
+  %tmp_97 = call i1 @_ssdm_op_BitSelect.i1.i2.i32(i2 %k, i32 1), !dbg !134 ; [#uses=1 type=i1] [debug line = 192:7@74:32]
   %k_10 = or i1 %tmp_97, %tmp_93, !dbg !143       ; [#uses=3 type=i1] [debug line = 74:32]
   %k_10_cast1 = zext i1 %k_10 to i2, !dbg !143    ; [#uses=1 type=i2] [debug line = 74:32]
   call void @llvm.dbg.value(metadata !{i1 %k_10}, i64 0, metadata !61), !dbg !143 ; [debug line = 74:32] [debug variable = k]
@@ -540,7 +547,7 @@ declare i13 @llvm.part.select.i13(i13, i32, i32) nounwind readnone
 ; [#uses=65]
 declare void @llvm.dbg.value(metadata, i64, metadata) nounwind readnone
 
-; [#uses=6]
+; [#uses=8]
 declare void @llvm.dbg.declare(metadata, metadata) nounwind readnone
 
 ; [#uses=0]
@@ -548,62 +555,63 @@ define void @bgsub(i8* %gmem, float* %gmem_offset, i32 %frame_in, i32 %frame_out
 codeRepl:
   call void (...)* @_ssdm_op_SpecBitsMap(float* %gmem_offset), !map !213
   call void (...)* @_ssdm_op_SpecBitsMap(i8* %gmem), !map !219
-  call void (...)* @_ssdm_op_SpecDataflowPipeline(i32 -1, [1 x i8]* @p_str1805) nounwind, !dbg !226 ; [debug line = 151:1]
+  call void (...)* @_ssdm_op_SpecDataflowPipeline(i32 -1, [1 x i8]* @p_str1805) nounwind, !dbg !226 ; [debug line = 158:1]
   call void (...)* @_ssdm_op_SpecBitsMap(i1 %init) nounwind, !map !233
   call void (...)* @_ssdm_op_SpecTopModule([6 x i8]* @bgsub_str) nounwind
-  call void (...)* @_ssdm_op_SpecInterface(float* %gmem_offset, [6 x i8]* @p_str1807, i32 0, i32 0, i32 0, i32 614400, [1 x i8]* @p_str1805, [6 x i8]* @p_str1808, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805)
-  call void (...)* @_ssdm_op_SpecInterface(i32 %bgmodel, [10 x i8]* @mode7, i32 0, i32 0, i32 0, i32 614400, [1 x i8]* @bundle8, [6 x i8]* @p_str1808, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805)
-  call void (...)* @_ssdm_op_SpecInterface(i1 %init, [10 x i8]* @p_str1809, i32 0, i32 0, i32 0, i32 1, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805) nounwind, !dbg !239 ; [debug line = 153:1]
-  call void (...)* @_ssdm_op_SpecInterface(i32 %frame_out, [10 x i8]* @mode5, i32 0, i32 0, i32 0, i32 76800, [1 x i8]* @bundle6, [6 x i8]* @p_str1808, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805)
-  call void (...)* @_ssdm_op_SpecInterface(i8* %gmem, [6 x i8]* @p_str1807, i32 0, i32 0, i32 0, i32 76800, [1 x i8]* @p_str1805, [6 x i8]* @p_str1808, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805)
-  call void (...)* @_ssdm_op_SpecInterface(i32 %frame_in, [10 x i8]* @mode, i32 0, i32 0, i32 0, i32 76800, [1 x i8]* @bundle, [6 x i8]* @p_str1808, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805)
+  call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str1807, i32 0, i32 0, i32 0, i32 0, [9 x i8]* @p_str1808, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805) nounwind, !dbg !239 ; [debug line = 151:1]
+  call void (...)* @_ssdm_op_SpecInterface(float* %gmem_offset, [6 x i8]* @p_str1809, i32 0, i32 0, i32 0, i32 614400, [1 x i8]* @p_str1805, [6 x i8]* @p_str1810, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805)
+  call void (...)* @_ssdm_op_SpecInterface(i32 %bgmodel, [10 x i8]* @mode7, i32 0, i32 0, i32 0, i32 614400, [1 x i8]* @bundle8, [6 x i8]* @p_str1810, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805)
+  call void (...)* @_ssdm_op_SpecInterface(i1 %init, [10 x i8]* @p_str1807, i32 0, i32 0, i32 0, i32 1, [9 x i8]* @p_str1808, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805) nounwind, !dbg !240 ; [debug line = 153:1]
+  call void (...)* @_ssdm_op_SpecInterface(i32 %frame_out, [10 x i8]* @mode5, i32 0, i32 0, i32 0, i32 76800, [1 x i8]* @bundle6, [6 x i8]* @p_str1810, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805)
+  call void (...)* @_ssdm_op_SpecInterface(i8* %gmem, [6 x i8]* @p_str1809, i32 0, i32 0, i32 0, i32 76800, [1 x i8]* @p_str1805, [6 x i8]* @p_str1810, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805)
+  call void (...)* @_ssdm_op_SpecInterface(i32 %frame_in, [10 x i8]* @mode, i32 0, i32 0, i32 0, i32 76800, [1 x i8]* @bundle, [6 x i8]* @p_str1810, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805)
   %bgmodel_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %bgmodel) ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %bgmodel_read}, i64 0, metadata !240), !dbg !244 ; [debug line = 149:12] [debug variable = bgmodel]
+  call void @llvm.dbg.value(metadata !{i32 %bgmodel_read}, i64 0, metadata !241), !dbg !245 ; [debug line = 149:12] [debug variable = bgmodel]
   %init_read = call i1 @_ssdm_op_Read.s_axilite.i1(i1 %init) ; [#uses=1 type=i1]
-  call void @llvm.dbg.value(metadata !{i1 %init_read}, i64 0, metadata !245), !dbg !246 ; [debug line = 148:11] [debug variable = init]
+  call void @llvm.dbg.value(metadata !{i1 %init_read}, i64 0, metadata !246), !dbg !247 ; [debug line = 148:11] [debug variable = init]
   %frame_out_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %frame_out) ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %frame_out_read}, i64 0, metadata !247), !dbg !251 ; [debug line = 147:20] [debug variable = frame_out]
+  call void @llvm.dbg.value(metadata !{i32 %frame_out_read}, i64 0, metadata !248), !dbg !252 ; [debug line = 147:20] [debug variable = frame_out]
   %frame_in_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %frame_in) ; [#uses=1 type=i32]
-  call void @llvm.dbg.value(metadata !{i32 %frame_in_read}, i64 0, metadata !252), !dbg !253 ; [debug line = 146:20] [debug variable = frame_in]
-  call void @llvm.dbg.value(metadata !{i32 %frame_in}, i64 0, metadata !252), !dbg !253 ; [debug line = 146:20] [debug variable = frame_in]
-  call void @llvm.dbg.value(metadata !{i32 %frame_out}, i64 0, metadata !247), !dbg !251 ; [debug line = 147:20] [debug variable = frame_out]
-  call void @llvm.dbg.value(metadata !{i1 %init}, i64 0, metadata !245), !dbg !246 ; [debug line = 148:11] [debug variable = init]
-  call void @llvm.dbg.value(metadata !{i32 %bgmodel}, i64 0, metadata !240), !dbg !244 ; [debug line = 149:12] [debug variable = bgmodel]
+  call void @llvm.dbg.value(metadata !{i32 %frame_in_read}, i64 0, metadata !253), !dbg !254 ; [debug line = 146:20] [debug variable = frame_in]
+  call void @llvm.dbg.value(metadata !{i32 %frame_in}, i64 0, metadata !253), !dbg !254 ; [debug line = 146:20] [debug variable = frame_in]
+  call void @llvm.dbg.value(metadata !{i32 %frame_out}, i64 0, metadata !248), !dbg !252 ; [debug line = 147:20] [debug variable = frame_out]
+  call void @llvm.dbg.value(metadata !{i1 %init}, i64 0, metadata !246), !dbg !247 ; [debug line = 148:11] [debug variable = init]
+  call void @llvm.dbg.value(metadata !{i32 %bgmodel}, i64 0, metadata !241), !dbg !245 ; [debug line = 149:12] [debug variable = bgmodel]
   call fastcc void @bgsub_Block__proc(i1 %init_read, float* %gmem_offset, i32 %bgmodel_read, i8* %gmem, i32 %frame_out_read, i32 %frame_in_read)
-  ret void, !dbg !254                             ; [debug line = 228:1]
+  ret void, !dbg !255                             ; [debug line = 241:1]
 }
 
-; [#uses=3]
+; [#uses=4]
 define weak i1 @_ssdm_op_WriteResp.m_axi.i8P(i8*) {
 entry:
   ret i1 true
 }
 
-; [#uses=4]
+; [#uses=5]
 define weak i1 @_ssdm_op_WriteResp.m_axi.floatP(float*) {
 entry:
   ret i1 true
 }
 
-; [#uses=3]
+; [#uses=4]
 define weak i1 @_ssdm_op_WriteReq.m_axi.i8P(i8*, i32) {
 entry:
   ret i1 true
 }
 
-; [#uses=4]
+; [#uses=5]
 define weak i1 @_ssdm_op_WriteReq.m_axi.floatP(float*, i32) {
 entry:
   ret i1 true
 }
 
-; [#uses=3]
+; [#uses=4]
 define weak void @_ssdm_op_Write.m_axi.i8P(i8*, i8, i1) {
 entry:
   ret void
 }
 
-; [#uses=4]
+; [#uses=5]
 define weak void @_ssdm_op_Write.m_axi.floatP(float*, float, i4) {
 entry:
   ret void
@@ -615,37 +623,37 @@ entry:
   ret void
 }
 
-; [#uses=16]
+; [#uses=20]
 define weak i32 @_ssdm_op_SpecRegionEnd(...) {
 entry:
   ret i32 0
 }
 
-; [#uses=16]
+; [#uses=20]
 define weak i32 @_ssdm_op_SpecRegionBegin(...) {
 entry:
   ret i32 0
 }
 
-; [#uses=12]
+; [#uses=16]
 define weak i32 @_ssdm_op_SpecPipeline(...) {
 entry:
   ret i32 0
 }
 
-; [#uses=23]
+; [#uses=27]
 define weak void @_ssdm_op_SpecLoopTripCount(...) nounwind {
 entry:
   ret void
 }
 
-; [#uses=12]
+; [#uses=16]
 define weak i32 @_ssdm_op_SpecLoopName(...) {
 entry:
   ret i32 0
 }
 
-; [#uses=9]
+; [#uses=10]
 define weak void @_ssdm_op_SpecInterface(...) nounwind {
 entry:
   ret void
@@ -663,13 +671,13 @@ entry:
   ret void
 }
 
-; [#uses=3]
+; [#uses=4]
 define weak i1 @_ssdm_op_ReadReq.m_axi.i8P(i8*, i32) {
 entry:
   ret i1 true
 }
 
-; [#uses=3]
+; [#uses=4]
 define weak i1 @_ssdm_op_ReadReq.m_axi.floatP(float*, i32) {
 entry:
   ret i1 true
@@ -687,14 +695,14 @@ entry:
   ret i1 %0
 }
 
-; [#uses=3]
+; [#uses=4]
 define weak i8 @_ssdm_op_Read.m_axi.i8P(i8*) {
 entry:
   %empty = load i8* %0                            ; [#uses=1 type=i8]
   ret i8 %empty
 }
 
-; [#uses=3]
+; [#uses=4]
 define weak float @_ssdm_op_Read.m_axi.floatP(float*) {
 entry:
   %empty = load float* %0                         ; [#uses=1 type=float]
@@ -829,7 +837,7 @@ entry:
   ret i3 %empty_33
 }
 
-; [#uses=1]
+; [#uses=4]
 define weak i19 @_ssdm_op_BitConcatenate.i19.i7.i12(i7, i12) nounwind readnone {
 entry:
   %empty = zext i7 %0 to i19                      ; [#uses=1 type=i19]
@@ -839,7 +847,7 @@ entry:
   ret i19 %empty_36
 }
 
-; [#uses=1]
+; [#uses=4]
 define weak i17 @_ssdm_op_BitConcatenate.i17.i7.i10(i7, i10) nounwind readnone {
 entry:
   %empty = zext i7 %0 to i17                      ; [#uses=1 type=i17]
@@ -849,7 +857,7 @@ entry:
   ret i17 %empty_39
 }
 
-; [#uses=1]
+; [#uses=4]
 define weak i16 @_ssdm_op_BitConcatenate.i16.i7.i9(i7, i9) nounwind readnone {
 entry:
   %empty = zext i7 %0 to i16                      ; [#uses=1 type=i16]
@@ -859,7 +867,7 @@ entry:
   ret i16 %empty_42
 }
 
-; [#uses=1]
+; [#uses=4]
 define weak i14 @_ssdm_op_BitConcatenate.i14.i7.i7(i7, i7) nounwind readnone {
 entry:
   %empty = zext i7 %0 to i14                      ; [#uses=1 type=i14]
@@ -914,7 +922,7 @@ entry:
 }
 
 ; [#uses=1]
-declare void @_GLOBAL__I_a() nounwind
+declare void @_GLOBAL__I_a() nounwind section ".text.startup"
 
 ; [#uses=1]
 define internal fastcc void @bgsub_Block__proc(i1 %init, float* %bgmodel, i32 %bgmodel1, i8* %frame_out, i32 %frame_out2, i32 %frame_in) {
@@ -923,13 +931,13 @@ newFuncRoot:
   %frame_out2_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %frame_out2) ; [#uses=1 type=i32]
   %bgmodel1_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %bgmodel1) ; [#uses=1 type=i32]
   %init_read = call i1 @_ssdm_op_Read.ap_auto.i1(i1 %init) ; [#uses=1 type=i1]
-  %tmp_114_cast = sext i32 %frame_in_read to i33  ; [#uses=3 type=i33]
-  %tmp_115_cast = sext i32 %frame_out2_read to i33 ; [#uses=3 type=i33]
+  %tmp_114_cast = sext i32 %frame_in_read to i33  ; [#uses=4 type=i33]
+  %tmp_115_cast = sext i32 %frame_out2_read to i33 ; [#uses=4 type=i33]
   %tmp_113 = call i30 @_ssdm_op_PartSelect.i30.i32.i32.i32(i32 %bgmodel1_read, i32 2, i32 31) ; [#uses=2 type=i30]
-  %tmp_116_cast = zext i30 %tmp_113 to i31        ; [#uses=3 type=i31]
-  call void (...)* @_ssdm_op_SpecInterface(i8* %frame_out, [6 x i8]* @p_str1807, i32 0, i32 0, i32 0, i32 76800, [1 x i8]* @p_str1805, [6 x i8]* @p_str1808, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805)
-  call void (...)* @_ssdm_op_SpecInterface(i8* %frame_out, [6 x i8]* @p_str1807, i32 0, i32 0, i32 0, i32 76800, [1 x i8]* @p_str1805, [6 x i8]* @p_str1808, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805)
-  call void (...)* @_ssdm_op_SpecInterface(float* %bgmodel, [6 x i8]* @p_str1807, i32 0, i32 0, i32 0, i32 614400, [1 x i8]* @p_str1805, [6 x i8]* @p_str1808, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805)
+  %tmp_116_cast = zext i30 %tmp_113 to i31        ; [#uses=4 type=i31]
+  call void (...)* @_ssdm_op_SpecInterface(i8* %frame_out, [6 x i8]* @p_str1809, i32 0, i32 0, i32 0, i32 76800, [1 x i8]* @p_str1805, [6 x i8]* @p_str1810, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805)
+  call void (...)* @_ssdm_op_SpecInterface(i8* %frame_out, [6 x i8]* @p_str1809, i32 0, i32 0, i32 0, i32 76800, [1 x i8]* @p_str1805, [6 x i8]* @p_str1810, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805)
+  call void (...)* @_ssdm_op_SpecInterface(float* %bgmodel, [6 x i8]* @p_str1809, i32 0, i32 0, i32 0, i32 614400, [1 x i8]* @p_str1805, [6 x i8]* @p_str1810, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805)
   %part_bgmodel = alloca [5120 x float], align 16 ; [#uses=3 type=[5120 x float]*]
   %part_frame_in = alloca [640 x i8], align 16    ; [#uses=2 type=[640 x i8]*]
   %part_frame_out = alloca [640 x i1], align 1    ; [#uses=2 type=[640 x i1]*]
@@ -939,73 +947,178 @@ newFuncRoot:
   %part3_bgmodel = alloca [5120 x float], align 16 ; [#uses=3 type=[5120 x float]*]
   %part3_frame_in = alloca [640 x i8], align 16   ; [#uses=2 type=[640 x i8]*]
   %part3_frame_out = alloca [640 x i1], align 1   ; [#uses=2 type=[640 x i1]*]
-  call void @llvm.dbg.declare(metadata !{[5120 x float]* %part_bgmodel}, metadata !255), !dbg !257 ; [debug line = 158:9] [debug variable = part_bgmodel]
-  call void @llvm.dbg.declare(metadata !{[640 x i8]* %part_frame_in}, metadata !258), !dbg !260 ; [debug line = 159:13] [debug variable = part_frame_in]
-  call void @llvm.dbg.declare(metadata !{[5120 x float]* %part2_bgmodel}, metadata !261), !dbg !262 ; [debug line = 163:12] [debug variable = part2_bgmodel]
-  call void @llvm.dbg.declare(metadata !{[640 x i8]* %part2_frame_in}, metadata !263), !dbg !264 ; [debug line = 164:13] [debug variable = part2_frame_in]
-  call void @llvm.dbg.declare(metadata !{[5120 x float]* %part3_bgmodel}, metadata !265), !dbg !266 ; [debug line = 168:12] [debug variable = part3_bgmodel]
-  call void @llvm.dbg.declare(metadata !{[640 x i8]* %part3_frame_in}, metadata !267), !dbg !268 ; [debug line = 169:13] [debug variable = part3_frame_in]
-  br i1 %init_read, label %.preheader.preheader, label %.loopexit, !dbg !269 ; [debug line = 173:5]
+  %part4_bgmodel = alloca [5120 x float], align 16 ; [#uses=3 type=[5120 x float]*]
+  %part4_frame_in = alloca [640 x i8], align 16   ; [#uses=2 type=[640 x i8]*]
+  %part4_frame_out = alloca [640 x i1], align 1   ; [#uses=2 type=[640 x i1]*]
+  call void @llvm.dbg.declare(metadata !{[5120 x float]* %part_bgmodel}, metadata !256), !dbg !258 ; [debug line = 159:9] [debug variable = part_bgmodel]
+  call void @llvm.dbg.declare(metadata !{[640 x i8]* %part_frame_in}, metadata !259), !dbg !261 ; [debug line = 160:13] [debug variable = part_frame_in]
+  call void @llvm.dbg.declare(metadata !{[5120 x float]* %part2_bgmodel}, metadata !262), !dbg !263 ; [debug line = 164:12] [debug variable = part2_bgmodel]
+  call void @llvm.dbg.declare(metadata !{[640 x i8]* %part2_frame_in}, metadata !264), !dbg !265 ; [debug line = 165:13] [debug variable = part2_frame_in]
+  call void @llvm.dbg.declare(metadata !{[5120 x float]* %part3_bgmodel}, metadata !266), !dbg !267 ; [debug line = 169:12] [debug variable = part3_bgmodel]
+  call void @llvm.dbg.declare(metadata !{[640 x i8]* %part3_frame_in}, metadata !268), !dbg !269 ; [debug line = 170:13] [debug variable = part3_frame_in]
+  call void @llvm.dbg.declare(metadata !{[5120 x float]* %part4_bgmodel}, metadata !270), !dbg !271 ; [debug line = 174:12] [debug variable = part4_bgmodel]
+  call void @llvm.dbg.declare(metadata !{[640 x i8]* %part4_frame_in}, metadata !272), !dbg !273 ; [debug line = 175:13] [debug variable = part4_frame_in]
+  br i1 %init_read, label %.preheader.preheader, label %.loopexit, !dbg !274 ; [debug line = 179:5]
 
 .preheader.preheader:                             ; preds = %newFuncRoot
   %tmp_114 = zext i30 %tmp_113 to i64             ; [#uses=1 type=i64]
   %bgmodel_addr = getelementptr float* %bgmodel, i64 %tmp_114 ; [#uses=3 type=float*]
-  %p_wr_req = call i1 @_ssdm_op_WriteReq.m_axi.floatP(float* %bgmodel_addr, i32 614400), !dbg !270 ; [#uses=0 type=i1] [debug line = 182:13]
-  br label %.preheader, !dbg !273                 ; [debug line = 181:20]
+  %p_wr_req = call i1 @_ssdm_op_WriteReq.m_axi.floatP(float* %bgmodel_addr, i32 614400), !dbg !275 ; [#uses=0 type=i1] [debug line = 188:13]
+  br label %.preheader, !dbg !278                 ; [debug line = 187:20]
 
 .exitStub:                                        ; preds = %1
   ret void
 
 .preheader:                                       ; preds = %0, %.preheader.preheader
   %p = phi i20 [ %p_1, %0 ], [ 0, %.preheader.preheader ] ; [#uses=2 type=i20]
-  %exitcond = icmp eq i20 %p, -434176, !dbg !273  ; [#uses=1 type=i1] [debug line = 181:20]
+  %exitcond = icmp eq i20 %p, -434176, !dbg !278  ; [#uses=1 type=i1] [debug line = 187:20]
   call void (...)* @_ssdm_op_SpecLoopTripCount(i64 614400, i64 614400, i64 614400)
-  %p_1 = add i20 %p, 1, !dbg !274                 ; [#uses=1 type=i20] [debug line = 181:64]
-  br i1 %exitcond, label %.loopexit.loopexit, label %0, !dbg !273 ; [debug line = 181:20]
+  %p_1 = add i20 %p, 1, !dbg !279                 ; [#uses=1 type=i20] [debug line = 187:64]
+  br i1 %exitcond, label %.loopexit.loopexit, label %0, !dbg !278 ; [debug line = 187:20]
 
 .loopexit.loopexit:                               ; preds = %.preheader
-  %p_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %bgmodel_addr), !dbg !270 ; [#uses=0 type=i1] [debug line = 182:13]
+  %p_wr_resp = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %bgmodel_addr), !dbg !275 ; [#uses=0 type=i1] [debug line = 188:13]
   br label %.loopexit
 
 .loopexit:                                        ; preds = %.loopexit.loopexit, %newFuncRoot
-  %learningRate = phi float [ 0.000000e+00, %newFuncRoot ], [ 1.000000e+00, %.loopexit.loopexit ] ; [#uses=3 type=float]
-  br label %1, !dbg !275                          ; [debug line = 196:19]
+  %learningRate2 = phi float [ 0.000000e+00, %newFuncRoot ], [ 1.000000e+00, %.loopexit.loopexit ] ; [#uses=4 type=float]
+  br label %1, !dbg !280                          ; [debug line = 204:19]
 
 ; <label>:0                                       ; preds = %.preheader
-  call void @_ssdm_op_Write.m_axi.floatP(float* %bgmodel_addr, float 0.000000e+00, i4 -1), !dbg !270 ; [debug line = 182:13]
-  call void @llvm.dbg.value(metadata !{i20 %p_1}, i64 0, metadata !277), !dbg !274 ; [debug line = 181:64] [debug variable = p]
-  br label %.preheader, !dbg !274                 ; [debug line = 181:64]
+  call void @_ssdm_op_Write.m_axi.floatP(float* %bgmodel_addr, float 0.000000e+00, i4 -1), !dbg !275 ; [debug line = 188:13]
+  call void @llvm.dbg.value(metadata !{i20 %p_1}, i64 0, metadata !282), !dbg !279 ; [debug line = 187:64] [debug variable = p]
+  br label %.preheader, !dbg !279                 ; [debug line = 187:64]
 
-; <label>:1                                       ; preds = %burst.wr.end141, %.loopexit
-  %part = phi i7 [ 0, %.loopexit ], [ %part_1, %burst.wr.end141 ] ; [#uses=6 type=i7]
-  %tmp_54 = icmp ult i7 %part, -8, !dbg !275      ; [#uses=1 type=i1] [debug line = 196:19]
-  call void (...)* @_ssdm_op_SpecLoopTripCount(i64 40, i64 40, i64 40)
-  br i1 %tmp_54, label %2, label %.exitStub, !dbg !275 ; [debug line = 196:19]
+; <label>:1                                       ; preds = %burst.wr.end199, %.loopexit
+  %part = phi i7 [ 0, %.loopexit ], [ %part_1, %burst.wr.end199 ] ; [#uses=9 type=i7]
+  %tmp_54 = icmp ult i7 %part, -8, !dbg !280      ; [#uses=1 type=i1] [debug line = 204:19]
+  call void (...)* @_ssdm_op_SpecLoopTripCount(i64 30, i64 30, i64 30)
+  br i1 %tmp_54, label %2, label %.exitStub, !dbg !280 ; [debug line = 204:19]
 
-burst.wr.end141:                                  ; preds = %burst.wr.header142
-  %p_wr_resp149 = call i1 @_ssdm_op_WriteResp.m_axi.i8P(i8* %frame_out_addr_6), !dbg !278 ; [#uses=0 type=i1] [debug line = 220:9]
-  %empty = call i32 (...)* @_ssdm_op_SpecRegionEnd([10 x i8]* @p_str1812, i32 %tmp_71) nounwind, !dbg !281 ; [#uses=0 type=i32] [debug line = 221:6]
-  %part_1 = add i7 %part, 3, !dbg !282            ; [#uses=1 type=i7] [debug line = 196:29]
-  call void @llvm.dbg.value(metadata !{i7 %part_1}, i64 0, metadata !283), !dbg !282 ; [debug line = 196:29] [debug variable = part]
-  br label %1, !dbg !282                          ; [debug line = 196:29]
+burst.wr.end199:                                  ; preds = %burst.wr.header200
+  %p_wr_resp193 = call i1 @_ssdm_op_WriteResp.m_axi.i8P(i8* %frame_out_addr_8), !dbg !283 ; [#uses=0 type=i1] [debug line = 233:9]
+  %empty = call i32 (...)* @_ssdm_op_SpecRegionEnd([10 x i8]* @p_str1813, i32 %tmp_80) nounwind, !dbg !286 ; [#uses=0 type=i32] [debug line = 234:6]
+  %part_1 = add i7 %part, 4, !dbg !287            ; [#uses=1 type=i7] [debug line = 204:29]
+  call void @llvm.dbg.value(metadata !{i7 %part_1}, i64 0, metadata !288), !dbg !287 ; [debug line = 204:29] [debug variable = part]
+  br label %1, !dbg !287                          ; [debug line = 204:29]
+
+burst.wr.header200:                               ; preds = %burst.wr.header200.preheader, %burst.wr.body201
+  %indvar15 = phi i10 [ %indvar_next15, %burst.wr.body201 ], [ 0, %burst.wr.header200.preheader ] ; [#uses=3 type=i10]
+  %exitcond16 = icmp eq i10 %indvar15, -384       ; [#uses=1 type=i1]
+  call void (...)* @_ssdm_op_SpecLoopTripCount(i64 640, i64 640, i64 640)
+  %indvar_next15 = add i10 %indvar15, 1           ; [#uses=1 type=i10]
+  br i1 %exitcond16, label %burst.wr.end199, label %burst.wr.body201
+
+burst.wr.body201:                                 ; preds = %burst.wr.header200
+  %burstwrite_rbegin7 = call i32 (...)* @_ssdm_op_SpecRegionBegin([18 x i8]* @burstwrite_OC_region_str) nounwind ; [#uses=1 type=i32]
+  %empty_62 = call i32 (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str606) nounwind ; [#uses=0 type=i32]
+  %empty_63 = call i32 (...)* @_ssdm_op_SpecLoopName([18 x i8]* @memcpy_OC_frame_out_OC_str) nounwind ; [#uses=0 type=i32]
+  %tmp_97 = zext i10 %indvar15 to i64, !dbg !283  ; [#uses=1 type=i64] [debug line = 233:9]
+  %part4_frame_out_addr = getelementptr [640 x i1]* %part4_frame_out, i64 0, i64 %tmp_97, !dbg !283 ; [#uses=1 type=i1*] [debug line = 233:9]
+  %part4_frame_out_load = load i1* %part4_frame_out_addr, align 1 ; [#uses=1 type=i1]
+  %extLd3 = select i1 %part4_frame_out_load, i8 -1, i8 0 ; [#uses=1 type=i8]
+  call void @_ssdm_op_Write.m_axi.i8P(i8* %frame_out_addr_8, i8 %extLd3, i1 true), !dbg !283 ; [debug line = 233:9]
+  %burstwrite_rend212 = call i32 (...)* @_ssdm_op_SpecRegionEnd([18 x i8]* @burstwrite_OC_region_str, i32 %burstwrite_rbegin7) nounwind ; [#uses=0 type=i32]
+  br label %burst.wr.header200
+
+burst.wr.header186:                               ; preds = %burst.wr.header186.preheader, %burst.wr.body187
+  %indvar14 = phi i13 [ %indvar_next14, %burst.wr.body187 ], [ 0, %burst.wr.header186.preheader ] ; [#uses=3 type=i13]
+  %exitcond15 = icmp eq i13 %indvar14, -3072      ; [#uses=1 type=i1]
+  call void (...)* @_ssdm_op_SpecLoopTripCount(i64 5120, i64 5120, i64 5120)
+  %indvar_next14 = add i13 %indvar14, 1           ; [#uses=1 type=i13]
+  br i1 %exitcond15, label %burst.wr.header200.preheader, label %burst.wr.body187
+
+burst.wr.header200.preheader:                     ; preds = %burst.wr.header186
+  %p_wr_resp195 = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %bgmodel_addr_20), !dbg !289 ; [#uses=0 type=i1] [debug line = 232:9]
+  %tmp_145 = add i33 %tmp_133, %tmp_115_cast      ; [#uses=1 type=i33]
+  %tmp_146 = sext i33 %tmp_145 to i64             ; [#uses=1 type=i64]
+  %frame_out_addr_8 = getelementptr i8* %frame_out, i64 %tmp_146 ; [#uses=3 type=i8*]
+  %p_wr_req192 = call i1 @_ssdm_op_WriteReq.m_axi.i8P(i8* %frame_out_addr_8, i32 640), !dbg !283 ; [#uses=0 type=i1] [debug line = 233:9]
+  br label %burst.wr.header200
+
+burst.wr.body187:                                 ; preds = %burst.wr.header186
+  %burstwrite_rbegin6 = call i32 (...)* @_ssdm_op_SpecRegionBegin([18 x i8]* @burstwrite_OC_region_str) nounwind ; [#uses=1 type=i32]
+  %empty_64 = call i32 (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str590) nounwind ; [#uses=0 type=i32]
+  %empty_65 = call i32 (...)* @_ssdm_op_SpecLoopName([33 x i8]* @memcpy_OC_bgmodel_OC_part4_bgm) nounwind ; [#uses=0 type=i32]
+  %tmp_95 = zext i13 %indvar14 to i64, !dbg !289  ; [#uses=1 type=i64] [debug line = 232:9]
+  %part4_bgmodel_addr_1 = getelementptr [5120 x float]* %part4_bgmodel, i64 0, i64 %tmp_95, !dbg !289 ; [#uses=1 type=float*] [debug line = 232:9]
+  %part4_bgmodel_load = load float* %part4_bgmodel_addr_1, align 4, !dbg !289 ; [#uses=1 type=float] [debug line = 232:9]
+  call void @_ssdm_op_Write.m_axi.floatP(float* %bgmodel_addr_20, float %part4_bgmodel_load, i4 -1), !dbg !289 ; [debug line = 232:9]
+  %burstwrite_rend197 = call i32 (...)* @_ssdm_op_SpecRegionEnd([18 x i8]* @burstwrite_OC_region_str, i32 %burstwrite_rbegin6) nounwind ; [#uses=0 type=i32]
+  br label %burst.wr.header186
+
+burst.wr.header171:                               ; preds = %burst.wr.header171.preheader, %burst.wr.body172
+  %indvar13 = phi i10 [ %indvar_next13, %burst.wr.body172 ], [ 0, %burst.wr.header171.preheader ] ; [#uses=3 type=i10]
+  %exitcond14 = icmp eq i10 %indvar13, -384       ; [#uses=1 type=i1]
+  call void (...)* @_ssdm_op_SpecLoopTripCount(i64 640, i64 640, i64 640)
+  %indvar_next13 = add i10 %indvar13, 1           ; [#uses=1 type=i10]
+  br i1 %exitcond14, label %burst.wr.header186.preheader, label %burst.wr.body172
+
+burst.wr.header186.preheader:                     ; preds = %burst.wr.header171
+  %p_wr_resp197 = call i1 @_ssdm_op_WriteResp.m_axi.i8P(i8* %frame_out_addr_7), !dbg !290 ; [#uses=0 type=i1] [debug line = 231:9]
+  %p_wr_req194 = call i1 @_ssdm_op_WriteReq.m_axi.floatP(float* %bgmodel_addr_20, i32 5120), !dbg !289 ; [#uses=0 type=i1] [debug line = 232:9]
+  br label %burst.wr.header186
+
+burst.wr.body172:                                 ; preds = %burst.wr.header171
+  %burstwrite_rbegin5 = call i32 (...)* @_ssdm_op_SpecRegionBegin([18 x i8]* @burstwrite_OC_region_str) nounwind ; [#uses=1 type=i32]
+  %empty_66 = call i32 (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str552) nounwind ; [#uses=0 type=i32]
+  %empty_67 = call i32 (...)* @_ssdm_op_SpecLoopName([18 x i8]* @memcpy_OC_frame_out_OC_str) nounwind ; [#uses=0 type=i32]
+  %tmp_93 = zext i10 %indvar13 to i64, !dbg !290  ; [#uses=1 type=i64] [debug line = 231:9]
+  %part3_frame_out_addr = getelementptr [640 x i1]* %part3_frame_out, i64 0, i64 %tmp_93, !dbg !290 ; [#uses=1 type=i1*] [debug line = 231:9]
+  %part3_frame_out_load = load i1* %part3_frame_out_addr, align 1 ; [#uses=1 type=i1]
+  %extLd2 = select i1 %part3_frame_out_load, i8 -1, i8 0 ; [#uses=1 type=i8]
+  call void @_ssdm_op_Write.m_axi.i8P(i8* %frame_out_addr_7, i8 %extLd2, i1 true), !dbg !290 ; [debug line = 231:9]
+  %burstwrite_rend183 = call i32 (...)* @_ssdm_op_SpecRegionEnd([18 x i8]* @burstwrite_OC_region_str, i32 %burstwrite_rbegin5) nounwind ; [#uses=0 type=i32]
+  br label %burst.wr.header171
+
+burst.wr.header157:                               ; preds = %burst.wr.header157.preheader, %burst.wr.body158
+  %indvar12 = phi i13 [ %indvar_next12, %burst.wr.body158 ], [ 0, %burst.wr.header157.preheader ] ; [#uses=3 type=i13]
+  %exitcond13 = icmp eq i13 %indvar12, -3072      ; [#uses=1 type=i1]
+  call void (...)* @_ssdm_op_SpecLoopTripCount(i64 5120, i64 5120, i64 5120)
+  %indvar_next12 = add i13 %indvar12, 1           ; [#uses=1 type=i13]
+  br i1 %exitcond13, label %burst.wr.header171.preheader, label %burst.wr.body158
+
+burst.wr.header171.preheader:                     ; preds = %burst.wr.header157
+  %p_wr_resp199 = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %bgmodel_addr_19), !dbg !291 ; [#uses=0 type=i1] [debug line = 230:9]
+  %tmp_143 = add i33 %tmp_127, %tmp_115_cast      ; [#uses=1 type=i33]
+  %tmp_144 = sext i33 %tmp_143 to i64             ; [#uses=1 type=i64]
+  %frame_out_addr_7 = getelementptr i8* %frame_out, i64 %tmp_144 ; [#uses=3 type=i8*]
+  %p_wr_req196 = call i1 @_ssdm_op_WriteReq.m_axi.i8P(i8* %frame_out_addr_7, i32 640), !dbg !290 ; [#uses=0 type=i1] [debug line = 231:9]
+  br label %burst.wr.header171
+
+burst.wr.body158:                                 ; preds = %burst.wr.header157
+  %burstwrite_rbegin4 = call i32 (...)* @_ssdm_op_SpecRegionBegin([18 x i8]* @burstwrite_OC_region_str) nounwind ; [#uses=1 type=i32]
+  %empty_68 = call i32 (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str488) nounwind ; [#uses=0 type=i32]
+  %empty_69 = call i32 (...)* @_ssdm_op_SpecLoopName([33 x i8]* @memcpy_OC_bgmodel_OC_part3_bgm) nounwind ; [#uses=0 type=i32]
+  %tmp_91 = zext i13 %indvar12 to i64, !dbg !291  ; [#uses=1 type=i64] [debug line = 230:9]
+  %part3_bgmodel_addr_1 = getelementptr [5120 x float]* %part3_bgmodel, i64 0, i64 %tmp_91, !dbg !291 ; [#uses=1 type=float*] [debug line = 230:9]
+  %part3_bgmodel_load = load float* %part3_bgmodel_addr_1, align 4, !dbg !291 ; [#uses=1 type=float] [debug line = 230:9]
+  call void @_ssdm_op_Write.m_axi.floatP(float* %bgmodel_addr_19, float %part3_bgmodel_load, i4 -1), !dbg !291 ; [debug line = 230:9]
+  %burstwrite_rend168 = call i32 (...)* @_ssdm_op_SpecRegionEnd([18 x i8]* @burstwrite_OC_region_str, i32 %burstwrite_rbegin4) nounwind ; [#uses=0 type=i32]
+  br label %burst.wr.header157
 
 burst.wr.header142:                               ; preds = %burst.wr.header142.preheader, %burst.wr.body143
   %indvar11 = phi i10 [ %indvar_next11, %burst.wr.body143 ], [ 0, %burst.wr.header142.preheader ] ; [#uses=3 type=i10]
   %exitcond12 = icmp eq i10 %indvar11, -384       ; [#uses=1 type=i1]
   call void (...)* @_ssdm_op_SpecLoopTripCount(i64 640, i64 640, i64 640)
   %indvar_next11 = add i10 %indvar11, 1           ; [#uses=1 type=i10]
-  br i1 %exitcond12, label %burst.wr.end141, label %burst.wr.body143
+  br i1 %exitcond12, label %burst.wr.header157.preheader, label %burst.wr.body143
+
+burst.wr.header157.preheader:                     ; preds = %burst.wr.header142
+  %p_wr_resp201 = call i1 @_ssdm_op_WriteResp.m_axi.i8P(i8* %frame_out_addr_6), !dbg !292 ; [#uses=0 type=i1] [debug line = 229:9]
+  %p_wr_req198 = call i1 @_ssdm_op_WriteReq.m_axi.floatP(float* %bgmodel_addr_19, i32 5120), !dbg !291 ; [#uses=0 type=i1] [debug line = 230:9]
+  br label %burst.wr.header157
 
 burst.wr.body143:                                 ; preds = %burst.wr.header142
-  %burstwrite_rbegin5 = call i32 (...)* @_ssdm_op_SpecRegionBegin([18 x i8]* @burstwrite_OC_region_str) nounwind ; [#uses=1 type=i32]
-  %empty_62 = call i32 (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str472) nounwind ; [#uses=0 type=i32]
-  %empty_63 = call i32 (...)* @_ssdm_op_SpecLoopName([18 x i8]* @memcpy_OC_frame_out_OC_str) nounwind ; [#uses=0 type=i32]
-  %tmp_84 = zext i10 %indvar11 to i64, !dbg !278  ; [#uses=1 type=i64] [debug line = 220:9]
-  %part3_frame_out_addr = getelementptr [640 x i1]* %part3_frame_out, i64 0, i64 %tmp_84, !dbg !278 ; [#uses=1 type=i1*] [debug line = 220:9]
-  %part3_frame_out_load = load i1* %part3_frame_out_addr, align 1 ; [#uses=1 type=i1]
-  %extLd2 = select i1 %part3_frame_out_load, i8 -1, i8 0 ; [#uses=1 type=i8]
-  call void @_ssdm_op_Write.m_axi.i8P(i8* %frame_out_addr_6, i8 %extLd2, i1 true), !dbg !278 ; [debug line = 220:9]
-  %burstwrite_rend154 = call i32 (...)* @_ssdm_op_SpecRegionEnd([18 x i8]* @burstwrite_OC_region_str, i32 %burstwrite_rbegin5) nounwind ; [#uses=0 type=i32]
+  %burstwrite_rbegin3 = call i32 (...)* @_ssdm_op_SpecRegionBegin([18 x i8]* @burstwrite_OC_region_str) nounwind ; [#uses=1 type=i32]
+  %empty_70 = call i32 (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str472) nounwind ; [#uses=0 type=i32]
+  %empty_71 = call i32 (...)* @_ssdm_op_SpecLoopName([18 x i8]* @memcpy_OC_frame_out_OC_str) nounwind ; [#uses=0 type=i32]
+  %tmp_89 = zext i10 %indvar11 to i64, !dbg !292  ; [#uses=1 type=i64] [debug line = 229:9]
+  %part2_frame_out_addr = getelementptr [640 x i1]* %part2_frame_out, i64 0, i64 %tmp_89, !dbg !292 ; [#uses=1 type=i1*] [debug line = 229:9]
+  %part2_frame_out_load = load i1* %part2_frame_out_addr, align 1 ; [#uses=1 type=i1]
+  %extLd1 = select i1 %part2_frame_out_load, i8 -1, i8 0 ; [#uses=1 type=i8]
+  call void @_ssdm_op_Write.m_axi.i8P(i8* %frame_out_addr_6, i8 %extLd1, i1 true), !dbg !292 ; [debug line = 229:9]
+  %burstwrite_rend154 = call i32 (...)* @_ssdm_op_SpecRegionEnd([18 x i8]* @burstwrite_OC_region_str, i32 %burstwrite_rbegin3) nounwind ; [#uses=0 type=i32]
   br label %burst.wr.header142
 
 burst.wr.header128:                               ; preds = %burst.wr.header128.preheader, %burst.wr.body129
@@ -1016,121 +1129,113 @@ burst.wr.header128:                               ; preds = %burst.wr.header128.
   br i1 %exitcond11, label %burst.wr.header142.preheader, label %burst.wr.body129
 
 burst.wr.header142.preheader:                     ; preds = %burst.wr.header128
-  %p_wr_resp151 = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %bgmodel_addr_19), !dbg !284 ; [#uses=0 type=i1] [debug line = 219:9]
-  %tmp_137 = add i33 %tmp_127, %tmp_115_cast      ; [#uses=1 type=i33]
-  %tmp_138 = sext i33 %tmp_137 to i64             ; [#uses=1 type=i64]
-  %frame_out_addr_6 = getelementptr i8* %frame_out, i64 %tmp_138 ; [#uses=3 type=i8*]
-  %p_wr_req148 = call i1 @_ssdm_op_WriteReq.m_axi.i8P(i8* %frame_out_addr_6, i32 640), !dbg !278 ; [#uses=0 type=i1] [debug line = 220:9]
+  %p_wr_resp203 = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %bgmodel_addr_18), !dbg !293 ; [#uses=0 type=i1] [debug line = 228:9]
+  %tmp_141 = add i33 %tmp_121, %tmp_115_cast      ; [#uses=1 type=i33]
+  %tmp_142 = sext i33 %tmp_141 to i64             ; [#uses=1 type=i64]
+  %frame_out_addr_6 = getelementptr i8* %frame_out, i64 %tmp_142 ; [#uses=3 type=i8*]
+  %p_wr_req200 = call i1 @_ssdm_op_WriteReq.m_axi.i8P(i8* %frame_out_addr_6, i32 640), !dbg !292 ; [#uses=0 type=i1] [debug line = 229:9]
   br label %burst.wr.header142
 
 burst.wr.body129:                                 ; preds = %burst.wr.header128
-  %burstwrite_rbegin4 = call i32 (...)* @_ssdm_op_SpecRegionBegin([18 x i8]* @burstwrite_OC_region_str) nounwind ; [#uses=1 type=i32]
-  %empty_64 = call i32 (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str433) nounwind ; [#uses=0 type=i32]
-  %empty_65 = call i32 (...)* @_ssdm_op_SpecLoopName([33 x i8]* @memcpy_OC_bgmodel_OC_part3_bgm) nounwind ; [#uses=0 type=i32]
-  %tmp_82 = zext i13 %indvar10 to i64, !dbg !284  ; [#uses=1 type=i64] [debug line = 219:9]
-  %part3_bgmodel_addr_1 = getelementptr [5120 x float]* %part3_bgmodel, i64 0, i64 %tmp_82, !dbg !284 ; [#uses=1 type=float*] [debug line = 219:9]
-  %part3_bgmodel_load = load float* %part3_bgmodel_addr_1, align 4, !dbg !284 ; [#uses=1 type=float] [debug line = 219:9]
-  call void @_ssdm_op_Write.m_axi.floatP(float* %bgmodel_addr_19, float %part3_bgmodel_load, i4 -1), !dbg !284 ; [debug line = 219:9]
-  %burstwrite_rend139 = call i32 (...)* @_ssdm_op_SpecRegionEnd([18 x i8]* @burstwrite_OC_region_str, i32 %burstwrite_rbegin4) nounwind ; [#uses=0 type=i32]
+  %burstwrite_rbegin2 = call i32 (...)* @_ssdm_op_SpecRegionBegin([18 x i8]* @burstwrite_OC_region_str) nounwind ; [#uses=1 type=i32]
+  %empty_72 = call i32 (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str433) nounwind ; [#uses=0 type=i32]
+  %empty_73 = call i32 (...)* @_ssdm_op_SpecLoopName([33 x i8]* @memcpy_OC_bgmodel_OC_part2_bgm) nounwind ; [#uses=0 type=i32]
+  %tmp_87 = zext i13 %indvar10 to i64, !dbg !293  ; [#uses=1 type=i64] [debug line = 228:9]
+  %part2_bgmodel_addr_1 = getelementptr [5120 x float]* %part2_bgmodel, i64 0, i64 %tmp_87, !dbg !293 ; [#uses=1 type=float*] [debug line = 228:9]
+  %part2_bgmodel_load = load float* %part2_bgmodel_addr_1, align 4, !dbg !293 ; [#uses=1 type=float] [debug line = 228:9]
+  call void @_ssdm_op_Write.m_axi.floatP(float* %bgmodel_addr_18, float %part2_bgmodel_load, i4 -1), !dbg !293 ; [debug line = 228:9]
+  %burstwrite_rend139 = call i32 (...)* @_ssdm_op_SpecRegionEnd([18 x i8]* @burstwrite_OC_region_str, i32 %burstwrite_rbegin2) nounwind ; [#uses=0 type=i32]
   br label %burst.wr.header128
 
-burst.wr.header113:                               ; preds = %burst.wr.header113.preheader, %burst.wr.body114
-  %indvar8 = phi i10 [ %indvar_next9, %burst.wr.body114 ], [ 0, %burst.wr.header113.preheader ] ; [#uses=3 type=i10]
+burst.wr.header115:                               ; preds = %burst.wr.header115.preheader, %burst.wr.body116
+  %indvar8 = phi i10 [ %indvar_next9, %burst.wr.body116 ], [ 0, %burst.wr.header115.preheader ] ; [#uses=3 type=i10]
   %exitcond10 = icmp eq i10 %indvar8, -384        ; [#uses=1 type=i1]
   call void (...)* @_ssdm_op_SpecLoopTripCount(i64 640, i64 640, i64 640)
   %indvar_next9 = add i10 %indvar8, 1             ; [#uses=1 type=i10]
-  br i1 %exitcond10, label %burst.wr.header128.preheader, label %burst.wr.body114
+  br i1 %exitcond10, label %burst.wr.header128.preheader, label %burst.wr.body116
 
-burst.wr.header128.preheader:                     ; preds = %burst.wr.header113
-  %p_wr_resp153 = call i1 @_ssdm_op_WriteResp.m_axi.i8P(i8* %frame_out_addr_5), !dbg !285 ; [#uses=0 type=i1] [debug line = 218:9]
-  %p_wr_req150 = call i1 @_ssdm_op_WriteReq.m_axi.floatP(float* %bgmodel_addr_19, i32 5120), !dbg !284 ; [#uses=0 type=i1] [debug line = 219:9]
+burst.wr.header128.preheader:                     ; preds = %burst.wr.header115
+  %p_wr_resp205 = call i1 @_ssdm_op_WriteResp.m_axi.i8P(i8* %frame_out_addr_5), !dbg !294 ; [#uses=0 type=i1] [debug line = 227:9]
+  %p_wr_req202 = call i1 @_ssdm_op_WriteReq.m_axi.floatP(float* %bgmodel_addr_18, i32 5120), !dbg !293 ; [#uses=0 type=i1] [debug line = 228:9]
   br label %burst.wr.header128
 
-burst.wr.body114:                                 ; preds = %burst.wr.header113
-  %burstwrite_rbegin3 = call i32 (...)* @_ssdm_op_SpecRegionBegin([18 x i8]* @burstwrite_OC_region_str) nounwind ; [#uses=1 type=i32]
-  %empty_66 = call i32 (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str308) nounwind ; [#uses=0 type=i32]
-  %empty_67 = call i32 (...)* @_ssdm_op_SpecLoopName([18 x i8]* @memcpy_OC_frame_out_OC_str) nounwind ; [#uses=0 type=i32]
-  %tmp_80 = zext i10 %indvar8 to i64, !dbg !285   ; [#uses=1 type=i64] [debug line = 218:9]
-  %part2_frame_out_addr = getelementptr [640 x i1]* %part2_frame_out, i64 0, i64 %tmp_80, !dbg !285 ; [#uses=1 type=i1*] [debug line = 218:9]
-  %part2_frame_out_load = load i1* %part2_frame_out_addr, align 1 ; [#uses=1 type=i1]
-  %extLd1 = select i1 %part2_frame_out_load, i8 -1, i8 0 ; [#uses=1 type=i8]
-  call void @_ssdm_op_Write.m_axi.i8P(i8* %frame_out_addr_5, i8 %extLd1, i1 true), !dbg !285 ; [debug line = 218:9]
-  %burstwrite_rend125 = call i32 (...)* @_ssdm_op_SpecRegionEnd([18 x i8]* @burstwrite_OC_region_str, i32 %burstwrite_rbegin3) nounwind ; [#uses=0 type=i32]
-  br label %burst.wr.header113
+burst.wr.body116:                                 ; preds = %burst.wr.header115
+  %burstwrite_rbegin1 = call i32 (...)* @_ssdm_op_SpecRegionBegin([18 x i8]* @burstwrite_OC_region_str) nounwind ; [#uses=1 type=i32]
+  %empty_74 = call i32 (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str308) nounwind ; [#uses=0 type=i32]
+  %empty_75 = call i32 (...)* @_ssdm_op_SpecLoopName([18 x i8]* @memcpy_OC_frame_out_OC_str) nounwind ; [#uses=0 type=i32]
+  %tmp_85 = zext i10 %indvar8 to i64, !dbg !294   ; [#uses=1 type=i64] [debug line = 227:9]
+  %part_frame_out_addr = getelementptr [640 x i1]* %part_frame_out, i64 0, i64 %tmp_85, !dbg !294 ; [#uses=1 type=i1*] [debug line = 227:9]
+  %part_frame_out_load = load i1* %part_frame_out_addr, align 1 ; [#uses=1 type=i1]
+  %extLd = select i1 %part_frame_out_load, i8 -1, i8 0 ; [#uses=1 type=i8]
+  call void @_ssdm_op_Write.m_axi.i8P(i8* %frame_out_addr_5, i8 %extLd, i1 true), !dbg !294 ; [debug line = 227:9]
+  %burstwrite_rend125 = call i32 (...)* @_ssdm_op_SpecRegionEnd([18 x i8]* @burstwrite_OC_region_str, i32 %burstwrite_rbegin1) nounwind ; [#uses=0 type=i32]
+  br label %burst.wr.header115
 
-burst.wr.header99:                                ; preds = %burst.wr.header99.preheader, %burst.wr.body100
-  %indvar7 = phi i13 [ %indvar_next8, %burst.wr.body100 ], [ 0, %burst.wr.header99.preheader ] ; [#uses=3 type=i13]
+burst.wr.header:                                  ; preds = %burst.wr.body, %burst.rd.end91
+  %indvar7 = phi i13 [ 0, %burst.rd.end91 ], [ %indvar_next8, %burst.wr.body ] ; [#uses=3 type=i13]
   %exitcond3 = icmp eq i13 %indvar7, -3072        ; [#uses=1 type=i1]
   call void (...)* @_ssdm_op_SpecLoopTripCount(i64 5120, i64 5120, i64 5120)
   %indvar_next8 = add i13 %indvar7, 1             ; [#uses=1 type=i13]
-  br i1 %exitcond3, label %burst.wr.header113.preheader, label %burst.wr.body100
+  br i1 %exitcond3, label %burst.wr.header115.preheader, label %burst.wr.body
 
-burst.wr.header113.preheader:                     ; preds = %burst.wr.header99
-  %p_wr_resp155 = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %bgmodel_addr_18), !dbg !286 ; [#uses=0 type=i1] [debug line = 217:9]
-  %tmp_135 = add i33 %tmp_121, %tmp_115_cast      ; [#uses=1 type=i33]
-  %tmp_136 = sext i33 %tmp_135 to i64             ; [#uses=1 type=i64]
-  %frame_out_addr_5 = getelementptr i8* %frame_out, i64 %tmp_136 ; [#uses=3 type=i8*]
-  %p_wr_req152 = call i1 @_ssdm_op_WriteReq.m_axi.i8P(i8* %frame_out_addr_5, i32 640), !dbg !285 ; [#uses=0 type=i1] [debug line = 218:9]
-  br label %burst.wr.header113
+burst.wr.header115.preheader:                     ; preds = %burst.wr.header
+  %p_wr_resp214 = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %bgmodel_addr_17), !dbg !295 ; [#uses=0 type=i1] [debug line = 226:9]
+  %tmp_139 = add i33 %tmp_115, %tmp_115_cast      ; [#uses=1 type=i33]
+  %tmp_140 = sext i33 %tmp_139 to i64             ; [#uses=1 type=i64]
+  %frame_out_addr_5 = getelementptr i8* %frame_out, i64 %tmp_140 ; [#uses=3 type=i8*]
+  %p_wr_req204 = call i1 @_ssdm_op_WriteReq.m_axi.i8P(i8* %frame_out_addr_5, i32 640), !dbg !294 ; [#uses=0 type=i1] [debug line = 227:9]
+  br label %burst.wr.header115
 
-burst.wr.body100:                                 ; preds = %burst.wr.header99
-  %burstwrite_rbegin2 = call i32 (...)* @_ssdm_op_SpecRegionBegin([18 x i8]* @burstwrite_OC_region_str) nounwind ; [#uses=1 type=i32]
-  %empty_68 = call i32 (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str180) nounwind ; [#uses=0 type=i32]
-  %empty_69 = call i32 (...)* @_ssdm_op_SpecLoopName([33 x i8]* @memcpy_OC_bgmodel_OC_part2_bgm) nounwind ; [#uses=0 type=i32]
-  %tmp_78 = zext i13 %indvar7 to i64, !dbg !286   ; [#uses=1 type=i64] [debug line = 217:9]
-  %part2_bgmodel_addr_1 = getelementptr [5120 x float]* %part2_bgmodel, i64 0, i64 %tmp_78, !dbg !286 ; [#uses=1 type=float*] [debug line = 217:9]
-  %part2_bgmodel_load = load float* %part2_bgmodel_addr_1, align 4, !dbg !286 ; [#uses=1 type=float] [debug line = 217:9]
-  call void @_ssdm_op_Write.m_axi.floatP(float* %bgmodel_addr_18, float %part2_bgmodel_load, i4 -1), !dbg !286 ; [debug line = 217:9]
-  %burstwrite_rend110 = call i32 (...)* @_ssdm_op_SpecRegionEnd([18 x i8]* @burstwrite_OC_region_str, i32 %burstwrite_rbegin2) nounwind ; [#uses=0 type=i32]
-  br label %burst.wr.header99
+burst.rd.end91:                                   ; preds = %burst.rd.header92
+  %empty_76 = call i32 (...)* @_ssdm_op_SpecRegionEnd([9 x i8]* @p_str1811, i32 %tmp) nounwind, !dbg !296 ; [#uses=0 type=i32] [debug line = 215:6]
+  call fastcc void @bgsub_process([640 x i8]* %part_frame_in, [640 x i1]* %part_frame_out, [5120 x float]* %part_bgmodel, float %learningRate2) nounwind, !dbg !298 ; [debug line = 218:9]
+  call fastcc void @bgsub_process([640 x i8]* %part2_frame_in, [640 x i1]* %part2_frame_out, [5120 x float]* %part2_bgmodel, float %learningRate2) nounwind, !dbg !300 ; [debug line = 219:9]
+  call fastcc void @bgsub_process([640 x i8]* %part3_frame_in, [640 x i1]* %part3_frame_out, [5120 x float]* %part3_bgmodel, float %learningRate2) nounwind, !dbg !301 ; [debug line = 220:9]
+  call fastcc void @bgsub_process([640 x i8]* %part4_frame_in, [640 x i1]* %part4_frame_out, [5120 x float]* %part4_bgmodel, float %learningRate2) nounwind, !dbg !302 ; [debug line = 221:9]
+  %tmp_80 = call i32 (...)* @_ssdm_op_SpecRegionBegin([10 x i8]* @p_str1813) nounwind, !dbg !303 ; [#uses=1 type=i32] [debug line = 225:17]
+  %p_wr_req213 = call i1 @_ssdm_op_WriteReq.m_axi.floatP(float* %bgmodel_addr_17, i32 5120), !dbg !295 ; [#uses=0 type=i1] [debug line = 226:9]
+  br label %burst.wr.header
 
-burst.wr.header86:                                ; preds = %burst.wr.header86.preheader, %burst.wr.body87
-  %indvar6 = phi i10 [ %indvar_next7, %burst.wr.body87 ], [ 0, %burst.wr.header86.preheader ] ; [#uses=3 type=i10]
-  %exitcond2 = icmp eq i10 %indvar6, -384         ; [#uses=1 type=i1]
-  call void (...)* @_ssdm_op_SpecLoopTripCount(i64 640, i64 640, i64 640)
-  %indvar_next7 = add i10 %indvar6, 1             ; [#uses=1 type=i10]
-  br i1 %exitcond2, label %burst.wr.header99.preheader, label %burst.wr.body87
-
-burst.wr.header99.preheader:                      ; preds = %burst.wr.header86
-  %p_wr_resp157 = call i1 @_ssdm_op_WriteResp.m_axi.i8P(i8* %frame_out_addr_4), !dbg !287 ; [#uses=0 type=i1] [debug line = 216:9]
-  %p_wr_req154 = call i1 @_ssdm_op_WriteReq.m_axi.floatP(float* %bgmodel_addr_18, i32 5120), !dbg !286 ; [#uses=0 type=i1] [debug line = 217:9]
-  br label %burst.wr.header99
-
-burst.wr.body87:                                  ; preds = %burst.wr.header86
-  %burstwrite_rbegin1 = call i32 (...)* @_ssdm_op_SpecRegionBegin([18 x i8]* @burstwrite_OC_region_str) nounwind ; [#uses=1 type=i32]
-  %empty_70 = call i32 (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str52) nounwind ; [#uses=0 type=i32]
-  %empty_71 = call i32 (...)* @_ssdm_op_SpecLoopName([18 x i8]* @memcpy_OC_frame_out_OC_str) nounwind ; [#uses=0 type=i32]
-  %tmp_76 = zext i10 %indvar6 to i64, !dbg !287   ; [#uses=1 type=i64] [debug line = 216:9]
-  %part_frame_out_addr = getelementptr [640 x i1]* %part_frame_out, i64 0, i64 %tmp_76, !dbg !287 ; [#uses=1 type=i1*] [debug line = 216:9]
-  %part_frame_out_load = load i1* %part_frame_out_addr, align 1 ; [#uses=1 type=i1]
-  %extLd = select i1 %part_frame_out_load, i8 -1, i8 0 ; [#uses=1 type=i8]
-  call void @_ssdm_op_Write.m_axi.i8P(i8* %frame_out_addr_4, i8 %extLd, i1 true), !dbg !287 ; [debug line = 216:9]
-  %burstwrite_rend96 = call i32 (...)* @_ssdm_op_SpecRegionEnd([18 x i8]* @burstwrite_OC_region_str, i32 %burstwrite_rbegin1) nounwind ; [#uses=0 type=i32]
-  br label %burst.wr.header86
-
-burst.wr.header:                                  ; preds = %burst.wr.body, %burst.rd.end62
-  %indvar5 = phi i13 [ 0, %burst.rd.end62 ], [ %indvar_next6, %burst.wr.body ] ; [#uses=3 type=i13]
-  %exitcond9 = icmp eq i13 %indvar5, -3072        ; [#uses=1 type=i1]
+burst.rd.header92:                                ; preds = %burst.rd.body93, %burst.rd.end76
+  %indvar6 = phi i13 [ 0, %burst.rd.end76 ], [ %indvar_next7, %burst.rd.body93 ] ; [#uses=3 type=i13]
+  %exitcond2 = icmp eq i13 %indvar6, -3072        ; [#uses=1 type=i1]
   call void (...)* @_ssdm_op_SpecLoopTripCount(i64 5120, i64 5120, i64 5120)
-  %indvar_next6 = add i13 %indvar5, 1             ; [#uses=1 type=i13]
-  br i1 %exitcond9, label %burst.wr.header86.preheader, label %burst.wr.body
+  %indvar_next7 = add i13 %indvar6, 1             ; [#uses=1 type=i13]
+  br i1 %exitcond2, label %burst.rd.end91, label %burst.rd.body93
 
-burst.wr.header86.preheader:                      ; preds = %burst.wr.header
-  %p_wr_resp164 = call i1 @_ssdm_op_WriteResp.m_axi.floatP(float* %bgmodel_addr_17), !dbg !288 ; [#uses=0 type=i1] [debug line = 215:9]
-  %tmp_133 = add i33 %tmp_115, %tmp_115_cast      ; [#uses=1 type=i33]
-  %tmp_134 = sext i33 %tmp_133 to i64             ; [#uses=1 type=i64]
-  %frame_out_addr_4 = getelementptr i8* %frame_out, i64 %tmp_134 ; [#uses=3 type=i8*]
-  %p_wr_req156 = call i1 @_ssdm_op_WriteReq.m_axi.i8P(i8* %frame_out_addr_4, i32 640), !dbg !287 ; [#uses=0 type=i1] [debug line = 216:9]
-  br label %burst.wr.header86
+burst.rd.end76:                                   ; preds = %burst.rd.header77
+  %p_shl14 = call i19 @_ssdm_op_BitConcatenate.i19.i7.i12(i7 %tmp_73, i12 0), !dbg !304 ; [#uses=1 type=i19] [debug line = 214:9]
+  %p_shl15_cast = zext i19 %p_shl14 to i20, !dbg !304 ; [#uses=1 type=i20] [debug line = 214:9]
+  %p_shl15 = call i17 @_ssdm_op_BitConcatenate.i17.i7.i10(i7 %tmp_73, i10 0), !dbg !304 ; [#uses=1 type=i17] [debug line = 214:9]
+  %p_shl16_cast = zext i17 %p_shl15 to i20, !dbg !304 ; [#uses=1 type=i20] [debug line = 214:9]
+  %tmp_77 = add i20 %p_shl15_cast, %p_shl16_cast, !dbg !304 ; [#uses=1 type=i20] [debug line = 214:9]
+  %tmp_136 = zext i20 %tmp_77 to i31              ; [#uses=1 type=i31]
+  %tmp_137 = add i31 %tmp_116_cast, %tmp_136      ; [#uses=1 type=i31]
+  %tmp_138 = zext i31 %tmp_137 to i64             ; [#uses=1 type=i64]
+  %bgmodel_addr_20 = getelementptr float* %bgmodel, i64 %tmp_138 ; [#uses=5 type=float*]
+  %p_rd_req212 = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %bgmodel_addr_20, i32 5120), !dbg !304 ; [#uses=0 type=i1] [debug line = 214:9]
+  br label %burst.rd.header92
+
+burst.rd.header77:                                ; preds = %burst.rd.body78, %burst.rd.end62
+  %indvar5 = phi i10 [ 0, %burst.rd.end62 ], [ %indvar_next6, %burst.rd.body78 ] ; [#uses=3 type=i10]
+  %exitcond9 = icmp eq i10 %indvar5, -384         ; [#uses=1 type=i1]
+  call void (...)* @_ssdm_op_SpecLoopTripCount(i64 640, i64 640, i64 640)
+  %indvar_next6 = add i10 %indvar5, 1             ; [#uses=1 type=i10]
+  br i1 %exitcond9, label %burst.rd.end76, label %burst.rd.body78
 
 burst.rd.end62:                                   ; preds = %burst.rd.header63
-  %empty_72 = call i32 (...)* @_ssdm_op_SpecRegionEnd([9 x i8]* @p_str1810, i32 %tmp) nounwind, !dbg !289 ; [#uses=0 type=i32] [debug line = 205:6]
-  call fastcc void @bgsub_process([640 x i8]* %part_frame_in, [640 x i1]* %part_frame_out, [5120 x float]* %part_bgmodel, float %learningRate) nounwind, !dbg !291 ; [debug line = 208:9]
-  call fastcc void @bgsub_process([640 x i8]* %part2_frame_in, [640 x i1]* %part2_frame_out, [5120 x float]* %part2_bgmodel, float %learningRate) nounwind, !dbg !293 ; [debug line = 209:9]
-  call fastcc void @bgsub_process([640 x i8]* %part3_frame_in, [640 x i1]* %part3_frame_out, [5120 x float]* %part3_bgmodel, float %learningRate) nounwind, !dbg !294 ; [debug line = 210:9]
-  %tmp_71 = call i32 (...)* @_ssdm_op_SpecRegionBegin([10 x i8]* @p_str1812) nounwind, !dbg !295 ; [#uses=1 type=i32] [debug line = 214:17]
-  %p_wr_req163 = call i1 @_ssdm_op_WriteReq.m_axi.floatP(float* %bgmodel_addr_17, i32 5120), !dbg !288 ; [#uses=0 type=i1] [debug line = 215:9]
-  br label %burst.wr.header
+  %tmp_73 = or i7 %part, 3, !dbg !305             ; [#uses=4 type=i7] [debug line = 213:9]
+  %p_shl12 = call i16 @_ssdm_op_BitConcatenate.i16.i7.i9(i7 %tmp_73, i9 0), !dbg !305 ; [#uses=1 type=i16] [debug line = 213:9]
+  %p_shl13_cast = zext i16 %p_shl12 to i17, !dbg !305 ; [#uses=1 type=i17] [debug line = 213:9]
+  %p_shl13 = call i14 @_ssdm_op_BitConcatenate.i14.i7.i7(i7 %tmp_73, i7 0), !dbg !305 ; [#uses=1 type=i14] [debug line = 213:9]
+  %p_shl14_cast = zext i14 %p_shl13 to i17, !dbg !305 ; [#uses=1 type=i17] [debug line = 213:9]
+  %tmp_74 = add i17 %p_shl13_cast, %p_shl14_cast, !dbg !305 ; [#uses=1 type=i17] [debug line = 213:9]
+  %tmp_133 = zext i17 %tmp_74 to i33              ; [#uses=2 type=i33]
+  %tmp_134 = add i33 %tmp_114_cast, %tmp_133      ; [#uses=1 type=i33]
+  %tmp_135 = sext i33 %tmp_134 to i64             ; [#uses=1 type=i64]
+  %frame_out_addr_4 = getelementptr i8* %frame_out, i64 %tmp_135 ; [#uses=2 type=i8*]
+  %p_rd_req211 = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %frame_out_addr_4, i32 640), !dbg !305 ; [#uses=0 type=i1] [debug line = 213:9]
+  br label %burst.rd.header77
 
 burst.rd.header63:                                ; preds = %burst.rd.body64, %burst.rd.end47
   %indvar4 = phi i13 [ 0, %burst.rd.end47 ], [ %indvar_next5, %burst.rd.body64 ] ; [#uses=3 type=i13]
@@ -1140,12 +1245,16 @@ burst.rd.header63:                                ; preds = %burst.rd.body64, %b
   br i1 %exitcond8, label %burst.rd.end62, label %burst.rd.body64
 
 burst.rd.end47:                                   ; preds = %burst.rd.header48
-  %tmp_68 = add i20 %tmp_56, 10240, !dbg !296     ; [#uses=1 type=i20] [debug line = 204:9]
-  %tmp_130 = zext i20 %tmp_68 to i31              ; [#uses=1 type=i31]
+  %p_shl10 = call i19 @_ssdm_op_BitConcatenate.i19.i7.i12(i7 %tmp_66, i12 0), !dbg !306 ; [#uses=1 type=i19] [debug line = 212:9]
+  %p_shl11_cast = zext i19 %p_shl10 to i20, !dbg !306 ; [#uses=1 type=i20] [debug line = 212:9]
+  %p_shl11 = call i17 @_ssdm_op_BitConcatenate.i17.i7.i10(i7 %tmp_66, i10 0), !dbg !306 ; [#uses=1 type=i17] [debug line = 212:9]
+  %p_shl12_cast = zext i17 %p_shl11 to i20, !dbg !306 ; [#uses=1 type=i20] [debug line = 212:9]
+  %tmp_70 = add i20 %p_shl11_cast, %p_shl12_cast, !dbg !306 ; [#uses=1 type=i20] [debug line = 212:9]
+  %tmp_130 = zext i20 %tmp_70 to i31              ; [#uses=1 type=i31]
   %tmp_131 = add i31 %tmp_116_cast, %tmp_130      ; [#uses=1 type=i31]
   %tmp_132 = zext i31 %tmp_131 to i64             ; [#uses=1 type=i64]
   %bgmodel_addr_19 = getelementptr float* %bgmodel, i64 %tmp_132 ; [#uses=5 type=float*]
-  %p_rd_req162 = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %bgmodel_addr_19, i32 5120), !dbg !296 ; [#uses=0 type=i1] [debug line = 204:9]
+  %p_rd_req210 = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %bgmodel_addr_19, i32 5120), !dbg !306 ; [#uses=0 type=i1] [debug line = 212:9]
   br label %burst.rd.header63
 
 burst.rd.header48:                                ; preds = %burst.rd.body49, %burst.rd.end33
@@ -1156,12 +1265,17 @@ burst.rd.header48:                                ; preds = %burst.rd.body49, %b
   br i1 %exitcond7, label %burst.rd.end47, label %burst.rd.body49
 
 burst.rd.end33:                                   ; preds = %burst.rd.header34
-  %tmp_65 = add i17 %tmp_55, 1280, !dbg !297      ; [#uses=1 type=i17] [debug line = 203:9]
-  %tmp_127 = zext i17 %tmp_65 to i33              ; [#uses=2 type=i33]
+  %tmp_66 = or i7 %part, 2, !dbg !307             ; [#uses=4 type=i7] [debug line = 211:9]
+  %p_shl9 = call i16 @_ssdm_op_BitConcatenate.i16.i7.i9(i7 %tmp_66, i9 0), !dbg !307 ; [#uses=1 type=i16] [debug line = 211:9]
+  %p_shl9_cast = zext i16 %p_shl9 to i17, !dbg !307 ; [#uses=1 type=i17] [debug line = 211:9]
+  %p_shl1 = call i14 @_ssdm_op_BitConcatenate.i14.i7.i7(i7 %tmp_66, i7 0), !dbg !307 ; [#uses=1 type=i14] [debug line = 211:9]
+  %p_shl10_cast = zext i14 %p_shl1 to i17, !dbg !307 ; [#uses=1 type=i17] [debug line = 211:9]
+  %tmp_67 = add i17 %p_shl9_cast, %p_shl10_cast, !dbg !307 ; [#uses=1 type=i17] [debug line = 211:9]
+  %tmp_127 = zext i17 %tmp_67 to i33              ; [#uses=2 type=i33]
   %tmp_128 = add i33 %tmp_114_cast, %tmp_127      ; [#uses=1 type=i33]
   %tmp_129 = sext i33 %tmp_128 to i64             ; [#uses=1 type=i64]
   %frame_out_addr_3 = getelementptr i8* %frame_out, i64 %tmp_129 ; [#uses=2 type=i8*]
-  %p_rd_req161 = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %frame_out_addr_3, i32 640), !dbg !297 ; [#uses=0 type=i1] [debug line = 203:9]
+  %p_rd_req209 = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %frame_out_addr_3, i32 640), !dbg !307 ; [#uses=0 type=i1] [debug line = 211:9]
   br label %burst.rd.header48
 
 burst.rd.header34:                                ; preds = %burst.rd.body35, %burst.rd.end18
@@ -1172,12 +1286,16 @@ burst.rd.header34:                                ; preds = %burst.rd.body35, %b
   br i1 %exitcond6, label %burst.rd.end33, label %burst.rd.body35
 
 burst.rd.end18:                                   ; preds = %burst.rd.header19
-  %tmp_62 = add i20 %tmp_56, 5120, !dbg !298      ; [#uses=1 type=i20] [debug line = 202:9]
-  %tmp_124 = zext i20 %tmp_62 to i31              ; [#uses=1 type=i31]
+  %p_shl7 = call i19 @_ssdm_op_BitConcatenate.i19.i7.i12(i7 %tmp_59, i12 0), !dbg !308 ; [#uses=1 type=i19] [debug line = 210:9]
+  %p_shl7_cast = zext i19 %p_shl7 to i20, !dbg !308 ; [#uses=1 type=i20] [debug line = 210:9]
+  %p_shl8 = call i17 @_ssdm_op_BitConcatenate.i17.i7.i10(i7 %tmp_59, i10 0), !dbg !308 ; [#uses=1 type=i17] [debug line = 210:9]
+  %p_shl8_cast = zext i17 %p_shl8 to i20, !dbg !308 ; [#uses=1 type=i20] [debug line = 210:9]
+  %tmp_63 = add i20 %p_shl7_cast, %p_shl8_cast, !dbg !308 ; [#uses=1 type=i20] [debug line = 210:9]
+  %tmp_124 = zext i20 %tmp_63 to i31              ; [#uses=1 type=i31]
   %tmp_125 = add i31 %tmp_116_cast, %tmp_124      ; [#uses=1 type=i31]
   %tmp_126 = zext i31 %tmp_125 to i64             ; [#uses=1 type=i64]
   %bgmodel_addr_18 = getelementptr float* %bgmodel, i64 %tmp_126 ; [#uses=5 type=float*]
-  %p_rd_req160 = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %bgmodel_addr_18, i32 5120), !dbg !298 ; [#uses=0 type=i1] [debug line = 202:9]
+  %p_rd_req208 = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %bgmodel_addr_18, i32 5120), !dbg !308 ; [#uses=0 type=i1] [debug line = 210:9]
   br label %burst.rd.header34
 
 burst.rd.header19:                                ; preds = %burst.rd.body20, %burst.rd.end6
@@ -1188,12 +1306,17 @@ burst.rd.header19:                                ; preds = %burst.rd.body20, %b
   br i1 %exitcond5, label %burst.rd.end18, label %burst.rd.body20
 
 burst.rd.end6:                                    ; preds = %burst.rd.header7
-  %tmp_59 = add i17 %tmp_55, 640, !dbg !299       ; [#uses=1 type=i17] [debug line = 201:9]
-  %tmp_121 = zext i17 %tmp_59 to i33              ; [#uses=2 type=i33]
+  %tmp_59 = or i7 %part, 1, !dbg !309             ; [#uses=4 type=i7] [debug line = 209:9]
+  %p_shl5 = call i16 @_ssdm_op_BitConcatenate.i16.i7.i9(i7 %tmp_59, i9 0), !dbg !309 ; [#uses=1 type=i16] [debug line = 209:9]
+  %p_shl5_cast = zext i16 %p_shl5 to i17, !dbg !309 ; [#uses=1 type=i17] [debug line = 209:9]
+  %p_shl6 = call i14 @_ssdm_op_BitConcatenate.i14.i7.i7(i7 %tmp_59, i7 0), !dbg !309 ; [#uses=1 type=i14] [debug line = 209:9]
+  %p_shl6_cast = zext i14 %p_shl6 to i17, !dbg !309 ; [#uses=1 type=i17] [debug line = 209:9]
+  %tmp_60 = add i17 %p_shl5_cast, %p_shl6_cast, !dbg !309 ; [#uses=1 type=i17] [debug line = 209:9]
+  %tmp_121 = zext i17 %tmp_60 to i33              ; [#uses=2 type=i33]
   %tmp_122 = add i33 %tmp_114_cast, %tmp_121      ; [#uses=1 type=i33]
   %tmp_123 = sext i33 %tmp_122 to i64             ; [#uses=1 type=i64]
   %frame_out_addr_2 = getelementptr i8* %frame_out, i64 %tmp_123 ; [#uses=2 type=i8*]
-  %p_rd_req159 = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %frame_out_addr_2, i32 640), !dbg !299 ; [#uses=0 type=i1] [debug line = 201:9]
+  %p_rd_req207 = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %frame_out_addr_2, i32 640), !dbg !309 ; [#uses=0 type=i1] [debug line = 209:9]
   br label %burst.rd.header19
 
 burst.rd.header7:                                 ; preds = %burst.rd.body8, %burst.rd.end
@@ -1204,16 +1327,16 @@ burst.rd.header7:                                 ; preds = %burst.rd.body8, %bu
   br i1 %exitcond4, label %burst.rd.end6, label %burst.rd.body8
 
 burst.rd.end:                                     ; preds = %burst.rd.header
-  %p_shl3 = call i19 @_ssdm_op_BitConcatenate.i19.i7.i12(i7 %part, i12 0), !dbg !300 ; [#uses=1 type=i19] [debug line = 200:9]
-  %p_shl3_cast = zext i19 %p_shl3 to i20, !dbg !300 ; [#uses=1 type=i20] [debug line = 200:9]
-  %p_shl4 = call i17 @_ssdm_op_BitConcatenate.i17.i7.i10(i7 %part, i10 0), !dbg !300 ; [#uses=1 type=i17] [debug line = 200:9]
-  %p_shl4_cast = zext i17 %p_shl4 to i20, !dbg !300 ; [#uses=1 type=i20] [debug line = 200:9]
-  %tmp_56 = add i20 %p_shl3_cast, %p_shl4_cast, !dbg !300 ; [#uses=3 type=i20] [debug line = 200:9]
+  %p_shl3 = call i19 @_ssdm_op_BitConcatenate.i19.i7.i12(i7 %part, i12 0), !dbg !310 ; [#uses=1 type=i19] [debug line = 208:9]
+  %p_shl3_cast = zext i19 %p_shl3 to i20, !dbg !310 ; [#uses=1 type=i20] [debug line = 208:9]
+  %p_shl4 = call i17 @_ssdm_op_BitConcatenate.i17.i7.i10(i7 %part, i10 0), !dbg !310 ; [#uses=1 type=i17] [debug line = 208:9]
+  %p_shl4_cast = zext i17 %p_shl4 to i20, !dbg !310 ; [#uses=1 type=i20] [debug line = 208:9]
+  %tmp_56 = add i20 %p_shl3_cast, %p_shl4_cast, !dbg !310 ; [#uses=1 type=i20] [debug line = 208:9]
   %tmp_118 = zext i20 %tmp_56 to i31              ; [#uses=1 type=i31]
   %tmp_119 = add i31 %tmp_116_cast, %tmp_118      ; [#uses=1 type=i31]
   %tmp_120 = zext i31 %tmp_119 to i64             ; [#uses=1 type=i64]
   %bgmodel_addr_17 = getelementptr float* %bgmodel, i64 %tmp_120 ; [#uses=5 type=float*]
-  %p_rd_req158 = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %bgmodel_addr_17, i32 5120), !dbg !300 ; [#uses=0 type=i1] [debug line = 200:9]
+  %p_rd_req206 = call i1 @_ssdm_op_ReadReq.m_axi.floatP(float* %bgmodel_addr_17, i32 5120), !dbg !310 ; [#uses=0 type=i1] [debug line = 208:9]
   br label %burst.rd.header7
 
 burst.rd.header:                                  ; preds = %burst.rd.body, %2
@@ -1224,93 +1347,115 @@ burst.rd.header:                                  ; preds = %burst.rd.body, %2
   br i1 %exitcond1, label %burst.rd.end, label %burst.rd.body
 
 ; <label>:2                                       ; preds = %1
-  %tmp = call i32 (...)* @_ssdm_op_SpecRegionBegin([9 x i8]* @p_str1810) nounwind, !dbg !301 ; [#uses=1 type=i32] [debug line = 198:16]
-  %p_shl = call i16 @_ssdm_op_BitConcatenate.i16.i7.i9(i7 %part, i9 0), !dbg !302 ; [#uses=1 type=i16] [debug line = 199:9]
-  %p_shl_cast = zext i16 %p_shl to i17, !dbg !302 ; [#uses=1 type=i17] [debug line = 199:9]
-  %p_shl2 = call i14 @_ssdm_op_BitConcatenate.i14.i7.i7(i7 %part, i7 0), !dbg !302 ; [#uses=1 type=i14] [debug line = 199:9]
-  %p_shl2_cast = zext i14 %p_shl2 to i17, !dbg !302 ; [#uses=1 type=i17] [debug line = 199:9]
-  %tmp_55 = add i17 %p_shl_cast, %p_shl2_cast, !dbg !302 ; [#uses=3 type=i17] [debug line = 199:9]
+  %tmp = call i32 (...)* @_ssdm_op_SpecRegionBegin([9 x i8]* @p_str1811) nounwind, !dbg !311 ; [#uses=1 type=i32] [debug line = 206:16]
+  %p_shl = call i16 @_ssdm_op_BitConcatenate.i16.i7.i9(i7 %part, i9 0), !dbg !312 ; [#uses=1 type=i16] [debug line = 207:9]
+  %p_shl_cast = zext i16 %p_shl to i17, !dbg !312 ; [#uses=1 type=i17] [debug line = 207:9]
+  %p_shl2 = call i14 @_ssdm_op_BitConcatenate.i14.i7.i7(i7 %part, i7 0), !dbg !312 ; [#uses=1 type=i14] [debug line = 207:9]
+  %p_shl2_cast = zext i14 %p_shl2 to i17, !dbg !312 ; [#uses=1 type=i17] [debug line = 207:9]
+  %tmp_55 = add i17 %p_shl_cast, %p_shl2_cast, !dbg !312 ; [#uses=1 type=i17] [debug line = 207:9]
   %tmp_115 = zext i17 %tmp_55 to i33              ; [#uses=2 type=i33]
   %tmp_116 = add i33 %tmp_114_cast, %tmp_115      ; [#uses=1 type=i33]
   %tmp_117 = sext i33 %tmp_116 to i64             ; [#uses=1 type=i64]
   %frame_out_addr = getelementptr i8* %frame_out, i64 %tmp_117 ; [#uses=2 type=i8*]
-  %p_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %frame_out_addr, i32 640), !dbg !302 ; [#uses=0 type=i1] [debug line = 199:9]
+  %p_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i8P(i8* %frame_out_addr, i32 640), !dbg !312 ; [#uses=0 type=i1] [debug line = 207:9]
   br label %burst.rd.header
 
 burst.rd.body:                                    ; preds = %burst.rd.header
   %burstread_rbegin = call i32 (...)* @_ssdm_op_SpecRegionBegin([17 x i8]* @burstread_OC_region_str) nounwind ; [#uses=1 type=i32]
-  %empty_73 = call i32 (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str1) nounwind ; [#uses=0 type=i32]
-  %empty_74 = call i32 (...)* @_ssdm_op_SpecLoopName([17 x i8]* @memcpy_OC_OC_frame_in_str) nounwind ; [#uses=0 type=i32]
-  %frame_out_addr_read = call i8 @_ssdm_op_Read.m_axi.i8P(i8* %frame_out_addr), !dbg !302 ; [#uses=1 type=i8] [debug line = 199:9]
-  %tmp_58 = zext i10 %indvar to i64, !dbg !302    ; [#uses=1 type=i64] [debug line = 199:9]
-  %part_frame_in_addr = getelementptr [640 x i8]* %part_frame_in, i64 0, i64 %tmp_58, !dbg !302 ; [#uses=1 type=i8*] [debug line = 199:9]
-  store i8 %frame_out_addr_read, i8* %part_frame_in_addr, align 1, !dbg !302 ; [debug line = 199:9]
+  %empty_77 = call i32 (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str1) nounwind ; [#uses=0 type=i32]
+  %empty_78 = call i32 (...)* @_ssdm_op_SpecLoopName([17 x i8]* @memcpy_OC_OC_frame_in_str) nounwind ; [#uses=0 type=i32]
+  %frame_out_addr_read = call i8 @_ssdm_op_Read.m_axi.i8P(i8* %frame_out_addr), !dbg !312 ; [#uses=1 type=i8] [debug line = 207:9]
+  %tmp_58 = zext i10 %indvar to i64, !dbg !312    ; [#uses=1 type=i64] [debug line = 207:9]
+  %part_frame_in_addr = getelementptr [640 x i8]* %part_frame_in, i64 0, i64 %tmp_58, !dbg !312 ; [#uses=1 type=i8*] [debug line = 207:9]
+  store i8 %frame_out_addr_read, i8* %part_frame_in_addr, align 1, !dbg !312 ; [debug line = 207:9]
   %burstread_rend = call i32 (...)* @_ssdm_op_SpecRegionEnd([17 x i8]* @burstread_OC_region_str, i32 %burstread_rbegin) nounwind ; [#uses=0 type=i32]
   br label %burst.rd.header
 
 burst.rd.body8:                                   ; preds = %burst.rd.header7
   %burstread_rbegin1 = call i32 (...)* @_ssdm_op_SpecRegionBegin([17 x i8]* @burstread_OC_region_str) nounwind ; [#uses=1 type=i32]
-  %empty_75 = call i32 (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str2) nounwind ; [#uses=0 type=i32]
-  %empty_76 = call i32 (...)* @_ssdm_op_SpecLoopName([28 x i8]* @memcpy_OC_part_bgmodel_OC_bgmo) nounwind ; [#uses=0 type=i32]
-  %bgmodel_addr_17_read = call float @_ssdm_op_Read.m_axi.floatP(float* %bgmodel_addr_17), !dbg !300 ; [#uses=1 type=float] [debug line = 200:9]
-  %tmp_61 = zext i13 %indvar9 to i64, !dbg !300   ; [#uses=1 type=i64] [debug line = 200:9]
-  %part_bgmodel_addr = getelementptr [5120 x float]* %part_bgmodel, i64 0, i64 %tmp_61, !dbg !300 ; [#uses=1 type=float*] [debug line = 200:9]
-  store float %bgmodel_addr_17_read, float* %part_bgmodel_addr, align 4, !dbg !300 ; [debug line = 200:9]
+  %empty_79 = call i32 (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str2) nounwind ; [#uses=0 type=i32]
+  %empty_80 = call i32 (...)* @_ssdm_op_SpecLoopName([28 x i8]* @memcpy_OC_part_bgmodel_OC_bgmo) nounwind ; [#uses=0 type=i32]
+  %bgmodel_addr_17_read = call float @_ssdm_op_Read.m_axi.floatP(float* %bgmodel_addr_17), !dbg !310 ; [#uses=1 type=float] [debug line = 208:9]
+  %tmp_62 = zext i13 %indvar9 to i64, !dbg !310   ; [#uses=1 type=i64] [debug line = 208:9]
+  %part_bgmodel_addr = getelementptr [5120 x float]* %part_bgmodel, i64 0, i64 %tmp_62, !dbg !310 ; [#uses=1 type=float*] [debug line = 208:9]
+  store float %bgmodel_addr_17_read, float* %part_bgmodel_addr, align 4, !dbg !310 ; [debug line = 208:9]
   %burstread_rend16 = call i32 (...)* @_ssdm_op_SpecRegionEnd([17 x i8]* @burstread_OC_region_str, i32 %burstread_rbegin1) nounwind ; [#uses=0 type=i32]
   br label %burst.rd.header7
 
 burst.rd.body20:                                  ; preds = %burst.rd.header19
   %burstread_rbegin2 = call i32 (...)* @_ssdm_op_SpecRegionBegin([17 x i8]* @burstread_OC_region_str) nounwind ; [#uses=1 type=i32]
-  %empty_77 = call i32 (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str4) nounwind ; [#uses=0 type=i32]
-  %empty_78 = call i32 (...)* @_ssdm_op_SpecLoopName([17 x i8]* @memcpy_OC_OC_frame_in_str) nounwind ; [#uses=0 type=i32]
-  %frame_out_addr_2_read = call i8 @_ssdm_op_Read.m_axi.i8P(i8* %frame_out_addr_2), !dbg !299 ; [#uses=1 type=i8] [debug line = 201:9]
-  %tmp_64 = zext i10 %indvar1 to i64, !dbg !299   ; [#uses=1 type=i64] [debug line = 201:9]
-  %part2_frame_in_addr = getelementptr [640 x i8]* %part2_frame_in, i64 0, i64 %tmp_64, !dbg !299 ; [#uses=1 type=i8*] [debug line = 201:9]
-  store i8 %frame_out_addr_2_read, i8* %part2_frame_in_addr, align 1, !dbg !299 ; [debug line = 201:9]
+  %empty_81 = call i32 (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str4) nounwind ; [#uses=0 type=i32]
+  %empty_82 = call i32 (...)* @_ssdm_op_SpecLoopName([17 x i8]* @memcpy_OC_OC_frame_in_str) nounwind ; [#uses=0 type=i32]
+  %frame_out_addr_2_read = call i8 @_ssdm_op_Read.m_axi.i8P(i8* %frame_out_addr_2), !dbg !309 ; [#uses=1 type=i8] [debug line = 209:9]
+  %tmp_65 = zext i10 %indvar1 to i64, !dbg !309   ; [#uses=1 type=i64] [debug line = 209:9]
+  %part2_frame_in_addr = getelementptr [640 x i8]* %part2_frame_in, i64 0, i64 %tmp_65, !dbg !309 ; [#uses=1 type=i8*] [debug line = 209:9]
+  store i8 %frame_out_addr_2_read, i8* %part2_frame_in_addr, align 1, !dbg !309 ; [debug line = 209:9]
   %burstread_rend31 = call i32 (...)* @_ssdm_op_SpecRegionEnd([17 x i8]* @burstread_OC_region_str, i32 %burstread_rbegin2) nounwind ; [#uses=0 type=i32]
   br label %burst.rd.header19
 
 burst.rd.body35:                                  ; preds = %burst.rd.header34
   %burstread_rbegin3 = call i32 (...)* @_ssdm_op_SpecRegionBegin([17 x i8]* @burstread_OC_region_str) nounwind ; [#uses=1 type=i32]
-  %empty_79 = call i32 (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str15) nounwind ; [#uses=0 type=i32]
-  %empty_80 = call i32 (...)* @_ssdm_op_SpecLoopName([29 x i8]* @memcpy_OC_part2_bgmodel_OC_bgm) nounwind ; [#uses=0 type=i32]
-  %bgmodel_addr_18_read = call float @_ssdm_op_Read.m_axi.floatP(float* %bgmodel_addr_18), !dbg !298 ; [#uses=1 type=float] [debug line = 202:9]
-  %tmp_67 = zext i13 %indvar2 to i64, !dbg !298   ; [#uses=1 type=i64] [debug line = 202:9]
-  %part2_bgmodel_addr = getelementptr [5120 x float]* %part2_bgmodel, i64 0, i64 %tmp_67, !dbg !298 ; [#uses=1 type=float*] [debug line = 202:9]
-  store float %bgmodel_addr_18_read, float* %part2_bgmodel_addr, align 4, !dbg !298 ; [debug line = 202:9]
+  %empty_83 = call i32 (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str15) nounwind ; [#uses=0 type=i32]
+  %empty_84 = call i32 (...)* @_ssdm_op_SpecLoopName([29 x i8]* @memcpy_OC_part2_bgmodel_OC_bgm) nounwind ; [#uses=0 type=i32]
+  %bgmodel_addr_18_read = call float @_ssdm_op_Read.m_axi.floatP(float* %bgmodel_addr_18), !dbg !308 ; [#uses=1 type=float] [debug line = 210:9]
+  %tmp_69 = zext i13 %indvar2 to i64, !dbg !308   ; [#uses=1 type=i64] [debug line = 210:9]
+  %part2_bgmodel_addr = getelementptr [5120 x float]* %part2_bgmodel, i64 0, i64 %tmp_69, !dbg !308 ; [#uses=1 type=float*] [debug line = 210:9]
+  store float %bgmodel_addr_18_read, float* %part2_bgmodel_addr, align 4, !dbg !308 ; [debug line = 210:9]
   %burstread_rend45 = call i32 (...)* @_ssdm_op_SpecRegionEnd([17 x i8]* @burstread_OC_region_str, i32 %burstread_rbegin3) nounwind ; [#uses=0 type=i32]
   br label %burst.rd.header34
 
 burst.rd.body49:                                  ; preds = %burst.rd.header48
   %burstread_rbegin4 = call i32 (...)* @_ssdm_op_SpecRegionBegin([17 x i8]* @burstread_OC_region_str) nounwind ; [#uses=1 type=i32]
-  %empty_81 = call i32 (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str29) nounwind ; [#uses=0 type=i32]
-  %empty_82 = call i32 (...)* @_ssdm_op_SpecLoopName([17 x i8]* @memcpy_OC_OC_frame_in_str) nounwind ; [#uses=0 type=i32]
-  %frame_out_addr_3_read = call i8 @_ssdm_op_Read.m_axi.i8P(i8* %frame_out_addr_3), !dbg !297 ; [#uses=1 type=i8] [debug line = 203:9]
-  %tmp_70 = zext i10 %indvar3 to i64, !dbg !297   ; [#uses=1 type=i64] [debug line = 203:9]
-  %part3_frame_in_addr = getelementptr [640 x i8]* %part3_frame_in, i64 0, i64 %tmp_70, !dbg !297 ; [#uses=1 type=i8*] [debug line = 203:9]
-  store i8 %frame_out_addr_3_read, i8* %part3_frame_in_addr, align 1, !dbg !297 ; [debug line = 203:9]
+  %empty_85 = call i32 (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str29) nounwind ; [#uses=0 type=i32]
+  %empty_86 = call i32 (...)* @_ssdm_op_SpecLoopName([17 x i8]* @memcpy_OC_OC_frame_in_str) nounwind ; [#uses=0 type=i32]
+  %frame_out_addr_3_read = call i8 @_ssdm_op_Read.m_axi.i8P(i8* %frame_out_addr_3), !dbg !307 ; [#uses=1 type=i8] [debug line = 211:9]
+  %tmp_72 = zext i10 %indvar3 to i64, !dbg !307   ; [#uses=1 type=i64] [debug line = 211:9]
+  %part3_frame_in_addr = getelementptr [640 x i8]* %part3_frame_in, i64 0, i64 %tmp_72, !dbg !307 ; [#uses=1 type=i8*] [debug line = 211:9]
+  store i8 %frame_out_addr_3_read, i8* %part3_frame_in_addr, align 1, !dbg !307 ; [debug line = 211:9]
   %burstread_rend60 = call i32 (...)* @_ssdm_op_SpecRegionEnd([17 x i8]* @burstread_OC_region_str, i32 %burstread_rbegin4) nounwind ; [#uses=0 type=i32]
   br label %burst.rd.header48
 
 burst.rd.body64:                                  ; preds = %burst.rd.header63
   %burstread_rbegin5 = call i32 (...)* @_ssdm_op_SpecRegionBegin([17 x i8]* @burstread_OC_region_str) nounwind ; [#uses=1 type=i32]
-  %empty_83 = call i32 (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str39) nounwind ; [#uses=0 type=i32]
-  %empty_84 = call i32 (...)* @_ssdm_op_SpecLoopName([29 x i8]* @memcpy_OC_part3_bgmodel_OC_bgm) nounwind ; [#uses=0 type=i32]
-  %bgmodel_addr_19_read = call float @_ssdm_op_Read.m_axi.floatP(float* %bgmodel_addr_19), !dbg !296 ; [#uses=1 type=float] [debug line = 204:9]
-  %tmp_73 = zext i13 %indvar4 to i64, !dbg !296   ; [#uses=1 type=i64] [debug line = 204:9]
-  %part3_bgmodel_addr = getelementptr [5120 x float]* %part3_bgmodel, i64 0, i64 %tmp_73, !dbg !296 ; [#uses=1 type=float*] [debug line = 204:9]
-  store float %bgmodel_addr_19_read, float* %part3_bgmodel_addr, align 4, !dbg !296 ; [debug line = 204:9]
+  %empty_87 = call i32 (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str39) nounwind ; [#uses=0 type=i32]
+  %empty_88 = call i32 (...)* @_ssdm_op_SpecLoopName([29 x i8]* @memcpy_OC_part3_bgmodel_OC_bgm) nounwind ; [#uses=0 type=i32]
+  %bgmodel_addr_19_read = call float @_ssdm_op_Read.m_axi.floatP(float* %bgmodel_addr_19), !dbg !306 ; [#uses=1 type=float] [debug line = 212:9]
+  %tmp_76 = zext i13 %indvar4 to i64, !dbg !306   ; [#uses=1 type=i64] [debug line = 212:9]
+  %part3_bgmodel_addr = getelementptr [5120 x float]* %part3_bgmodel, i64 0, i64 %tmp_76, !dbg !306 ; [#uses=1 type=float*] [debug line = 212:9]
+  store float %bgmodel_addr_19_read, float* %part3_bgmodel_addr, align 4, !dbg !306 ; [debug line = 212:9]
   %burstread_rend74 = call i32 (...)* @_ssdm_op_SpecRegionEnd([17 x i8]* @burstread_OC_region_str, i32 %burstread_rbegin5) nounwind ; [#uses=0 type=i32]
   br label %burst.rd.header63
 
+burst.rd.body78:                                  ; preds = %burst.rd.header77
+  %burstread_rbegin6 = call i32 (...)* @_ssdm_op_SpecRegionBegin([17 x i8]* @burstread_OC_region_str) nounwind ; [#uses=1 type=i32]
+  %empty_89 = call i32 (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str41) nounwind ; [#uses=0 type=i32]
+  %empty_90 = call i32 (...)* @_ssdm_op_SpecLoopName([17 x i8]* @memcpy_OC_OC_frame_in_str) nounwind ; [#uses=0 type=i32]
+  %frame_out_addr_4_read = call i8 @_ssdm_op_Read.m_axi.i8P(i8* %frame_out_addr_4), !dbg !305 ; [#uses=1 type=i8] [debug line = 213:9]
+  %tmp_79 = zext i10 %indvar5 to i64, !dbg !305   ; [#uses=1 type=i64] [debug line = 213:9]
+  %part4_frame_in_addr = getelementptr [640 x i8]* %part4_frame_in, i64 0, i64 %tmp_79, !dbg !305 ; [#uses=1 type=i8*] [debug line = 213:9]
+  store i8 %frame_out_addr_4_read, i8* %part4_frame_in_addr, align 1, !dbg !305 ; [debug line = 213:9]
+  %burstread_rend89 = call i32 (...)* @_ssdm_op_SpecRegionEnd([17 x i8]* @burstread_OC_region_str, i32 %burstread_rbegin6) nounwind ; [#uses=0 type=i32]
+  br label %burst.rd.header77
+
+burst.rd.body93:                                  ; preds = %burst.rd.header92
+  %burstread_rbegin7 = call i32 (...)* @_ssdm_op_SpecRegionBegin([17 x i8]* @burstread_OC_region_str) nounwind ; [#uses=1 type=i32]
+  %empty_91 = call i32 (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str52) nounwind ; [#uses=0 type=i32]
+  %empty_92 = call i32 (...)* @_ssdm_op_SpecLoopName([29 x i8]* @memcpy_OC_part4_bgmodel_OC_bgm) nounwind ; [#uses=0 type=i32]
+  %bgmodel_addr_20_read = call float @_ssdm_op_Read.m_axi.floatP(float* %bgmodel_addr_20), !dbg !304 ; [#uses=1 type=float] [debug line = 214:9]
+  %tmp_82 = zext i13 %indvar6 to i64, !dbg !304   ; [#uses=1 type=i64] [debug line = 214:9]
+  %part4_bgmodel_addr = getelementptr [5120 x float]* %part4_bgmodel, i64 0, i64 %tmp_82, !dbg !304 ; [#uses=1 type=float*] [debug line = 214:9]
+  store float %bgmodel_addr_20_read, float* %part4_bgmodel_addr, align 4, !dbg !304 ; [debug line = 214:9]
+  %burstread_rend103 = call i32 (...)* @_ssdm_op_SpecRegionEnd([17 x i8]* @burstread_OC_region_str, i32 %burstread_rbegin7) nounwind ; [#uses=0 type=i32]
+  br label %burst.rd.header92
+
 burst.wr.body:                                    ; preds = %burst.wr.header
   %burstwrite_rbegin = call i32 (...)* @_ssdm_op_SpecRegionBegin([18 x i8]* @burstwrite_OC_region_str) nounwind ; [#uses=1 type=i32]
-  %empty_85 = call i32 (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str41) nounwind ; [#uses=0 type=i32]
-  %empty_86 = call i32 (...)* @_ssdm_op_SpecLoopName([32 x i8]* @memcpy_OC_bgmodel_OC_part_bgmo) nounwind ; [#uses=0 type=i32]
-  %tmp_74 = zext i13 %indvar5 to i64, !dbg !288   ; [#uses=1 type=i64] [debug line = 215:9]
-  %part_bgmodel_addr_1 = getelementptr [5120 x float]* %part_bgmodel, i64 0, i64 %tmp_74, !dbg !288 ; [#uses=1 type=float*] [debug line = 215:9]
-  %part_bgmodel_load = load float* %part_bgmodel_addr_1, align 4, !dbg !288 ; [#uses=1 type=float] [debug line = 215:9]
-  call void @_ssdm_op_Write.m_axi.floatP(float* %bgmodel_addr_17, float %part_bgmodel_load, i4 -1), !dbg !288 ; [debug line = 215:9]
+  %empty_93 = call i32 (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str180) nounwind ; [#uses=0 type=i32]
+  %empty_94 = call i32 (...)* @_ssdm_op_SpecLoopName([32 x i8]* @memcpy_OC_bgmodel_OC_part_bgmo) nounwind ; [#uses=0 type=i32]
+  %tmp_83 = zext i13 %indvar7 to i64, !dbg !295   ; [#uses=1 type=i64] [debug line = 226:9]
+  %part_bgmodel_addr_1 = getelementptr [5120 x float]* %part_bgmodel, i64 0, i64 %tmp_83, !dbg !295 ; [#uses=1 type=float*] [debug line = 226:9]
+  %part_bgmodel_load = load float* %part_bgmodel_addr_1, align 4, !dbg !295 ; [#uses=1 type=float] [debug line = 226:9]
+  call void @_ssdm_op_Write.m_axi.floatP(float* %bgmodel_addr_17, float %part_bgmodel_load, i4 -1), !dbg !295 ; [debug line = 226:9]
   %burstwrite_rend = call i32 (...)* @_ssdm_op_SpecRegionEnd([18 x i8]* @burstwrite_OC_region_str, i32 %burstwrite_rbegin) nounwind ; [#uses=0 type=i32]
   br label %burst.wr.header
 }
@@ -1334,11 +1479,11 @@ burst.wr.body:                                    ; preds = %burst.wr.header
 !11 = metadata !{metadata !"bgmodel", metadata !""}
 !12 = metadata !{i32 786689, metadata !13, metadata !"learningRate", metadata !14, i32 67108882, metadata !23, i32 0, i32 0} ; [ DW_TAG_arg_variable ]
 !13 = metadata !{i32 786478, i32 0, metadata !14, metadata !"process", metadata !"process", metadata !"_Z7processPhS_Pff", metadata !14, i32 15, metadata !15, i1 false, i1 true, i32 0, i32 0, null, i32 256, i1 false, null, null, null, metadata !24, i32 19} ; [ DW_TAG_subprogram ]
-!14 = metadata !{i32 786473, metadata !"backsub_gmm_new_180110/core.cpp", metadata !"f:/maxi_latest", null} ; [ DW_TAG_file_type ]
+!14 = metadata !{i32 786473, metadata !"backsub_gmm_new_180110/core.cpp", metadata !"/home/chathura/Desktop/maxi_final_180113", null} ; [ DW_TAG_file_type ]
 !15 = metadata !{i32 786453, i32 0, metadata !"", i32 0, i32 0, i64 0, i64 0, i64 0, i32 0, null, metadata !16, i32 0, i32 0} ; [ DW_TAG_subroutine_type ]
 !16 = metadata !{null, metadata !17, metadata !17, metadata !20, metadata !23}
 !17 = metadata !{i32 786447, null, metadata !"", null, i32 0, i64 64, i64 64, i64 0, i32 0, metadata !18} ; [ DW_TAG_pointer_type ]
-!18 = metadata !{i32 786454, null, metadata !"uint8_t", metadata !14, i32 36, i64 0, i64 0, i64 0, i32 0, metadata !19} ; [ DW_TAG_typedef ]
+!18 = metadata !{i32 786454, null, metadata !"uint8_t", metadata !14, i32 48, i64 0, i64 0, i64 0, i32 0, metadata !19} ; [ DW_TAG_typedef ]
 !19 = metadata !{i32 786468, null, metadata !"unsigned char", null, i32 0, i64 8, i64 8, i64 0, i32 0, i32 8} ; [ DW_TAG_base_type ]
 !20 = metadata !{i32 786447, null, metadata !"", null, i32 0, i64 64, i64 64, i64 0, i32 0, metadata !21} ; [ DW_TAG_pointer_type ]
 !21 = metadata !{i32 786454, null, metadata !"data_t", metadata !14, i32 17, i64 0, i64 0, i64 0, i32 0, metadata !22} ; [ DW_TAG_typedef ]
@@ -1404,11 +1549,11 @@ burst.wr.body:                                    ; preds = %burst.wr.header
 !81 = metadata !{i32 53, i32 25, metadata !78, null}
 !82 = metadata !{i32 54, i32 25, metadata !78, null}
 !83 = metadata !{i32 55, i32 31, metadata !78, null}
-!84 = metadata !{i32 214, i32 7, metadata !85, metadata !83}
-!85 = metadata !{i32 786443, metadata !86, i32 210, i32 5, metadata !88, i32 38} ; [ DW_TAG_lexical_block ]
-!86 = metadata !{i32 786478, i32 0, metadata !87, metadata !"max<float>", metadata !"max<float>", metadata !"_ZSt3maxIfERKT_S2_S2_", metadata !88, i32 209, metadata !89, i1 false, i1 true, i32 0, i32 0, null, i32 256, i1 false, null, metadata !93, null, metadata !24, i32 210} ; [ DW_TAG_subprogram ]
-!87 = metadata !{i32 786489, null, metadata !"std", metadata !88, i32 74} ; [ DW_TAG_namespace ]
-!88 = metadata !{i32 786473, metadata !"F:/Xilinx/Vivado_HLS/2015.4/win64/tools/clang/bin\5C..\5Clib\5Cclang\5C3.1/../../../include/c++/4.5.2\5Cbits/stl_algobase.h", metadata !"f:/maxi_latest", null} ; [ DW_TAG_file_type ]
+!84 = metadata !{i32 215, i32 7, metadata !85, metadata !83}
+!85 = metadata !{i32 786443, metadata !86, i32 211, i32 5, metadata !88, i32 38} ; [ DW_TAG_lexical_block ]
+!86 = metadata !{i32 786478, i32 0, metadata !87, metadata !"max<float>", metadata !"max<float>", metadata !"_ZSt3maxIfERKT_S2_S2_", metadata !88, i32 210, metadata !89, i1 false, i1 true, i32 0, i32 0, null, i32 256, i1 false, null, metadata !93, null, metadata !24, i32 211} ; [ DW_TAG_subprogram ]
+!87 = metadata !{i32 786489, null, metadata !"std", metadata !88, i32 73} ; [ DW_TAG_namespace ]
+!88 = metadata !{i32 786473, metadata !"/opt/Xilinx/Vivado_HLS/2015.4/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bits/stl_algobase.h", metadata !"/home/chathura/Desktop/maxi_final_180113", null} ; [ DW_TAG_file_type ]
 !89 = metadata !{i32 786453, i32 0, metadata !"", i32 0, i32 0, i64 0, i64 0, i64 0, i32 0, null, metadata !90, i32 0, i32 0} ; [ DW_TAG_subroutine_type ]
 !90 = metadata !{metadata !91, metadata !91, metadata !91}
 !91 = metadata !{i32 786448, null, null, null, i32 0, i64 0, i64 0, i64 0, i32 0, metadata !92} ; [ DW_TAG_reference_type ]
@@ -1416,16 +1561,16 @@ burst.wr.body:                                    ; preds = %burst.wr.header
 !93 = metadata !{metadata !94}
 !94 = metadata !{i32 786479, null, metadata !"_Tp", metadata !22, null, i32 0, i32 0} ; [ DW_TAG_template_type_parameter ]
 !95 = metadata !{i32 56, i32 25, metadata !78, null}
-!96 = metadata !{i32 786689, metadata !97, metadata !"__x", metadata !99, i32 16777649, metadata !22, i32 0, metadata !102} ; [ DW_TAG_arg_variable ]
-!97 = metadata !{i32 786478, i32 0, metadata !98, metadata !"sqrt", metadata !"sqrt", metadata !"_ZSt4sqrtf", metadata !99, i32 433, metadata !100, i1 false, i1 true, i32 0, i32 0, null, i32 256, i1 false, null, null, null, metadata !24, i32 434} ; [ DW_TAG_subprogram ]
+!96 = metadata !{i32 786689, metadata !97, metadata !"__x", metadata !99, i32 16777631, metadata !22, i32 0, metadata !102} ; [ DW_TAG_arg_variable ]
+!97 = metadata !{i32 786478, i32 0, metadata !98, metadata !"sqrt", metadata !"sqrt", metadata !"_ZSt4sqrtf", metadata !99, i32 415, metadata !100, i1 false, i1 true, i32 0, i32 0, null, i32 256, i1 false, null, null, null, metadata !24, i32 416} ; [ DW_TAG_subprogram ]
 !98 = metadata !{i32 786489, null, metadata !"std", metadata !99, i32 76} ; [ DW_TAG_namespace ]
-!99 = metadata !{i32 786473, metadata !"F:/Xilinx/Vivado_HLS/2015.4/win64/tools/clang/bin\5C..\5Clib\5Cclang\5C3.1/../../../include/c++/4.5.2\5Ccmath", metadata !"f:/maxi_latest", null} ; [ DW_TAG_file_type ]
+!99 = metadata !{i32 786473, metadata !"/opt/Xilinx/Vivado_HLS/2015.4/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/cmath", metadata !"/home/chathura/Desktop/maxi_final_180113", null} ; [ DW_TAG_file_type ]
 !100 = metadata !{i32 786453, i32 0, metadata !"", i32 0, i32 0, i64 0, i64 0, i64 0, i32 0, null, metadata !101, i32 0, i32 0} ; [ DW_TAG_subroutine_type ]
 !101 = metadata !{metadata !22, metadata !22}
 !102 = metadata !{i32 57, i32 39, metadata !78, null}
-!103 = metadata !{i32 433, i32 14, metadata !97, metadata !102}
-!104 = metadata !{i32 434, i32 12, metadata !105, metadata !102}
-!105 = metadata !{i32 786443, metadata !97, i32 434, i32 3, metadata !99, i32 154} ; [ DW_TAG_lexical_block ]
+!103 = metadata !{i32 415, i32 14, metadata !97, metadata !102}
+!104 = metadata !{i32 416, i32 12, metadata !105, metadata !102}
+!105 = metadata !{i32 786443, metadata !97, i32 416, i32 3, metadata !99, i32 154} ; [ DW_TAG_lexical_block ]
 !106 = metadata !{i32 62, i32 2, metadata !107, null}
 !107 = metadata !{i32 786443, metadata !108, i32 60, i32 25, metadata !14, i32 10} ; [ DW_TAG_lexical_block ]
 !108 = metadata !{i32 786443, metadata !78, i32 59, i32 25, metadata !14, i32 9} ; [ DW_TAG_lexical_block ]
@@ -1435,28 +1580,28 @@ burst.wr.body:                                    ; preds = %burst.wr.header
 !112 = metadata !{i32 786688, metadata !40, metadata !"k1", metadata !14, i32 20, metadata !62, i32 0, i32 0} ; [ DW_TAG_auto_variable ]
 !113 = metadata !{i32 60, i32 26, metadata !107, null}
 !114 = metadata !{i32 61, i32 1, metadata !107, null}
-!115 = metadata !{i32 790532, metadata !116, metadata !"__a", null, i32 106, metadata !121, i32 0, metadata !122} ; [ DW_TAG_arg_variable_ro ]
-!116 = metadata !{i32 786478, i32 0, metadata !117, metadata !"swap<float>", metadata !"swap<float>", metadata !"_ZSt4swapIfEvRT_S1_", metadata !118, i32 106, metadata !119, i1 false, i1 true, i32 0, i32 0, null, i32 256, i1 false, null, metadata !93, null, metadata !24, i32 107} ; [ DW_TAG_subprogram ]
-!117 = metadata !{i32 786489, null, metadata !"std", metadata !118, i32 95} ; [ DW_TAG_namespace ]
-!118 = metadata !{i32 786473, metadata !"F:/Xilinx/Vivado_HLS/2015.4/win64/tools/clang/bin\5C..\5Clib\5Cclang\5C3.1/../../../include/c++/4.5.2\5Cbits/move.h", metadata !"f:/maxi_latest", null} ; [ DW_TAG_file_type ]
+!115 = metadata !{i32 790532, metadata !116, metadata !"__a", null, i32 122, metadata !121, i32 0, metadata !122} ; [ DW_TAG_arg_variable_ro ]
+!116 = metadata !{i32 786478, i32 0, metadata !117, metadata !"swap<float>", metadata !"swap<float>", metadata !"_ZSt4swapIfEvRT_S1_", metadata !118, i32 122, metadata !119, i1 false, i1 true, i32 0, i32 0, null, i32 256, i1 false, null, metadata !93, null, metadata !24, i32 123} ; [ DW_TAG_subprogram ]
+!117 = metadata !{i32 786489, null, metadata !"std", metadata !118, i32 109} ; [ DW_TAG_namespace ]
+!118 = metadata !{i32 786473, metadata !"/opt/Xilinx/Vivado_HLS/2015.4/lnx64/tools/gcc/lib/gcc/x86_64-unknown-linux-gnu/4.6.3/../../../../include/c++/4.6.3/bits/move.h", metadata !"/home/chathura/Desktop/maxi_final_180113", null} ; [ DW_TAG_file_type ]
 !119 = metadata !{i32 786453, i32 0, metadata !"", i32 0, i32 0, i64 0, i64 0, i64 0, i32 0, null, metadata !120, i32 0, i32 0} ; [ DW_TAG_subroutine_type ]
 !120 = metadata !{null, metadata !121, metadata !121}
 !121 = metadata !{i32 786448, null, null, null, i32 0, i64 0, i64 0, i64 0, i32 0, metadata !22} ; [ DW_TAG_reference_type ]
 !122 = metadata !{i32 64, i32 29, metadata !107, null}
-!123 = metadata !{i32 106, i32 15, metadata !116, metadata !122}
-!124 = metadata !{i32 790532, metadata !116, metadata !"__b", null, i32 106, metadata !121, i32 0, metadata !122} ; [ DW_TAG_arg_variable_ro ]
-!125 = metadata !{i32 106, i32 25, metadata !116, metadata !122}
-!126 = metadata !{i32 786688, metadata !127, metadata !"__tmp", metadata !118, i32 111, metadata !22, i32 0, metadata !122} ; [ DW_TAG_auto_variable ]
-!127 = metadata !{i32 786443, metadata !116, i32 107, i32 5, metadata !118, i32 37} ; [ DW_TAG_lexical_block ]
-!128 = metadata !{i32 111, i32 24, metadata !127, metadata !122}
-!129 = metadata !{i32 790534, metadata !116, metadata !"__a", null, i32 106, metadata !121, i32 0, metadata !122} ; [ DW_TAG_arg_variable_wo ]
-!130 = metadata !{i32 790534, metadata !116, metadata !"__b", null, i32 106, metadata !121, i32 0, metadata !122} ; [ DW_TAG_arg_variable_wo ]
+!123 = metadata !{i32 122, i32 15, metadata !116, metadata !122}
+!124 = metadata !{i32 790532, metadata !116, metadata !"__b", null, i32 122, metadata !121, i32 0, metadata !122} ; [ DW_TAG_arg_variable_ro ]
+!125 = metadata !{i32 122, i32 25, metadata !116, metadata !122}
+!126 = metadata !{i32 786688, metadata !127, metadata !"__tmp", metadata !118, i32 127, metadata !22, i32 0, metadata !122} ; [ DW_TAG_auto_variable ]
+!127 = metadata !{i32 786443, metadata !116, i32 123, i32 5, metadata !118, i32 37} ; [ DW_TAG_lexical_block ]
+!128 = metadata !{i32 127, i32 24, metadata !127, metadata !122}
+!129 = metadata !{i32 790534, metadata !116, metadata !"__a", null, i32 122, metadata !121, i32 0, metadata !122} ; [ DW_TAG_arg_variable_wo ]
+!130 = metadata !{i32 790534, metadata !116, metadata !"__b", null, i32 122, metadata !121, i32 0, metadata !122} ; [ DW_TAG_arg_variable_wo ]
 !131 = metadata !{i32 65, i32 25, metadata !107, null}
 !132 = metadata !{i32 59, i32 49, metadata !108, null}
 !133 = metadata !{i32 72, i32 17, metadata !55, null}
-!134 = metadata !{i32 191, i32 7, metadata !135, metadata !143}
-!135 = metadata !{i32 786443, metadata !136, i32 187, i32 5, metadata !88, i32 36} ; [ DW_TAG_lexical_block ]
-!136 = metadata !{i32 786478, i32 0, metadata !87, metadata !"min<int>", metadata !"min<int>", metadata !"_ZSt3minIiERKT_S2_S2_", metadata !88, i32 186, metadata !137, i1 false, i1 true, i32 0, i32 0, null, i32 256, i1 false, null, metadata !141, null, metadata !24, i32 187} ; [ DW_TAG_subprogram ]
+!134 = metadata !{i32 192, i32 7, metadata !135, metadata !143}
+!135 = metadata !{i32 786443, metadata !136, i32 188, i32 5, metadata !88, i32 36} ; [ DW_TAG_lexical_block ]
+!136 = metadata !{i32 786478, i32 0, metadata !87, metadata !"min<int>", metadata !"min<int>", metadata !"_ZSt3minIiERKT_S2_S2_", metadata !88, i32 187, metadata !137, i1 false, i1 true, i32 0, i32 0, null, i32 256, i1 false, null, metadata !141, null, metadata !24, i32 188} ; [ DW_TAG_subprogram ]
 !137 = metadata !{i32 786453, i32 0, metadata !"", i32 0, i32 0, i64 0, i64 0, i64 0, i32 0, null, metadata !138, i32 0, i32 0} ; [ DW_TAG_subroutine_type ]
 !138 = metadata !{metadata !139, metadata !139, metadata !139}
 !139 = metadata !{i32 786448, null, null, null, i32 0, i64 0, i64 0, i64 0, i32 0, metadata !140} ; [ DW_TAG_reference_type ]
@@ -1546,7 +1691,7 @@ burst.wr.body:                                    ; preds = %burst.wr.header
 !223 = metadata !{metadata !224}
 !224 = metadata !{i32 0, i32 76799, i32 1}
 !225 = metadata !{metadata !"frame_out", metadata !223, metadata !"unsigned char", i32 0, i32 7}
-!226 = metadata !{i32 151, i32 1, metadata !227, null}
+!226 = metadata !{i32 158, i32 1, metadata !227, null}
 !227 = metadata !{i32 786443, metadata !228, i32 150, i32 1, metadata !14, i32 27} ; [ DW_TAG_lexical_block ]
 !228 = metadata !{i32 786478, i32 0, metadata !14, metadata !"bgsub", metadata !"bgsub", metadata !"_Z5bgsubPhS_bPf", metadata !14, i32 146, metadata !229, i1 false, i1 true, i32 0, i32 0, null, i32 256, i1 false, null, null, null, metadata !24, i32 150} ; [ DW_TAG_subprogram ]
 !229 = metadata !{i32 786453, i32 0, metadata !"", i32 0, i32 0, i64 0, i64 0, i64 0, i32 0, null, metadata !230, i32 0, i32 0} ; [ DW_TAG_subroutine_type ]
@@ -1559,67 +1704,77 @@ burst.wr.body:                                    ; preds = %burst.wr.header
 !236 = metadata !{metadata !"init", metadata !237, metadata !"bool", i32 0, i32 0}
 !237 = metadata !{metadata !238}
 !238 = metadata !{i32 0, i32 0, i32 0}
-!239 = metadata !{i32 153, i32 1, metadata !227, null}
-!240 = metadata !{i32 786689, metadata !228, metadata !"bgmodel", null, i32 149, metadata !241, i32 0, i32 0} ; [ DW_TAG_arg_variable ]
-!241 = metadata !{i32 786433, null, metadata !"", null, i32 0, i64 19660800, i64 32, i32 0, i32 0, metadata !22, metadata !242, i32 0, i32 0} ; [ DW_TAG_array_type ]
-!242 = metadata !{metadata !243}
-!243 = metadata !{i32 786465, i64 0, i64 614399}  ; [ DW_TAG_subrange_type ]
-!244 = metadata !{i32 149, i32 12, metadata !228, null}
-!245 = metadata !{i32 786689, metadata !228, metadata !"init", metadata !14, i32 50331796, metadata !231, i32 0, i32 0} ; [ DW_TAG_arg_variable ]
-!246 = metadata !{i32 148, i32 11, metadata !228, null}
-!247 = metadata !{i32 786689, metadata !228, metadata !"frame_out", null, i32 147, metadata !248, i32 0, i32 0} ; [ DW_TAG_arg_variable ]
-!248 = metadata !{i32 786433, null, metadata !"", null, i32 0, i64 0, i64 0, i32 0, i32 0, metadata !18, metadata !249, i32 0, i32 0} ; [ DW_TAG_array_type ]
-!249 = metadata !{metadata !250}
-!250 = metadata !{i32 786465, i64 0, i64 76799}   ; [ DW_TAG_subrange_type ]
-!251 = metadata !{i32 147, i32 20, metadata !228, null}
-!252 = metadata !{i32 786689, metadata !228, metadata !"frame_in", null, i32 146, metadata !248, i32 0, i32 0} ; [ DW_TAG_arg_variable ]
-!253 = metadata !{i32 146, i32 20, metadata !228, null}
-!254 = metadata !{i32 228, i32 1, metadata !227, null}
-!255 = metadata !{i32 786688, metadata !227, metadata !"part_bgmodel", metadata !14, i32 158, metadata !256, i32 0, i32 0} ; [ DW_TAG_auto_variable ]
-!256 = metadata !{i32 786433, null, metadata !"", null, i32 0, i64 163840, i64 32, i32 0, i32 0, metadata !21, metadata !36, i32 0, i32 0} ; [ DW_TAG_array_type ]
-!257 = metadata !{i32 158, i32 9, metadata !227, null}
-!258 = metadata !{i32 786688, metadata !227, metadata !"part_frame_in", metadata !14, i32 159, metadata !259, i32 0, i32 0} ; [ DW_TAG_auto_variable ]
-!259 = metadata !{i32 786433, null, metadata !"", null, i32 0, i64 5120, i64 8, i32 0, i32 0, metadata !18, metadata !29, i32 0, i32 0} ; [ DW_TAG_array_type ]
-!260 = metadata !{i32 159, i32 13, metadata !227, null}
-!261 = metadata !{i32 786688, metadata !227, metadata !"part2_bgmodel", metadata !14, i32 163, metadata !256, i32 0, i32 0} ; [ DW_TAG_auto_variable ]
-!262 = metadata !{i32 163, i32 12, metadata !227, null}
-!263 = metadata !{i32 786688, metadata !227, metadata !"part2_frame_in", metadata !14, i32 164, metadata !259, i32 0, i32 0} ; [ DW_TAG_auto_variable ]
-!264 = metadata !{i32 164, i32 13, metadata !227, null}
-!265 = metadata !{i32 786688, metadata !227, metadata !"part3_bgmodel", metadata !14, i32 168, metadata !256, i32 0, i32 0} ; [ DW_TAG_auto_variable ]
-!266 = metadata !{i32 168, i32 12, metadata !227, null}
-!267 = metadata !{i32 786688, metadata !227, metadata !"part3_frame_in", metadata !14, i32 169, metadata !259, i32 0, i32 0} ; [ DW_TAG_auto_variable ]
-!268 = metadata !{i32 169, i32 13, metadata !227, null}
-!269 = metadata !{i32 173, i32 5, metadata !227, null}
-!270 = metadata !{i32 182, i32 13, metadata !271, null}
-!271 = metadata !{i32 786443, metadata !272, i32 181, i32 9, metadata !14, i32 29} ; [ DW_TAG_lexical_block ]
-!272 = metadata !{i32 786443, metadata !227, i32 174, i32 5, metadata !14, i32 28} ; [ DW_TAG_lexical_block ]
-!273 = metadata !{i32 181, i32 20, metadata !271, null}
-!274 = metadata !{i32 181, i32 64, metadata !271, null}
-!275 = metadata !{i32 196, i32 19, metadata !276, null}
-!276 = metadata !{i32 786443, metadata !227, i32 196, i32 5, metadata !14, i32 31} ; [ DW_TAG_lexical_block ]
-!277 = metadata !{i32 786688, metadata !271, metadata !"p", metadata !14, i32 181, metadata !62, i32 0, i32 0} ; [ DW_TAG_auto_variable ]
-!278 = metadata !{i32 220, i32 9, metadata !279, null}
-!279 = metadata !{i32 786443, metadata !280, i32 214, i32 16, metadata !14, i32 35} ; [ DW_TAG_lexical_block ]
-!280 = metadata !{i32 786443, metadata !276, i32 197, i32 5, metadata !14, i32 32} ; [ DW_TAG_lexical_block ]
-!281 = metadata !{i32 221, i32 6, metadata !279, null}
-!282 = metadata !{i32 196, i32 29, metadata !276, null}
-!283 = metadata !{i32 786688, metadata !276, metadata !"part", metadata !14, i32 196, metadata !62, i32 0, i32 0} ; [ DW_TAG_auto_variable ]
-!284 = metadata !{i32 219, i32 9, metadata !279, null}
-!285 = metadata !{i32 218, i32 9, metadata !279, null}
-!286 = metadata !{i32 217, i32 9, metadata !279, null}
-!287 = metadata !{i32 216, i32 9, metadata !279, null}
-!288 = metadata !{i32 215, i32 9, metadata !279, null}
-!289 = metadata !{i32 205, i32 6, metadata !290, null}
-!290 = metadata !{i32 786443, metadata !280, i32 198, i32 15, metadata !14, i32 33} ; [ DW_TAG_lexical_block ]
-!291 = metadata !{i32 208, i32 9, metadata !292, null}
-!292 = metadata !{i32 786443, metadata !280, i32 207, i32 17, metadata !14, i32 34} ; [ DW_TAG_lexical_block ]
-!293 = metadata !{i32 209, i32 9, metadata !292, null}
-!294 = metadata !{i32 210, i32 9, metadata !292, null}
-!295 = metadata !{i32 214, i32 17, metadata !279, null}
-!296 = metadata !{i32 204, i32 9, metadata !290, null}
-!297 = metadata !{i32 203, i32 9, metadata !290, null}
-!298 = metadata !{i32 202, i32 9, metadata !290, null}
-!299 = metadata !{i32 201, i32 9, metadata !290, null}
-!300 = metadata !{i32 200, i32 9, metadata !290, null}
-!301 = metadata !{i32 198, i32 16, metadata !290, null}
-!302 = metadata !{i32 199, i32 9, metadata !290, null}
+!239 = metadata !{i32 151, i32 1, metadata !227, null}
+!240 = metadata !{i32 153, i32 1, metadata !227, null}
+!241 = metadata !{i32 786689, metadata !228, metadata !"bgmodel", null, i32 149, metadata !242, i32 0, i32 0} ; [ DW_TAG_arg_variable ]
+!242 = metadata !{i32 786433, null, metadata !"", null, i32 0, i64 19660800, i64 32, i32 0, i32 0, metadata !22, metadata !243, i32 0, i32 0} ; [ DW_TAG_array_type ]
+!243 = metadata !{metadata !244}
+!244 = metadata !{i32 786465, i64 0, i64 614399}  ; [ DW_TAG_subrange_type ]
+!245 = metadata !{i32 149, i32 12, metadata !228, null}
+!246 = metadata !{i32 786689, metadata !228, metadata !"init", metadata !14, i32 50331796, metadata !231, i32 0, i32 0} ; [ DW_TAG_arg_variable ]
+!247 = metadata !{i32 148, i32 11, metadata !228, null}
+!248 = metadata !{i32 786689, metadata !228, metadata !"frame_out", null, i32 147, metadata !249, i32 0, i32 0} ; [ DW_TAG_arg_variable ]
+!249 = metadata !{i32 786433, null, metadata !"", null, i32 0, i64 0, i64 0, i32 0, i32 0, metadata !18, metadata !250, i32 0, i32 0} ; [ DW_TAG_array_type ]
+!250 = metadata !{metadata !251}
+!251 = metadata !{i32 786465, i64 0, i64 76799}   ; [ DW_TAG_subrange_type ]
+!252 = metadata !{i32 147, i32 20, metadata !228, null}
+!253 = metadata !{i32 786689, metadata !228, metadata !"frame_in", null, i32 146, metadata !249, i32 0, i32 0} ; [ DW_TAG_arg_variable ]
+!254 = metadata !{i32 146, i32 20, metadata !228, null}
+!255 = metadata !{i32 241, i32 1, metadata !227, null}
+!256 = metadata !{i32 786688, metadata !227, metadata !"part_bgmodel", metadata !14, i32 159, metadata !257, i32 0, i32 0} ; [ DW_TAG_auto_variable ]
+!257 = metadata !{i32 786433, null, metadata !"", null, i32 0, i64 163840, i64 32, i32 0, i32 0, metadata !21, metadata !36, i32 0, i32 0} ; [ DW_TAG_array_type ]
+!258 = metadata !{i32 159, i32 9, metadata !227, null}
+!259 = metadata !{i32 786688, metadata !227, metadata !"part_frame_in", metadata !14, i32 160, metadata !260, i32 0, i32 0} ; [ DW_TAG_auto_variable ]
+!260 = metadata !{i32 786433, null, metadata !"", null, i32 0, i64 5120, i64 8, i32 0, i32 0, metadata !18, metadata !29, i32 0, i32 0} ; [ DW_TAG_array_type ]
+!261 = metadata !{i32 160, i32 13, metadata !227, null}
+!262 = metadata !{i32 786688, metadata !227, metadata !"part2_bgmodel", metadata !14, i32 164, metadata !257, i32 0, i32 0} ; [ DW_TAG_auto_variable ]
+!263 = metadata !{i32 164, i32 12, metadata !227, null}
+!264 = metadata !{i32 786688, metadata !227, metadata !"part2_frame_in", metadata !14, i32 165, metadata !260, i32 0, i32 0} ; [ DW_TAG_auto_variable ]
+!265 = metadata !{i32 165, i32 13, metadata !227, null}
+!266 = metadata !{i32 786688, metadata !227, metadata !"part3_bgmodel", metadata !14, i32 169, metadata !257, i32 0, i32 0} ; [ DW_TAG_auto_variable ]
+!267 = metadata !{i32 169, i32 12, metadata !227, null}
+!268 = metadata !{i32 786688, metadata !227, metadata !"part3_frame_in", metadata !14, i32 170, metadata !260, i32 0, i32 0} ; [ DW_TAG_auto_variable ]
+!269 = metadata !{i32 170, i32 13, metadata !227, null}
+!270 = metadata !{i32 786688, metadata !227, metadata !"part4_bgmodel", metadata !14, i32 174, metadata !257, i32 0, i32 0} ; [ DW_TAG_auto_variable ]
+!271 = metadata !{i32 174, i32 12, metadata !227, null}
+!272 = metadata !{i32 786688, metadata !227, metadata !"part4_frame_in", metadata !14, i32 175, metadata !260, i32 0, i32 0} ; [ DW_TAG_auto_variable ]
+!273 = metadata !{i32 175, i32 13, metadata !227, null}
+!274 = metadata !{i32 179, i32 5, metadata !227, null}
+!275 = metadata !{i32 188, i32 13, metadata !276, null}
+!276 = metadata !{i32 786443, metadata !277, i32 187, i32 9, metadata !14, i32 29} ; [ DW_TAG_lexical_block ]
+!277 = metadata !{i32 786443, metadata !227, i32 180, i32 5, metadata !14, i32 28} ; [ DW_TAG_lexical_block ]
+!278 = metadata !{i32 187, i32 20, metadata !276, null}
+!279 = metadata !{i32 187, i32 64, metadata !276, null}
+!280 = metadata !{i32 204, i32 19, metadata !281, null}
+!281 = metadata !{i32 786443, metadata !227, i32 204, i32 5, metadata !14, i32 31} ; [ DW_TAG_lexical_block ]
+!282 = metadata !{i32 786688, metadata !276, metadata !"p", metadata !14, i32 187, metadata !62, i32 0, i32 0} ; [ DW_TAG_auto_variable ]
+!283 = metadata !{i32 233, i32 9, metadata !284, null}
+!284 = metadata !{i32 786443, metadata !285, i32 225, i32 16, metadata !14, i32 35} ; [ DW_TAG_lexical_block ]
+!285 = metadata !{i32 786443, metadata !281, i32 205, i32 5, metadata !14, i32 32} ; [ DW_TAG_lexical_block ]
+!286 = metadata !{i32 234, i32 6, metadata !284, null}
+!287 = metadata !{i32 204, i32 29, metadata !281, null}
+!288 = metadata !{i32 786688, metadata !281, metadata !"part", metadata !14, i32 204, metadata !62, i32 0, i32 0} ; [ DW_TAG_auto_variable ]
+!289 = metadata !{i32 232, i32 9, metadata !284, null}
+!290 = metadata !{i32 231, i32 9, metadata !284, null}
+!291 = metadata !{i32 230, i32 9, metadata !284, null}
+!292 = metadata !{i32 229, i32 9, metadata !284, null}
+!293 = metadata !{i32 228, i32 9, metadata !284, null}
+!294 = metadata !{i32 227, i32 9, metadata !284, null}
+!295 = metadata !{i32 226, i32 9, metadata !284, null}
+!296 = metadata !{i32 215, i32 6, metadata !297, null}
+!297 = metadata !{i32 786443, metadata !285, i32 206, i32 15, metadata !14, i32 33} ; [ DW_TAG_lexical_block ]
+!298 = metadata !{i32 218, i32 9, metadata !299, null}
+!299 = metadata !{i32 786443, metadata !285, i32 217, i32 17, metadata !14, i32 34} ; [ DW_TAG_lexical_block ]
+!300 = metadata !{i32 219, i32 9, metadata !299, null}
+!301 = metadata !{i32 220, i32 9, metadata !299, null}
+!302 = metadata !{i32 221, i32 9, metadata !299, null}
+!303 = metadata !{i32 225, i32 17, metadata !284, null}
+!304 = metadata !{i32 214, i32 9, metadata !297, null}
+!305 = metadata !{i32 213, i32 9, metadata !297, null}
+!306 = metadata !{i32 212, i32 9, metadata !297, null}
+!307 = metadata !{i32 211, i32 9, metadata !297, null}
+!308 = metadata !{i32 210, i32 9, metadata !297, null}
+!309 = metadata !{i32 209, i32 9, metadata !297, null}
+!310 = metadata !{i32 208, i32 9, metadata !297, null}
+!311 = metadata !{i32 206, i32 16, metadata !297, null}
+!312 = metadata !{i32 207, i32 9, metadata !297, null}

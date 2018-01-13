@@ -58,8 +58,34 @@ bgsub::bgsub(sc_module_name name) : sc_module(name), mVcdFile(0) {
     bgsub_AXILiteS_s_axi_U->ACLK_EN(bgsub_AXILiteS_s_axi_U_ap_dummy_ce);
     bgsub_AXILiteS_s_axi_U->frame_in(frame_in);
     bgsub_AXILiteS_s_axi_U->frame_out(frame_out);
-    bgsub_AXILiteS_s_axi_U->init(init);
     bgsub_AXILiteS_s_axi_U->bgmodel(bgmodel);
+    bgsub_CRTL_BUS_s_axi_U = new bgsub_CRTL_BUS_s_axi<C_S_AXI_CRTL_BUS_ADDR_WIDTH,C_S_AXI_CRTL_BUS_DATA_WIDTH>("bgsub_CRTL_BUS_s_axi_U");
+    bgsub_CRTL_BUS_s_axi_U->AWVALID(s_axi_CRTL_BUS_AWVALID);
+    bgsub_CRTL_BUS_s_axi_U->AWREADY(s_axi_CRTL_BUS_AWREADY);
+    bgsub_CRTL_BUS_s_axi_U->AWADDR(s_axi_CRTL_BUS_AWADDR);
+    bgsub_CRTL_BUS_s_axi_U->WVALID(s_axi_CRTL_BUS_WVALID);
+    bgsub_CRTL_BUS_s_axi_U->WREADY(s_axi_CRTL_BUS_WREADY);
+    bgsub_CRTL_BUS_s_axi_U->WDATA(s_axi_CRTL_BUS_WDATA);
+    bgsub_CRTL_BUS_s_axi_U->WSTRB(s_axi_CRTL_BUS_WSTRB);
+    bgsub_CRTL_BUS_s_axi_U->ARVALID(s_axi_CRTL_BUS_ARVALID);
+    bgsub_CRTL_BUS_s_axi_U->ARREADY(s_axi_CRTL_BUS_ARREADY);
+    bgsub_CRTL_BUS_s_axi_U->ARADDR(s_axi_CRTL_BUS_ARADDR);
+    bgsub_CRTL_BUS_s_axi_U->RVALID(s_axi_CRTL_BUS_RVALID);
+    bgsub_CRTL_BUS_s_axi_U->RREADY(s_axi_CRTL_BUS_RREADY);
+    bgsub_CRTL_BUS_s_axi_U->RDATA(s_axi_CRTL_BUS_RDATA);
+    bgsub_CRTL_BUS_s_axi_U->RRESP(s_axi_CRTL_BUS_RRESP);
+    bgsub_CRTL_BUS_s_axi_U->BVALID(s_axi_CRTL_BUS_BVALID);
+    bgsub_CRTL_BUS_s_axi_U->BREADY(s_axi_CRTL_BUS_BREADY);
+    bgsub_CRTL_BUS_s_axi_U->BRESP(s_axi_CRTL_BUS_BRESP);
+    bgsub_CRTL_BUS_s_axi_U->ACLK(ap_clk);
+    bgsub_CRTL_BUS_s_axi_U->ARESET(ap_rst_n_inv);
+    bgsub_CRTL_BUS_s_axi_U->ACLK_EN(bgsub_CRTL_BUS_s_axi_U_ap_dummy_ce);
+    bgsub_CRTL_BUS_s_axi_U->ap_start(ap_start);
+    bgsub_CRTL_BUS_s_axi_U->interrupt(interrupt);
+    bgsub_CRTL_BUS_s_axi_U->ap_ready(ap_ready);
+    bgsub_CRTL_BUS_s_axi_U->ap_done(ap_done);
+    bgsub_CRTL_BUS_s_axi_U->ap_idle(ap_idle);
+    bgsub_CRTL_BUS_s_axi_U->init(init);
     bgsub_gmem_m_axi_U = new bgsub_gmem_m_axi<8,32,5,C_M_AXI_GMEM_ID_WIDTH,C_M_AXI_GMEM_ADDR_WIDTH,C_M_AXI_GMEM_DATA_WIDTH,C_M_AXI_GMEM_AWUSER_WIDTH,C_M_AXI_GMEM_ARUSER_WIDTH,C_M_AXI_GMEM_WUSER_WIDTH,C_M_AXI_GMEM_RUSER_WIDTH,C_M_AXI_GMEM_BUSER_WIDTH,C_M_AXI_GMEM_USER_VALUE,C_M_AXI_GMEM_PROT_VALUE,C_M_AXI_GMEM_CACHE_VALUE>("bgsub_gmem_m_axi_U");
     bgsub_gmem_m_axi_U->AWVALID(m_axi_gmem_AWVALID);
     bgsub_gmem_m_axi_U->AWREADY(m_axi_gmem_AWREADY);
@@ -472,6 +498,8 @@ bgsub::bgsub(sc_module_name name) : sc_module(name), mVcdFile(0) {
     SC_METHOD(thread_bgsub_Block_proc_U0_m_axi_frame_out_WREADY);
     sensitive << ( gmem_WREADY );
 
+    SC_METHOD(thread_bgsub_CRTL_BUS_s_axi_U_ap_dummy_ce);
+
     SC_METHOD(thread_bgsub_gmem_m_axi_U_ap_dummy_ce);
 
     SC_METHOD(thread_bgsub_gmem_offset_m_axi_U_ap_dummy_ce);
@@ -699,6 +727,24 @@ bgsub::bgsub(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sc_trace(mVcdFile, s_axi_AXILiteS_BRESP, "(port)s_axi_AXILiteS_BRESP");
     sc_trace(mVcdFile, ap_clk, "(port)ap_clk");
     sc_trace(mVcdFile, ap_rst_n, "(port)ap_rst_n");
+    sc_trace(mVcdFile, s_axi_CRTL_BUS_AWVALID, "(port)s_axi_CRTL_BUS_AWVALID");
+    sc_trace(mVcdFile, s_axi_CRTL_BUS_AWREADY, "(port)s_axi_CRTL_BUS_AWREADY");
+    sc_trace(mVcdFile, s_axi_CRTL_BUS_AWADDR, "(port)s_axi_CRTL_BUS_AWADDR");
+    sc_trace(mVcdFile, s_axi_CRTL_BUS_WVALID, "(port)s_axi_CRTL_BUS_WVALID");
+    sc_trace(mVcdFile, s_axi_CRTL_BUS_WREADY, "(port)s_axi_CRTL_BUS_WREADY");
+    sc_trace(mVcdFile, s_axi_CRTL_BUS_WDATA, "(port)s_axi_CRTL_BUS_WDATA");
+    sc_trace(mVcdFile, s_axi_CRTL_BUS_WSTRB, "(port)s_axi_CRTL_BUS_WSTRB");
+    sc_trace(mVcdFile, s_axi_CRTL_BUS_ARVALID, "(port)s_axi_CRTL_BUS_ARVALID");
+    sc_trace(mVcdFile, s_axi_CRTL_BUS_ARREADY, "(port)s_axi_CRTL_BUS_ARREADY");
+    sc_trace(mVcdFile, s_axi_CRTL_BUS_ARADDR, "(port)s_axi_CRTL_BUS_ARADDR");
+    sc_trace(mVcdFile, s_axi_CRTL_BUS_RVALID, "(port)s_axi_CRTL_BUS_RVALID");
+    sc_trace(mVcdFile, s_axi_CRTL_BUS_RREADY, "(port)s_axi_CRTL_BUS_RREADY");
+    sc_trace(mVcdFile, s_axi_CRTL_BUS_RDATA, "(port)s_axi_CRTL_BUS_RDATA");
+    sc_trace(mVcdFile, s_axi_CRTL_BUS_RRESP, "(port)s_axi_CRTL_BUS_RRESP");
+    sc_trace(mVcdFile, s_axi_CRTL_BUS_BVALID, "(port)s_axi_CRTL_BUS_BVALID");
+    sc_trace(mVcdFile, s_axi_CRTL_BUS_BREADY, "(port)s_axi_CRTL_BUS_BREADY");
+    sc_trace(mVcdFile, s_axi_CRTL_BUS_BRESP, "(port)s_axi_CRTL_BUS_BRESP");
+    sc_trace(mVcdFile, interrupt, "(port)interrupt");
     sc_trace(mVcdFile, m_axi_gmem_AWVALID, "(port)m_axi_gmem_AWVALID");
     sc_trace(mVcdFile, m_axi_gmem_AWREADY, "(port)m_axi_gmem_AWREADY");
     sc_trace(mVcdFile, m_axi_gmem_AWADDR, "(port)m_axi_gmem_AWADDR");
@@ -789,18 +835,19 @@ bgsub::bgsub(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sc_trace(mVcdFile, m_axi_gmem_offset_BRESP, "(port)m_axi_gmem_offset_BRESP");
     sc_trace(mVcdFile, m_axi_gmem_offset_BID, "(port)m_axi_gmem_offset_BID");
     sc_trace(mVcdFile, m_axi_gmem_offset_BUSER, "(port)m_axi_gmem_offset_BUSER");
-    sc_trace(mVcdFile, ap_done, "(port)ap_done");
-    sc_trace(mVcdFile, ap_start, "(port)ap_start");
-    sc_trace(mVcdFile, ap_idle, "(port)ap_idle");
-    sc_trace(mVcdFile, ap_ready, "(port)ap_ready");
 #endif
 #ifdef __HLS_TRACE_LEVEL_INT__
     sc_trace(mVcdFile, ap_rst_n_inv, "ap_rst_n_inv");
     sc_trace(mVcdFile, bgsub_AXILiteS_s_axi_U_ap_dummy_ce, "bgsub_AXILiteS_s_axi_U_ap_dummy_ce");
     sc_trace(mVcdFile, frame_in, "frame_in");
     sc_trace(mVcdFile, frame_out, "frame_out");
-    sc_trace(mVcdFile, init, "init");
     sc_trace(mVcdFile, bgmodel, "bgmodel");
+    sc_trace(mVcdFile, bgsub_CRTL_BUS_s_axi_U_ap_dummy_ce, "bgsub_CRTL_BUS_s_axi_U_ap_dummy_ce");
+    sc_trace(mVcdFile, ap_start, "ap_start");
+    sc_trace(mVcdFile, ap_ready, "ap_ready");
+    sc_trace(mVcdFile, ap_done, "ap_done");
+    sc_trace(mVcdFile, ap_idle, "ap_idle");
+    sc_trace(mVcdFile, init, "init");
     sc_trace(mVcdFile, gmem_AWVALID, "gmem_AWVALID");
     sc_trace(mVcdFile, gmem_AWREADY, "gmem_AWREADY");
     sc_trace(mVcdFile, gmem_AWADDR, "gmem_AWADDR");
@@ -1013,6 +1060,7 @@ bgsub::~bgsub() {
     mHdltvinHandle.close();
     mHdltvoutHandle.close();
     delete bgsub_AXILiteS_s_axi_U;
+    delete bgsub_CRTL_BUS_s_axi_U;
     delete bgsub_gmem_m_axi_U;
     delete bgsub_gmem_offset_m_axi_U;
     delete bgsub_Block_proc_U0;
@@ -1197,6 +1245,10 @@ void bgsub::thread_bgsub_Block_proc_U0_m_axi_frame_out_RVALID() {
 
 void bgsub::thread_bgsub_Block_proc_U0_m_axi_frame_out_WREADY() {
     bgsub_Block_proc_U0_m_axi_frame_out_WREADY = gmem_WREADY.read();
+}
+
+void bgsub::thread_bgsub_CRTL_BUS_s_axi_U_ap_dummy_ce() {
+    bgsub_CRTL_BUS_s_axi_U_ap_dummy_ce = ap_const_logic_1;
 }
 
 void bgsub::thread_bgsub_gmem_m_axi_U_ap_dummy_ce() {
@@ -1493,6 +1545,24 @@ void bgsub::thread_hdltv_gen() {
         mHdltvinHandle << " , " <<  " \"s_axi_AXILiteS_BREADY\" :  \"" << s_axi_AXILiteS_BREADY.read() << "\" ";
         mHdltvoutHandle << " , " <<  " \"s_axi_AXILiteS_BRESP\" :  \"" << s_axi_AXILiteS_BRESP.read() << "\" ";
         mHdltvinHandle << " , " <<  " \"ap_rst_n\" :  \"" << ap_rst_n.read() << "\" ";
+        mHdltvinHandle << " , " <<  " \"s_axi_CRTL_BUS_AWVALID\" :  \"" << s_axi_CRTL_BUS_AWVALID.read() << "\" ";
+        mHdltvoutHandle << " , " <<  " \"s_axi_CRTL_BUS_AWREADY\" :  \"" << s_axi_CRTL_BUS_AWREADY.read() << "\" ";
+        mHdltvinHandle << " , " <<  " \"s_axi_CRTL_BUS_AWADDR\" :  \"" << s_axi_CRTL_BUS_AWADDR.read() << "\" ";
+        mHdltvinHandle << " , " <<  " \"s_axi_CRTL_BUS_WVALID\" :  \"" << s_axi_CRTL_BUS_WVALID.read() << "\" ";
+        mHdltvoutHandle << " , " <<  " \"s_axi_CRTL_BUS_WREADY\" :  \"" << s_axi_CRTL_BUS_WREADY.read() << "\" ";
+        mHdltvinHandle << " , " <<  " \"s_axi_CRTL_BUS_WDATA\" :  \"" << s_axi_CRTL_BUS_WDATA.read() << "\" ";
+        mHdltvinHandle << " , " <<  " \"s_axi_CRTL_BUS_WSTRB\" :  \"" << s_axi_CRTL_BUS_WSTRB.read() << "\" ";
+        mHdltvinHandle << " , " <<  " \"s_axi_CRTL_BUS_ARVALID\" :  \"" << s_axi_CRTL_BUS_ARVALID.read() << "\" ";
+        mHdltvoutHandle << " , " <<  " \"s_axi_CRTL_BUS_ARREADY\" :  \"" << s_axi_CRTL_BUS_ARREADY.read() << "\" ";
+        mHdltvinHandle << " , " <<  " \"s_axi_CRTL_BUS_ARADDR\" :  \"" << s_axi_CRTL_BUS_ARADDR.read() << "\" ";
+        mHdltvoutHandle << " , " <<  " \"s_axi_CRTL_BUS_RVALID\" :  \"" << s_axi_CRTL_BUS_RVALID.read() << "\" ";
+        mHdltvinHandle << " , " <<  " \"s_axi_CRTL_BUS_RREADY\" :  \"" << s_axi_CRTL_BUS_RREADY.read() << "\" ";
+        mHdltvoutHandle << " , " <<  " \"s_axi_CRTL_BUS_RDATA\" :  \"" << s_axi_CRTL_BUS_RDATA.read() << "\" ";
+        mHdltvoutHandle << " , " <<  " \"s_axi_CRTL_BUS_RRESP\" :  \"" << s_axi_CRTL_BUS_RRESP.read() << "\" ";
+        mHdltvoutHandle << " , " <<  " \"s_axi_CRTL_BUS_BVALID\" :  \"" << s_axi_CRTL_BUS_BVALID.read() << "\" ";
+        mHdltvinHandle << " , " <<  " \"s_axi_CRTL_BUS_BREADY\" :  \"" << s_axi_CRTL_BUS_BREADY.read() << "\" ";
+        mHdltvoutHandle << " , " <<  " \"s_axi_CRTL_BUS_BRESP\" :  \"" << s_axi_CRTL_BUS_BRESP.read() << "\" ";
+        mHdltvoutHandle << " , " <<  " \"interrupt\" :  \"" << interrupt.read() << "\" ";
         mHdltvoutHandle << " , " <<  " \"m_axi_gmem_AWVALID\" :  \"" << m_axi_gmem_AWVALID.read() << "\" ";
         mHdltvinHandle << " , " <<  " \"m_axi_gmem_AWREADY\" :  \"" << m_axi_gmem_AWREADY.read() << "\" ";
         mHdltvoutHandle << " , " <<  " \"m_axi_gmem_AWADDR\" :  \"" << m_axi_gmem_AWADDR.read() << "\" ";
@@ -1583,10 +1653,6 @@ void bgsub::thread_hdltv_gen() {
         mHdltvinHandle << " , " <<  " \"m_axi_gmem_offset_BRESP\" :  \"" << m_axi_gmem_offset_BRESP.read() << "\" ";
         mHdltvinHandle << " , " <<  " \"m_axi_gmem_offset_BID\" :  \"" << m_axi_gmem_offset_BID.read() << "\" ";
         mHdltvinHandle << " , " <<  " \"m_axi_gmem_offset_BUSER\" :  \"" << m_axi_gmem_offset_BUSER.read() << "\" ";
-        mHdltvoutHandle << " , " <<  " \"ap_done\" :  \"" << ap_done.read() << "\" ";
-        mHdltvinHandle << " , " <<  " \"ap_start\" :  \"" << ap_start.read() << "\" ";
-        mHdltvoutHandle << " , " <<  " \"ap_idle\" :  \"" << ap_idle.read() << "\" ";
-        mHdltvoutHandle << " , " <<  " \"ap_ready\" :  \"" << ap_ready.read() << "\" ";
         mHdltvinHandle << "}" << std::endl;
         mHdltvoutHandle << "}" << std::endl;
         ap_cycleNo++;
